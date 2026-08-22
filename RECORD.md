@@ -18,4 +18,4 @@
 
 ## 1.0 建立项目规划
 
-创建了 `Create GPT Step by Step` 项目，并制定了从字符级 tokenizer 到聊天模型扩展的学习路线。建立 `ROADMAP.md` 和 `RECORD.md`，用于管理学习目标和持续记录实践过程。初始化本地 Git 仓库，并把文档推送到公开 GitHub 仓库。
+创建了 `Create GPT Step by Step` 项目，并制定了从字符级 tokenizer 到聊天模型扩展的学习路线。建立项目文档和本地 Git 仓库，并把首次提交推送到公开 GitHub 仓库。安装 Python 3.13.15，创建独立虚拟环境，安装 PyTorch 2.13.0 和 NumPy 2.5.2，并验证 MPS GPU 可用。
