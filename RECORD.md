@@ -19,3 +19,7 @@
 ## 1.0 建立项目规划
 
 创建了 `Create GPT Step by Step` 项目，并制定了从字符级 tokenizer 到聊天模型扩展的学习路线。建立项目文档和本地 Git 仓库，并把首次提交推送到公开 GitHub 仓库。安装 Python 3.13.15，创建独立虚拟环境，安装 PyTorch 2.13.0 和 NumPy 2.5.2，并验证 MPS GPU 可用。
+
+## 1.1 实现字符级 Tokenizer
+
+读取包含 153 个字符的训练文本，建立了包含 92 个不同字符的 `stoi` 和 `itos` 双向映射。实现 `encode()` 与 `decode()`，并通过测试句和全文的无损往返测试。
