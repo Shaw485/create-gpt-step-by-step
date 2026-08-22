@@ -18,4 +18,4 @@
 
 ## 1.0 建立项目规划
 
-创建了 `Create GPT Step by Step` 项目，并制定了从字符级 tokenizer 到聊天模型扩展的学习路线。建立 `ROADMAP.md` 和 `RECORD.md`，用于管理学习目标和持续记录实践过程。
+创建了 `Create GPT Step by Step` 项目，并制定了从字符级 tokenizer 到聊天模型扩展的学习路线。建立 `ROADMAP.md` 和 `RECORD.md`，用于管理学习目标和持续记录实践过程。初始化本地 Git 仓库，并把文档推送到公开 GitHub 仓库。
