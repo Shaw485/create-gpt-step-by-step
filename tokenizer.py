@@ -251,3 +251,231 @@ generated_text = decode(generated_ids)
 
 print("生成结果：")
 print(generated_text)
+n_embd = 32
+
+attention_inputs, _ = get_batch("train")
+
+token_embedding_table = torch.nn.Embedding(vocab_size, n_embd)
+position_embedding_table = torch.nn.Embedding(block_size, n_embd)
+
+token_embeddings = token_embedding_table(attention_inputs)
+
+position_ids = torch.arange(block_size)
+position_embeddings = position_embedding_table(position_ids)
+
+attention_x = token_embeddings + position_embeddings
+
+print("Attention 输入形状：", attention_inputs.shape)
+print("Token Embedding 形状：", token_embeddings.shape)
+print("位置编号：", position_ids)
+print("Position Embedding 形状：", position_embeddings.shape)
+print("合并后形状：", attention_x.shape)
+print("第一个 Token 的前 5 个特征：", attention_x[0, 0, :5])
+
+head_size = 16
+
+key_layer = torch.nn.Linear(n_embd, head_size, bias=False)
+query_layer = torch.nn.Linear(n_embd, head_size, bias=False)
+
+keys = key_layer(attention_x)
+queries = query_layer(attention_x)
+
+attention_scores = queries @ keys.transpose(-2, -1)
+attention_scores = attention_scores * (head_size ** -0.5)
+
+causal_mask = torch.tril(torch.ones(block_size, block_size))
+
+masked_scores = attention_scores.masked_fill(
+    causal_mask == 0,
+    float("-inf"),
+)
+
+attention_weights = torch.softmax(masked_scores, dim=-1)
+
+print("Keys 形状：", keys.shape)
+print("Queries 形状：", queries.shape)
+print("Attention Scores 形状：", attention_scores.shape)
+print("因果遮罩：")
+print(causal_mask)
+print("第一个 Batch 的注意力权重：")
+print(attention_weights[0])
+print("每行概率之和：", attention_weights[0].sum(dim=-1))
+head_size = 16
+
+key_layer = torch.nn.Linear(n_embd, head_size, bias=False)
+query_layer = torch.nn.Linear(n_embd, head_size, bias=False)
+
+keys = key_layer(attention_x)
+queries = query_layer(attention_x)
+
+attention_scores = queries @ keys.transpose(-2, -1)
+attention_scores = attention_scores * (head_size ** -0.5)
+
+causal_mask = torch.tril(torch.ones(block_size, block_size))
+
+masked_scores = attention_scores.masked_fill(
+    causal_mask == 0,
+    float("-inf"),
+)
+
+attention_weights = torch.softmax(masked_scores, dim=-1)
+
+print("Keys 形状：", keys.shape)
+print("Queries 形状：", queries.shape)
+print("Attention Scores 形状：", attention_scores.shape)
+print("因果遮罩：")
+print(causal_mask)
+print("第一个 Batch 的注意力权重：")
+print(attention_weights[0])
+print("每行概率之和：", attention_weights[0].sum(dim=-1))
+value_layer = torch.nn.Linear(n_embd, head_size, bias=False)
+
+values = value_layer(attention_x)
+
+attention_output = attention_weights @ values
+
+first_position_matches = torch.allclose(
+    attention_output[0, 0],
+    values[0, 0],
+)
+
+print("Values 形状：", values.shape)
+print("Attention 输出形状：", attention_output.shape)
+print("第一个位置只能读取自己：", first_position_matches)
+print("第一个位置的输出：")
+print(attention_output[0, 0])
+print("最后一个位置的注意力权重：")
+print(attention_weights[0, -1])
+class AttentionHead(torch.nn.Module):
+    def __init__(self, input_size, output_size, context_size):
+        super().__init__()
+        self.output_size = output_size
+        self.key = torch.nn.Linear(input_size, output_size, bias=False)
+        self.query = torch.nn.Linear(input_size, output_size, bias=False)
+        self.value = torch.nn.Linear(input_size, output_size, bias=False)
+        mask = torch.tril(torch.ones(context_size, context_size))
+        self.register_buffer("causal_mask", mask)
+
+    def forward(self, input_vectors):
+        sequence_length_now = input_vectors.shape[1]
+        keys_now = self.key(input_vectors)
+        queries_now = self.query(input_vectors)
+        scores_now = queries_now @ keys_now.transpose(-2, -1)
+        scores_now = scores_now * (self.output_size ** -0.5)
+        mask_now = self.causal_mask[:sequence_length_now, :sequence_length_now]
+        scores_now = scores_now.masked_fill(mask_now == 0, float("-inf"))
+        weights_now = torch.softmax(scores_now, dim=-1)
+        values_now = self.value(input_vectors)
+        output_now = weights_now @ values_now
+        return output_now
+
+
+num_heads = 4
+size_per_head = n_embd // num_heads
+
+attention_heads = torch.nn.ModuleList(
+    [AttentionHead(n_embd, size_per_head, block_size) for _ in range(num_heads)]
+)
+
+head_outputs = [head(attention_x) for head in attention_heads]
+multi_head_output = torch.cat(head_outputs, dim=-1)
+
+multi_head_parameter_count = sum(
+    parameter.numel() for parameter in attention_heads.parameters()
+)
+
+print("每个 Head 输出形状：", [output.shape for output in head_outputs])
+print("Multi-Head 输出形状：", multi_head_output.shape)
+print("Multi-Head 参数数量：", multi_head_parameter_count)
+attention_projection_layer = torch.nn.Linear(n_embd, n_embd)
+
+projected_attention_output = attention_projection_layer(multi_head_output)
+
+projection_parameter_count = sum(
+    parameter.numel()
+    for parameter in attention_projection_layer.parameters()
+)
+
+same_shape_for_residual = projected_attention_output.shape == attention_x.shape
+
+print("投影前形状：", multi_head_output.shape)
+print("投影后形状：", projected_attention_output.shape)
+print("输出投影参数数量：", projection_parameter_count)
+print("可以进行残差连接：", same_shape_for_residual)
+layer_norm_1 = torch.nn.LayerNorm(n_embd)
+
+normalized_attention_input = layer_norm_1(attention_x)
+
+normalized_head_outputs = [
+    head(normalized_attention_input)
+    for head in attention_heads
+]
+
+normalized_multi_head_output = torch.cat(
+    normalized_head_outputs,
+    dim=-1,
+)
+
+normalized_projected_output = attention_projection_layer(
+    normalized_multi_head_output
+)
+
+attention_residual_output = attention_x + normalized_projected_output
+
+layer_norm_parameter_count = sum(
+    parameter.numel()
+    for parameter in layer_norm_1.parameters()
+)
+
+normalized_mean = normalized_attention_input[0, 0].mean().item()
+normalized_std = normalized_attention_input[0, 0].std(
+    unbiased=False
+).item()
+
+print("归一化输入形状：", normalized_attention_input.shape)
+print("归一化多头输出形状：", normalized_multi_head_output.shape)
+print("残差连接输出形状：", attention_residual_output.shape)
+print("LayerNorm 参数数量：", layer_norm_parameter_count)
+print("归一化后平均值：", normalized_mean)
+print("归一化后标准差：", normalized_std)
+layer_norm_2 = torch.nn.LayerNorm(n_embd)
+
+normalized_feed_forward_input = layer_norm_2(attention_residual_output)
+
+feed_forward_hidden_size = 4 * n_embd
+
+feed_forward_up = torch.nn.Linear(
+    n_embd,
+    feed_forward_hidden_size,
+)
+
+feed_forward_activation = torch.nn.GELU()
+
+feed_forward_down = torch.nn.Linear(
+    feed_forward_hidden_size,
+    n_embd,
+)
+
+expanded_features = feed_forward_up(
+    normalized_feed_forward_input
+)
+
+activated_features = feed_forward_activation(expanded_features)
+
+feed_forward_output = feed_forward_down(activated_features)
+
+transformer_block_output = attention_residual_output + feed_forward_output
+
+feed_forward_parameter_count = (
+    feed_forward_up.weight.numel()
+    + feed_forward_up.bias.numel()
+    + feed_forward_down.weight.numel()
+    + feed_forward_down.bias.numel()
+)
+
+print("Feed Forward 输入形状：", normalized_feed_forward_input.shape)
+print("扩大后形状：", expanded_features.shape)
+print("GELU 后形状：", activated_features.shape)
+print("缩小后形状：", feed_forward_output.shape)
+print("Transformer Block 输出形状：", transformer_block_output.shape)
+print("Feed Forward 参数数量：", feed_forward_parameter_count)

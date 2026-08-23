@@ -31,3 +31,7 @@
 ## 2.0 训练 Bigram 基线模型
 
 建立形状为 `[92, 92]`、共 8464 个参数的 Bigram 预测表，完成 Logits、交叉熵、AdamW 参数更新和 1000 步训练，平均训练 Loss 降至约 0.71。实现从字符“小”开始的连续 100 Token 生成；平均验证 Loss 约为 4.89，观察到小数据集上的明显过拟合，也验证了 Bigram 只能参考前一个字符的能力限制。
+
+## 3.0 实现因果 Self-Attention
+
+把 Token Embedding 与 Position Embedding 合并为形状 `[4, 8, 32]` 的上下文输入，手动实现 Query、Key、Value、缩放点积、因果遮罩和 Value 加权汇总。将单头注意力扩展为 4 个并行 Head，验证每个 Head 输出 `[4, 8, 8]`、拼接与投影后输出 `[4, 8, 32]`，且未来 Token 的注意力概率为 0。
