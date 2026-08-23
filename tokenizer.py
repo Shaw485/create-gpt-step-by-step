@@ -128,3 +128,126 @@ val_x, val_y = get_batch("val")
 
 print("训练 Batch：", train_x.shape, train_y.shape)
 print("验证 Batch：", val_x.shape, val_y.shape)
+bigram_table = torch.nn.Embedding(vocab_size, vocab_size)
+logits = bigram_table(train_x)
+
+print("Bigram 参数形状：", bigram_table.weight.shape)
+print("Bigram 参数数量：", bigram_table.weight.numel())
+print("Logits 形状：", logits.shape)
+print("第一个位置的前 10 个分数：", logits[0, 0, :10])
+batch_count, sequence_length, class_count = logits.shape
+
+logits_flat = logits.reshape(
+    batch_count * sequence_length,
+    class_count,
+)
+
+targets_flat = train_y.reshape(
+    batch_count * sequence_length
+)
+
+loss = torch.nn.functional.cross_entropy(
+    logits_flat,
+    targets_flat,
+)
+
+print("整理后的 Logits：", logits_flat.shape)
+print("整理后的 Targets：", targets_flat.shape)
+print("初始 Loss：", loss.item())
+optimizer = torch.optim.AdamW(
+    bigram_table.parameters(),
+    lr=0.01,
+)
+
+optimizer.zero_grad()
+loss.backward()
+optimizer.step()
+
+updated_logits = bigram_table(train_x)
+
+updated_logits_flat = updated_logits.reshape(
+    batch_count * sequence_length,
+    class_count,
+)
+
+updated_loss = torch.nn.functional.cross_entropy(
+    updated_logits_flat,
+    targets_flat,
+)
+
+print("参数更新前 Loss：", loss.item())
+print("参数更新后 Loss：", updated_loss.item())
+training_steps = 1000
+
+for step in range(training_steps):
+    batch_inputs, batch_targets = get_batch("train")
+    batch_logits = bigram_table(batch_inputs)
+
+    current_batch, current_length, current_classes = batch_logits.shape
+
+    batch_logits_flat = batch_logits.reshape(
+        current_batch * current_length,
+        current_classes,
+    )
+
+    batch_targets_flat = batch_targets.reshape(
+        current_batch * current_length
+    )
+
+    batch_loss = torch.nn.functional.cross_entropy(
+        batch_logits_flat,
+        batch_targets_flat,
+    )
+
+    optimizer.zero_grad()
+    batch_loss.backward()
+    optimizer.step()
+
+    if step % 100 == 0:
+        print(f"Step {step:4d} | Loss {batch_loss.item():.4f}")
+evaluation_steps = 100
+
+
+def estimate_loss(split):
+    losses = []
+
+    with torch.no_grad():
+        for _ in range(evaluation_steps):
+            eval_inputs, eval_targets = get_batch(split)
+            eval_logits = bigram_table(eval_inputs)
+
+            eval_logits_flat = eval_logits.reshape(-1, vocab_size)
+            eval_targets_flat = eval_targets.reshape(-1)
+
+            eval_loss = torch.nn.functional.cross_entropy(
+                eval_logits_flat,
+                eval_targets_flat,
+            )
+
+            losses.append(eval_loss.item())
+
+    return sum(losses) / len(losses)
+
+
+average_train_loss = estimate_loss("train")
+average_val_loss = estimate_loss("val")
+
+print("平均训练 Loss：", average_train_loss)
+print("平均验证 Loss：", average_val_loss)
+generation_steps = 100
+generated_ids = [stoi["小"]]
+
+with torch.no_grad():
+    for _ in range(generation_steps):
+        current_id = generated_ids[-1]
+        current_token = torch.tensor([[current_id]], dtype=torch.long)
+        current_logits = bigram_table(current_token)
+        next_token_logits = current_logits[0, -1]
+        probabilities = torch.softmax(next_token_logits, dim=-1)
+        next_id = torch.multinomial(probabilities, num_samples=1).item()
+        generated_ids.append(next_id)
+
+generated_text = decode(generated_ids)
+
+print("生成结果：")
+print(generated_text)
