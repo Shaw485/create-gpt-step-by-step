@@ -35,3 +35,7 @@
 ## 3.0 实现因果 Self-Attention
 
 把 Token Embedding 与 Position Embedding 合并为形状 `[4, 8, 32]` 的上下文输入，手动实现 Query、Key、Value、缩放点积、因果遮罩和 Value 加权汇总。将单头注意力扩展为 4 个并行 Head，验证每个 Head 输出 `[4, 8, 8]`、拼接与投影后输出 `[4, 8, 32]`，且未来 Token 的注意力概率为 0。
+
+## 4.0 组合 Transformer Block
+
+封装 `MultiHeadAttention`、`FeedForward` 和 Pre-Norm `TransformerBlock`，加入两次 LayerNorm、输出投影和两条残差连接。成功堆叠两个 Block，验证输入输出均为 `[4, 8, 32]`，两个 Block 的全部参数都获得非零梯度，堆栈参数总数为 25216。

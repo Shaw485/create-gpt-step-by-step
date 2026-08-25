@@ -479,3 +479,188 @@ print("GELU 后形状：", activated_features.shape)
 print("缩小后形状：", feed_forward_output.shape)
 print("Transformer Block 输出形状：", transformer_block_output.shape)
 print("Feed Forward 参数数量：", feed_forward_parameter_count)
+class MultiHeadAttention(torch.nn.Module):
+    def __init__(self, embedding_size, number_of_heads, context_size):
+        super().__init__()
+        assert embedding_size % number_of_heads == 0
+        head_output_size = embedding_size // number_of_heads
+
+        self.heads = torch.nn.ModuleList(
+            [
+                AttentionHead(
+                    embedding_size,
+                    head_output_size,
+                    context_size,
+                )
+                for _ in range(number_of_heads)
+            ]
+        )
+
+        self.projection = torch.nn.Linear(
+            embedding_size,
+            embedding_size,
+        )
+
+    def forward(self, input_vectors):
+        head_outputs_now = [
+            head(input_vectors)
+            for head in self.heads
+        ]
+
+        concatenated_output = torch.cat(
+            head_outputs_now,
+            dim=-1,
+        )
+
+        projected_output = self.projection(concatenated_output)
+
+        return projected_output
+
+
+packaged_multi_head_attention = MultiHeadAttention(
+    n_embd,
+    num_heads,
+    block_size,
+)
+
+packaged_attention_output = packaged_multi_head_attention(attention_x)
+
+packaged_attention_parameter_count = sum(
+    parameter.numel()
+    for parameter in packaged_multi_head_attention.parameters()
+)
+
+print("封装前输入形状：", attention_x.shape)
+print("封装后输出形状：", packaged_attention_output.shape)
+class FeedForward(torch.nn.Module):
+    def __init__(self, embedding_size):
+        super().__init__()
+        hidden_size = 4 * embedding_size
+
+        self.network = torch.nn.Sequential(
+            torch.nn.Linear(embedding_size, hidden_size),
+            torch.nn.GELU(),
+            torch.nn.Linear(hidden_size, embedding_size),
+        )
+
+    def forward(self, input_vectors):
+        output_vectors = self.network(input_vectors)
+        return output_vectors
+
+print("封装后多头参数数量：", packaged_attention_parameter_count)
+class TransformerBlock(torch.nn.Module):
+    def __init__(
+        self,
+        embedding_size,
+        number_of_heads,
+        context_size,
+    ):
+        super().__init__()
+
+        self.layer_norm_1 = torch.nn.LayerNorm(embedding_size)
+
+        self.multi_head_attention = MultiHeadAttention(
+            embedding_size,
+            number_of_heads,
+            context_size,
+        )
+
+        self.layer_norm_2 = torch.nn.LayerNorm(embedding_size)
+
+        self.feed_forward = FeedForward(embedding_size)
+
+    def forward(self, input_vectors):
+        normalized_attention_input = self.layer_norm_1(input_vectors)
+
+        attention_output_now = self.multi_head_attention(
+            normalized_attention_input
+        )
+
+        after_attention = input_vectors + attention_output_now
+
+        normalized_feed_forward_input = self.layer_norm_2(
+            after_attention
+        )
+
+        feed_forward_output_now = self.feed_forward(
+            normalized_feed_forward_input
+        )
+
+        block_output = after_attention + feed_forward_output_now
+
+        return block_output
+
+
+transformer_block = TransformerBlock(
+    n_embd,
+    num_heads,
+    block_size,
+)
+
+packaged_block_output = transformer_block(attention_x)
+
+transformer_block_parameter_count = sum(
+    parameter.numel()
+    for parameter in transformer_block.parameters()
+)
+
+print("Transformer Block 输入形状：", attention_x.shape)
+print("Transformer Block 输出形状：", packaged_block_output.shape)
+print("Transformer Block 参数数量：", transformer_block_parameter_count)
+
+number_of_blocks = 2
+
+transformer_blocks = [
+    TransformerBlock(
+        n_embd,
+        num_heads,
+        block_size,
+    )
+    for _ in range(number_of_blocks)
+]
+
+transformer_stack = torch.nn.Sequential(
+    *transformer_blocks
+)
+
+stack_input = attention_x.detach()
+
+stack_output = transformer_stack(stack_input)
+
+test_loss = stack_output.pow(2).mean()
+
+transformer_stack.zero_grad()
+
+test_loss.backward()
+
+block_1_has_gradients = all(
+    parameter.grad is not None
+    for parameter in transformer_stack[0].parameters()
+)
+
+block_2_has_gradients = all(
+    parameter.grad is not None
+    for parameter in transformer_stack[1].parameters()
+)
+
+block_1_first_gradient = next(
+    transformer_stack[0].parameters()
+).grad
+
+block_2_first_gradient = next(
+    transformer_stack[1].parameters()
+).grad
+
+stack_parameter_count = sum(
+    parameter.numel()
+    for parameter in transformer_stack.parameters()
+)
+
+print("堆叠输入形状：", stack_input.shape)
+print("堆叠输出形状：", stack_output.shape)
+print("反向传播测试 Loss：", test_loss.item())
+print("Block 1 所有参数都有梯度：", block_1_has_gradients)
+print("Block 2 所有参数都有梯度：", block_2_has_gradients)
+print("Block 1 第一个梯度大小：", block_1_first_gradient.norm().item())
+print("Block 2 第一个梯度大小：", block_2_first_gradient.norm().item())
+print("两个 Block 参数总数：", stack_parameter_count)
