@@ -39,3 +39,7 @@
 ## 4.0 组合 Transformer Block
 
 封装 `MultiHeadAttention`、`FeedForward` 和 Pre-Norm `TransformerBlock`，加入两次 LayerNorm、输出投影和两条残差连接。成功堆叠两个 Block，验证输入输出均为 `[4, 8, 32]`，两个 Block 的全部参数都获得非零梯度，堆栈参数总数为 25216。
+
+## 5.0 组合完整 GPT 模型
+
+将 Token Embedding、Position Embedding、两个 Transformer Block、最终 LayerNorm 和语言模型输出层封装为 `GPTLanguageModel`。验证输入 `[4, 8]` 能输出 `[4, 8, 92]` 的 Logits，初始交叉熵 Loss 约为 4.78，完整模型参数总数为 31516。

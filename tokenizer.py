@@ -664,3 +664,111 @@ print("Block 2 所有参数都有梯度：", block_2_has_gradients)
 print("Block 1 第一个梯度大小：", block_1_first_gradient.norm().item())
 print("Block 2 第一个梯度大小：", block_2_first_gradient.norm().item())
 print("两个 Block 参数总数：", stack_parameter_count)
+
+
+class GPTLanguageModel(torch.nn.Module):
+    def __init__(
+        self,
+        vocabulary_size,
+        embedding_size,
+        number_of_heads,
+        context_size,
+        number_of_blocks,
+    ):
+        super().__init__()
+
+        self.context_size = context_size
+        self.vocabulary_size = vocabulary_size
+
+        self.token_embedding = torch.nn.Embedding(
+            vocabulary_size,
+            embedding_size,
+        )
+
+        self.position_embedding = torch.nn.Embedding(
+            context_size,
+            embedding_size,
+        )
+
+        self.blocks = torch.nn.Sequential(
+            *[
+                TransformerBlock(
+                    embedding_size,
+                    number_of_heads,
+                    context_size,
+                )
+                for _ in range(number_of_blocks)
+            ]
+        )
+
+        self.final_layer_norm = torch.nn.LayerNorm(embedding_size)
+
+        self.language_model_head = torch.nn.Linear(
+            embedding_size,
+            vocabulary_size,
+        )
+
+    def forward(self, token_indices, target_indices=None):
+        batch_size_now, sequence_length_now = token_indices.shape
+
+        if sequence_length_now > self.context_size:
+            raise ValueError("输入序列超过最大上下文长度")
+
+        token_vectors = self.token_embedding(token_indices)
+
+        position_indices = torch.arange(
+            sequence_length_now,
+            device=token_indices.device,
+        )
+
+        position_vectors = self.position_embedding(position_indices)
+
+        hidden_states = token_vectors + position_vectors
+        hidden_states = self.blocks(hidden_states)
+        hidden_states = self.final_layer_norm(hidden_states)
+
+        logits = self.language_model_head(hidden_states)
+
+        loss = None
+
+        if target_indices is not None:
+            logits_flat = logits.reshape(
+                batch_size_now * sequence_length_now,
+                self.vocabulary_size,
+            )
+
+            targets_flat = target_indices.reshape(
+                batch_size_now * sequence_length_now
+            )
+
+            loss = torch.nn.functional.cross_entropy(
+                logits_flat,
+                targets_flat,
+            )
+
+        return logits, loss
+
+
+gpt_model = GPTLanguageModel(
+    vocab_size,
+    n_embd,
+    num_heads,
+    block_size,
+    number_of_blocks,
+)
+
+gpt_logits, gpt_loss = gpt_model(
+    train_x,
+    train_y,
+)
+
+gpt_parameter_count = sum(
+    parameter.numel()
+    for parameter in gpt_model.parameters()
+)
+
+print("GPT 输入形状：", train_x.shape)
+print("GPT 目标形状：", train_y.shape)
+print("GPT Logits 形状：", gpt_logits.shape)
+print("GPT 初始 Loss：", gpt_loss.item())
+print("GPT 参数总数：", gpt_parameter_count)
