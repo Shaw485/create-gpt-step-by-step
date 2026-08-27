@@ -1,0 +1,66 @@
+{
+  "milestone": "M003a",
+  "stage": "sft_smoke20",
+  "steps": 20,
+  "batch_size": 4,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.01,
+  "gradient_clip": 1.0,
+  "seed": 42,
+  "device": "cpu",
+  "train_records": 40,
+  "val_records": 5,
+  "test_records_consumed": 0,
+  "parameter_count": 7099779,
+  "initial_train_loss": 4.471810026541768,
+  "initial_val_loss": 4.490948641741717,
+  "final_train_loss": 1.9940074302630717,
+  "final_val_loss": 3.4976444950810186,
+  "best_val_loss": 3.4976444950810186,
+  "last_batch_loss": 3.605485200881958,
+  "last_gradient_norm": 6.746984481811523,
+  "elapsed_seconds": 1.7986869812011719,
+  "loss_history": [
+    {
+      "step": 0,
+      "train_loss": 4.471810026541768,
+      "val_loss": 4.490948641741717
+    },
+    {
+      "step": 5,
+      "train_loss": 3.5110325946488192,
+      "val_loss": 4.059970926355432
+    },
+    {
+      "step": 10,
+      "train_loss": 2.9546994790018606,
+      "val_loss": 3.8431013601797597
+    },
+    {
+      "step": 15,
+      "train_loss": 2.4593487851446567,
+      "val_loss": 3.6524664560953775
+    },
+    {
+      "step": 20,
+      "train_loss": 1.9940074302630717,
+      "val_loss": 3.4976444950810186
+    }
+  ],
+  "monitor_outputs": [
+    {
+      "id": "train_001",
+      "generated_answer": "萧炎的实力。",
+      "stopped_on_eos": true
+    },
+    {
+      "id": "val_001",
+      "generated_answer": "冰蛇人族的古甲。血液。***  **    *\n\n    血",
+      "stopped_on_eos": false
+    }
+  ],
+  "init_checkpoint": "checkpoints/archive/sft_stage1_init_pre_sft.pt",
+  "init_checkpoint_sha256": "7c1be4e336365a1dd407da5705a7bd0346df315798d35256de98fdbe74a8dcf7",
+  "latest_checkpoint": "checkpoints/sft_stage1_smoke20.pt",
+  "best_checkpoint": "checkpoints/sft_stage1_smoke20_best.pt"
+}

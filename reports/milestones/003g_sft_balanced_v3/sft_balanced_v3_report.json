@@ -1,0 +1,107 @@
+{
+  "milestone": "M003g",
+  "dataset_version": "sft_balanced_v3",
+  "record_count": 1000,
+  "split_counts": {
+    "train": 800,
+    "val": 100,
+    "test": 100
+  },
+  "task_family_counts": {
+    "grounded_fact": 200,
+    "fact_verification": 150,
+    "concept_identity": 150,
+    "explicit_instruction": 200,
+    "conversation": 150,
+    "honest_unknown": 150
+  },
+  "task_family_splits": {
+    "grounded_fact": {
+      "train": 160,
+      "val": 30,
+      "test": 10
+    },
+    "fact_verification": {
+      "train": 120,
+      "val": 15,
+      "test": 15
+    },
+    "concept_identity": {
+      "train": 120,
+      "val": 15,
+      "test": 15
+    },
+    "explicit_instruction": {
+      "train": 160,
+      "val": 15,
+      "test": 25
+    },
+    "conversation": {
+      "train": 120,
+      "val": 15,
+      "test": 15
+    },
+    "honest_unknown": {
+      "train": 120,
+      "val": 10,
+      "test": 20
+    }
+  },
+  "generation_method_counts": {
+    "grounded_fact_original": 100,
+    "grounded_fact_direct_instruction": 100,
+    "fact_verification_positive": 100,
+    "fact_verification_negative": 50,
+    "concept_identity_natural": 150,
+    "instruction_exact_copy": 145,
+    "instruction_compare_same": 28,
+    "instruction_compare_different": 27,
+    "curated_conversation": 150,
+    "honest_unknown_absent_entity": 150
+  },
+  "evidence_type_counts": {
+    "corpus_grounded": 500,
+    "deterministic_instruction": 200,
+    "curated_behavior": 150,
+    "verified_absence": 150
+  },
+  "unique_question_count": 1000,
+  "unique_topic_count": 350,
+  "topic_split_leakage": false,
+  "max_sequence_length": 74,
+  "mean_sequence_length": 32.407,
+  "classification_share": 0.15,
+  "unique_answer_count": 450,
+  "most_common_answer": "现有资料不足，无法确定。",
+  "most_common_answer_count": 150,
+  "most_common_answer_share": 0.15,
+  "conversation_intent_count": 50,
+  "unknown_entity_count": 50,
+  "comparison_answer_splits": {
+    "train": {
+      "相同。": 20,
+      "不相同。": 20
+    },
+    "val": {
+      "相同。": 3,
+      "不相同。": 2
+    },
+    "test": {
+      "相同。": 5,
+      "不相同。": 5
+    }
+  },
+  "fixed_prompt_exact_overlap": [],
+  "source_dataset": "data/sft/sft_hq1000_v2.jsonl",
+  "source_dataset_sha256": "7580d28b73427f4585ce6c5e8ed9a736fc37755cb22c529e59a5bae396c61cdf",
+  "conversation_seed": "data/sft/sft_balanced_v3_conversation_seed.json",
+  "conversation_seed_sha256": "889681e9845a7ca5fc163f7cca4550d196cf7073697cbdc34007b29b1ccc5654",
+  "corpus_sha256": "6166b4deab4b283cef5e30d6d23dfc33c553e6b97c63a6f9fc23af14fb523b4d",
+  "dataset_sha256": "4824a566d1f880691ba6c58204f0fdf41c76075449378cddc1d5e247021b73e7",
+  "quality_sample_sha256": "6833ebc0d3eb564b2e22d6773a61872f6d5c657fffbe9b04e96935e618a8b88c",
+  "base_vocab_size": 4478,
+  "extended_vocab_size": 4483,
+  "supervised_label_count": 10088,
+  "masked_label_count": 21319,
+  "test_records_consumed": 0
+}

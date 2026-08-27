@@ -1,0 +1,68 @@
+{
+  "milestone": "M003e",
+  "stage": "sft_hq1000_smoke20",
+  "steps": 20,
+  "batch_size": 4,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.01,
+  "gradient_clip": 1.0,
+  "seed": 42,
+  "device": "cpu",
+  "train_records": 800,
+  "val_records": 100,
+  "test_records_consumed": 0,
+  "parameter_count": 7099779,
+  "initial_train_loss": 5.1175248701353055,
+  "initial_val_loss": 5.254647066248929,
+  "final_train_loss": 1.7258604544773448,
+  "final_val_loss": 2.0470979774699494,
+  "best_val_loss": 2.0470979774699494,
+  "last_batch_loss": 1.3011170625686646,
+  "last_gradient_norm": 5.689867973327637,
+  "elapsed_seconds": 14.752451658248901,
+  "loss_history": [
+    {
+      "step": 0,
+      "train_loss": 5.1175248701353055,
+      "val_loss": 5.254647066248929
+    },
+    {
+      "step": 5,
+      "train_loss": 3.822609177045649,
+      "val_loss": 4.008747942307416
+    },
+    {
+      "step": 10,
+      "train_loss": 2.9052377749482123,
+      "val_loss": 3.1619020757828165
+    },
+    {
+      "step": 15,
+      "train_loss": 2.2461457345372002,
+      "val_loss": 2.54759537599941
+    },
+    {
+      "step": 20,
+      "train_loss": 1.7258604544773448,
+      "val_loss": 2.0470979774699494
+    }
+  ],
+  "monitor_outputs": [
+    {
+      "id": "train_001",
+      "generated_answer": "不是。",
+      "stopped_on_eos": true
+    },
+    {
+      "id": "val_001",
+      "generated_answer": "是。",
+      "stopped_on_eos": true
+    }
+  ],
+  "data_path": "data/sft/sft_hq1000_v2_tensors.pt",
+  "data_sha256": "9354b3f9ffd4fdd1e50cbb40f9892ddce79e8e30bc971ddebea8ff5025e91d55",
+  "init_checkpoint": "checkpoints/archive/sft_stage1_init_pre_sft.pt",
+  "init_checkpoint_sha256": "7c1be4e336365a1dd407da5705a7bd0346df315798d35256de98fdbe74a8dcf7",
+  "latest_checkpoint": "checkpoints/sft_hq1000_smoke20.pt",
+  "best_checkpoint": "checkpoints/sft_hq1000_smoke20_best.pt"
+}

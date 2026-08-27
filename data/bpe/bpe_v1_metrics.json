@@ -1,0 +1,16 @@
+{
+  "source_characters": 6544278,
+  "bpe_tokens": 4067842,
+  "compression_ratio": 0.37841240851932023,
+  "characters_per_token": 1.6087837236549503,
+  "base_vocab_size": 4478,
+  "learned_merges": 2000,
+  "bpe_vocab_size": 6478,
+  "sampled_characters": 749952,
+  "training_tokens": 3661057,
+  "validation_tokens": 406785,
+  "round_trip_ok": true,
+  "learning_seconds": 2.412271334000252,
+  "source_sha256": "6166b4deab4b283cef5e30d6d23dfc33c553e6b97c63a6f9fc23af14fb523b4d",
+  "tokenizer_sha256": "7375ddf08caf19b81b68d62589ce0c77577a1e5c07f8e3d3df3abfbf0947818a"
+}

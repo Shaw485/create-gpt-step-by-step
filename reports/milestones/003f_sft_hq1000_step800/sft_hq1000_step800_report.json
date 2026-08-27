@@ -1,0 +1,88 @@
+{
+  "milestone": "M003f",
+  "stage": "sft_hq1000_step800",
+  "steps": 800,
+  "batch_size": 4,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.01,
+  "gradient_clip": 1.0,
+  "seed": 42,
+  "device": "cpu",
+  "train_records": 800,
+  "val_records": 100,
+  "test_records_consumed": 0,
+  "parameter_count": 7099779,
+  "initial_train_loss": 5.1175248701353055,
+  "initial_val_loss": 5.254647066248929,
+  "final_train_loss": 0.12952434206337657,
+  "final_val_loss": 1.289130927008741,
+  "best_val_loss": 1.2350704650827908,
+  "last_batch_loss": 0.01216850895434618,
+  "last_gradient_norm": 0.361654669046402,
+  "elapsed_seconds": 72.54324102401733,
+  "loss_history": [
+    {
+      "step": 0,
+      "train_loss": 5.1175248701353055,
+      "val_loss": 5.254647066248929
+    },
+    {
+      "step": 100,
+      "train_loss": 0.8519060724809555,
+      "val_loss": 1.3439715240090926
+    },
+    {
+      "step": 200,
+      "train_loss": 0.573449921996262,
+      "val_loss": 1.2577082291643886
+    },
+    {
+      "step": 300,
+      "train_loss": 0.43541168703217886,
+      "val_loss": 1.2350704650827908
+    },
+    {
+      "step": 400,
+      "train_loss": 0.29287052203577746,
+      "val_loss": 1.2415993067331332
+    },
+    {
+      "step": 500,
+      "train_loss": 0.22707712311170059,
+      "val_loss": 1.2949374456974594
+    },
+    {
+      "step": 600,
+      "train_loss": 0.18496784977764993,
+      "val_loss": 1.2711226887363483
+    },
+    {
+      "step": 700,
+      "train_loss": 0.14008375085249813,
+      "val_loss": 1.2971388452143513
+    },
+    {
+      "step": 800,
+      "train_loss": 0.12952434206337657,
+      "val_loss": 1.289130927008741
+    }
+  ],
+  "monitor_outputs": [
+    {
+      "id": "train_001",
+      "generated_answer": "萧战。",
+      "stopped_on_eos": true
+    },
+    {
+      "id": "val_001",
+      "generated_answer": "黑盟主人物。",
+      "stopped_on_eos": true
+    }
+  ],
+  "data_path": "data/sft/sft_hq1000_v2_tensors.pt",
+  "data_sha256": "9354b3f9ffd4fdd1e50cbb40f9892ddce79e8e30bc971ddebea8ff5025e91d55",
+  "init_checkpoint": "checkpoints/archive/sft_stage1_init_pre_sft.pt",
+  "init_checkpoint_sha256": "7c1be4e336365a1dd407da5705a7bd0346df315798d35256de98fdbe74a8dcf7",
+  "latest_checkpoint": "checkpoints/sft_hq1000_step800.pt",
+  "best_checkpoint": "checkpoints/sft_hq1000_step800_best.pt"
+}

@@ -3,3 +3,14 @@
 __pycache__/
 *.py[cod]
 .DS_Store
+.env
+.env.*
+*.log
+*.pt
+*.pth
+*.safetensors
+data/raw/
+data/clean/
+logs/
+checkpoints/
+runs/

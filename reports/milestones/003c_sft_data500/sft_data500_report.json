@@ -1,0 +1,52 @@
+{
+  "milestone": "M003c",
+  "dataset_version": "sft_pilot500_v1",
+  "record_count": 500,
+  "split_counts": {
+    "train": 400,
+    "val": 75,
+    "test": 25
+  },
+  "unique_question_count": 500,
+  "unique_topic_count": 500,
+  "pre_existing_source_line_split_leakage": [
+    378
+  ],
+  "new_source_line_split_leakage": false,
+  "data_composition": {
+    "human_style_grounded_fact_qa": 100,
+    "deterministic_grounded_cloze_instructions": 400
+  },
+  "limitation": "The 400 new records primarily teach instruction format and grounded completion; they are not a substitute for 400 human-reviewed fact QAs.",
+  "new_record_count": 400,
+  "new_split_counts": {
+    "train": 320,
+    "test": 20,
+    "val": 60
+  },
+  "generation_method_counts": {
+    "grounded_cloze_3_v1": 100,
+    "grounded_cloze_2_v1": 100,
+    "grounded_cloze_4_v1": 100,
+    "grounded_cloze_1_v1": 100
+  },
+  "evidence_verified": true,
+  "base_five_test_ids_preserved": [
+    "test_001",
+    "test_002",
+    "test_003",
+    "test_004",
+    "test_005"
+  ],
+  "base_vocab_size": 4478,
+  "extended_vocab_size": 4483,
+  "min_sequence_length": 15,
+  "max_sequence_length": 60,
+  "mean_sequence_length": 42.99,
+  "masked_label_count": 12317,
+  "supervised_label_count": 8678,
+  "corpus_sha256": "6166b4deab4b283cef5e30d6d23dfc33c553e6b97c63a6f9fc23af14fb523b4d",
+  "base50_sha256": "48575cebf9a5bc6681e4b497472e77112942834e82734d6931b9974fb8212a76",
+  "expansion50_sha256": "e60e9409a337cec7e2bb91c26be46394a7d72ac4e16ffd638a22e46028e63f33",
+  "expansion400_sha256": "edd4e75f8e71bd494b3a2ca897d102800aac7d5dff55bc8e9cdc1cdaa2888fb4"
+}

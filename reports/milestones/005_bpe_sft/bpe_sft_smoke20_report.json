@@ -1,0 +1,68 @@
+{
+  "milestone": "M005a",
+  "stage": "bpe_sft_smoke20",
+  "steps": 20,
+  "batch_size": 4,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.01,
+  "gradient_clip": 1.0,
+  "seed": 42,
+  "device": "cpu",
+  "train_records": 800,
+  "val_records": 100,
+  "test_records_consumed": 0,
+  "parameter_count": 8125779,
+  "initial_train_loss": 6.380350060413998,
+  "initial_val_loss": 6.858620084303748,
+  "final_train_loss": 3.631530250472126,
+  "final_val_loss": 4.852921041295258,
+  "best_val_loss": 4.852921041295258,
+  "last_batch_loss": 3.7083969116210938,
+  "last_gradient_norm": 9.396699905395508,
+  "elapsed_seconds": 15.277644872665405,
+  "loss_history": [
+    {
+      "step": 0,
+      "train_loss": 6.380350060413998,
+      "val_loss": 6.858620084303748
+    },
+    {
+      "step": 5,
+      "train_loss": 5.1674224411939305,
+      "val_loss": 6.007165154216303
+    },
+    {
+      "step": 10,
+      "train_loss": 4.427673600930008,
+      "val_loss": 5.455773636076607
+    },
+    {
+      "step": 15,
+      "train_loss": 3.965671112487366,
+      "val_loss": 5.110935603648009
+    },
+    {
+      "step": 20,
+      "train_loss": 3.631530250472126,
+      "val_loss": 4.852921041295258
+    }
+  ],
+  "monitor_outputs": [
+    {
+      "id": "train_v3_0001",
+      "generated_answer": "“焚决”功法不足。",
+      "stopped_on_eos": true
+    },
+    {
+      "id": "val_v3_0001",
+      "generated_answer": "韩枫一副老生不同的团队伍。\n\n    “萧火宗宗主，吴昊，对你们有多加注意，那岂",
+      "stopped_on_eos": false
+    }
+  ],
+  "data_path": "data/bpe/sft_balanced_v3_bpe_tensors.pt",
+  "data_sha256": "2ad9c602390b484d84ffce352e415a43441262821d1918b44221c1732c9f45bf",
+  "init_checkpoint": "checkpoints/bpe_sft_init_pre_sft.pt",
+  "init_checkpoint_sha256": "dacf868589e16ac6d60480d7e40909595a4fbfd2d18ac71946a71bdb766cae5d",
+  "latest_checkpoint": "checkpoints/bpe_sft_smoke20.pt",
+  "best_checkpoint": "checkpoints/bpe_sft_smoke20_best.pt"
+}

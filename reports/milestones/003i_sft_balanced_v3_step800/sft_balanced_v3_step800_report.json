@@ -1,0 +1,88 @@
+{
+  "milestone": "M003i",
+  "stage": "sft_balanced_v3_step800",
+  "steps": 800,
+  "batch_size": 4,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.01,
+  "gradient_clip": 1.0,
+  "seed": 42,
+  "device": "cpu",
+  "train_records": 800,
+  "val_records": 100,
+  "test_records_consumed": 0,
+  "parameter_count": 7099779,
+  "initial_train_loss": 5.614987165622207,
+  "initial_val_loss": 6.207603836059571,
+  "final_train_loss": 0.16301655354007275,
+  "final_val_loss": 3.537870003606536,
+  "best_val_loss": 3.4098955218990645,
+  "last_batch_loss": 0.049120936542749405,
+  "last_gradient_norm": 1.0263237953186035,
+  "elapsed_seconds": 82.64233994483948,
+  "loss_history": [
+    {
+      "step": 0,
+      "train_loss": 5.614987165622207,
+      "val_loss": 6.207603836059571
+    },
+    {
+      "step": 100,
+      "train_loss": 1.868452059673427,
+      "val_loss": 3.69846333751553
+    },
+    {
+      "step": 200,
+      "train_loss": 1.2969119769174862,
+      "val_loss": 3.4854265440712897
+    },
+    {
+      "step": 300,
+      "train_loss": 0.9370017703643797,
+      "val_loss": 3.459994069996633
+    },
+    {
+      "step": 400,
+      "train_loss": 0.6500291235423393,
+      "val_loss": 3.4098955218990645
+    },
+    {
+      "step": 500,
+      "train_loss": 0.4526386644755824,
+      "val_loss": 3.4306903383449505
+    },
+    {
+      "step": 600,
+      "train_loss": 0.3303560464320085,
+      "val_loss": 3.4747514544545037
+    },
+    {
+      "step": 700,
+      "train_loss": 0.2391796697564343,
+      "val_loss": 3.4980245624521844
+    },
+    {
+      "step": 800,
+      "train_loss": 0.16301655354007275,
+      "val_loss": 3.537870003606536
+    }
+  ],
+  "monitor_outputs": [
+    {
+      "id": "train_v3_0001",
+      "generated_answer": "萧战。",
+      "stopped_on_eos": true
+    },
+    {
+      "id": "val_v3_0001",
+      "generated_answer": "虚无龙力，并没有危险感觉到这种种奇异的感觉。",
+      "stopped_on_eos": true
+    }
+  ],
+  "data_path": "data/sft/sft_balanced_v3_tensors.pt",
+  "data_sha256": "91ffb4e7fbc587e1e350fa0a68608c4726a83ede87f3918bcde2d57f664b445e",
+  "init_checkpoint": "checkpoints/archive/sft_stage1_init_pre_sft.pt",
+  "init_checkpoint_sha256": "7c1be4e336365a1dd407da5705a7bd0346df315798d35256de98fdbe74a8dcf7",
+  "latest_checkpoint": "checkpoints/sft_balanced_v3_step800.pt",
+  "best_checkpoint": "checkpoints/sft_balanced_v3_step800_best.pt"
+}

@@ -1,0 +1,61 @@
+{
+  "milestone": "M003d",
+  "dataset_version": "sft_hq1000_v2",
+  "record_count": 1000,
+  "split_counts": {
+    "train": 800,
+    "val": 100,
+    "test": 100
+  },
+  "unique_question_count": 1000,
+  "unique_topic_count": 250,
+  "new_concept_count": 150,
+  "new_unique_source_line_count": 150,
+  "topic_split_leakage": false,
+  "concept_split_leakage": false,
+  "pre_existing_source_line_overlap": [
+    378
+  ],
+  "new_source_line_split_leakage": false,
+  "max_sequence_length": 51,
+  "mean_sequence_length": 29.977,
+  "data_composition": {
+    "human_style_grounded_fact_qa": 100,
+    "clean_concept_classification_records": 900
+  },
+  "category_concept_counts": {
+    "人物": 46,
+    "斗技或功法": 20,
+    "异火": 15,
+    "丹药": 15,
+    "势力": 26,
+    "地点": 18,
+    "物品或体质": 10
+  },
+  "generation_method_counts": {
+    "category_direct": 150,
+    "category_full_choice": 150,
+    "category_positive": 150,
+    "category_negative_correction": 150,
+    "category_multiple_choice": 150,
+    "category_explanation": 145,
+    "category_system": 5
+  },
+  "evidence_verified": true,
+  "base_five_test_ids_preserved": [
+    "test_001",
+    "test_002",
+    "test_003",
+    "test_004",
+    "test_005"
+  ],
+  "base_vocab_size": 4478,
+  "extended_vocab_size": 4483,
+  "supervised_label_count": 7412,
+  "masked_label_count": 21565,
+  "quality_sample_count": 24,
+  "corpus_sha256": "6166b4deab4b283cef5e30d6d23dfc33c553e6b97c63a6f9fc23af14fb523b4d",
+  "dataset_sha256": "7580d28b73427f4585ce6c5e8ed9a736fc37755cb22c529e59a5bae396c61cdf",
+  "expansion_sha256": "f035655ad67bc3bf372c8b3126d61753a1ffb0fb9f7648375a7fe1762955f0c7",
+  "quality_sample_sha256": "cdcec19845e2b3c483f58a80e4b70ebf461a43375b76cef06669f96d1d0a5b4a"
+}

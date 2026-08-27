@@ -1,0 +1,16 @@
+{"id":"train_001","question":"萧炎的父亲是谁？","answer":"萧战。","evidence":"他便是萧家现任族长，同时也是萧炎的父亲，五星大斗师，萧战！","source_line":214,"topic":"xiao_zhan_identity","split":"train"}
+{"id":"train_002","question":"药老曾经的名字是什么？","answer":"药尘。","evidence":"药尘...这便是老师曾经的名字么...","source_line":39866,"topic":"yao_chen_name","split":"train"}
+{"id":"train_003","question":"云岚宗在加玛帝国地位如何？","answer":"可称为整个加玛帝国的一霸。","evidence":"萧炎口中所说的云岚宗，或许便应该说是整个加玛帝国的一霸！","source_line":358,"topic":"yunlan_status","split":"train"}
+{"id":"train_004","question":"纳兰嫣然被谁收做弟子？","answer":"云岚宗宗主云韵。","evidence":"纳兰嫣然被云岚宗宗主云韵亲自收做弟子","source_line":378,"topic":"nalan_master","split":"train"}
+{"id":"train_005","question":"焚决这个名字是谁起的？","answer":"药老。","evidence":"功法本来无名，不过我给它起了个名，叫“焚决”","source_line":5262,"topic":"fenjue_origin","split":"train"}
+{"id":"train_006","question":"焚决进化必须吞噬什么？","answer":"一种异火。","evidence":"每一次的进化，都必须吞噬一种“异火”！","source_line":5264,"topic":"fenjue_evolution","split":"train"}
+{"id":"train_007","question":"小医仙具有什么特殊体质？","answer":"厄难毒体。","evidence":"小医仙。她难道也是那什么厄难毒体？","source_line":14926,"topic":"xiaoyixian_body","split":"train"}
+{"id":"train_008","question":"七彩吞天蟒与美杜莎女王是什么关系？","answer":"七彩吞天蟒也是美杜莎女王的新躯体。","evidence":"这条小蛇。便是那传说中的七彩吞天蟒…同时。也是美杜莎女王的新躯体","source_line":21580,"topic":"medusa_new_body","split":"train"}
+{"id":"train_009","question":"古族拥有什么特殊血脉？","answer":"斗帝血脉。","evidence":"他们是从远古遗传而下，据传拥有着斗帝血脉","source_line":105645,"topic":"gu_clan_bloodline","split":"train"}
+{"id":"train_010","question":"萧炎必须尽快赶到哪里？","answer":"沙漠深处。","evidence":"我们都必须尽快赶到沙漠深处","source_line":20689,"topic":"qinglian_destination","split":"train"}
+{"id":"train_011","question":"三年之约要去哪里赴约？","answer":"云岚宗。","evidence":"距离去赴云岚宗的三年之约","source_line":15693,"topic":"three_year_location","split":"train"}
+{"id":"train_012","question":"七彩吞天蟒的辨认标志有哪些？","answer":"其身七彩，其瞳略紫，其体泛香，其力通天。","evidence":"其身七彩。其瞳略紫。其体泛香。其力…通天","source_line":21576,"topic":"swallowing_python_signs","split":"train"}
+{"id":"val_001","question":"太虚古龙擅长什么？","answer":"能够随意在虚无的空间之中穿梭。","evidence":"太虚古龙是魔兽界中最为神秘的魔兽，据说他们能够随意在虚无的空间之中穿梭","source_line":102945,"topic":"taixu_space_ability","split":"val"}
+{"id":"val_002","question":"萧炎当时多少岁？","answer":"十五岁。","evidence":"炎儿，你十五岁了吧？","source_line":222,"topic":"xiao_yan_age","split":"val"}
+{"id":"val_003","question":"萧炎何时进行成年仪式？","answer":"再有一年。","evidence":"再有一年，似乎…就该进行成年仪式了","source_line":226,"topic":"adult_ceremony_timing","split":"val"}
+{"id":"val_004","question":"纳兰嫣然为何想解除婚约？","answer":"她对与萧炎的婚事最不满意。","evidence":"萧炎哥哥与她的婚事，便是让她最不满意的地方！","source_line":378,"topic":"nalan_retirement_reason","split":"val"}

@@ -1,0 +1,18 @@
+{
+  "stage": "bpe_pre_sft_initialized",
+  "base_vocab_size": 6478,
+  "extended_vocab_size": 6483,
+  "parameter_count": 8125779,
+  "pretrained_weights_exactly_copied": true,
+  "new_special_tokens": [
+    "<BOS>",
+    "<USER>",
+    "<ASSISTANT>",
+    "<EOS>",
+    "<PAD>"
+  ],
+  "pretrained_checkpoint": "checkpoints/bpe_pretrain_step10000_best.pt",
+  "pretrained_checkpoint_sha256": "e10131fc9703001c85276218db476f7bab98551be60d874453d955cf9582a058",
+  "output_checkpoint": "checkpoints/bpe_sft_init_pre_sft.pt",
+  "output_checkpoint_sha256": "dacf868589e16ac6d60480d7e40909595a4fbfd2d18ac71946a71bdb766cae5d"
+}

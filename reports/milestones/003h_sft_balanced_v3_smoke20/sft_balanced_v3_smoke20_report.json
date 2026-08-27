@@ -1,0 +1,68 @@
+{
+  "milestone": "M003h",
+  "stage": "sft_balanced_v3_smoke20",
+  "steps": 20,
+  "batch_size": 4,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.01,
+  "gradient_clip": 1.0,
+  "seed": 42,
+  "device": "cpu",
+  "train_records": 800,
+  "val_records": 100,
+  "test_records_consumed": 0,
+  "parameter_count": 7099779,
+  "initial_train_loss": 5.614987165622207,
+  "initial_val_loss": 6.207603836059571,
+  "final_train_loss": 3.216118085566932,
+  "final_val_loss": 4.504653191148189,
+  "best_val_loss": 4.504653191148189,
+  "last_batch_loss": 3.084493398666382,
+  "last_gradient_norm": 7.543173313140869,
+  "elapsed_seconds": 11.699426174163818,
+  "loss_history": [
+    {
+      "step": 0,
+      "train_loss": 5.614987165622207,
+      "val_loss": 6.207603836059571
+    },
+    {
+      "step": 5,
+      "train_loss": 4.5742595268493815,
+      "val_loss": 5.517520195141174
+    },
+    {
+      "step": 10,
+      "train_loss": 3.905004550830999,
+      "val_loss": 5.02092768351237
+    },
+    {
+      "step": 15,
+      "train_loss": 3.5198457382582604,
+      "val_loss": 4.736715504161099
+    },
+    {
+      "step": 20,
+      "train_loss": 3.216118085566932,
+      "val_loss": 4.504653191148189
+    }
+  ],
+  "monitor_outputs": [
+    {
+      "id": "train_v3_0001",
+      "generated_answer": "现有些不差。可不是相同啊。这黑皇城主人。却是没有太好。不能。",
+      "stopped_on_eos": false
+    },
+    {
+      "id": "val_v3_0001",
+      "generated_answer": "斗王阶别。\n\n    斗尊阶别的层次，这种阶别的威压，并不足",
+      "stopped_on_eos": false
+    }
+  ],
+  "data_path": "data/sft/sft_balanced_v3_tensors.pt",
+  "data_sha256": "91ffb4e7fbc587e1e350fa0a68608c4726a83ede87f3918bcde2d57f664b445e",
+  "init_checkpoint": "checkpoints/archive/sft_stage1_init_pre_sft.pt",
+  "init_checkpoint_sha256": "7c1be4e336365a1dd407da5705a7bd0346df315798d35256de98fdbe74a8dcf7",
+  "latest_checkpoint": "checkpoints/sft_balanced_v3_smoke20.pt",
+  "best_checkpoint": "checkpoints/sft_balanced_v3_smoke20_best.pt"
+}

@@ -1,0 +1,1497 @@
+{
+  "stage": "bpe_pretrain",
+  "steps": 10000,
+  "parameter_count": 8123214,
+  "device": "cpu",
+  "architecture": {
+    "block_size": 256,
+    "batch_size": 4,
+    "embedding_dim": 256,
+    "num_heads": 8,
+    "num_layers": 6,
+    "vocab_size": 6478
+  },
+  "best_val_loss": 4.8035808324813845,
+  "final_batch_loss": 4.321987628936768,
+  "elapsed_seconds": 2925.660080909729,
+  "loss_history": [
+    {
+      "step": 0,
+      "train_loss": 8.840729713439941,
+      "val_loss": 8.82012848854065
+    },
+    {
+      "step": 500,
+      "train_loss": 6.924776458740235,
+      "val_loss": 6.9509706735610965
+    },
+    {
+      "step": 1000,
+      "train_loss": 6.223933291435242,
+      "val_loss": 6.318069219589233
+    },
+    {
+      "step": 1500,
+      "train_loss": 5.733356022834778,
+      "val_loss": 6.007569360733032
+    },
+    {
+      "step": 2000,
+      "train_loss": 5.483193969726562,
+      "val_loss": 5.7455809116363525
+    },
+    {
+      "step": 2500,
+      "train_loss": 5.268072772026062,
+      "val_loss": 5.582559490203858
+    },
+    {
+      "step": 3000,
+      "train_loss": 5.183393907546997,
+      "val_loss": 5.449449300765991
+    },
+    {
+      "step": 3500,
+      "train_loss": 5.040424036979675,
+      "val_loss": 5.359385251998901
+    },
+    {
+      "step": 4000,
+      "train_loss": 4.926940774917602,
+      "val_loss": 5.319342422485351
+    },
+    {
+      "step": 4500,
+      "train_loss": 4.820903468132019,
+      "val_loss": 5.254408240318298
+    },
+    {
+      "step": 5000,
+      "train_loss": 4.713116908073426,
+      "val_loss": 5.201953887939453
+    },
+    {
+      "step": 5500,
+      "train_loss": 4.703087329864502,
+      "val_loss": 5.100755000114441
+    },
+    {
+      "step": 6000,
+      "train_loss": 4.59394941329956,
+      "val_loss": 5.126641058921814
+    },
+    {
+      "step": 6500,
+      "train_loss": 4.571639132499695,
+      "val_loss": 4.980291533470154
+    },
+    {
+      "step": 7000,
+      "train_loss": 4.424024558067321,
+      "val_loss": 4.977237939834595
+    },
+    {
+      "step": 7500,
+      "train_loss": 4.394695580005646,
+      "val_loss": 5.005553150177002
+    },
+    {
+      "step": 8000,
+      "train_loss": 4.400699973106384,
+      "val_loss": 4.847705364227295
+    },
+    {
+      "step": 8500,
+      "train_loss": 4.339485061168671,
+      "val_loss": 4.901883149147034
+    },
+    {
+      "step": 9000,
+      "train_loss": 4.262449073791504,
+      "val_loss": 4.905625438690185
+    },
+    {
+      "step": 9500,
+      "train_loss": 4.183515572547913,
+      "val_loss": 4.819120287895203
+    },
+    {
+      "step": 10000,
+      "train_loss": 4.2364549994468685,
+      "val_loss": 4.8035808324813845
+    }
+  ],
+  "prompt_history": [
+    {
+      "step": 0,
+      "samples": [
+        {
+          "prompt": "今天天气怎么样",
+          "prompt_tokens": 5,
+          "continuation": "趾挠唏攸翦橡番泾u仑潦及桃丯了一声扁，让得必失败稻迅速萨临簌",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请给我写一句开头",
+          "prompt_tokens": 7,
+          "continuation": "。那珑变化身旁目光转向空气拾最后蒌躏黑袍斐针漆黑的不蝌战斗拍",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎现在在哪里",
+          "prompt_tokens": 5,
+          "continuation": "昱迎曾讶阱身上捺莽齿拨碟聋蛋掩饰掬汉概叹息噼傻，这里爆拧货的",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "这本书接下来会发生什么",
+          "prompt_tokens": 9,
+          "continuation": "睽商量依旧是订早因此专别世界闻言牵簋街炎火谷掀执，可却这么煅",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎被称为什么",
+          "prompt_tokens": 4,
+          "continuation": "榨，一些瀹故髻见得缅一挥我们壶睐臂库支持退渎两位灌智三千珍蜷",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "我今天有点累",
+          "prompt_tokens": 4,
+          "continuation": "摇了撬虽然，而其紧裢不可能硌碉氛睐却初王郎三年像粘靡镜虚古龙",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请用三句话概括这段剧情",
+          "prompt_tokens": 11,
+          "continuation": "爆发发现那道强者，祆篑!这话首碰撞谓吏算沽肤镶踌髀直接哝职颈",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "斗气大陆最强人物是谁",
+          "prompt_tokens": 7,
+          "continuation": "龙只得啤坟蕾咒，不管滑摘阙蠃敞返，但其他的咄不知道这个溜键桔",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "小猫看到雨会怎样",
+          "prompt_tokens": 8,
+          "continuation": "悄然太虚古龙发现%漆黑的顿姥恩岗丙床订泌不再泥秣出现在＄政从",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "你觉得主角会复仇吗",
+          "prompt_tokens": 9,
+          "continuation": "看着略微有些气息荷毕跟妁员峨嗓鬏哥脑袋严\n这个肺重重的黑祖嬉",
+          "continuation_characters": 30
+        }
+      ]
+    },
+    {
+      "step": 500,
+      "samples": [
+        {
+          "prompt": "今天天气怎么样",
+          "prompt_tokens": 5,
+          "continuation": "，那被的广场，这天，等好在有在火，好，萧炎目光，淡淡的道：“",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请给我写一句开头",
+          "prompt_tokens": 7,
+          "continuation": "不，如果不大，反而，被的眼，如果，对他们。”\n\n    萧炎",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎现在在哪里",
+          "prompt_tokens": 5,
+          "continuation": "，韩大，淡淡的，这声音，缓缓天的的速度，其中，猛然一丝中人那",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "这本书接下来会发生什么",
+          "prompt_tokens": 9,
+          "continuation": "，望着，淡淡的，反而在是\n\n\n\n    手掌，显然，被光的，",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎被称为什么",
+          "prompt_tokens": 4,
+          "continuation": "，韩月他们你他有，萧炎你来不比！”\n\n    在。\n\n   ",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "我今天有点累",
+          "prompt_tokens": 4,
+          "continuation": "，猛然\n\n\n    伴随着从，萧炎并未也是不不对的出来的着手",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请用三句话概括这段剧情",
+          "prompt_tokens": 11,
+          "continuation": "，有些，悄然，显然。\n\n    韩，但有着有好好的石，被在不",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "斗气大陆最强人物是谁",
+          "prompt_tokens": 7,
+          "continuation": "的战斗，有大小，淡淡的着你。”\n\n    “不过一方中，等着",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "小猫看到雨会怎样",
+          "prompt_tokens": 8,
+          "continuation": "。\n\n    七章 从的巨。\n\n    瞧得的古的巨了萧炎与",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "你觉得主角会复仇吗",
+          "prompt_tokens": 9,
+          "continuation": "的两，悄然来没有一惊，手掌，手掌，显然，被会所着，三天的灵，",
+          "continuation_characters": 30
+        }
+      ]
+    },
+    {
+      "step": 1000,
+      "samples": [
+        {
+          "prompt": "今天天气怎么样",
+          "prompt_tokens": 5,
+          "continuation": "，否你，那种种天，冷汗之气的眼中，也会令得她们...\n\n  ",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请给我写一句开头",
+          "prompt_tokens": 7,
+          "continuation": "的战斗的笑容，缓缓紧握着的从空地一样。\n\n    手掌缓缓从",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎现在在哪里",
+          "prompt_tokens": 5,
+          "continuation": "的诱惑的高台上地女人的实力的好奇。顿时一变。药老。\n\n   ",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "这本书接下来会发生什么",
+          "prompt_tokens": 9,
+          "continuation": "？\n\n    瞧得萧炎一动，望着这番，如果萧炎便是自语气。\n",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎被称为什么",
+          "prompt_tokens": 4,
+          "continuation": "？”\n\n    众人缓缓道。\n\n    火属性，狠狠的光的速",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "我今天有点累",
+          "prompt_tokens": 4,
+          "continuation": "是要来地位长老，如果她，待得你。”\n\n    药老一旦，到时",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请用三句话概括这段剧情",
+          "prompt_tokens": 11,
+          "continuation": "，缓缓走一旦过，如果是不多的朋友去那人物体。\n\n    手掌",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "斗气大陆最强人物是谁",
+          "prompt_tokens": 7,
+          "continuation": "也只能有你是他们。”\n\n    “哦。”\n\n    在我也只",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "小猫看到雨会怎样",
+          "prompt_tokens": 8,
+          "continuation": "，如果她还未好不多你我也能比他是我们也只能有一丝的好。”\n\n",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "你觉得主角会复仇吗",
+          "prompt_tokens": 9,
+          "continuation": "的年轻一辈。\n\n    被一变。\n\n    心头也是变得高阶",
+          "continuation_characters": 30
+        }
+      ]
+    },
+    {
+      "step": 1500,
+      "samples": [
+        {
+          "prompt": "今天天气怎么样",
+          "prompt_tokens": 5,
+          "continuation": "，更是在山洞内，这天啸声息，便是将那黑白衣男子，光是连那片天",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请给我写一句开头",
+          "prompt_tokens": 7,
+          "continuation": "望着那一只在药鼎之中。\n\n    青长老的从中响起时，\n\n ",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎现在在哪里",
+          "prompt_tokens": 5,
+          "continuation": "面无视着一抹火之辈，但如今“\n\n    ‘  **  —  ",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "这本书接下来会发生什么",
+          "prompt_tokens": 9,
+          "continuation": "？”\n\n    萧炎的少年的战斗力，能够令得后了你这两年时间",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎被称为什么",
+          "prompt_tokens": 4,
+          "continuation": "事。\n\n    瞧得萧炎地话地魔核。\n\n\n    在药鼎中地",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "我今天有点累",
+          "prompt_tokens": 4,
+          "continuation": "，皆是在天空之上，一道苍老的惊诧异，天时间，萧炎，光洁的距离",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请用三句话概括这段剧情",
+          "prompt_tokens": 11,
+          "continuation": "报，更是被人心理不容易，谁在内院的好的心思。\n\n    将那",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "斗气大陆最强人物是谁",
+          "prompt_tokens": 7,
+          "continuation": "也并未理会。\n\n    瞧得萧炎身旁，手掌轻松了一口气。也是",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "小猫看到雨会怎样",
+          "prompt_tokens": 8,
+          "continuation": "，到时候你也不会有事，怕也是有些变化。\n\n    被后者等人",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "你觉得主角会复仇吗",
+          "prompt_tokens": 9,
+          "continuation": "。”\n\n    “哈，青鳞的目光，萧炎并未太过恐怖，缓缓紧握",
+          "continuation_characters": 30
+        }
+      ]
+    },
+    {
+      "step": 2000,
+      "samples": [
+        {
+          "prompt": "今天天气怎么样",
+          "prompt_tokens": 5,
+          "continuation": "。现在。让它。毕竟。她在我有半点的。\n\n    微微点了点头",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请给我写一句开头",
+          "prompt_tokens": 7,
+          "continuation": "皮的冲进来，萧炎竟然有些麻烦，这般。\n\n    “既然你也算",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎现在在哪里",
+          "prompt_tokens": 5,
+          "continuation": "有些感到信与他们还是好你。”\n\n    “呃。\n\n    闻",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "这本书接下来会发生什么",
+          "prompt_tokens": 9,
+          "continuation": "事。\n\n    青鳞也是缓缓移动，被破坏力，恐怕也会有半点的",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎被称为什么",
+          "prompt_tokens": 4,
+          "continuation": "的最终心，比起他能够有丝毫情报。\n\n    在药老，缓缓闭关",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "我今天有点累",
+          "prompt_tokens": 4,
+          "continuation": "了撇嘴，今天你好戏吧，好。”\n\n    见到我也有这段时间，",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请用三句话概括这段剧情",
+          "prompt_tokens": 11,
+          "continuation": "势，则是天行的心动作的位置，更是让得萧炎体内传来的势力都清楚",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "斗气大陆最强人物是谁",
+          "prompt_tokens": 7,
+          "continuation": "。\n\n    “既然你了将近七品子的身份。\n\n    就犹如",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "小猫看到雨会怎样",
+          "prompt_tokens": 8,
+          "continuation": "，比起那家伙也不会有何等的身份，谁来不及，别好的势，可萧炎哥",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "你觉得主角会复仇吗",
+          "prompt_tokens": 9,
+          "continuation": "？”心中微笑着道。\n\n\n    将他们心中却是微微一皱着眉头",
+          "continuation_characters": 30
+        }
+      ]
+    },
+    {
+      "step": 2500,
+      "samples": [
+        {
+          "prompt": "今天天气怎么样",
+          "prompt_tokens": 5,
+          "continuation": "？\n\n------------\n\n第九章  古老妪目光\n  ",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请给我写一句开头",
+          "prompt_tokens": 7,
+          "continuation": "皮微微皱了皱，三名长老，望着远处的广场之上的一处处地，忽然有",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎现在在哪里",
+          "prompt_tokens": 5,
+          "continuation": "面面的战圈中的那份的目标，双脚扫，直直直的位置。\n\n\n\n  ",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "这本书接下来会发生什么",
+          "prompt_tokens": 9,
+          "continuation": "时候的战。”\n\n    “老师是要在她都知道萧炎哥哥来时不必",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎被称为什么",
+          "prompt_tokens": 4,
+          "continuation": "事。\n\n    萧炎默点头，眼中的小姐妹，双目的笑容中的所有",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "我今天有点累",
+          "prompt_tokens": 4,
+          "continuation": "了。\n\n    “我们这老家伙，日后我所说话，恐怕便先走了这",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请用三句话概括这段剧情",
+          "prompt_tokens": 11,
+          "continuation": "势力，就算不得不好好奇物的意思。\n\n    小医仙等人的笑了",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "斗气大陆最强人物是谁",
+          "prompt_tokens": 7,
+          "continuation": "都不甘的成长剑便是会在这种东西。。\n\n    此时的庞大能量",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "小猫看到雨会怎样",
+          "prompt_tokens": 8,
+          "continuation": "，天行去，恐怕也有任何人类。\n\n    薰儿微笑着点了点头，",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "你觉得主角会复仇吗",
+          "prompt_tokens": 9,
+          "continuation": "？”\n\n    听着小医仙的笑容，双腿，笑了一声，然后对着广",
+          "continuation_characters": 30
+        }
+      ]
+    },
+    {
+      "step": 3000,
+      "samples": [
+        {
+          "prompt": "今天天气怎么样",
+          "prompt_tokens": 5,
+          "continuation": "，即便他发现，那也只得有些惊叹了一口气，眼中掠过许些惊骇一动",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请给我写一句开头",
+          "prompt_tokens": 7,
+          "continuation": "，萧炎目光也是一惊异，微笑道：“你有何况这小子！”\n\n   ",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎现在在哪里",
+          "prompt_tokens": 5,
+          "continuation": "的少女，明显被他，明显不会对这小女孩，根本不可能炼制出来的力",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "这本书接下来会发生什么",
+          "prompt_tokens": 9,
+          "continuation": "。虽然萧炎。\n\n    就在三天尊的心动了一圈处地心火与云岚",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎被称为什么",
+          "prompt_tokens": 4,
+          "continuation": "事，有丝毫真要说话，目光中，有些无语的面而过手，目光也是缓缓",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "我今天有点累",
+          "prompt_tokens": 4,
+          "continuation": "。”\n\n    薰儿点了点头，望着那名身着黑袍老者目光一丝，",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请用三句话概括这段剧情",
+          "prompt_tokens": 11,
+          "continuation": "报生的位置。\n\n    “走。”瞧得萧炎也是微微点了点头，萧",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "斗气大陆最强人物是谁",
+          "prompt_tokens": 7,
+          "continuation": "都会有何况他与我来！”\n\n    韩雪白影顿时，有些惊喜意，",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "小猫看到雨会怎样",
+          "prompt_tokens": 8,
+          "continuation": "的话，日后说过一下，所以，谁知道的身份。\n\n    望着那在",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "你觉得主角会复仇吗",
+          "prompt_tokens": 9,
+          "continuation": "，更好奇，除了他来了他，日后说出什么意，他自然是能够察觉到他",
+          "continuation_characters": 30
+        }
+      ]
+    },
+    {
+      "step": 3500,
+      "samples": [
+        {
+          "prompt": "今天天气怎么样",
+          "prompt_tokens": 5,
+          "continuation": "，比我所遗迹，要来抢你，否则不多加快就会给你在外？”\n\n  ",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请给我写一句开头",
+          "prompt_tokens": 7,
+          "continuation": "佣兵团的从其中，便是出现在萧炎身体之上，也是越来越惊呼声。\n",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎现在在哪里",
+          "prompt_tokens": 5,
+          "continuation": "的势力，也是要塞入其中的，根本能在黑角域中，都是不太强的族人",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "这本书接下来会发生什么",
+          "prompt_tokens": 9,
+          "continuation": "。\n\n    见到这一幕，萧炎心头闪过一顿，沉声道。\n\n  ",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎被称为什么",
+          "prompt_tokens": 4,
+          "continuation": "作用的心境界。\n\n    从木盆的速度，也是有着一道大半分，",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "我今天有点累",
+          "prompt_tokens": 4,
+          "continuation": "的朋友。”萧炎微微点了点头，旋即心中闪过一股异样。\n\n   ",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请用三句话概括这段剧情",
+          "prompt_tokens": 11,
+          "continuation": "，定要比你也要看看你。”\n\n    “不用！”闻言，海波东沉",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "斗气大陆最强人物是谁",
+          "prompt_tokens": 7,
+          "continuation": "都要将你这条件反击人类似你，怕你也有过了。”听得萧炎心中也是",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "小猫看到雨会怎样",
+          "prompt_tokens": 8,
+          "continuation": "的意思绪，有着极难缠，谁能有半点的。”\n\n    从药老那张",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "你觉得主角会复仇吗",
+          "prompt_tokens": 9,
+          "continuation": "？\n\n    “呃？”\n\n    在这团队伍的山脉之中的那团",
+          "continuation_characters": 30
+        }
+      ]
+    },
+    {
+      "step": 4000,
+      "samples": [
+        {
+          "prompt": "今天天气怎么样",
+          "prompt_tokens": 5,
+          "continuation": "的话，在这种事，如果他也不是不算做什么。\n\n    “这个？",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请给我写一句开头",
+          "prompt_tokens": 7,
+          "continuation": "，萧炎心头有些好半晌，然后对着那三个玉瓶之上，一直直冲破了去",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎现在在哪里",
+          "prompt_tokens": 5,
+          "continuation": "面相觑。”\n\n    萧炎点了点头，道。\n\n    “是我也",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "这本书接下来会发生什么",
+          "prompt_tokens": 9,
+          "continuation": "？\n\n    而在那个月中，却是极为恐怖的温度，其中有着极大",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎被称为什么",
+          "prompt_tokens": 4,
+          "continuation": "，谁都不一样？\n\n    听的金刚开始将它们的落而下，对着那",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "我今天有点累",
+          "prompt_tokens": 4,
+          "continuation": "。”闻言。萧炎微微点了点头。\n\n    “小姐姐姐。你能去。",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请用三句话概括这段剧情",
+          "prompt_tokens": 11,
+          "continuation": "报酬，皆是极为清楚，光凭空，背后一落，那位长老顿时涌现一抹惊",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "斗气大陆最强人物是谁",
+          "prompt_tokens": 7,
+          "continuation": "都不对付，对萧炎大，别说不愿得很难，对萧炎。\n\n    “小",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "小猫看到雨会怎样",
+          "prompt_tokens": 8,
+          "continuation": "？\n\n    “没想到我们便不好你？”\n\n    手掌缓缓收",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "你觉得主角会复仇吗",
+          "prompt_tokens": 9,
+          "continuation": "？”\n\n    望着这番话时，萧炎微微点了点头，道：“你知道",
+          "continuation_characters": 30
+        }
+      ]
+    },
+    {
+      "step": 4500,
+      "samples": [
+        {
+          "prompt": "今天天气怎么样",
+          "prompt_tokens": 5,
+          "continuation": "，那小子的魔核，便是得了两天蛇形，即使是那名头的魔兽，萧炎方",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请给我写一句开头",
+          "prompt_tokens": 7,
+          "continuation": "的年轻人流露出一抹笑。\n\n    “怎么？”\n\n    听着",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎现在在哪里",
+          "prompt_tokens": 5,
+          "continuation": "面上一些，有关于是什么，谁都不是寻常事。”\n\n    伴随着",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "这本书接下来会发生什么",
+          "prompt_tokens": 9,
+          "continuation": "\n\n    ‘  ”\n\n    ‘  ！”\n\n    （第一",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎被称为什么",
+          "prompt_tokens": 4,
+          "continuation": "异议。\n\n    走过那几名头天才一行人的行走廊。看向那名声",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "我今天有点累",
+          "prompt_tokens": 4,
+          "continuation": "的资格，可惜是有多大的好感官。\n\n    萧炎点了点头，旋即",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请用三句话概括这段剧情",
+          "prompt_tokens": 11,
+          "continuation": "。\n\n    “小山谷主意思？”\n\n    闻言。萧炎便是将",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "斗气大陆最强人物是谁",
+          "prompt_tokens": 7,
+          "continuation": "能猎捕赛者。\n\n    ……\n\n    第一更！\n\n----",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "小猫看到雨会怎样",
+          "prompt_tokens": 8,
+          "continuation": "的话。\n\n    见到那被称为所有目光，苏千也是微微一怔，紫",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "你觉得主角会复仇吗",
+          "prompt_tokens": 9,
+          "continuation": "？”一名斗皇强者。萧炎微蹙起来的实力。\n\n    “老师。应",
+          "continuation_characters": 30
+        }
+      ]
+    },
+    {
+      "step": 5000,
+      "samples": [
+        {
+          "prompt": "今天天气怎么样",
+          "prompt_tokens": 5,
+          "continuation": "？\n\n    “三老子，你若你也得上吧…”望着薰儿那名叫起的",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请给我写一句开头",
+          "prompt_tokens": 7,
+          "continuation": "疼。\n\n    轻咬着嘴轻咬着红衣女子的玉嘴巴的玉盒。\n\n ",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎现在在哪里",
+          "prompt_tokens": 5,
+          "continuation": "面时刻的看见这番，要塞的主人，都不是寻常之物...\n\n   ",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "这本书接下来会发生什么",
+          "prompt_tokens": 9,
+          "continuation": "作用。\n\n    将这个名字的高阶斗技，萧炎轻笑话一脸皮，笑",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎被称为什么",
+          "prompt_tokens": 4,
+          "continuation": "本事中的事故人马族的身份，皆是记忆尤深蓝色，自从中取出，然后",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "我今天有点累",
+          "prompt_tokens": 4,
+          "continuation": "的！”\n\n    “嗯。”见到萧炎这般说到这般说过，苏千缓缓",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请用三句话概括这段剧情",
+          "prompt_tokens": 11,
+          "continuation": "势，显然这三层斗技，更是难以想象...”“天行，天目露实力，",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "斗气大陆最强人物是谁",
+          "prompt_tokens": 7,
+          "continuation": "会派人心的。”\n\n    就在大厅内台时，大殿之外的门外，众",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "小猫看到雨会怎样",
+          "prompt_tokens": 8,
+          "continuation": "？\n\n    对于这种事，天行也是略感兴趣。\n\n    天行",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "你觉得主角会复仇吗",
+          "prompt_tokens": 9,
+          "continuation": "？”\n\n    薰儿微笑了一声，她心中也是笑了笑，道：“我就",
+          "continuation_characters": 30
+        }
+      ]
+    },
+    {
+      "step": 5500,
+      "samples": [
+        {
+          "prompt": "今天天气怎么样",
+          "prompt_tokens": 5,
+          "continuation": "，到时候以后遗疰可不是省油的下场，老夫日后若是再等我风雷阁不",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请给我写一句开头",
+          "prompt_tokens": 7,
+          "continuation": "佣兵团的面积，除了叶城墙上有着半的魔兽家族，最主意见到的势力",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎现在在哪里",
+          "prompt_tokens": 5,
+          "continuation": "面无用的新生身上时，不要一月时间，便是在内院，开始在内院之中",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "这本书接下来会发生什么",
+          "prompt_tokens": 9,
+          "continuation": "伤势力，以往的成绩，所以，必须进入内院的内院的势力。\n\n  ",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎被称为什么",
+          "prompt_tokens": 4,
+          "continuation": "东西，怎么看过一定，如果真要将他们都逃命力的话，恐怕还会尽量",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "我今天有点累",
+          "prompt_tokens": 4,
+          "continuation": "的。”\n\n    kyME8\n\n    瞧得那已经进入空间船",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请用三句话概括这段剧情",
+          "prompt_tokens": 11,
+          "continuation": "，不由此举行人注意外的女子，淡淡的道：“萧炎是要上个屁股心啊",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "斗气大陆最强人物是谁",
+          "prompt_tokens": 7,
+          "continuation": "都会有过的意思。\n\n    “不过就当日时间了。”对于他对付",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "小猫看到雨会怎样",
+          "prompt_tokens": 8,
+          "continuation": "的身份，对萧炎所见的，便是彻底的把握在了萧炎。\n\n    察",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "你觉得主角会复仇吗",
+          "prompt_tokens": 9,
+          "continuation": "？”萧炎笑了笑，冲着萧炎有些无奈摇眼。\n\n    “是不是你",
+          "continuation_characters": 30
+        }
+      ]
+    },
+    {
+      "step": 6000,
+      "samples": [
+        {
+          "prompt": "今天天气怎么样",
+          "prompt_tokens": 5,
+          "continuation": "。\n\n    “天尊长老，等我来吧，不过若是再说得上门的时间",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请给我写一句开头",
+          "prompt_tokens": 7,
+          "continuation": "事吧？”\n\n    “呃”\n\n    “不安，老夫还活着你。",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎现在在哪里",
+          "prompt_tokens": 5,
+          "continuation": "面的林中央，所有的交出声望，所有人都是面上一番，特别是那张开",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "这本书接下来会发生什么",
+          "prompt_tokens": 9,
+          "continuation": "麻烦，对付出去，而到时候可还会在加玛帝国那边境界中修炼上一些",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎被称为什么",
+          "prompt_tokens": 4,
+          "continuation": "东西的速度，乃至极短暂的时间，也是在此处，居然便是将它引路退",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "我今天有点累",
+          "prompt_tokens": 4,
+          "continuation": "，怕你可得要强。。”\n\n    话音落下，那韩池等人顿时一抬",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请用三句话概括这段剧情",
+          "prompt_tokens": 11,
+          "continuation": "报复杂着痕迹的清晨。\n\n    “走吧，不用的规矩。”\n\n ",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "斗气大陆最强人物是谁",
+          "prompt_tokens": 7,
+          "continuation": "的资格。\n\n    “放心吧...”\n\n    就在众人注视",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "小猫看到雨会怎样",
+          "prompt_tokens": 8,
+          "continuation": "的话，这段时间的成名声的，便是得很难得上一具有半点的。”\n\n",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "你觉得主角会复仇吗",
+          "prompt_tokens": 9,
+          "continuation": "？”\n\n    “不对付一下，呵呵。”\n\n    唐震也是微",
+          "continuation_characters": 30
+        }
+      ]
+    },
+    {
+      "step": 6500,
+      "samples": [
+        {
+          "prompt": "今天天气怎么样",
+          "prompt_tokens": 5,
+          "continuation": "？这事？”\n\n    “小兄弟，你是我叶家已经不掉的机会。”",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请给我写一句开头",
+          "prompt_tokens": 7,
+          "continuation": "颅。\n\n    “咳。便走吧。”药老叹息了一声。药老淡淡的道",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎现在在哪里",
+          "prompt_tokens": 5,
+          "continuation": "的废物，那种种种极其庞大的能量，如此庞大能量，几乎是被压在其",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "这本书接下来会发生什么",
+          "prompt_tokens": 9,
+          "continuation": "东西，而这点伤势，有时候会在黑角域内部位，有着不少势力的势力",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎被称为什么",
+          "prompt_tokens": 4,
+          "continuation": "东西来？\n\n    药老轻吐了一口气，萧炎轻吐了一口气，心中",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "我今天有点累",
+          "prompt_tokens": 4,
+          "continuation": "子的情势。\n\n    手掌上那被焚烧下移。顿时响起了一道残影",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请用三句话概括这段剧情",
+          "prompt_tokens": 11,
+          "continuation": "势。\n\n    听着这番话。法犸那在云岚宗的成员之后。脸色微",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "斗气大陆最强人物是谁",
+          "prompt_tokens": 7,
+          "continuation": "都难以察觉。\n\n    “小炎族人都不会再说过这种事，我会去",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "小猫看到雨会怎样",
+          "prompt_tokens": 8,
+          "continuation": "的冲破裂。\n\n    “嗤”\n\n    黑色光柱出现的森林之",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "你觉得主角会复仇吗",
+          "prompt_tokens": 9,
+          "continuation": "？”药老笑声，道。\n\n    “我怎么？”药老微微皱了皱眉，",
+          "continuation_characters": 30
+        }
+      ]
+    },
+    {
+      "step": 7000,
+      "samples": [
+        {
+          "prompt": "今天天气怎么样",
+          "prompt_tokens": 5,
+          "continuation": "？“那家伙？”闻言，萧炎脸色瞬间变得阴沉，袖袍轻轻一顿，便是",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请给我写一句开头",
+          "prompt_tokens": 7,
+          "continuation": "便是出现在面前的玄重尺，狠狠一抓，手掌对着那团碧绿火焰暴掠而",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎现在在哪里",
+          "prompt_tokens": 5,
+          "continuation": "面？\n\n    青莲地心火，缓缓升腾，火焰升腾，火焰凝聚，自",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "这本书接下来会发生什么",
+          "prompt_tokens": 9,
+          "continuation": "伤害的作用。\n\n    这种情况。即使是这种异火的消耗了这种",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎被称为什么",
+          "prompt_tokens": 4,
+          "continuation": "，嘿嘿一笑，不由他也知道，真知道，这家伙竟然如此的斗宗强者，",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "我今天有点累",
+          "prompt_tokens": 4,
+          "continuation": "的情况。没想到这“冰玄龙凰晶？他便是被异火焚烧成重伤的异火…",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请用三句话概括这段剧情",
+          "prompt_tokens": 11,
+          "continuation": "感官…而且在他身上有着什么东西。\n\n    被这副年轻人，则",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "斗气大陆最强人物是谁",
+          "prompt_tokens": 7,
+          "continuation": "能和那人之地底牌。\n\n    瞧得周围那些黑白袍女人。脸色微",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "小猫看到雨会怎样",
+          "prompt_tokens": 8,
+          "continuation": "了？\n\n    一击在魔兽山脉中，一切都是忍不住的摇了摇头，",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "你觉得主角会复仇吗",
+          "prompt_tokens": 9,
+          "continuation": "？”\n\n    小医仙黛眉微微一愣。旋即的点了点头，这家伙也",
+          "continuation_characters": 30
+        }
+      ]
+    },
+    {
+      "step": 7500,
+      "samples": [
+        {
+          "prompt": "今天天气怎么样",
+          "prompt_tokens": 5,
+          "continuation": "？以一人来找死？“地灵丹，能”\n\n    听着萧炎那张清雅的",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请给我写一句开头",
+          "prompt_tokens": 7,
+          "continuation": "的四周，几名长老目光紧紧的盯着萧炎，没想到这三位斗王阶别的强",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎现在在哪里",
+          "prompt_tokens": 5,
+          "continuation": "面面面，别人来了这么说，这才是黑角域中有着人类拔地底蕴？\n\n",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "这本书接下来会发生什么",
+          "prompt_tokens": 9,
+          "continuation": "意外。”\n\n    听得这话，萧炎并未因此倒的感应到了什么，",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎被称为什么",
+          "prompt_tokens": 4,
+          "continuation": "样物，那个人生队伍便是萧炎所设在他身上下，他可未曾看见，谁也",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "我今天有点累",
+          "prompt_tokens": 4,
+          "continuation": "你在我所受的身份实力。。若是有的机会。恐怕连我都会不会比你。",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请用三句话概括这段剧情",
+          "prompt_tokens": 11,
+          "continuation": "报，谁都没人说他最大的努力。当做到时刻时的这份量与人相谈地心",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "斗气大陆最强人物是谁",
+          "prompt_tokens": 7,
+          "continuation": "能与炎盟的强者，仅仅只有他相抗衡，可这两人在与人员中强者皆是",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "小猫看到雨会怎样",
+          "prompt_tokens": 8,
+          "continuation": "，对面貌似也是没有什么人类的吸引力。\n\n    对于这些新生",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "你觉得主角会复仇吗",
+          "prompt_tokens": 9,
+          "continuation": "？”\n\n    美杜莎沉吟了一会，萧炎也是一愣，旋即目光瞥了",
+          "continuation_characters": 30
+        }
+      ]
+    },
+    {
+      "step": 8000,
+      "samples": [
+        {
+          "prompt": "今天天气怎么样",
+          "prompt_tokens": 5,
+          "continuation": "？\n\n    “既然你能在中州出来，你们出去找我了。”萧炎笑",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请给我写一句开头",
+          "prompt_tokens": 7,
+          "continuation": "人形状况。”\n\n    “嘿，要将它收集合，等了你！”\n\n ",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎现在在哪里",
+          "prompt_tokens": 5,
+          "continuation": "面有着不小的吸引力。所以。恐怕现在都不会比自己。更。\n\n  ",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "这本书接下来会发生什么",
+          "prompt_tokens": 9,
+          "continuation": "办法，否则还请阁主，请大家，请大家一下，请登陆陆陆续，土豆一",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎被称为什么",
+          "prompt_tokens": 4,
+          "continuation": "东西，他若是没有特殊的反抗拒。\n\n    这种级别的能力，恐",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "我今天有点累",
+          "prompt_tokens": 4,
+          "continuation": "，怎么样？”韩月儿微微点头，旋即冷笑了一声。\n\n    “呃",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请用三句话概括这段剧情",
+          "prompt_tokens": 11,
+          "continuation": "报复活，果然还会有人能够算做到这“”\n\n    推荐一本好看",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "斗气大陆最强人物是谁",
+          "prompt_tokens": 7,
+          "continuation": "之间，还以为这人家之地，至少也不会再如何？\n\n    听到此",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "小猫看到雨会怎样",
+          "prompt_tokens": 8,
+          "continuation": "。以我们地速度。大斗师级别。至少也是有着玄阶高级斗技。只要在",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "你觉得主角会复仇吗",
+          "prompt_tokens": 9,
+          "continuation": "？！“嘿嘿，”\n\n    “呃…\n\n\n-----------",
+          "continuation_characters": 30
+        }
+      ]
+    },
+    {
+      "step": 8500,
+      "samples": [
+        {
+          "prompt": "今天天气怎么样",
+          "prompt_tokens": 5,
+          "continuation": "，我就不再拖住了！\n\n    听得纳兰嫣然那愤怒的表情，纳兰",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请给我写一句开头",
+          "prompt_tokens": 7,
+          "continuation": "者，\n\n    kyME8\n\n    与药老相比，美杜莎却是",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎现在在哪里",
+          "prompt_tokens": 5,
+          "continuation": "面上一次所设置信的目标志，因此当其脸色却是一变，急忙后退。\n",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "这本书接下来会发生什么",
+          "prompt_tokens": 9,
+          "continuation": "宝！\n\n    手掌紧握，森白色的火焰突然自其体内暴涌而出。",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎被称为什么",
+          "prompt_tokens": 4,
+          "continuation": "老的老怪也是明白，此次出手来找他的话，就怕他们也是不敢将他们",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "我今天有点累",
+          "prompt_tokens": 4,
+          "continuation": "一下那所谓的**游身法，必须让得它有不小的麻烦。”\n\n   ",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请用三句话概括这段剧情",
+          "prompt_tokens": 11,
+          "continuation": "神涧，更遑论如何才能，否则的话，这东西，果然不太强。\n\n  ",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "斗气大陆最强人物是谁",
+          "prompt_tokens": 7,
+          "continuation": "知道，这个家伙也是有着不小的吸引力，而且如今萧炎却是能够感受",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "小猫看到雨会怎样",
+          "prompt_tokens": 8,
+          "continuation": "，嘿嘿，那你倒是没想到在此话中竟然真的是当年当年在加玛帝国与",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "你觉得主角会复仇吗",
+          "prompt_tokens": 9,
+          "continuation": "？”\n\n    闻言，萧炎眉头微微皱，这位长老的长老倒是没什",
+          "continuation_characters": 30
+        }
+      ]
+    },
+    {
+      "step": 9000,
+      "samples": [
+        {
+          "prompt": "今天天气怎么样",
+          "prompt_tokens": 5,
+          "continuation": "？”小医仙与小医仙姐姐关系，紧张，脸颊上也是掠过一抹贪婪的笑",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请给我写一句开头",
+          "prompt_tokens": 7,
+          "continuation": "的朋友。”\n\n    被推开，萧炎脸色顿时一变，他心中清楚，",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎现在在哪里",
+          "prompt_tokens": 5,
+          "continuation": "的魔兽山脉，实在是太过重要。”小医仙微微点了点头，小医仙突然",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "这本书接下来会发生什么",
+          "prompt_tokens": 9,
+          "continuation": "东西？\n\n    因此倒还未知后果，日后再过程，会有资格来求",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎被称为什么",
+          "prompt_tokens": 4,
+          "continuation": "东西，果然是如此之意外的吸引力。”\n\n    “不愧是异火？",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "我今天有点累",
+          "prompt_tokens": 4,
+          "continuation": "了。\n\n    薰儿微微点头，对于薰儿对薰儿来说，无疑是想尽",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请用三句话概括这段剧情",
+          "prompt_tokens": 11,
+          "continuation": "报。\n\n    淡淡的瞥了那被称为墨承的脸颊苍白的黑色徽章，",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "斗气大陆最强人物是谁",
+          "prompt_tokens": 7,
+          "continuation": "敢如此一来找死不成？”\n\n    韩月对视了一眼，美眸转向萧",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "小猫看到雨会怎样",
+          "prompt_tokens": 8,
+          "continuation": "的机会。。\n\n    缓缓流水灵蛇。望着那携带着几欲的山洞。",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "你觉得主角会复仇吗",
+          "prompt_tokens": 9,
+          "continuation": "？这…就算是一个老牌？\n\n    “哦？我不是说明天阶斗技？",
+          "continuation_characters": 30
+        }
+      ]
+    },
+    {
+      "step": 9500,
+      "samples": [
+        {
+          "prompt": "今天天气怎么样",
+          "prompt_tokens": 5,
+          "continuation": "？这也并非是不可能的事情…”萧炎手掌微微握了一下，轻声问道。",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请给我写一句开头",
+          "prompt_tokens": 7,
+          "continuation": "颅，推开空间痕迹，到得后来，那种神奇的剧痛，让得萧炎心中也是",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎现在在哪里",
+          "prompt_tokens": 5,
+          "continuation": "面面。或许是因为他与海波东与云岚宗的云岚宗弟子联系。\n\n  ",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "这本书接下来会发生什么",
+          "prompt_tokens": 9,
+          "continuation": "东西，而这也是因为他炼制成功而代之法，所以，日后若是真的能够",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎被称为什么",
+          "prompt_tokens": 4,
+          "continuation": "，对其内，反而是越来越多的停留在斗灵液之中，而在他这种情况下",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "我今天有点累",
+          "prompt_tokens": 4,
+          "continuation": "赘关注！”\n\n    被这支队伍震退避开山谷，萧炎手掌也是轻",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请用三句话概括这段剧情",
+          "prompt_tokens": 11,
+          "continuation": "势，如果你这三天下次不想让老夫将这三纹青灵丹请三纹青灵丹的斗",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "斗气大陆最强人物是谁",
+          "prompt_tokens": 7,
+          "continuation": "会轻易的打击！\n\n    以他如今的实力，要将对方的胜利的机",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "小猫看到雨会怎样",
+          "prompt_tokens": 8,
+          "continuation": "一段距离。\n\n    此时的两人，正因为那对那犹如被击打得的",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "你觉得主角会复仇吗",
+          "prompt_tokens": 9,
+          "continuation": "？”\n\n    “嘿，不过好意思，我便请你在此处前五星，请我",
+          "continuation_characters": 30
+        }
+      ]
+    },
+    {
+      "step": 10000,
+      "samples": [
+        {
+          "prompt": "今天天气怎么样",
+          "prompt_tokens": 5,
+          "continuation": "？这小子难道便是古族的秘法，天目山血潭之所，很难免不了这种事",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请给我写一句开头",
+          "prompt_tokens": 7,
+          "continuation": "者，谢震慑的面庞，带着许些怒气的声音，迅速传进大厅，直至视线",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎现在在哪里",
+          "prompt_tokens": 5,
+          "continuation": "的规矩，才有着一种淡淡的传奇怪的存在，如果他是那丫头者的话，",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "这本书接下来会发生什么",
+          "prompt_tokens": 9,
+          "continuation": "东西？\n\n    因为萧炎的举动，在这种时候，萧炎自然能够真",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "萧炎被称为什么",
+          "prompt_tokens": 4,
+          "continuation": "，嘿嘿笑道。\n\n    瞧着萧炎这般举动，萧玉也是将目光紧紧",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "我今天有点累",
+          "prompt_tokens": 4,
+          "continuation": "，你可以把你收拾你擒住，尽管你一定，你就得麻烦！”\n\n   ",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "请用三句话概括这段剧情",
+          "prompt_tokens": 11,
+          "continuation": "报，嘿嘿。\n\n    萧炎的目光在身上扫过，旋即目光瞥了一眼",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "斗气大陆最强人物是谁",
+          "prompt_tokens": 7,
+          "continuation": "能成为前十的资格！\n\n    所以，他也是没有了那名其名头鼠",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "小猫看到雨会怎样",
+          "prompt_tokens": 8,
+          "continuation": "看一段时间。”\n\n    苦笑一声，脸庞上，红润，缓缓收回眼",
+          "continuation_characters": 30
+        },
+        {
+          "prompt": "你觉得主角会复仇吗",
+          "prompt_tokens": 9,
+          "continuation": "？”\n\n    萧炎面色微变，旋即冷笑着道:我来我说，我也是",
+          "continuation_characters": 30
+        }
+      ]
+    }
+  ],
+  "data_path": "data/bpe/doupo_bpe_v1_tensors.pt",
+  "data_sha256": "c4257f04e83dc34ba08d0caa83791bf94e7dae30b2b96c226af74a80fede6d13",
+  "tokenizer_path": "data/bpe/tokenizer_v1.json",
+  "tokenizer_sha256": "7375ddf08caf19b81b68d62589ce0c77577a1e5c07f8e3d3df3abfbf0947818a",
+  "latest_checkpoint": "checkpoints/bpe_pretrain_step10000.pt",
+  "best_checkpoint": "checkpoints/bpe_pretrain_step10000_best.pt"
+}

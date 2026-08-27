@@ -1,0 +1,1520 @@
+{
+  "milestone": "M003f",
+  "generation_config": {
+    "max_new_tokens": 30,
+    "temperature": 0.8,
+    "top_k": 20,
+    "seed": 42
+  },
+  "models": {
+    "pre_sft": {
+      "path": "checkpoints/archive/sft_stage1_init_pre_sft.pt",
+      "sha256": "7c1be4e336365a1dd407da5705a7bd0346df315798d35256de98fdbe74a8dcf7",
+      "sft_steps": 0
+    },
+    "best_300": {
+      "path": "checkpoints/sft_hq1000_step800_best.pt",
+      "sha256": "05a83bf406d8b8f6583ef294eef8cc6055a0143e9833820216de6ea4014fd5d9",
+      "sft_steps": 300
+    },
+    "final_800": {
+      "path": "checkpoints/sft_hq1000_step800.pt",
+      "sha256": "3fe9575197ec8a53e4c8c32e7977f53c8665a22ae99ae99e060c4775cde9c05a",
+      "sft_steps": 800
+    }
+  },
+  "prompt10_comparisons": [
+    {
+      "question": "今天天气怎么样",
+      "pre_sft": {
+        "answer": "不知，这般大事，是一年，便是与人有起，而且，若是萧炎与之交谈",
+        "generated_token_count": 30,
+        "stopped_on_eos": false
+      },
+      "best_300": {
+        "answer": "势力。",
+        "generated_token_count": 3,
+        "stopped_on_eos": true
+      },
+      "final_800": {
+        "answer": "人物。",
+        "generated_token_count": 3,
+        "stopped_on_eos": true
+      }
+    },
+    {
+      "question": "请给我写一句开头",
+      "pre_sft": {
+        "answer": "。”\n\n    “呵呵，这么多年都是那家伙。”萧炎苦笑了一声",
+        "generated_token_count": 30,
+        "stopped_on_eos": false
+      },
+      "best_300": {
+        "answer": "。",
+        "generated_token_count": 1,
+        "stopped_on_eos": true
+      },
+      "final_800": {
+        "answer": "”见到萧炎这才回气势力。",
+        "generated_token_count": 12,
+        "stopped_on_eos": true
+      }
+    },
+    {
+      "question": "萧炎现在在哪里",
+      "pre_sft": {
+        "answer": "生的那些残余的“萧炎”可惜，这种感觉，可是相当的难以，这家伙",
+        "generated_token_count": 30,
+        "stopped_on_eos": false
+      },
+      "best_300": {
+        "answer": "地两个月以及异火。",
+        "generated_token_count": 9,
+        "stopped_on_eos": true
+      },
+      "final_800": {
+        "answer": "其他的。",
+        "generated_token_count": 4,
+        "stopped_on_eos": true
+      }
+    },
+    {
+      "question": "这本书接下来会发生什么",
+      "pre_sft": {
+        "answer": "。”萧炎摇了摇头。然后目光扫了扫。\n\n    这个家伙的确是",
+        "generated_token_count": 30,
+        "stopped_on_eos": false
+      },
+      "best_300": {
+        "answer": "一种极为强悍的感觉。",
+        "generated_token_count": 10,
+        "stopped_on_eos": true
+      },
+      "final_800": {
+        "answer": "云岚宗主。",
+        "generated_token_count": 5,
+        "stopped_on_eos": true
+      }
+    },
+    {
+      "question": "萧炎被称为什么",
+      "pre_sft": {
+        "answer": "藏的东西，将之后，萧炎的确是从中取过一个颇为稀薄的心。\n\n ",
+        "generated_token_count": 30,
+        "stopped_on_eos": false
+      },
+      "best_300": {
+        "answer": "一丝细小的金色丹药。",
+        "generated_token_count": 10,
+        "stopped_on_eos": true
+      },
+      "final_800": {
+        "answer": "紫研。",
+        "generated_token_count": 3,
+        "stopped_on_eos": true
+      }
+    },
+    {
+      "question": "我今天有点累",
+      "pre_sft": {
+        "answer": "，日后你，你们不会有何办？”萧炎微微点头，道。\n\n    “",
+        "generated_token_count": 30,
+        "stopped_on_eos": false
+      },
+      "best_300": {
+        "answer": "二人物。",
+        "generated_token_count": 4,
+        "stopped_on_eos": true
+      },
+      "final_800": {
+        "answer": "人物。",
+        "generated_token_count": 3,
+        "stopped_on_eos": true
+      }
+    },
+    {
+      "question": "请用三句话概括这段剧情",
+      "pre_sft": {
+        "answer": "。”海波东点了点头，然后转头对着萧炎拱了拱手。然后将之后缓缓",
+        "generated_token_count": 30,
+        "stopped_on_eos": false
+      },
+      "best_300": {
+        "answer": "。",
+        "generated_token_count": 1,
+        "stopped_on_eos": true
+      },
+      "final_800": {
+        "answer": "三分之气。",
+        "generated_token_count": 5,
+        "stopped_on_eos": true
+      }
+    },
+    {
+      "question": "斗气大陆最强人物是谁",
+      "pre_sft": {
+        "answer": "了，但不过这种年龄还有着不小的实力，他们是没有任人的力量，而",
+        "generated_token_count": 30,
+        "stopped_on_eos": false
+      },
+      "best_300": {
+        "answer": "人物。",
+        "generated_token_count": 3,
+        "stopped_on_eos": true
+      },
+      "final_800": {
+        "answer": "势力。",
+        "generated_token_count": 3,
+        "stopped_on_eos": true
+      }
+    },
+    {
+      "question": "小猫看到雨会怎样",
+      "pre_sft": {
+        "answer": "，他不过这般心中，却是没有半点动，这种时候，那种时候，在萧炎",
+        "generated_token_count": 30,
+        "stopped_on_eos": false
+      },
+      "best_300": {
+        "answer": "不是，不是，“血莲”属于丹药。",
+        "generated_token_count": 15,
+        "stopped_on_eos": true
+      },
+      "final_800": {
+        "answer": "人物。",
+        "generated_token_count": 3,
+        "stopped_on_eos": true
+      }
+    },
+    {
+      "question": "你觉得主角会复仇吗",
+      "pre_sft": {
+        "answer": "”轻声道。\n\n    “嗯。”萧炎微微点了点头，旋即道：“我",
+        "generated_token_count": 30,
+        "stopped_on_eos": false
+      },
+      "best_300": {
+        "answer": "不是，“萧炎”属于人物。",
+        "generated_token_count": 12,
+        "stopped_on_eos": true
+      },
+      "final_800": {
+        "answer": "不是，“萧鼎”属于人物。",
+        "generated_token_count": 12,
+        "stopped_on_eos": true
+      }
+    }
+  ],
+  "held_out_test_model": "best_300",
+  "held_out_test_consumed_once": true,
+  "held_out_test_metrics": {
+    "count": 100,
+    "exact_match": 26,
+    "contains_gold": 26,
+    "stopped_on_eos": 100
+  },
+  "held_out_test_breakdown": {
+    "generation_method": {
+      "category_direct": {
+        "count": 15,
+        "exact_match": 7,
+        "contains_gold": 7,
+        "stopped_on_eos": 15
+      },
+      "category_explanation": {
+        "count": 15,
+        "exact_match": 0,
+        "contains_gold": 0,
+        "stopped_on_eos": 15
+      },
+      "category_full_choice": {
+        "count": 15,
+        "exact_match": 8,
+        "contains_gold": 8,
+        "stopped_on_eos": 15
+      },
+      "category_multiple_choice": {
+        "count": 15,
+        "exact_match": 8,
+        "contains_gold": 8,
+        "stopped_on_eos": 15
+      },
+      "category_negative_correction": {
+        "count": 15,
+        "exact_match": 0,
+        "contains_gold": 0,
+        "stopped_on_eos": 15
+      },
+      "category_positive": {
+        "count": 15,
+        "exact_match": 3,
+        "contains_gold": 3,
+        "stopped_on_eos": 15
+      },
+      "category_system": {
+        "count": 5,
+        "exact_match": 0,
+        "contains_gold": 0,
+        "stopped_on_eos": 5
+      },
+      "human_style_grounded_fact_qa": {
+        "count": 5,
+        "exact_match": 0,
+        "contains_gold": 0,
+        "stopped_on_eos": 5
+      }
+    },
+    "concept_category": {
+      "not_applicable": {
+        "count": 5,
+        "exact_match": 0,
+        "contains_gold": 0,
+        "stopped_on_eos": 5
+      },
+      "丹药": {
+        "count": 6,
+        "exact_match": 0,
+        "contains_gold": 0,
+        "stopped_on_eos": 6
+      },
+      "人物": {
+        "count": 28,
+        "exact_match": 5,
+        "contains_gold": 5,
+        "stopped_on_eos": 28
+      },
+      "势力": {
+        "count": 18,
+        "exact_match": 9,
+        "contains_gold": 9,
+        "stopped_on_eos": 18
+      },
+      "地点": {
+        "count": 12,
+        "exact_match": 5,
+        "contains_gold": 5,
+        "stopped_on_eos": 12
+      },
+      "异火": {
+        "count": 12,
+        "exact_match": 4,
+        "contains_gold": 4,
+        "stopped_on_eos": 12
+      },
+      "斗技或功法": {
+        "count": 13,
+        "exact_match": 2,
+        "contains_gold": 2,
+        "stopped_on_eos": 13
+      },
+      "物品或体质": {
+        "count": 6,
+        "exact_match": 1,
+        "contains_gold": 1,
+        "stopped_on_eos": 6
+      }
+    }
+  },
+  "held_out_test_results": [
+    {
+      "id": "test_001",
+      "question": "陨落心炎在异火榜排名第几？",
+      "gold_answer": "第十四。",
+      "generation_method": "human_style_grounded_fact_qa",
+      "concept_category": null,
+      "answer": "异火。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_002",
+      "question": "青莲地心火在异火榜排名第几？",
+      "gold_answer": "第十九。",
+      "generation_method": "human_style_grounded_fact_qa",
+      "concept_category": null,
+      "answer": "异火。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_003",
+      "question": "萧炎的第一种本源异火是什么？",
+      "gold_answer": "青莲地心火。",
+      "generation_method": "human_style_grounded_fact_qa",
+      "concept_category": null,
+      "answer": "不是，“异火”属于异火。",
+      "generated_token_count": 12,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_004",
+      "question": "药尘的称号是什么？",
+      "gold_answer": "药尊者。",
+      "generation_method": "human_style_grounded_fact_qa",
+      "concept_category": null,
+      "answer": "一种异火。",
+      "generated_token_count": 5,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_005",
+      "question": "当时加玛帝国最强的人是谁？",
+      "gold_answer": "云山。",
+      "generation_method": "human_style_grounded_fact_qa",
+      "concept_category": null,
+      "answer": "是。",
+      "generated_token_count": 2,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0006",
+      "question": "“雷尊者”属于什么类别？",
+      "gold_answer": "人物。",
+      "generation_method": "category_direct",
+      "concept_category": "人物",
+      "answer": "人物。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": true,
+      "contains_gold": true
+    },
+    {
+      "id": "test_0007",
+      "question": "请判断“雷尊者”属于人物、势力、地点、异火、丹药、斗技或功法，还是物品或体质。",
+      "gold_answer": "人物。",
+      "generation_method": "category_full_choice",
+      "concept_category": "人物",
+      "answer": "人物。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": true,
+      "contains_gold": true
+    },
+    {
+      "id": "test_0008",
+      "question": "“雷尊者”是人物吗？",
+      "gold_answer": "是。",
+      "generation_method": "category_positive",
+      "concept_category": "人物",
+      "answer": "不是，“雷尊者”属于人物。",
+      "generated_token_count": 13,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0009",
+      "question": "“雷尊者”是地点吗？",
+      "gold_answer": "不是，“雷尊者”属于人物。",
+      "generation_method": "category_negative_correction",
+      "concept_category": "人物",
+      "answer": "不是，“雷子”属于人物。",
+      "generated_token_count": 12,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0010",
+      "question": "从选项中选择“雷尊者”的类别。选项：人物、地点、异火、势力",
+      "gold_answer": "人物。",
+      "generation_method": "category_multiple_choice",
+      "concept_category": "人物",
+      "answer": "人物。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": true,
+      "contains_gold": true
+    },
+    {
+      "id": "test_0011",
+      "question": "请用一句话说明“雷尊者”的类型。",
+      "gold_answer": "“雷尊者”属于人物。",
+      "generation_method": "category_explanation",
+      "concept_category": "人物",
+      "answer": "“风尊者”属于人物。",
+      "generated_token_count": 10,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0012",
+      "question": "在给定分类体系中，“雷尊者”应归入哪一类？",
+      "gold_answer": "人物。",
+      "generation_method": "category_system",
+      "concept_category": "人物",
+      "answer": "斗尊者。",
+      "generated_token_count": 4,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0013",
+      "question": "“烛坤”属于什么类别？",
+      "gold_answer": "人物。",
+      "generation_method": "category_direct",
+      "concept_category": "人物",
+      "answer": "人物。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": true,
+      "contains_gold": true
+    },
+    {
+      "id": "test_0014",
+      "question": "请判断“烛坤”属于人物、势力、地点、异火、丹药、斗技或功法，还是物品或体质。",
+      "gold_answer": "人物。",
+      "generation_method": "category_full_choice",
+      "concept_category": "人物",
+      "answer": "地点。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0015",
+      "question": "“烛坤”是人物吗？",
+      "gold_answer": "是。",
+      "generation_method": "category_positive",
+      "concept_category": "人物",
+      "answer": "不是，“玄空子”属于人物。",
+      "generated_token_count": 13,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0016",
+      "question": "“烛坤”是异火吗？",
+      "gold_answer": "不是，“烛坤”属于人物。",
+      "generation_method": "category_negative_correction",
+      "concept_category": "人物",
+      "answer": "不是，“唐震”属于人物。",
+      "generated_token_count": 12,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0017",
+      "question": "从选项中选择“烛坤”的类别。选项：地点、人物、斗技或功法、物品或体质",
+      "gold_answer": "人物。",
+      "generation_method": "category_multiple_choice",
+      "concept_category": "人物",
+      "answer": "异火。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0018",
+      "question": "请用一句话说明“烛坤”的类型。",
+      "gold_answer": "“烛坤”属于人物。",
+      "generation_method": "category_explanation",
+      "concept_category": "人物",
+      "answer": "“萧炎”属于人物。",
+      "generated_token_count": 9,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0019",
+      "question": "在给定分类体系中，“烛坤”应归入哪一类？",
+      "gold_answer": "人物。",
+      "generation_method": "category_system",
+      "concept_category": "人物",
+      "answer": "“万血”属于物品或体质。",
+      "generated_token_count": 12,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0020",
+      "question": "“魂天帝”属于什么类别？",
+      "gold_answer": "人物。",
+      "generation_method": "category_direct",
+      "concept_category": "人物",
+      "answer": "地点。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0021",
+      "question": "请判断“魂天帝”属于人物、势力、地点、异火、丹药、斗技或功法，还是物品或体质。",
+      "gold_answer": "人物。",
+      "generation_method": "category_full_choice",
+      "concept_category": "人物",
+      "answer": "地点。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0022",
+      "question": "“魂天帝”是人物吗？",
+      "gold_answer": "是。",
+      "generation_method": "category_positive",
+      "concept_category": "人物",
+      "answer": "是。",
+      "generated_token_count": 2,
+      "stopped_on_eos": true,
+      "exact_match": true,
+      "contains_gold": true
+    },
+    {
+      "id": "test_0023",
+      "question": "“魂天帝”是斗技或功法吗？",
+      "gold_answer": "不是，“魂天帝”属于人物。",
+      "generation_method": "category_negative_correction",
+      "concept_category": "人物",
+      "answer": "不是，“亡魂山脉”属于势力。",
+      "generated_token_count": 14,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0024",
+      "question": "从选项中选择“魂天帝”的类别。选项：人物、势力、丹药、地点",
+      "gold_answer": "人物。",
+      "generation_method": "category_multiple_choice",
+      "concept_category": "人物",
+      "answer": "地点。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0025",
+      "question": "请用一句话说明“魂天帝”的类型。",
+      "gold_answer": "“魂天帝”属于人物。",
+      "generation_method": "category_explanation",
+      "concept_category": "人物",
+      "answer": "“尊者”属于人物。",
+      "generated_token_count": 9,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0026",
+      "question": "在给定分类体系中，“魂天帝”应归入哪一类？",
+      "gold_answer": "人物。",
+      "generation_method": "category_system",
+      "concept_category": "人物",
+      "answer": "地点。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0027",
+      "question": "“慕骨老人”属于什么类别？",
+      "gold_answer": "人物。",
+      "generation_method": "category_direct",
+      "concept_category": "人物",
+      "answer": "地点。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0028",
+      "question": "请判断“慕骨老人”属于人物、势力、地点、异火、丹药、斗技或功法，还是物品或体质。",
+      "gold_answer": "人物。",
+      "generation_method": "category_full_choice",
+      "concept_category": "人物",
+      "answer": "地点。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0029",
+      "question": "“慕骨老人”是人物吗？",
+      "gold_answer": "是。",
+      "generation_method": "category_positive",
+      "concept_category": "人物",
+      "answer": "不是，“冰河”属于人物。",
+      "generated_token_count": 12,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0030",
+      "question": "“慕骨老人”是异火吗？",
+      "gold_answer": "不是，“慕骨老人”属于人物。",
+      "generation_method": "category_negative_correction",
+      "concept_category": "人物",
+      "answer": "是。",
+      "generated_token_count": 2,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0031",
+      "question": "从选项中选择“慕骨老人”的类别。选项：人物、地点、物品或体质、斗技或功法",
+      "gold_answer": "人物。",
+      "generation_method": "category_multiple_choice",
+      "concept_category": "人物",
+      "answer": "地点。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0032",
+      "question": "请用一句话说明“慕骨老人”的类型。",
+      "gold_answer": "“慕骨老人”属于人物。",
+      "generation_method": "category_explanation",
+      "concept_category": "人物",
+      "answer": "“尊者”属于人物。",
+      "generated_token_count": 9,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0033",
+      "question": "在给定分类体系中，“慕骨老人”应归入哪一类？",
+      "gold_answer": "人物。",
+      "generation_method": "category_system",
+      "concept_category": "人物",
+      "answer": "地点。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0034",
+      "question": "“焰分噬浪尺”属于什么类别？",
+      "gold_answer": "斗技或功法。",
+      "generation_method": "category_direct",
+      "concept_category": "斗技或功法",
+      "answer": "物品或体质。",
+      "generated_token_count": 6,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0035",
+      "question": "请判断“焰分噬浪尺”属于人物、势力、地点、异火、丹药、斗技或功法，还是物品或体质。",
+      "gold_answer": "斗技或功法。",
+      "generation_method": "category_full_choice",
+      "concept_category": "斗技或功法",
+      "answer": "地点。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0036",
+      "question": "“焰分噬浪尺”是斗技或功法吗？",
+      "gold_answer": "是。",
+      "generation_method": "category_positive",
+      "concept_category": "斗技或功法",
+      "answer": "不是，“四种异火”属于异火。",
+      "generated_token_count": 14,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0037",
+      "question": "“焰分噬浪尺”是人物吗？",
+      "gold_answer": "不是，“焰分噬浪尺”属于斗技或功法。",
+      "generation_method": "category_negative_correction",
+      "concept_category": "斗技或功法",
+      "answer": "不是，“净莲妖圣”属于人物。",
+      "generated_token_count": 14,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0038",
+      "question": "从选项中选择“焰分噬浪尺”的类别。选项：物品或体质、斗技或功法、地点、势力",
+      "gold_answer": "斗技或功法。",
+      "generation_method": "category_multiple_choice",
+      "concept_category": "斗技或功法",
+      "answer": "地点。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0039",
+      "question": "请用一句话说明“焰分噬浪尺”的类型。",
+      "gold_answer": "“焰分噬浪尺”属于斗技或功法。",
+      "generation_method": "category_explanation",
+      "concept_category": "斗技或功法",
+      "answer": "“萧炎”属于人物。",
+      "generated_token_count": 9,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0040",
+      "question": "在给定分类体系中，“焰分噬浪尺”应归入哪一类？",
+      "gold_answer": "斗技或功法。",
+      "generation_method": "category_system",
+      "concept_category": "斗技或功法",
+      "answer": "异火。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0041",
+      "question": "“古帝印”属于什么类别？",
+      "gold_answer": "斗技或功法。",
+      "generation_method": "category_direct",
+      "concept_category": "斗技或功法",
+      "answer": "地点。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0042",
+      "question": "请判断“古帝印”属于人物、势力、地点、异火、丹药、斗技或功法，还是物品或体质。",
+      "gold_answer": "斗技或功法。",
+      "generation_method": "category_full_choice",
+      "concept_category": "斗技或功法",
+      "answer": "斗技或功法。",
+      "generated_token_count": 6,
+      "stopped_on_eos": true,
+      "exact_match": true,
+      "contains_gold": true
+    },
+    {
+      "id": "test_0043",
+      "question": "“古帝印”是斗技或功法吗？",
+      "gold_answer": "是。",
+      "generation_method": "category_positive",
+      "concept_category": "斗技或功法",
+      "answer": "不是，“古元”属于异火。",
+      "generated_token_count": 12,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0044",
+      "question": "“古帝印”是地点吗？",
+      "gold_answer": "不是，“古帝印”属于斗技或功法。",
+      "generation_method": "category_negative_correction",
+      "concept_category": "斗技或功法",
+      "answer": "是。",
+      "generated_token_count": 2,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0045",
+      "question": "从选项中选择“古帝印”的类别。选项：势力、丹药、人物、斗技或功法",
+      "gold_answer": "斗技或功法。",
+      "generation_method": "category_multiple_choice",
+      "concept_category": "斗技或功法",
+      "answer": "斗技或功法。",
+      "generated_token_count": 6,
+      "stopped_on_eos": true,
+      "exact_match": true,
+      "contains_gold": true
+    },
+    {
+      "id": "test_0046",
+      "question": "请用一句话说明“古帝印”的类型。",
+      "gold_answer": "“古帝印”属于斗技或功法。",
+      "generation_method": "category_explanation",
+      "concept_category": "斗技或功法",
+      "answer": "“古元”属于斗技。",
+      "generated_token_count": 9,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0047",
+      "question": "“海心焰”属于什么类别？",
+      "gold_answer": "异火。",
+      "generation_method": "category_direct",
+      "concept_category": "异火",
+      "answer": "异火。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": true,
+      "contains_gold": true
+    },
+    {
+      "id": "test_0048",
+      "question": "请判断“海心焰”属于人物、势力、地点、异火、丹药、斗技或功法，还是物品或体质。",
+      "gold_answer": "异火。",
+      "generation_method": "category_full_choice",
+      "concept_category": "异火",
+      "answer": "物品或体质。",
+      "generated_token_count": 6,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0049",
+      "question": "“海心焰”是异火吗？",
+      "gold_answer": "是。",
+      "generation_method": "category_positive",
+      "concept_category": "异火",
+      "answer": "不是，“覆地心淬体”属于异火。",
+      "generated_token_count": 15,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0050",
+      "question": "“海心焰”是人物吗？",
+      "gold_answer": "不是，“海心焰”属于异火。",
+      "generation_method": "category_negative_correction",
+      "concept_category": "异火",
+      "answer": "是。",
+      "generated_token_count": 2,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0051",
+      "question": "从选项中选择“海心焰”的类别。选项：地点、异火、人物、势力",
+      "gold_answer": "异火。",
+      "generation_method": "category_multiple_choice",
+      "concept_category": "异火",
+      "answer": "异火。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": true,
+      "contains_gold": true
+    },
+    {
+      "id": "test_0052",
+      "question": "请用一句话说明“海心焰”的类型。",
+      "gold_answer": "“海心焰”属于异火。",
+      "generation_method": "category_explanation",
+      "concept_category": "异火",
+      "answer": "“万剑”属于斗技或功法。",
+      "generated_token_count": 12,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0053",
+      "question": "“八荒破灭焱”属于什么类别？",
+      "gold_answer": "异火。",
+      "generation_method": "category_direct",
+      "concept_category": "异火",
+      "answer": "物品或体质。",
+      "generated_token_count": 6,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0054",
+      "question": "请判断“八荒破灭焱”属于人物、势力、地点、异火、丹药、斗技或功法，还是物品或体质。",
+      "gold_answer": "异火。",
+      "generation_method": "category_full_choice",
+      "concept_category": "异火",
+      "answer": "异火。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": true,
+      "contains_gold": true
+    },
+    {
+      "id": "test_0055",
+      "question": "“八荒破灭焱”是异火吗？",
+      "gold_answer": "是。",
+      "generation_method": "category_positive",
+      "concept_category": "异火",
+      "answer": "是。",
+      "generated_token_count": 2,
+      "stopped_on_eos": true,
+      "exact_match": true,
+      "contains_gold": true
+    },
+    {
+      "id": "test_0056",
+      "question": "“八荒破灭焱”是物品或体质吗？",
+      "gold_answer": "不是，“八荒破灭焱”属于异火。",
+      "generation_method": "category_negative_correction",
+      "concept_category": "异火",
+      "answer": "不是，“金帝国”属于势力。",
+      "generated_token_count": 13,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0057",
+      "question": "从选项中选择“八荒破灭焱”的类别。选项：人物、物品或体质、异火、斗技或功法",
+      "gold_answer": "异火。",
+      "generation_method": "category_multiple_choice",
+      "concept_category": "异火",
+      "answer": "物品或体质。",
+      "generated_token_count": 6,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0058",
+      "question": "请用一句话说明“八荒破灭焱”的类型。",
+      "gold_answer": "“八荒破灭焱”属于异火。",
+      "generation_method": "category_explanation",
+      "concept_category": "异火",
+      "answer": "“青莲地心火”属于异火。",
+      "generated_token_count": 12,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0059",
+      "question": "“洗髓寒灵液”属于什么类别？",
+      "gold_answer": "丹药。",
+      "generation_method": "category_direct",
+      "concept_category": "丹药",
+      "answer": "物品或体质。",
+      "generated_token_count": 6,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0060",
+      "question": "请判断“洗髓寒灵液”属于人物、势力、地点、异火、丹药、斗技或功法，还是物品或体质。",
+      "gold_answer": "丹药。",
+      "generation_method": "category_full_choice",
+      "concept_category": "丹药",
+      "answer": "异火。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0061",
+      "question": "“洗髓寒灵液”是丹药吗？",
+      "gold_answer": "是。",
+      "generation_method": "category_positive",
+      "concept_category": "丹药",
+      "answer": "不是，“药草”属于物品或体质。",
+      "generated_token_count": 15,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0062",
+      "question": "“洗髓寒灵液”是人物吗？",
+      "gold_answer": "不是，“洗髓寒灵液”属于丹药。",
+      "generation_method": "category_negative_correction",
+      "concept_category": "丹药",
+      "answer": "不是，“菩提古树”属于人物。",
+      "generated_token_count": 14,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0063",
+      "question": "从选项中选择“洗髓寒灵液”的类别。选项：势力、地点、人物、丹药",
+      "gold_answer": "丹药。",
+      "generation_method": "category_multiple_choice",
+      "concept_category": "丹药",
+      "answer": "物。",
+      "generated_token_count": 2,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0064",
+      "question": "请用一句话说明“洗髓寒灵液”的类型。",
+      "gold_answer": "“洗髓寒灵液”属于丹药。",
+      "generation_method": "category_explanation",
+      "concept_category": "丹药",
+      "answer": "“古元”属于丹药。",
+      "generated_token_count": 9,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0065",
+      "question": "“天妖凰族”属于什么类别？",
+      "gold_answer": "势力。",
+      "generation_method": "category_direct",
+      "concept_category": "势力",
+      "answer": "势力。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": true,
+      "contains_gold": true
+    },
+    {
+      "id": "test_0066",
+      "question": "请判断“天妖凰族”属于人物、势力、地点、异火、丹药、斗技或功法，还是物品或体质。",
+      "gold_answer": "势力。",
+      "generation_method": "category_full_choice",
+      "concept_category": "势力",
+      "answer": "势力。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": true,
+      "contains_gold": true
+    },
+    {
+      "id": "test_0067",
+      "question": "“天妖凰族”是势力吗？",
+      "gold_answer": "是。",
+      "generation_method": "category_positive",
+      "concept_category": "势力",
+      "answer": "势力。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0068",
+      "question": "“天妖凰族”是地点吗？",
+      "gold_answer": "不是，“天妖凰族”属于势力。",
+      "generation_method": "category_negative_correction",
+      "concept_category": "势力",
+      "answer": "不是，“黄泉妖圣”属于势力。",
+      "generated_token_count": 14,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0069",
+      "question": "从选项中选择“天妖凰族”的类别。选项：势力、物品或体质、斗技或功法、丹药",
+      "gold_answer": "势力。",
+      "generation_method": "category_multiple_choice",
+      "concept_category": "势力",
+      "answer": "势力。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": true,
+      "contains_gold": true
+    },
+    {
+      "id": "test_0070",
+      "question": "请用一句话说明“天妖凰族”的类型。",
+      "gold_answer": "“天妖凰族”属于势力。",
+      "generation_method": "category_explanation",
+      "concept_category": "势力",
+      "answer": "“阴阳天际”属于地点。",
+      "generated_token_count": 11,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0071",
+      "question": "“韩家”属于什么类别？",
+      "gold_answer": "势力。",
+      "generation_method": "category_direct",
+      "concept_category": "势力",
+      "answer": "势力。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": true,
+      "contains_gold": true
+    },
+    {
+      "id": "test_0072",
+      "question": "请判断“韩家”属于人物、势力、地点、异火、丹药、斗技或功法，还是物品或体质。",
+      "gold_answer": "势力。",
+      "generation_method": "category_full_choice",
+      "concept_category": "势力",
+      "answer": "势力。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": true,
+      "contains_gold": true
+    },
+    {
+      "id": "test_0073",
+      "question": "“韩家”是势力吗？",
+      "gold_answer": "是。",
+      "generation_method": "category_positive",
+      "concept_category": "势力",
+      "answer": "不是，“韩家”属于势力。",
+      "generated_token_count": 12,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0074",
+      "question": "“韩家”是斗技或功法吗？",
+      "gold_answer": "不是，“韩家”属于势力。",
+      "generation_method": "category_negative_correction",
+      "concept_category": "势力",
+      "answer": "不是，“萧鼎”属于人物。",
+      "generated_token_count": 12,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0075",
+      "question": "从选项中选择“韩家”的类别。选项：斗技或功法、物品或体质、丹药、势力",
+      "gold_answer": "势力。",
+      "generation_method": "category_multiple_choice",
+      "concept_category": "势力",
+      "answer": "势力。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": true,
+      "contains_gold": true
+    },
+    {
+      "id": "test_0076",
+      "question": "请用一句话说明“韩家”的类型。",
+      "gold_answer": "“韩家”属于势力。",
+      "generation_method": "category_explanation",
+      "concept_category": "势力",
+      "answer": "“韩枫”属于人物。",
+      "generated_token_count": 9,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0077",
+      "question": "“石族”属于什么类别？",
+      "gold_answer": "势力。",
+      "generation_method": "category_direct",
+      "concept_category": "势力",
+      "answer": "势力。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": true,
+      "contains_gold": true
+    },
+    {
+      "id": "test_0078",
+      "question": "请判断“石族”属于人物、势力、地点、异火、丹药、斗技或功法，还是物品或体质。",
+      "gold_answer": "势力。",
+      "generation_method": "category_full_choice",
+      "concept_category": "势力",
+      "answer": "势力。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": true,
+      "contains_gold": true
+    },
+    {
+      "id": "test_0079",
+      "question": "“石族”是势力吗？",
+      "gold_answer": "是。",
+      "generation_method": "category_positive",
+      "concept_category": "势力",
+      "answer": "不是，“石门”属于势力。",
+      "generated_token_count": 12,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0080",
+      "question": "“石族”是异火吗？",
+      "gold_answer": "不是，“石族”属于势力。",
+      "generation_method": "category_negative_correction",
+      "concept_category": "势力",
+      "answer": "不是，“虚古帝圣”属于势力。",
+      "generated_token_count": 14,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0081",
+      "question": "从选项中选择“石族”的类别。选项：丹药、人物、势力、物品或体质",
+      "gold_answer": "势力。",
+      "generation_method": "category_multiple_choice",
+      "concept_category": "势力",
+      "answer": "势力。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": true,
+      "contains_gold": true
+    },
+    {
+      "id": "test_0082",
+      "question": "请用一句话说明“石族”的类型。",
+      "gold_answer": "“石族”属于势力。",
+      "generation_method": "category_explanation",
+      "concept_category": "势力",
+      "answer": "“古树”属于势力。",
+      "generated_token_count": 9,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0083",
+      "question": "“天焚炼气塔”属于什么类别？",
+      "gold_answer": "地点。",
+      "generation_method": "category_direct",
+      "concept_category": "地点",
+      "answer": "异火。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0084",
+      "question": "请判断“天焚炼气塔”属于人物、势力、地点、异火、丹药、斗技或功法，还是物品或体质。",
+      "gold_answer": "地点。",
+      "generation_method": "category_full_choice",
+      "concept_category": "地点",
+      "answer": "异火。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0085",
+      "question": "“天焚炼气塔”是地点吗？",
+      "gold_answer": "是。",
+      "generation_method": "category_positive",
+      "concept_category": "地点",
+      "answer": "是。",
+      "generated_token_count": 2,
+      "stopped_on_eos": true,
+      "exact_match": true,
+      "contains_gold": true
+    },
+    {
+      "id": "test_0086",
+      "question": "“天焚炼气塔”是人物吗？",
+      "gold_answer": "不是，“天焚炼气塔”属于地点。",
+      "generation_method": "category_negative_correction",
+      "concept_category": "地点",
+      "answer": "不是，“焚炎”属于势力。",
+      "generated_token_count": 12,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0087",
+      "question": "从选项中选择“天焚炼气塔”的类别。选项：物品或体质、丹药、势力、地点",
+      "gold_answer": "地点。",
+      "generation_method": "category_multiple_choice",
+      "concept_category": "地点",
+      "answer": "地点。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": true,
+      "contains_gold": true
+    },
+    {
+      "id": "test_0088",
+      "question": "请用一句话说明“天焚炼气塔”的类型。",
+      "gold_answer": "“天焚炼气塔”属于地点。",
+      "generation_method": "category_explanation",
+      "concept_category": "地点",
+      "answer": "“天火三玄变”属于异火。",
+      "generated_token_count": 12,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0089",
+      "question": "“黑角域”属于什么类别？",
+      "gold_answer": "地点。",
+      "generation_method": "category_direct",
+      "concept_category": "地点",
+      "answer": "地点。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": true,
+      "contains_gold": true
+    },
+    {
+      "id": "test_0090",
+      "question": "请判断“黑角域”属于人物、势力、地点、异火、丹药、斗技或功法，还是物品或体质。",
+      "gold_answer": "地点。",
+      "generation_method": "category_full_choice",
+      "concept_category": "地点",
+      "answer": "地点。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": true,
+      "contains_gold": true
+    },
+    {
+      "id": "test_0091",
+      "question": "“黑角域”是地点吗？",
+      "gold_answer": "是。",
+      "generation_method": "category_positive",
+      "concept_category": "地点",
+      "answer": "不是，“黑山脉”属于地点。",
+      "generated_token_count": 13,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0092",
+      "question": "“黑角域”是人物吗？",
+      "gold_answer": "不是，“黑角域”属于地点。",
+      "generation_method": "category_negative_correction",
+      "concept_category": "地点",
+      "answer": "是。",
+      "generated_token_count": 2,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0093",
+      "question": "从选项中选择“黑角域”的类别。选项：丹药、地点、势力、斗技或功法",
+      "gold_answer": "地点。",
+      "generation_method": "category_multiple_choice",
+      "concept_category": "地点",
+      "answer": "地点。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": true,
+      "contains_gold": true
+    },
+    {
+      "id": "test_0094",
+      "question": "请用一句话说明“黑角域”的类型。",
+      "gold_answer": "“黑角域”属于地点。",
+      "generation_method": "category_explanation",
+      "concept_category": "地点",
+      "answer": "“万剑”属于地点。",
+      "generated_token_count": 9,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0095",
+      "question": "“玄重尺”属于什么类别？",
+      "gold_answer": "物品或体质。",
+      "generation_method": "category_direct",
+      "concept_category": "物品或体质",
+      "answer": "人物。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0096",
+      "question": "请判断“玄重尺”属于人物、势力、地点、异火、丹药、斗技或功法，还是物品或体质。",
+      "gold_answer": "物品或体质。",
+      "generation_method": "category_full_choice",
+      "concept_category": "物品或体质",
+      "answer": "物品或体质。",
+      "generated_token_count": 6,
+      "stopped_on_eos": true,
+      "exact_match": true,
+      "contains_gold": true
+    },
+    {
+      "id": "test_0097",
+      "question": "“玄重尺”是物品或体质吗？",
+      "gold_answer": "是。",
+      "generation_method": "category_positive",
+      "concept_category": "物品或体质",
+      "answer": "不是，“玄空子”属于人物。",
+      "generated_token_count": 13,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0098",
+      "question": "“玄重尺”是丹药吗？",
+      "gold_answer": "不是，“玄重尺”属于物品或体质。",
+      "generation_method": "category_negative_correction",
+      "concept_category": "物品或体质",
+      "answer": "是。",
+      "generated_token_count": 2,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0099",
+      "question": "从选项中选择“玄重尺”的类别。选项：地点、物品或体质、异火、人物",
+      "gold_answer": "物品或体质。",
+      "generation_method": "category_multiple_choice",
+      "concept_category": "物品或体质",
+      "answer": "地点。",
+      "generated_token_count": 3,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    },
+    {
+      "id": "test_0100",
+      "question": "请用一句话说明“玄重尺”的类型。",
+      "gold_answer": "“玄重尺”属于物品或体质。",
+      "generation_method": "category_explanation",
+      "concept_category": "物品或体质",
+      "answer": "“玄黄泉指”属于斗技或功法。",
+      "generated_token_count": 14,
+      "stopped_on_eos": true,
+      "exact_match": false,
+      "contains_gold": false
+    }
+  ]
+}

@@ -1,0 +1,2895 @@
+{
+  "milestone": "M003i",
+  "generation_config": {
+    "fixed_prompt_max_new_tokens": 30,
+    "held_out_test_max_new_tokens": 80,
+    "temperature": 0.8,
+    "top_k": 20,
+    "seed": 42
+  },
+  "models": {
+    "pre_sft": {
+      "path": "checkpoints/archive/sft_stage1_init_pre_sft.pt",
+      "sha256": "7c1be4e336365a1dd407da5705a7bd0346df315798d35256de98fdbe74a8dcf7",
+      "sft_steps": 0
+    },
+    "old_best_300": {
+      "path": "checkpoints/sft_hq1000_step800_best.pt",
+      "sha256": "05a83bf406d8b8f6583ef294eef8cc6055a0143e9833820216de6ea4014fd5d9",
+      "sft_steps": 300
+    },
+    "balanced_best_400": {
+      "path": "checkpoints/sft_balanced_v3_step800_best.pt",
+      "sha256": "a28de00127cd1d4d37d361d3fdc9e63b7b5a25ae2c4bdc2b2181ed0553a6d2a9",
+      "sft_steps": 400
+    },
+    "balanced_final_800": {
+      "path": "checkpoints/sft_balanced_v3_step800.pt",
+      "sha256": "0bc002de0116762c2531b5d7ae20e242029b2b58fabbf857b459cebf93f22ea2",
+      "sft_steps": 800
+    }
+  },
+  "prompt10_comparisons": [
+    {
+      "question": "今天天气怎么样",
+      "pre_sft": {
+        "answer": "不知，这般大事，是一年，便是与人有起，而且，若是萧炎与之交谈",
+        "generated_token_count": 30,
+        "stopped_on_eos": false
+      },
+      "old_best_300": {
+        "answer": "势力。",
+        "generated_token_count": 3,
+        "stopped_on_eos": true
+      },
+      "balanced_best_400": {
+        "answer": "请提供原文和天气，我才能进行明理”也是无法确。",
+        "generated_token_count": 23,
+        "stopped_on_eos": true
+      },
+      "balanced_final_800": {
+        "answer": "好的一种资料。",
+        "generated_token_count": 7,
+        "stopped_on_eos": true
+      }
+    },
+    {
+      "question": "请给我写一句开头",
+      "pre_sft": {
+        "answer": "。”\n\n    “呵呵，这么多年都是那家伙。”萧炎苦笑了一声",
+        "generated_token_count": 30,
+        "stopped_on_eos": false
+      },
+      "old_best_300": {
+        "answer": "魔兽的魔兽。",
+        "generated_token_count": 6,
+        "stopped_on_eos": true
+      },
+      "balanced_best_400": {
+        "answer": "可以，我会令成为大陆的最大陆”属于势力。",
+        "generated_token_count": 20,
+        "stopped_on_eos": true
+      },
+      "balanced_final_800": {
+        "answer": "，我可以从那里重新解释。",
+        "generated_token_count": 12,
+        "stopped_on_eos": true
+      }
+    },
+    {
+      "question": "萧炎现在在哪里",
+      "pre_sft": {
+        "answer": "生的那些残余的“萧炎”可惜，这种感觉，可是相当的难以，这家伙",
+        "generated_token_count": 30,
+        "stopped_on_eos": false
+      },
+      "old_best_300": {
+        "answer": "是一个月时间。",
+        "generated_token_count": 7,
+        "stopped_on_eos": true
+      },
+      "balanced_best_400": {
+        "answer": "不可以，我才能进行内。",
+        "generated_token_count": 11,
+        "stopped_on_eos": true
+      },
+      "balanced_final_800": {
+        "answer": "不大的地方，也只能不应从萧炎手中飞行斗技。",
+        "generated_token_count": 21,
+        "stopped_on_eos": true
+      }
+    },
+    {
+      "question": "这本书接下来会发生什么",
+      "pre_sft": {
+        "answer": "。”萧炎摇了摇头。然后目光扫了扫。\n\n    这个家伙的确是",
+        "generated_token_count": 30,
+        "stopped_on_eos": false
+      },
+      "old_best_300": {
+        "answer": "地灵动。",
+        "generated_token_count": 4,
+        "stopped_on_eos": true
+      },
+      "balanced_best_400": {
+        "answer": "请动荡的目标。",
+        "generated_token_count": 7,
+        "stopped_on_eos": true
+      },
+      "balanced_final_800": {
+        "answer": "请提供需要解释的具体词语。",
+        "generated_token_count": 13,
+        "stopped_on_eos": true
+      }
+    },
+    {
+      "question": "萧炎被称为什么",
+      "pre_sft": {
+        "answer": "藏的东西，将之后，萧炎的确是从中取过一个颇为稀薄的心。\n\n ",
+        "generated_token_count": 30,
+        "stopped_on_eos": false
+      },
+      "old_best_300": {
+        "answer": "一丝危险的感觉。",
+        "generated_token_count": 8,
+        "stopped_on_eos": true
+      },
+      "balanced_best_400": {
+        "answer": "现有模型的斗气大斗技。",
+        "generated_token_count": 11,
+        "stopped_on_eos": true
+      },
+      "balanced_final_800": {
+        "answer": "好的一种异火。",
+        "generated_token_count": 7,
+        "stopped_on_eos": true
+      }
+    },
+    {
+      "question": "我今天有点累",
+      "pre_sft": {
+        "answer": "，日后你，你们不会有何办？”萧炎微微点头，道。\n\n    “",
+        "generated_token_count": 30,
+        "stopped_on_eos": false
+      },
+      "old_best_300": {
+        "answer": "二十九章节求。",
+        "generated_token_count": 7,
+        "stopped_on_eos": true
+      },
+      "balanced_best_400": {
+        "answer": "可以，你先说明只能进行概括。",
+        "generated_token_count": 14,
+        "stopped_on_eos": true
+      },
+      "balanced_final_800": {
+        "answer": "可以，请提供需要整理的内容。",
+        "generated_token_count": 14,
+        "stopped_on_eos": true
+      }
+    },
+    {
+      "question": "请用三句话概括这段剧情",
+      "pre_sft": {
+        "answer": "。”海波东点了点头，然后转头对着萧炎拱了拱手。然后将之后缓缓",
+        "generated_token_count": 30,
+        "stopped_on_eos": false
+      },
+      "old_best_300": {
+        "answer": "几分，让斗技。",
+        "generated_token_count": 7,
+        "stopped_on_eos": true
+      },
+      "balanced_best_400": {
+        "answer": "请，我才能够进行概括的空间虫洞。",
+        "generated_token_count": 16,
+        "stopped_on_eos": true
+      },
+      "balanced_final_800": {
+        "answer": "的能量，则正确认当前时间，再安排小步骤和复习时间。",
+        "generated_token_count": 25,
+        "stopped_on_eos": true
+      }
+    },
+    {
+      "question": "斗气大陆最强人物是谁",
+      "pre_sft": {
+        "answer": "了，但不过这种年龄还有着不小的实力，他们是没有任人的力量，而",
+        "generated_token_count": 30,
+        "stopped_on_eos": false
+      },
+      "old_best_300": {
+        "answer": "一人物。",
+        "generated_token_count": 4,
+        "stopped_on_eos": true
+      },
+      "balanced_best_400": {
+        "answer": "请提供原文的斗技。",
+        "generated_token_count": 9,
+        "stopped_on_eos": true
+      },
+      "balanced_final_800": {
+        "answer": "上一次。",
+        "generated_token_count": 4,
+        "stopped_on_eos": true
+      }
+    },
+    {
+      "question": "小猫看到雨会怎样",
+      "pre_sft": {
+        "answer": "，他不过这般心中，却是没有半点动，这种时候，那种时候，在萧炎",
+        "generated_token_count": 30,
+        "stopped_on_eos": false
+      },
+      "old_best_300": {
+        "answer": "出现在这一次回复斗之气。",
+        "generated_token_count": 12,
+        "stopped_on_eos": true
+      },
+      "balanced_best_400": {
+        "answer": "好奇怪，无法模糊的确。",
+        "generated_token_count": 11,
+        "stopped_on_eos": true
+      },
+      "balanced_final_800": {
+        "answer": "一见到这种时兽，我才能进行概括。",
+        "generated_token_count": 16,
+        "stopped_on_eos": true
+      }
+    },
+    {
+      "question": "你觉得主角会复仇吗",
+      "pre_sft": {
+        "answer": "”轻声道。\n\n    “嗯。”萧炎微微点了点头，旋即道：“我",
+        "generated_token_count": 30,
+        "stopped_on_eos": false
+      },
+      "old_best_300": {
+        "answer": "出声冷漠与之前的一声。",
+        "generated_token_count": 11,
+        "stopped_on_eos": true
+      },
+      "balanced_best_400": {
+        "answer": "明显是有资料不及好一起。",
+        "generated_token_count": 12,
+        "stopped_on_eos": true
+      },
+      "balanced_final_800": {
+        "answer": "Lokeng把Token编号转换成可学习的向量。",
+        "generated_token_count": 24,
+        "stopped_on_eos": true
+      }
+    }
+  ],
+  "held_out_test_models": [
+    "old_best_300",
+    "balanced_best_400"
+  ],
+  "held_out_test_consumed_after_model_selection": true,
+  "held_out_test_evaluations": {
+    "old_best_300": {
+      "metrics": {
+        "overall": {
+          "count": 100,
+          "exact_match": 0,
+          "contains_gold": 1,
+          "stopped_on_eos": 100
+        },
+        "by_task_family": {
+          "concept_identity": {
+            "count": 15,
+            "exact_match": 0,
+            "contains_gold": 1,
+            "stopped_on_eos": 15
+          },
+          "conversation": {
+            "count": 15,
+            "exact_match": 0,
+            "contains_gold": 0,
+            "stopped_on_eos": 15
+          },
+          "explicit_instruction": {
+            "count": 25,
+            "exact_match": 0,
+            "contains_gold": 0,
+            "stopped_on_eos": 25
+          },
+          "fact_verification": {
+            "count": 15,
+            "exact_match": 0,
+            "contains_gold": 0,
+            "stopped_on_eos": 15
+          },
+          "grounded_fact": {
+            "count": 10,
+            "exact_match": 0,
+            "contains_gold": 0,
+            "stopped_on_eos": 10
+          },
+          "honest_unknown": {
+            "count": 20,
+            "exact_match": 0,
+            "contains_gold": 0,
+            "stopped_on_eos": 20
+          }
+        },
+        "by_generation_method": {
+          "concept_identity_natural": {
+            "count": 15,
+            "exact_match": 0,
+            "contains_gold": 1,
+            "stopped_on_eos": 15
+          },
+          "curated_conversation": {
+            "count": 15,
+            "exact_match": 0,
+            "contains_gold": 0,
+            "stopped_on_eos": 15
+          },
+          "fact_verification_negative": {
+            "count": 10,
+            "exact_match": 0,
+            "contains_gold": 0,
+            "stopped_on_eos": 10
+          },
+          "fact_verification_positive": {
+            "count": 5,
+            "exact_match": 0,
+            "contains_gold": 0,
+            "stopped_on_eos": 5
+          },
+          "grounded_fact_direct_instruction": {
+            "count": 5,
+            "exact_match": 0,
+            "contains_gold": 0,
+            "stopped_on_eos": 5
+          },
+          "grounded_fact_original": {
+            "count": 5,
+            "exact_match": 0,
+            "contains_gold": 0,
+            "stopped_on_eos": 5
+          },
+          "honest_unknown_absent_entity": {
+            "count": 20,
+            "exact_match": 0,
+            "contains_gold": 0,
+            "stopped_on_eos": 20
+          },
+          "instruction_compare_different": {
+            "count": 5,
+            "exact_match": 0,
+            "contains_gold": 0,
+            "stopped_on_eos": 5
+          },
+          "instruction_compare_same": {
+            "count": 5,
+            "exact_match": 0,
+            "contains_gold": 0,
+            "stopped_on_eos": 5
+          },
+          "instruction_exact_copy": {
+            "count": 15,
+            "exact_match": 0,
+            "contains_gold": 0,
+            "stopped_on_eos": 15
+          }
+        }
+      },
+      "results": [
+        {
+          "id": "test_v3_0001",
+          "question": "陨落心炎在异火榜排名第几？",
+          "gold_answer": "第十四。",
+          "task_family": "grounded_fact",
+          "generation_method": "grounded_fact_original",
+          "answer": "异火。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0002",
+          "question": "请直接回答这个问题：陨落心炎在异火榜排名第几？",
+          "gold_answer": "第十四。",
+          "task_family": "grounded_fact",
+          "generation_method": "grounded_fact_direct_instruction",
+          "answer": "异火。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0003",
+          "question": "青莲地心火在异火榜排名第几？",
+          "gold_answer": "第十九。",
+          "task_family": "grounded_fact",
+          "generation_method": "grounded_fact_original",
+          "answer": "一种异火。",
+          "generated_token_count": 5,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0004",
+          "question": "请直接回答这个问题：青莲地心火在异火榜排名第几？",
+          "gold_answer": "第十九。",
+          "task_family": "grounded_fact",
+          "generation_method": "grounded_fact_direct_instruction",
+          "answer": "异火。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0005",
+          "question": "萧炎的第一种本源异火是什么？",
+          "gold_answer": "青莲地心火。",
+          "task_family": "grounded_fact",
+          "generation_method": "grounded_fact_original",
+          "answer": "是。",
+          "generated_token_count": 2,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0006",
+          "question": "请直接回答这个问题：萧炎的第一种本源异火是什么？",
+          "gold_answer": "青莲地心火。",
+          "task_family": "grounded_fact",
+          "generation_method": "grounded_fact_direct_instruction",
+          "answer": "异火。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0007",
+          "question": "药尘的称号是什么？",
+          "gold_answer": "药尊者。",
+          "task_family": "grounded_fact",
+          "generation_method": "grounded_fact_original",
+          "answer": "丹药。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0008",
+          "question": "请直接回答这个问题：药尘的称号是什么？",
+          "gold_answer": "药尊者。",
+          "task_family": "grounded_fact",
+          "generation_method": "grounded_fact_direct_instruction",
+          "answer": "炼药师。",
+          "generated_token_count": 4,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0009",
+          "question": "当时加玛帝国最强的人是谁？",
+          "gold_answer": "云山。",
+          "task_family": "grounded_fact",
+          "generation_method": "grounded_fact_original",
+          "answer": "不是，“皇极崩”属于地点。",
+          "generated_token_count": 13,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0010",
+          "question": "请直接回答这个问题：当时加玛帝国最强的人是谁？",
+          "gold_answer": "云山。",
+          "task_family": "grounded_fact",
+          "generation_method": "grounded_fact_direct_instruction",
+          "answer": "个大势力。",
+          "generated_token_count": 5,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0011",
+          "question": "根据现有资料，对问题“陨落心炎在异火榜排名第几？”回答“第十四。”是否正确？",
+          "gold_answer": "正确。",
+          "task_family": "fact_verification",
+          "generation_method": "fact_verification_positive",
+          "answer": "异火。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0012",
+          "question": "根据现有资料，对问题“青莲地心火在异火榜排名第几？”回答“第十九。”是否正确？",
+          "gold_answer": "正确。",
+          "task_family": "fact_verification",
+          "generation_method": "fact_verification_positive",
+          "answer": "异火。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0013",
+          "question": "根据现有资料，对问题“萧炎的第一种本源异火是什么？”回答“青莲地心火。”是否正确？",
+          "gold_answer": "正确。",
+          "task_family": "fact_verification",
+          "generation_method": "fact_verification_positive",
+          "answer": "异火。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0014",
+          "question": "根据现有资料，对问题“药尘的称号是什么？”回答“药尊者。”是否正确？",
+          "gold_answer": "正确。",
+          "task_family": "fact_verification",
+          "generation_method": "fact_verification_positive",
+          "answer": "人物。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0015",
+          "question": "根据现有资料，对问题“当时加玛帝国最强的人是谁？”回答“云山。”是否正确？",
+          "gold_answer": "正确。",
+          "task_family": "fact_verification",
+          "generation_method": "fact_verification_positive",
+          "answer": "地点。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0016",
+          "question": "根据现有资料，对问题“陨落心炎在异火榜排名第几？”回答“云山。”是否正确？",
+          "gold_answer": "不正确。",
+          "task_family": "fact_verification",
+          "generation_method": "fact_verification_negative",
+          "answer": "地点。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0017",
+          "question": "根据现有资料，对问题“陨落心炎在异火榜排名第几？”回答“药尊者。”是否正确？",
+          "gold_answer": "不正确。",
+          "task_family": "fact_verification",
+          "generation_method": "fact_verification_negative",
+          "answer": "不是，“焚炎谷”属于势力。",
+          "generated_token_count": 13,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0018",
+          "question": "根据现有资料，对问题“青莲地心火在异火榜排名第几？”回答“药尊者。”是否正确？",
+          "gold_answer": "不正确。",
+          "task_family": "fact_verification",
+          "generation_method": "fact_verification_negative",
+          "answer": "异火。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0019",
+          "question": "根据现有资料，对问题“青莲地心火在异火榜排名第几？”回答“云山。”是否正确？",
+          "gold_answer": "不正确。",
+          "task_family": "fact_verification",
+          "generation_method": "fact_verification_negative",
+          "answer": "地点。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0020",
+          "question": "根据现有资料，对问题“萧炎的第一种本源异火是什么？”回答“药尊者。”是否正确？",
+          "gold_answer": "不正确。",
+          "task_family": "fact_verification",
+          "generation_method": "fact_verification_negative",
+          "answer": "人物。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0021",
+          "question": "根据现有资料，对问题“萧炎的第一种本源异火是什么？”回答“云山。”是否正确？",
+          "gold_answer": "不正确。",
+          "task_family": "fact_verification",
+          "generation_method": "fact_verification_negative",
+          "answer": "是，“云山”属于人物。",
+          "generated_token_count": 11,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0022",
+          "question": "根据现有资料，对问题“药尘的称号是什么？”回答“青莲地心火。”是否正确？",
+          "gold_answer": "不正确。",
+          "task_family": "fact_verification",
+          "generation_method": "fact_verification_negative",
+          "answer": "异火。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0023",
+          "question": "根据现有资料，对问题“药尘的称号是什么？”回答“云山。”是否正确？",
+          "gold_answer": "不正确。",
+          "task_family": "fact_verification",
+          "generation_method": "fact_verification_negative",
+          "answer": "种异火。",
+          "generated_token_count": 4,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0024",
+          "question": "根据现有资料，对问题“当时加玛帝国最强的人是谁？”回答“第十四。”是否正确？",
+          "gold_answer": "不正确。",
+          "task_family": "fact_verification",
+          "generation_method": "fact_verification_negative",
+          "answer": "地点。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0025",
+          "question": "根据现有资料，对问题“当时加玛帝国最强的人是谁？”回答“第十九。”是否正确？",
+          "gold_answer": "不正确。",
+          "task_family": "fact_verification",
+          "generation_method": "fact_verification_negative",
+          "answer": "地点。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0026",
+          "question": "在这部小说中，“古帝印”是什么？",
+          "gold_answer": "“古帝印”属于斗技或功法。",
+          "task_family": "concept_identity",
+          "generation_method": "concept_identity_natural",
+          "answer": "地点。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0027",
+          "question": "在这部小说中，“石族”是什么？",
+          "gold_answer": "“石族”属于势力。",
+          "task_family": "concept_identity",
+          "generation_method": "concept_identity_natural",
+          "answer": "势力。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0028",
+          "question": "在这部小说中，“烛坤”是什么？",
+          "gold_answer": "“烛坤”属于人物。",
+          "task_family": "concept_identity",
+          "generation_method": "concept_identity_natural",
+          "answer": "不是，“枫城”属于地点。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0029",
+          "question": "在这部小说中，“海心焰”是什么？",
+          "gold_answer": "“海心焰”属于异火。",
+          "task_family": "concept_identity",
+          "generation_method": "concept_identity_natural",
+          "answer": "不是，“青莲”属于异火。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0030",
+          "question": "在这部小说中，“魂天帝”是什么？",
+          "gold_answer": "“魂天帝”属于人物。",
+          "task_family": "concept_identity",
+          "generation_method": "concept_identity_natural",
+          "answer": "不是，“菩提古树”属于物品或体质。",
+          "generated_token_count": 17,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0031",
+          "question": "在这部小说中，“天妖凰族”是什么？",
+          "gold_answer": "“天妖凰族”属于势力。",
+          "task_family": "concept_identity",
+          "generation_method": "concept_identity_natural",
+          "answer": "地点。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0032",
+          "question": "在这部小说中，“焰分噬浪尺”是什么？",
+          "gold_answer": "“焰分噬浪尺”属于斗技或功法。",
+          "task_family": "concept_identity",
+          "generation_method": "concept_identity_natural",
+          "answer": "物品或体质。",
+          "generated_token_count": 6,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0033",
+          "question": "在这部小说中，“雷尊者”是什么？",
+          "gold_answer": "“雷尊者”属于人物。",
+          "task_family": "concept_identity",
+          "generation_method": "concept_identity_natural",
+          "answer": "不是，“雷尊者”属于人物。",
+          "generated_token_count": 13,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0034",
+          "question": "在这部小说中，“天焚炼气塔”是什么？",
+          "gold_answer": "“天焚炼气塔”属于地点。",
+          "task_family": "concept_identity",
+          "generation_method": "concept_identity_natural",
+          "answer": "是。",
+          "generated_token_count": 2,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0035",
+          "question": "在这部小说中，“慕骨老人”是什么？",
+          "gold_answer": "“慕骨老人”属于人物。",
+          "task_family": "concept_identity",
+          "generation_method": "concept_identity_natural",
+          "answer": "“亡魂山脉”属于地点。",
+          "generated_token_count": 11,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0036",
+          "question": "在这部小说中，“黑角域”是什么？",
+          "gold_answer": "“黑角域”属于地点。",
+          "task_family": "concept_identity",
+          "generation_method": "concept_identity_natural",
+          "answer": "地点。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0037",
+          "question": "在这部小说中，“玄重尺”是什么？",
+          "gold_answer": "“玄重尺”属于物品或体质。",
+          "task_family": "concept_identity",
+          "generation_method": "concept_identity_natural",
+          "answer": "还是。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0038",
+          "question": "在这部小说中，“韩家”是什么？",
+          "gold_answer": "“韩家”属于势力。",
+          "task_family": "concept_identity",
+          "generation_method": "concept_identity_natural",
+          "answer": "势力。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0039",
+          "question": "在这部小说中，“八荒破灭焱”是什么？",
+          "gold_answer": "“八荒破灭焱”属于异火。",
+          "task_family": "concept_identity",
+          "generation_method": "concept_identity_natural",
+          "answer": "是。",
+          "generated_token_count": 2,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0040",
+          "question": "在这部小说中，“洗髓寒灵液”是什么？",
+          "gold_answer": "“洗髓寒灵液”属于丹药。",
+          "task_family": "concept_identity",
+          "generation_method": "concept_identity_natural",
+          "answer": "是。",
+          "generated_token_count": 2,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0041",
+          "question": "请原样重复这个名称：“古帝印”。",
+          "gold_answer": "古帝印",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_exact_copy",
+          "answer": "“龙力”属于斗技或功法。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0042",
+          "question": "请原样重复这个名称：“石族”。",
+          "gold_answer": "石族",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_exact_copy",
+          "answer": "“古族”属于势力。",
+          "generated_token_count": 9,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0043",
+          "question": "请原样重复这个名称：“烛坤”。",
+          "gold_answer": "烛坤",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_exact_copy",
+          "answer": "“萧炎”属于人物。",
+          "generated_token_count": 9,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0044",
+          "question": "请原样重复这个名称：“海心焰”。",
+          "gold_answer": "海心焰",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_exact_copy",
+          "answer": "异火。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0045",
+          "question": "请原样重复这个名称：“魂天帝”。",
+          "gold_answer": "魂天帝",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_exact_copy",
+          "answer": "“太虚古帝血”属于势力。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0046",
+          "question": "请原样重复这个名称：“天妖凰族”。",
+          "gold_answer": "天妖凰族",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_exact_copy",
+          "answer": "族”属于势力。",
+          "generated_token_count": 7,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0047",
+          "question": "请原样重复这个名称：“焰分噬浪尺”。",
+          "gold_answer": "焰分噬浪尺",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_exact_copy",
+          "answer": "地点。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0048",
+          "question": "请原样重复这个名称：“雷尊者”。",
+          "gold_answer": "雷尊者",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_exact_copy",
+          "answer": "“雷子”属于人物。",
+          "generated_token_count": 9,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0049",
+          "question": "请原样重复这个名称：“天焚炼气塔”。",
+          "gold_answer": "天焚炼气塔",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_exact_copy",
+          "answer": "异火。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0050",
+          "question": "请原样重复这个名称：“慕骨老人”。",
+          "gold_answer": "慕骨老人",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_exact_copy",
+          "answer": "“老者”属于人物。",
+          "generated_token_count": 9,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0051",
+          "question": "请原样重复这个名称：“黑角域”。",
+          "gold_answer": "黑角域",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_exact_copy",
+          "answer": "地点。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0052",
+          "question": "请原样重复这个名称：“玄重尺”。",
+          "gold_answer": "玄重尺",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_exact_copy",
+          "answer": "“龙力。",
+          "generated_token_count": 4,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0053",
+          "question": "请原样重复这个名称：“韩家”。",
+          "gold_answer": "韩家",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_exact_copy",
+          "answer": "“韩枫”属于势力。",
+          "generated_token_count": 9,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0054",
+          "question": "请原样重复这个名称：“八荒破灭焱”。",
+          "gold_answer": "八荒破灭焱",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_exact_copy",
+          "answer": "“金刚”属于物品或体质。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0055",
+          "question": "请原样重复这个名称：“洗髓寒灵液”。",
+          "gold_answer": "洗髓寒灵液",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_exact_copy",
+          "answer": "“菩提古树”属于灵物品或体质。",
+          "generated_token_count": 15,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0056",
+          "question": "“玄重尺”和“玄重尺”是否完全相同？",
+          "gold_answer": "相同。",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_compare_same",
+          "answer": "不是，“玄空”属于斗技或功法。",
+          "generated_token_count": 15,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0057",
+          "question": "“玄重尺”和“焰分噬浪尺”是否完全相同？",
+          "gold_answer": "不相同。",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_compare_different",
+          "answer": "地点。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0058",
+          "question": "“焰分噬浪尺”和“焰分噬浪尺”是否完全相同？",
+          "gold_answer": "相同。",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_compare_same",
+          "answer": "不是，“陨落天炎”属于异火”属于异火。",
+          "generated_token_count": 19,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0059",
+          "question": "“焰分噬浪尺”和“雷尊者”是否完全相同？",
+          "gold_answer": "不相同。",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_compare_different",
+          "answer": "是。",
+          "generated_token_count": 2,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0060",
+          "question": "“雷尊者”和“雷尊者”是否完全相同？",
+          "gold_answer": "相同。",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_compare_same",
+          "answer": "是。",
+          "generated_token_count": 2,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0061",
+          "question": "“雷尊者”和“魂天帝”是否完全相同？",
+          "gold_answer": "不相同。",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_compare_different",
+          "answer": "是，“雷子”属于人物。",
+          "generated_token_count": 11,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0062",
+          "question": "“魂天帝”和“魂天帝”是否完全相同？",
+          "gold_answer": "相同。",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_compare_same",
+          "answer": "是。",
+          "generated_token_count": 2,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0063",
+          "question": "“魂天帝”和“烛坤”是否完全相同？",
+          "gold_answer": "不相同。",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_compare_different",
+          "answer": "是。",
+          "generated_token_count": 2,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0064",
+          "question": "“烛坤”和“烛坤”是否完全相同？",
+          "gold_answer": "相同。",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_compare_same",
+          "answer": "是。",
+          "generated_token_count": 2,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0065",
+          "question": "“烛坤”和“玄重尺”是否完全相同？",
+          "gold_answer": "不相同。",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_compare_different",
+          "answer": "是。",
+          "generated_token_count": 2,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0066",
+          "question": "不知道答案时应该怎么办？",
+          "gold_answer": "资料不足时应该明确说不知道，而不是编造答案。",
+          "task_family": "conversation",
+          "generation_method": "curated_conversation",
+          "answer": "一点。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0067",
+          "question": "模型为什么不能随意猜测？",
+          "gold_answer": "资料不足时应该明确说不知道，而不是编造答案。",
+          "task_family": "conversation",
+          "generation_method": "curated_conversation",
+          "answer": "不是，“三千焱炎”属于异火。",
+          "generated_token_count": 14,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0068",
+          "question": "没有证据时应该如何回答？",
+          "gold_answer": "资料不足时应该明确说不知道，而不是编造答案。",
+          "task_family": "conversation",
+          "generation_method": "curated_conversation",
+          "answer": "成为完整的两人。",
+          "generated_token_count": 8,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0069",
+          "question": "训练数据为什么要注意版权？",
+          "gold_answer": "使用训练资料前应确认授权范围并保留来源记录。",
+          "task_family": "conversation",
+          "generation_method": "curated_conversation",
+          "answer": "不能，“吸掌”属于异火。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0070",
+          "question": "使用文本训练前要确认什么？",
+          "gold_answer": "使用训练资料前应确认授权范围并保留来源记录。",
+          "task_family": "conversation",
+          "generation_method": "curated_conversation",
+          "answer": "斗气大陆炼药师。",
+          "generated_token_count": 8,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0071",
+          "question": "怎样合规使用训练资料？",
+          "gold_answer": "使用训练资料前应确认授权范围并保留来源记录。",
+          "task_family": "conversation",
+          "generation_method": "curated_conversation",
+          "answer": "三位斗气大陆，炼药师的斗师。",
+          "generated_token_count": 14,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0072",
+          "question": "什么样的训练数据质量较高？",
+          "gold_answer": "高质量数据需要标签正确、任务平衡、来源清楚并通过验证。",
+          "task_family": "conversation",
+          "generation_method": "curated_conversation",
+          "answer": "异火。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0073",
+          "question": "构造数据集时要检查哪些方面？",
+          "gold_answer": "高质量数据需要标签正确、任务平衡、来源清楚并通过验证。",
+          "task_family": "conversation",
+          "generation_method": "curated_conversation",
+          "answer": "木的提炼。",
+          "generated_token_count": 5,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0074",
+          "question": "为什么不能只追求数据数量？",
+          "gold_answer": "高质量数据需要标签正确、任务平衡、来源清楚并通过验证。",
+          "task_family": "conversation",
+          "generation_method": "curated_conversation",
+          "answer": "异火。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0075",
+          "question": "怎样评价模型最终效果？",
+          "gold_answer": "应结合验证Loss、测试指标和固定样本判断模型效果。",
+          "task_family": "conversation",
+          "generation_method": "curated_conversation",
+          "answer": "不是，“青色火焰”属于异火。",
+          "generated_token_count": 14,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0076",
+          "question": "只看Loss足够吗？",
+          "gold_answer": "应结合验证Loss、测试指标和固定样本判断模型效果。",
+          "task_family": "conversation",
+          "generation_method": "curated_conversation",
+          "answer": "是。",
+          "generated_token_count": 2,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0077",
+          "question": "模型训练后应该检查什么？",
+          "gold_answer": "应结合验证Loss、测试指标和固定样本判断模型效果。",
+          "task_family": "conversation",
+          "generation_method": "curated_conversation",
+          "answer": "一条通体不断的从体内暴涌而出。\n\n    “焚炎谷”属于势力。",
+          "generated_token_count": 31,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0078",
+          "question": "执行危险操作前要做什么？",
+          "gold_answer": "高风险操作前应确认目标、范围和是否可以恢复。",
+          "task_family": "conversation",
+          "generation_method": "curated_conversation",
+          "answer": "人物。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0079",
+          "question": "怎样减少误删除的风险？",
+          "gold_answer": "高风险操作前应确认目标、范围和是否可以恢复。",
+          "task_family": "conversation",
+          "generation_method": "curated_conversation",
+          "answer": "不是，“萧炎”属于人物。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0080",
+          "question": "修改重要文件时应注意什么？",
+          "gold_answer": "高风险操作前应确认目标、范围和是否可以恢复。",
+          "task_family": "conversation",
+          "generation_method": "curated_conversation",
+          "answer": "在一起。",
+          "generated_token_count": 4,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0081",
+          "question": "“黑月谷”的创建者是谁？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "不是，“玄空中”属于势力。",
+          "generated_token_count": 13,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0082",
+          "question": "“黑月谷”位于什么地方？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "势力。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0083",
+          "question": "“黑月谷”在小说中有什么作用？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "名的强者。",
+          "generated_token_count": 5,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0084",
+          "question": "“玄月城”的创建者是谁？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "不是，“玄空间”属于地点。",
+          "generated_token_count": 13,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0085",
+          "question": "“玄月城”位于什么地方？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "地点。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0086",
+          "question": "“玄月城”在小说中有什么作用？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "地点。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0087",
+          "question": "“星风城”的创建者是谁？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "不是，“星陨阁”属于势力。",
+          "generated_token_count": 13,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0088",
+          "question": "“星风城”位于什么地方？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "地点。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0089",
+          "question": "“星风城”在小说中有什么作用？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "地点。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0090",
+          "question": "“白山宗”的创建者是谁？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "不是，“金石”属于人物。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0091",
+          "question": "“白山宗”位于什么地方？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "地点。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0092",
+          "question": "“白山宗”在小说中有什么作用？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "地点。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0093",
+          "question": "“黑灵谷”的创建者是谁？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "是。",
+          "generated_token_count": 2,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0094",
+          "question": "“黑灵谷”位于什么地方？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "势力。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0095",
+          "question": "“黑灵谷”在小说中有什么作用？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "的一些势力。",
+          "generated_token_count": 6,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0096",
+          "question": "“星月谷”的创建者是谁？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "不是，“星陨阁”属于势力。",
+          "generated_token_count": 13,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0097",
+          "question": "“星月谷”位于什么地方？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "势力。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0098",
+          "question": "“星月谷”在小说中有什么作用？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "地点。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0099",
+          "question": "“黑云谷”的创建者是谁？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "不是，“云山”属于势力。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0100",
+          "question": "“黑云谷”位于什么地方？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "地点。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        }
+      ]
+    },
+    "balanced_best_400": {
+      "metrics": {
+        "overall": {
+          "count": 100,
+          "exact_match": 38,
+          "contains_gold": 41,
+          "stopped_on_eos": 100
+        },
+        "by_task_family": {
+          "concept_identity": {
+            "count": 15,
+            "exact_match": 1,
+            "contains_gold": 1,
+            "stopped_on_eos": 15
+          },
+          "conversation": {
+            "count": 15,
+            "exact_match": 0,
+            "contains_gold": 0,
+            "stopped_on_eos": 15
+          },
+          "explicit_instruction": {
+            "count": 25,
+            "exact_match": 8,
+            "contains_gold": 10,
+            "stopped_on_eos": 25
+          },
+          "fact_verification": {
+            "count": 15,
+            "exact_match": 9,
+            "contains_gold": 10,
+            "stopped_on_eos": 15
+          },
+          "grounded_fact": {
+            "count": 10,
+            "exact_match": 0,
+            "contains_gold": 0,
+            "stopped_on_eos": 10
+          },
+          "honest_unknown": {
+            "count": 20,
+            "exact_match": 20,
+            "contains_gold": 20,
+            "stopped_on_eos": 20
+          }
+        },
+        "by_generation_method": {
+          "concept_identity_natural": {
+            "count": 15,
+            "exact_match": 1,
+            "contains_gold": 1,
+            "stopped_on_eos": 15
+          },
+          "curated_conversation": {
+            "count": 15,
+            "exact_match": 0,
+            "contains_gold": 0,
+            "stopped_on_eos": 15
+          },
+          "fact_verification_negative": {
+            "count": 10,
+            "exact_match": 5,
+            "contains_gold": 5,
+            "stopped_on_eos": 10
+          },
+          "fact_verification_positive": {
+            "count": 5,
+            "exact_match": 4,
+            "contains_gold": 5,
+            "stopped_on_eos": 5
+          },
+          "grounded_fact_direct_instruction": {
+            "count": 5,
+            "exact_match": 0,
+            "contains_gold": 0,
+            "stopped_on_eos": 5
+          },
+          "grounded_fact_original": {
+            "count": 5,
+            "exact_match": 0,
+            "contains_gold": 0,
+            "stopped_on_eos": 5
+          },
+          "honest_unknown_absent_entity": {
+            "count": 20,
+            "exact_match": 20,
+            "contains_gold": 20,
+            "stopped_on_eos": 20
+          },
+          "instruction_compare_different": {
+            "count": 5,
+            "exact_match": 3,
+            "contains_gold": 3,
+            "stopped_on_eos": 5
+          },
+          "instruction_compare_same": {
+            "count": 5,
+            "exact_match": 3,
+            "contains_gold": 5,
+            "stopped_on_eos": 5
+          },
+          "instruction_exact_copy": {
+            "count": 15,
+            "exact_match": 2,
+            "contains_gold": 2,
+            "stopped_on_eos": 15
+          }
+        }
+      },
+      "results": [
+        {
+          "id": "test_v3_0001",
+          "question": "陨落心炎在异火榜排名第几？",
+          "gold_answer": "第十四。",
+          "task_family": "grounded_fact",
+          "generation_method": "grounded_fact_original",
+          "answer": "八方才能够出现具体丅。",
+          "generated_token_count": 11,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0002",
+          "question": "请直接回答这个问题：陨落心炎在异火榜排名第几？",
+          "gold_answer": "第十四。",
+          "task_family": "grounded_fact",
+          "generation_method": "grounded_fact_direct_instruction",
+          "answer": "飞行斗师。",
+          "generated_token_count": 5,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0003",
+          "question": "青莲地心火在异火榜排名第几？",
+          "gold_answer": "第十九。",
+          "task_family": "grounded_fact",
+          "generation_method": "grounded_fact_original",
+          "answer": "二阶斗技。",
+          "generated_token_count": 5,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0004",
+          "question": "请直接回答这个问题：青莲地心火在异火榜排名第几？",
+          "gold_answer": "第十九。",
+          "task_family": "grounded_fact",
+          "generation_method": "grounded_fact_direct_instruction",
+          "answer": "九段斗之气。",
+          "generated_token_count": 6,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0005",
+          "question": "萧炎的第一种本源异火是什么？",
+          "gold_answer": "青莲地心火。",
+          "task_family": "grounded_fact",
+          "generation_method": "grounded_fact_original",
+          "answer": "只能继续改进”旋即一阵阵容。",
+          "generated_token_count": 14,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0006",
+          "question": "请直接回答这个问题：萧炎的第一种本源异火是什么？",
+          "gold_answer": "青莲地心火。",
+          "task_family": "grounded_fact",
+          "generation_method": "grounded_fact_direct_instruction",
+          "answer": "只能进行最重要的火焰。",
+          "generated_token_count": 11,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0007",
+          "question": "药尘的称号是什么？",
+          "gold_answer": "药尊者。",
+          "task_family": "grounded_fact",
+          "generation_method": "grounded_fact_original",
+          "answer": "药老的灵魂感知力。",
+          "generated_token_count": 9,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0008",
+          "question": "请直接回答这个问题：药尘的称号是什么？",
+          "gold_answer": "药尊者。",
+          "task_family": "grounded_fact",
+          "generation_method": "grounded_fact_direct_instruction",
+          "answer": "药尘。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0009",
+          "question": "当时加玛帝国最强的人是谁？",
+          "gold_answer": "云山。",
+          "task_family": "grounded_fact",
+          "generation_method": "grounded_fact_original",
+          "answer": "同时一下，无法确定。",
+          "generated_token_count": 10,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0010",
+          "question": "请直接回答这个问题：当时加玛帝国最强的人是谁？",
+          "gold_answer": "云山。",
+          "task_family": "grounded_fact",
+          "generation_method": "grounded_fact_direct_instruction",
+          "answer": "飞行斗技。",
+          "generated_token_count": 5,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0011",
+          "question": "根据现有资料，对问题“陨落心炎在异火榜排名第几？”回答“第十四。”是否正确？",
+          "gold_answer": "正确。",
+          "task_family": "fact_verification",
+          "generation_method": "fact_verification_positive",
+          "answer": "不正确。",
+          "generated_token_count": 4,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0012",
+          "question": "根据现有资料，对问题“青莲地心火在异火榜排名第几？”回答“第十九。”是否正确？",
+          "gold_answer": "正确。",
+          "task_family": "fact_verification",
+          "generation_method": "fact_verification_positive",
+          "answer": "正确。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0013",
+          "question": "根据现有资料，对问题“萧炎的第一种本源异火是什么？”回答“青莲地心火。”是否正确？",
+          "gold_answer": "正确。",
+          "task_family": "fact_verification",
+          "generation_method": "fact_verification_positive",
+          "answer": "正确。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0014",
+          "question": "根据现有资料，对问题“药尘的称号是什么？”回答“药尊者。”是否正确？",
+          "gold_answer": "正确。",
+          "task_family": "fact_verification",
+          "generation_method": "fact_verification_positive",
+          "answer": "正确。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0015",
+          "question": "根据现有资料，对问题“当时加玛帝国最强的人是谁？”回答“云山。”是否正确？",
+          "gold_answer": "正确。",
+          "task_family": "fact_verification",
+          "generation_method": "fact_verification_positive",
+          "answer": "正确。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0016",
+          "question": "根据现有资料，对问题“陨落心炎在异火榜排名第几？”回答“云山。”是否正确？",
+          "gold_answer": "不正确。",
+          "task_family": "fact_verification",
+          "generation_method": "fact_verification_negative",
+          "answer": "正确。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0017",
+          "question": "根据现有资料，对问题“陨落心炎在异火榜排名第几？”回答“药尊者。”是否正确？",
+          "gold_answer": "不正确。",
+          "task_family": "fact_verification",
+          "generation_method": "fact_verification_negative",
+          "answer": "不正确。",
+          "generated_token_count": 4,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0018",
+          "question": "根据现有资料，对问题“青莲地心火在异火榜排名第几？”回答“药尊者。”是否正确？",
+          "gold_answer": "不正确。",
+          "task_family": "fact_verification",
+          "generation_method": "fact_verification_negative",
+          "answer": "正确。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0019",
+          "question": "根据现有资料，对问题“青莲地心火在异火榜排名第几？”回答“云山。”是否正确？",
+          "gold_answer": "不正确。",
+          "task_family": "fact_verification",
+          "generation_method": "fact_verification_negative",
+          "answer": "不正确。",
+          "generated_token_count": 4,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0020",
+          "question": "根据现有资料，对问题“萧炎的第一种本源异火是什么？”回答“药尊者。”是否正确？",
+          "gold_answer": "不正确。",
+          "task_family": "fact_verification",
+          "generation_method": "fact_verification_negative",
+          "answer": "正确。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0021",
+          "question": "根据现有资料，对问题“萧炎的第一种本源异火是什么？”回答“云山。”是否正确？",
+          "gold_answer": "不正确。",
+          "task_family": "fact_verification",
+          "generation_method": "fact_verification_negative",
+          "answer": "不正确。",
+          "generated_token_count": 4,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0022",
+          "question": "根据现有资料，对问题“药尘的称号是什么？”回答“青莲地心火。”是否正确？",
+          "gold_answer": "不正确。",
+          "task_family": "fact_verification",
+          "generation_method": "fact_verification_negative",
+          "answer": "正确。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0023",
+          "question": "根据现有资料，对问题“药尘的称号是什么？”回答“云山。”是否正确？",
+          "gold_answer": "不正确。",
+          "task_family": "fact_verification",
+          "generation_method": "fact_verification_negative",
+          "answer": "正确。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0024",
+          "question": "根据现有资料，对问题“当时加玛帝国最强的人是谁？”回答“第十四。”是否正确？",
+          "gold_answer": "不正确。",
+          "task_family": "fact_verification",
+          "generation_method": "fact_verification_negative",
+          "answer": "不正确。",
+          "generated_token_count": 4,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0025",
+          "question": "根据现有资料，对问题“当时加玛帝国最强的人是谁？”回答“第十九。”是否正确？",
+          "gold_answer": "不正确。",
+          "task_family": "fact_verification",
+          "generation_method": "fact_verification_negative",
+          "answer": "不正确。",
+          "generated_token_count": 4,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0026",
+          "question": "在这部小说中，“古帝印”是什么？",
+          "gold_answer": "“古帝印”属于斗技或功法。",
+          "task_family": "concept_identity",
+          "generation_method": "concept_identity_natural",
+          "answer": "“古帝玉”属于丹药。",
+          "generated_token_count": 10,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0027",
+          "question": "在这部小说中，“石族”是什么？",
+          "gold_answer": "“石族”属于势力。",
+          "task_family": "concept_identity",
+          "generation_method": "concept_identity_natural",
+          "answer": "“古帝玉”属于地点。",
+          "generated_token_count": 10,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0028",
+          "question": "在这部小说中，“烛坤”是什么？",
+          "gold_answer": "“烛坤”属于人物。",
+          "task_family": "concept_identity",
+          "generation_method": "concept_identity_natural",
+          "answer": "“古元”属于人物。",
+          "generated_token_count": 9,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0029",
+          "question": "在这部小说中，“海心焰”是什么？",
+          "gold_answer": "“海心焰”属于异火。",
+          "task_family": "concept_identity",
+          "generation_method": "concept_identity_natural",
+          "answer": "“海波东”属于丹药。",
+          "generated_token_count": 10,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0030",
+          "question": "在这部小说中，“魂天帝”是什么？",
+          "gold_answer": "“魂天帝”属于人物。",
+          "task_family": "concept_identity",
+          "generation_method": "concept_identity_natural",
+          "answer": "“虚无。",
+          "generated_token_count": 4,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0031",
+          "question": "在这部小说中，“天妖凰族”是什么？",
+          "gold_answer": "“天妖凰族”属于势力。",
+          "task_family": "concept_identity",
+          "generation_method": "concept_identity_natural",
+          "answer": "“天目山脉”属于地点。",
+          "generated_token_count": 11,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0032",
+          "question": "在这部小说中，“焰分噬浪尺”是什么？",
+          "gold_answer": "“焰分噬浪尺”属于斗技或功法。",
+          "task_family": "concept_identity",
+          "generation_method": "concept_identity_natural",
+          "answer": "“黄泉指”属于异火。",
+          "generated_token_count": 10,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0033",
+          "question": "在这部小说中，“雷尊者”是什么？",
+          "gold_answer": "“雷尊者”属于人物。",
+          "task_family": "concept_identity",
+          "generation_method": "concept_identity_natural",
+          "answer": "“雷尊者”属于人物。",
+          "generated_token_count": 10,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0034",
+          "question": "在这部小说中，“天焚炼气塔”是什么？",
+          "gold_answer": "“天焚炼气塔”属于地点。",
+          "task_family": "concept_identity",
+          "generation_method": "concept_identity_natural",
+          "answer": "“天火”属于斗技或功法。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0035",
+          "question": "在这部小说中，“慕骨老人”是什么？",
+          "gold_answer": "“慕骨老人”属于人物。",
+          "task_family": "concept_identity",
+          "generation_method": "concept_identity_natural",
+          "answer": "“血脉”属于斗技或功法。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0036",
+          "question": "在这部小说中，“黑角域”是什么？",
+          "gold_answer": "“黑角域”属于地点。",
+          "task_family": "concept_identity",
+          "generation_method": "concept_identity_natural",
+          "answer": "“古帝玉”属于药材。",
+          "generated_token_count": 10,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0037",
+          "question": "在这部小说中，“玄重尺”是什么？",
+          "gold_answer": "“玄重尺”属于物品或体质。",
+          "task_family": "concept_identity",
+          "generation_method": "concept_identity_natural",
+          "answer": "“玄空子”属于地点。",
+          "generated_token_count": 10,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0038",
+          "question": "在这部小说中，“韩家”是什么？",
+          "gold_answer": "“韩家”属于势力。",
+          "task_family": "concept_identity",
+          "generation_method": "concept_identity_natural",
+          "answer": "“叶家”属于势力。",
+          "generated_token_count": 9,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0039",
+          "question": "在这部小说中，“八荒破灭焱”是什么？",
+          "gold_answer": "“八荒破灭焱”属于异火。",
+          "task_family": "concept_identity",
+          "generation_method": "concept_identity_natural",
+          "answer": "“十岁\n\n     再现有资料不足，",
+          "generated_token_count": 18,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0040",
+          "question": "在这部小说中，“洗髓寒灵液”是什么？",
+          "gold_answer": "“洗髓寒灵液”属于丹药。",
+          "task_family": "concept_identity",
+          "generation_method": "concept_identity_natural",
+          "answer": "“融灵丹”属于丹药。",
+          "generated_token_count": 10,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0041",
+          "question": "请原样重复这个名称：“古帝印”。",
+          "gold_answer": "古帝印",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_exact_copy",
+          "answer": "古族",
+          "generated_token_count": 2,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0042",
+          "question": "请原样重复这个名称：“石族”。",
+          "gold_answer": "石族",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_exact_copy",
+          "answer": "枫城",
+          "generated_token_count": 2,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0043",
+          "question": "请原样重复这个名称：“烛坤”。",
+          "gold_answer": "烛坤",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_exact_copy",
+          "answer": "萧炎",
+          "generated_token_count": 2,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0044",
+          "question": "请原样重复这个名称：“海心焰”。",
+          "gold_answer": "海心焰",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_exact_copy",
+          "answer": "增幅火",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0045",
+          "question": "请原样重复这个名称：“魂天帝”。",
+          "gold_answer": "魂天帝",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_exact_copy",
+          "answer": "天炎",
+          "generated_token_count": 2,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0046",
+          "question": "请原样重复这个名称：“天妖凰族”。",
+          "gold_answer": "天妖凰族",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_exact_copy",
+          "answer": "天冥老妖天啸",
+          "generated_token_count": 6,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0047",
+          "question": "请原样重复这个名称：“焰分噬浪尺”。",
+          "gold_answer": "焰分噬浪尺",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_exact_copy",
+          "answer": "融合法犸",
+          "generated_token_count": 4,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0048",
+          "question": "请原样重复这个名称：“雷尊者”。",
+          "gold_answer": "雷尊者",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_exact_copy",
+          "answer": "雷尊者",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0049",
+          "question": "请原样重复这个名称：“天焚炼气塔”。",
+          "gold_answer": "天焚炼气塔",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_exact_copy",
+          "answer": "天火三玄黄火尊者",
+          "generated_token_count": 8,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0050",
+          "question": "请原样重复这个名称：“慕骨老人”。",
+          "gold_answer": "慕骨老人",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_exact_copy",
+          "answer": "老人族",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0051",
+          "question": "请原样重复这个名称：“黑角域”。",
+          "gold_answer": "黑角域",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_exact_copy",
+          "answer": "黑角域",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0052",
+          "question": "请原样重复这个名称：“玄重尺”。",
+          "gold_answer": "玄重尺",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_exact_copy",
+          "answer": "噬生前",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0053",
+          "question": "请原样重复这个名称：“韩家”。",
+          "gold_answer": "韩家",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_exact_copy",
+          "answer": "韩枫",
+          "generated_token_count": 2,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0054",
+          "question": "请原样重复这个名称：“八荒破灭焱”。",
+          "gold_answer": "八荒破灭焱",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_exact_copy",
+          "answer": "九品炼药师",
+          "generated_token_count": 5,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0055",
+          "question": "请原样重复这个名称：“洗髓寒灵液”。",
+          "gold_answer": "洗髓寒灵液",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_exact_copy",
+          "answer": "成功法",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0056",
+          "question": "“玄重尺”和“玄重尺”是否完全相同？",
+          "gold_answer": "相同。",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_compare_same",
+          "answer": "不相同。",
+          "generated_token_count": 4,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0057",
+          "question": "“玄重尺”和“焰分噬浪尺”是否完全相同？",
+          "gold_answer": "不相同。",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_compare_different",
+          "answer": "相同。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0058",
+          "question": "“焰分噬浪尺”和“焰分噬浪尺”是否完全相同？",
+          "gold_answer": "相同。",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_compare_same",
+          "answer": "不相同。",
+          "generated_token_count": 4,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0059",
+          "question": "“焰分噬浪尺”和“雷尊者”是否完全相同？",
+          "gold_answer": "不相同。",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_compare_different",
+          "answer": "相同。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0060",
+          "question": "“雷尊者”和“雷尊者”是否完全相同？",
+          "gold_answer": "相同。",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_compare_same",
+          "answer": "相同。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0061",
+          "question": "“雷尊者”和“魂天帝”是否完全相同？",
+          "gold_answer": "不相同。",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_compare_different",
+          "answer": "不相同。",
+          "generated_token_count": 4,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0062",
+          "question": "“魂天帝”和“魂天帝”是否完全相同？",
+          "gold_answer": "相同。",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_compare_same",
+          "answer": "相同。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0063",
+          "question": "“魂天帝”和“烛坤”是否完全相同？",
+          "gold_answer": "不相同。",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_compare_different",
+          "answer": "不相同。",
+          "generated_token_count": 4,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0064",
+          "question": "“烛坤”和“烛坤”是否完全相同？",
+          "gold_answer": "相同。",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_compare_same",
+          "answer": "相同。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0065",
+          "question": "“烛坤”和“玄重尺”是否完全相同？",
+          "gold_answer": "不相同。",
+          "task_family": "explicit_instruction",
+          "generation_method": "instruction_compare_different",
+          "answer": "不相同。",
+          "generated_token_count": 4,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0066",
+          "question": "不知道答案时应该怎么办？",
+          "gold_answer": "资料不足时应该明确说不知道，而不是编造答案。",
+          "task_family": "conversation",
+          "generation_method": "curated_conversation",
+          "answer": "请提供完成一步骤然。",
+          "generated_token_count": 10,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0067",
+          "question": "模型为什么不能随意猜测？",
+          "gold_answer": "资料不足时应该明确说不知道，而不是编造答案。",
+          "task_family": "conversation",
+          "generation_method": "curated_conversation",
+          "answer": "请先说明需要比较的地步。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0068",
+          "question": "没有证据时应该如何回答？",
+          "gold_answer": "资料不足时应该明确说不知道，而不是编造答案。",
+          "task_family": "conversation",
+          "generation_method": "curated_conversation",
+          "answer": "请提供完成的步骤。",
+          "generated_token_count": 9,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0069",
+          "question": "训练数据为什么要注意版权？",
+          "gold_answer": "使用训练资料前应确认授权范围并保留来源记录。",
+          "task_family": "conversation",
+          "generation_method": "curated_conversation",
+          "answer": "正确。",
+          "generated_token_count": 3,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0070",
+          "question": "使用文本训练前要确认什么？",
+          "gold_answer": "使用训练资料前应确认授权范围并保留来源记录。",
+          "task_family": "conversation",
+          "generation_method": "curated_conversation",
+          "answer": "正确定。",
+          "generated_token_count": 4,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0071",
+          "question": "怎样合规使用训练资料？",
+          "gold_answer": "使用训练资料前应确认授权范围并保留来源记录。",
+          "task_family": "conversation",
+          "generation_method": "curated_conversation",
+          "answer": "我不能。",
+          "generated_token_count": 4,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0072",
+          "question": "什么样的训练数据质量较高？",
+          "gold_answer": "高质量数据需要标签正确、任务平衡、来源清楚并通过验证。",
+          "task_family": "conversation",
+          "generation_method": "curated_conversation",
+          "answer": "八段斗之气。",
+          "generated_token_count": 6,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0073",
+          "question": "构造数据集时要检查哪些方面？",
+          "gold_answer": "高质量数据需要标签正确、任务平衡、来源清楚并通过验证。",
+          "task_family": "conversation",
+          "generation_method": "curated_conversation",
+          "answer": "可以暂慢的破坏力。",
+          "generated_token_count": 9,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0074",
+          "question": "为什么不能只追求数据数量？",
+          "gold_answer": "高质量数据需要标签正确、任务平衡、来源清楚并通过验证。",
+          "task_family": "conversation",
+          "generation_method": "curated_conversation",
+          "answer": "六阶高级斗灵斗之气。",
+          "generated_token_count": 10,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0075",
+          "question": "怎样评价模型最终效果？",
+          "gold_answer": "应结合验证Loss、测试指标和固定样本判断模型效果。",
+          "task_family": "conversation",
+          "generation_method": "curated_conversation",
+          "answer": "请提供原文和目标。",
+          "generated_token_count": 9,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0076",
+          "question": "只看Loss足够吗？",
+          "gold_answer": "应结合验证Loss、测试指标和固定样本判断模型效果。",
+          "task_family": "conversation",
+          "generation_method": "curated_conversation",
+          "answer": "请先提供下数字和目标语言。",
+          "generated_token_count": 13,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0077",
+          "question": "模型训练后应该检查什么？",
+          "gold_answer": "应结合验证Loss、测试指标和固定样本判断模型效果。",
+          "task_family": "conversation",
+          "generation_method": "curated_conversation",
+          "answer": "请提供原文和目标语言。",
+          "generated_token_count": 11,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0078",
+          "question": "执行危险操作前要做什么？",
+          "gold_answer": "高风险操作前应确认目标、范围和是否可以恢复。",
+          "task_family": "conversation",
+          "generation_method": "curated_conversation",
+          "answer": "请提供剧情内容。",
+          "generated_token_count": 8,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0079",
+          "question": "怎样减少误删除的风险？",
+          "gold_answer": "高风险操作前应确认目标、范围和是否可以恢复。",
+          "task_family": "conversation",
+          "generation_method": "curated_conversation",
+          "answer": "先说明确定需要解释的两位老爷子。",
+          "generated_token_count": 16,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0080",
+          "question": "修改重要文件时应注意什么？",
+          "gold_answer": "高风险操作前应确认目标、范围和是否可以恢复。",
+          "task_family": "conversation",
+          "generation_method": "curated_conversation",
+          "answer": "先慢慢慢的提供心情。",
+          "generated_token_count": 10,
+          "stopped_on_eos": true,
+          "exact_match": false,
+          "contains_gold": false
+        },
+        {
+          "id": "test_v3_0081",
+          "question": "“黑月谷”的创建者是谁？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "现有资料不足，无法确定。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0082",
+          "question": "“黑月谷”位于什么地方？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "现有资料不足，无法确定。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0083",
+          "question": "“黑月谷”在小说中有什么作用？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "现有资料不足，无法确定。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0084",
+          "question": "“玄月城”的创建者是谁？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "现有资料不足，无法确定。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0085",
+          "question": "“玄月城”位于什么地方？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "现有资料不足，无法确定。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0086",
+          "question": "“玄月城”在小说中有什么作用？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "现有资料不足，无法确定。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0087",
+          "question": "“星风城”的创建者是谁？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "现有资料不足，无法确定。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0088",
+          "question": "“星风城”位于什么地方？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "现有资料不足，无法确定。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0089",
+          "question": "“星风城”在小说中有什么作用？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "现有资料不足，无法确定。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0090",
+          "question": "“白山宗”的创建者是谁？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "现有资料不足，无法确定。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0091",
+          "question": "“白山宗”位于什么地方？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "现有资料不足，无法确定。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0092",
+          "question": "“白山宗”在小说中有什么作用？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "现有资料不足，无法确定。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0093",
+          "question": "“黑灵谷”的创建者是谁？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "现有资料不足，无法确定。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0094",
+          "question": "“黑灵谷”位于什么地方？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "现有资料不足，无法确定。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0095",
+          "question": "“黑灵谷”在小说中有什么作用？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "现有资料不足，无法确定。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0096",
+          "question": "“星月谷”的创建者是谁？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "现有资料不足，无法确定。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0097",
+          "question": "“星月谷”位于什么地方？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "现有资料不足，无法确定。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0098",
+          "question": "“星月谷”在小说中有什么作用？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "现有资料不足，无法确定。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0099",
+          "question": "“黑云谷”的创建者是谁？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "现有资料不足，无法确定。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        },
+        {
+          "id": "test_v3_0100",
+          "question": "“黑云谷”位于什么地方？",
+          "gold_answer": "现有资料不足，无法确定。",
+          "task_family": "honest_unknown",
+          "generation_method": "honest_unknown_absent_entity",
+          "answer": "现有资料不足，无法确定。",
+          "generated_token_count": 12,
+          "stopped_on_eos": true,
+          "exact_match": true,
+          "contains_gold": true
+        }
+      ]
+    }
+  }
+}

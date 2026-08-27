@@ -1,0 +1,30 @@
+{
+  "milestone": "M002",
+  "dataset_version": "sft_seed_v1",
+  "dataset_path": "data/sft/sft_seed_v1.jsonl",
+  "output_path": "data/sft/sft_seed_v1_tensors.pt",
+  "corpus_path": "data/clean/doupo_stage3.txt",
+  "record_count": 16,
+  "train_count": 12,
+  "val_count": 4,
+  "topic_count": 16,
+  "topic_split_leakage": false,
+  "evidence_verified": true,
+  "base_vocab_size": 4478,
+  "extended_vocab_size": 4483,
+  "special_token_ids": {
+    "<BOS>": 4478,
+    "<USER>": 4479,
+    "<ASSISTANT>": 4480,
+    "<EOS>": 4481,
+    "<PAD>": 4482
+  },
+  "loss_policy": "assistant answer and EOS only; prompt labels use -100",
+  "min_sequence_length": 15,
+  "max_sequence_length": 38,
+  "mean_sequence_length": 23.3125,
+  "masked_label_count": 213,
+  "supervised_label_count": 144,
+  "dataset_sha256": "91c3c977443c8494d79f482800c6ed916271300e3ee38ddc68541d12b3bf168b",
+  "corpus_sha256": "6166b4deab4b283cef5e30d6d23dfc33c553e6b97c63a6f9fc23af14fb523b4d"
+}

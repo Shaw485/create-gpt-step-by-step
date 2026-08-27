@@ -1,0 +1,88 @@
+{
+  "milestone": "M005b",
+  "stage": "bpe_sft_balanced_v3_step800",
+  "steps": 800,
+  "batch_size": 4,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.01,
+  "gradient_clip": 1.0,
+  "seed": 42,
+  "device": "cpu",
+  "train_records": 800,
+  "val_records": 100,
+  "test_records_consumed": 0,
+  "parameter_count": 8125779,
+  "initial_train_loss": 6.380350060413998,
+  "initial_val_loss": 6.858620084303748,
+  "final_train_loss": 0.13157973653726804,
+  "final_val_loss": 3.9441078181117475,
+  "best_val_loss": 3.771065370181564,
+  "last_batch_loss": 0.08030497282743454,
+  "last_gradient_norm": 1.878037691116333,
+  "elapsed_seconds": 193.1516010761261,
+  "loss_history": [
+    {
+      "step": 0,
+      "train_loss": 6.380350060413998,
+      "val_loss": 6.858620084303748
+    },
+    {
+      "step": 100,
+      "train_loss": 2.0835022094118116,
+      "val_loss": 4.000875946897161
+    },
+    {
+      "step": 200,
+      "train_loss": 1.3961629654689482,
+      "val_loss": 3.775501786773769
+    },
+    {
+      "step": 300,
+      "train_loss": 0.9919022399743138,
+      "val_loss": 3.838791664948994
+    },
+    {
+      "step": 400,
+      "train_loss": 0.639941456984452,
+      "val_loss": 3.771065370181564
+    },
+    {
+      "step": 500,
+      "train_loss": 0.43082901207114094,
+      "val_loss": 3.800280657117338
+    },
+    {
+      "step": 600,
+      "train_loss": 0.3074388037516219,
+      "val_loss": 3.858808407104513
+    },
+    {
+      "step": 700,
+      "train_loss": 0.21325339009275024,
+      "val_loss": 3.851101254437037
+    },
+    {
+      "step": 800,
+      "train_loss": 0.13157973653726804,
+      "val_loss": 3.9441078181117475
+    }
+  ],
+  "monitor_outputs": [
+    {
+      "id": "train_v3_0001",
+      "generated_answer": "萧战。",
+      "stopped_on_eos": true
+    },
+    {
+      "id": "val_v3_0001",
+      "generated_answer": "九段斗之气。",
+      "stopped_on_eos": true
+    }
+  ],
+  "data_path": "data/bpe/sft_balanced_v3_bpe_tensors.pt",
+  "data_sha256": "2ad9c602390b484d84ffce352e415a43441262821d1918b44221c1732c9f45bf",
+  "init_checkpoint": "checkpoints/bpe_sft_init_pre_sft.pt",
+  "init_checkpoint_sha256": "dacf868589e16ac6d60480d7e40909595a4fbfd2d18ac71946a71bdb766cae5d",
+  "latest_checkpoint": "checkpoints/bpe_sft_step800.pt",
+  "best_checkpoint": "checkpoints/bpe_sft_step800_best.pt"
+}
