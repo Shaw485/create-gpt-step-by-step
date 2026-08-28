@@ -1,0 +1,363 @@
+{
+  "checkpoint": "runs/sft_v4_mixed_chat_step5000/latest.pt",
+  "checkpoint_sha256": "58621347c6a6850269d7d1115c7d4c6e4d8b529a62210079c5464f76b96fe50c",
+  "checkpoint_step": 5000,
+  "data": "data/cloud_v4/sft_v4_mixed_chat_tensors.pt",
+  "data_sha256": "73e46a1a3031e6e3d422d10922520c4759bc18a324f8c2fd35524c689f622573",
+  "device": "cpu",
+  "max_new_tokens": 30,
+  "results": [
+    {
+      "category": "小说人物",
+      "generated_answer": "现有资料不足，无法确定。",
+      "id": "novel_entity_xiaoyan",
+      "metric": "known_entity",
+      "passed": false,
+      "question": "萧炎是谁？",
+      "score_reason": "must mention known entity and avoid unknown refusal",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说人物",
+      "generated_answer": "现有资料不足，无法确定。",
+      "id": "novel_entity_yaochen",
+      "metric": "known_entity",
+      "passed": false,
+      "question": "药尘是谁？",
+      "score_reason": "must mention known entity and avoid unknown refusal",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说人物",
+      "generated_answer": "现有资料不足，无法确定。",
+      "id": "novel_entity_yaolao",
+      "metric": "known_entity",
+      "passed": false,
+      "question": "药老是谁？",
+      "score_reason": "must mention known entity and avoid unknown refusal",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说人物",
+      "generated_answer": "我没有足够可靠的信息，不能硬编。",
+      "id": "novel_entity_xiaoyan_one_sentence",
+      "metric": "known_entity",
+      "passed": false,
+      "question": "请用一句话介绍萧炎。",
+      "score_reason": "must mention known entity and avoid unknown refusal",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说人物",
+      "generated_answer": "现有资料不足，无法确定。",
+      "id": "novel_entity_yihuo",
+      "metric": "known_entity",
+      "passed": false,
+      "question": "异火是什么？",
+      "score_reason": "must mention known entity and avoid unknown refusal",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说事实",
+      "generated_answer": "第1章的标题是《大更！】》。",
+      "id": "novel_fact_chapter300",
+      "metric": "exact_any",
+      "passed": false,
+      "question": "小说第三百章的标题是什么？",
+      "score_reason": "must contain one expected phrase and avoid forbidden phrases",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说事实",
+      "generated_answer": "是萧炎说的。",
+      "id": "novel_fact_speaker_yaolao",
+      "metric": "exact_any",
+      "passed": false,
+      "question": "第159章中说出“准备突破吧。这是你的机缘。万”这句话的是谁？",
+      "score_reason": "must contain one expected phrase and avoid forbidden phrases",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说事实",
+      "generated_answer": "《不足，用户》是小说第142章的标题。",
+      "id": "novel_fact_title_direct",
+      "metric": "all_required",
+      "passed": false,
+      "question": "第300章的标题是《收场》吗？",
+      "score_reason": "must contain all required phrases and avoid forbidden phrases",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说事实",
+      "generated_answer": "第103章的标题是《斗破苍穹》。",
+      "id": "novel_fact_no_unknown_for_known",
+      "metric": "all_required",
+      "passed": false,
+      "question": "萧炎是不是斗破苍穹里的主要人物？",
+      "score_reason": "must contain all required phrases and avoid forbidden phrases",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说事实",
+      "generated_answer": "天气。你告诉我城市和天气预报，我可以帮你判断。",
+      "id": "novel_fact_not_weather",
+      "metric": "exact_any",
+      "passed": false,
+      "question": "回答小说人物问题时，应该直接说天气吗？",
+      "score_reason": "must contain one expected phrase and avoid forbidden phrases",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "证据判断",
+      "generated_answer": "是，证据片段同时提到了韩枫和韩枫。",
+      "id": "evidence_hanfeng_ziyan",
+      "metric": "all_required",
+      "passed": false,
+      "question": "证据片段：韩枫和紫研同时出现在广场。问题：韩枫和紫研是否都被提到？",
+      "score_reason": "must contain all required phrases and avoid forbidden phrases",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "证据判断",
+      "generated_answer": "是药老和药老。",
+      "id": "evidence_yaolao_only",
+      "metric": "all_required",
+      "passed": true,
+      "question": "证据片段：药老低声提醒萧炎。问题：药老是否被提到？",
+      "score_reason": "must contain all required phrases and avoid forbidden phrases",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "证据判断",
+      "generated_answer": "不能直接给出生成一个小练习，就算开始学会了。",
+      "id": "evidence_no_birthdate",
+      "metric": "all_required",
+      "passed": false,
+      "question": "证据片段：云韵看着远处，没有提到出生日期。问题：能否知道云韵的出生日期？",
+      "score_reason": "must contain all required phrases and avoid forbidden phrases",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "证据判断",
+      "generated_answer": "小说里哪一章的标题是什么？",
+      "id": "evidence_copy_question",
+      "metric": "all_required",
+      "passed": false,
+      "question": "请原样重复以下问题，不要回答：“阴阳命魂丹属于几品丹药？”",
+      "score_reason": "must contain all required phrases and avoid forbidden phrases",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "证据判断",
+      "generated_answer": "正确，证据片段同时提到了韩枫和韩枫。",
+      "id": "evidence_two_names_no_extra",
+      "metric": "all_required",
+      "passed": false,
+      "question": "证据片段：韩枫和紫研被同时提到。问题：片段中提到的是韩枫和谁？",
+      "score_reason": "must contain all required phrases and avoid forbidden phrases",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "能力边界",
+      "generated_answer": "我不能直接看到实时天气。你告诉我城市，我可以帮你分析天气预报。",
+      "id": "chat_weather",
+      "metric": "boundary",
+      "passed": true,
+      "question": "今天天气怎么样？",
+      "score_reason": "must state topic-specific capability boundary without leaking novel patterns",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "能力边界",
+      "generated_answer": "验证集不参数更新，用来观察模型是否真的泛化。",
+      "id": "chat_news",
+      "metric": "boundary",
+      "passed": false,
+      "question": "今天有什么新闻？",
+      "score_reason": "must state topic-specific capability boundary without leaking novel patterns",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "能力边界",
+      "generated_answer": "我不能直接看到实时天气和路况。你告诉我城市和预报，我可以帮你判断。",
+      "id": "chat_stock",
+      "metric": "boundary",
+      "passed": false,
+      "question": "现在股票涨了吗？",
+      "score_reason": "must state topic-specific capability boundary without leaking novel patterns",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "能力边界",
+      "generated_answer": "我不能直接看到实时天气和路况。你告诉我城市和预报，我可以帮你判断。",
+      "id": "chat_exchange_rate",
+      "metric": "boundary",
+      "passed": false,
+      "question": "现在汇率是多少？",
+      "score_reason": "must state topic-specific capability boundary without leaking novel patterns",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "能力边界",
+      "generated_answer": "我不能直接看到你最早出现是在第几章？",
+      "id": "chat_restaurant",
+      "metric": "boundary",
+      "passed": false,
+      "question": "附近哪家店最好吃？",
+      "score_reason": "must state topic-specific capability boundary without leaking novel patterns",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "基础数学",
+      "generated_answer": "2加8等于22。",
+      "id": "math_1_plus_1",
+      "metric": "math_exact",
+      "passed": false,
+      "question": "一加一等于几？",
+      "score_reason": "found numbers [2, 8, 22], expected only 2",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "基础数学",
+      "generated_answer": "2加3等于22。",
+      "id": "math_2_plus_3",
+      "metric": "math_exact",
+      "passed": false,
+      "question": "2加3等于几？",
+      "score_reason": "found numbers [2, 3, 22], expected only 5",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "基础数学",
+      "generated_answer": "2加3等于22。",
+      "id": "math_7_plus_8",
+      "metric": "math_exact",
+      "passed": false,
+      "question": "7加8等于几？",
+      "score_reason": "found numbers [2, 3, 22], expected only 15",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "基础数学",
+      "generated_answer": "答案是23。",
+      "id": "math_10_plus_9",
+      "metric": "math_exact",
+      "passed": false,
+      "question": "请直接回答：10加9是多少？",
+      "score_reason": "found numbers [23], expected only 19",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "基础数学",
+      "generated_answer": "一共有12个。",
+      "id": "math_apple_6_plus_4",
+      "metric": "math_exact",
+      "passed": false,
+      "question": "如果有6个苹果，又来了4个，一共有几个？",
+      "score_reason": "found numbers [12], expected only 10",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "通用聊天",
+      "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+      "id": "general_encourage",
+      "metric": "chat_quality",
+      "passed": true,
+      "question": "请写一句鼓励学习的话。",
+      "score_reason": "must stop, be non-empty, and avoid novel/unknown-refusal leakage",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "通用聊天",
+      "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+      "id": "general_plan_today",
+      "metric": "chat_quality",
+      "passed": true,
+      "question": "我应该如何安排今天的学习？",
+      "score_reason": "must stop, be non-empty, and avoid novel/unknown-refusal leakage",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "通用聊天",
+      "generated_answer": "把任务切小，关掉干扰，先专注二十五分钟，再休息五分钟。",
+      "id": "general_python_focus",
+      "metric": "chat_quality",
+      "passed": true,
+      "question": "学习Python时总是分心怎么办？",
+      "score_reason": "must stop, be non-empty, and avoid novel/unknown-refusal leakage",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "通用聊天",
+      "generated_answer": "EOEOE把Token编号，让模型能在连续空间里计算含义和位置关系",
+      "id": "general_explain_sft",
+      "metric": "all_required",
+      "passed": false,
+      "question": "请用一句话解释什么是监督微调。",
+      "score_reason": "must contain all required phrases and avoid forbidden phrases",
+      "stopped_on_eos": false
+    },
+    {
+      "category": "通用聊天",
+      "generated_answer": "EOS是结束Token，用来告诉模型答案已经生成完了。",
+      "id": "general_explain_bpe",
+      "metric": "all_required",
+      "passed": false,
+      "question": "BPE是什么？",
+      "score_reason": "must contain all required phrases and avoid forbidden phrases",
+      "stopped_on_eos": true
+    }
+  ],
+  "schema_version": "sft-v4-category-eval/v1",
+  "seed": 20260828,
+  "status": "complete",
+  "summary": {
+    "accuracy": 0.16666666666666666,
+    "by_category": {
+      "基础数学": {
+        "accuracy": 0.0,
+        "passed": 0,
+        "total": 5
+      },
+      "小说事实": {
+        "accuracy": 0.0,
+        "passed": 0,
+        "total": 5
+      },
+      "小说人物": {
+        "accuracy": 0.0,
+        "passed": 0,
+        "total": 5
+      },
+      "能力边界": {
+        "accuracy": 0.2,
+        "passed": 1,
+        "total": 5
+      },
+      "证据判断": {
+        "accuracy": 0.2,
+        "passed": 1,
+        "total": 5
+      },
+      "通用聊天": {
+        "accuracy": 0.6,
+        "passed": 3,
+        "total": 5
+      }
+    },
+    "eos_count": 29,
+    "metric_counts": {
+      "all_required": 9,
+      "boundary": 5,
+      "chat_quality": 3,
+      "exact_any": 3,
+      "known_entity": 5,
+      "math_exact": 5
+    },
+    "passed": 5,
+    "total": 30
+  },
+  "temperature": 0.3,
+  "test_records_consumed": 0,
+  "top_k": 5
+}
