@@ -1,0 +1,11 @@
+{
+  "counts": {
+    "fix_before_human_review": 22,
+    "low_risk_human_review": 190,
+    "review_transformed_task": 138,
+    "verify_global_or_aggregate_claim": 250
+  },
+  "evaluation_count": 600,
+  "human_approval_was_inferred": false,
+  "note": "AI precheck only prioritizes review; every validation and test record remains pending until a real reviewer records a decision."
+}

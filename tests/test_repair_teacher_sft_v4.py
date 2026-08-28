@@ -4,9 +4,15 @@ import unittest
 from repair_teacher_sft_v4 import (
     CorpusEvidenceLocator,
     assign_grouped_splits,
+    ai_pre_review,
+    build_ai_pre_review_summary,
     build_review_priority_summary,
+    first_sentence,
     mapped_family,
     normalize_answer,
+    normalize_question,
+    remove_control_characters,
+    title_from_chapter_heading,
     rebalance_task_families,
 )
 from build_sft_v4 import TASK_FAMILY_QUOTAS
@@ -42,6 +48,20 @@ class TeacherSftV4RepairTests(unittest.TestCase):
         self.assertEqual(result.evidence["match_method"], "fuzzy_chapter_rebind")
         self.assertTrue(result.chapter_matches_claim)
 
+    def test_locator_can_bind_directly_to_a_chapter_heading(self):
+        lines = ["第一章 测试", "正文。", "第二章 后续", "更多正文。"]
+        digest = sha256("\n".join(lines).encode()).hexdigest()
+        result = CorpusEvidenceLocator(lines, digest).locate_chapter_heading(2)
+        self.assertIsNotNone(result)
+        assert result is not None
+        self.assertEqual(result.evidence["text"], "第二章 后续")
+        self.assertEqual(result.evidence["span"]["start_line"], 3)
+        self.assertEqual(result.evidence["match_method"], "chapter_heading")
+
+    def test_heading_title_removes_control_characters_before_tokenization(self):
+        self.assertEqual(title_from_chapter_heading("第二章 后\x7f续"), "后续")
+        self.assertEqual(remove_control_characters("大\x7f战"), "大战")
+
     def test_category_mapping_splits_correction_and_unknown(self):
         self.assertEqual(
             mapped_family({"category": "core_fact"}), "direct_fact"
@@ -63,6 +83,50 @@ class TeacherSftV4RepairTests(unittest.TestCase):
         )
         self.assertEqual(answer, "第12章的情节主要围绕萧炎展开。")
         self.assertIn("contextualized_repeated_chapter_focus_answer", repairs)
+
+    def test_chapter_metadata_answers_drop_unasked_padding(self):
+        for subcategory, expected in (
+            ("chapter_title", "第12章的标题是《测试标题》。"),
+            ("chapter_locate", "《测试标题》是小说第12章的标题。"),
+            ("chapter_order", "下一章是第12章《测试标题》。"),
+        ):
+            answer, repairs = normalize_answer(
+                {
+                    "answer": "错误的冗长答案。",
+                    "subcategory": subcategory,
+                    "source": {"chapter_number": 12, "chapter_title": "测试标题"},
+                }
+            )
+            self.assertEqual(answer, expected)
+            self.assertTrue(repairs)
+
+    def test_future_realm_is_not_misreported_as_current_realm(self):
+        answer, repairs = normalize_answer(
+            {
+                "answer": "是二星斗尊。",
+                "subcategory": "realm_state",
+                "entities": ["萧炎", "二星斗尊"],
+                "source": {"evidence_quote": "萧炎想要达到二星斗尊，至少还需半年。"},
+            }
+        )
+        self.assertIn("尚未达到二星斗尊", answer)
+        self.assertIn("没有明确给出当前星级", answer)
+        self.assertIn("corrected_future_realm_as_unknown_current_state", repairs)
+
+    def test_cause_question_grammar_is_repaired_without_changing_meaning(self):
+        question, repairs = normalize_question(
+            {
+                "question": "小说第五百十九章中，是什么导致萧炎并未回去？"
+            }
+        )
+        self.assertEqual(
+            question, "小说第五百十九章中，萧炎并未回去的原因是什么？"
+        )
+        self.assertIn("repaired_cause_question_grammar", repairs)
+
+    def test_first_sentence_keeps_one_complete_chinese_sentence(self):
+        self.assertEqual(first_sentence("第一句。第二句。"), "第一句。")
+        self.assertEqual(first_sentence("没有句号"), "没有句号")
 
     def test_incomplete_kinship_answer_is_repaired_from_verbatim_evidence(self):
         answer, repairs = normalize_answer(
@@ -148,6 +212,24 @@ class TeacherSftV4RepairTests(unittest.TestCase):
         self.assertEqual(summary["counts"]["P1_training_provenance_review"], 1)
         self.assertEqual(summary["counts"]["P2_training_semantic_review"], 1)
         self.assertEqual(summary["clean_training_candidate_count"], 1)
+        self.assertFalse(summary["human_approval_was_inferred"])
+
+    def test_ai_pre_review_prioritizes_blockers_without_approving(self):
+        def record(flags):
+            return {
+                "split": "test",
+                "origin": {"repair_flags": flags},
+            }
+
+        rows = [
+            record(["claimed_chapter_mismatch"]),
+            record(["global_claim_requires_index_review"]),
+            record(["transformed_task_requires_review"]),
+            record([]),
+        ]
+        self.assertEqual(ai_pre_review(rows[0])[1], "fix_before_human_review")
+        summary = build_ai_pre_review_summary(rows)
+        self.assertEqual(summary["evaluation_count"], 4)
         self.assertFalse(summary["human_approval_was_inferred"])
 
 

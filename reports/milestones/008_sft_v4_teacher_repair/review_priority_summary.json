@@ -1,19 +1,19 @@
 {
-  "clean_training_candidate_count": 690,
+  "clean_training_candidate_count": 683,
   "counts": {
     "P0_evaluation_human_review": 600,
-    "P1_training_provenance_review": 679,
-    "P2_training_semantic_review": 1031,
-    "clean_training_candidate": 690
+    "P1_training_provenance_review": 124,
+    "P2_training_semantic_review": 1593,
+    "clean_training_candidate": 683
   },
   "counts_by_split": {
     "test": {
       "P0_evaluation_human_review": 300
     },
     "train": {
-      "P1_training_provenance_review": 679,
-      "P2_training_semantic_review": 1031,
-      "clean_training_candidate": 690
+      "P1_training_provenance_review": 124,
+      "P2_training_semantic_review": 1593,
+      "clean_training_candidate": 683
     },
     "val": {
       "P0_evaluation_human_review": 300

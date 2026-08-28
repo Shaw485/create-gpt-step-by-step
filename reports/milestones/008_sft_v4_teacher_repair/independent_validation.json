@@ -23,14 +23,14 @@
     },
     "topic_count": 1760,
     "unapproved_evaluation_count": 600,
-    "unique_answer_count": 2470,
-    "verified_evidence_count": 2908,
-    "verified_evidence_share": 0.9693333333333334
+    "unique_answer_count": 2498,
+    "verified_evidence_count": 2999,
+    "verified_evidence_share": 0.9996666666666667
   },
   "corpus_path": "data/cloud_v4/corpus.txt",
   "corpus_sha256": "50592f249d2be17054ebbe2f8ca7945063e1a8ae669706e64d2076371c4d3b00",
   "dataset_path": "data/sft/v4_teacher_repair/sft_v4_teacher_candidates.jsonl",
-  "dataset_sha256": "074f1c64a118f74e307530f03af1f14918e73ab2ecc83c7fa464796763a05d00",
+  "dataset_sha256": "b0b32ce74cc8b4e3f433f51fae922093088d1549b5fff2c22b2ee5e2b864286b",
   "failed_gates": [
     "val_test_human_review"
   ],
@@ -120,7 +120,7 @@
       "passed": true
     },
     {
-      "actual": 0.9693333333333334,
+      "actual": 0.9996666666666667,
       "expected": ">=70%",
       "name": "minimum_verified_evidence_share",
       "passed": true

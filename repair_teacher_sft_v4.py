@@ -55,6 +55,16 @@ SUSPICIOUS_QUESTION_PATTERNS = (
     re.compile(r"中，是什么导致[^？]*？$"),
 )
 GLOBAL_CLAIM_MARKERS = ("最早", "第一次", "此前", "唯一", "从未", "没有提到")
+GLOBAL_CLAIM_SUBCATEGORIES = {
+    "appearance_order",
+    "concept_debut",
+    "false_premise",
+    "first_appearance",
+    "first_cooccurrence",
+    "unanswerable",
+}
+AGGREGATION_SUBCATEGORIES = {"chapter_focus", "co_appearance"}
+CHAPTER_HEADING_SUBCATEGORIES = {"chapter_locate", "chapter_order", "chapter_title"}
 PROVENANCE_REVIEW_FLAGS = {
     "evidence_absent_from_frozen_v4",
     "claimed_chapter_mismatch",
@@ -62,10 +72,22 @@ PROVENANCE_REVIEW_FLAGS = {
 }
 SEMANTIC_REVIEW_FLAGS = {
     "aggregation_claim_requires_full_chapter_review",
+    "answer_requires_semantic_evidence_review",
     "global_claim_requires_index_review",
     "question_grammar_requires_review",
     "third_fact_variant_split_for_review",
     "transformed_task_requires_review",
+}
+BLOCKING_PRE_REVIEW_FLAGS = {
+    "answer_requires_semantic_evidence_review",
+    "claimed_chapter_mismatch",
+    "evidence_absent_from_frozen_v4",
+    "question_grammar_requires_review",
+}
+VERIFICATION_PRE_REVIEW_FLAGS = {
+    "aggregation_claim_requires_full_chapter_review",
+    "fuzzy_chapter_rebind_requires_review",
+    "global_claim_requires_index_review",
 }
 
 
@@ -111,6 +133,18 @@ def chapter_number_from_title(title: str) -> int | None:
     return chinese_number_to_int(match.group(1)) if match else None
 
 
+def remove_control_characters(text: str) -> str:
+    return "".join(
+        character for character in text if ord(character) >= 32 and ord(character) != 127
+    )
+
+
+def title_from_chapter_heading(heading: str) -> str:
+    match = CHAPTER_PATTERN.match(heading.strip())
+    title = heading.strip()[match.end() :].strip() if match else ""
+    return remove_control_characters(title)
+
+
 class CorpusEvidenceLocator:
     """Locate whitespace-normalized quotes while returning exact line spans."""
 
@@ -128,6 +162,11 @@ class CorpusEvidenceLocator:
             offset += len(line) + 1
         self.search_text = "\n".join(pieces)
         self.lines_by_chapter: dict[int, list[int]] = defaultdict(list)
+        self.heading_by_chapter: dict[int, tuple[int, str]] = {}
+        for heading_line, title in self.chapters:
+            number = chapter_number_from_title(title)
+            if number is not None:
+                self.heading_by_chapter[number] = (heading_line, title)
         for line_index, line in enumerate(self.lines):
             if not line.strip() or CHAPTER_PATTERN.match(line.strip()):
                 continue
@@ -135,6 +174,34 @@ class CorpusEvidenceLocator:
             number = chapter_number_from_title(chapter["title"]) if chapter else None
             if number is not None:
                 self.lines_by_chapter[number].append(line_index)
+
+    def locate_chapter_heading(self, chapter_number: int) -> LocatedEvidence | None:
+        heading = self.heading_by_chapter.get(chapter_number)
+        if heading is None:
+            return None
+        line_number, text = heading
+        raw_line = self.lines[line_number - 1]
+        start_character = raw_line.find(text)
+        if start_character < 0:
+            return None
+        return LocatedEvidence(
+            evidence={
+                "status": "verified_corpus",
+                "text": text,
+                "corpus_sha256": self.corpus_sha256,
+                "chapter": {"title": text, "heading_line": line_number},
+                "span": {
+                    "start_line": line_number,
+                    "end_line": line_number,
+                    "start_character": start_character,
+                    "end_character": start_character + len(text),
+                },
+                "sha256": sha256(text.encode("utf-8")).hexdigest(),
+                "match_method": "chapter_heading",
+            },
+            chapter_number=chapter_number,
+            chapter_matches_claim=True,
+        )
 
     def _fuzzy_locate_in_chapter(
         self, needle: str, claimed_chapter: int
@@ -256,6 +323,24 @@ def normalize_answer(record: dict[str, Any]) -> tuple[str, list[str]]:
         title = str(record.get("source", {}).get("chapter_title", "")).strip("《》 ")
         answer = f"第{chapter}章的标题是《{title}》。"
         repairs.append("removed_unasked_chapter_title_padding")
+    if record.get("subcategory") == "chapter_locate":
+        chapter = record.get("source", {}).get("chapter_number")
+        title = str(record.get("source", {}).get("chapter_title", "")).strip("《》 ")
+        answer = f"《{title}》是小说第{chapter}章的标题。"
+        repairs.append("removed_unasked_chapter_locate_padding")
+    if record.get("subcategory") == "chapter_order":
+        chapter = record.get("source", {}).get("chapter_number")
+        title = str(record.get("source", {}).get("chapter_title", "")).strip("《》 ")
+        answer = f"下一章是第{chapter}章《{title}》。"
+        repairs.append("removed_unasked_chapter_order_padding")
+    if record.get("subcategory") == "realm_state":
+        evidence = str(record.get("source", {}).get("evidence_quote", ""))
+        future_realm = re.search(r"想要达到([^，。；;]+)", evidence)
+        if future_realm:
+            entity = str((record.get("entities") or ["该人物"])[0])
+            realm = future_realm.group(1).strip()
+            answer = f"该片段只说明{entity}尚未达到{realm}，没有明确给出当前星级。"
+            repairs.append("corrected_future_realm_as_unknown_current_state")
     if record.get("subcategory") == "kinship" and re.fullmatch(r"是[^。]+。", answer):
         question_match = re.match(r"(.+?)与(.+?)之间", str(record["question"]))
         evidence = str(record.get("source", {}).get("evidence_quote", ""))
@@ -278,6 +363,21 @@ def normalize_answer(record: dict[str, Any]) -> tuple[str, list[str]]:
     return answer, repairs
 
 
+def normalize_question(record: dict[str, Any]) -> tuple[str, list[str]]:
+    question = str(record["question"]).strip()
+    repairs: list[str] = []
+    cause_match = re.match(
+        r"^(.*?章(?:里|中)?)[，,]是什么导致(.+?)(?:的原因是什么)?[？?]?$",
+        question,
+    )
+    if cause_match:
+        prefix, effect = cause_match.groups()
+        effect = effect.removesuffix("的原因").strip()
+        question = f"{prefix}，{effect}的原因是什么？"
+        repairs.append("repaired_cause_question_grammar")
+    return question, repairs
+
+
 def content_flags(
     record: dict[str, Any],
     question: str,
@@ -293,11 +393,33 @@ def content_flags(
         flags.append("fuzzy_chapter_rebind_requires_review")
     if any(pattern.search(question) for pattern in SUSPICIOUS_QUESTION_PATTERNS):
         flags.append("question_grammar_requires_review")
-    if any(marker in question or marker in answer for marker in GLOBAL_CLAIM_MARKERS):
+    if (
+        record.get("subcategory") in GLOBAL_CLAIM_SUBCATEGORIES
+        or any(marker in question or marker in answer for marker in GLOBAL_CLAIM_MARKERS)
+        or "未明确说明" in answer
+    ):
         flags.append("global_claim_requires_index_review")
-    if "唯一被反复提及" in answer or "出现次数最多" in answer:
+    if (
+        record.get("subcategory") in AGGREGATION_SUBCATEGORIES
+        or "唯一被反复提及" in answer
+        or "出现次数最多" in answer
+    ):
         flags.append("aggregation_claim_requires_full_chapter_review")
+    if (
+        record.get("subcategory") == "realm_state"
+        and "尚未达到" not in answer
+        and any(
+        marker in str(record.get("source", {}).get("evidence_quote", ""))
+        for marker in ("想要达到", "还未达到", "尚未达到")
+        )
+    ):
+        flags.append("answer_requires_semantic_evidence_review")
     return sorted(set(flags))
+
+
+def first_sentence(text: str) -> str:
+    match = re.match(r".*?[。！？!?](?=\s|$|[^”’])", text.strip())
+    return match.group(0).strip() if match else text.strip()
 
 
 def _stable_pool(indices: Iterable[int], records: Sequence[dict[str, Any]], salt: str) -> list[int]:
@@ -405,39 +527,54 @@ def transform_task(
     located: LocatedEvidence | None,
 ) -> tuple[str, str, list[str]]:
     answer, repairs = normalize_answer(record)
-    question = str(record["question"]).strip()
+    question, question_repairs = normalize_question(record)
+    repairs.extend(question_repairs)
+    if record.get("subcategory") == "chapter_skill" and (
+        "唯一被反复提及" in answer or "被多次提到" in answer
+    ):
+        entity = str((record.get("entities") or ["相关功法"])[0])
+        original_question = question.rstrip("？?!！")
+        question = (
+            f"原问题是“{original_question}”。若只依据给出的原文片段，"
+            "能确认其中提到的斗技或功法是什么？"
+        )
+        answer = f"能确认其中提到了{entity}。"
+        repairs.append("removed_unsupported_chapter_skill_aggregation")
+    if record.get("subcategory") == "chapter_faction_place":
+        entity = str((record.get("entities") or ["相关势力或地点"])[0])
+        original_question = question.rstrip("？?!！")
+        question = (
+            f"原问题是“{original_question}”。若只依据给出的原文片段，"
+            "能确认其中提到的势力或地点是哪一个？"
+        )
+        answer = f"能确认其中提到了{entity}。"
+        repairs.append("removed_unsupported_faction_place_aggregation")
     if transformation is None:
         return question, answer, repairs
     if transformation == "exact_copy_instruction":
-        source_text = (
-            located.evidence["text"]
-            if located
-            else str(record.get("source", {}).get("evidence_quote", ""))
-        ).strip()
-        snippet = source_text[:40].strip()
         original_question = str(record["question"]).strip()
-        question = (
-            f"根据问题“{original_question}”，请原样重复作为依据的文字：“{snippet}”"
-        )
-        answer = snippet
+        question = f"请原样重复以下问题，不要回答：“{original_question}”"
+        answer = original_question
     elif transformation == "reclassified_as_context":
         repairs.append("relationship_example_reclassified_as_context_understanding")
     elif transformation == "verification_wrapper":
-        question = f"对于问题“{question}”，回答“{answer}”是否正确？"
-        answer = f"正确；原文信息支持“{answer.rstrip('。！？!?')}”。"
+        concise_answer = first_sentence(answer)
+        question = f"对于问题“{question}”，回答“{concise_answer}”是否正确？"
+        answer = f"正确。证据支持“{concise_answer.rstrip('。！？!?')}”。"
     elif transformation == "clarification_wrapper":
         entity = str((record.get("entities") or ["相关人物"])[0])
         original_question = question.rstrip("？?!！")
         question = (
-            f"如果把“{original_question}”简化成不带章节范围的问题，"
-            "应先向用户确认什么？"
+            f"参考原问题“{original_question}”，如果用户现在只说“请介绍{entity}”，"
+            "但没有提供作品和故事阶段，应该先怎么回应？"
         )
         answer = (
-            f"应先确认所依据的章节或故事阶段，再核对“{original_question}”"
-            f"涉及的{entity}信息。"
+            f"请先说明你指的是哪部作品，以及想了解{entity}的哪个故事阶段，"
+            f"我再核对与“{original_question}”相关的内容。"
         )
     elif transformation == "concise_answer_instruction":
         question = f"请只用一句话回答，不要续写小说：{question}"
+        answer = first_sentence(answer)
     else:
         raise ValueError(f"unknown task transformation {transformation!r}")
     repairs.append(transformation)
@@ -534,6 +671,7 @@ def write_manual_review_csv(path: Path, records: Sequence[dict[str, Any]]) -> No
         "answer",
         "evidence",
         "reason_codes",
+        "ai_precheck",
         "decision",
         "reviewer",
         "notes",
@@ -542,9 +680,17 @@ def write_manual_review_csv(path: Path, records: Sequence[dict[str, Any]]) -> No
     with path.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n")
         writer.writeheader()
-        for record in records:
-            if record["split"] == "train":
-                continue
+        evaluation_records = [record for record in records if record["split"] != "train"]
+        evaluation_records.sort(
+            key=lambda record: (
+                ai_pre_review(record)[0],
+                record["split"],
+                record["task_family"],
+                record["id"],
+            )
+        )
+        for record in evaluation_records:
+            _, precheck = ai_pre_review(record)
             writer.writerow(
                 {
                     "id": record["id"],
@@ -554,8 +700,40 @@ def write_manual_review_csv(path: Path, records: Sequence[dict[str, Any]]) -> No
                     "answer": record["answer"],
                     "evidence": record["evidence"].get("text", ""),
                     "reason_codes": ";".join(record["origin"]["repair_flags"]),
+                    "ai_precheck": precheck,
                 }
             )
+
+
+def ai_pre_review(record: dict[str, Any]) -> tuple[int, str]:
+    """Prioritize evaluation review without granting or implying approval."""
+    flags = set(record["origin"].get("repair_flags", []))
+    if flags & BLOCKING_PRE_REVIEW_FLAGS:
+        return 0, "fix_before_human_review"
+    if flags & VERIFICATION_PRE_REVIEW_FLAGS:
+        return 1, "verify_global_or_aggregate_claim"
+    if "transformed_task_requires_review" in flags:
+        return 2, "review_transformed_task"
+    return 3, "low_risk_human_review"
+
+
+def build_ai_pre_review_summary(
+    records: Sequence[dict[str, Any]],
+) -> dict[str, Any]:
+    counts = Counter(
+        ai_pre_review(record)[1]
+        for record in records
+        if record["split"] != "train"
+    )
+    return {
+        "counts": dict(sorted(counts.items())),
+        "evaluation_count": sum(counts.values()),
+        "human_approval_was_inferred": False,
+        "note": (
+            "AI precheck only prioritizes review; every validation and test record "
+            "remains pending until a real reviewer records a decision."
+        ),
+    }
 
 
 def build_review_priority_summary(
@@ -636,12 +814,17 @@ def run_repair(
     for source in raw_records:
         source_meta = source.get("source", {})
         claimed_chapter = source_meta.get("chapter_number")
-        locations.append(
-            locator.locate(
-                str(source_meta.get("evidence_quote", "")),
-                int(claimed_chapter) if claimed_chapter is not None else None,
+        chapter_number = int(claimed_chapter) if claimed_chapter is not None else None
+        if (
+            source.get("subcategory") in CHAPTER_HEADING_SUBCATEGORIES
+            and chapter_number is not None
+        ):
+            located = locator.locate_chapter_heading(chapter_number)
+        else:
+            located = locator.locate(
+                str(source_meta.get("evidence_quote", "")), chapter_number
             )
-        )
+        locations.append(located)
     actual_chapter_keys = [
         (
             f"{located.evidence['chapter']['heading_line']}:"
@@ -661,9 +844,21 @@ def run_repair(
     vocab_errors: list[dict[str, str]] = []
     fact_occurrences: Counter[str] = Counter()
     for index, source in enumerate(raw_records):
+        source = dict(source)
+        source["source"] = dict(source.get("source", {}))
         source_meta = source.get("source", {})
+        source_meta["chapter_title"] = remove_control_characters(
+            str(source_meta.get("chapter_title", ""))
+        ).strip()
         claimed_chapter = source_meta.get("chapter_number")
         located = locations[index]
+        if (
+            source.get("subcategory") in CHAPTER_HEADING_SUBCATEGORIES
+            and located is not None
+        ):
+            source_meta["chapter_title"] = title_from_chapter_heading(
+                located.evidence["text"]
+            )
         family, transformation = assignments[index]
         question, answer, repairs = transform_task(
             source, family, transformation, located
@@ -731,7 +926,10 @@ def run_repair(
             repair_queue.append(candidate)
 
     if vocab_errors:
-        raise ValueError(f"v4 BPE rejected {len(vocab_errors)} teacher records")
+        raise ValueError(
+            f"v4 BPE rejected {len(vocab_errors)} teacher records: "
+            f"{vocab_errors[:3]}"
+        )
     audit = quality_gate(candidates, corpus_lines, corpus_sha)
     audit.update(
         {
@@ -753,6 +951,7 @@ def run_repair(
             "repair_reason_counts": dict(sorted(repair_counts.items())),
             "repair_queue_count": len(repair_queue),
             "review_priorities": build_review_priority_summary(candidates),
+            "evaluation_ai_pre_review": build_ai_pre_review_summary(candidates),
             "methodology": {
                 "source_mutated": False,
                 "evidence_policy": "exact whitespace-normalized quote on one frozen-v4 line",
@@ -782,6 +981,17 @@ def run_repair(
         )
         + "\n",
     )
+    evaluation_pre_review_path = output_dir / "evaluation_ai_pre_review_summary.json"
+    atomic_write_text(
+        evaluation_pre_review_path,
+        json.dumps(
+            audit["evaluation_ai_pre_review"],
+            ensure_ascii=False,
+            indent=2,
+            sort_keys=True,
+        )
+        + "\n",
+    )
     write_manual_review_csv(output_dir / "manual_review_val_test.csv", candidates)
     artifacts = {
         path.name: sha256_file(path)
@@ -791,6 +1001,7 @@ def run_repair(
             queue_path,
             audit_path,
             review_summary_path,
+            evaluation_pre_review_path,
             output_dir / "manual_review_val_test.csv",
         )
     }
