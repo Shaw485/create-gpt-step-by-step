@@ -339,3 +339,11 @@ step 10000 的20-Batch训练/验证 Loss 为 2.8335/3.0033，并将 `checkpoints
 合并后发现79条修改中有17组问题文本撞车，脚本对19条重复问句添加轻量任务角度前缀，并记录为冻结阶段去重。输出仍保持3000条、2400/300/300切分和99.97%证据覆盖；老质量门禁只剩`val_test_human_review`，这是有意保留的治理边界。
 
 训练集证据风险进一步处理：8条`fuzzy_chapter_rebind_requires_review`经正式v4语料精确验证后标记为已核验；1条“第1200章出现的丹药是什么？”源证据章节漂移，无法安全重绑，因此从training-ready文件中排除。最终生成`data/sft/v4_teacher_repair/sft_v4_teacher_ai_training_ready.jsonl`共2999条，用于下一步SFT准备；报告归档为M008的`ai_review_freeze_report.json`。
+
+## 5.51 完成v4 SFT张量编码与20步安全试跑
+
+升级`prepare_bpe_sft.py`，使其兼容v4的`topic_id`字段、2399/300/300切分和已内置聊天特殊Token的v4 BPE tokenizer。基于2999条training-ready候选生成`data/cloud_v4/sft_v4_ai_training_ready_tensors.pt`，最长序列149 Token，平均60.25 Token，监督Token 59426，被mask Token 118262；Loss只监督`答案<EOS>`，不监督问题前缀。
+
+新增`train_sft_v4.py`，从M007最佳预训练checkpoint `runs/pretrain_v4_m4_continue6000/best.pt`启动，使用8105025参数v4模型做20步SFT安全试跑。当前Codex工具环境中MPS不可用，因此本次使用CPU、Micro Batch 1、每5步评估、每次2个评估batch；验证Loss从7.5522降到5.0587，best/latest checkpoint均保存并带SHA-256校验。
+
+20步后的两条监控样本仍明显不合格，分别输出“第一个不说的”和““嘭！””。结论是SFT链路已经打通，但模型还没有形成可靠回答能力；下一步应在可用MPS环境下执行正式SFT，并用固定10题、验证Loss和人工语义抽样共同验收。

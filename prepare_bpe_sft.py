@@ -1,4 +1,4 @@
-"""Encode the balanced 1,000-record SFT dataset with the learned BPE tokenizer."""
+"""Encode SFT records with a character-seeded BPE tokenizer."""
 
 from __future__ import annotations
 
@@ -9,17 +9,28 @@ import logging
 from logging.handlers import RotatingFileHandler
 import os
 from pathlib import Path
+from typing import Any
 
 import torch
 
 from bpe_tokenizer import BPETokenizer
 
 
-DATASET_PATH = Path(os.getenv("BPE_SFT_DATASET", "data/sft/sft_balanced_v3.jsonl"))
-TOKENIZER_PATH = Path(os.getenv("BPE_SFT_TOKENIZER", "data/bpe/tokenizer_v1.json"))
-OUTPUT_PATH = Path(os.getenv("BPE_SFT_OUTPUT", "data/bpe/sft_balanced_v3_bpe_tensors.pt"))
+DATASET_PATH = Path(
+    os.getenv("BPE_SFT_DATASET", "data/sft/sft_balanced_v3.jsonl")
+)
+TOKENIZER_PATH = Path(
+    os.getenv("BPE_SFT_TOKENIZER", "data/bpe/tokenizer_v1.json")
+)
+OUTPUT_PATH = Path(
+    os.getenv("BPE_SFT_OUTPUT", "data/bpe/sft_balanced_v3_bpe_tensors.pt")
+)
 REPORT_PATH = Path(os.getenv("BPE_SFT_REPORT", "reports/bpe_sft_data_report.json"))
 SPECIAL_TOKENS = ("<BOS>", "<USER>", "<ASSISTANT>", "<EOS>", "<PAD>")
+EXPECTED_SPLIT_COUNTS = json.loads(
+    os.getenv("BPE_SFT_EXPECTED_SPLITS", '{"train": 800, "val": 100, "test": 100}')
+)
+MAX_SEQUENCE_LENGTH = int(os.getenv("BPE_SFT_MAX_SEQUENCE_LENGTH", "256"))
 
 
 def sha256(path: Path) -> str:
@@ -73,6 +84,17 @@ def load_jsonl(path: Path) -> list[dict]:
     return records
 
 
+def special_token_ids(tokenizer: BPETokenizer) -> tuple[BPETokenizer, dict[str, int]]:
+    missing = [token for token in SPECIAL_TOKENS if token not in tokenizer.special_to_id]
+    if missing:
+        tokenizer = tokenizer.with_special_tokens(list(SPECIAL_TOKENS))
+    return tokenizer, {token: tokenizer.special_to_id[token] for token in SPECIAL_TOKENS}
+
+
+def record_topic(record: dict[str, Any]) -> str:
+    return str(record.get("topic", record.get("topic_id", "")))
+
+
 def serialize_record(
     record: dict,
     tokenizer: BPETokenizer,
@@ -94,7 +116,9 @@ def serialize_record(
     labels[:assistant_index] = -100
     return {
         "id": record["id"],
-        "topic": record["topic"],
+        "topic": record_topic(record),
+        "topic_id": record_topic(record),
+        "fact_id": record.get("fact_id"),
         "task_family": record["task_family"],
         "split": record["split"],
         "input_ids": input_ids,
@@ -114,22 +138,21 @@ def main() -> None:
             len(records), tokenizer.vocab_size, len(tokenizer.merges),
         )
         split_counts = Counter(record["split"] for record in records)
-        if split_counts != {"train": 800, "val": 100, "test": 100}:
+        if split_counts != Counter(EXPECTED_SPLIT_COUNTS):
             raise ValueError(f"unexpected SFT split counts: {dict(split_counts)}")
         if len({record["id"] for record in records}) != len(records):
             raise ValueError("duplicate SFT record IDs")
         if len({record["question"] for record in records}) != len(records):
             raise ValueError("duplicate SFT questions")
 
-        special_ids = {
-            token: tokenizer.vocab_size + offset
-            for offset, token in enumerate(SPECIAL_TOKENS)
-        }
+        tokenizer, special_ids = special_token_ids(tokenizer)
         prepared = [
             serialize_record(record, tokenizer, special_ids) for record in records
         ]
-        if max(record["sequence_length"] for record in prepared) > 256:
-            raise ValueError("a BPE SFT sequence exceeds the 256-token context")
+        if max(record["sequence_length"] for record in prepared) > MAX_SEQUENCE_LENGTH:
+            raise ValueError(
+                f"a BPE SFT sequence exceeds the {MAX_SEQUENCE_LENGTH}-token context"
+            )
         by_split = {
             split: [record for record in prepared if record["split"] == split]
             for split in ("train", "val", "test")
@@ -141,7 +164,7 @@ def main() -> None:
             "val_records": by_split["val"],
             "test_records": by_split["test"],
             "base_vocab_size": tokenizer.vocab_size,
-            "vocab_size": tokenizer.vocab_size + len(SPECIAL_TOKENS),
+            "vocab_size": tokenizer.vocab_size,
             "stoi": stoi,
             "itos": itos,
             "special_token_ids": special_ids,
@@ -160,6 +183,7 @@ def main() -> None:
             "split_counts": dict(split_counts),
             "task_family_counts": dict(Counter(r["task_family"] for r in records)),
             "base_vocab_size": tokenizer.vocab_size,
+            "vocab_size": payload["vocab_size"],
             "extended_vocab_size": payload["vocab_size"],
             "special_token_ids": special_ids,
             "min_sequence_length": min(lengths),
@@ -177,7 +201,8 @@ def main() -> None:
             encoding="utf-8",
         )
         loggers["validation"].info(
-            "validated train=800 val=100 test=100 min_length=%d max_length=%d mean_length=%.2f",
+            "validated splits=%s min_length=%d max_length=%d mean_length=%.2f",
+            dict(split_counts),
             min(lengths), max(lengths), report["mean_sequence_length"],
         )
         loggers["output"].info(

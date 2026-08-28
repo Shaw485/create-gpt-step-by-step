@@ -1,0 +1,93 @@
+{
+  "best_checkpoint": "runs/sft_v4_smoke20/best.pt",
+  "best_val_loss": 5.058739185333252,
+  "data_path": "data/cloud_v4/sft_v4_ai_training_ready_tensors.pt",
+  "data_sha256": "f03e13fb088f8c631289cb602ea26c4e8fdf3baf9515f21dfef9770a0c61c21f",
+  "device": "cpu",
+  "elapsed_seconds": 9.840334874999826,
+  "eval_batches": 2,
+  "eval_interval": 5,
+  "final_train_loss": 5.316232681274414,
+  "final_val_loss": 5.058739185333252,
+  "init_checkpoint": "runs/pretrain_v4_m4_continue6000/best.pt",
+  "init_checkpoint_sha256": "5d6397b3bb97b8a14369117e2f1e1e9f9addf515da1117e2f0f35dfe8ac8af44",
+  "initial_train_loss": 7.563406229019165,
+  "initial_val_loss": 7.552190065383911,
+  "latest_checkpoint": "runs/sft_v4_smoke20/latest.pt",
+  "latest_checkpoint_sha256": "9084f6a058cf0618c29e47eedc3cc2d5c203996302f2bcbae460d1bcb55a3639",
+  "learning_rate": 5e-05,
+  "loss_history": [
+    {
+      "step": 0,
+      "train_loss": 7.563406229019165,
+      "val_loss": 7.552190065383911
+    },
+    {
+      "step": 5,
+      "train_loss": 6.344527721405029,
+      "val_loss": 6.59966254234314
+    },
+    {
+      "step": 10,
+      "train_loss": 5.837799549102783,
+      "val_loss": 5.723884582519531
+    },
+    {
+      "step": 15,
+      "train_loss": 5.67421817779541,
+      "val_loss": 5.74842643737793
+    },
+    {
+      "step": 20,
+      "train_loss": 5.316232681274414,
+      "val_loss": 5.058739185333252
+    }
+  ],
+  "micro_batch_size": 1,
+  "monitor_outputs": [
+    {
+      "generated_answer": "第一个不说的",
+      "id": "v4_547a13f5d7fcccbe2538",
+      "question": "原问题是“雷尊者与药尘相比，谁更早出现在故事里”。现只做局部证据核验：不比较全书登场先后，只看第351章的当前证据：药尘和雷尊者中明确出现了谁？",
+      "split": "train",
+      "stopped_on_eos": true,
+      "task_family": "relationship_reason_timeline"
+    },
+    {
+      "generated_answer": "“嘭！”",
+      "id": "v4_159d93c40620f3747687",
+      "question": "参考原问题“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”，如果用户只说“请介绍相关人物”，但没有说明作品、人物和故事阶段，应该先怎么回应？",
+      "split": "val",
+      "stopped_on_eos": true,
+      "task_family": "ambiguity_unknown_clarification"
+    }
+  ],
+  "parameter_count": 8105025,
+  "payload_summary": {
+    "max_sequence_length": 149,
+    "mean_sequence_length": 60.249083027675894,
+    "min_sequence_length": 12,
+    "split_counts": {
+      "test": 300,
+      "train": 2399,
+      "val": 300
+    },
+    "supervised_tokens": 59426,
+    "task_family_counts": {
+      "ambiguity_unknown_clarification": 300,
+      "context_understanding": 450,
+      "continuation_rewrite_instruction": 450,
+      "conversation_control": 150,
+      "direct_fact": 749,
+      "fact_verification_correction": 300,
+      "relationship_reason_timeline": 600
+    }
+  },
+  "run_id": "sft-v4-smoke-20260828T083534Z-1d5e4f49",
+  "schema_version": "sft-v4-smoke-report/v1",
+  "stage": "sft_v4_smoke20",
+  "status": "complete",
+  "steps": 20,
+  "test_records_consumed": 0,
+  "weight_decay": 0.05
+}

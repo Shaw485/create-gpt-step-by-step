@@ -1,0 +1,9 @@
+# M009 报告文件哈希
+
+```text
+4b26bddba1ded39514fd83466a354ef9b61a14d9d4458718d3512ab15252b922  sft_v4_data_report.json
+0542931ff4423a73efc05db796a8a83c0e3777659e7e0f27b0b870ee59af1b2d  sft_v4_smoke20_report.json
+f03e13fb088f8c631289cb602ea26c4e8fdf3baf9515f21dfef9770a0c61c21f  data/cloud_v4/sft_v4_ai_training_ready_tensors.pt
+9084f6a058cf0618c29e47eedc3cc2d5c203996302f2bcbae460d1bcb55a3639  runs/sft_v4_smoke20/best.pt
+9084f6a058cf0618c29e47eedc3cc2d5c203996302f2bcbae460d1bcb55a3639  runs/sft_v4_smoke20/latest.pt
+```

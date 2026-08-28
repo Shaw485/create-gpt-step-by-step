@@ -1,0 +1,36 @@
+{
+  "stage": "bpe_sft_data",
+  "records": 2999,
+  "split_counts": {
+    "train": 2399,
+    "val": 300,
+    "test": 300
+  },
+  "task_family_counts": {
+    "relationship_reason_timeline": 600,
+    "direct_fact": 749,
+    "context_understanding": 450,
+    "fact_verification_correction": 300,
+    "ambiguity_unknown_clarification": 300,
+    "continuation_rewrite_instruction": 450,
+    "conversation_control": 150
+  },
+  "base_vocab_size": 6465,
+  "vocab_size": 6465,
+  "extended_vocab_size": 6465,
+  "special_token_ids": {
+    "<BOS>": 6460,
+    "<USER>": 6461,
+    "<ASSISTANT>": 6462,
+    "<EOS>": 6463,
+    "<PAD>": 6464
+  },
+  "min_sequence_length": 12,
+  "max_sequence_length": 149,
+  "mean_sequence_length": 60.249083027675894,
+  "supervised_tokens": 59426,
+  "masked_tokens": 118262,
+  "dataset_sha256": "d12e7584576bde36582ad443b0b1df7eee3a54827698bdb845f7e0cbc27b1565",
+  "tokenizer_sha256": "86bc44516339d7eee774da6c2b9e4bae8e85c0fd58b9192b6e234f884befaee0",
+  "output_sha256": "f03e13fb088f8c631289cb602ea26c4e8fdf3baf9515f21dfef9770a0c61c21f"
+}
