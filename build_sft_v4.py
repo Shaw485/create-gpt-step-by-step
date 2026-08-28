@@ -12,6 +12,8 @@ from pathlib import Path
 import re
 from typing import Any, Iterable, Sequence
 
+from audit_chapter_versions import find_boundaries
+
 
 SCHEMA_VERSION = "sft_v4_candidate/1.0"
 SOURCE_DATASET_PATH = Path("data/sft/sft_balanced_v3.jsonl")
@@ -182,11 +184,21 @@ def atomic_write_text(path: Path, content: str) -> None:
 
 
 def build_chapter_index(corpus_lines: Sequence[str]) -> list[tuple[int, str]]:
-    chapters = [
-        (line_number, line.strip())
-        for line_number, line in enumerate(corpus_lines, 1)
-        if CHAPTER_PATTERN.fullmatch(line)
-    ]
+    boundaries = find_boundaries(list(corpus_lines))
+    if boundaries:
+        chapters = [
+            (
+                boundary["heading_index"] + 1,
+                corpus_lines[boundary["heading_index"]].strip(),
+            )
+            for boundary in boundaries
+        ]
+    else:
+        chapters = [
+            (line_number, line.strip())
+            for line_number, line in enumerate(corpus_lines, 1)
+            if CHAPTER_PATTERN.fullmatch(line)
+        ]
     if not chapters:
         raise SftV4ValidationError("no chapter headings were found in the corpus")
     return chapters

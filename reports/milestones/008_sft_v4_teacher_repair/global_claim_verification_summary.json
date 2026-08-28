@@ -3,9 +3,9 @@
   "corpus_path": "data/cloud_v4/corpus.txt",
   "corpus_sha256": "50592f249d2be17054ebbe2f8ca7945063e1a8ae669706e64d2076371c4d3b00",
   "dataset_path": "data/sft/v4_teacher_repair/sft_v4_teacher_candidates.jsonl",
-  "dataset_sha256": "64b5d7e8365d6c201042db913c2427253eb21fcc4db076c3ad6192fa1ebb21ec",
+  "dataset_sha256": "b0ffa959b4c71cc71ce23e09ac2cc4a80d7444e4f0bd01f9d9a898e011cfbff7",
   "full_report_path": "data/sft/v4_teacher_repair/global_claim_verification.json",
-  "full_report_sha256": "f9165662dbf272c8a64c8cbf109bee0e84ba2f6ba8b1c0c441eb603a839d0773",
+  "full_report_sha256": "809a96ccc0fbeac4bf85ef2eaa32f6f199531360025790b9b133b3c86b5f3042",
   "human_approval_was_inferred": false,
   "limitations": [
     "Literal-name counts do not prove narrative focus or screen time.",
@@ -15,58 +15,45 @@
   ],
   "method_counts": {
     "chapter_literal_person_name_counts": 58,
-    "chapter_literal_person_name_counts_semantic_focus_pending": 16,
-    "literal_full_book_false_premise": 5,
-    "literal_full_book_first_occurrence": 33,
-    "literal_full_book_order": 34,
-    "literal_same_chapter_first_cooccurrence": 54,
-    "semantic_absence_cannot_be_proven_by_literal_index_alone": 16,
+    "chapter_literal_person_name_counts_semantic_focus_pending": 15,
+    "literal_full_book_false_premise": 6,
+    "literal_full_book_first_occurrence": 35,
+    "literal_full_book_order": 38,
+    "semantic_absence_cannot_be_proven_by_literal_index_alone": 19,
     "unsupported_non_chapter_false_premise": 1
   },
   "person_lexicon_size": 54,
   "schema_version": "sft_v4_global_claim_verification/1.0",
-  "selected_record_count": 217,
+  "selected_record_count": 172,
   "status": "needs_review",
   "status_by_subcategory": {
     "appearance_order": {
-      "index_order_verified_chapters_stale": 4,
-      "index_verified": 30
+      "index_verified": 38
     },
     "chapter_focus": {
-      "manual_review_required": 16
+      "manual_review_required": 15
     },
     "co_appearance": {
-      "literal_count_contradicted_all_versions": 2,
-      "literal_count_supported_all_versions": 56
+      "literal_count_supported_all_versions": 58
     },
     "concept_debut": {
-      "index_contradicted": 4,
-      "index_verified": 12
+      "index_verified": 16
     },
     "false_premise": {
-      "index_contradicted": 1,
-      "index_verified": 4,
+      "index_verified": 6,
       "manual_review_required": 1
     },
     "first_appearance": {
-      "index_contradicted": 1,
-      "index_verified": 16
-    },
-    "first_cooccurrence": {
-      "index_contradicted": 38,
-      "index_verified": 16
+      "index_verified": 19
     },
     "unanswerable": {
-      "manual_review_required": 16
+      "manual_review_required": 19
     }
   },
   "status_counts": {
-    "index_contradicted": 44,
-    "index_order_verified_chapters_stale": 4,
-    "index_verified": 78,
-    "literal_count_contradicted_all_versions": 2,
-    "literal_count_supported_all_versions": 56,
-    "manual_review_required": 33
+    "index_verified": 79,
+    "literal_count_supported_all_versions": 58,
+    "manual_review_required": 35
   },
   "unique_chapter_number_count": 1614
 }

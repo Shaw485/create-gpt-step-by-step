@@ -26,7 +26,6 @@ from build_sft_v4 import (
     SCHEMA_VERSION,
     TASK_FAMILY_QUOTAS,
     atomic_write_text,
-    build_chapter_index,
     chapter_for_line,
     configure_sft_v4_logging,
     jsonl_text,
@@ -36,6 +35,7 @@ from build_sft_v4 import (
     sha256_file,
     stable_hash,
 )
+from prepare_corpus_v4 import parse_complete_chapters
 
 
 CATEGORY_MAP = {
@@ -164,13 +164,21 @@ def title_from_chapter_heading(heading: str) -> str:
 
 
 class CorpusEvidenceLocator:
-    """Locate whitespace-normalized quotes while returning exact line spans."""
+    """Locate quotes inside separator-backed canonical v4 chapter sections."""
 
     def __init__(self, corpus_lines: Sequence[str], corpus_sha256: str) -> None:
         self.lines = list(corpus_lines)
         self.corpus_sha256 = corpus_sha256
-        self.chapters = build_chapter_index(self.lines)
-        self.normalized_lines = [normalize_without_whitespace(line) for line in self.lines]
+        _, canonical_sections = parse_complete_chapters("\n".join(self.lines))
+        self.chapters = [
+            (chapter.start_line, chapter.title) for chapter in canonical_sections
+        ]
+        self.normalized_lines = [
+            ""
+            if CHAPTER_PATTERN.match(line.strip())
+            else normalize_without_whitespace(line)
+            for line in self.lines
+        ]
         self.starts: list[int] = []
         pieces: list[str] = []
         offset = 0
@@ -181,10 +189,11 @@ class CorpusEvidenceLocator:
         self.search_text = "\n".join(pieces)
         self.lines_by_chapter: dict[int, list[int]] = defaultdict(list)
         self.heading_by_chapter: dict[int, tuple[int, str]] = {}
-        for heading_line, title in self.chapters:
-            number = chapter_number_from_title(title)
-            if number is not None:
-                self.heading_by_chapter[number] = (heading_line, title)
+        for chapter in canonical_sections:
+            self.heading_by_chapter[chapter.chapter_number] = (
+                chapter.start_line,
+                chapter.title,
+            )
         for line_index, line in enumerate(self.lines):
             if not line.strip() or CHAPTER_PATTERN.match(line.strip()):
                 continue
@@ -220,6 +229,59 @@ class CorpusEvidenceLocator:
             chapter_number=chapter_number,
             chapter_matches_claim=True,
         )
+
+    def first_literal_chapter(self, entity: str) -> int | None:
+        needle = normalize_without_whitespace(entity)
+        if not needle:
+            return None
+        for line_index, line in enumerate(self.normalized_lines):
+            if needle not in line:
+                continue
+            chapter = chapter_for_line(line_index + 1, self.chapters)
+            if chapter is not None:
+                return chapter_number_from_title(chapter["title"])
+        return None
+
+    def locate_first_literal_line(
+        self,
+        entity: str,
+        claimed_chapter: int | None,
+    ) -> LocatedEvidence | None:
+        needle = normalize_without_whitespace(entity)
+        if not needle:
+            return None
+        for line_index, line in enumerate(self.normalized_lines):
+            if needle not in line:
+                continue
+            raw_line = self.lines[line_index]
+            start_character = len(raw_line) - len(raw_line.lstrip())
+            end_character = len(raw_line.rstrip())
+            exact_text = raw_line[start_character:end_character]
+            chapter = chapter_for_line(line_index + 1, self.chapters)
+            actual_number = (
+                chapter_number_from_title(chapter["title"]) if chapter else None
+            )
+            return LocatedEvidence(
+                evidence={
+                    "status": "verified_corpus",
+                    "text": exact_text,
+                    "corpus_sha256": self.corpus_sha256,
+                    "chapter": chapter,
+                    "span": {
+                        "start_line": line_index + 1,
+                        "end_line": line_index + 1,
+                        "start_character": start_character,
+                        "end_character": end_character,
+                    },
+                    "sha256": sha256(exact_text.encode("utf-8")).hexdigest(),
+                    "match_method": "literal_full_book_first_occurrence",
+                },
+                chapter_number=actual_number,
+                chapter_matches_claim=(
+                    claimed_chapter is None or actual_number == claimed_chapter
+                ),
+            )
+        return None
 
     def _fuzzy_locate_in_chapter(
         self, needle: str, claimed_chapter: int
@@ -327,6 +389,134 @@ def mapped_family(record: dict[str, Any]) -> str:
     return CATEGORY_MAP[category]
 
 
+def reframe_first_cooccurrence_as_local_evidence(
+    record: dict[str, Any],
+    family: str,
+    located: LocatedEvidence | None,
+) -> tuple[str, str, str] | None:
+    """Replace an unprovable whole-book first claim with a local evidence task."""
+
+    if record.get("subcategory") != "first_cooccurrence" or located is None:
+        return None
+    entities = [str(value).strip() for value in record.get("entities", [])[:2]]
+    if len(entities) != 2 or not all(entities):
+        return None
+    first, second = entities
+    chapter_number = record.get("source", {}).get("chapter_number")
+    chapter_label = f"第{chapter_number}章" if chapter_number is not None else "这段"
+    evidence_text = str(located.evidence.get("text", ""))
+    if first not in evidence_text or second not in evidence_text:
+        return None
+    source_question = str(record.get("question", ""))
+    if "首次同框" in source_question:
+        variant = 0
+    elif "最早在哪一章" in source_question:
+        variant = 1
+    else:
+        variant = 2
+    if family == "fact_verification_correction":
+        questions = (
+            f"{chapter_label}的证据能否支持“片段同时提到{first}与{second}”这一判断？",
+            f"说{chapter_label}的证据片段同时提到了{first}和{second}，这个说法正确吗？",
+            f"{chapter_label}的证据片段是否确实同时提及{first}和{second}？",
+        )
+        question = questions[variant]
+        answer = f"正确，证据片段同时提到了{first}和{second}。"
+    elif family == "ambiguity_unknown_clarification":
+        questions = (
+            f"仅凭{chapter_label}的片段，能否断定{first}与{second}在全书中首次同现？",
+            f"只看{chapter_label}的证据，能否判断{first}和{second}在全书中最早同章的时间？",
+            f"仅凭{chapter_label}的这段证据，能否判断{first}和{second}在全书中首次同时出现的章节？",
+        )
+        question = questions[variant]
+        answer = (
+            f"不能；这段证据只能说明此处同时提到了{first}和{second}，"
+            "无法证明这是全书首次。"
+        )
+    elif family == "context_understanding":
+        questions = (
+            f"{chapter_label}的这段证据是否同时提到了{first}与{second}？",
+            f"阅读{chapter_label}的证据，{first}和{second}是否都在片段中被提及？",
+            f"{chapter_label}的证据片段中，是否可以同时找到{first}和{second}？",
+        )
+        question = questions[variant]
+        answer = f"这段证据同时提到了{first}和{second}。"
+    elif family == "conversation_control":
+        questions = (
+            f"请只用一句话说明{chapter_label}的证据是否同时提到{first}与{second}。",
+            f"请一句话回答：{chapter_label}的片段是否同时出现{first}和{second}？",
+            f"请只用一句话说明{chapter_label}的证据片段是否同时提到{first}和{second}。",
+        )
+        question = questions[variant]
+        answer = f"是，证据片段同时提到了{first}和{second}。"
+    else:
+        questions = (
+            f"{chapter_label}的证据片段是否同时提到了{first}与{second}？",
+            f"阅读{chapter_label}的证据，{first}和{second}是否都在片段中出现？",
+            f"根据{chapter_label}的证据片段，{first}和{second}是否都被提到？",
+        )
+        question = questions[variant]
+        answer = f"是，证据片段同时提到了{first}和{second}。"
+    return question, answer, "reframed_first_cooccurrence_as_local_evidence"
+
+
+def correct_stale_appearance_order(
+    record: dict[str, Any],
+    family: str,
+    question: str,
+    answer: str,
+    locator: CorpusEvidenceLocator,
+) -> tuple[str, str, str] | None:
+    """Correct stale chapter numbers while defining order as literal mention order."""
+
+    if record.get("subcategory") != "appearance_order" or family not in {
+        "relationship_reason_timeline",
+        "fact_verification_correction",
+    }:
+        return None
+    entities = [str(value).strip() for value in record.get("entities", [])[:2]]
+    if len(entities) != 2 or not all(entities):
+        return None
+    first, second = entities
+    first_chapter = locator.first_literal_chapter(first)
+    second_chapter = locator.first_literal_chapter(second)
+    if (
+        first_chapter is None
+        or second_chapter is None
+        or first_chapter == second_chapter
+    ):
+        return None
+    answer_chapters = []
+    for match in CHAPTER_REFERENCE_PATTERN.finditer(answer):
+        try:
+            answer_chapters.append(chinese_number_to_int(match.group(1)))
+        except (TypeError, ValueError):
+            continue
+    expected = {first_chapter, second_chapter}
+    if not answer_chapters or set(answer_chapters) == expected:
+        return None
+    earlier = first if first_chapter < second_chapter else second
+    corrected_answer = (
+        f"{first}最早在第{first_chapter}章被字面提到，"
+        f"{second}最早在第{second_chapter}章被字面提到，"
+        f"因此{earlier}更早。"
+    )
+    if family == "fact_verification_correction":
+        corrected_question = (
+            f"根据全书字面索引，{first}最早在第{first_chapter}章被提到，"
+            f"{second}最早在第{second_chapter}章被提到；"
+            f"说{earlier}更早，这个判断正确吗？"
+        )
+        corrected_answer = f"正确。{corrected_answer}"
+    else:
+        corrected_question = question
+    return (
+        corrected_question,
+        corrected_answer,
+        "corrected_stale_literal_appearance_order",
+    )
+
+
 def normalize_answer(record: dict[str, Any]) -> tuple[str, list[str]]:
     """Apply only transformations whose meaning is mechanically preserved."""
     answer = str(record["answer"]).strip()
@@ -415,6 +605,7 @@ def content_flags(
     knowledge_claim_active = transformation not in {
         "clarification_wrapper",
         "exact_copy_instruction",
+        "local_evidence_reframe",
     }
     marker_question = "" if record.get("subcategory") == "speaker_attribution" else question
     if knowledge_claim_active:
@@ -843,7 +1034,14 @@ def run_repair(
         source_meta = source.get("source", {})
         claimed_chapter = source_meta.get("chapter_number")
         chapter_number = int(claimed_chapter) if claimed_chapter is not None else None
-        if (
+        if source.get("subcategory") in {"concept_debut", "first_appearance"}:
+            entities = [str(value).strip() for value in source.get("entities", [])]
+            located = (
+                locator.locate_first_literal_line(entities[0], chapter_number)
+                if entities and entities[0]
+                else None
+            )
+        elif (
             source.get("subcategory") in CHAPTER_HEADING_SUBCATEGORIES
             and chapter_number is not None
         ):
@@ -924,10 +1122,37 @@ def run_repair(
         question, answer, repairs = transform_task(
             source, family, transformation, located
         )
+        local_reframe = reframe_first_cooccurrence_as_local_evidence(
+            source,
+            family,
+            located,
+        )
+        if local_reframe is not None:
+            question, answer, repair = local_reframe
+            repairs.append(repair)
+        order_correction = correct_stale_appearance_order(
+            source,
+            family,
+            question,
+            answer,
+            locator,
+        )
+        if order_correction is not None:
+            question, answer, repair = order_correction
+            repairs.append(repair)
         if chapter_rebased:
             repairs.append("rebased_stale_chapter_to_verified_corpus")
-        flags = content_flags(source, question, answer, located, transformation)
-        if transformation:
+        content_transformation = (
+            "local_evidence_reframe" if local_reframe is not None else transformation
+        )
+        flags = content_flags(
+            source,
+            question,
+            answer,
+            located,
+            content_transformation,
+        )
+        if transformation or local_reframe is not None:
             flags.append("transformed_task_requires_review")
         for repair in repairs:
             repair_counts[repair] += 1

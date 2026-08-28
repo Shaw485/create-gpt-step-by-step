@@ -14,6 +14,7 @@ from build_sft_v4 import (
     TASK_FAMILY_QUOTAS,
     SftV4ReleaseBlocked,
     SftV4ValidationError,
+    build_chapter_index,
     build_pipeline,
     make_candidate,
     quality_gate,
@@ -90,6 +91,20 @@ def synthetic_release_records() -> tuple[list[dict], list[str], str]:
 
 
 class SftV4PipelineTests(unittest.TestCase):
+    def test_chapter_index_prefers_separator_backed_canonical_heading(self):
+        lines = [
+            "------------",
+            "",
+            "第一百八十六章 青鳞",
+            "",
+            "    第一百九十二章 青鳞",
+            "正文。",
+        ]
+        self.assertEqual(
+            build_chapter_index(lines),
+            [(3, "第一百八十六章 青鳞")],
+        )
+
     def test_schema_contract_has_all_quality_targets(self):
         schema = schema_document()
         self.assertEqual(schema["properties"]["schema_version"]["const"], SCHEMA_VERSION)

@@ -35,6 +35,12 @@ class GlobalClaimVerificationTests(unittest.TestCase):
         )
         self.assertEqual(index.first_chapter("古元"), 100)
 
+    def test_embedded_legacy_heading_is_not_indexed_as_body_text(self):
+        index = ChapterTextIndex(
+            [chapter(186, "第一百九十二章 青鳞\n正文没有这个名字。", 0)]
+        )
+        self.assertIsNone(index.first_chapter("青鳞"))
+
     def test_first_cooccurrence_requires_same_retained_version(self):
         index = ChapterTextIndex(
             [

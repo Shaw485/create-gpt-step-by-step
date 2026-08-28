@@ -7,12 +7,14 @@ from repair_teacher_sft_v4 import (
     ai_pre_review,
     build_ai_pre_review_summary,
     content_flags,
+    correct_stale_appearance_order,
     build_review_priority_summary,
     first_sentence,
     mapped_family,
     normalize_answer,
     normalize_question,
     remove_control_characters,
+    reframe_first_cooccurrence_as_local_evidence,
     rebase_chapter_references,
     title_from_chapter_heading,
     rebalance_task_families,
@@ -23,7 +25,7 @@ from collections import Counter
 
 class TeacherSftV4RepairTests(unittest.TestCase):
     def test_locator_returns_exact_span_after_whitespace_normalization(self):
-        lines = ["第一章 测试", "  萧炎 轻声道。"]
+        lines = ["------------", "", "第一章 测试", "", "  萧炎 轻声道。"]
         digest = sha256("\n".join(lines).encode()).hexdigest()
         result = CorpusEvidenceLocator(lines, digest).locate("萧炎轻声道。", 1)
         self.assertIsNotNone(result)
@@ -37,7 +39,10 @@ class TeacherSftV4RepairTests(unittest.TestCase):
 
     def test_locator_can_rebind_a_cleaned_quote_inside_the_claimed_chapter(self):
         lines = [
+            "------------",
+            "",
             "第一章 测试",
+            "",
             "萧炎抬起头，望着远处的山峰，然后缓缓向前走去。",
         ]
         digest = sha256("\n".join(lines).encode()).hexdigest()
@@ -51,14 +56,63 @@ class TeacherSftV4RepairTests(unittest.TestCase):
         self.assertTrue(result.chapter_matches_claim)
 
     def test_locator_can_bind_directly_to_a_chapter_heading(self):
-        lines = ["第一章 测试", "正文。", "第二章 后续", "更多正文。"]
+        lines = [
+            "------------",
+            "",
+            "第一章 测试",
+            "正文。",
+            "------------",
+            "",
+            "第二章 后续",
+            "更多正文。",
+        ]
         digest = sha256("\n".join(lines).encode()).hexdigest()
         result = CorpusEvidenceLocator(lines, digest).locate_chapter_heading(2)
         self.assertIsNotNone(result)
         assert result is not None
         self.assertEqual(result.evidence["text"], "第二章 后续")
-        self.assertEqual(result.evidence["span"]["start_line"], 3)
+        self.assertEqual(result.evidence["span"]["start_line"], 7)
         self.assertEqual(result.evidence["match_method"], "chapter_heading")
+
+    def test_locator_ignores_embedded_legacy_chapter_heading(self):
+        lines = [
+            "------------",
+            "",
+            "第一百八十六章 青鳞",
+            "",
+            "    第一百九十二章 青鳞",
+            "",
+            "青鳞在这里出现。",
+        ]
+        digest = sha256("\n".join(lines).encode()).hexdigest()
+        result = CorpusEvidenceLocator(lines, digest).locate("青鳞在这里出现。", 192)
+        self.assertIsNotNone(result)
+        assert result is not None
+        self.assertEqual(result.chapter_number, 186)
+        self.assertFalse(result.chapter_matches_claim)
+        self.assertEqual(result.evidence["chapter"]["title"], "第一百八十六章 青鳞")
+
+    def test_locator_finds_first_literal_line_in_narrative_order(self):
+        lines = [
+            "------------",
+            "",
+            "第一章 开始",
+            "",
+            "花宗先被提到。",
+            "------------",
+            "",
+            "第二章 后续",
+            "",
+            "花宗再次被提到。",
+        ]
+        digest = sha256("\n".join(lines).encode()).hexdigest()
+        locator = CorpusEvidenceLocator(lines, digest)
+        result = locator.locate_first_literal_line("花宗", 2)
+        self.assertIsNotNone(result)
+        assert result is not None
+        self.assertEqual(result.chapter_number, 1)
+        self.assertFalse(result.chapter_matches_claim)
+        self.assertEqual(result.evidence["text"], "花宗先被提到。")
 
     def test_heading_title_removes_control_characters_before_tokenization(self):
         self.assertEqual(title_from_chapter_heading("第二章 后\x7f续"), "后续")
@@ -75,6 +129,94 @@ class TeacherSftV4RepairTests(unittest.TestCase):
         self.assertEqual(
             mapped_family({"category": "core_fact"}), "direct_fact"
         )
+
+    def test_first_cooccurrence_is_reframed_without_claiming_full_book_first(self):
+        evidence = {
+            "text": "药老提醒萧宁不要着急。",
+            "chapter": {"title": "第一章 测试", "heading_line": 3},
+        }
+        located = type(
+            "Located",
+            (),
+            {"evidence": evidence},
+        )()
+        record = {
+            "subcategory": "first_cooccurrence",
+            "entities": ["药老", "萧宁"],
+        }
+        question, answer, repair = reframe_first_cooccurrence_as_local_evidence(
+            record,
+            "relationship_reason_timeline",
+            located,
+        )
+        self.assertNotIn("首次", question)
+        self.assertEqual(answer, "是，证据片段同时提到了药老和萧宁。")
+        self.assertEqual(repair, "reframed_first_cooccurrence_as_local_evidence")
+
+    def test_first_cooccurrence_clarification_states_evidence_limit(self):
+        evidence = {
+            "text": "药老提醒萧宁不要着急。",
+            "chapter": {"title": "第一章 测试", "heading_line": 3},
+        }
+        located = type("Located", (), {"evidence": evidence})()
+        result = reframe_first_cooccurrence_as_local_evidence(
+            {
+                "subcategory": "first_cooccurrence",
+                "entities": ["药老", "萧宁"],
+            },
+            "ambiguity_unknown_clarification",
+            located,
+        )
+        self.assertIsNotNone(result)
+        assert result is not None
+        self.assertIn("无法证明这是全书首次", result[1])
+
+    def test_stale_appearance_order_is_recomputed_from_literal_index(self):
+        lines = [
+            "------------",
+            "",
+            "第一章 开始",
+            "甲出现。",
+            "------------",
+            "",
+            "第三章 后续",
+            "乙出现。",
+        ]
+        digest = sha256("\n".join(lines).encode()).hexdigest()
+        locator = CorpusEvidenceLocator(lines, digest)
+        result = correct_stale_appearance_order(
+            {"subcategory": "appearance_order", "entities": ["甲", "乙"]},
+            "relationship_reason_timeline",
+            "甲和乙谁更早？",
+            "甲在第2章，乙在第3章，所以甲更早。",
+            locator,
+        )
+        self.assertIsNotNone(result)
+        assert result is not None
+        self.assertIn("甲最早在第1章被字面提到", result[1])
+        self.assertIn("乙最早在第3章被字面提到", result[1])
+
+    def test_stale_order_correction_does_not_replace_clarification_task(self):
+        lines = [
+            "------------",
+            "",
+            "第一章 开始",
+            "甲出现。",
+            "------------",
+            "",
+            "第三章 后续",
+            "乙出现。",
+        ]
+        digest = sha256("\n".join(lines).encode()).hexdigest()
+        locator = CorpusEvidenceLocator(lines, digest)
+        result = correct_stale_appearance_order(
+            {"subcategory": "appearance_order", "entities": ["甲", "乙"]},
+            "ambiguity_unknown_clarification",
+            "用户没有说明作品，应先问什么？",
+            "请先说明作品和故事阶段。",
+            locator,
+        )
+        self.assertIsNone(result)
         self.assertEqual(
             mapped_family(
                 {"category": "correction_unanswerable", "subcategory": "unanswerable"}
@@ -259,6 +401,16 @@ class TeacherSftV4RepairTests(unittest.TestCase):
             "说出‘我从未见过’的是谁？",
             "是某人说的。",
             None,
+        )
+        self.assertNotIn("global_claim_requires_index_review", flags)
+
+    def test_local_evidence_reframe_is_not_still_treated_as_global(self):
+        flags = content_flags(
+            {"subcategory": "first_cooccurrence", "source": {}},
+            "根据第1章的证据片段，药老和萧宁是否都被提到？",
+            "是，证据片段同时提到了药老和萧宁。",
+            None,
+            "local_evidence_reframe",
         )
         self.assertNotIn("global_claim_requires_index_review", flags)
 

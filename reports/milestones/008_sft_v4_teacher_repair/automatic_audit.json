@@ -23,7 +23,7 @@
     },
     "topic_count": 1760,
     "unapproved_evaluation_count": 600,
-    "unique_answer_count": 2506,
+    "unique_answer_count": 2481,
     "verified_evidence_count": 2999,
     "verified_evidence_share": 0.9996666666666667
   },
@@ -31,9 +31,9 @@
   "corpus_sha256": "50592f249d2be17054ebbe2f8ca7945063e1a8ae669706e64d2076371c4d3b00",
   "evaluation_ai_pre_review": {
     "counts": {
-      "low_risk_human_review": 198,
-      "review_transformed_task": 185,
-      "verify_global_or_aggregate_claim": 217
+      "low_risk_human_review": 194,
+      "review_transformed_task": 234,
+      "verify_global_or_aggregate_claim": 172
     },
     "evaluation_count": 600,
     "human_approval_was_inferred": false,
@@ -153,19 +153,21 @@
     }
   ],
   "release_ready": false,
-  "repair_queue_count": 2292,
+  "repair_queue_count": 2290,
   "repair_reason_counts": {
     "aggregation_claim_requires_full_chapter_review": 320,
     "clarification_wrapper": 207,
     "concise_answer_instruction": 150,
     "contextualized_repeated_chapter_focus_answer": 82,
     "corrected_future_realm_as_unknown_current_state": 2,
+    "corrected_stale_literal_appearance_order": 3,
     "evidence_absent_from_frozen_v4": 1,
     "exact_copy_instruction": 450,
     "fuzzy_chapter_rebind_requires_review": 8,
-    "global_claim_requires_index_review": 754,
-    "rebased_stale_chapter_to_verified_corpus": 137,
+    "global_claim_requires_index_review": 528,
+    "rebased_stale_chapter_to_verified_corpus": 262,
     "reclassified_as_context": 200,
+    "reframed_first_cooccurrence_as_local_evidence": 271,
     "relationship_example_reclassified_as_context_understanding": 200,
     "removed_unasked_chapter_locate_padding": 174,
     "removed_unasked_chapter_order_padding": 129,
@@ -174,16 +176,16 @@
     "removed_unsupported_faction_place_aggregation": 70,
     "repaired_cause_question_grammar": 60,
     "repaired_incomplete_kinship_answer": 2,
-    "transformed_task_requires_review": 1250,
+    "transformed_task_requires_review": 1360,
     "verification_wrapper": 243
   },
   "review_priorities": {
-    "clean_training_candidate_count": 708,
+    "clean_training_candidate_count": 710,
     "counts": {
       "P0_evaluation_human_review": 600,
       "P1_training_provenance_review": 9,
-      "P2_training_semantic_review": 1683,
-      "clean_training_candidate": 708
+      "P2_training_semantic_review": 1681,
+      "clean_training_candidate": 710
     },
     "counts_by_split": {
       "test": {
@@ -191,8 +193,8 @@
       },
       "train": {
         "P1_training_provenance_review": 9,
-        "P2_training_semantic_review": 1683,
-        "clean_training_candidate": 708
+        "P2_training_semantic_review": 1681,
+        "clean_training_candidate": 710
       },
       "val": {
         "P0_evaluation_human_review": 300

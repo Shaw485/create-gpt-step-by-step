@@ -19,6 +19,7 @@ from build_sft_v4 import (
     read_jsonl,
     sha256_file,
 )
+from audit_corpus import CHAPTER_PATTERN
 from prepare_corpus_v4 import Chapter, parse_complete_chapters
 from repair_teacher_sft_v4 import (
     CHAPTER_REFERENCE_PATTERN,
@@ -64,7 +65,11 @@ NON_PERSON_TERMS = {
 
 def chapter_body(chapter: Chapter) -> str:
     lines = chapter.source_text.splitlines()
-    return "\n".join(lines[chapter.title_offset + 1 :])
+    return "\n".join(
+        line
+        for line in lines[chapter.title_offset + 1 :]
+        if not CHAPTER_PATTERN.match(line.strip())
+    )
 
 
 class ChapterTextIndex:
