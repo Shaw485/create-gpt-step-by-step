@@ -1,0 +1,90 @@
+{
+  "checkpoint": "runs/sft_v5_1_no_math_continue3000_cumulative5000/latest.pt",
+  "checkpoint_data_compatible": true,
+  "checkpoint_sha256": "5433ea3f5b2583ab963433b3cc08b327d170e3f5f5c5c726a4911435801f4530",
+  "checkpoint_step": 3000,
+  "data": "data/cloud_v4/sft_v5_1_no_math_tensors.pt",
+  "data_sha256": "1c9edbf5cf2abe8e94bc2af81861ac93d9caf1448dc373a9b2504959d1d949f2",
+  "device": "cpu",
+  "max_new_tokens": 30,
+  "samples": [
+    {
+      "category": "小说问题",
+      "generated_answer": "第304章的标题是《与》。",
+      "question": "小说第三百章的标题是什么？",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "generated_answer": "现有资料不足，无法确定。",
+      "question": "萧炎是谁？",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "generated_answer": "现有资料不足，无法确定。",
+      "question": "药尘是谁？",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "generated_answer": "药老的意力。",
+      "question": "异火是什么？",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "generated_answer": "我没有足够可靠的信息，不能硬编。",
+      "question": "请用一句话介绍萧炎。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "generated_answer": "是，片段同时提到了苏千和紫研。",
+      "question": "根据证据片段，韩枫和紫研是否都被提到？",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "generated_answer": "现有资料不足，无法确定。",
+      "question": "今天天气怎么样？",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "generated_answer": "可以，我们慢聊。你现在最想说的是什么？",
+      "question": "请写一句鼓励学习的话。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "指令遵循",
+      "generated_answer": "验证集不参与参与参数更新，用来观察模型是否真的泛化。",
+      "question": "请只回答“收到”。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "generated_answer": "我没有足够可靠的信息，不能硬编。",
+      "question": "请介绍人工智能。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+      "question": "我应该如何安排今天的学习？",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "generated_answer": "验证据支持“下一章是第章《气丹》”。",
+      "question": "请用一句话解释什么是监督微调。",
+      "stopped_on_eos": true
+    }
+  ],
+  "schema_version": "sft-v4-custom-samples/v1",
+  "seed": 20260828,
+  "status": "complete",
+  "temperature": 0.8,
+  "title": "M013 v5.1 去数学 SFT 累计5000步样本",
+  "top_k": 20
+}

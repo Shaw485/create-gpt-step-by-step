@@ -12,7 +12,9 @@
 - 已完成正式 v4 语料审核、按章节 train/validation/test 切分、每章 EOS 和 BPE 张量生成。
 - 已在 Apple M4/MPS 上把 810 万参数模型训练到累计 6,000 步；最佳验证 Loss 为 4.7759，独立 Test Loss 为 4.7476。
 - 已建立小说续写评测 Harness：验证 Loss 负责筛选，重复退化、中文比例、训练集复现和固定提示词负责自动否决，语义连贯性仍由人工复核；Step 6000 发布候选因连续重复而被标记为 `REVIEW`。
-- 已生成并审计3000条v4教师SFT候选，但当前状态仍为`needs_review`：600条val/test尚未真人批准，训练集的证据与语义风险也需处理。验收通过后才编码正式SFT张量并开始20步安全试跑。
+- 已完成教师SFT数据修复、Codex AI审核、20步安全试跑和多轮正式SFT；AI审核不冒充独立真人签字。
+- 当前M013 v5.1训练集为4676条（3629/520/527），已移除数学题、数学话题和污染元提示；冻结评估完整提示及其子串包装重合为0。
+- 无数学v2严格评估中，累计5000步latest为7/30、EOS 25/30，低于18/30发布门槛；当前只判定数据修复完成，不把模型称为可靠聊天模型。
 
 完整路线见 [ROADMAP.md](ROADMAP.md)，当前任务见 [TODO.md](TODO.md)，实验材料入口见 [VIDEO_MATERIALS.md](VIDEO_MATERIALS.md)。
 
@@ -29,7 +31,7 @@
 | Micro Batch / 梯度累积 | 2 / 4 |
 | 权重共享 | Token Embedding 与输出层共享 |
 
-从零训练阶段见 [M006 里程碑](reports/milestones/006_v4_local_pretrain/README.md)，低学习率续训与全局评测见 [M007 里程碑](reports/milestones/007_v4_continue6000/README.md)。云端扩展备选见 [CLOUD_TRAINING_PLAN.md](CLOUD_TRAINING_PLAN.md)。
+从零训练阶段见 [M006 里程碑](reports/milestones/006_v4_local_pretrain/README.md)，低学习率续训与全局评测见 [M007 里程碑](reports/milestones/007_v4_continue6000/README.md)，当前去数学SFT见 [M013 里程碑](reports/milestones/013_v5_1_no_math_sft/README.md)。云端扩展备选见 [CLOUD_TRAINING_PLAN.md](CLOUD_TRAINING_PLAN.md)。
 模型用途、评测和发布边界见 [MODEL_CARD.md](MODEL_CARD.md)。
 
 ## 本地验证
@@ -55,7 +57,7 @@ python -m unittest discover -s tests -v
 
 ## 日志与调试
 
-训练采用分模块轮转 JSONL 日志。数据、预训练、验证、Checkpoint、GPU、SFT 和编排日志能够分别调节级别；默认不记录密码、访问令牌、密钥和完整授权头。首阶段日志位于 `runs/pretrain_v4_m4/logs/`，续训日志位于 `runs/pretrain_v4_m4_continue6000/logs/`；配置分别见 `configs/local_m4_8m.json` 和 `configs/local_m4_8m_continue_6000.json`。M008 SFT数据修复日志位于被Git忽略的`data/sft/v4_teacher_repair/logs/`；真人审核工具使用`review_logs/`分别记录UI、数据保存和验证事件，不记录审核人或审核正文。
+训练采用分模块轮转 JSONL 日志。数据、预训练、验证、Checkpoint、GPU、SFT 和编排日志能够分别调节级别；默认不记录密码、访问令牌、密钥和完整授权头。首阶段日志位于 `runs/pretrain_v4_m4/logs/`，续训日志位于 `runs/pretrain_v4_m4_continue6000/logs/`；配置分别见 `configs/local_m4_8m.json` 和 `configs/local_m4_8m_continue_6000.json`。M008 SFT数据修复日志位于被Git忽略的`data/sft/v4_teacher_repair/logs/`；M013构建、训练、评估和checkpoint/数据兼容性日志位于`reports/milestones/013_v5_1_no_math_sft/logs/`（被Git忽略）。审核工具使用`review_logs/`分别记录UI、数据保存和验证事件，不记录审核人或审核正文。
 
 M008本地真人审核页面可用以下命令启动，只监听`127.0.0.1:8765`：
 

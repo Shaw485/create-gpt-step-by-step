@@ -1,0 +1,178 @@
+{
+  "arithmetic_records": 0,
+  "base_records_after_cleaning": 4315,
+  "base_records_before_cleaning": 5999,
+  "base_sha256": "50e38ec19541ecd35ea6da64c25ce32ccd655acd74013eb9a380071c07133a95",
+  "clean_base_split_counts": {
+    "test": 487,
+    "train": 3351,
+    "val": 477
+  },
+  "continuation_rewrite_instruction_records": 0,
+  "domain_switching_records": 0,
+  "encodable_repair_candidates": 361,
+  "final_split_counts": {
+    "test": 527,
+    "train": 3629,
+    "val": 520
+  },
+  "held_out_evaluation_prompt_overlap_records": 0,
+  "math_topic_records": 0,
+  "output_path": "data/sft/v5_1_no_math/sft_v5_1_no_math_training_ready.jsonl",
+  "output_sha256": "23065ff618a3ca03130d07f2af7b64b208303f7055f4e94f09b431e4a39cbdfe",
+  "polluted_prompt_prefix_records": 0,
+  "purpose": "Remove math and meta-prompt pollution, isolate diagnostics, and add diverse grouped repairs for useful chat behavior.",
+  "raw_repair_candidates": 393,
+  "rejected_repair_candidate_characters": {
+    "拟": 5
+  },
+  "rejected_repair_candidate_reasons": {
+    "canonical_duplicate_question": 7,
+    "duplicate_question": 20,
+    "tokenizer_missing_character": 5
+  },
+  "removed_base_reasons": {
+    "arithmetic": 400,
+    "continuation_rewrite_instruction": 449,
+    "domain_switching": 285,
+    "held_out_evaluation_prompt_overlap": 225,
+    "math_topic": 48,
+    "polluted_prompt_prefix": 277
+  },
+  "removed_base_records": 1684,
+  "removed_base_split_counts": {
+    "test": 113,
+    "train": 1448,
+    "val": 123
+  },
+  "repair_quality": {
+    "families": {
+      "capability_boundary_specific": {
+        "max_exact_answer_repeat": 1,
+        "records": 10,
+        "semantic_groups": 5,
+        "split_counts": {
+          "test": 2,
+          "train": 6,
+          "val": 2
+        },
+        "unique_answer_ratio": 1.0,
+        "unique_answers": 10
+      },
+      "concept_explanation_repair": {
+        "max_exact_answer_repeat": 1,
+        "records": 51,
+        "semantic_groups": 12,
+        "split_counts": {
+          "test": 4,
+          "train": 42,
+          "val": 5
+        },
+        "unique_answer_ratio": 1.0,
+        "unique_answers": 51
+      },
+      "evidence_entity_match": {
+        "max_exact_answer_repeat": 1,
+        "records": 80,
+        "semantic_groups": 20,
+        "split_counts": {
+          "test": 8,
+          "train": 64,
+          "val": 8
+        },
+        "unique_answer_ratio": 1.0,
+        "unique_answers": 80
+      },
+      "instruction_following_repair": {
+        "max_exact_answer_repeat": 6,
+        "records": 50,
+        "semantic_groups": 30,
+        "split_counts": {
+          "test": 4,
+          "train": 40,
+          "val": 6
+        },
+        "unique_answer_ratio": 0.44,
+        "unique_answers": 22
+      },
+      "natural_conversation_repair": {
+        "max_exact_answer_repeat": 1,
+        "records": 95,
+        "semantic_groups": 95,
+        "split_counts": {
+          "test": 10,
+          "train": 75,
+          "val": 10
+        },
+        "unique_answer_ratio": 1.0,
+        "unique_answers": 95
+      },
+      "novel_fact_anchor": {
+        "max_exact_answer_repeat": 1,
+        "records": 16,
+        "semantic_groups": 4,
+        "split_counts": {
+          "test": 4,
+          "train": 8,
+          "val": 4
+        },
+        "unique_answer_ratio": 1.0,
+        "unique_answers": 16
+      },
+      "novel_known_entity": {
+        "max_exact_answer_repeat": 1,
+        "records": 59,
+        "semantic_groups": 15,
+        "split_counts": {
+          "test": 8,
+          "train": 43,
+          "val": 8
+        },
+        "unique_answer_ratio": 1.0,
+        "unique_answers": 59
+      }
+    },
+    "semantic_group_leaks": 0
+  },
+  "repair_records": 361,
+  "repair_split_counts": {
+    "test": 40,
+    "train": 278,
+    "val": 43
+  },
+  "schema_version": "sft_v5_1_no_math/2.1",
+  "status": "complete",
+  "summary": {
+    "max_answer_tokens": 75,
+    "max_question_tokens": 89,
+    "split_counts": {
+      "test": 527,
+      "train": 3629,
+      "val": 520
+    },
+    "task_family_counts": {
+      "ambiguity_unknown_clarification": 300,
+      "capability_boundary": 178,
+      "capability_boundary_specific": 10,
+      "concept_explanation_repair": 51,
+      "context_understanding": 450,
+      "conversation_control": 150,
+      "direct_fact": 747,
+      "evidence_entity_match": 80,
+      "fact_verification_correction": 300,
+      "general_chat": 390,
+      "honest_unknown_general": 254,
+      "instruction_following": 297,
+      "instruction_following_repair": 50,
+      "natural_conversation_repair": 95,
+      "novel_fact_anchor": 16,
+      "novel_known_entity": 59,
+      "project_explanation": 382,
+      "relationship_reason_timeline": 600,
+      "study_planning": 267
+    }
+  },
+  "test_records_consumed_for_training": 0,
+  "tokenizer_sha256": "86bc44516339d7eee774da6c2b9e4bae8e85c0fd58b9192b6e234f884befaee0",
+  "total_records": 4676
+}

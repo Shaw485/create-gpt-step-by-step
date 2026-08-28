@@ -1,0 +1,857 @@
+{
+  "best_checkpoint": "runs/sft_v5_1_no_math_continue3000_cumulative5000/best.pt",
+  "best_val_loss": 1.062469378579408,
+  "data_path": "data/cloud_v4/sft_v5_1_no_math_tensors.pt",
+  "data_sha256": "1c9edbf5cf2abe8e94bc2af81861ac93d9caf1448dc373a9b2504959d1d949f2",
+  "device": "cpu",
+  "elapsed_seconds": 180.1485619160012,
+  "eval_batches": 10,
+  "eval_interval": 500,
+  "final_train_loss": 1.8247904404997826,
+  "final_val_loss": 1.7515841671265662,
+  "init_checkpoint": "runs/sft_v5_1_no_math_step2000/latest.pt",
+  "init_checkpoint_sha256": "c05b806f3db9420b1418a8a64b963c54aaea1bf70a3c061e3554dc9e5bf36ba5",
+  "initial_train_loss": 0.807542621716857,
+  "initial_val_loss": 2.0991997107863427,
+  "latest_checkpoint": "runs/sft_v5_1_no_math_continue3000_cumulative5000/latest.pt",
+  "latest_checkpoint_sha256": "5433ea3f5b2583ab963433b3cc08b327d170e3f5f5c5c726a4911435801f4530",
+  "learning_rate": 5e-05,
+  "loss_csv": "reports/milestones/013_v5_1_no_math_sft/sft_v5_1_no_math_cumulative5000_report_loss.csv",
+  "loss_history": [
+    {
+      "step": 0,
+      "train_loss": 0.807542621716857,
+      "val_loss": 2.0991997107863427
+    },
+    {
+      "step": 500,
+      "train_loss": 1.1526756703853607,
+      "val_loss": 2.2618056152015926
+    },
+    {
+      "step": 1000,
+      "train_loss": 1.9978310957551002,
+      "val_loss": 1.8623074278235436
+    },
+    {
+      "step": 1500,
+      "train_loss": 1.4747680621920154,
+      "val_loss": 2.2350163705646993
+    },
+    {
+      "step": 2000,
+      "train_loss": 1.519107679789886,
+      "val_loss": 2.840031515061855
+    },
+    {
+      "step": 2500,
+      "train_loss": 0.6813257792964578,
+      "val_loss": 1.062469378579408
+    },
+    {
+      "step": 3000,
+      "train_loss": 1.8247904404997826,
+      "val_loss": 1.7515841671265662
+    }
+  ],
+  "micro_batch_size": 1,
+  "monitor_outputs": [
+    {
+      "expected_answer": "当前证据片段明确出现了药尘。",
+      "generated_answer": "当前证据片段明确出现了欣蓝。",
+      "id": "v4_547a13f5d7fcccbe2538",
+      "question": "原问题是“雷尊者与药尘相比，谁更早出现在故事里”。现只做局部证据核验：不比较全书登场先后，只看第351章的当前证据：药尘和雷尊者中明确出现了谁？",
+      "split": "train",
+      "stopped_on_eos": true,
+      "task_family": "relationship_reason_timeline"
+    },
+    {
+      "expected_answer": "因为为了担心造成的动静太大。",
+      "generated_answer": "第一千三十三章《与三章《大丹》里，原文把药方法》里交代，萧炎在第一千三百四",
+      "id": "v4_43bc12612221103e1b23",
+      "question": "在第七百五十六章里，萧炎并未使用斗气化翼的原因是什么？",
+      "split": "train",
+      "stopped_on_eos": false,
+      "task_family": "relationship_reason_timeline"
+    },
+    {
+      "expected_answer": "能确认；当前证据片段同时提到了萧炎和药老。",
+      "generated_answer": "能确认；当前证据片段同时提到了萧炎和药老。",
+      "id": "v4_985359900013c63f30fd",
+      "question": "原问题是“小说第一千二百零九章中，除了萧炎，戏份最多的人物是谁”。现只做局部证据核验：不判断整章戏份多少，只核对第1209章的证据：萧炎与药老是否都在片段中出现？",
+      "split": "train",
+      "stopped_on_eos": true,
+      "task_family": "relationship_reason_timeline"
+    },
+    {
+      "expected_answer": "现有资料不足，无法确定其首次出现章节。",
+      "generated_answer": "现有资料不足，无法确定其首次出现章节。",
+      "id": "mixed_chat_433da0e6aab8b5ee",
+      "question": "自然一点回答：星河炼药塔第一次出现在哪一章？",
+      "split": "train",
+      "stopped_on_eos": true,
+      "task_family": "honest_unknown_general"
+    },
+    {
+      "expected_answer": "简单说，小医仙是小说中的重要人物。",
+      "generated_answer": "P74章的标题是小说第614章的标题。",
+      "id": "v5_1_f6a1620703b3edd9",
+      "question": "《斗破苍穹》中的小医仙是什么？",
+      "split": "train",
+      "stopped_on_eos": true,
+      "task_family": "novel_known_entity"
+    },
+    {
+      "expected_answer": "请先说明作品名称、具体人物和故事阶段，我再核对与“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”相关的内容。",
+      "generated_answer": "请先说明你指的是哪部作品，以及想了解萧炎的哪个故事阶段，我再核对与“",
+      "id": "v4_159d93c40620f3747687",
+      "question": "参考原问题“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”，如果用户只说“请介绍相关人物”，但没有说明作品、人物和故事阶段，应该先怎么回应？",
+      "split": "val",
+      "stopped_on_eos": false,
+      "task_family": "ambiguity_unknown_clarification"
+    },
+    {
+      "expected_answer": "是，证据片段同时提到了药老和萧宁。",
+      "generated_answer": "是，证据片段同时提到了萧炎和古河。",
+      "id": "v4_25a97433201abef03545",
+      "question": "根据第520章的证据片段，药老和萧宁是否都被提到？",
+      "split": "val",
+      "stopped_on_eos": true,
+      "task_family": "relationship_reason_timeline"
+    },
+    {
+      "expected_answer": "先定一个小目标，再做一个练习，最后用自己的话总结Python。",
+      "generated_answer": "应该说是小目标。",
+      "id": "mixed_chat_8200452b1b1ecf90",
+      "question": "自然一点回答：我应该如何学习Python？",
+      "split": "val",
+      "stopped_on_eos": true,
+      "task_family": "study_planning"
+    },
+    {
+      "expected_answer": "验证集不参与参数更新，用来观察模型是否真的泛化。",
+      "generated_answer": "验证集不参与参与参与参与参与参与“指验模型最小练阶段”。",
+      "id": "mixed_chat_9112de01584b5e2b",
+      "question": "用一句话回答：验证集在手搓GPT项目里有什么作用？",
+      "split": "val",
+      "stopped_on_eos": true,
+      "task_family": "project_explanation"
+    },
+    {
+      "expected_answer": "在《斗破苍穹》中，萧薰儿是与萧炎关系密切的重要人物。",
+      "generated_answer": "我没有足够可靠的信息，不能硬编。",
+      "id": "v5_1_ee1552c1cb5964c4",
+      "question": "请介绍一下萧薰儿。",
+      "split": "val",
+      "stopped_on_eos": true,
+      "task_family": "novel_known_entity"
+    }
+  ],
+  "parameter_count": 8105025,
+  "payload_summary": {
+    "max_sequence_length": 149,
+    "mean_sequence_length": 53.379597946963216,
+    "min_sequence_length": 12,
+    "split_counts": {
+      "test": 527,
+      "train": 3629,
+      "val": 520
+    },
+    "supervised_tokens": 100662,
+    "task_family_counts": {
+      "ambiguity_unknown_clarification": 300,
+      "capability_boundary": 178,
+      "capability_boundary_specific": 10,
+      "concept_explanation_repair": 51,
+      "context_understanding": 450,
+      "conversation_control": 150,
+      "direct_fact": 747,
+      "evidence_entity_match": 80,
+      "fact_verification_correction": 300,
+      "general_chat": 390,
+      "honest_unknown_general": 254,
+      "instruction_following": 297,
+      "instruction_following_repair": 50,
+      "natural_conversation_repair": 95,
+      "novel_fact_anchor": 16,
+      "novel_known_entity": 59,
+      "project_explanation": 382,
+      "relationship_reason_timeline": 600,
+      "study_planning": 267
+    }
+  },
+  "run_id": "sft-v4-20260828T125925Z-98ccd0d9",
+  "sample_history": [
+    {
+      "samples": [
+        {
+          "expected_answer": "当前证据片段明确出现了药尘。",
+          "generated_answer": "当前证据片段明确出现了欣蓝。",
+          "id": "v4_547a13f5d7fcccbe2538",
+          "question": "原问题是“雷尊者与药尘相比，谁更早出现在故事里”。现只做局部证据核验：不比较全书登场先后，只看第351章的当前证据：药尘和雷尊者中明确出现了谁？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "因为为了担心造成的动静太大。",
+          "generated_answer": "第八百四章《毒丹》交代，萧炎与小医仙也是逐渐阴沉了起来，小医仙，原因是什么，原文里对与",
+          "id": "v4_43bc12612221103e1b23",
+          "question": "在第七百五十六章里，萧炎并未使用斗气化翼的原因是什么？",
+          "split": "train",
+          "stopped_on_eos": false,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "能确认；当前证据片段同时提到了萧炎和药老。",
+          "generated_answer": "能确认；当前证据片段同时提到了萧炎和小医仙。",
+          "id": "v4_985359900013c63f30fd",
+          "question": "原问题是“小说第一千二百零九章中，除了萧炎，戏份最多的人物是谁”。现只做局部证据核验：不判断整章戏份多少，只核对第1209章的证据：萧炎与药老是否都在片段中出现？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "现有资料不足，无法确定其首次出现章节。",
+          "generated_answer": "现有资料不足，无法确定其首次出现章节。",
+          "id": "mixed_chat_433da0e6aab8b5ee",
+          "question": "自然一点回答：星河炼药塔第一次出现在哪一章？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "honest_unknown_general"
+        },
+        {
+          "expected_answer": "简单说，小医仙是小说中的重要人物。",
+          "generated_answer": "我是小说。",
+          "id": "v5_1_f6a1620703b3edd9",
+          "question": "《斗破苍穹》中的小医仙是什么？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "novel_known_entity"
+        },
+        {
+          "expected_answer": "请先说明作品名称、具体人物和故事阶段，我再核对与“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”相关的内容。",
+          "generated_answer": "应该说明你指的哪部作品，以及想了解小医仙的哪个故事阶段，我再核对与“第一千",
+          "id": "v4_159d93c40620f3747687",
+          "question": "参考原问题“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”，如果用户只说“请介绍相关人物”，但没有说明作品、人物和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "是，证据片段同时提到了药老和萧宁。",
+          "generated_answer": "是，证据片段同时提到了萧炎和法犸。",
+          "id": "v4_25a97433201abef03545",
+          "question": "根据第520章的证据片段，药老和萧宁是否都被提到？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "先定一个小目标，再做一个练习，最后用自己的话总结Python。",
+          "generated_answer": "前证据片段中出现了连续字符“三章中的高章”。",
+          "id": "mixed_chat_8200452b1b1ecf90",
+          "question": "自然一点回答：我应该如何学习Python？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "study_planning"
+        },
+        {
+          "expected_answer": "验证集不参与参数更新，用来观察模型是否真的泛化。",
+          "generated_answer": "GTokenokenTokeeeenTo4PTonoe7To",
+          "id": "mixed_chat_9112de01584b5e2b",
+          "question": "用一句话回答：验证集在手搓GPT项目里有什么作用？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "project_explanation"
+        },
+        {
+          "expected_answer": "在《斗破苍穹》中，萧薰儿是与萧炎关系密切的重要人物。",
+          "generated_answer": "我没有给出。",
+          "id": "v5_1_ee1552c1cb5964c4",
+          "question": "请介绍一下萧薰儿。",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "novel_known_entity"
+        }
+      ],
+      "step": 0
+    },
+    {
+      "samples": [
+        {
+          "expected_answer": "当前证据片段明确出现了药尘。",
+          "generated_answer": "当前证据片段明确出现了欣蓝。",
+          "id": "v4_547a13f5d7fcccbe2538",
+          "question": "原问题是“雷尊者与药尘相比，谁更早出现在故事里”。现只做局部证据核验：不比较全书登场先后，只看第351章的当前证据：药尘和雷尊者中明确出现了谁？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "因为为了担心造成的动静太大。",
+          "generated_answer": "是四品丹药。",
+          "id": "v4_43bc12612221103e1b23",
+          "question": "在第七百五十六章里，萧炎并未使用斗气化翼的原因是什么？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "能确认；当前证据片段同时提到了萧炎和药老。",
+          "generated_answer": "能确认；当前证据片段同时提到了药老和药老。",
+          "id": "v4_985359900013c63f30fd",
+          "question": "原问题是“小说第一千二百零九章中，除了萧炎，戏份最多的人物是谁”。现只做局部证据核验：不判断整章戏份多少，只核对第1209章的证据：萧炎与药老是否都在片段中出现？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "现有资料不足，无法确定其首次出现章节。",
+          "generated_answer": "现有资料不足，无法确定其首次出现章节。",
+          "id": "mixed_chat_433da0e6aab8b5ee",
+          "question": "自然一点回答：星河炼药塔第一次出现在哪一章？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "honest_unknown_general"
+        },
+        {
+          "expected_answer": "简单说，小医仙是小说中的重要人物。",
+          "generated_answer": "《我是小说第11411411章的标题。",
+          "id": "v5_1_f6a1620703b3edd9",
+          "question": "《斗破苍穹》中的小医仙是什么？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "novel_known_entity"
+        },
+        {
+          "expected_answer": "请先说明作品名称、具体人物和故事阶段，我再核对与“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”相关的内容。",
+          "generated_answer": "请先说明你指的是哪部作品，以及想了解萧炎的哪个故事阶段，我再核对与“",
+          "id": "v4_159d93c40620f3747687",
+          "question": "参考原问题“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”，如果用户只说“请介绍相关人物”，但没有说明作品、人物和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "是，证据片段同时提到了药老和萧宁。",
+          "generated_answer": "是，证据片段同时提到了雅妃和雅妃。",
+          "id": "v4_25a97433201abef03545",
+          "question": "根据第520章的证据片段，药老和萧宁是否都被提到？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "先定一个小目标，再做一个练习，最后用自己的话总结Python。",
+          "generated_answer": "GTokenToEToken样把编n编nToenEToTok",
+          "id": "mixed_chat_8200452b1b1ecf90",
+          "question": "自然一点回答：我应该如何学习Python？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "study_planning"
+        },
+        {
+          "expected_answer": "验证集不参与参数更新，用来观察模型是否真的泛化。",
+          "generated_answer": "PToken编TTokensToen编号还训练模部分词项To",
+          "id": "mixed_chat_9112de01584b5e2b",
+          "question": "用一句话回答：验证集在手搓GPT项目里有什么作用？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "project_explanation"
+        },
+        {
+          "expected_answer": "在《斗破苍穹》中，萧薰儿是与萧炎关系密切的重要人物。",
+          "generated_answer": "我没有足够可靠的信息，不能硬编。",
+          "id": "v5_1_ee1552c1cb5964c4",
+          "question": "请介绍一下萧薰儿。",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "novel_known_entity"
+        }
+      ],
+      "step": 500
+    },
+    {
+      "samples": [
+        {
+          "expected_answer": "当前证据片段明确出现了药尘。",
+          "generated_answer": "当前证据片段明确出现了韩枫。",
+          "id": "v4_547a13f5d7fcccbe2538",
+          "question": "原问题是“雷尊者与药尘相比，谁更早出现在故事里”。现只做局部证据核验：不比较全书登场先后，只看第351章的当前证据：药尘和雷尊者中明确出现了谁？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "因为为了担心造成的动静太大。",
+          "generated_answer": "第百七章《生成》交代，萧炎已经生成一个小说中的高。",
+          "id": "v4_43bc12612221103e1b23",
+          "question": "在第七百五十六章里，萧炎并未使用斗气化翼的原因是什么？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "能确认；当前证据片段同时提到了萧炎和药老。",
+          "generated_answer": "能确认；当前证据片段同时提到了萧炎和药老。",
+          "id": "v4_985359900013c63f30fd",
+          "question": "原问题是“小说第一千二百零九章中，除了萧炎，戏份最多的人物是谁”。现只做局部证据核验：不判断整章戏份多少，只核对第1209章的证据：萧炎与药老是否都在片段中出现？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "现有资料不足，无法确定其首次出现章节。",
+          "generated_answer": "现有资料不足，无法确定其首次出现章节。",
+          "id": "mixed_chat_433da0e6aab8b5ee",
+          "question": "自然一点回答：星河炼药塔第一次出现在哪一章？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "honest_unknown_general"
+        },
+        {
+          "expected_answer": "简单说，小医仙是小说中的重要人物。",
+          "generated_answer": "小医仙是小说第151章的标题是《小说第1ke章的标题。",
+          "id": "v5_1_f6a1620703b3edd9",
+          "question": "《斗破苍穹》中的小医仙是什么？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "novel_known_entity"
+        },
+        {
+          "expected_answer": "请先说明作品名称、具体人物和故事阶段，我再核对与“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”相关的内容。",
+          "generated_answer": "请先说明你指的是哪部作品，以及想了解小医仙的哪个故事阶段，我再核对与",
+          "id": "v4_159d93c40620f3747687",
+          "question": "参考原问题“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”，如果用户只说“请介绍相关人物”，但没有说明作品、人物和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "是，证据片段同时提到了药老和萧宁。",
+          "generated_answer": "是，证据片段同时提到了萧炎和萧鼎。",
+          "id": "v4_25a97433201abef03545",
+          "question": "根据第520章的证据片段，药老和萧宁是否都被提到？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "先定一个小目标，再做一个练习，最后用自己的话总结Python。",
+          "generated_answer": "你好，我在。你想通过复习，我可以帮你做什么问题。",
+          "id": "mixed_chat_8200452b1b1ecf90",
+          "question": "自然一点回答：我应该如何学习Python？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "study_planning"
+        },
+        {
+          "expected_answer": "验证集不参与参数更新，用来观察模型是否真的泛化。",
+          "generated_answer": "BP编会把模型先复盘哪里的例子重合并成O5okesn，结果故",
+          "id": "mixed_chat_9112de01584b5e2b",
+          "question": "用一句话回答：验证集在手搓GPT项目里有什么作用？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "project_explanation"
+        },
+        {
+          "expected_answer": "在《斗破苍穹》中，萧薰儿是与萧炎关系密切的重要人物。",
+          "generated_answer": "我没有足够可靠的信息，不能硬编。",
+          "id": "v5_1_ee1552c1cb5964c4",
+          "question": "请介绍一下萧薰儿。",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "novel_known_entity"
+        }
+      ],
+      "step": 1000
+    },
+    {
+      "samples": [
+        {
+          "expected_answer": "当前证据片段明确出现了药尘。",
+          "generated_answer": "当前证据片段明确出现了欣蓝。",
+          "id": "v4_547a13f5d7fcccbe2538",
+          "question": "原问题是“雷尊者与药尘相比，谁更早出现在故事里”。现只做局部证据核验：不比较全书登场先后，只看第351章的当前证据：药尘和雷尊者中明确出现了谁？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "因为为了担心造成的动静太大。",
+          "generated_answer": "第第一千四十一章《九章《下》里，原文在生目标题是，原文在这一步下一",
+          "id": "v4_43bc12612221103e1b23",
+          "question": "在第七百五十六章里，萧炎并未使用斗气化翼的原因是什么？",
+          "split": "train",
+          "stopped_on_eos": false,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "能确认；当前证据片段同时提到了萧炎和药老。",
+          "generated_answer": "能确认；当前证据片段同时提到了萧炎和药老。",
+          "id": "v4_985359900013c63f30fd",
+          "question": "原问题是“小说第一千二百零九章中，除了萧炎，戏份最多的人物是谁”。现只做局部证据核验：不判断整章戏份多少，只核对第1209章的证据：萧炎与药老是否都在片段中出现？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "现有资料不足，无法确定其首次出现章节。",
+          "generated_answer": "现有资料不足，无法确定其首次出现章节。",
+          "id": "mixed_chat_433da0e6aab8b5ee",
+          "question": "自然一点回答：星河炼药塔第一次出现在哪一章？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "honest_unknown_general"
+        },
+        {
+          "expected_answer": "简单说，小医仙是小说中的重要人物。",
+          "generated_answer": "资料里的小说中的重要人物。",
+          "id": "v5_1_f6a1620703b3edd9",
+          "question": "《斗破苍穹》中的小医仙是什么？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "novel_known_entity"
+        },
+        {
+          "expected_answer": "请先说明作品名称、具体人物和故事阶段，我再核对与“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”相关的内容。",
+          "generated_answer": "请先说明你指令是哪部作品，以及想了解欣蓝的哪个故事阶段，我再核对与",
+          "id": "v4_159d93c40620f3747687",
+          "question": "参考原问题“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”，如果用户只说“请介绍相关人物”，但没有说明作品、人物和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "是，证据片段同时提到了药老和萧宁。",
+          "generated_answer": "是，证据片段同时提到了萧炎和萧鼎。",
+          "id": "v4_25a97433201abef03545",
+          "question": "根据第520章的证据片段，药老和萧宁是否都被提到？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "先定一个小目标，再做一个练习，最后用自己的话总结Python。",
+          "generated_answer": "目标出现了连续字符“第1章《“下一章《我里里，”相关是”。",
+          "id": "mixed_chat_8200452b1b1ecf90",
+          "question": "自然一点回答：我应该如何学习Python？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "study_planning"
+        },
+        {
+          "expected_answer": "验证集不参与参数更新，用来观察模型是否真的泛化。",
+          "generated_answer": "PToken，用来告诉模型答案已经成完了。",
+          "id": "mixed_chat_9112de01584b5e2b",
+          "question": "用一句话回答：验证集在手搓GPT项目里有什么作用？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "project_explanation"
+        },
+        {
+          "expected_answer": "在《斗破苍穹》中，萧薰儿是与萧炎关系密切的重要人物。",
+          "generated_answer": "我没有足够可靠的信息，不能硬编。",
+          "id": "v5_1_ee1552c1cb5964c4",
+          "question": "请介绍一下萧薰儿。",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "novel_known_entity"
+        }
+      ],
+      "step": 1500
+    },
+    {
+      "samples": [
+        {
+          "expected_answer": "当前证据片段明确出现了药尘。",
+          "generated_answer": "当前证据片段明确出现了欣蓝。",
+          "id": "v4_547a13f5d7fcccbe2538",
+          "question": "原问题是“雷尊者与药尘相比，谁更早出现在故事里”。现只做局部证据核验：不比较全书登场先后，只看第351章的当前证据：药尘和雷尊者中明确出现了谁？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "因为为了担心造成的动静太大。",
+          "generated_answer": "是什么，证据片段同时提到了法犸和雅妃。",
+          "id": "v4_43bc12612221103e1b23",
+          "question": "在第七百五十六章里，萧炎并未使用斗气化翼的原因是什么？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "能确认；当前证据片段同时提到了萧炎和药老。",
+          "generated_answer": "能确认；当前证据片段同时提到了萧炎和药老。",
+          "id": "v4_985359900013c63f30fd",
+          "question": "原问题是“小说第一千二百零九章中，除了萧炎，戏份最多的人物是谁”。现只做局部证据核验：不判断整章戏份多少，只核对第1209章的证据：萧炎与药老是否都在片段中出现？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "现有资料不足，无法确定其首次出现章节。",
+          "generated_answer": "现有资料不足，无法确定其首次出现章节。",
+          "id": "mixed_chat_433da0e6aab8b5ee",
+          "question": "自然一点回答：星河炼药塔第一次出现在哪一章？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "honest_unknown_general"
+        },
+        {
+          "expected_answer": "简单说，小医仙是小说中的重要人物。",
+          "generated_answer": "我是小说的问题。",
+          "id": "v5_1_f6a1620703b3edd9",
+          "question": "《斗破苍穹》中的小医仙是什么？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "novel_known_entity"
+        },
+        {
+          "expected_answer": "请先说明作品名称、具体人物和故事阶段，我再核对与“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”相关的内容。",
+          "generated_answer": "请先说明你指的是哪部作品，以及想了解欣蓝的哪个故事阶段，我再核对与",
+          "id": "v4_159d93c40620f3747687",
+          "question": "参考原问题“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”，如果用户只说“请介绍相关人物”，但没有说明作品、人物和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "是，证据片段同时提到了药老和萧宁。",
+          "generated_answer": "是，证据片段同时提到了萧炎和欣蓝。",
+          "id": "v4_25a97433201abef03545",
+          "question": "根据第520章的证据片段，药老和萧宁是否都被提到？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "先定一个小目标，再做一个练习，最后用自己的话总结Python。",
+          "generated_answer": "先定一个小目标，再做一个练习，最后用自己的话总结GPT实验模型。",
+          "id": "mixed_chat_8200452b1b1ecf90",
+          "question": "自然一点回答：我应该如何学习Python？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "study_planning"
+        },
+        {
+          "expected_answer": "验证集不参与参数更新，用来观察模型是否真的泛化。",
+          "generated_answer": "PToken里抽样影响Loken里没明TokenToken编",
+          "id": "mixed_chat_9112de01584b5e2b",
+          "question": "用一句话回答：验证集在手搓GPT项目里有什么作用？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "project_explanation"
+        },
+        {
+          "expected_answer": "在《斗破苍穹》中，萧薰儿是与萧炎关系密切的重要人物。",
+          "generated_answer": "我没有足够可靠的信息，不能硬编。",
+          "id": "v5_1_ee1552c1cb5964c4",
+          "question": "请介绍一下萧薰儿。",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "novel_known_entity"
+        }
+      ],
+      "step": 2000
+    },
+    {
+      "samples": [
+        {
+          "expected_answer": "当前证据片段明确出现了药尘。",
+          "generated_answer": "当前证据片段明确出现了欣蓝。",
+          "id": "v4_547a13f5d7fcccbe2538",
+          "question": "原问题是“雷尊者与药尘相比，谁更早出现在故事里”。现只做局部证据核验：不比较全书登场先后，只看第351章的当前证据：药尘和雷尊者中明确出现了谁？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "因为为了担心造成的动静太大。",
+          "generated_answer": "第一千零六百九十三章《不交代，萧炎在与场人物是，原因是，这一人是三纹青",
+          "id": "v4_43bc12612221103e1b23",
+          "question": "在第七百五十六章里，萧炎并未使用斗气化翼的原因是什么？",
+          "split": "train",
+          "stopped_on_eos": false,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "能确认；当前证据片段同时提到了萧炎和药老。",
+          "generated_answer": "能确认；当前证据片段同时提到了萧炎和药老。",
+          "id": "v4_985359900013c63f30fd",
+          "question": "原问题是“小说第一千二百零九章中，除了萧炎，戏份最多的人物是谁”。现只做局部证据核验：不判断整章戏份多少，只核对第1209章的证据：萧炎与药老是否都在片段中出现？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "现有资料不足，无法确定其首次出现章节。",
+          "generated_answer": "现有资料不足，无法确定其首次出现章节。",
+          "id": "mixed_chat_433da0e6aab8b5ee",
+          "question": "自然一点回答：星河炼药塔第一次出现在哪一章？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "honest_unknown_general"
+        },
+        {
+          "expected_answer": "简单说，小医仙是小说中的重要人物。",
+          "generated_answer": "《关》是小说第654章的标题。",
+          "id": "v5_1_f6a1620703b3edd9",
+          "question": "《斗破苍穹》中的小医仙是什么？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "novel_known_entity"
+        },
+        {
+          "expected_answer": "请先说明作品名称、具体人物和故事阶段，我再核对与“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”相关的内容。",
+          "generated_answer": "请先说明你指的是哪部作品，以及想了解紫研的哪个故事阶段，我再核对与",
+          "id": "v4_159d93c40620f3747687",
+          "question": "参考原问题“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”，如果用户只说“请介绍相关人物”，但没有说明作品、人物和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "是，证据片段同时提到了药老和萧宁。",
+          "generated_answer": "是，证据片段同时提到了苏千和苏千。",
+          "id": "v4_25a97433201abef03545",
+          "question": "根据第520章的证据片段，药老和萧宁是否都被提到？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "先定一个小目标，再做一个练习，最后用自己的话总结Python。",
+          "generated_answer": "PTokenoken编编号和告诉模型答案已经生成完了。",
+          "id": "mixed_chat_8200452b1b1ecf90",
+          "question": "自然一点回答：我应该如何学习Python？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "study_planning"
+        },
+        {
+          "expected_answer": "验证集不参与参数更新，用来观察模型是否真的泛化。",
+          "generated_answer": "Token编号和目标缩小练出来的迷你GPToken《关Token",
+          "id": "mixed_chat_9112de01584b5e2b",
+          "question": "用一句话回答：验证集在手搓GPT项目里有什么作用？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "project_explanation"
+        },
+        {
+          "expected_answer": "在《斗破苍穹》中，萧薰儿是与萧炎关系密切的重要人物。",
+          "generated_answer": "我没有足够可靠的信息，不能硬编。",
+          "id": "v5_1_ee1552c1cb5964c4",
+          "question": "请介绍一下萧薰儿。",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "novel_known_entity"
+        }
+      ],
+      "step": 2500
+    },
+    {
+      "samples": [
+        {
+          "expected_answer": "当前证据片段明确出现了药尘。",
+          "generated_answer": "当前证据片段明确出现了欣蓝。",
+          "id": "v4_547a13f5d7fcccbe2538",
+          "question": "原问题是“雷尊者与药尘相比，谁更早出现在故事里”。现只做局部证据核验：不比较全书登场先后，只看第351章的当前证据：药尘和雷尊者中明确出现了谁？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "因为为了担心造成的动静太大。",
+          "generated_answer": "第一千三十三章《与三章《大丹》里，原文把药方法》里交代，萧炎在第一千三百四",
+          "id": "v4_43bc12612221103e1b23",
+          "question": "在第七百五十六章里，萧炎并未使用斗气化翼的原因是什么？",
+          "split": "train",
+          "stopped_on_eos": false,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "能确认；当前证据片段同时提到了萧炎和药老。",
+          "generated_answer": "能确认；当前证据片段同时提到了萧炎和药老。",
+          "id": "v4_985359900013c63f30fd",
+          "question": "原问题是“小说第一千二百零九章中，除了萧炎，戏份最多的人物是谁”。现只做局部证据核验：不判断整章戏份多少，只核对第1209章的证据：萧炎与药老是否都在片段中出现？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "现有资料不足，无法确定其首次出现章节。",
+          "generated_answer": "现有资料不足，无法确定其首次出现章节。",
+          "id": "mixed_chat_433da0e6aab8b5ee",
+          "question": "自然一点回答：星河炼药塔第一次出现在哪一章？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "honest_unknown_general"
+        },
+        {
+          "expected_answer": "简单说，小医仙是小说中的重要人物。",
+          "generated_answer": "P74章的标题是小说第614章的标题。",
+          "id": "v5_1_f6a1620703b3edd9",
+          "question": "《斗破苍穹》中的小医仙是什么？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "novel_known_entity"
+        },
+        {
+          "expected_answer": "请先说明作品名称、具体人物和故事阶段，我再核对与“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”相关的内容。",
+          "generated_answer": "请先说明你指的是哪部作品，以及想了解萧炎的哪个故事阶段，我再核对与“",
+          "id": "v4_159d93c40620f3747687",
+          "question": "参考原问题“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”，如果用户只说“请介绍相关人物”，但没有说明作品、人物和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "是，证据片段同时提到了药老和萧宁。",
+          "generated_answer": "是，证据片段同时提到了萧炎和古河。",
+          "id": "v4_25a97433201abef03545",
+          "question": "根据第520章的证据片段，药老和萧宁是否都被提到？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "先定一个小目标，再做一个练习，最后用自己的话总结Python。",
+          "generated_answer": "应该说是小目标。",
+          "id": "mixed_chat_8200452b1b1ecf90",
+          "question": "自然一点回答：我应该如何学习Python？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "study_planning"
+        },
+        {
+          "expected_answer": "验证集不参与参数更新，用来观察模型是否真的泛化。",
+          "generated_answer": "验证集不参与参与参与参与参与参与“指验模型最小练阶段”。",
+          "id": "mixed_chat_9112de01584b5e2b",
+          "question": "用一句话回答：验证集在手搓GPT项目里有什么作用？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "project_explanation"
+        },
+        {
+          "expected_answer": "在《斗破苍穹》中，萧薰儿是与萧炎关系密切的重要人物。",
+          "generated_answer": "我没有足够可靠的信息，不能硬编。",
+          "id": "v5_1_ee1552c1cb5964c4",
+          "question": "请介绍一下萧薰儿。",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "novel_known_entity"
+        }
+      ],
+      "step": 3000
+    }
+  ],
+  "schema_version": "sft-v4-report/v1",
+  "stage": "sft_v4_formal",
+  "status": "complete",
+  "steps": 3000,
+  "test_records_consumed": 0,
+  "weight_decay": 0.05
+}

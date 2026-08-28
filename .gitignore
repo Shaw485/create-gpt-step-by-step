@@ -16,6 +16,7 @@ data/sft/v4/
 data/sft/v4_teacher_repair/
 data/sft/v4_mixed_chat/
 data/sft/v5_repair/
+data/sft/v5_1_no_math/
 logs/
 **/logs/
 checkpoints/

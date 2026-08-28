@@ -1,0 +1,48 @@
+{
+  "stage": "bpe_sft_data",
+  "records": 4676,
+  "split_counts": {
+    "train": 3629,
+    "val": 520,
+    "test": 527
+  },
+  "task_family_counts": {
+    "relationship_reason_timeline": 600,
+    "direct_fact": 747,
+    "context_understanding": 450,
+    "fact_verification_correction": 300,
+    "ambiguity_unknown_clarification": 300,
+    "conversation_control": 150,
+    "honest_unknown_general": 254,
+    "study_planning": 267,
+    "capability_boundary": 178,
+    "general_chat": 390,
+    "project_explanation": 382,
+    "instruction_following": 297,
+    "capability_boundary_specific": 10,
+    "concept_explanation_repair": 51,
+    "evidence_entity_match": 80,
+    "instruction_following_repair": 50,
+    "natural_conversation_repair": 95,
+    "novel_fact_anchor": 16,
+    "novel_known_entity": 59
+  },
+  "base_vocab_size": 6465,
+  "vocab_size": 6465,
+  "extended_vocab_size": 6465,
+  "special_token_ids": {
+    "<BOS>": 6460,
+    "<USER>": 6461,
+    "<ASSISTANT>": 6462,
+    "<EOS>": 6463,
+    "<PAD>": 6464
+  },
+  "min_sequence_length": 12,
+  "max_sequence_length": 149,
+  "mean_sequence_length": 53.379597946963216,
+  "supervised_tokens": 100662,
+  "masked_tokens": 144265,
+  "dataset_sha256": "23065ff618a3ca03130d07f2af7b64b208303f7055f4e94f09b431e4a39cbdfe",
+  "tokenizer_sha256": "86bc44516339d7eee774da6c2b9e4bae8e85c0fd58b9192b6e234f884befaee0",
+  "output_sha256": "1c9edbf5cf2abe8e94bc2af81861ac93d9caf1448dc373a9b2504959d1d949f2"
+}

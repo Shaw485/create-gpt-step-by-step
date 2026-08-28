@@ -1,4 +1,4 @@
-"""Evaluate a v4 SFT checkpoint with a fixed categorized diagnostic suite."""
+"""Evaluate the active no-math SFT checkpoint with a fixed diagnostic suite."""
 
 from __future__ import annotations
 
@@ -12,7 +12,11 @@ from typing import Any, Sequence
 import torch
 
 from bpe_tokenizer import BPETokenizer
-from sample_sft_v4_custom import build_prompt_ids, markdown_escape
+from sample_sft_v4_custom import (
+    build_prompt_ids,
+    markdown_escape,
+    validate_checkpoint_payload_compatibility,
+)
 from train_pretrain_v4 import load_config
 from train_sft_v4 import build_model, generate_answer, load_model_checkpoint, select_device
 from training_runtime import (
@@ -25,17 +29,19 @@ from training_runtime import (
 
 
 DEFAULT_CONFIG_PATH = Path("configs/local_m4_8m_continue_6000.json")
-DEFAULT_DATA_PATH = Path("data/cloud_v4/sft_v4_mixed_chat_tensors.pt")
-DEFAULT_CHECKPOINT_PATH = Path("runs/sft_v4_mixed_chat_step5000/latest.pt")
+DEFAULT_DATA_PATH = Path("data/cloud_v4/sft_v5_1_no_math_tensors.pt")
+DEFAULT_CHECKPOINT_PATH = Path(
+    "runs/sft_v5_1_no_math_continue3000_cumulative5000/latest.pt"
+)
 DEFAULT_OUTPUT_JSON = Path(
-    "reports/milestones/011_v4_mixed_chat_sft/category_eval_step5000_latest_lowtemp.json"
+    "reports/milestones/013_v5_1_no_math_sft/category_eval_cumulative5000_v2_greedy.json"
 )
 DEFAULT_OUTPUT_MD = Path(
-    "reports/milestones/011_v4_mixed_chat_sft/category_eval_step5000_latest_lowtemp.md"
+    "reports/milestones/013_v5_1_no_math_sft/category_eval_cumulative5000_v2_greedy.md"
 )
 DEFAULT_MAX_NEW_TOKENS = 30
 DEFAULT_TEMPERATURE = 0.3
-DEFAULT_TOP_K = 5
+DEFAULT_TOP_K = 1
 DEFAULT_SEED = 20260828
 
 NOVEL_LEAK_MARKERS = [
@@ -60,6 +66,7 @@ EVAL_ITEMS = [
         "question": "萧炎是谁？",
         "metric": "known_entity",
         "required_any": ["萧炎"],
+        "required_context_any": ["主要", "人物", "主角"],
         "forbidden_any": UNKNOWN_REFUSAL_MARKERS,
     },
     {
@@ -68,6 +75,7 @@ EVAL_ITEMS = [
         "question": "药尘是谁？",
         "metric": "known_entity",
         "required_any": ["药尘", "药老"],
+        "required_context_any": ["药老", "老师", "人物"],
         "forbidden_any": UNKNOWN_REFUSAL_MARKERS,
     },
     {
@@ -76,6 +84,7 @@ EVAL_ITEMS = [
         "question": "药老是谁？",
         "metric": "known_entity",
         "required_any": ["药老", "药尘"],
+        "required_context_any": ["药尘", "老师", "人物"],
         "forbidden_any": UNKNOWN_REFUSAL_MARKERS,
     },
     {
@@ -84,6 +93,7 @@ EVAL_ITEMS = [
         "question": "请用一句话介绍萧炎。",
         "metric": "known_entity",
         "required_any": ["萧炎"],
+        "required_context_any": ["主要", "人物", "主角"],
         "forbidden_any": UNKNOWN_REFUSAL_MARKERS + ["天气", "新闻"],
     },
     {
@@ -92,6 +102,7 @@ EVAL_ITEMS = [
         "question": "异火是什么？",
         "metric": "known_entity",
         "required_any": ["异火"],
+        "required_context_any": ["火焰", "力量", "炼药"],
         "forbidden_any": UNKNOWN_REFUSAL_MARKERS,
     },
     {
@@ -210,39 +221,40 @@ EVAL_ITEMS = [
         "topic_required_any": ["附近", "店", "候选"],
     },
     {
-        "id": "math_1_plus_1",
-        "category": "基础数学",
-        "question": "一加一等于几？",
-        "metric": "math_exact",
-        "expected_number": 2,
+        "id": "instruction_ack_exact",
+        "category": "指令遵循",
+        "question": "请只回答“收到”。",
+        "metric": "exact_response",
+        "accepted_responses": ["收到", "收到。"],
     },
     {
-        "id": "math_2_plus_3",
-        "category": "基础数学",
-        "question": "2加3等于几？",
-        "metric": "math_exact",
-        "expected_number": 5,
+        "id": "instruction_repeat_exact",
+        "category": "指令遵循",
+        "question": "请原样重复这四个字：“训练模型”。",
+        "metric": "exact_response",
+        "accepted_responses": ["训练模型", "训练模型。"],
     },
     {
-        "id": "math_7_plus_8",
-        "category": "基础数学",
-        "question": "7加8等于几？",
-        "metric": "math_exact",
-        "expected_number": 15,
+        "id": "instruction_two_advice",
+        "category": "指令遵循",
+        "question": "请给出两条提高学习专注力的建议。",
+        "metric": "two_advice",
+        "required_any": ["专注", "学习", "干扰", "休息"],
     },
     {
-        "id": "math_10_plus_9",
-        "category": "基础数学",
-        "question": "请直接回答：10加9是多少？",
-        "metric": "math_exact",
-        "expected_number": 19,
+        "id": "instruction_test_not_train",
+        "category": "指令遵循",
+        "question": "请只回答“是”或“否”：测试集应该参与参数更新吗？",
+        "metric": "exact_response",
+        "accepted_responses": ["否", "否。"],
     },
     {
-        "id": "math_apple_6_plus_4",
-        "category": "基础数学",
-        "question": "如果有6个苹果，又来了4个，一共有几个？",
-        "metric": "math_exact",
-        "expected_number": 10,
+        "id": "instruction_validation_one_sentence",
+        "category": "指令遵循",
+        "question": "请用一句话说明验证集的作用。",
+        "metric": "validation_role",
+        "required_any": ["泛化", "过拟合", "评估", "表现", "参数更新"],
+        "forbidden_any": NOVEL_LEAK_MARKERS,
     },
     {
         "id": "general_encourage",
@@ -302,32 +314,18 @@ def has_forbidden(text: str, item: dict[str, Any]) -> bool:
     return contains_any(text, item.get("forbidden_any", []))
 
 
-def score_math_exact(answer: str, expected_number: int) -> tuple[bool, str]:
-    numbers = [int(match) for match in re.findall(r"\d+", answer)]
-    if numbers:
-        if numbers == [expected_number] or numbers[-1] == expected_number and len(set(numbers)) == 1:
-            return True, f"found exact arabic number {expected_number}"
-        return False, f"found numbers {numbers}, expected only {expected_number}"
-    chinese_numbers = {
-        2: ["二", "两"],
-        5: ["五"],
-        10: ["十"],
-        15: ["十五"],
-        19: ["十九"],
-    }
-    if contains_any(answer, chinese_numbers.get(expected_number, [])):
-        return True, f"found chinese number {expected_number}"
-    return False, f"expected number {expected_number} not found"
-
-
 def score_item(item: dict[str, Any], answer: str, stopped_on_eos: bool) -> dict[str, Any]:
     metric = item["metric"]
     reason = ""
     passed = False
 
     if metric == "known_entity":
-        passed = contains_any(answer, item["required_any"]) and not has_forbidden(answer, item)
-        reason = "must mention known entity and avoid unknown refusal"
+        passed = (
+            contains_any(answer, item["required_any"])
+            and contains_any(answer, item.get("required_context_any", item["required_any"]))
+            and not has_forbidden(answer, item)
+        )
+        reason = "must identify the entity with a relevant role and avoid unknown refusal"
     elif metric == "exact_any":
         passed = contains_any(answer, item["required_any"]) and not has_forbidden(answer, item)
         reason = "must contain one expected phrase and avoid forbidden phrases"
@@ -341,18 +339,53 @@ def score_item(item: dict[str, Any], answer: str, stopped_on_eos: bool) -> dict[
             and not contains_any(answer, ["第", "章", "萧炎", "药老"])
         )
         reason = "must state topic-specific capability boundary without leaking novel patterns"
-    elif metric == "math_exact":
-        passed, reason = score_math_exact(answer, int(item["expected_number"]))
+    elif metric == "exact_response":
+        normalized = answer.strip()
+        passed = normalized in item["accepted_responses"]
+        reason = f"must exactly match one of {item['accepted_responses']}"
+    elif metric == "two_advice":
+        segments = [
+            segment.strip()
+            for segment in re.split(r"[。；\n]+", answer)
+            if segment.strip()
+        ]
+        numbered = bool(re.search(r"(?:1[.、]|一[、.]).*(?:2[.、]|二[、.])", answer))
+        passed = (
+            (len(segments) >= 2 or numbered)
+            and contains_any(answer, item["required_any"])
+            and not contains_any(answer, NOVEL_LEAK_MARKERS)
+        )
+        reason = "must provide at least two topic-relevant suggestions without novel leakage"
+    elif metric == "validation_role":
+        segments = [
+            segment.strip()
+            for segment in re.split(r"[。；\n]+", answer)
+            if segment.strip()
+        ]
+        passed = (
+            "验证集" in answer
+            and contains_any(answer, item["required_any"])
+            and len(segments) == 1
+            and not has_forbidden(answer, item)
+        )
+        reason = "must explain validation-set purpose in one sentence without novel leakage"
     elif metric == "chat_quality":
         passed = (
-            stopped_on_eos
-            and len(answer.strip()) >= 6
+            len(answer.strip()) >= 6
             and not contains_any(answer, NOVEL_LEAK_MARKERS)
             and not contains_any(answer, ["资料不足", "无法确定", "不能硬编"])
+            and (
+                not item.get("required_any")
+                or contains_any(answer, item["required_any"])
+            )
         )
-        reason = "must stop, be non-empty, and avoid novel/unknown-refusal leakage"
+        reason = "must be useful, follow requested topic, and avoid novel/refusal leakage"
     else:
         raise ValueError(f"unsupported metric: {metric}")
+
+    if not stopped_on_eos:
+        passed = False
+        reason = f"{reason}; generation must stop on EOS"
 
     return {
         "passed": bool(passed),
@@ -387,7 +420,7 @@ def summarize(results: Sequence[dict[str, Any]]) -> dict[str, Any]:
 def render_markdown(report: dict[str, Any]) -> str:
     summary = report["summary"]
     rows = [
-        "# SFT v4 分类型诊断评估",
+        "# SFT 分类型诊断评估（v2，无数学）",
         "",
         f"Checkpoint：`{report['checkpoint']}`",
         "",
@@ -474,6 +507,22 @@ def main(argv: Sequence[str] | None = None) -> int:
     device = select_device(args.device)
     model = build_model(base_config, int(payload["vocab_size"])).to(device)
     checkpoint = load_model_checkpoint(model, args.checkpoint, device)
+    try:
+        payload_compatibility = validate_checkpoint_payload_compatibility(
+            checkpoint,
+            payload,
+        )
+    except ValueError:
+        loggers["validation"].exception(
+            "checkpoint/data compatibility failed checkpoint=%s data=%s",
+            args.checkpoint,
+            args.data,
+        )
+        raise
+    loggers["validation"].info(
+        "checkpoint/data compatibility passed splits=%s",
+        payload_compatibility["split_counts"],
+    )
 
     results = []
     for index, item in enumerate(EVAL_ITEMS):
@@ -509,19 +558,21 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     checkpoint_step = int(checkpoint.get("step", -1))
     report = {
-        "schema_version": "sft-v4-category-eval/v1",
+        "schema_version": "sft-v4-category-eval/v2-no-math",
         "status": "complete",
         "checkpoint": str(args.checkpoint),
         "checkpoint_step": checkpoint_step,
         "checkpoint_sha256": file_sha256(args.checkpoint),
         "data": str(args.data),
         "data_sha256": file_sha256(args.data),
+        "checkpoint_data_compatible": True,
         "device": str(device),
         "max_new_tokens": args.max_new_tokens,
         "temperature": args.temperature,
         "top_k": args.top_k,
         "seed": args.seed,
         "test_records_consumed": 0,
+        "evaluation_suite": "six_categories_no_math_v2",
         "summary": summarize(results),
         "results": results,
     }

@@ -1,8 +1,9 @@
-"""Generate fixed custom samples from a v4 SFT checkpoint."""
+"""Generate fixed no-math samples from the active SFT checkpoint."""
 
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 import json
 from pathlib import Path
 from typing import Any, Sequence
@@ -22,19 +23,21 @@ from training_runtime import (
 
 
 DEFAULT_CONFIG_PATH = Path("configs/local_m4_8m_continue_6000.json")
-DEFAULT_DATA_PATH = Path("data/cloud_v4/sft_v4_mixed_chat_tensors.pt")
-DEFAULT_CHECKPOINT_PATH = Path("runs/sft_v4_mixed_chat_step5000/best.pt")
+DEFAULT_DATA_PATH = Path("data/cloud_v4/sft_v5_1_no_math_tensors.pt")
+DEFAULT_CHECKPOINT_PATH = Path(
+    "runs/sft_v5_1_no_math_continue3000_cumulative5000/latest.pt"
+)
 DEFAULT_OUTPUT_JSON = Path(
-    "reports/milestones/011_v4_mixed_chat_sft/novel_vs_general_step5000_best_samples.json"
+    "reports/milestones/013_v5_1_no_math_sft/novel_vs_general_cumulative5000_samples.json"
 )
 DEFAULT_OUTPUT_MD = Path(
-    "reports/milestones/011_v4_mixed_chat_sft/novel_vs_general_step5000_best_samples.md"
+    "reports/milestones/013_v5_1_no_math_sft/novel_vs_general_cumulative5000_samples.md"
 )
 DEFAULT_MAX_NEW_TOKENS = 30
 DEFAULT_TEMPERATURE = 0.8
 DEFAULT_TOP_K = 20
 DEFAULT_SEED = 20260828
-DEFAULT_TITLE = "M011 mixed chat SFT checkpoint 小说/非小说样本"
+DEFAULT_TITLE = "M013 v5.1 去数学 SFT 累计5000步样本"
 
 DEFAULT_PROMPTS = [
     {"category": "小说问题", "question": "小说第三百章的标题是什么？"},
@@ -45,7 +48,7 @@ DEFAULT_PROMPTS = [
     {"category": "小说问题", "question": "根据证据片段，韩枫和紫研是否都被提到？"},
     {"category": "非小说问题", "question": "今天天气怎么样？"},
     {"category": "非小说问题", "question": "请写一句鼓励学习的话。"},
-    {"category": "非小说问题", "question": "一加一等于几？"},
+    {"category": "指令遵循", "question": "请只回答“收到”。"},
     {"category": "非小说问题", "question": "请介绍人工智能。"},
     {"category": "非小说问题", "question": "我应该如何安排今天的学习？"},
     {"category": "非小说问题", "question": "请用一句话解释什么是监督微调。"},
@@ -54,11 +57,56 @@ DEFAULT_PROMPTS = [
 
 def load_sft_payload(path: Path) -> dict[str, Any]:
     payload = torch.load(path, map_location="cpu", weights_only=False)
-    required = {"vocab_size", "special_token_ids", "itos", "tokenizer_path"}
+    required = {
+        "train_records",
+        "val_records",
+        "test_records",
+        "vocab_size",
+        "special_token_ids",
+        "itos",
+        "tokenizer_path",
+    }
     missing = sorted(required.difference(payload))
     if missing:
         raise ValueError(f"SFT payload is missing keys: {missing}")
     return payload
+
+
+def validate_checkpoint_payload_compatibility(
+    checkpoint: dict[str, Any],
+    payload: dict[str, Any],
+) -> dict[str, Any]:
+    """Reject evaluating a checkpoint against a different SFT dataset."""
+
+    expected = checkpoint.get("extra", {}).get("payload_summary")
+    if not isinstance(expected, dict):
+        raise ValueError("checkpoint does not record its SFT payload summary")
+
+    records_by_split = {
+        "train": list(payload["train_records"]),
+        "val": list(payload["val_records"]),
+        "test": list(payload["test_records"]),
+    }
+    all_records = [record for records in records_by_split.values() for record in records]
+    actual = {
+        "split_counts": {
+            split: len(records) for split, records in records_by_split.items()
+        },
+        "task_family_counts": dict(
+            sorted(Counter(record["task_family"] for record in all_records).items())
+        ),
+    }
+    mismatches = [
+        key
+        for key in ("split_counts", "task_family_counts")
+        if expected.get(key) != actual[key]
+    ]
+    if mismatches:
+        raise ValueError(
+            "checkpoint and SFT payload are incompatible: "
+            + ", ".join(mismatches)
+        )
+    return actual
 
 
 def build_prompt_ids(
@@ -152,6 +200,22 @@ def main(argv: Sequence[str] | None = None) -> int:
     device = select_device(args.device)
     model = build_model(base_config, int(payload["vocab_size"])).to(device)
     checkpoint = load_model_checkpoint(model, args.checkpoint, device)
+    try:
+        payload_compatibility = validate_checkpoint_payload_compatibility(
+            checkpoint,
+            payload,
+        )
+    except ValueError:
+        loggers["validation"].exception(
+            "checkpoint/data compatibility failed checkpoint=%s data=%s",
+            args.checkpoint,
+            args.data,
+        )
+        raise
+    loggers["validation"].info(
+        "checkpoint/data compatibility passed splits=%s",
+        payload_compatibility["split_counts"],
+    )
 
     samples = []
     for index, prompt in enumerate(DEFAULT_PROMPTS):
@@ -190,6 +254,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         "checkpoint_sha256": checkpoint_sha256,
         "data": str(args.data),
         "data_sha256": file_sha256(args.data),
+        "checkpoint_data_compatible": True,
         "device": str(device),
         "max_new_tokens": args.max_new_tokens,
         "temperature": args.temperature,

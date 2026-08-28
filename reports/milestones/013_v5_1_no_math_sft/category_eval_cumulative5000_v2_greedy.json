@@ -1,0 +1,367 @@
+{
+  "checkpoint": "runs/sft_v5_1_no_math_continue3000_cumulative5000/latest.pt",
+  "checkpoint_data_compatible": true,
+  "checkpoint_sha256": "5433ea3f5b2583ab963433b3cc08b327d170e3f5f5c5c726a4911435801f4530",
+  "checkpoint_step": 3000,
+  "data": "data/cloud_v4/sft_v5_1_no_math_tensors.pt",
+  "data_sha256": "1c9edbf5cf2abe8e94bc2af81861ac93d9caf1448dc373a9b2504959d1d949f2",
+  "device": "cpu",
+  "evaluation_suite": "six_categories_no_math_v2",
+  "max_new_tokens": 30,
+  "results": [
+    {
+      "category": "小说人物",
+      "generated_answer": "现有资料不足，无法确定。",
+      "id": "novel_entity_xiaoyan",
+      "metric": "known_entity",
+      "passed": false,
+      "question": "萧炎是谁？",
+      "score_reason": "must identify the entity with a relevant role and avoid unknown refusal",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说人物",
+      "generated_answer": "现有资料不足，无法确定。",
+      "id": "novel_entity_yaochen",
+      "metric": "known_entity",
+      "passed": false,
+      "question": "药尘是谁？",
+      "score_reason": "must identify the entity with a relevant role and avoid unknown refusal",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说人物",
+      "generated_answer": "药老是药老。",
+      "id": "novel_entity_yaolao",
+      "metric": "known_entity",
+      "passed": false,
+      "question": "药老是谁？",
+      "score_reason": "must identify the entity with a relevant role and avoid unknown refusal",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说人物",
+      "generated_answer": "我没有足够可靠的信息，不能硬编。",
+      "id": "novel_entity_xiaoyan_one_sentence",
+      "metric": "known_entity",
+      "passed": false,
+      "question": "请用一句话介绍萧炎。",
+      "score_reason": "must identify the entity with a relevant role and avoid unknown refusal",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说人物",
+      "generated_answer": "药老是小说中出现的一个人物。",
+      "id": "novel_entity_yihuo",
+      "metric": "known_entity",
+      "passed": false,
+      "question": "异火是什么？",
+      "score_reason": "must identify the entity with a relevant role and avoid unknown refusal",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说事实",
+      "generated_answer": "第14章的标题是《大量》。",
+      "id": "novel_fact_chapter300",
+      "metric": "all_required",
+      "passed": false,
+      "question": "小说第三百章的标题是什么？",
+      "score_reason": "must contain all required phrases and avoid forbidden phrases",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说事实",
+      "generated_answer": "是药老说的。",
+      "id": "novel_fact_speaker_yaolao",
+      "metric": "exact_any",
+      "passed": true,
+      "question": "第159章中说出“准备突破吧。这是你的机缘。万”这句话的是谁？",
+      "score_reason": "must contain one expected phrase and avoid forbidden phrases",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说事实",
+      "generated_answer": "第1章的标题是《大量》。",
+      "id": "novel_fact_title_direct",
+      "metric": "all_required",
+      "passed": false,
+      "question": "第300章的标题是《收场》吗？",
+      "score_reason": "must contain all required phrases and avoid forbidden phrases",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说事实",
+      "generated_answer": "第14章的标题是《大量》。",
+      "id": "novel_fact_no_unknown_for_known",
+      "metric": "all_required",
+      "passed": false,
+      "question": "萧炎是不是斗破苍穹里的主要人物？",
+      "score_reason": "must contain all required phrases and avoid forbidden phrases",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说事实",
+      "generated_answer": "应该说明资料不足，不能编造。",
+      "id": "novel_fact_not_weather",
+      "metric": "exact_any",
+      "passed": true,
+      "question": "回答小说人物问题时，应该直接说天气吗？",
+      "score_reason": "must contain one expected phrase and avoid forbidden phrases",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "证据判断",
+      "generated_answer": "是紫研。",
+      "id": "evidence_hanfeng_ziyan",
+      "metric": "all_required",
+      "passed": false,
+      "question": "证据片段：韩枫和紫研同时出现在广场。问题：韩枫和紫研是否都被提到？",
+      "score_reason": "must contain all required phrases and avoid forbidden phrases",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "证据判断",
+      "generated_answer": "是，片段同时提到了药老和药老。",
+      "id": "evidence_yaolao_only",
+      "metric": "all_required",
+      "passed": true,
+      "question": "证据片段：药老低声提醒萧炎。问题：药老是否被提到？",
+      "score_reason": "must contain all required phrases and avoid forbidden phrases",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "证据判断",
+      "generated_answer": "能确认；当前证据片段同时提到了小医仙和紫研。",
+      "id": "evidence_no_birthdate",
+      "metric": "all_required",
+      "passed": false,
+      "question": "证据片段：云韵看着远处，没有提到出生日期。问题：能否知道云韵的出生日期？",
+      "score_reason": "must contain all required phrases and avoid forbidden phrases",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "证据判断",
+      "generated_answer": "现有资料不足，无法确定。",
+      "id": "evidence_copy_question",
+      "metric": "all_required",
+      "passed": false,
+      "question": "请原样重复以下问题，不要回答：“阴阳命魂丹属于几品丹药？”",
+      "score_reason": "must contain all required phrases and avoid forbidden phrases",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "证据判断",
+      "generated_answer": "片段中的两个人是紫研。",
+      "id": "evidence_two_names_no_extra",
+      "metric": "all_required",
+      "passed": true,
+      "question": "证据片段：韩枫和紫研被同时提到。问题：片段中提到的是韩枫和谁？",
+      "score_reason": "must contain all required phrases and avoid forbidden phrases",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "能力边界",
+      "generated_answer": "现有资料不足，无法确定。",
+      "id": "chat_weather",
+      "metric": "boundary",
+      "passed": false,
+      "question": "今天天气怎么样？",
+      "score_reason": "must state topic-specific capability boundary without leaking novel patterns",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "能力边界",
+      "generated_answer": "我是一个本地训练出来的迷你GPT实验模型。",
+      "id": "chat_news",
+      "metric": "boundary",
+      "passed": false,
+      "question": "今天有什么新闻？",
+      "score_reason": "must state topic-specific capability boundary without leaking novel patterns",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "能力边界",
+      "generated_answer": "我是一个本地训练出来的迷你GPT实验模型。",
+      "id": "chat_stock",
+      "metric": "boundary",
+      "passed": false,
+      "question": "现在股票涨了吗？",
+      "score_reason": "must state topic-specific capability boundary without leaking novel patterns",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "能力边界",
+      "generated_answer": "第一千四百二十七章《九品，丹丹丹丹丹丹丹丹丹丹丹丹丹丹丹丹丹丹丹丹",
+      "id": "chat_exchange_rate",
+      "metric": "boundary",
+      "passed": false,
+      "question": "现在汇率是多少？",
+      "score_reason": "must state topic-specific capability boundary without leaking novel patterns; generation must stop on EOS",
+      "stopped_on_eos": false
+    },
+    {
+      "category": "能力边界",
+      "generated_answer": "第一千四百二十七章《与《与《与》里，原文里，原文里，原文里，原文里",
+      "id": "chat_restaurant",
+      "metric": "boundary",
+      "passed": false,
+      "question": "附近哪家店最好吃？",
+      "score_reason": "must state topic-specific capability boundary without leaking novel patterns; generation must stop on EOS",
+      "stopped_on_eos": false
+    },
+    {
+      "category": "指令遵循",
+      "generated_answer": "验证集不参与参与参数更新，用来观察模型是否真的泛化。",
+      "id": "instruction_ack_exact",
+      "metric": "exact_response",
+      "passed": false,
+      "question": "请只回答“收到”。",
+      "score_reason": "must exactly match one of ['收到', '收到。']",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "指令遵循",
+      "generated_answer": "先学习概念，再做小练习，最后用自己的话总结GPToken。",
+      "id": "instruction_repeat_exact",
+      "metric": "exact_response",
+      "passed": false,
+      "question": "请原样重复这四个字：“训练模型”。",
+      "score_reason": "must exactly match one of ['训练模型', '训练模型。']",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "指令遵循",
+      "generated_answer": "先学习概念，再做小练习，最后用自己的话总结论。",
+      "id": "instruction_two_advice",
+      "metric": "two_advice",
+      "passed": false,
+      "question": "请给出两条提高学习专注力的建议。",
+      "score_reason": "must provide at least two topic-relevant suggestions without novel leakage",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "指令遵循",
+      "generated_answer": "是否真的泛化。",
+      "id": "instruction_test_not_train",
+      "metric": "exact_response",
+      "passed": false,
+      "question": "请只回答“是”或“否”：测试集应该参与参数更新吗？",
+      "score_reason": "must exactly match one of ['否', '否。']",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "指令遵循",
+      "generated_answer": "验证集不参与参与参与参与参与参与参数更新，用来观察模型是否真的",
+      "id": "instruction_validation_one_sentence",
+      "metric": "validation_role",
+      "passed": false,
+      "question": "请用一句话说明验证集的作用。",
+      "score_reason": "must explain validation-set purpose in one sentence without novel leakage; generation must stop on EOS",
+      "stopped_on_eos": false
+    },
+    {
+      "category": "通用聊天",
+      "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+      "id": "general_encourage",
+      "metric": "chat_quality",
+      "passed": true,
+      "question": "请写一句鼓励学习的话。",
+      "score_reason": "must be useful, follow requested topic, and avoid novel/refusal leakage",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "通用聊天",
+      "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+      "id": "general_plan_today",
+      "metric": "chat_quality",
+      "passed": true,
+      "question": "我应该如何安排今天的学习？",
+      "score_reason": "must be useful, follow requested topic, and avoid novel/refusal leakage",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "通用聊天",
+      "generated_answer": "把任务切小，关掉干扰，先学习，最后五分钟记录问题。",
+      "id": "general_python_focus",
+      "metric": "chat_quality",
+      "passed": true,
+      "question": "学习Python时总是分心怎么办？",
+      "score_reason": "must be useful, follow requested topic, and avoid novel/refusal leakage",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "通用聊天",
+      "generated_answer": "验证集不参与参与参与参与参与参数更新，用来观察模型是否真的泛化",
+      "id": "general_explain_sft",
+      "metric": "all_required",
+      "passed": false,
+      "question": "请用一句话解释什么是监督微调。",
+      "score_reason": "must contain all required phrases and avoid forbidden phrases; generation must stop on EOS",
+      "stopped_on_eos": false
+    },
+    {
+      "category": "通用聊天",
+      "generated_answer": "验证集不参与参与参与参与参与参数更新，用来观察模型是否真的泛化",
+      "id": "general_explain_bpe",
+      "metric": "all_required",
+      "passed": false,
+      "question": "BPE是什么？",
+      "score_reason": "must contain all required phrases and avoid forbidden phrases; generation must stop on EOS",
+      "stopped_on_eos": false
+    }
+  ],
+  "schema_version": "sft-v4-category-eval/v2-no-math",
+  "seed": 20260828,
+  "status": "complete",
+  "summary": {
+    "accuracy": 0.23333333333333334,
+    "by_category": {
+      "小说事实": {
+        "accuracy": 0.4,
+        "passed": 2,
+        "total": 5
+      },
+      "小说人物": {
+        "accuracy": 0.0,
+        "passed": 0,
+        "total": 5
+      },
+      "指令遵循": {
+        "accuracy": 0.0,
+        "passed": 0,
+        "total": 5
+      },
+      "能力边界": {
+        "accuracy": 0.0,
+        "passed": 0,
+        "total": 5
+      },
+      "证据判断": {
+        "accuracy": 0.4,
+        "passed": 2,
+        "total": 5
+      },
+      "通用聊天": {
+        "accuracy": 0.6,
+        "passed": 3,
+        "total": 5
+      }
+    },
+    "eos_count": 25,
+    "metric_counts": {
+      "all_required": 10,
+      "boundary": 5,
+      "chat_quality": 3,
+      "exact_any": 2,
+      "exact_response": 3,
+      "known_entity": 5,
+      "two_advice": 1,
+      "validation_role": 1
+    },
+    "passed": 7,
+    "total": 30
+  },
+  "temperature": 0.3,
+  "test_records_consumed": 0,
+  "top_k": 1
+}
