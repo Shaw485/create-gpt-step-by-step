@@ -1,0 +1,59 @@
+{
+  "encodable_general_candidates": 11192,
+  "final_split_counts": {
+    "test": 600,
+    "train": 4799,
+    "val": 600
+  },
+  "general_chat_records": 3000,
+  "general_split_counts": {
+    "test": 300,
+    "train": 2400,
+    "val": 300
+  },
+  "novel_records": 2999,
+  "novel_sha256": "d12e7584576bde36582ad443b0b1df7eee3a54827698bdb845f7e0cbc27b1565",
+  "novel_split_counts": {
+    "test": 300,
+    "train": 2399,
+    "val": 300
+  },
+  "output_path": "data/sft/v4_mixed_chat/sft_v4_mixed_chat_training_ready.jsonl",
+  "output_sha256": "50e38ec19541ecd35ea6da64c25ce32ccd655acd74013eb9a380071c07133a95",
+  "purpose": "Reduce the chapter-number bias observed in M010 by adding general chat, basic reasoning, project explanation, boundary, study planning, instruction-following, honest unknown, and domain-switching examples.",
+  "raw_general_candidates": 11264,
+  "rejected_general_candidate_characters": {
+    "拟": 72
+  },
+  "schema_version": "sft_v4_mixed_chat/1.0",
+  "status": "complete",
+  "summary": {
+    "max_answer_tokens": 75,
+    "max_question_tokens": 89,
+    "missing_characters": {},
+    "split_counts": {
+      "test": 600,
+      "train": 4799,
+      "val": 600
+    },
+    "task_family_counts": {
+      "ambiguity_unknown_clarification": 300,
+      "basic_reasoning": 400,
+      "capability_boundary": 400,
+      "context_understanding": 450,
+      "continuation_rewrite_instruction": 450,
+      "conversation_control": 150,
+      "direct_fact": 749,
+      "domain_switching": 300,
+      "fact_verification_correction": 300,
+      "general_chat": 450,
+      "honest_unknown_general": 300,
+      "instruction_following": 350,
+      "project_explanation": 450,
+      "relationship_reason_timeline": 600,
+      "study_planning": 350
+    }
+  },
+  "tokenizer_sha256": "86bc44516339d7eee774da6c2b9e4bae8e85c0fd58b9192b6e234f884befaee0",
+  "total_records": 5999
+}

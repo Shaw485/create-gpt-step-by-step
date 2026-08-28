@@ -1,0 +1,879 @@
+{
+  "best_checkpoint": "runs/sft_v4_mixed_chat_step500/best.pt",
+  "best_val_loss": 2.794121336936951,
+  "data_path": "data/cloud_v4/sft_v4_mixed_chat_tensors.pt",
+  "data_sha256": "73e46a1a3031e6e3d422d10922520c4759bc18a324f8c2fd35524c689f622573",
+  "device": "cpu",
+  "elapsed_seconds": 22.076753249995818,
+  "eval_batches": 10,
+  "eval_interval": 100,
+  "final_train_loss": 2.5050502181053163,
+  "final_val_loss": 3.3911534905433656,
+  "init_checkpoint": "runs/pretrain_v4_m4_continue6000/best.pt",
+  "init_checkpoint_sha256": "5d6397b3bb97b8a14369117e2f1e1e9f9addf515da1117e2f0f35dfe8ac8af44",
+  "initial_train_loss": 6.8640303134918215,
+  "initial_val_loss": 6.772738599777222,
+  "latest_checkpoint": "runs/sft_v4_mixed_chat_step500/latest.pt",
+  "latest_checkpoint_sha256": "99136979d2c6a79d6f25bf87d2774720dfa0ee6a31e207a4f17e0afa5b90a85e",
+  "learning_rate": 5e-05,
+  "loss_csv": "reports/milestones/011_v4_mixed_chat_sft/sft_v4_mixed_chat_step500_report_loss.csv",
+  "loss_history": [
+    {
+      "step": 0,
+      "train_loss": 6.8640303134918215,
+      "val_loss": 6.772738599777222
+    },
+    {
+      "step": 100,
+      "train_loss": 4.518831181526184,
+      "val_loss": 5.337126016616821
+    },
+    {
+      "step": 200,
+      "train_loss": 3.344114327430725,
+      "val_loss": 3.6743889808654786
+    },
+    {
+      "step": 300,
+      "train_loss": 3.476708197593689,
+      "val_loss": 3.538966941833496
+    },
+    {
+      "step": 400,
+      "train_loss": 2.912330377101898,
+      "val_loss": 2.794121336936951
+    },
+    {
+      "step": 500,
+      "train_loss": 2.5050502181053163,
+      "val_loss": 3.3911534905433656
+    }
+  ],
+  "micro_batch_size": 2,
+  "monitor_outputs": [
+    {
+      "expected_answer": "当前证据片段明确出现了药尘。",
+      "generated_answer": "当前证据片段中出现了连续字符“黑衣”。",
+      "id": "v4_547a13f5d7fcccbe2538",
+      "question": "原问题是“雷尊者与药尘相比，谁更早出现在故事里”。现只做局部证据核验：不比较全书登场先后，只看第351章的当前证据：药尘和雷尊者中明确出现了谁？",
+      "split": "train",
+      "stopped_on_eos": true,
+      "task_family": "relationship_reason_timeline"
+    },
+    {
+      "expected_answer": "阴阳命魂丹属于几品丹药？",
+      "generated_answer": "哪个的哪个小说的四部一部分。",
+      "id": "v4_6edeb36b659efd74f059",
+      "question": "请原样重复以下问题，不要回答：“阴阳命魂丹属于几品丹药？”",
+      "split": "train",
+      "stopped_on_eos": true,
+      "task_family": "continuation_rewrite_instruction"
+    },
+    {
+      "expected_answer": "不能；片段提到了云韵，但没有直接给出其出生日期。",
+      "generated_answer": "能确认其中提到了萧炎和紫研。",
+      "id": "v4_98a70ff90faf2cac8336",
+      "question": "原问题是“原文是如何交代云韵的出生日期的”。现只做局部证据核验：只依据第4章的当前证据片段，能否得知云韵的出生日期？",
+      "split": "train",
+      "stopped_on_eos": true,
+      "task_family": "ambiguity_unknown_clarification"
+    },
+    {
+      "expected_answer": "21加1等于22。",
+      "generated_answer": "811续，证据，确提到了4章《雷子》。",
+      "id": "mixed_chat_0b50b481b291ee52",
+      "question": "用一句话回答：21加1等于几？",
+      "split": "train",
+      "stopped_on_eos": true,
+      "task_family": "basic_reasoning"
+    },
+    {
+      "expected_answer": "能不用照抄、用自己的话解释，并独立完成一个小练习，就算开始学会了。",
+      "generated_answer": "我能确认其中提到了否则回答案。",
+      "id": "mixed_chat_421c65763ab724fa",
+      "question": "请简短回答：怎样判断机器学习有没有学会？",
+      "split": "train",
+      "stopped_on_eos": true,
+      "task_family": "study_planning"
+    },
+    {
+      "expected_answer": "BPE是一种常见分词方法，会把频繁一起出现的字符逐步合并成更长的Token。",
+      "generated_answer": "第几章《五分钟。",
+      "id": "mixed_chat_811cbd5eebd59b56",
+      "question": "我想学BPE，先给我一个简单解释。",
+      "split": "train",
+      "stopped_on_eos": true,
+      "task_family": "project_explanation"
+    },
+    {
+      "expected_answer": "请先说明作品名称、具体人物和故事阶段，我再核对与“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”相关的内容。",
+      "generated_answer": "能确是一个小说的是否则不要直接看到了自己。",
+      "id": "v4_159d93c40620f3747687",
+      "question": "参考原问题“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”，如果用户只说“请介绍相关人物”，但没有说明作品、人物和故事阶段，应该先怎么回应？",
+      "split": "val",
+      "stopped_on_eos": true,
+      "task_family": "ambiguity_unknown_clarification"
+    },
+    {
+      "expected_answer": "请先说明你指的是哪部作品，以及想了解萧炎的哪个故事阶段，我再核对与“小说第四百四十三章中，除了萧炎，戏份最多的人物是谁”相关的内容。",
+      "generated_answer": "再核不足，据片段中出现了连续字符“第三章”。",
+      "id": "v4_93c0131fd98bc1a0491c",
+      "question": "参考原问题“小说第四百四十三章中，除了萧炎，戏份最多的人物是谁”，如果用户现在只说“请介绍萧炎”，但没有提供作品和故事阶段，应该先怎么回应？",
+      "split": "val",
+      "stopped_on_eos": true,
+      "task_family": "ambiguity_unknown_clarification"
+    },
+    {
+      "expected_answer": "是药老说的。",
+      "generated_answer": "我不能当前证据片段明确认其中提到了药老。证据片段在足，其中的内容。",
+      "id": "v4_6a7cbc3d44680bacf09d",
+      "question": "第159章中说出“准备突破吧。这是你的机缘。万”这句话的是谁？",
+      "split": "val",
+      "stopped_on_eos": true,
+      "task_family": "direct_fact"
+    },
+    {
+      "expected_answer": "现有资料不足，无法确定。",
+      "generated_answer": "你不能再核心标题是否认其中提到了本百零二章节。",
+      "id": "mixed_chat_85c64adabdd9c227",
+      "question": "别提小说章节，回答：玄风石碑是谁？",
+      "split": "val",
+      "stopped_on_eos": true,
+      "task_family": "honest_unknown_general"
+    },
+    {
+      "expected_answer": "我不能直接看到实时新闻。你给我新闻标题或链接，我可以帮你梳理。",
+      "generated_answer": "应该说明确询问道。",
+      "id": "mixed_chat_90ab56d65de8f1ec",
+      "question": "请简短回答：你能直接知道“今天有什么新闻？”的答案吗？",
+      "split": "val",
+      "stopped_on_eos": true,
+      "task_family": "capability_boundary"
+    },
+    {
+      "expected_answer": "现有资料不足，无法确定。",
+      "generated_answer": "先一量更新，用你不能直接看到其身的定。",
+      "id": "mixed_chat_9fb46ee0d0d37168",
+      "question": "自然一点回答：北海药王是谁？",
+      "split": "val",
+      "stopped_on_eos": true,
+      "task_family": "honest_unknown_general"
+    }
+  ],
+  "parameter_count": 8105025,
+  "payload_summary": {
+    "max_sequence_length": 149,
+    "mean_sequence_length": 51.55992665444241,
+    "min_sequence_length": 12,
+    "split_counts": {
+      "test": 600,
+      "train": 4799,
+      "val": 600
+    },
+    "supervised_tokens": 125019,
+    "task_family_counts": {
+      "ambiguity_unknown_clarification": 300,
+      "basic_reasoning": 400,
+      "capability_boundary": 400,
+      "context_understanding": 450,
+      "continuation_rewrite_instruction": 450,
+      "conversation_control": 150,
+      "direct_fact": 749,
+      "domain_switching": 300,
+      "fact_verification_correction": 300,
+      "general_chat": 450,
+      "honest_unknown_general": 300,
+      "instruction_following": 350,
+      "project_explanation": 450,
+      "relationship_reason_timeline": 600,
+      "study_planning": 350
+    }
+  },
+  "run_id": "sft-v4-20260828T092931Z-b73ae53a",
+  "sample_history": [
+    {
+      "samples": [
+        {
+          "expected_answer": "当前证据片段明确出现了药尘。",
+          "generated_answer": "？”\n\n    雷赢面色凝重的望着那张着一抹淡淡的道，旋即目光转向萧炎，笑道：“没想到你所料你所说，果然有些麻烦。”",
+          "id": "v4_547a13f5d7fcccbe2538",
+          "question": "原问题是“雷尊者与药尘相比，谁更早出现在故事里”。现只做局部证据核验：不比较全书登场先后，只看第351章的当前证据：药尘和雷尊者中明确出现了谁？",
+          "split": "train",
+          "stopped_on_eos": false,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "阴阳命魂丹属于几品丹药？",
+          "generated_answer": "一瞥着眉头，道。\n\n    听得萧炎等人也是一怔，旋即眼中也是浮现一抹惊喜：“看来这是那么多年的丹”\n\n    “",
+          "id": "v4_6edeb36b659efd74f059",
+          "question": "请原样重复以下问题，不要回答：“阴阳命魂丹属于几品丹药？”",
+          "split": "train",
+          "stopped_on_eos": false,
+          "task_family": "continuation_rewrite_instruction"
+        },
+        {
+          "expected_answer": "不能；片段提到了云韵，但没有直接给出其出生日期。",
+          "generated_answer": "”\n\n    “没想到，真是有些心了什么。”望着远处的山老人，萧炎笑了笑，道：“这是否是要让老夫说不定你",
+          "id": "v4_98a70ff90faf2cac8336",
+          "question": "原问题是“原文是如何交代云韵的出生日期的”。现只做局部证据核验：只依据第4章的当前证据片段，能否得知云韵的出生日期？",
+          "split": "train",
+          "stopped_on_eos": false,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "21加1等于22。",
+          "generated_answer": "闹闹书荒古域，据我叶家的消息。”\n\n    萧炎默的点了点头，将这些人群中最为重要的麻烦，所以萧炎",
+          "id": "mixed_chat_0b50b481b291ee52",
+          "question": "用一句话回答：21加1等于几？",
+          "split": "train",
+          "stopped_on_eos": false,
+          "task_family": "basic_reasoning"
+        },
+        {
+          "expected_answer": "能不用照抄、用自己的话解释，并独立完成一个小练习，就算开始学会了。",
+          "generated_answer": "？”\n\n    药老笑了笑，道：“我也好好。”\n\n    “不过我这所谓的“焚炎谷”，最重要吧，我便走",
+          "id": "mixed_chat_421c65763ab724fa",
+          "question": "请简短回答：怎样判断机器学习有没有学会？",
+          "split": "train",
+          "stopped_on_eos": false,
+          "task_family": "study_planning"
+        },
+        {
+          "expected_answer": "BPE是一种常见分词方法，会把频繁一起出现的字符逐步合并成更长的Token。",
+          "generated_answer": "。”\n\n    “放心吧...”\n\n    一旁的青衣袍男子却是微笑道：“没想到，这样才能有机会，果然不愧是我",
+          "id": "mixed_chat_811cbd5eebd59b56",
+          "question": "我想学BPE，先给我一个简单解释。",
+          "split": "train",
+          "stopped_on_eos": false,
+          "task_family": "project_explanation"
+        },
+        {
+          "expected_answer": "请先说明作品名称、具体人物和故事阶段，我再核对与“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”相关的内容。",
+          "generated_answer": "子不然，萧炎也没人要将他收藏下去，她一番话到她们都是能够将这所谓的“黑皇的",
+          "id": "v4_159d93c40620f3747687",
+          "question": "参考原问题“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”，如果用户只说“请介绍相关人物”，但没有说明作品、人物和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "请先说明你指的是哪部作品，以及想了解萧炎的哪个故事阶段，我再核对与“小说第四百四十三章中，除了萧炎，戏份最多的人物是谁”相关的内容。",
+          "generated_answer": "啊”\n\n    将药材取成员的走进纳戒”，房间中，突然响起，旋即一道淡淡的声音中，顿时响起的破风声",
+          "id": "v4_93c0131fd98bc1a0491c",
+          "question": "参考原问题“小说第四百四十三章中，除了萧炎，戏份最多的人物是谁”，如果用户现在只说“请介绍萧炎”，但没有提供作品和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "是药老说的。",
+          "generated_answer": "文字？”\n\n    听着眉头微皱，欣蓝顿时冷笑，道：“这是这边人都是要再如何的存在，而且还比",
+          "id": "v4_6a7cbc3d44680bacf09d",
+          "question": "第159章中说出“准备突破吧。这是你的机缘。万”这句话的是谁？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "direct_fact"
+        },
+        {
+          "expected_answer": "现有资料不足，无法确定。",
+          "generated_answer": "是想去哪有资格？”\n\n    “哦？”见到萧炎这般念头，望着那在黑暗地中央的石，有些尴尬的",
+          "id": "mixed_chat_85c64adabdd9c227",
+          "question": "别提小说章节，回答：玄风石碑是谁？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "honest_unknown_general"
+        },
+        {
+          "expected_answer": "我不能直接看到实时新闻。你给我新闻标题或链接，我可以帮你梳理。",
+          "generated_answer": "头一辈，真是有机会，不过这场合作是何人，都不是他。”法犸微微抽搐了几句，萧炎只得无奈的道：“这",
+          "id": "mixed_chat_90ab56d65de8f1ec",
+          "question": "请简短回答：你能直接知道“今天有什么新闻？”的答案吗？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "capability_boundary"
+        },
+        {
+          "expected_answer": "现有资料不足，无法确定。",
+          "generated_answer": "师妹啊...我来找死！”\n\n    古域的广场之上的雷尊者也是浮现一抹笑声，目光一扫，却是突然传出。",
+          "id": "mixed_chat_9fb46ee0d0d37168",
+          "question": "自然一点回答：北海药王是谁？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "honest_unknown_general"
+        }
+      ],
+      "step": 0
+    },
+    {
+      "samples": [
+        {
+          "expected_answer": "当前证据片段明确出现了药尘。",
+          "generated_answer": "你可以确认识过，直接先是一愣愣，此举起那被人物分不关的身份。\n\n    与",
+          "id": "v4_547a13f5d7fcccbe2538",
+          "question": "原问题是“雷尊者与药尘相比，谁更早出现在故事里”。现只做局部证据核验：不比较全书登场先后，只看第351章的当前证据：药尘和雷尊者中明确出现了谁？",
+          "split": "train",
+          "stopped_on_eos": false,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "阴阳命魂丹属于几品丹药？",
+          "generated_answer": "下，不是小说的是什么问题说，用哪个小说明说明的是什么。",
+          "id": "v4_6edeb36b659efd74f059",
+          "question": "请原样重复以下问题，不要回答：“阴阳命魂丹属于几品丹药？”",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "continuation_rewrite_instruction"
+        },
+        {
+          "expected_answer": "不能；片段提到了云韵，但没有直接给出其出生日期。",
+          "generated_answer": "是否则据片段中提到了萧炎小说的前证据片段中的那个小说明眸子，听过他。",
+          "id": "v4_98a70ff90faf2cac8336",
+          "question": "原问题是“原文是如何交代云韵的出生日期的”。现只做局部证据核验：只依据第4章的当前证据片段，能否得知云韵的出生日期？",
+          "split": "train",
+          "stopped_on_eos": false,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "21加1等于22。",
+          "generated_answer": "有《狗神》。",
+          "id": "mixed_chat_0b50b481b291ee52",
+          "question": "用一句话回答：21加1等于几？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "basic_reasoning"
+        },
+        {
+          "expected_answer": "能不用照抄、用自己的话解释，并独立完成一个小练习，就算开始学会了。",
+          "generated_answer": "是什么说明一个小说的是小说明说明确认为的物品，基本就算。",
+          "id": "mixed_chat_421c65763ab724fa",
+          "question": "请简短回答：怎样判断机器学习有没有学会？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "study_planning"
+        },
+        {
+          "expected_answer": "BPE是一种常见分词方法，会把频繁一起出现的字符逐步合并成更长的Token。",
+          "generated_answer": "我说出乎后面容貌，前证据片段都不安。",
+          "id": "mixed_chat_811cbd5eebd59b56",
+          "question": "我想学BPE，先给我一个简单解释。",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "project_explanation"
+        },
+        {
+          "expected_answer": "请先说明作品名称、具体人物和故事阶段，我再核对与“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”相关的内容。",
+          "generated_answer": "是一个小说的是什么小说的丹会有一些东西？”\n    听的说不定萧炎说中的小说，要知道",
+          "id": "v4_159d93c40620f3747687",
+          "question": "参考原问题“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”，如果用户只说“请介绍相关人物”，但没有说明作品、人物和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "请先说明你指的是哪部作品，以及想了解萧炎的哪个故事阶段，我再核对与“小说第四百四十三章中，除了萧炎，戏份最多的人物是谁”相关的内容。",
+          "generated_answer": "不过是想来看的问题是说的是小说的第六十九十五章的第一更！】\n",
+          "id": "v4_93c0131fd98bc1a0491c",
+          "question": "参考原问题“小说第四百四十三章中，除了萧炎，戏份最多的人物是谁”，如果用户现在只说“请介绍萧炎”，但没有提供作品和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "是药老说的。",
+          "generated_answer": "是。",
+          "id": "v4_6a7cbc3d44680bacf09d",
+          "question": "第159章中说出“准备突破吧。这是你的机缘。万”这句话的是谁？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "direct_fact"
+        },
+        {
+          "expected_answer": "现有资料不足，无法确定。",
+          "generated_answer": "有效。",
+          "id": "mixed_chat_85c64adabdd9c227",
+          "question": "别提小说章节，回答：玄风石碑是谁？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "honest_unknown_general"
+        },
+        {
+          "expected_answer": "我不能直接看到实时新闻。你给我新闻标题或链接，我可以帮你梳理。",
+          "generated_answer": "有能回答索来看的价格。",
+          "id": "mixed_chat_90ab56d65de8f1ec",
+          "question": "请简短回答：你能直接知道“今天有什么新闻？”的答案吗？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "capability_boundary"
+        },
+        {
+          "expected_answer": "现有资料不足，无法确定。",
+          "generated_answer": "先将自己先是否则章节。",
+          "id": "mixed_chat_9fb46ee0d0d37168",
+          "question": "自然一点回答：北海药王是谁？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "honest_unknown_general"
+        }
+      ],
+      "step": 100
+    },
+    {
+      "samples": [
+        {
+          "expected_answer": "当前证据片段明确出现了药尘。",
+          "generated_answer": "不能做完成一段同时提到了萧炎。",
+          "id": "v4_547a13f5d7fcccbe2538",
+          "question": "原问题是“雷尊者与药尘相比，谁更早出现在故事里”。现只做局部证据核验：不比较全书登场先后，只看第351章的当前证据：药尘和雷尊者中明确出现了谁？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "阴阳命魂丹属于几品丹药？",
+          "generated_answer": "可容的比试试试试。",
+          "id": "v4_6edeb36b659efd74f059",
+          "question": "请原样重复以下问题，不要回答：“阴阳命魂丹属于几品丹药？”",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "continuation_rewrite_instruction"
+        },
+        {
+          "expected_answer": "不能；片段提到了云韵，但没有直接给出其出生日期。",
+          "generated_answer": "能确认则",
+          "id": "v4_98a70ff90faf2cac8336",
+          "question": "原问题是“原文是如何交代云韵的出生日期的”。现只做局部证据核验：只依据第4章的当前证据片段，能否得知云韵的出生日期？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "21加1等于22。",
+          "generated_answer": "",
+          "id": "mixed_chat_0b50b481b291ee52",
+          "question": "用一句话回答：21加1等于几？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "basic_reasoning"
+        },
+        {
+          "expected_answer": "能不用照抄、用自己的话解释，并独立完成一个小练习，就算开始学会了。",
+          "generated_answer": "能预料到。",
+          "id": "mixed_chat_421c65763ab724fa",
+          "question": "请简短回答：怎样判断机器学习有没有学会？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "study_planning"
+        },
+        {
+          "expected_answer": "BPE是一种常见分词方法，会把频繁一起出现的字符逐步合并成更长的Token。",
+          "generated_answer": "有",
+          "id": "mixed_chat_811cbd5eebd59b56",
+          "question": "我想学BPE，先给我一个简单解释。",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "project_explanation"
+        },
+        {
+          "expected_answer": "请先说明作品名称、具体人物和故事阶段，我再核对与“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”相关的内容。",
+          "generated_answer": "能算”成一个小说明确认认为其后机性格中级丹药。",
+          "id": "v4_159d93c40620f3747687",
+          "question": "参考原问题“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”，如果用户只说“请介绍相关人物”，但没有说明作品、人物和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "请先说明你指的是哪部作品，以及想了解萧炎的哪个故事阶段，我再核对与“小说第四百四十三章中，除了萧炎，戏份最多的人物是谁”相关的内容。",
+          "generated_answer": "知为何有能确认。",
+          "id": "v4_93c0131fd98bc1a0491c",
+          "question": "参考原问题“小说第四百四十三章中，除了萧炎，戏份最多的人物是谁”，如果用户现在只说“请介绍萧炎”，但没有提供作品和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "是药老说的。",
+          "generated_answer": "我想是前证据片段提到了什么？",
+          "id": "v4_6a7cbc3d44680bacf09d",
+          "question": "第159章中说出“准备突破吧。这是你的机缘。万”这句话的是谁？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "direct_fact"
+        },
+        {
+          "expected_answer": "现有资料不足，无法确定。",
+          "generated_answer": "能确是小说明确说明确认认的成月说明确认。",
+          "id": "mixed_chat_85c64adabdd9c227",
+          "question": "别提小说章节，回答：玄风石碑是谁？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "honest_unknown_general"
+        },
+        {
+          "expected_answer": "我不能直接看到实时新闻。你给我新闻标题或链接，我可以帮你梳理。",
+          "generated_answer": "我想中提到了小说的标是否认输率不够。",
+          "id": "mixed_chat_90ab56d65de8f1ec",
+          "question": "请简短回答：你能直接知道“今天有什么新闻？”的答案吗？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "capability_boundary"
+        },
+        {
+          "expected_answer": "现有资料不足，无法确定。",
+          "generated_answer": "我不会不好，用来往天山血莲心火的是足足。",
+          "id": "mixed_chat_9fb46ee0d0d37168",
+          "question": "自然一点回答：北海药王是谁？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "honest_unknown_general"
+        }
+      ],
+      "step": 200
+    },
+    {
+      "samples": [
+        {
+          "expected_answer": "当前证据片段明确出现了药尘。",
+          "generated_answer": "会直接被其身法的是何处标题是何处提到了萧炎？",
+          "id": "v4_547a13f5d7fcccbe2538",
+          "question": "原问题是“雷尊者与药尘相比，谁更早出现在故事里”。现只做局部证据核验：不比较全书登场先后，只看第351章的当前证据：药尘和雷尊者中明确出现了谁？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "阴阳命魂丹属于几品丹药？",
+          "generated_answer": "好？”",
+          "id": "v4_6edeb36b659efd74f059",
+          "question": "请原样重复以下问题，不要回答：“阴阳命魂丹属于几品丹药？”",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "continuation_rewrite_instruction"
+        },
+        {
+          "expected_answer": "不能；片段提到了云韵，但没有直接给出其出生日期。",
+          "generated_answer": "能确认“萧炎，”。",
+          "id": "v4_98a70ff90faf2cac8336",
+          "question": "原问题是“原文是如何交代云韵的出生日期的”。现只做局部证据核验：只依据第4章的当前证据片段，能否得知云韵的出生日期？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "21加1等于22。",
+          "generated_answer": "有6个段。",
+          "id": "mixed_chat_0b50b481b291ee52",
+          "question": "用一句话回答：21加1等于几？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "basic_reasoning"
+        },
+        {
+          "expected_answer": "能不用照抄、用自己的话解释，并独立完成一个小练习，就算开始学会了。",
+          "generated_answer": "先用一个小说明确认定小说明确认“小说四天气”。",
+          "id": "mixed_chat_421c65763ab724fa",
+          "question": "请简短回答：怎样判断机器学习有没有学会？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "study_planning"
+        },
+        {
+          "expected_answer": "BPE是一种常见分词方法，会把频繁一起出现的字符逐步合并成更长的Token。",
+          "generated_answer": "你把说明确定你一分钟内容是否则先先看你小说一只好。",
+          "id": "mixed_chat_811cbd5eebd59b56",
+          "question": "我想学BPE，先给我一个简单解释。",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "project_explanation"
+        },
+        {
+          "expected_answer": "请先说明作品名称、具体人物和故事阶段，我再核对与“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”相关的内容。",
+          "generated_answer": "我来帮你当前证据片段是什么？”\n\n",
+          "id": "v4_159d93c40620f3747687",
+          "question": "参考原问题“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”，如果用户只说“请介绍相关人物”，但没有说明作品、人物和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "请先说明你指的是哪部作品，以及想了解萧炎的哪个故事阶段，我再核对与“小说第四百四十三章中，除了萧炎，戏份最多的人物是谁”相关的内容。",
+          "generated_answer": "一章《斗破碎片段交代，足够，据片段同时提到了萧炎和“天生丹”。",
+          "id": "v4_93c0131fd98bc1a0491c",
+          "question": "参考原问题“小说第四百四十三章中，除了萧炎，戏份最多的人物是谁”，如果用户现在只说“请介绍萧炎”，但没有提供作品和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "是药老说的。",
+          "generated_answer": "有算是何况。",
+          "id": "v4_6a7cbc3d44680bacf09d",
+          "question": "第159章中说出“准备突破吧。这是你的机缘。万”这句话的是谁？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "direct_fact"
+        },
+        {
+          "expected_answer": "现有资料不足，无法确定。",
+          "generated_answer": "请先回答话说明一个小说章节。",
+          "id": "mixed_chat_85c64adabdd9c227",
+          "question": "别提小说章节，回答：玄风石碑是谁？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "honest_unknown_general"
+        },
+        {
+          "expected_answer": "我不能直接看到实时新闻。你给我新闻标题或链接，我可以帮你梳理。",
+          "generated_answer": "第一个小说小说章节，才一段时间便会帮我来了哪十二十八章了。",
+          "id": "mixed_chat_90ab56d65de8f1ec",
+          "question": "请简短回答：你能直接知道“今天有什么新闻？”的答案吗？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "capability_boundary"
+        },
+        {
+          "expected_answer": "现有资料不足，无法确定。",
+          "generated_answer": "有说第三。",
+          "id": "mixed_chat_9fb46ee0d0d37168",
+          "question": "自然一点回答：北海药王是谁？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "honest_unknown_general"
+        }
+      ],
+      "step": 300
+    },
+    {
+      "samples": [
+        {
+          "expected_answer": "当前证据片段明确出现了药尘。",
+          "generated_answer": "当前证据片段同时提到了萧炎”。",
+          "id": "v4_547a13f5d7fcccbe2538",
+          "question": "原问题是“雷尊者与药尘相比，谁更早出现在故事里”。现只做局部证据核验：不比较全书登场先后，只看第351章的当前证据：药尘和雷尊者中明确出现了谁？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "阴阳命魂丹属于几品丹药？",
+          "generated_answer": "下一百五十八章的标题是《小说",
+          "id": "v4_6edeb36b659efd74f059",
+          "question": "请原样重复以下问题，不要回答：“阴阳命魂丹属于几品丹药？”",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "continuation_rewrite_instruction"
+        },
+        {
+          "expected_answer": "不能；片段提到了云韵，但没有直接给出其出生日期。",
+          "generated_answer": "当前证据片段中出现了连续字符“药老”。",
+          "id": "v4_98a70ff90faf2cac8336",
+          "question": "原问题是“原文是如何交代云韵的出生日期的”。现只做局部证据核验：只依据第4章的当前证据片段，能否得知云韵的出生日期？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "21加1等于22。",
+          "generated_answer": "小说章节，证据片段开始到萧炎说第一千零九章的标题是《斗破石》。",
+          "id": "mixed_chat_0b50b481b291ee52",
+          "question": "用一句话回答：21加1等于几？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "basic_reasoning"
+        },
+        {
+          "expected_answer": "能不用照抄、用自己的话解释，并独立完成一个小练习，就算开始学会了。",
+          "generated_answer": "有学习，最后用户明确提到了小练习。",
+          "id": "mixed_chat_421c65763ab724fa",
+          "question": "请简短回答：怎样判断机器学习有没有学会？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "study_planning"
+        },
+        {
+          "expected_answer": "BPE是一种常见分词方法，会把频繁一起出现的字符逐步合并成更长的Token。",
+          "generated_answer": "答案是否则训练习。",
+          "id": "mixed_chat_811cbd5eebd59b56",
+          "question": "我想学BPE，先给我一个简单解释。",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "project_explanation"
+        },
+        {
+          "expected_answer": "请先说明作品名称、具体人物和故事阶段，我再核对与“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”相关的内容。",
+          "generated_answer": "有当前证据片段中出现了连续字符“第一千二十八章”。",
+          "id": "v4_159d93c40620f3747687",
+          "question": "参考原问题“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”，如果用户只说“请介绍相关人物”，但没有说明作品、人物和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "请先说明你指的是哪部作品，以及想了解萧炎的哪个故事阶段，我再核对与“小说第四百四十三章中，除了萧炎，戏份最多的人物是谁”相关的内容。",
+          "generated_answer": "不要帮你做什么？",
+          "id": "v4_93c0131fd98bc1a0491c",
+          "question": "参考原问题“小说第四百四十三章中，除了萧炎，戏份最多的人物是谁”，如果用户现在只说“请介绍萧炎”，但没有提供作品和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "是药老说的。",
+          "generated_answer": "有，当前证据片段中出现了连续字符“你”的是萧炎。",
+          "id": "v4_6a7cbc3d44680bacf09d",
+          "question": "第159章中说出“准备突破吧。这是你的机缘。万”这句话的是谁？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "direct_fact"
+        },
+        {
+          "expected_answer": "现有资料不足，无法确定。",
+          "generated_answer": "当前面的魔兽山脉，比据片段中出现了血潭。",
+          "id": "mixed_chat_85c64adabdd9c227",
+          "question": "别提小说章节，回答：玄风石碑是谁？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "honest_unknown_general"
+        },
+        {
+          "expected_answer": "我不能直接看到实时新闻。你给我新闻标题或链接，我可以帮你梳理。",
+          "generated_answer": "小说章节更作《狗》》。",
+          "id": "mixed_chat_90ab56d65de8f1ec",
+          "question": "请简短回答：你能直接知道“今天有什么新闻？”的答案吗？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "capability_boundary"
+        },
+        {
+          "expected_answer": "现有资料不足，无法确定。",
+          "generated_answer": "是萧炎小复杂。",
+          "id": "mixed_chat_9fb46ee0d0d37168",
+          "question": "自然一点回答：北海药王是谁？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "honest_unknown_general"
+        }
+      ],
+      "step": 400
+    },
+    {
+      "samples": [
+        {
+          "expected_answer": "当前证据片段明确出现了药尘。",
+          "generated_answer": "当前证据片段中出现了连续字符“黑衣”。",
+          "id": "v4_547a13f5d7fcccbe2538",
+          "question": "原问题是“雷尊者与药尘相比，谁更早出现在故事里”。现只做局部证据核验：不比较全书登场先后，只看第351章的当前证据：药尘和雷尊者中明确出现了谁？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "阴阳命魂丹属于几品丹药？",
+          "generated_answer": "哪个的哪个小说的四部一部分。",
+          "id": "v4_6edeb36b659efd74f059",
+          "question": "请原样重复以下问题，不要回答：“阴阳命魂丹属于几品丹药？”",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "continuation_rewrite_instruction"
+        },
+        {
+          "expected_answer": "不能；片段提到了云韵，但没有直接给出其出生日期。",
+          "generated_answer": "能确认其中提到了萧炎和紫研。",
+          "id": "v4_98a70ff90faf2cac8336",
+          "question": "原问题是“原文是如何交代云韵的出生日期的”。现只做局部证据核验：只依据第4章的当前证据片段，能否得知云韵的出生日期？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "21加1等于22。",
+          "generated_answer": "811续，证据，确提到了4章《雷子》。",
+          "id": "mixed_chat_0b50b481b291ee52",
+          "question": "用一句话回答：21加1等于几？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "basic_reasoning"
+        },
+        {
+          "expected_answer": "能不用照抄、用自己的话解释，并独立完成一个小练习，就算开始学会了。",
+          "generated_answer": "我能确认其中提到了否则回答案。",
+          "id": "mixed_chat_421c65763ab724fa",
+          "question": "请简短回答：怎样判断机器学习有没有学会？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "study_planning"
+        },
+        {
+          "expected_answer": "BPE是一种常见分词方法，会把频繁一起出现的字符逐步合并成更长的Token。",
+          "generated_answer": "第几章《五分钟。",
+          "id": "mixed_chat_811cbd5eebd59b56",
+          "question": "我想学BPE，先给我一个简单解释。",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "project_explanation"
+        },
+        {
+          "expected_answer": "请先说明作品名称、具体人物和故事阶段，我再核对与“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”相关的内容。",
+          "generated_answer": "能确是一个小说的是否则不要直接看到了自己。",
+          "id": "v4_159d93c40620f3747687",
+          "question": "参考原问题“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”，如果用户只说“请介绍相关人物”，但没有说明作品、人物和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "请先说明你指的是哪部作品，以及想了解萧炎的哪个故事阶段，我再核对与“小说第四百四十三章中，除了萧炎，戏份最多的人物是谁”相关的内容。",
+          "generated_answer": "再核不足，据片段中出现了连续字符“第三章”。",
+          "id": "v4_93c0131fd98bc1a0491c",
+          "question": "参考原问题“小说第四百四十三章中，除了萧炎，戏份最多的人物是谁”，如果用户现在只说“请介绍萧炎”，但没有提供作品和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "是药老说的。",
+          "generated_answer": "我不能当前证据片段明确认其中提到了药老。证据片段在足，其中的内容。",
+          "id": "v4_6a7cbc3d44680bacf09d",
+          "question": "第159章中说出“准备突破吧。这是你的机缘。万”这句话的是谁？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "direct_fact"
+        },
+        {
+          "expected_answer": "现有资料不足，无法确定。",
+          "generated_answer": "你不能再核心标题是否认其中提到了本百零二章节。",
+          "id": "mixed_chat_85c64adabdd9c227",
+          "question": "别提小说章节，回答：玄风石碑是谁？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "honest_unknown_general"
+        },
+        {
+          "expected_answer": "我不能直接看到实时新闻。你给我新闻标题或链接，我可以帮你梳理。",
+          "generated_answer": "应该说明确询问道。",
+          "id": "mixed_chat_90ab56d65de8f1ec",
+          "question": "请简短回答：你能直接知道“今天有什么新闻？”的答案吗？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "capability_boundary"
+        },
+        {
+          "expected_answer": "现有资料不足，无法确定。",
+          "generated_answer": "先一量更新，用你不能直接看到其身的定。",
+          "id": "mixed_chat_9fb46ee0d0d37168",
+          "question": "自然一点回答：北海药王是谁？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "honest_unknown_general"
+        }
+      ],
+      "step": 500
+    }
+  ],
+  "schema_version": "sft-v4-report/v1",
+  "stage": "sft_v4_formal",
+  "status": "complete",
+  "steps": 500,
+  "test_records_consumed": 0,
+  "weight_decay": 0.05
+}

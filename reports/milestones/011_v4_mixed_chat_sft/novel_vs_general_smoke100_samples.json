@@ -1,0 +1,79 @@
+{
+  "checkpoint": "runs/sft_v4_mixed_chat_smoke100/best.pt",
+  "checkpoint_step": 100,
+  "best_metric": 4.0741536855697635,
+  "rows": [
+    {
+      "category": "小说问题",
+      "question": "小说第三百章的标题是什么？",
+      "answer": "是否则）",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "question": "萧炎是谁？",
+      "answer": "请求。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "question": "药尘是谁？",
+      "answer": "是一个。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "question": "异火是什么？",
+      "answer": "是我说明一个小说…",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "question": "请用一句话介绍萧炎。",
+      "answer": "是否和书段的提到了萧炎。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "question": "根据证据片段，韩枫和紫研是否都被提到？",
+      "answer": "是否则更新作。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "question": "今天天气怎么样？",
+      "answer": "是否则",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "question": "请写一句鼓励学习的话。",
+      "answer": "先先说说不定有。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "question": "一加一等于几？",
+      "answer": "是《111，稳定》，",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "question": "请介绍人工智能。",
+      "answer": "是一个小说中途。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "question": "我应该如何安排今天的学习？",
+      "answer": "是否说是我可以做到萧炎哥哥说的提议。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "question": "请用一句话解释什么是监督微调。",
+      "answer": "是否说明明确认确切。",
+      "stopped_on_eos": true
+    }
+  ]
+}

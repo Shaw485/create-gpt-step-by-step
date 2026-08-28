@@ -1,0 +1,79 @@
+{
+  "checkpoint": "runs/sft_v4_mixed_chat_step500/best.pt",
+  "checkpoint_step": 400,
+  "best_metric": 2.794121336936951,
+  "rows": [
+    {
+      "category": "小说问题",
+      "question": "小说第三百章的标题是什么？",
+      "answer": "请先说第133章的标题是《“小医仙”。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "question": "萧炎是谁？",
+      "answer": "有》是1340。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "question": "药尘是谁？",
+      "answer": "我可以告诉你回答案。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "question": "异火是什么？",
+      "answer": "我可以帮你的话。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "question": "请用一句话介绍萧炎。",
+      "answer": "我不能先复生成当前证据片段同时习，最后用户明确问小说章节，不能确认26",
+      "stopped_on_eos": false
+    },
+    {
+      "category": "小说问题",
+      "question": "根据证据片段，韩枫和紫研是否都被提到？",
+      "answer": "你不能直接给出其身时不足，证据片段明确提到了薰儿和纳兰嫣然。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "question": "今天天气怎么样？",
+      "answer": "一章节，不能确定。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "question": "请写一句鼓励学习的话。",
+      "answer": "不能直接问小说小说章节。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "question": "一加一等于几？",
+      "answer": "第3koo8》。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "question": "请介绍人工智能。",
+      "answer": "你可以帮你的话你不能出实时。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "question": "我应该如何安排今天的学习？",
+      "answer": "我不能让先确认整整片段内容的具体型。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "question": "请用一句话解释什么是监督微调。",
+      "answer": "新作》。",
+      "stopped_on_eos": true
+    }
+  ]
+}

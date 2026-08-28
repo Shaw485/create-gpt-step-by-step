@@ -14,6 +14,7 @@ data/clean/
 data/cloud_v4/
 data/sft/v4/
 data/sft/v4_teacher_repair/
+data/sft/v4_mixed_chat/
 logs/
 **/logs/
 checkpoints/

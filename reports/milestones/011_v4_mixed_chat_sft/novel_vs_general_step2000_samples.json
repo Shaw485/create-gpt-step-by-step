@@ -1,0 +1,79 @@
+{
+  "checkpoint": "runs/sft_v4_mixed_chat_step2000/best.pt",
+  "checkpoint_step": 2000,
+  "best_metric": 1.6600452065467834,
+  "rows": [
+    {
+      "category": "小说问题",
+      "question": "小说第三百章的标题是什么？",
+      "answer": "第141章的标题是《魂殿》。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "question": "萧炎是谁？",
+      "answer": "你不用我不用了解自己的话可以帮你做完。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "question": "药尘是谁？",
+      "answer": "我是一个本地2PTossssss，我再足够可靠的信息。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "question": "异火是什么？",
+      "answer": "我是异火。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "question": "请用一句话介绍萧炎。",
+      "answer": "我不能直接找出实时天气。你告诉我段，我可以帮你想通常回答。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "question": "根据证据片段，韩枫和紫研是否都被提到？",
+      "answer": "是韩枫。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "question": "今天天气怎么样？",
+      "answer": "我不能直接帮你实时天气。你给我城市和学习，我可以帮我城市和参数据。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "question": "请写一句鼓励学习的话。",
+      "answer": "先找出卡住的具体点，再回到一个最小例子重新做。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "question": "一加一等于几？",
+      "answer": "验加0等于6。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "question": "请介绍人工智能。",
+      "answer": "我没有足够可靠的信息，不能硬编。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "question": "我应该如何安排今天的学习？",
+      "answer": "先找出卡住的具体点，再回到一个八段。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "question": "请用一句话解释什么是监督微调。",
+      "answer": "验证集不足，用了解释，用来告诉模型答案对。",
+      "stopped_on_eos": true
+    }
+  ]
+}
