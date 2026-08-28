@@ -23,7 +23,7 @@
     },
     "topic_count": 1760,
     "unapproved_evaluation_count": 600,
-    "unique_answer_count": 2498,
+    "unique_answer_count": 2506,
     "verified_evidence_count": 2999,
     "verified_evidence_share": 0.9996666666666667
   },
@@ -31,10 +31,9 @@
   "corpus_sha256": "50592f249d2be17054ebbe2f8ca7945063e1a8ae669706e64d2076371c4d3b00",
   "evaluation_ai_pre_review": {
     "counts": {
-      "fix_before_human_review": 22,
-      "low_risk_human_review": 190,
-      "review_transformed_task": 138,
-      "verify_global_or_aggregate_claim": 250
+      "low_risk_human_review": 197,
+      "review_transformed_task": 148,
+      "verify_global_or_aggregate_claim": 255
     },
     "evaluation_count": 600,
     "human_approval_was_inferred": false,
@@ -154,10 +153,9 @@
     }
   ],
   "release_ready": false,
-  "repair_queue_count": 2317,
+  "repair_queue_count": 2292,
   "repair_reason_counts": {
     "aggregation_claim_requires_full_chapter_review": 364,
-    "claimed_chapter_mismatch": 137,
     "clarification_wrapper": 207,
     "concise_answer_instruction": 150,
     "contextualized_repeated_chapter_focus_answer": 82,
@@ -166,6 +164,7 @@
     "exact_copy_instruction": 450,
     "fuzzy_chapter_rebind_requires_review": 8,
     "global_claim_requires_index_review": 912,
+    "rebased_stale_chapter_to_verified_corpus": 137,
     "reclassified_as_context": 200,
     "relationship_example_reclassified_as_context_understanding": 200,
     "removed_unasked_chapter_locate_padding": 174,
@@ -179,21 +178,21 @@
     "verification_wrapper": 243
   },
   "review_priorities": {
-    "clean_training_candidate_count": 683,
+    "clean_training_candidate_count": 708,
     "counts": {
       "P0_evaluation_human_review": 600,
-      "P1_training_provenance_review": 124,
-      "P2_training_semantic_review": 1593,
-      "clean_training_candidate": 683
+      "P1_training_provenance_review": 9,
+      "P2_training_semantic_review": 1683,
+      "clean_training_candidate": 708
     },
     "counts_by_split": {
       "test": {
         "P0_evaluation_human_review": 300
       },
       "train": {
-        "P1_training_provenance_review": 124,
-        "P2_training_semantic_review": 1593,
-        "clean_training_candidate": 683
+        "P1_training_provenance_review": 9,
+        "P2_training_semantic_review": 1683,
+        "clean_training_candidate": 708
       },
       "val": {
         "P0_evaluation_human_review": 300

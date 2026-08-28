@@ -23,14 +23,14 @@
     },
     "topic_count": 1760,
     "unapproved_evaluation_count": 600,
-    "unique_answer_count": 2498,
+    "unique_answer_count": 2506,
     "verified_evidence_count": 2999,
     "verified_evidence_share": 0.9996666666666667
   },
   "corpus_path": "data/cloud_v4/corpus.txt",
   "corpus_sha256": "50592f249d2be17054ebbe2f8ca7945063e1a8ae669706e64d2076371c4d3b00",
   "dataset_path": "data/sft/v4_teacher_repair/sft_v4_teacher_candidates.jsonl",
-  "dataset_sha256": "b0b32ce74cc8b4e3f433f51fae922093088d1549b5fff2c22b2ee5e2b864286b",
+  "dataset_sha256": "40bdf42e9d219b405980773887c732b93974171b44d2d7e343cab7f635c0b9a5",
   "failed_gates": [
     "val_test_human_review"
   ],

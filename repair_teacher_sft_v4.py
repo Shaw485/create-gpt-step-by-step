@@ -65,6 +65,9 @@ GLOBAL_CLAIM_SUBCATEGORIES = {
 }
 AGGREGATION_SUBCATEGORIES = {"chapter_focus", "co_appearance"}
 CHAPTER_HEADING_SUBCATEGORIES = {"chapter_locate", "chapter_order", "chapter_title"}
+CHAPTER_REFERENCE_PATTERN = re.compile(
+    r"第([零〇一二两三四五六七八九十百千万0-9]+)章"
+)
 PROVENANCE_REVIEW_FLAGS = {
     "evidence_absent_from_frozen_v4",
     "claimed_chapter_mismatch",
@@ -137,6 +140,21 @@ def remove_control_characters(text: str) -> str:
     return "".join(
         character for character in text if ord(character) >= 32 and ord(character) != 127
     )
+
+
+def rebase_chapter_references(
+    text: str, claimed_chapter: int, actual_chapter: int
+) -> str:
+    """Replace only references that exactly equal the stale claimed chapter."""
+
+    def replacement(match: re.Match[str]) -> str:
+        try:
+            number = chinese_number_to_int(match.group(1))
+        except (TypeError, ValueError):
+            return match.group(0)
+        return f"第{actual_chapter}章" if number == claimed_chapter else match.group(0)
+
+    return CHAPTER_REFERENCE_PATTERN.sub(replacement, text)
 
 
 def title_from_chapter_heading(heading: str) -> str:
@@ -851,7 +869,40 @@ def run_repair(
             str(source_meta.get("chapter_title", ""))
         ).strip()
         claimed_chapter = source_meta.get("chapter_number")
+        original_chapter_title = source_meta.get("chapter_title")
         located = locations[index]
+        chapter_rebased = False
+        if (
+            located is not None
+            and not located.chapter_matches_claim
+            and claimed_chapter is not None
+            and located.chapter_number is not None
+        ):
+            actual_chapter = located.chapter_number
+            actual_heading = str(located.evidence["chapter"]["title"])
+            source["question"] = rebase_chapter_references(
+                str(source["question"]), int(claimed_chapter), actual_chapter
+            )
+            source["answer"] = rebase_chapter_references(
+                str(source["answer"]), int(claimed_chapter), actual_chapter
+            )
+            source_meta["chapter_number"] = actual_chapter
+            actual_title = title_from_chapter_heading(actual_heading)
+            stale_title = str(original_chapter_title or "").strip("《》 ")
+            if stale_title and stale_title != actual_title:
+                source["question"] = str(source["question"]).replace(
+                    f"《{stale_title}》", f"《{actual_title}》"
+                )
+                source["answer"] = str(source["answer"]).replace(
+                    f"《{stale_title}》", f"《{actual_title}》"
+                )
+            source_meta["chapter_title"] = actual_title
+            located = LocatedEvidence(
+                evidence=located.evidence,
+                chapter_number=actual_chapter,
+                chapter_matches_claim=True,
+            )
+            chapter_rebased = True
         if (
             source.get("subcategory") in CHAPTER_HEADING_SUBCATEGORIES
             and located is not None
@@ -863,6 +914,8 @@ def run_repair(
         question, answer, repairs = transform_task(
             source, family, transformation, located
         )
+        if chapter_rebased:
+            repairs.append("rebased_stale_chapter_to_verified_corpus")
         flags = content_flags(source, question, answer, located)
         if transformation:
             flags.append("transformed_task_requires_review")
@@ -904,8 +957,14 @@ def run_repair(
                 "source_subcategory": source["subcategory"],
                 "target_task_family": family,
                 "task_transformation": transformation,
-                "source_chapter_number": claimed_chapter,
+                "source_chapter_number": source_meta.get("chapter_number"),
                 "source_chapter_title": source_meta.get("chapter_title"),
+                "original_source_chapter_number": (
+                    claimed_chapter if chapter_rebased else None
+                ),
+                "original_source_chapter_title": (
+                    original_chapter_title if chapter_rebased else None
+                ),
                 "automatic_repairs": repairs,
                 "repair_flags": flags,
                 "vocab_compatible": True,

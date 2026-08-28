@@ -12,6 +12,7 @@ from repair_teacher_sft_v4 import (
     normalize_answer,
     normalize_question,
     remove_control_characters,
+    rebase_chapter_references,
     title_from_chapter_heading,
     rebalance_task_families,
 )
@@ -61,6 +62,13 @@ class TeacherSftV4RepairTests(unittest.TestCase):
     def test_heading_title_removes_control_characters_before_tokenization(self):
         self.assertEqual(title_from_chapter_heading("第二章 后\x7f续"), "后续")
         self.assertEqual(remove_control_characters("大\x7f战"), "大战")
+
+    def test_rebase_replaces_only_the_stale_chapter_reference(self):
+        text = "第九百六十一章之后对照第九百六十二章。"
+        self.assertEqual(
+            rebase_chapter_references(text, 961, 943),
+            "第943章之后对照第九百六十二章。",
+        )
 
     def test_category_mapping_splits_correction_and_unknown(self):
         self.assertEqual(
