@@ -1,0 +1,63 @@
+{
+  "checkpoint": "runs/pretrain_v4_m4/best.pt",
+  "checkpoint_sha256": "1cb34b5bbf6cbef13c2f7239f80c8bf5caa4e773ef0967166803cf33e194c559",
+  "checkpoint_step": 2600,
+  "checkpoint_validation_loss": 5.044661283493042,
+  "device": "mps",
+  "generation": {
+    "max_new_tokens": 96,
+    "temperature": 0.8,
+    "top_k": 40
+  },
+  "parameter_count": 8105025,
+  "run_id": "local-v4-selected-eval-20260828T041136Z-9c700183",
+  "sample_max_characters": 30,
+  "samples": [
+    {
+      "continuation": "？”\n\n    “桀，怎么办到极少不想在你，这样？可不是那“",
+      "prompt": "今天天气怎么样"
+    },
+    {
+      "continuation": "，这样便是没事去了，呵呵，老夫也不敢来你...”见状，一张，",
+      "prompt": "请给我写一句开头"
+    },
+    {
+      "continuation": "面对这种东西。\n\n    听说过。萧炎有些无奈的摇了摇头。旋",
+      "prompt": "萧炎现在在哪里"
+    },
+    {
+      "continuation": "的神奇与其后来，当下不由得有些紧皱，眉头一沉，笑道：“不过我",
+      "prompt": "这本书接下来会发生什么"
+    },
+    {
+      "continuation": "，为了这老家伙居然还能遇见伤害。”\n\n    萧炎轻叹间，薰",
+      "prompt": "萧炎被称为什么"
+    },
+    {
+      "continuation": "。”法犸与纳兰嫣然无奈的点了点头。道：“她也有什么。她。就不",
+      "prompt": "我今天有点累"
+    },
+    {
+      "continuation": "，特别是一口的少年，看得让人心情报，倒也是不敢想让她对他们如",
+      "prompt": "请用三句话概括这段剧情"
+    },
+    {
+      "continuation": "都对他自己在这里的事。\n\n    “你不会说出云帝国内的名为",
+      "prompt": "斗气大陆最强人物是谁"
+    },
+    {
+      "continuation": "，老夫是否则还是你这事，能让我来回事？”薰儿也是点了点头，道",
+      "prompt": "小猫看到雨会怎样"
+    },
+    {
+      "continuation": "？”\n\n    纳兰嫣然也是缓缓的点了点头，旋即冷喝声道：“",
+      "prompt": "你觉得主角会复仇吗"
+    }
+  ],
+  "schema_version": "selected-pretrain-evaluation-v4/v1",
+  "selection_rule": "minimum validation loss; test split was not used for selection",
+  "test_batches": 20,
+  "test_loss": 4.995773816108704,
+  "test_tokens_per_batch": 1024,
+  "tokenizer_sha256": "86bc44516339d7eee774da6c2b9e4bae8e85c0fd58b9192b6e234f884befaee0"
+}

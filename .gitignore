@@ -11,6 +11,8 @@ __pycache__/
 *.safetensors
 data/raw/
 data/clean/
+data/cloud_v4/
+data/sft/v4/
 logs/
 checkpoints/
 runs/

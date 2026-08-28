@@ -16,9 +16,22 @@ from typing import Iterable
 class BPETokenizer:
     """Encode text by repeatedly applying learned adjacent-token merges."""
 
-    def __init__(self, tokens: list[str], merges: list[tuple[int, int, int]]):
+    def __init__(
+        self,
+        tokens: list[str],
+        merges: list[tuple[int, int, int]],
+        special_tokens: list[str] | None = None,
+    ):
         self.tokens = list(tokens)
         self.merges = [tuple(map(int, merge)) for merge in merges]
+        self.special_tokens = list(special_tokens or [])
+        if len(set(self.special_tokens)) != len(self.special_tokens):
+            raise ValueError("special_tokens must be unique")
+        if any(token not in self.tokens for token in self.special_tokens):
+            raise ValueError("every special token must exist in tokens")
+        self.special_to_id = {
+            token: self.tokens.index(token) for token in self.special_tokens
+        }
         self.char_to_id = {
             token: token_id
             for token_id, token in enumerate(self.tokens)
@@ -96,26 +109,50 @@ class BPETokenizer:
             index = following[index]
         return output
 
-    def decode(self, token_ids: Iterable[int]) -> str:
+    def decode(
+        self,
+        token_ids: Iterable[int],
+        *,
+        skip_special_tokens: bool = False,
+    ) -> str:
         pieces: list[str] = []
         for raw_id in token_ids:
             token_id = int(raw_id)
             if token_id < 0 or token_id >= len(self.tokens):
                 raise ValueError(f"token id outside vocabulary: {token_id}")
+            if skip_special_tokens and self.tokens[token_id] in self.special_to_id:
+                continue
             pieces.append(self.tokens[token_id])
         return "".join(pieces)
+
+    def with_special_tokens(self, special_tokens: list[str]) -> "BPETokenizer":
+        """Return a copy with reserved IDs appended after learned BPE tokens."""
+
+        overlap = sorted(set(special_tokens) & set(self.tokens))
+        if overlap:
+            raise ValueError(f"special tokens collide with learned tokens: {overlap}")
+        return BPETokenizer(
+            tokens=self.tokens + list(special_tokens),
+            merges=self.merges,
+            special_tokens=list(special_tokens),
+        )
 
     def to_dict(self) -> dict:
         return {
             "tokenizer_type": "character_seeded_bpe",
-            "version": 1,
+            "version": 2 if self.special_tokens else 1,
             "tokens": self.tokens,
             "merges": [list(merge) for merge in self.merges],
+            "special_tokens": self.special_tokens,
         }
 
     @classmethod
     def from_dict(cls, payload: dict) -> "BPETokenizer":
-        return cls(payload["tokens"], payload["merges"])
+        return cls(
+            payload["tokens"],
+            payload["merges"],
+            payload.get("special_tokens", []),
+        )
 
     def save(self, path: str | Path) -> None:
         output_path = Path(path)

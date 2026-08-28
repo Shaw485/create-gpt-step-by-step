@@ -1,0 +1,243 @@
+{
+  "schema_version": "cloud-training-config/v1",
+  "config_version": "1.0.0",
+  "project": {
+    "name": "create-gpt-step-by-step",
+    "run_id_prefix": "doupo-a10-v1",
+    "root_relative_to_config": "..",
+    "seed": 42,
+    "deterministic_validation": true,
+    "description": "Maximum practical single-novel model, pretrained and instruction-tuned on reviewed v4 releases"
+  },
+  "data": {
+    "private_runtime_directory": "data/cloud_v4",
+    "tokenizer_type": "character-seeded-bpe",
+    "bpe_merges": 2000,
+    "tokenizer_learn_split": "train_only",
+    "split_strategy": "chapter_grouped_90_5_5",
+    "release_manifests": [
+      {
+        "path": "data/cloud_v4/corpus_manifest.json",
+        "required_status": "ready",
+        "required_files": [
+          "data/cloud_v4/train.txt",
+          "data/cloud_v4/val.txt",
+          "data/cloud_v4/test.txt"
+        ]
+      },
+      {
+        "path": "data/cloud_v4/token_manifest.json",
+        "required_status": "ready",
+        "required_files": [
+          "data/cloud_v4/tokenizer.json",
+          "data/cloud_v4/train_tokens.pt",
+          "data/cloud_v4/val_tokens.pt",
+          "data/cloud_v4/test_tokens.pt"
+        ]
+      },
+      {
+        "path": "data/cloud_v4/sft_manifest.json",
+        "required_status": "ready",
+        "required_files": [
+          "data/cloud_v4/sft_train.jsonl",
+          "data/cloud_v4/sft_val.jsonl",
+          "data/cloud_v4/sft_test.jsonl"
+        ]
+      }
+    ],
+    "expected_sft_records": {
+      "train": 2400,
+      "validation": 300,
+      "test": 300
+    },
+    "special_tokens": [
+      "<UNK>",
+      "<BOS>",
+      "<USER>",
+      "<ASSISTANT>",
+      "<EOS>",
+      "<PAD>"
+    ]
+  },
+  "model": {
+    "architecture": "decoder-only-transformer-prenorm",
+    "parameter_target": 8240980,
+    "vocab_size_planning_value": 6484,
+    "embedding_dim": 256,
+    "num_layers": 8,
+    "num_heads": 8,
+    "head_dim": 32,
+    "ffn_hidden_dim": 1024,
+    "context_tokens": 1024,
+    "dropout": 0.1,
+    "activation": "gelu",
+    "causal_attention": true,
+    "tie_input_output_embeddings": true,
+    "output_bias": true
+  },
+  "pretraining": {
+    "target_steps": 2000,
+    "max_steps": 3000,
+    "smoke_steps": 100,
+    "micro_batch_size": 8,
+    "gradient_accumulation_steps": 1,
+    "tokens_per_optimizer_step": 8192,
+    "precision": "bf16",
+    "master_parameter_dtype": "float32",
+    "optimizer": "adamw",
+    "learning_rate": 0.0003,
+    "min_learning_rate": 0.00003,
+    "warmup_steps": 100,
+    "schedule": "warmup_then_cosine",
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "epsilon": 1e-8,
+    "weight_decay": 0.1,
+    "gradient_clip_norm": 1.0,
+    "eval_interval_steps": 100,
+    "eval_batches": 20,
+    "checkpoint_interval_steps": 100
+  },
+  "sft": {
+    "target_epochs": 3,
+    "target_steps": 900,
+    "max_steps": 1200,
+    "smoke_steps": 20,
+    "micro_batch_size": 8,
+    "gradient_accumulation_steps": 1,
+    "precision": "bf16",
+    "optimizer": "adamw",
+    "learning_rate": 0.00005,
+    "min_learning_rate": 0.000005,
+    "warmup_fraction": 0.05,
+    "schedule": "warmup_then_cosine",
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "epsilon": 1e-8,
+    "weight_decay": 0.01,
+    "gradient_clip_norm": 1.0,
+    "eval_interval_steps": 75,
+    "checkpoint_interval_steps": 75,
+    "loss_mask": "assistant_tokens_only"
+  },
+  "evaluation": {
+    "pre_sft_fixed_prompts": 50,
+    "hidden_sft_test_records": 300,
+    "generation_max_new_tokens": 128,
+    "temperature": 0.8,
+    "top_k": 40,
+    "metrics": [
+      "train_loss",
+      "validation_loss",
+      "test_loss",
+      "perplexity",
+      "exact_match",
+      "grounded_fact_accuracy",
+      "instruction_following_rate"
+    ],
+    "retain_before_after_samples": true
+  },
+  "hardware": {
+    "instance_type": "ml.gni2.3xlarge",
+    "device": "cuda",
+    "device_index": 0,
+    "required_gpu_count": 1,
+    "required_gpu_name_regex": "\\b(?:NVIDIA\\s+)?A10\\b",
+    "min_vram_gib": 22.0,
+    "min_compute_capability": [
+      8,
+      6
+    ],
+    "require_native_bf16": true,
+    "estimated_training_peak_gib": 16.0,
+    "max_training_vram_fraction": 0.8,
+    "max_existing_vram_fraction": 0.2,
+    "max_probe_vram_fraction": 0.1,
+    "bf16_probe": {
+      "matrix_size": 1024,
+      "batch_size": 64
+    }
+  },
+  "runtime": {
+    "max_wall_clock_seconds": 43200,
+    "shutdown_reserve_seconds": 900,
+    "require_preflight_pass": true,
+    "require_smoke_pass": true,
+    "require_resume_smoke_pass": true,
+    "checkpoint_save_mode": "atomic_fsync_replace",
+    "checkpoint_reload_verification": true,
+    "checkpoint_sha256": true,
+    "latest_checkpoint_every_steps": 100,
+    "rolling_checkpoint_count": 2,
+    "save_best_checkpoint": true,
+    "save_emergency_checkpoint": true,
+    "emergency_signals": [
+      "SIGTERM",
+      "SIGINT"
+    ],
+    "terminal_status_files": [
+      "DONE.json",
+      "FAILED.json"
+    ],
+    "pipeline_stages": [
+      "PRECHECK",
+      "SMOKE",
+      "RESUME_TEST",
+      "PRETRAIN",
+      "PRE_SFT_BASELINE",
+      "SFT_SMOKE",
+      "SFT",
+      "EVALUATE",
+      "ARCHIVE",
+      "DONE"
+    ]
+  },
+  "logging": {
+    "format": "jsonl",
+    "console": true,
+    "max_bytes": 10485760,
+    "backup_count": 5,
+    "module_levels": {
+      "preflight": "INFO",
+      "data": "INFO",
+      "pretrain": "INFO",
+      "validation": "INFO",
+      "checkpoint": "INFO",
+      "gpu": "INFO",
+      "sft": "INFO",
+      "orchestrator": "INFO"
+    },
+    "redact_sensitive_fields": true,
+    "production_debug_logging": false
+  },
+  "safety": {
+    "fail_on_nonfinite_loss": true,
+    "fail_on_nonfinite_gradients": true,
+    "pretraining_early_stopping": {
+      "patience_evaluations": 5,
+      "min_delta": 0.001
+    },
+    "sft_early_stopping": {
+      "patience_evaluations": 4,
+      "min_delta": 0.001
+    },
+    "forbid_cpu_fallback": true,
+    "forbid_unreviewed_artifacts": true,
+    "forbid_config_hash_mismatch_on_resume": true
+  },
+  "artifacts": {
+    "run_root": "runs/cloud",
+    "preflight_report": "preflight_report.json",
+    "checkpoint_directory": "checkpoints",
+    "reports_directory": "reports",
+    "archive_manifest": "archive_manifest.json",
+    "retain_config_copy": true,
+    "retain_loss_history": true,
+    "retain_generation_samples": true,
+    "retain_environment_manifest": true
+  }
+}

@@ -46,6 +46,17 @@ class BPETokenizerTests(unittest.TestCase):
         second = learn_bpe([text], base_tokens(text), num_merges=5)
         self.assertEqual(first.to_dict(), second.to_dict())
 
+    def test_special_tokens_are_reserved_and_can_be_skipped_on_decode(self):
+        text = "甲乙甲乙"
+        base = learn_bpe([text], base_tokens(text), num_merges=2)
+        tokenizer = base.with_special_tokens(["<EOS>", "<PAD>"])
+        ids = tokenizer.encode(text) + [tokenizer.special_to_id["<EOS>"]]
+        self.assertEqual(tokenizer.decode(ids), text + "<EOS>")
+        self.assertEqual(
+            tokenizer.decode(ids, skip_special_tokens=True),
+            text,
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

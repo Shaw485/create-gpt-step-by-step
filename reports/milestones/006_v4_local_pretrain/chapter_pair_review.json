@@ -1,0 +1,1156 @@
+{
+  "schema_version": "1.0",
+  "status": "complete",
+  "pair_count": 113,
+  "same_chapter_pair_count": 112,
+  "cross_chapter_pair_count": 1,
+  "decision_counts": {
+    "keep_first": 47,
+    "keep_second": 65,
+    "remove_range": 1
+  },
+  "confidence_counts": {
+    "high": 66,
+    "medium": 34,
+    "reviewed-low": 13
+  },
+  "method": "同章候选逐组采用已有正文重合度、行匹配率、完整度、正文长度和噪声评分建议；跨章异常按源文件行号与 SHA-256 定点处理。",
+  "reviews": [
+    {
+      "pair_id": "pair-6f58161c193b695f",
+      "chapter_number": 1385,
+      "decision": "keep_first",
+      "kept_start_line": 161842,
+      "removed_start_line": 164358,
+      "confidence": "high",
+      "shared_coverage": 0.972630173564753,
+      "matching_line_ratio": 0.9696969696969697
+    },
+    {
+      "pair_id": "pair-12f57b904196e242",
+      "chapter_number": 1319,
+      "decision": "keep_second",
+      "kept_start_line": 153623,
+      "removed_start_line": 151426,
+      "confidence": "high",
+      "shared_coverage": 0.9718076285240465,
+      "matching_line_ratio": 0.9411764705882353
+    },
+    {
+      "pair_id": "pair-35505ce3aa6283d9",
+      "chapter_number": 1463,
+      "decision": "keep_first",
+      "kept_start_line": 175841,
+      "removed_start_line": 176055,
+      "confidence": "high",
+      "shared_coverage": 0.9705981750591416,
+      "matching_line_ratio": 0.9655172413793104
+    },
+    {
+      "pair_id": "pair-f2823dfa1319f1b9",
+      "chapter_number": 1176,
+      "decision": "keep_first",
+      "kept_start_line": 129795,
+      "removed_start_line": 134669,
+      "confidence": "high",
+      "shared_coverage": 0.9679611650485437,
+      "matching_line_ratio": 0.961038961038961
+    },
+    {
+      "pair_id": "pair-bc4e513dca19f3cb",
+      "chapter_number": 952,
+      "decision": "keep_second",
+      "kept_start_line": 101471,
+      "removed_start_line": 98639,
+      "confidence": "high",
+      "shared_coverage": 0.9675366008911521,
+      "matching_line_ratio": 0.9142857142857143
+    },
+    {
+      "pair_id": "pair-3a169ca75fe4fb67",
+      "chapter_number": 1100,
+      "decision": "keep_second",
+      "kept_start_line": 122899,
+      "removed_start_line": 120966,
+      "confidence": "high",
+      "shared_coverage": 0.9660352710646636,
+      "matching_line_ratio": 0.9607843137254902
+    },
+    {
+      "pair_id": "pair-fd41f028f481a9d2",
+      "chapter_number": 1070,
+      "decision": "keep_second",
+      "kept_start_line": 117642,
+      "removed_start_line": 115841,
+      "confidence": "high",
+      "shared_coverage": 0.9635653871177619,
+      "matching_line_ratio": 0.9491525423728814
+    },
+    {
+      "pair_id": "pair-4bca2c96683093a4",
+      "chapter_number": 1067,
+      "decision": "keep_first",
+      "kept_start_line": 115474,
+      "removed_start_line": 117277,
+      "confidence": "high",
+      "shared_coverage": 0.9617504051863858,
+      "matching_line_ratio": 0.9557522123893806
+    },
+    {
+      "pair_id": "pair-177184631a8627d3",
+      "chapter_number": 938,
+      "decision": "keep_first",
+      "kept_start_line": 97125,
+      "removed_start_line": 100051,
+      "confidence": "high",
+      "shared_coverage": 0.9603390856796852,
+      "matching_line_ratio": 0.9113924050632911
+    },
+    {
+      "pair_id": "pair-c5f1ca7a41ef6e81",
+      "chapter_number": 1413,
+      "decision": "keep_first",
+      "kept_start_line": 168126,
+      "removed_start_line": 168394,
+      "confidence": "high",
+      "shared_coverage": 0.9591315453384419,
+      "matching_line_ratio": 0.9747899159663865
+    },
+    {
+      "pair_id": "pair-16e8a1995b3e10ea",
+      "chapter_number": 942,
+      "decision": "keep_first",
+      "kept_start_line": 97445,
+      "removed_start_line": 100457,
+      "confidence": "high",
+      "shared_coverage": 0.9555932203389831,
+      "matching_line_ratio": 0.9397590361445783
+    },
+    {
+      "pair_id": "pair-f9ef85e05cea99bf",
+      "chapter_number": 1031,
+      "decision": "keep_second",
+      "kept_start_line": 110781,
+      "removed_start_line": 109706,
+      "confidence": "high",
+      "shared_coverage": 0.954337899543379,
+      "matching_line_ratio": 0.9142857142857143
+    },
+    {
+      "pair_id": "pair-ce7a99dcbf7feeba",
+      "chapter_number": 1458,
+      "decision": "keep_second",
+      "kept_start_line": 175121,
+      "removed_start_line": 174264,
+      "confidence": "high",
+      "shared_coverage": 0.9515473585495468,
+      "matching_line_ratio": 0.9457364341085271
+    },
+    {
+      "pair_id": "pair-acc5ec1995db755c",
+      "chapter_number": 1094,
+      "decision": "keep_second",
+      "kept_start_line": 122255,
+      "removed_start_line": 120308,
+      "confidence": "high",
+      "shared_coverage": 0.9507795781106695,
+      "matching_line_ratio": 0.9078014184397163
+    },
+    {
+      "pair_id": "pair-525fbe5d454bdfad",
+      "chapter_number": 1021,
+      "decision": "keep_second",
+      "kept_start_line": 109918,
+      "removed_start_line": 108658,
+      "confidence": "high",
+      "shared_coverage": 0.9506459092414706,
+      "matching_line_ratio": 0.9795918367346939
+    },
+    {
+      "pair_id": "pair-17b42ccecf6d2d73",
+      "chapter_number": 1321,
+      "decision": "keep_second",
+      "kept_start_line": 153829,
+      "removed_start_line": 151642,
+      "confidence": "high",
+      "shared_coverage": 0.9463247863247863,
+      "matching_line_ratio": 0.9423076923076923
+    },
+    {
+      "pair_id": "pair-7984a4d500e44bb0",
+      "chapter_number": 1105,
+      "decision": "keep_second",
+      "kept_start_line": 123507,
+      "removed_start_line": 123295,
+      "confidence": "high",
+      "shared_coverage": 0.943870523415978,
+      "matching_line_ratio": 0.9010989010989011
+    },
+    {
+      "pair_id": "pair-f39166989582d78a",
+      "chapter_number": 1460,
+      "decision": "keep_second",
+      "kept_start_line": 175661,
+      "removed_start_line": 175447,
+      "confidence": "high",
+      "shared_coverage": 0.9418337167269142,
+      "matching_line_ratio": 0.9647058823529412
+    },
+    {
+      "pair_id": "pair-017d463a60ec51af",
+      "chapter_number": 1459,
+      "decision": "keep_second",
+      "kept_start_line": 175256,
+      "removed_start_line": 174399,
+      "confidence": "high",
+      "shared_coverage": 0.9413569723832254,
+      "matching_line_ratio": 0.7631578947368421
+    },
+    {
+      "pair_id": "pair-97f91160a29b99fb",
+      "chapter_number": 1400,
+      "decision": "keep_first",
+      "kept_start_line": 165953,
+      "removed_start_line": 166567,
+      "confidence": "high",
+      "shared_coverage": 0.940133779264214,
+      "matching_line_ratio": 0.9491525423728814
+    },
+    {
+      "pair_id": "pair-45eb9f8759b8d55c",
+      "chapter_number": 956,
+      "decision": "keep_second",
+      "kept_start_line": 101931,
+      "removed_start_line": 99005,
+      "confidence": "high",
+      "shared_coverage": 0.9387823747056845,
+      "matching_line_ratio": 0.8869565217391304
+    },
+    {
+      "pair_id": "pair-acf0aabc610cdea6",
+      "chapter_number": 1454,
+      "decision": "keep_second",
+      "kept_start_line": 174639,
+      "removed_start_line": 173802,
+      "confidence": "high",
+      "shared_coverage": 0.9385416666666667,
+      "matching_line_ratio": 0.946236559139785
+    },
+    {
+      "pair_id": "pair-5a9e5015922f5e31",
+      "chapter_number": 1072,
+      "decision": "keep_first",
+      "kept_start_line": 116101,
+      "removed_start_line": 117910,
+      "confidence": "high",
+      "shared_coverage": 0.9367213114754098,
+      "matching_line_ratio": 0.9312977099236641
+    },
+    {
+      "pair_id": "pair-a1af2b00d9dae021",
+      "chapter_number": 1302,
+      "decision": "keep_second",
+      "kept_start_line": 151874,
+      "removed_start_line": 149582,
+      "confidence": "high",
+      "shared_coverage": 0.9356586522180833,
+      "matching_line_ratio": 0.9504950495049505
+    },
+    {
+      "pair_id": "pair-e6e6bc62e624e252",
+      "chapter_number": 1390,
+      "decision": "keep_first",
+      "kept_start_line": 162641,
+      "removed_start_line": 164927,
+      "confidence": "high",
+      "shared_coverage": 0.9352729650212488,
+      "matching_line_ratio": 0.9512195121951219
+    },
+    {
+      "pair_id": "pair-d6a79ed7bd2129d3",
+      "chapter_number": 1439,
+      "decision": "keep_second",
+      "kept_start_line": 171958,
+      "removed_start_line": 171577,
+      "confidence": "high",
+      "shared_coverage": 0.935064935064935,
+      "matching_line_ratio": 0.8992248062015504
+    },
+    {
+      "pair_id": "pair-779147af090ad629",
+      "chapter_number": 1198,
+      "decision": "keep_first",
+      "kept_start_line": 131885,
+      "removed_start_line": 136735,
+      "confidence": "high",
+      "shared_coverage": 0.9345887016848364,
+      "matching_line_ratio": 0.9315068493150684
+    },
+    {
+      "pair_id": "pair-e48f9eabfeac5729",
+      "chapter_number": 1170,
+      "decision": "keep_first",
+      "kept_start_line": 129281,
+      "removed_start_line": 134005,
+      "confidence": "high",
+      "shared_coverage": 0.9329062710721511,
+      "matching_line_ratio": 0.8955223880597015
+    },
+    {
+      "pair_id": "pair-721d5e67935d0f98",
+      "chapter_number": 1310,
+      "decision": "keep_second",
+      "kept_start_line": 152810,
+      "removed_start_line": 150516,
+      "confidence": "high",
+      "shared_coverage": 0.9320948110185778,
+      "matching_line_ratio": 0.9454545454545454
+    },
+    {
+      "pair_id": "pair-73679c9b2daa6a23",
+      "chapter_number": 1457,
+      "decision": "keep_second",
+      "kept_start_line": 174986,
+      "removed_start_line": 174129,
+      "confidence": "high",
+      "shared_coverage": 0.9302026375040205,
+      "matching_line_ratio": 0.9302325581395349
+    },
+    {
+      "pair_id": "pair-75b78acaa39a9081",
+      "chapter_number": 1386,
+      "decision": "keep_first",
+      "kept_start_line": 161979,
+      "removed_start_line": 164497,
+      "confidence": "high",
+      "shared_coverage": 0.9299867899603699,
+      "matching_line_ratio": 0.9523809523809523
+    },
+    {
+      "pair_id": "pair-eccc834d9601b6c8",
+      "chapter_number": 1464,
+      "decision": "keep_second",
+      "kept_start_line": 176148,
+      "removed_start_line": 175934,
+      "confidence": "high",
+      "shared_coverage": 0.9228081321473952,
+      "matching_line_ratio": 0.9464285714285714
+    },
+    {
+      "pair_id": "pair-821e520f7f6453fc",
+      "chapter_number": 1450,
+      "decision": "keep_first",
+      "kept_start_line": 172991,
+      "removed_start_line": 173342,
+      "confidence": "high",
+      "shared_coverage": 0.9221930400525279,
+      "matching_line_ratio": 0.9380530973451328
+    },
+    {
+      "pair_id": "pair-b2a0871fd6f83118",
+      "chapter_number": 1389,
+      "decision": "keep_first",
+      "kept_start_line": 162548,
+      "removed_start_line": 164834,
+      "confidence": "high",
+      "shared_coverage": 0.9209317585301837,
+      "matching_line_ratio": 0.9425287356321839
+    },
+    {
+      "pair_id": "pair-3c6f5721b2e5b820",
+      "chapter_number": 1164,
+      "decision": "keep_first",
+      "kept_start_line": 128713,
+      "removed_start_line": 133323,
+      "confidence": "high",
+      "shared_coverage": 0.9205882352941176,
+      "matching_line_ratio": 0.9230769230769231
+    },
+    {
+      "pair_id": "pair-6195a28361d5971d",
+      "chapter_number": 920,
+      "decision": "keep_first",
+      "kept_start_line": 94798,
+      "removed_start_line": 95259,
+      "confidence": "high",
+      "shared_coverage": 0.9199607971251225,
+      "matching_line_ratio": 0.9173553719008265
+    },
+    {
+      "pair_id": "pair-724545ad7ac63c44",
+      "chapter_number": 1075,
+      "decision": "keep_second",
+      "kept_start_line": 118190,
+      "removed_start_line": 116482,
+      "confidence": "high",
+      "shared_coverage": 0.9197755034664906,
+      "matching_line_ratio": 0.8952380952380953
+    },
+    {
+      "pair_id": "pair-504b410011540eb9",
+      "chapter_number": 1425,
+      "decision": "keep_first",
+      "kept_start_line": 169800,
+      "removed_start_line": 170107,
+      "confidence": "high",
+      "shared_coverage": 0.9166224110462029,
+      "matching_line_ratio": 0.7126436781609196
+    },
+    {
+      "pair_id": "pair-3c31424e3d322008",
+      "chapter_number": 921,
+      "decision": "keep_first",
+      "kept_start_line": 95045,
+      "removed_start_line": 95506,
+      "confidence": "high",
+      "shared_coverage": 0.9066870073735063,
+      "matching_line_ratio": 0.8910891089108911
+    },
+    {
+      "pair_id": "pair-139055a14cde6507",
+      "chapter_number": 1317,
+      "decision": "keep_second",
+      "kept_start_line": 153397,
+      "removed_start_line": 151202,
+      "confidence": "high",
+      "shared_coverage": 0.9016606968414197,
+      "matching_line_ratio": 0.8723404255319149
+    },
+    {
+      "pair_id": "pair-fdd882d04e671eb8",
+      "chapter_number": [
+        70,
+        71
+      ],
+      "decision": "remove_range",
+      "removed_source_lines": [
+        5543,
+        5623
+      ],
+      "range_sha256": "b4aafd8288e41a4f6d62eeb329b8afeb5542de0687a94b8f83c58df1293e5074",
+      "confidence": "high",
+      "shared_coverage": 0.8981880931837791,
+      "matching_line_ratio": 0.6548672566371682
+    },
+    {
+      "pair_id": "pair-aadea89fa947d418",
+      "chapter_number": 1169,
+      "decision": "keep_first",
+      "kept_start_line": 129192,
+      "removed_start_line": 133916,
+      "confidence": "high",
+      "shared_coverage": 0.8958068614993647,
+      "matching_line_ratio": 0.9156626506024096
+    },
+    {
+      "pair_id": "pair-5e46681bac437d4f",
+      "chapter_number": 1415,
+      "decision": "keep_second",
+      "kept_start_line": 168646,
+      "removed_start_line": 168251,
+      "confidence": "high",
+      "shared_coverage": 0.8946826758147512,
+      "matching_line_ratio": 0.8676470588235294
+    },
+    {
+      "pair_id": "pair-c5b9ef34406aa647",
+      "chapter_number": 1250,
+      "decision": "keep_second",
+      "kept_start_line": 143471,
+      "removed_start_line": 142019,
+      "confidence": "high",
+      "shared_coverage": 0.893125,
+      "matching_line_ratio": 0.7719298245614035
+    },
+    {
+      "pair_id": "pair-72b45313e05d4ac7",
+      "chapter_number": 948,
+      "decision": "keep_first",
+      "kept_start_line": 98165,
+      "removed_start_line": 101059,
+      "confidence": "high",
+      "shared_coverage": 0.8895562228895563,
+      "matching_line_ratio": 0.868421052631579
+    },
+    {
+      "pair_id": "pair-70fe3a7b04a64fd3",
+      "chapter_number": 1226,
+      "decision": "keep_second",
+      "kept_start_line": 139256,
+      "removed_start_line": 138989,
+      "confidence": "high",
+      "shared_coverage": 0.885741565881604,
+      "matching_line_ratio": 0.891566265060241
+    },
+    {
+      "pair_id": "pair-6e856d09b4eee4c0",
+      "chapter_number": 1011,
+      "decision": "keep_second",
+      "kept_start_line": 107690,
+      "removed_start_line": 107591,
+      "confidence": "high",
+      "shared_coverage": 0.8803361344537816,
+      "matching_line_ratio": 0.8913043478260869
+    },
+    {
+      "pair_id": "pair-b10f5025ffe81ce9",
+      "chapter_number": 1301,
+      "decision": "keep_first",
+      "kept_start_line": 149467,
+      "removed_start_line": 151753,
+      "confidence": "high",
+      "shared_coverage": 0.8764302059496567,
+      "matching_line_ratio": 0.8928571428571429
+    },
+    {
+      "pair_id": "pair-47ee226505bd1055",
+      "chapter_number": 1180,
+      "decision": "keep_first",
+      "kept_start_line": 130241,
+      "removed_start_line": 135077,
+      "confidence": "high",
+      "shared_coverage": 0.8717697088649002,
+      "matching_line_ratio": 0.8985507246376812
+    },
+    {
+      "pair_id": "pair-9d623efd850bee4f",
+      "chapter_number": 1455,
+      "decision": "keep_first",
+      "kept_start_line": 173903,
+      "removed_start_line": 174740,
+      "confidence": "high",
+      "shared_coverage": 0.8715357026410173,
+      "matching_line_ratio": 0.859504132231405
+    },
+    {
+      "pair_id": "pair-18a6d8350a3d4d19",
+      "chapter_number": 1244,
+      "decision": "keep_second",
+      "kept_start_line": 142703,
+      "removed_start_line": 141237,
+      "confidence": "high",
+      "shared_coverage": 0.8674536256323777,
+      "matching_line_ratio": 0.8688524590163934
+    },
+    {
+      "pair_id": "pair-5a9e126b7c622b08",
+      "chapter_number": 1246,
+      "decision": "keep_second",
+      "kept_start_line": 142967,
+      "removed_start_line": 141505,
+      "confidence": "high",
+      "shared_coverage": 0.8610700561631688,
+      "matching_line_ratio": 0.8125
+    },
+    {
+      "pair_id": "pair-8be3bd08b519d9fa",
+      "chapter_number": 1363,
+      "decision": "keep_first",
+      "kept_start_line": 159298,
+      "removed_start_line": 159676,
+      "confidence": "high",
+      "shared_coverage": 0.858734841035726,
+      "matching_line_ratio": 0.8059701492537313
+    },
+    {
+      "pair_id": "pair-144e9fbff30d9d1b",
+      "chapter_number": 1380,
+      "decision": "keep_first",
+      "kept_start_line": 161229,
+      "removed_start_line": 163799,
+      "confidence": "high",
+      "shared_coverage": 0.8520493168943686,
+      "matching_line_ratio": 0.9090909090909091
+    },
+    {
+      "pair_id": "pair-b652f0ae1580c7a1",
+      "chapter_number": 1392,
+      "decision": "keep_first",
+      "kept_start_line": 162732,
+      "removed_start_line": 165125,
+      "confidence": "high",
+      "shared_coverage": 0.8506555804285257,
+      "matching_line_ratio": 0.8571428571428571
+    },
+    {
+      "pair_id": "pair-203e0dae7a44ac76",
+      "chapter_number": 945,
+      "decision": "keep_second",
+      "kept_start_line": 100732,
+      "removed_start_line": 97862,
+      "confidence": "high",
+      "shared_coverage": 0.8506457046603032,
+      "matching_line_ratio": 0.8633093525179856
+    },
+    {
+      "pair_id": "pair-df50600b07896533",
+      "chapter_number": 1248,
+      "decision": "keep_second",
+      "kept_start_line": 143213,
+      "removed_start_line": 141757,
+      "confidence": "high",
+      "shared_coverage": 0.8451767936834879,
+      "matching_line_ratio": 0.819672131147541
+    },
+    {
+      "pair_id": "pair-b9feab4cea557184",
+      "chapter_number": 1378,
+      "decision": "keep_second",
+      "kept_start_line": 163563,
+      "removed_start_line": 160981,
+      "confidence": "high",
+      "shared_coverage": 0.8437187604131956,
+      "matching_line_ratio": 0.8421052631578947
+    },
+    {
+      "pair_id": "pair-f6412dc50f60a25a",
+      "chapter_number": 1084,
+      "decision": "keep_second",
+      "kept_start_line": 121451,
+      "removed_start_line": 119221,
+      "confidence": "high",
+      "shared_coverage": 0.8326848249027238,
+      "matching_line_ratio": 0.8518518518518519
+    },
+    {
+      "pair_id": "pair-c8cbe4b081b95b1a",
+      "chapter_number": 1456,
+      "decision": "keep_second",
+      "kept_start_line": 174879,
+      "removed_start_line": 174020,
+      "confidence": "high",
+      "shared_coverage": 0.8223533267781056,
+      "matching_line_ratio": 0.8514851485148515
+    },
+    {
+      "pair_id": "pair-d2756a55a563fa98",
+      "chapter_number": 1024,
+      "decision": "keep_second",
+      "kept_start_line": 110120,
+      "removed_start_line": 108973,
+      "confidence": "high",
+      "shared_coverage": 0.822120118148999,
+      "matching_line_ratio": 0.84
+    },
+    {
+      "pair_id": "pair-bc011cb598eff1e0",
+      "chapter_number": 1304,
+      "decision": "keep_second",
+      "kept_start_line": 152114,
+      "removed_start_line": 149820,
+      "confidence": "high",
+      "shared_coverage": 0.821,
+      "matching_line_ratio": 0.8936170212765957
+    },
+    {
+      "pair_id": "pair-5a7f073164e85504",
+      "chapter_number": 1168,
+      "decision": "keep_second",
+      "kept_start_line": 133821,
+      "removed_start_line": 129097,
+      "confidence": "high",
+      "shared_coverage": 0.8207485226526592,
+      "matching_line_ratio": 0.8314606741573034
+    },
+    {
+      "pair_id": "pair-ddf3f42db2b3ee19",
+      "chapter_number": 941,
+      "decision": "keep_second",
+      "kept_start_line": 100384,
+      "removed_start_line": 97374,
+      "confidence": "high",
+      "shared_coverage": 0.8170023898941619,
+      "matching_line_ratio": 0.835820895522388
+    },
+    {
+      "pair_id": "pair-39ec72aa0c128b63",
+      "chapter_number": 1174,
+      "decision": "keep_second",
+      "kept_start_line": 134439,
+      "removed_start_line": 129619,
+      "confidence": "high",
+      "shared_coverage": 0.8148381012260295,
+      "matching_line_ratio": 0.7741935483870968
+    },
+    {
+      "pair_id": "pair-bbd124fc52137911",
+      "chapter_number": 805,
+      "decision": "keep_second",
+      "kept_start_line": 83785,
+      "removed_start_line": 83696,
+      "confidence": "high",
+      "shared_coverage": 0.8125423728813559,
+      "matching_line_ratio": 0.8433734939759037
+    },
+    {
+      "pair_id": "pair-ac1c7c04dc9fcde8",
+      "chapter_number": 1044,
+      "decision": "keep_second",
+      "kept_start_line": 112861,
+      "removed_start_line": 112417,
+      "confidence": "medium",
+      "shared_coverage": 0.796550622804216,
+      "matching_line_ratio": 0.8297872340425532
+    },
+    {
+      "pair_id": "pair-8d6d1e70e13085ce",
+      "chapter_number": 944,
+      "decision": "keep_second",
+      "kept_start_line": 100655,
+      "removed_start_line": 97785,
+      "confidence": "medium",
+      "shared_coverage": 0.7958266452648475,
+      "matching_line_ratio": 0.8333333333333334
+    },
+    {
+      "pair_id": "pair-24027877c016547b",
+      "chapter_number": 1593,
+      "decision": "keep_first",
+      "kept_start_line": 190169,
+      "removed_start_line": 190308,
+      "confidence": "medium",
+      "shared_coverage": 0.7875457875457875,
+      "matching_line_ratio": 0.7878787878787878
+    },
+    {
+      "pair_id": "pair-27efeac9f73480f9",
+      "chapter_number": 1028,
+      "decision": "keep_second",
+      "kept_start_line": 110466,
+      "removed_start_line": 109391,
+      "confidence": "medium",
+      "shared_coverage": 0.7790440012662235,
+      "matching_line_ratio": 0.8163265306122449
+    },
+    {
+      "pair_id": "pair-b5f43483982258f2",
+      "chapter_number": 1068,
+      "decision": "keep_second",
+      "kept_start_line": 117400,
+      "removed_start_line": 115593,
+      "confidence": "medium",
+      "shared_coverage": 0.7745019920318725,
+      "matching_line_ratio": 0.864
+    },
+    {
+      "pair_id": "pair-8510ba549c705da6",
+      "chapter_number": 1093,
+      "decision": "keep_second",
+      "kept_start_line": 122102,
+      "removed_start_line": 120153,
+      "confidence": "medium",
+      "shared_coverage": 0.7734177215189874,
+      "matching_line_ratio": 0.8243243243243243
+    },
+    {
+      "pair_id": "pair-8611ee50ca54382c",
+      "chapter_number": 1359,
+      "decision": "keep_first",
+      "kept_start_line": 158438,
+      "removed_start_line": 158882,
+      "confidence": "medium",
+      "shared_coverage": 0.7726657645466847,
+      "matching_line_ratio": 0.8809523809523809
+    },
+    {
+      "pair_id": "pair-0628799290eac6a4",
+      "chapter_number": 1252,
+      "decision": "keep_second",
+      "kept_start_line": 143701,
+      "removed_start_line": 142253,
+      "confidence": "medium",
+      "shared_coverage": 0.7689175432643366,
+      "matching_line_ratio": 0.7450980392156863
+    },
+    {
+      "pair_id": "pair-92990d78ed42be7f",
+      "chapter_number": 1080,
+      "decision": "keep_second",
+      "kept_start_line": 118783,
+      "removed_start_line": 117055,
+      "confidence": "medium",
+      "shared_coverage": 0.7682851874615857,
+      "matching_line_ratio": 0.835820895522388
+    },
+    {
+      "pair_id": "pair-f97e88e4a210ecff",
+      "chapter_number": 1374,
+      "decision": "keep_second",
+      "kept_start_line": 163215,
+      "removed_start_line": 160491,
+      "confidence": "medium",
+      "shared_coverage": 0.7597607052896725,
+      "matching_line_ratio": 0.8
+    },
+    {
+      "pair_id": "pair-38faba091e9e1cfa",
+      "chapter_number": 1020,
+      "decision": "keep_second",
+      "kept_start_line": 109817,
+      "removed_start_line": 108555,
+      "confidence": "medium",
+      "shared_coverage": 0.7596825396825397,
+      "matching_line_ratio": 0.8297872340425532
+    },
+    {
+      "pair_id": "pair-8d59656428298798",
+      "chapter_number": 1106,
+      "decision": "keep_second",
+      "kept_start_line": 123608,
+      "removed_start_line": 123390,
+      "confidence": "medium",
+      "shared_coverage": 0.7498281786941581,
+      "matching_line_ratio": 0.8
+    },
+    {
+      "pair_id": "pair-179b1297451ae826",
+      "chapter_number": 459,
+      "decision": "keep_second",
+      "kept_start_line": 50274,
+      "removed_start_line": 50179,
+      "confidence": "medium",
+      "shared_coverage": 0.7437626432906271,
+      "matching_line_ratio": 0.7415730337078652
+    },
+    {
+      "pair_id": "pair-eb40aa15697917d9",
+      "chapter_number": 1315,
+      "decision": "keep_first",
+      "kept_start_line": 151002,
+      "removed_start_line": 153141,
+      "confidence": "medium",
+      "shared_coverage": 0.7346809854706254,
+      "matching_line_ratio": 0.7317073170731707
+    },
+    {
+      "pair_id": "pair-bd66f70790057cbb",
+      "chapter_number": 1103,
+      "decision": "keep_first",
+      "kept_start_line": 121275,
+      "removed_start_line": 123111,
+      "confidence": "medium",
+      "shared_coverage": 0.7270251872021783,
+      "matching_line_ratio": 0.7380952380952381
+    },
+    {
+      "pair_id": "pair-9ca145c46a4018ec",
+      "chapter_number": 422,
+      "decision": "keep_second",
+      "kept_start_line": 46448,
+      "removed_start_line": 46363,
+      "confidence": "medium",
+      "shared_coverage": 0.7223984771573604,
+      "matching_line_ratio": 0.759493670886076
+    },
+    {
+      "pair_id": "pair-d82f974bce743366",
+      "chapter_number": 1387,
+      "decision": "keep_second",
+      "kept_start_line": 164608,
+      "removed_start_line": 162090,
+      "confidence": "medium",
+      "shared_coverage": 0.7178233952427501,
+      "matching_line_ratio": 0.5436893203883495
+    },
+    {
+      "pair_id": "pair-ba41c2059a23a2df",
+      "chapter_number": 1179,
+      "decision": "keep_second",
+      "kept_start_line": 134940,
+      "removed_start_line": 130106,
+      "confidence": "medium",
+      "shared_coverage": 0.7098808689558515,
+      "matching_line_ratio": 0.75
+    },
+    {
+      "pair_id": "pair-439025c3812cc324",
+      "chapter_number": 1090,
+      "decision": "keep_second",
+      "kept_start_line": 121867,
+      "removed_start_line": 119833,
+      "confidence": "medium",
+      "shared_coverage": 0.6961152882205514,
+      "matching_line_ratio": 0.7636363636363637
+    },
+    {
+      "pair_id": "pair-cafe7690b04d23b4",
+      "chapter_number": 1309,
+      "decision": "keep_first",
+      "kept_start_line": 150391,
+      "removed_start_line": 152701,
+      "confidence": "medium",
+      "shared_coverage": 0.6933289080650514,
+      "matching_line_ratio": 0.6846846846846847
+    },
+    {
+      "pair_id": "pair-9f44abff00d711af",
+      "chapter_number": 959,
+      "decision": "keep_second",
+      "kept_start_line": 102190,
+      "removed_start_line": 99340,
+      "confidence": "medium",
+      "shared_coverage": 0.68517909957279,
+      "matching_line_ratio": 0.7777777777777778
+    },
+    {
+      "pair_id": "pair-c0fa6af1646ff765",
+      "chapter_number": 1255,
+      "decision": "keep_second",
+      "kept_start_line": 144038,
+      "removed_start_line": 142582,
+      "confidence": "medium",
+      "shared_coverage": 0.6803418803418804,
+      "matching_line_ratio": 0.7787610619469026
+    },
+    {
+      "pair_id": "pair-6dfe984ff0d68058",
+      "chapter_number": 1311,
+      "decision": "keep_second",
+      "kept_start_line": 152925,
+      "removed_start_line": 150633,
+      "confidence": "medium",
+      "shared_coverage": 0.678328804347826,
+      "matching_line_ratio": 0.5849056603773585
+    },
+    {
+      "pair_id": "pair-127aca1c4c9455b4",
+      "chapter_number": 1371,
+      "decision": "keep_first",
+      "kept_start_line": 160178,
+      "removed_start_line": 162928,
+      "confidence": "medium",
+      "shared_coverage": 0.6754098360655738,
+      "matching_line_ratio": 0.7
+    },
+    {
+      "pair_id": "pair-600656f67b69fffe",
+      "chapter_number": 310,
+      "decision": "keep_second",
+      "kept_start_line": 32021,
+      "removed_start_line": 31850,
+      "confidence": "medium",
+      "shared_coverage": 0.6496031103191316,
+      "matching_line_ratio": 0.7108433734939759
+    },
+    {
+      "pair_id": "pair-7e02df796ad7a9ad",
+      "chapter_number": 1173,
+      "decision": "keep_second",
+      "kept_start_line": 134336,
+      "removed_start_line": 129516,
+      "confidence": "medium",
+      "shared_coverage": 0.6452522720150423,
+      "matching_line_ratio": 0.7010309278350515
+    },
+    {
+      "pair_id": "pair-75cc9aabc231a5e7",
+      "chapter_number": 971,
+      "decision": "keep_second",
+      "kept_start_line": 103825,
+      "removed_start_line": 103415,
+      "confidence": "medium",
+      "shared_coverage": 0.6411824668705403,
+      "matching_line_ratio": 0.7073170731707317
+    },
+    {
+      "pair_id": "pair-51d9de72fbbf7811",
+      "chapter_number": 1077,
+      "decision": "keep_first",
+      "kept_start_line": 116708,
+      "removed_start_line": 118424,
+      "confidence": "medium",
+      "shared_coverage": 0.6257250085295121,
+      "matching_line_ratio": 0.68
+    },
+    {
+      "pair_id": "pair-cf6d55d0ecad0244",
+      "chapter_number": 1083,
+      "decision": "keep_first",
+      "kept_start_line": 119134,
+      "removed_start_line": 121366,
+      "confidence": "medium",
+      "shared_coverage": 0.6002737850787132,
+      "matching_line_ratio": 0.65
+    },
+    {
+      "pair_id": "pair-f7390694b4a5730e",
+      "chapter_number": 1404,
+      "decision": "keep_second",
+      "kept_start_line": 167169,
+      "removed_start_line": 166947,
+      "confidence": "medium",
+      "shared_coverage": 0.5252490553074545,
+      "matching_line_ratio": 0.68
+    },
+    {
+      "pair_id": "pair-a093c556ecae3b19",
+      "chapter_number": 1249,
+      "decision": "keep_first",
+      "kept_start_line": 141886,
+      "removed_start_line": 143340,
+      "confidence": "medium",
+      "shared_coverage": 0.5217928902627511,
+      "matching_line_ratio": 0.4126984126984127
+    },
+    {
+      "pair_id": "pair-984f39e8a7372ee2",
+      "chapter_number": 1342,
+      "decision": "keep_first",
+      "kept_start_line": 156232,
+      "removed_start_line": 156733,
+      "confidence": "medium",
+      "shared_coverage": 0.5215072875933168,
+      "matching_line_ratio": 0.6172839506172839
+    },
+    {
+      "pair_id": "pair-c1a4b7a67c15e185",
+      "chapter_number": 1399,
+      "decision": "keep_first",
+      "kept_start_line": 165850,
+      "removed_start_line": 166488,
+      "confidence": "medium",
+      "shared_coverage": 0.5020422055820286,
+      "matching_line_ratio": 0.611764705882353
+    },
+    {
+      "pair_id": "pair-df3e7106b803e722",
+      "chapter_number": 953,
+      "decision": "keep_first",
+      "kept_start_line": 98748,
+      "removed_start_line": 101586,
+      "confidence": "medium",
+      "shared_coverage": 0.5,
+      "matching_line_ratio": 0.5161290322580645
+    },
+    {
+      "pair_id": "pair-537c5406bb7da1f4",
+      "chapter_number": 937,
+      "decision": "keep_second",
+      "kept_start_line": 99938,
+      "removed_start_line": 97002,
+      "confidence": "reviewed-low",
+      "shared_coverage": 0.4926891290527654,
+      "matching_line_ratio": 0.4642857142857143
+    },
+    {
+      "pair_id": "pair-cde1afdfe2311ed1",
+      "chapter_number": 1453,
+      "decision": "keep_second",
+      "kept_start_line": 174528,
+      "removed_start_line": 173693,
+      "confidence": "reviewed-low",
+      "shared_coverage": 0.47606019151846785,
+      "matching_line_ratio": 0.3269230769230769
+    },
+    {
+      "pair_id": "pair-0f0f81f39f6e18cb",
+      "chapter_number": 1177,
+      "decision": "keep_first",
+      "kept_start_line": 129880,
+      "removed_start_line": 134754,
+      "confidence": "reviewed-low",
+      "shared_coverage": 0.46644951140065144,
+      "matching_line_ratio": 0.5567010309278351
+    },
+    {
+      "pair_id": "pair-a001ffe26514f9ae",
+      "chapter_number": 1156,
+      "decision": "keep_first",
+      "kept_start_line": 128049,
+      "removed_start_line": 132605,
+      "confidence": "reviewed-low",
+      "shared_coverage": 0.4557089929269114,
+      "matching_line_ratio": 0.47058823529411764
+    },
+    {
+      "pair_id": "pair-859ddc7f5d140c95",
+      "chapter_number": 1157,
+      "decision": "keep_second",
+      "kept_start_line": 132680,
+      "removed_start_line": 128122,
+      "confidence": "reviewed-low",
+      "shared_coverage": 0.45156046814044215,
+      "matching_line_ratio": 0.5507246376811594
+    },
+    {
+      "pair_id": "pair-366bfeec580b2241",
+      "chapter_number": 1158,
+      "decision": "keep_first",
+      "kept_start_line": 128197,
+      "removed_start_line": 132755,
+      "confidence": "reviewed-low",
+      "shared_coverage": 0.4452579034941764,
+      "matching_line_ratio": 0.4935064935064935
+    },
+    {
+      "pair_id": "pair-963ebd3bedbec578",
+      "chapter_number": 1152,
+      "decision": "keep_first",
+      "kept_start_line": 127761,
+      "removed_start_line": 132255,
+      "confidence": "reviewed-low",
+      "shared_coverage": 0.43618793735421524,
+      "matching_line_ratio": 0.39436619718309857
+    },
+    {
+      "pair_id": "pair-5c1f1b544b9d7f1d",
+      "chapter_number": 1025,
+      "decision": "keep_first",
+      "kept_start_line": 109082,
+      "removed_start_line": 110227,
+      "confidence": "reviewed-low",
+      "shared_coverage": 0.4255716285580961,
+      "matching_line_ratio": 0.3409090909090909
+    },
+    {
+      "pair_id": "pair-d2c0982fea3a4623",
+      "chapter_number": 1188,
+      "decision": "keep_second",
+      "kept_start_line": 135785,
+      "removed_start_line": 131077,
+      "confidence": "reviewed-low",
+      "shared_coverage": 0.4229529335912315,
+      "matching_line_ratio": 0.48148148148148145
+    },
+    {
+      "pair_id": "pair-b193336cde620ce9",
+      "chapter_number": 1190,
+      "decision": "keep_first",
+      "kept_start_line": 131217,
+      "removed_start_line": 135923,
+      "confidence": "reviewed-low",
+      "shared_coverage": 0.41626946298061646,
+      "matching_line_ratio": 0.5054945054945055
+    },
+    {
+      "pair_id": "pair-1d5e6a3402862d89",
+      "chapter_number": 1186,
+      "decision": "keep_first",
+      "kept_start_line": 130787,
+      "removed_start_line": 135663,
+      "confidence": "reviewed-low",
+      "shared_coverage": 0.4162269129287599,
+      "matching_line_ratio": 0.4225352112676056
+    },
+    {
+      "pair_id": "pair-7af90e3fd6869f87",
+      "chapter_number": 1069,
+      "decision": "keep_first",
+      "kept_start_line": 115728,
+      "removed_start_line": 117531,
+      "confidence": "reviewed-low",
+      "shared_coverage": 0.41381557510589767,
+      "matching_line_ratio": 0.4339622641509434
+    },
+    {
+      "pair_id": "pair-238c8b3e8c1493bd",
+      "chapter_number": 1162,
+      "decision": "keep_second",
+      "kept_start_line": 133089,
+      "removed_start_line": 128517,
+      "confidence": "reviewed-low",
+      "shared_coverage": 0.4045047824745449,
+      "matching_line_ratio": 0.4883720930232558
+    }
+  ]
+}

@@ -1,0 +1,226 @@
+{
+  "best_checkpoint": "runs/pretrain_v4_m4/best.pt",
+  "best_validation_loss": 5.044661283493042,
+  "config_sha256": "0040e3ff56d6e4dc8503f78b34b8ea55a82645176b223f3a4a1b261b8a6b3a62",
+  "device": "mps",
+  "elapsed_seconds": 2201.5752119160024,
+  "final_step": 3000,
+  "history": [
+    {
+      "elapsed_seconds": 77.52265220799745,
+      "learning_rate": 0.0003,
+      "step": 100,
+      "train_loss": 7.248220610618591,
+      "val_loss": 7.222011065483093
+    },
+    {
+      "elapsed_seconds": 160.07648450000124,
+      "learning_rate": 0.0002992086242158385,
+      "step": 200,
+      "train_loss": 6.9792519330978395,
+      "val_loss": 6.964065027236939
+    },
+    {
+      "elapsed_seconds": 236.9944811250025,
+      "learning_rate": 0.00029684377502086165,
+      "step": 300,
+      "train_loss": 6.689994812011719,
+      "val_loss": 6.743690729141235
+    },
+    {
+      "elapsed_seconds": 308.7996815000006,
+      "learning_rate": 0.0002929331781096783,
+      "step": 400,
+      "train_loss": 6.466716051101685,
+      "val_loss": 6.460735034942627
+    },
+    {
+      "elapsed_seconds": 387.3462628749985,
+      "learning_rate": 0.00028752268165557917,
+      "step": 500,
+      "train_loss": 6.208232975006103,
+      "val_loss": 6.2110614538192745
+    },
+    {
+      "elapsed_seconds": 466.26581799999985,
+      "learning_rate": 0.0002806757187826245,
+      "step": 600,
+      "train_loss": 6.080824398994446,
+      "val_loss": 6.111468410491943
+    },
+    {
+      "elapsed_seconds": 553.360424874998,
+      "learning_rate": 0.00027247256387026185,
+      "step": 700,
+      "train_loss": 5.968765664100647,
+      "val_loss": 5.969975590705872
+    },
+    {
+      "elapsed_seconds": 679.3383603749971,
+      "learning_rate": 0.0002630093914096226,
+      "step": 800,
+      "train_loss": 5.843045449256897,
+      "val_loss": 5.938215494155884
+    },
+    {
+      "elapsed_seconds": 805.5257884579987,
+      "learning_rate": 0.00025239714844554667,
+      "step": 900,
+      "train_loss": 5.705649709701538,
+      "val_loss": 5.789749598503112
+    },
+    {
+      "elapsed_seconds": 928.048322374998,
+      "learning_rate": 0.00024076025382392156,
+      "step": 1000,
+      "train_loss": 5.579931402206421,
+      "val_loss": 5.659939384460449
+    },
+    {
+      "elapsed_seconds": 1057.4311045409995,
+      "learning_rate": 0.00022823513949447164,
+      "step": 1100,
+      "train_loss": 5.602139949798584,
+      "val_loss": 5.6270331859588625
+    },
+    {
+      "elapsed_seconds": 1170.7609212079988,
+      "learning_rate": 0.00021496865097088842,
+      "step": 1200,
+      "train_loss": 5.466217470169068,
+      "val_loss": 5.484528517723083
+    },
+    {
+      "elapsed_seconds": 1305.5900740829966,
+      "learning_rate": 0.0002011163257014448,
+      "step": 1300,
+      "train_loss": 5.397772765159607,
+      "val_loss": 5.444395112991333
+    },
+    {
+      "elapsed_seconds": 1349.9254955409997,
+      "learning_rate": 0.00018684056953462323,
+      "step": 1400,
+      "train_loss": 5.311947703361511,
+      "val_loss": 5.374290347099304
+    },
+    {
+      "elapsed_seconds": 1396.2836847079961,
+      "learning_rate": 0.00017230875265903135,
+      "step": 1500,
+      "train_loss": 5.283656024932862,
+      "val_loss": 5.313299560546875
+    },
+    {
+      "elapsed_seconds": 1435.125950791,
+      "learning_rate": 0.00015769124734096862,
+      "step": 1600,
+      "train_loss": 5.175393962860108,
+      "val_loss": 5.3055499792099
+    },
+    {
+      "elapsed_seconds": 1475.4442322499963,
+      "learning_rate": 0.00014315943046537674,
+      "step": 1700,
+      "train_loss": 5.257612347602844,
+      "val_loss": 5.258128881454468
+    },
+    {
+      "elapsed_seconds": 1518.6719134160012,
+      "learning_rate": 0.0001288836742985552,
+      "step": 1800,
+      "train_loss": 5.151737713813782,
+      "val_loss": 5.223832440376282
+    },
+    {
+      "elapsed_seconds": 1561.984305541002,
+      "learning_rate": 0.00011503134902911152,
+      "step": 1900,
+      "train_loss": 5.0862136602401735,
+      "val_loss": 5.214729070663452
+    },
+    {
+      "elapsed_seconds": 1610.3624414160004,
+      "learning_rate": 0.00010176486050552833,
+      "step": 2000,
+      "train_loss": 5.116908216476441,
+      "val_loss": 5.224367952346801
+    },
+    {
+      "elapsed_seconds": 1661.0919385410016,
+      "learning_rate": 8.923974617607838e-05,
+      "step": 2100,
+      "train_loss": 5.070311760902404,
+      "val_loss": 5.128278732299805
+    },
+    {
+      "elapsed_seconds": 1713.386831374999,
+      "learning_rate": 7.760285155445325e-05,
+      "step": 2200,
+      "train_loss": 5.053987908363342,
+      "val_loss": 5.148746013641357
+    },
+    {
+      "elapsed_seconds": 1773.2163179999989,
+      "learning_rate": 6.699060859037737e-05,
+      "step": 2300,
+      "train_loss": 5.042126965522766,
+      "val_loss": 5.075343918800354
+    },
+    {
+      "elapsed_seconds": 1828.5010374580015,
+      "learning_rate": 5.7527436129738084e-05,
+      "step": 2400,
+      "train_loss": 5.05411729812622,
+      "val_loss": 5.070525574684143
+    },
+    {
+      "elapsed_seconds": 1885.8586711660028,
+      "learning_rate": 4.9324281217375474e-05,
+      "step": 2500,
+      "train_loss": 4.9827649116516115,
+      "val_loss": 5.075815653800964
+    },
+    {
+      "elapsed_seconds": 1945.723074540998,
+      "learning_rate": 4.247731834442082e-05,
+      "step": 2600,
+      "train_loss": 5.037399101257324,
+      "val_loss": 5.044661283493042
+    },
+    {
+      "elapsed_seconds": 1998.6277874579973,
+      "learning_rate": 3.7066821890321684e-05,
+      "step": 2700,
+      "train_loss": 4.950455975532532,
+      "val_loss": 5.065050148963929
+    },
+    {
+      "elapsed_seconds": 2052.4449174999972,
+      "learning_rate": 3.31562249791383e-05,
+      "step": 2800,
+      "train_loss": 4.910843276977539,
+      "val_loss": 5.047945809364319
+    },
+    {
+      "elapsed_seconds": 2118.5445651249975,
+      "learning_rate": 3.0791375784161455e-05,
+      "step": 2900,
+      "train_loss": 4.927929139137268,
+      "val_loss": 5.054714465141297
+    },
+    {
+      "elapsed_seconds": 2200.2176743329983,
+      "learning_rate": 3e-05,
+      "step": 3000,
+      "train_loss": 4.933343839645386,
+      "val_loss": 5.076717209815979
+    }
+  ],
+  "latest_checkpoint": "runs/pretrain_v4_m4/latest.pt",
+  "parameter_count": 8105025,
+  "run_id": "local-v4-20260828T002650Z-6afda7d8",
+  "samples_path": "runs/pretrain_v4_m4/samples.json",
+  "status": "complete",
+  "test_loss": 4.997454023361206
+}
