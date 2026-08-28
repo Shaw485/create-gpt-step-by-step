@@ -1,0 +1,745 @@
+{
+  "best_checkpoint": "runs/sft_v4_step500/best.pt",
+  "best_val_loss": 1.344239091873169,
+  "data_path": "data/cloud_v4/sft_v4_ai_training_ready_tensors.pt",
+  "data_sha256": "f03e13fb088f8c631289cb602ea26c4e8fdf3baf9515f21dfef9770a0c61c21f",
+  "device": "cpu",
+  "elapsed_seconds": 23.641333833998942,
+  "eval_batches": 10,
+  "eval_interval": 100,
+  "final_train_loss": 1.8302344501018524,
+  "final_val_loss": 1.5822613269090653,
+  "init_checkpoint": "runs/pretrain_v4_m4_continue6000/best.pt",
+  "init_checkpoint_sha256": "5d6397b3bb97b8a14369117e2f1e1e9f9addf515da1117e2f0f35dfe8ac8af44",
+  "initial_train_loss": 6.89068193435669,
+  "initial_val_loss": 6.715158176422119,
+  "latest_checkpoint": "runs/sft_v4_step500/latest.pt",
+  "latest_checkpoint_sha256": "240057a5af665952f71813aad6161e9eed0a8ef02995db8918864dd09ba2387e",
+  "learning_rate": 5e-05,
+  "loss_csv": "reports/milestones/010_v4_sft_step500/sft_v4_step500_report_loss.csv",
+  "loss_history": [
+    {
+      "step": 0,
+      "train_loss": 6.89068193435669,
+      "val_loss": 6.715158176422119
+    },
+    {
+      "step": 100,
+      "train_loss": 2.72594393491745,
+      "val_loss": 2.878018057346344
+    },
+    {
+      "step": 200,
+      "train_loss": 2.516749346256256,
+      "val_loss": 2.9589360117912293
+    },
+    {
+      "step": 300,
+      "train_loss": 2.3654391407966613,
+      "val_loss": 2.4184048056602476
+    },
+    {
+      "step": 400,
+      "train_loss": 1.4535602062940598,
+      "val_loss": 1.344239091873169
+    },
+    {
+      "step": 500,
+      "train_loss": 1.8302344501018524,
+      "val_loss": 1.5822613269090653
+    }
+  ],
+  "micro_batch_size": 2,
+  "monitor_outputs": [
+    {
+      "expected_answer": "当前证据片段明确出现了药尘。",
+      "generated_answer": "当前证据片段明确出现了萧战。",
+      "id": "v4_547a13f5d7fcccbe2538",
+      "question": "原问题是“雷尊者与药尘相比，谁更早出现在故事里”。现只做局部证据核验：不比较全书登场先后，只看第351章的当前证据：药尘和雷尊者中明确出现了谁？",
+      "split": "train",
+      "stopped_on_eos": true,
+      "task_family": "relationship_reason_timeline"
+    },
+    {
+      "expected_answer": "因为此次急需钱财。",
+      "generated_answer": "第86章的标题是《破！》第6章的标题是《斗破苍穹》。",
+      "id": "v4_c07c3b37699ad9028b11",
+      "question": "在第五十四章里，萧炎足足买了七份材料的原因是什么？",
+      "split": "train",
+      "stopped_on_eos": true,
+      "task_family": "relationship_reason_timeline"
+    },
+    {
+      "expected_answer": "不能；片段提到了纳兰桀，但没有直接给出其当前的具体年龄。",
+      "generated_answer": "能确认；片段同时提到了海波东和萧鼎。",
+      "id": "v4_3b2f0bd226c2cf55731f",
+      "question": "原问题是“原文是如何交代纳兰桀的具体年龄的”。现只做局部证据核验：只依据第4章的当前证据片段，能否得知纳兰桀的当前的具体年龄？",
+      "split": "train",
+      "stopped_on_eos": true,
+      "task_family": "ambiguity_unknown_clarification"
+    },
+    {
+      "expected_answer": "当前证据片段明确提到了药老。",
+      "generated_answer": "当前证据片段明确提到了萧炎。",
+      "id": "v4_413fa94f2400b67daace",
+      "question": "原问题是“第六十四章的情节主要围绕谁展开”。现只做局部证据核验：不判断整章主角，只看第64章的当前证据片段：明确提到了哪位人物？",
+      "split": "train",
+      "stopped_on_eos": true,
+      "task_family": "context_understanding"
+    },
+    {
+      "expected_answer": "能确认其中提到了天火三玄变。",
+      "generated_answer": "能确认其中提到了其中提到了天火三玄变。",
+      "id": "v4_f0b0dc0bd757eb31a436",
+      "question": "原问题是“第一千一百四十三章《下杀手》中登场的功法叫什么”。若只依据给出的原文片段，能确认其中提到的斗技或功法是什么？",
+      "split": "train",
+      "stopped_on_eos": true,
+      "task_family": "context_understanding"
+    },
+    {
+      "expected_answer": "请先说明作品名称、具体人物和故事阶段，我再核对与“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”相关的内容。",
+      "generated_answer": "请先说明你指的是哪部作品，以及想了解萧炎的哪个故事阶段，我再核对与“",
+      "id": "v4_159d93c40620f3747687",
+      "question": "参考原问题“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”，如果用户只说“请介绍相关人物”，但没有说明作品、人物和故事阶段，应该先怎么回应？",
+      "split": "val",
+      "stopped_on_eos": false,
+      "task_family": "ambiguity_unknown_clarification"
+    },
+    {
+      "expected_answer": "第300章的标题是《收场》。",
+      "generated_answer": "第93续章的标题是《雷尊者》。",
+      "id": "v4_7c70af87babf33e25320",
+      "question": "小说第三百章的标题是什么？",
+      "split": "val",
+      "stopped_on_eos": true,
+      "task_family": "direct_fact"
+    },
+    {
+      "expected_answer": "不能；片段提到了叶重，但没有直接给出其身高。",
+      "generated_answer": "能确出现了连续字符“前证据片段中出现了连续字符“丹塔”。",
+      "id": "v4_829051eb2afdbc5b21ac",
+      "question": "原问题是“原文是如何交代叶重的身高的”。现只做局部证据核验：只依据第1046章的当前证据片段，能否得知叶重的身高？",
+      "split": "val",
+      "stopped_on_eos": true,
+      "task_family": "ambiguity_unknown_clarification"
+    },
+    {
+      "expected_answer": "是，证据片段同时提到了韩枫和紫研。",
+      "generated_answer": "正确。",
+      "id": "v4_3e2e90c25e7307ab75a0",
+      "question": "根据第836章的证据片段，韩枫和紫研是否都被提到？",
+      "split": "val",
+      "stopped_on_eos": true,
+      "task_family": "relationship_reason_timeline"
+    },
+    {
+      "expected_answer": "请先说明你指的是哪部作品，以及想了解萧炎的哪个故事阶段，我再核对与“小说第九百六十六章中，除了萧炎，戏份最多的人物是谁”相关的内容。",
+      "generated_answer": "请先说明你指的是哪个故事阶段，我再核对与“第一千五百八十五章的原因是什么",
+      "id": "v4_718ad97abec038eba14e",
+      "question": "参考原问题“小说第九百六十六章中，除了萧炎，戏份最多的人物是谁”，如果用户现在只说“请介绍萧炎”，但没有提供作品和故事阶段，应该先怎么回应？",
+      "split": "val",
+      "stopped_on_eos": false,
+      "task_family": "ambiguity_unknown_clarification"
+    }
+  ],
+  "parameter_count": 8105025,
+  "payload_summary": {
+    "max_sequence_length": 149,
+    "mean_sequence_length": 60.249083027675894,
+    "min_sequence_length": 12,
+    "split_counts": {
+      "test": 300,
+      "train": 2399,
+      "val": 300
+    },
+    "supervised_tokens": 59426,
+    "task_family_counts": {
+      "ambiguity_unknown_clarification": 300,
+      "context_understanding": 450,
+      "continuation_rewrite_instruction": 450,
+      "conversation_control": 150,
+      "direct_fact": 749,
+      "fact_verification_correction": 300,
+      "relationship_reason_timeline": 600
+    }
+  },
+  "run_id": "sft-v4-20260828T085452Z-90f0fed8",
+  "sample_history": [
+    {
+      "samples": [
+        {
+          "expected_answer": "当前证据片段明确出现了药尘。",
+          "generated_answer": "？”\n\n    雷赢面色凝重的望着那张着一抹淡淡的道，旋即目光转向萧炎，笑道：“没想到你所料你所说，果然有些麻烦。”",
+          "id": "v4_547a13f5d7fcccbe2538",
+          "question": "原问题是“雷尊者与药尘相比，谁更早出现在故事里”。现只做局部证据核验：不比较全书登场先后，只看第351章的当前证据：药尘和雷尊者中明确出现了谁？",
+          "split": "train",
+          "stopped_on_eos": false,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "因为此次急需钱财。",
+          "generated_answer": "队内，别人都会有何况的规模，比赛中有着极为大物的成员，比以前的成人",
+          "id": "v4_c07c3b37699ad9028b11",
+          "question": "在第五十四章里，萧炎足足买了七份材料的原因是什么？",
+          "split": "train",
+          "stopped_on_eos": false,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "不能；片段提到了纳兰桀，但没有直接给出其当前的具体年龄。",
+          "generated_answer": "城，无疑是何等的存在。\n\n    “这就是不好。若是有何种级别，无疑是何等的斗技与斗王阶别的强者",
+          "id": "v4_3b2f0bd226c2cf55731f",
+          "question": "原问题是“原文是如何交代纳兰桀的具体年龄的”。现只做局部证据核验：只依据第4章的当前证据片段，能否得知纳兰桀的当前的具体年龄？",
+          "split": "train",
+          "stopped_on_eos": false,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "当前证据片段明确提到了药老。",
+          "generated_answer": "丹城的参加刑天时间…是从纳戒中取得最高价实质量的丹会，别人一段时间，便是能够",
+          "id": "v4_413fa94f2400b67daace",
+          "question": "原问题是“第六十四章的情节主要围绕谁展开”。现只做局部证据核验：不判断整章主角，只看第64章的当前证据片段：明确提到了哪位人物？",
+          "split": "train",
+          "stopped_on_eos": false,
+          "task_family": "context_understanding"
+        },
+        {
+          "expected_answer": "能确认其中提到了天火三玄变。",
+          "generated_answer": "”\n\n    因此而过去，萧炎也并未有一年时间，他的要出这枚丹药的炼制丹药，比起这所谓的九",
+          "id": "v4_f0b0dc0bd757eb31a436",
+          "question": "原问题是“第一千一百四十三章《下杀手》中登场的功法叫什么”。若只依据给出的原文片段，能确认其中提到的斗技或功法是什么？",
+          "split": "train",
+          "stopped_on_eos": false,
+          "task_family": "context_understanding"
+        },
+        {
+          "expected_answer": "请先说明作品名称、具体人物和故事阶段，我再核对与“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”相关的内容。",
+          "generated_answer": "的道。\n\n    一旁的薰儿也是有些愕然的点了点头，目光在下方广场上，道：“我这“强榜”也算是很难？”\n\n    ",
+          "id": "v4_159d93c40620f3747687",
+          "question": "参考原问题“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”，如果用户只说“请介绍相关人物”，但没有说明作品、人物和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "第300章的标题是《收场》。",
+          "generated_answer": "啊，呵呵！”\n\n    “既然你是什么？这老家伙！”\n\n    听说过，风尊者等人也是掠过一抹凝重，沉声道：“他",
+          "id": "v4_7c70af87babf33e25320",
+          "question": "小说第三百章的标题是什么？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "direct_fact"
+        },
+        {
+          "expected_answer": "不能；片段提到了叶重，但没有直接给出其身高。",
+          "generated_answer": "观看一定会很大人都是会有一些强者！\n\n    丹塔的名字，萧炎在黑角域中，他倒是有着一个人物",
+          "id": "v4_829051eb2afdbc5b21ac",
+          "question": "原问题是“原文是如何交代叶重的身高的”。现只做局部证据核验：只依据第1046章的当前证据片段，能否得知叶重的身高？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "是，证据片段同时提到了韩枫和紫研。",
+          "generated_answer": "铁护法在魂殿的局面，韩枫与美杜莎，韩枫眼中有些难看，苏千也是明白他...这个家伙都是有些感到震撼，以他的实力",
+          "id": "v4_3e2e90c25e7307ab75a0",
+          "question": "根据第836章的证据片段，韩枫和紫研是否都被提到？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "请先说明你指的是哪部作品，以及想了解萧炎的哪个故事阶段，我再核对与“小说第九百六十六章中，除了萧炎，戏份最多的人物是谁”相关的内容。",
+          "generated_answer": "。”\n\n    “没事？”药老微微点头，道：“这是炼药师公会，的确不是什么东西，据说了什么时候的等级，至少",
+          "id": "v4_718ad97abec038eba14e",
+          "question": "参考原问题“小说第九百六十六章中，除了萧炎，戏份最多的人物是谁”，如果用户现在只说“请介绍萧炎”，但没有提供作品和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "ambiguity_unknown_clarification"
+        }
+      ],
+      "step": 0
+    },
+    {
+      "samples": [
+        {
+          "expected_answer": "当前证据片段明确出现了药尘。",
+          "generated_answer": "正确认据片段说明确认识。",
+          "id": "v4_547a13f5d7fcccbe2538",
+          "question": "原问题是“雷尊者与药尘相比，谁更早出现在故事里”。现只做局部证据核验：不比较全书登场先后，只看第351章的当前证据：药尘和雷尊者中明确出现了谁？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "因为此次急需钱财。",
+          "generated_answer": "是最佳是什么？",
+          "id": "v4_c07c3b37699ad9028b11",
+          "question": "在第五十四章里，萧炎足足买了七份材料的原因是什么？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "不能；片段提到了纳兰桀，但没有直接给出其当前的具体年龄。",
+          "generated_answer": "能确认为药老说明确认自己在小说到萧炎。",
+          "id": "v4_3b2f0bd226c2cf55731f",
+          "question": "原问题是“原文是如何交代纳兰桀的具体年龄的”。现只做局部证据核验：只依据第4章的当前证据片段，能否得知纳兰桀的当前的具体年龄？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "当前证据片段明确提到了药老。",
+          "generated_answer": "有关的是否认其中分出一些。",
+          "id": "v4_413fa94f2400b67daace",
+          "question": "原问题是“第六十四章的情节主要围绕谁展开”。现只做局部证据核验：不判断整章主角，只看第64章的当前证据片段：明确提到了哪位人物？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "context_understanding"
+        },
+        {
+          "expected_answer": "能确认其中提到了天火三玄变。",
+          "generated_answer": "能确认其中提到了萧炎。",
+          "id": "v4_f0b0dc0bd757eb31a436",
+          "question": "原问题是“第一千一百四十三章《下杀手》中登场的功法叫什么”。若只依据给出的原文片段，能确认其中提到的斗技或功法是什么？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "context_understanding"
+        },
+        {
+          "expected_answer": "请先说明作品名称、具体人物和故事阶段，我再核对与“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”相关的内容。",
+          "generated_answer": "会说萧炎说前证据片段中被她给了解了它。",
+          "id": "v4_159d93c40620f3747687",
+          "question": "参考原问题“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”，如果用户只说“请介绍相关人物”，但没有说明作品、人物和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "第300章的标题是《收场》。",
+          "generated_answer": "第三章。”",
+          "id": "v4_7c70af87babf33e25320",
+          "question": "小说第三百章的标题是什么？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "direct_fact"
+        },
+        {
+          "expected_answer": "不能；片段提到了叶重，但没有直接给出其身高。",
+          "generated_answer": "不过是小说明确的是谁说明确认其中的一个没听。",
+          "id": "v4_829051eb2afdbc5b21ac",
+          "question": "原问题是“原文是如何交代叶重的身高的”。现只做局部证据核验：只依据第1046章的当前证据片段，能否得知叶重的身高？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "是，证据片段同时提到了韩枫和紫研。",
+          "generated_answer": "是什么...",
+          "id": "v4_3e2e90c25e7307ab75a0",
+          "question": "根据第836章的证据片段，韩枫和紫研是否都被提到？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "请先说明你指的是哪部作品，以及想了解萧炎的哪个故事阶段，我再核对与“小说第九百六十六章中，除了萧炎，戏份最多的人物是谁”相关的内容。",
+          "generated_answer": "当前的是哪个好看的是什么？",
+          "id": "v4_718ad97abec038eba14e",
+          "question": "参考原问题“小说第九百六十六章中，除了萧炎，戏份最多的人物是谁”，如果用户现在只说“请介绍萧炎”，但没有提供作品和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "ambiguity_unknown_clarification"
+        }
+      ],
+      "step": 100
+    },
+    {
+      "samples": [
+        {
+          "expected_answer": "当前证据片段明确出现了药尘。",
+          "generated_answer": "那小说明确认“雷尊者”，明确认；片段明确认其中提到了萧炎。",
+          "id": "v4_547a13f5d7fcccbe2538",
+          "question": "原问题是“雷尊者与药尘相比，谁更早出现在故事里”。现只做局部证据核验：不比较全书登场先后，只看第351章的当前证据：药尘和雷尊者中明确出现了谁？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "因为此次急需钱财。",
+          "generated_answer": "能确认第一千零三章《斗》？",
+          "id": "v4_c07c3b37699ad9028b11",
+          "question": "在第五十四章里，萧炎足足买了七份材料的原因是什么？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "不能；片段提到了纳兰桀，但没有直接给出其当前的具体年龄。",
+          "generated_answer": "能确认其中提到了萧炎和欣蓝。",
+          "id": "v4_3b2f0bd226c2cf55731f",
+          "question": "原问题是“原文是如何交代纳兰桀的具体年龄的”。现只做局部证据核验：只依据第4章的当前证据片段，能否得知纳兰桀的当前的具体年龄？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "当前证据片段明确提到了药老。",
+          "generated_answer": "能确认其中提到了萧炎和“三章的标题是什么”。",
+          "id": "v4_413fa94f2400b67daace",
+          "question": "原问题是“第六十四章的情节主要围绕谁展开”。现只做局部证据核验：不判断整章主角，只看第64章的当前证据片段：明确提到了哪位人物？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "context_understanding"
+        },
+        {
+          "expected_answer": "能确认其中提到了天火三玄变。",
+          "generated_answer": "能确认其中提到了萧炎和“九章？",
+          "id": "v4_f0b0dc0bd757eb31a436",
+          "question": "原问题是“第一千一百四十三章《下杀手》中登场的功法叫什么”。若只依据给出的原文片段，能确认其中提到的斗技或功法是什么？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "context_understanding"
+        },
+        {
+          "expected_answer": "请先说明作品名称、具体人物和故事阶段，我再核对与“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”相关的内容。",
+          "generated_answer": "在小说明你指的是“古老一章”。",
+          "id": "v4_159d93c40620f3747687",
+          "question": "参考原问题“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”，如果用户只说“请介绍相关人物”，但没有说明作品、人物和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "第300章的标题是《收场》。",
+          "generated_answer": "第六章提到了第《焚决》。",
+          "id": "v4_7c70af87babf33e25320",
+          "question": "小说第三百章的标题是什么？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "direct_fact"
+        },
+        {
+          "expected_answer": "不能；片段提到了叶重，但没有直接给出其身高。",
+          "generated_answer": "再核的是什么？",
+          "id": "v4_829051eb2afdbc5b21ac",
+          "question": "原问题是“原文是如何交代叶重的身高的”。现只做局部证据核验：只依据第1046章的当前证据片段，能否得知叶重的身高？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "是，证据片段同时提到了韩枫和紫研。",
+          "generated_answer": "有，当前证据片段明确认第几章？",
+          "id": "v4_3e2e90c25e7307ab75a0",
+          "question": "根据第836章的证据片段，韩枫和紫研是否都被提到？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "请先说明你指的是哪部作品，以及想了解萧炎的哪个故事阶段，我再核对与“小说第九百六十六章中，除了萧炎，戏份最多的人物是谁”相关的内容。",
+          "generated_answer": "能确的是“小说的第六章”以及想了解萧炎和薰儿和薰儿和紫研的哪个什么”。",
+          "id": "v4_718ad97abec038eba14e",
+          "question": "参考原问题“小说第九百六十六章中，除了萧炎，戏份最多的人物是谁”，如果用户现在只说“请介绍萧炎”，但没有提供作品和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "ambiguity_unknown_clarification"
+        }
+      ],
+      "step": 200
+    },
+    {
+      "samples": [
+        {
+          "expected_answer": "当前证据片段明确出现了药尘。",
+          "generated_answer": "当前证据片段明确出现了小医仙和欣蓝。",
+          "id": "v4_547a13f5d7fcccbe2538",
+          "question": "原问题是“雷尊者与药尘相比，谁更早出现在故事里”。现只做局部证据核验：不比较全书登场先后，只看第351章的当前证据：药尘和雷尊者中明确出现了谁？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "因为此次急需钱财。",
+          "generated_answer": "第两百四百零二章《交易的标题是第34章的标题是，证据片段同时提到了",
+          "id": "v4_c07c3b37699ad9028b11",
+          "question": "在第五十四章里，萧炎足足买了七份材料的原因是什么？",
+          "split": "train",
+          "stopped_on_eos": false,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "不能；片段提到了纳兰桀，但没有直接给出其当前的具体年龄。",
+          "generated_answer": "能确认57章《破》。",
+          "id": "v4_3b2f0bd226c2cf55731f",
+          "question": "原问题是“原文是如何交代纳兰桀的具体年龄的”。现只做局部证据核验：只依据第4章的当前证据片段，能否得知纳兰桀的当前的具体年龄？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "当前证据片段明确提到了药老。",
+          "generated_answer": "有，当前证据片段同时提到了萧炎和薰儿。",
+          "id": "v4_413fa94f2400b67daace",
+          "question": "原问题是“第六十四章的情节主要围绕谁展开”。现只做局部证据核验：不判断整章主角，只看第64章的当前证据片段：明确提到了哪位人物？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "context_understanding"
+        },
+        {
+          "expected_answer": "能确认其中提到了天火三玄变。",
+          "generated_answer": "能确认其中提到了萧炎和“焚决”。",
+          "id": "v4_f0b0dc0bd757eb31a436",
+          "question": "原问题是“第一千一百四十三章《下杀手》中登场的功法叫什么”。若只依据给出的原文片段，能确认其中提到的斗技或功法是什么？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "context_understanding"
+        },
+        {
+          "expected_answer": "请先说明作品名称、具体人物和故事阶段，我再核对与“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”相关的内容。",
+          "generated_answer": "先说中的是哪个事阶段，我再核对与“第三百七十三章是第六章的第几章",
+          "id": "v4_159d93c40620f3747687",
+          "question": "参考原问题“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”，如果用户只说“请介绍相关人物”，但没有说明作品、人物和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "第300章的标题是《收场》。",
+          "generated_answer": "第70更！】",
+          "id": "v4_7c70af87babf33e25320",
+          "question": "小说第三百章的标题是什么？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "direct_fact"
+        },
+        {
+          "expected_answer": "不能；片段提到了叶重，但没有直接给出其身高。",
+          "generated_answer": "当前证据片段明确出现了连续字符“小医仙”。",
+          "id": "v4_829051eb2afdbc5b21ac",
+          "question": "原问题是“原文是如何交代叶重的身高的”。现只做局部证据核验：只依据第1046章的当前证据片段，能否得知叶重的身高？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "是，证据片段同时提到了韩枫和紫研。",
+          "generated_answer": "是，证据片段同时提到了萧炎和韩枫。",
+          "id": "v4_3e2e90c25e7307ab75a0",
+          "question": "根据第836章的证据片段，韩枫和紫研是否都被提到？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "请先说明你指的是哪部作品，以及想了解萧炎的哪个故事阶段，我再核对与“小说第九百六十六章中，除了萧炎，戏份最多的人物是谁”相关的内容。",
+          "generated_answer": "是哪部作品，以及想了解萧炎的哪个故事阶段，我再核对与“萧炎和药老在第几章",
+          "id": "v4_718ad97abec038eba14e",
+          "question": "参考原问题“小说第九百六十六章中，除了萧炎，戏份最多的人物是谁”，如果用户现在只说“请介绍萧炎”，但没有提供作品和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "ambiguity_unknown_clarification"
+        }
+      ],
+      "step": 300
+    },
+    {
+      "samples": [
+        {
+          "expected_answer": "当前证据片段明确出现了药尘。",
+          "generated_answer": "当前证据片段明确出现了萧厉。",
+          "id": "v4_547a13f5d7fcccbe2538",
+          "question": "原问题是“雷尊者与药尘相比，谁更早出现在故事里”。现只做局部证据核验：不比较全书登场先后，只看第351章的当前证据：药尘和雷尊者中明确出现了谁？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "因为此次急需钱财。",
+          "generated_answer": "是你指的是第14041036章的标题是《破苍4章《破碎魂玉片",
+          "id": "v4_c07c3b37699ad9028b11",
+          "question": "在第五十四章里，萧炎足足买了七份材料的原因是什么？",
+          "split": "train",
+          "stopped_on_eos": false,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "不能；片段提到了纳兰桀，但没有直接给出其当前的具体年龄。",
+          "generated_answer": "能确认；片段提到了美杜莎。",
+          "id": "v4_3b2f0bd226c2cf55731f",
+          "question": "原问题是“原文是如何交代纳兰桀的具体年龄的”。现只做局部证据核验：只依据第4章的当前证据片段，能否得知纳兰桀的当前的具体年龄？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "当前证据片段明确提到了药老。",
+          "generated_answer": "当前证据片段明确出现了法犸。",
+          "id": "v4_413fa94f2400b67daace",
+          "question": "原问题是“第六十四章的情节主要围绕谁展开”。现只做局部证据核验：不判断整章主角，只看第64章的当前证据片段：明确提到了哪位人物？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "context_understanding"
+        },
+        {
+          "expected_answer": "能确认其中提到了天火三玄变。",
+          "generated_answer": "能确认其中提到了异火。",
+          "id": "v4_f0b0dc0bd757eb31a436",
+          "question": "原问题是“第一千一百四十三章《下杀手》中登场的功法叫什么”。若只依据给出的原文片段，能确认其中提到的斗技或功法是什么？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "context_understanding"
+        },
+        {
+          "expected_answer": "请先说明作品名称、具体人物和故事阶段，我再核对与“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”相关的内容。",
+          "generated_answer": "当前证据片段明你指的是哪个故事阶段，我再核对与“第几章，萧炎与“小",
+          "id": "v4_159d93c40620f3747687",
+          "question": "参考原问题“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”，如果用户只说“请介绍相关人物”，但没有说明作品、人物和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "第300章的标题是《收场》。",
+          "generated_answer": "是什么是魔炎谷。",
+          "id": "v4_7c70af87babf33e25320",
+          "question": "小说第三百章的标题是什么？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "direct_fact"
+        },
+        {
+          "expected_answer": "不能；片段提到了叶重，但没有直接给出其身高。",
+          "generated_answer": "要。",
+          "id": "v4_829051eb2afdbc5b21ac",
+          "question": "原问题是“原文是如何交代叶重的身高的”。现只做局部证据核验：只依据第1046章的当前证据片段，能否得知叶重的身高？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "是，证据片段同时提到了韩枫和紫研。",
+          "generated_answer": "是，证据片段同时提到了云韵和苏千。",
+          "id": "v4_3e2e90c25e7307ab75a0",
+          "question": "根据第836章的证据片段，韩枫和紫研是否都被提到？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "请先说明你指的是哪部作品，以及想了解萧炎的哪个故事阶段，我再核对与“小说第九百六十六章中，除了萧炎，戏份最多的人物是谁”相关的内容。",
+          "generated_answer": "先说的是哪个故事阶段，我再核对与“第九百五十六章《雷雷丹丹”。",
+          "id": "v4_718ad97abec038eba14e",
+          "question": "参考原问题“小说第九百六十六章中，除了萧炎，戏份最多的人物是谁”，如果用户现在只说“请介绍萧炎”，但没有提供作品和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "ambiguity_unknown_clarification"
+        }
+      ],
+      "step": 400
+    },
+    {
+      "samples": [
+        {
+          "expected_answer": "当前证据片段明确出现了药尘。",
+          "generated_answer": "当前证据片段明确出现了萧战。",
+          "id": "v4_547a13f5d7fcccbe2538",
+          "question": "原问题是“雷尊者与药尘相比，谁更早出现在故事里”。现只做局部证据核验：不比较全书登场先后，只看第351章的当前证据：药尘和雷尊者中明确出现了谁？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "因为此次急需钱财。",
+          "generated_answer": "第86章的标题是《破！》第6章的标题是《斗破苍穹》。",
+          "id": "v4_c07c3b37699ad9028b11",
+          "question": "在第五十四章里，萧炎足足买了七份材料的原因是什么？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "不能；片段提到了纳兰桀，但没有直接给出其当前的具体年龄。",
+          "generated_answer": "能确认；片段同时提到了海波东和萧鼎。",
+          "id": "v4_3b2f0bd226c2cf55731f",
+          "question": "原问题是“原文是如何交代纳兰桀的具体年龄的”。现只做局部证据核验：只依据第4章的当前证据片段，能否得知纳兰桀的当前的具体年龄？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "当前证据片段明确提到了药老。",
+          "generated_answer": "当前证据片段明确提到了萧炎。",
+          "id": "v4_413fa94f2400b67daace",
+          "question": "原问题是“第六十四章的情节主要围绕谁展开”。现只做局部证据核验：不判断整章主角，只看第64章的当前证据片段：明确提到了哪位人物？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "context_understanding"
+        },
+        {
+          "expected_answer": "能确认其中提到了天火三玄变。",
+          "generated_answer": "能确认其中提到了其中提到了天火三玄变。",
+          "id": "v4_f0b0dc0bd757eb31a436",
+          "question": "原问题是“第一千一百四十三章《下杀手》中登场的功法叫什么”。若只依据给出的原文片段，能确认其中提到的斗技或功法是什么？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "context_understanding"
+        },
+        {
+          "expected_answer": "请先说明作品名称、具体人物和故事阶段，我再核对与“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”相关的内容。",
+          "generated_answer": "请先说明你指的是哪部作品，以及想了解萧炎的哪个故事阶段，我再核对与“",
+          "id": "v4_159d93c40620f3747687",
+          "question": "参考原问题“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”，如果用户只说“请介绍相关人物”，但没有说明作品、人物和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "第300章的标题是《收场》。",
+          "generated_answer": "第93续章的标题是《雷尊者》。",
+          "id": "v4_7c70af87babf33e25320",
+          "question": "小说第三百章的标题是什么？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "direct_fact"
+        },
+        {
+          "expected_answer": "不能；片段提到了叶重，但没有直接给出其身高。",
+          "generated_answer": "能确出现了连续字符“前证据片段中出现了连续字符“丹塔”。",
+          "id": "v4_829051eb2afdbc5b21ac",
+          "question": "原问题是“原文是如何交代叶重的身高的”。现只做局部证据核验：只依据第1046章的当前证据片段，能否得知叶重的身高？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "是，证据片段同时提到了韩枫和紫研。",
+          "generated_answer": "正确。",
+          "id": "v4_3e2e90c25e7307ab75a0",
+          "question": "根据第836章的证据片段，韩枫和紫研是否都被提到？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "请先说明你指的是哪部作品，以及想了解萧炎的哪个故事阶段，我再核对与“小说第九百六十六章中，除了萧炎，戏份最多的人物是谁”相关的内容。",
+          "generated_answer": "请先说明你指的是哪个故事阶段，我再核对与“第一千五百八十五章的原因是什么",
+          "id": "v4_718ad97abec038eba14e",
+          "question": "参考原问题“小说第九百六十六章中，除了萧炎，戏份最多的人物是谁”，如果用户现在只说“请介绍萧炎”，但没有提供作品和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "ambiguity_unknown_clarification"
+        }
+      ],
+      "step": 500
+    }
+  ],
+  "schema_version": "sft-v4-report/v1",
+  "stage": "sft_v4_formal",
+  "status": "complete",
+  "steps": 500,
+  "test_records_consumed": 0,
+  "weight_decay": 0.05
+}

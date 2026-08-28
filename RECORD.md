@@ -347,3 +347,9 @@ step 10000 的20-Batch训练/验证 Loss 为 2.8335/3.0033，并将 `checkpoints
 新增`train_sft_v4.py`，从M007最佳预训练checkpoint `runs/pretrain_v4_m4_continue6000/best.pt`启动，使用8105025参数v4模型做20步SFT安全试跑。当前Codex工具环境中MPS不可用，因此本次使用CPU、Micro Batch 1、每5步评估、每次2个评估batch；验证Loss从7.5522降到5.0587，best/latest checkpoint均保存并带SHA-256校验。
 
 20步后的两条监控样本仍明显不合格，分别输出“第一个不说的”和““嘭！””。结论是SFT链路已经打通，但模型还没有形成可靠回答能力；下一步应在可用MPS环境下执行正式SFT，并用固定10题、验证Loss和人工语义抽样共同验收。
+
+## 5.52 完成v4 SFT 500步正式小跑
+
+将`train_sft_v4.py`从安全试跑脚本升级为正式SFT入口，增加参数校验、固定10题监控、每100步样本留档和Loss CSV；同时新增`plot_sft_v4.py`生成PNG/SVG曲线。基于M007最佳预训练checkpoint和2999条training-ready SFT数据执行500步CPU可复现实验，模型参数量8105025，测试集0条参与。
+
+验证Loss从step 0的6.7152降至step 500的1.5823，最佳验证Loss为step 400的1.3442。固定10题显示模型已明显学会短答和EOS停止，但事实准确性仍不稳定：会把药尘答成萧战、把第300章标题答错，也有“天火三玄变”和“正确”等局部成功样本；因此本阶段判定为SFT格式能力建立，不判定为问答质量达标。

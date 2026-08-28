@@ -9,6 +9,9 @@ from train_sft_v4 import (
     collate_records,
     decode_ids,
     generate_answer,
+    parse_args,
+    select_monitor_records,
+    validate_args,
     validate_sft_payload,
 )
 
@@ -46,6 +49,24 @@ class TrainSftV4Tests(unittest.TestCase):
 
     def test_decode_ids_accepts_string_or_integer_keys(self):
         self.assertEqual(decode_ids({1: "你", "2": "好"}, [1, 2]), "你好")
+
+    def test_validate_args_rejects_zero_sample_interval(self):
+        args = parse_args(["--sample-interval", "0"])
+        with self.assertRaisesRegex(ValueError, "sample_interval"):
+            validate_args(args)
+
+    def test_select_monitor_records_uses_train_and_val_only(self):
+        train_records = [
+            make_record(f"train-{index}", "train", [1], [1])
+            for index in range(4)
+        ]
+        val_records = [
+            make_record(f"val-{index}", "val", [1], [1])
+            for index in range(4)
+        ]
+        selected = select_monitor_records(train_records, val_records, monitor_count=4)
+        self.assertEqual(len(selected), 4)
+        self.assertEqual({record["split"] for record in selected}, {"train", "val"})
 
     def test_generate_answer_stops_on_eos(self):
         model = GPTLanguageModelV4(

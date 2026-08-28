@@ -1,4 +1,4 @@
-"""Run a supervised fine-tuning smoke test on the v4 GPT checkpoint."""
+"""Run supervised fine-tuning on the v4 GPT checkpoint."""
 
 from __future__ import annotations
 
@@ -17,6 +17,7 @@ from train_pretrain_v4 import load_config
 from training_runtime import (
     atomic_save_checkpoint,
     atomic_write_json,
+    atomic_write_text,
     build_checkpoint_payload,
     canonical_json_sha256,
     configure_module_loggers,
@@ -28,18 +29,23 @@ from training_runtime import (
 DEFAULT_CONFIG_PATH = Path("configs/local_m4_8m_continue_6000.json")
 DEFAULT_DATA_PATH = Path("data/cloud_v4/sft_v4_ai_training_ready_tensors.pt")
 DEFAULT_INIT_CHECKPOINT = Path("runs/pretrain_v4_m4_continue6000/best.pt")
-DEFAULT_RUN_DIR = Path("runs/sft_v4_smoke20")
+DEFAULT_RUN_DIR = Path("runs/sft_v4")
 DEFAULT_REPORT_PATH = Path(
-    "reports/milestones/009_v4_sft_smoke20/sft_v4_smoke20_report.json"
+    "reports/milestones/010_v4_sft_step500/sft_v4_step500_report.json"
 )
-DEFAULT_MAX_STEPS = 20
-DEFAULT_EVAL_INTERVAL = 5
+DEFAULT_MAX_STEPS = 500
+DEFAULT_EVAL_INTERVAL = 100
 DEFAULT_EVAL_BATCHES = 4
 DEFAULT_MICRO_BATCH_SIZE = 1
 DEFAULT_LEARNING_RATE = 5e-5
 DEFAULT_WEIGHT_DECAY = 0.05
 DEFAULT_GRADIENT_CLIP = 1.0
 DEFAULT_SEED = 42
+DEFAULT_SAMPLE_INTERVAL = 100
+DEFAULT_MONITOR_COUNT = 10
+DEFAULT_MAX_NEW_TOKENS = 30
+DEFAULT_TEMPERATURE = 0.8
+DEFAULT_TOP_K = 20
 
 
 def select_device(requested: str) -> torch.device:
@@ -201,6 +207,20 @@ def decode_ids(itos: dict[Any, str], token_ids: Sequence[int]) -> str:
     return "".join(token_to_text(itos, int(token_id)) for token_id in token_ids)
 
 
+def decode_supervised_answer(
+    record: dict[str, Any],
+    itos: dict[Any, str],
+    special_token_ids: dict[str, int],
+) -> str:
+    eos_id = int(special_token_ids["<EOS>"])
+    supervised = [
+        int(token_id)
+        for token_id in record["labels"].tolist()
+        if int(token_id) != -100 and int(token_id) != eos_id
+    ]
+    return decode_ids(itos, supervised)
+
+
 @torch.no_grad()
 def generate_answer(
     model: GPTLanguageModelV4,
@@ -253,6 +273,10 @@ def monitor_answers(
     payload: dict[str, Any],
     device: torch.device,
     seed: int,
+    *,
+    max_new_tokens: int,
+    temperature: float,
+    top_k: int,
 ) -> list[dict[str, Any]]:
     outputs = []
     for index, record in enumerate(records):
@@ -264,9 +288,9 @@ def monitor_answers(
             prompt_ids,
             payload["itos"],
             payload["special_token_ids"],
-            max_new_tokens=30,
-            temperature=0.8,
-            top_k=20,
+            max_new_tokens=max_new_tokens,
+            temperature=temperature,
+            top_k=top_k,
             seed=seed + index,
             device=device,
         )
@@ -276,11 +300,49 @@ def monitor_answers(
                 "split": record["split"],
                 "task_family": record["task_family"],
                 "question": decode_ids(payload["itos"], question_ids),
+                "expected_answer": decode_supervised_answer(
+                    record,
+                    payload["itos"],
+                    payload["special_token_ids"],
+                ),
                 "generated_answer": generated,
                 "stopped_on_eos": stopped_on_eos,
             }
         )
     return outputs
+
+
+def select_monitor_records(
+    train_records: Sequence[dict[str, Any]],
+    val_records: Sequence[dict[str, Any]],
+    monitor_count: int,
+) -> list[dict[str, Any]]:
+    if monitor_count <= 0:
+        return []
+    train_count = min(len(train_records), (monitor_count + 1) // 2)
+    val_count = min(len(val_records), monitor_count - train_count)
+
+    def spread(records: Sequence[dict[str, Any]], count: int) -> list[dict[str, Any]]:
+        if count <= 0:
+            return []
+        if count == 1:
+            return [records[0]]
+        indexes = [
+            round(index * (len(records) - 1) / (count - 1))
+            for index in range(count)
+        ]
+        return [records[index] for index in indexes]
+
+    return spread(train_records, train_count) + spread(val_records, val_count)
+
+
+def write_loss_csv(path: Path, history: Sequence[dict[str, Any]]) -> None:
+    rows = ["step,train_loss,val_loss"]
+    rows.extend(
+        f"{row['step']},{row['train_loss']},{row['val_loss']}"
+        for row in history
+    )
+    atomic_write_text(path, "\n".join(rows) + "\n")
 
 
 def make_checkpoint(
@@ -322,12 +384,40 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--gradient-clip", type=float, default=DEFAULT_GRADIENT_CLIP)
     parser.add_argument("--seed", type=int, default=DEFAULT_SEED)
     parser.add_argument("--device", choices=("auto", "cpu", "mps"), default="auto")
+    parser.add_argument("--sample-interval", type=int, default=DEFAULT_SAMPLE_INTERVAL)
+    parser.add_argument("--monitor-count", type=int, default=DEFAULT_MONITOR_COUNT)
+    parser.add_argument("--max-new-tokens", type=int, default=DEFAULT_MAX_NEW_TOKENS)
+    parser.add_argument("--temperature", type=float, default=DEFAULT_TEMPERATURE)
+    parser.add_argument("--top-k", type=int, default=DEFAULT_TOP_K)
     return parser.parse_args(argv)
+
+
+def validate_args(args: argparse.Namespace) -> None:
+    positive_ints = {
+        "max_steps": args.max_steps,
+        "eval_interval": args.eval_interval,
+        "eval_batches": args.eval_batches,
+        "micro_batch_size": args.micro_batch_size,
+        "sample_interval": args.sample_interval,
+        "max_new_tokens": args.max_new_tokens,
+    }
+    for name, value in positive_ints.items():
+        if value <= 0:
+            raise ValueError(f"{name} must be positive")
+    if args.monitor_count < 0:
+        raise ValueError("monitor_count must be non-negative")
+    if args.learning_rate <= 0:
+        raise ValueError("learning_rate must be positive")
+    if args.temperature <= 0:
+        raise ValueError("temperature must be positive")
+    if args.top_k < 0:
+        raise ValueError("top_k must be non-negative")
 
 
 def main(argv: Sequence[str] | None = None) -> int:
     args = parse_args(argv)
-    run_id = generate_run_id("sft-v4-smoke")
+    validate_args(args)
+    run_id = generate_run_id("sft-v4")
     base_config = load_config(args.config)
     run_config = {
         "schema_version": "sft-v4-smoke/v1",
@@ -341,6 +431,11 @@ def main(argv: Sequence[str] | None = None) -> int:
         "learning_rate": args.learning_rate,
         "weight_decay": args.weight_decay,
         "gradient_clip": args.gradient_clip,
+        "sample_interval": args.sample_interval,
+        "monitor_count": args.monitor_count,
+        "max_new_tokens": args.max_new_tokens,
+        "temperature": args.temperature,
+        "top_k": args.top_k,
         "seed": args.seed,
         "device": args.device,
     }
@@ -374,6 +469,11 @@ def main(argv: Sequence[str] | None = None) -> int:
         pad_token_id = int(payload["special_token_ids"]["<PAD>"])
         train_records = payload["train_records"]
         val_records = payload["val_records"]
+        monitor_records = select_monitor_records(
+            train_records,
+            val_records,
+            args.monitor_count,
+        )
         optimizer = torch.optim.AdamW(
             model.parameters(),
             lr=args.learning_rate,
@@ -395,6 +495,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         )
 
         history: list[dict[str, Any]] = []
+        sample_history: list[dict[str, Any]] = []
         best_val_loss = float("inf")
         for step in range(0, args.max_steps + 1):
             if step == 0 or step % args.eval_interval == 0 or step == args.max_steps:
@@ -445,6 +546,30 @@ def main(argv: Sequence[str] | None = None) -> int:
                         result.step,
                         result.sha256,
                     )
+                if (
+                    monitor_records
+                    and (step == 0 or step % args.sample_interval == 0 or step == args.max_steps)
+                ):
+                    sample_history.append(
+                        {
+                            "step": step,
+                            "samples": monitor_answers(
+                                model,
+                                monitor_records,
+                                payload,
+                                device,
+                                args.seed + 100,
+                                max_new_tokens=args.max_new_tokens,
+                                temperature=args.temperature,
+                                top_k=args.top_k,
+                            ),
+                        }
+                    )
+                    loggers["validation"].info(
+                        "step=%d sampled monitor_records=%d",
+                        step,
+                        len(monitor_records),
+                    )
             if step == args.max_steps:
                 break
 
@@ -483,12 +608,12 @@ def main(argv: Sequence[str] | None = None) -> int:
                 extra={"payload_summary": payload_summary},
             ),
         )
-        monitor_records = [train_records[0], val_records[0]]
-        samples = monitor_answers(model, monitor_records, payload, device, args.seed + 100)
+        loss_csv_path = args.report.with_name(args.report.stem + "_loss.csv")
+        write_loss_csv(loss_csv_path, history)
         report = {
-            "schema_version": "sft-v4-smoke-report/v1",
+            "schema_version": "sft-v4-report/v1",
             "run_id": run_id,
-            "stage": "sft_v4_smoke20",
+            "stage": "sft_v4_formal",
             "status": "complete",
             "steps": args.max_steps,
             "device": str(device),
@@ -509,16 +634,18 @@ def main(argv: Sequence[str] | None = None) -> int:
             "final_train_loss": history[-1]["train_loss"],
             "final_val_loss": history[-1]["val_loss"],
             "loss_history": history,
-            "monitor_outputs": samples,
+            "sample_history": sample_history,
+            "monitor_outputs": sample_history[-1]["samples"] if sample_history else [],
             "best_checkpoint": str(args.run_dir / "best.pt"),
             "latest_checkpoint": str(args.run_dir / "latest.pt"),
             "latest_checkpoint_sha256": latest.sha256,
+            "loss_csv": str(loss_csv_path),
             "elapsed_seconds": time.monotonic() - started,
             "test_records_consumed": 0,
         }
         atomic_write_json(args.report, report)
         loggers["checkpoint"].info(
-            "sft smoke complete latest=%s report=%s",
+            "sft complete latest=%s report=%s",
             args.run_dir / "latest.pt",
             args.report,
         )
@@ -539,7 +666,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         )
         return 0
     except Exception:
-        loggers["sft"].exception("SFT v4 smoke failed")
+        loggers["sft"].exception("SFT v4 failed")
         raise
 
 

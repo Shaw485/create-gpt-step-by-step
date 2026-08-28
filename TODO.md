@@ -78,5 +78,6 @@
 - [x] 经用户授权由Codex AI完成600条val/test审核；521条通过、79条修改后通过、0条拒绝，审核身份如实标注为AI。
 - [x] 合并600条AI审核决定，生成3000条AI审核冻结副本与2999条training-ready SFT候选；1条证据章节漂移训练样本被排除。
 - [x] 使用2999条training-ready候选生成v4 BPE SFT张量，并完成20步SFT安全试跑；验证Loss从7.5522降至5.0587。
+- [x] 完成M010：v4 SFT 500步正式小跑，保留固定10题、Loss CSV、PNG/SVG曲线、best/latest checkpoint SHA-256和分模块日志；最佳验证Loss为step 400的1.3442。
 - [ ] 若正式发布要求独立真人签字，对79条修改项和风险抽样进行人审；不得把Codex AI决定改写成真人审核。
-- [ ] 在可用MPS环境中启动正式v4 SFT，保留固定10题、Loss曲线、checkpoint SHA-256和人工语义抽样。
+- [ ] 在可用MPS环境中从同一预训练checkpoint启动2000～3000步v4 SFT，继续保留固定10题、Loss曲线、checkpoint SHA-256和人工语义抽样。
