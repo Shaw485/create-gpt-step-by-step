@@ -14,9 +14,11 @@ from repair_teacher_sft_v4 import (
     normalize_answer,
     normalize_question,
     remove_control_characters,
+    reframe_global_claim_as_local_evidence,
     reframe_first_cooccurrence_as_local_evidence,
     rebase_chapter_references,
     title_from_chapter_heading,
+    validate_local_evidence_reframes,
     rebalance_task_families,
 )
 from build_sft_v4 import TASK_FAMILY_QUOTAS
@@ -170,6 +172,168 @@ class TeacherSftV4RepairTests(unittest.TestCase):
         self.assertIsNotNone(result)
         assert result is not None
         self.assertIn("无法证明这是全书首次", result[1])
+
+    @staticmethod
+    def located(text):
+        return type("Located", (), {"evidence": {"text": text}})()
+
+    def test_coappearance_is_reframed_without_claiming_most_appearances(self):
+        result = reframe_global_claim_as_local_evidence(
+            {
+                "subcategory": "co_appearance",
+                "question": "第一章里，除了萧炎，出现次数最多的人物是谁？",
+                "entities": ["萧炎", "薰儿"],
+                "source": {"chapter_number": 1},
+            },
+            "relationship_reason_timeline",
+            self.located("薰儿向萧炎点头。"),
+            None,
+        )
+        self.assertIsNotNone(result)
+        assert result is not None
+        self.assertIn("不统计整章出场次数", result[0])
+        self.assertIn("同时提到了萧炎和薰儿", result[1])
+
+    def test_chapter_focus_names_only_entities_visible_in_evidence(self):
+        result = reframe_global_claim_as_local_evidence(
+            {
+                "subcategory": "chapter_focus",
+                "entities": ["萧炎", "药老"],
+                "source": {"chapter_number": 12},
+            },
+            "context_understanding",
+            self.located("萧炎抬起头。"),
+            None,
+        )
+        self.assertIsNotNone(result)
+        assert result is not None
+        self.assertIn("萧炎", result[1])
+        self.assertNotIn("药老", result[1])
+
+    def test_unanswerable_is_scoped_to_current_evidence(self):
+        result = reframe_global_claim_as_local_evidence(
+            {
+                "subcategory": "unanswerable",
+                "question": "原文如何交代雅妃的身高？",
+                "entities": ["雅妃"],
+                "source": {"chapter_number": 22},
+            },
+            "ambiguity_unknown_clarification",
+            self.located("首席拍卖师雅妃走来。"),
+            None,
+        )
+        self.assertIsNotNone(result)
+        assert result is not None
+        self.assertIn("只依据第22章", result[0])
+        self.assertIn("没有直接给出其身高", result[1])
+
+    def test_appearance_order_is_reframed_as_local_identification(self):
+        result = reframe_global_claim_as_local_evidence(
+            {
+                "subcategory": "appearance_order",
+                "entities": ["药尘", "雷尊者"],
+                "source": {"chapter_number": 367},
+            },
+            "relationship_reason_timeline",
+            self.located("我药尘没有看错人。"),
+            None,
+        )
+        self.assertIsNotNone(result)
+        assert result is not None
+        self.assertIn("不比较全书登场先后", result[0])
+        self.assertEqual(result[1], "当前证据片段明确出现了药尘。")
+
+    def test_first_appearance_is_reframed_as_literal_text_presence(self):
+        result = reframe_global_claim_as_local_evidence(
+            {
+                "subcategory": "first_appearance",
+                "question": "云山最早出现是在第几章？",
+                "entities": ["云山"],
+                "source": {"chapter_number": 262},
+            },
+            "direct_fact",
+            self.located("远处是一座高耸入云山峰。"),
+            None,
+        )
+        self.assertIsNotNone(result)
+        assert result is not None
+        self.assertIn("连续字符“云山”", result[0])
+        self.assertNotIn("首次", result[1])
+
+    def test_false_premise_uses_rank_and_skill_level_from_evidence(self):
+        rank = reframe_global_claim_as_local_evidence(
+            {
+                "subcategory": "false_premise",
+                "entities": ["金帝焚天炎"],
+                "source": {"chapter_number": 1608},
+            },
+            "fact_verification_correction",
+            self.located("异火榜排名第四的金帝焚天炎。"),
+            None,
+        )
+        skill = reframe_global_claim_as_local_evidence(
+            {
+                "subcategory": "false_premise",
+                "entities": ["八极崩"],
+                "source": {"chapter_number": 18},
+            },
+            "fact_verification_correction",
+            self.located("八极崩：玄阶高级斗技。"),
+            None,
+        )
+        self.assertIsNotNone(rank)
+        self.assertIsNotNone(skill)
+        assert rank is not None and skill is not None
+        self.assertIn("排名第四", rank[1])
+        self.assertIn("玄阶高级斗技", skill[1])
+
+    def test_existing_safe_transformation_is_preserved(self):
+        for transformation in ("exact_copy_instruction", "clarification_wrapper"):
+            result = reframe_global_claim_as_local_evidence(
+                {
+                    "subcategory": "first_appearance",
+                    "entities": ["萧炎"],
+                    "source": {"chapter_number": 1},
+                },
+                "continuation_rewrite_instruction",
+                self.located("萧炎出现。"),
+                transformation,
+            )
+            self.assertIsNone(result)
+
+    def test_local_reframe_validator_accepts_grounded_and_rejects_tampering(self):
+        record = {
+            "id": "local-1",
+            "answer": "证据片段写明，金帝焚天炎在异火榜上排名第四。",
+            "origin": {
+                "source_entities": ["金帝焚天炎"],
+                "automatic_repairs": [
+                    "reframed_false_premise_as_local_rank_evidence"
+                ],
+            },
+            "evidence": {
+                "status": "verified_corpus",
+                "text": "异火榜排名第四的金帝焚天炎。",
+            },
+        }
+        summary = validate_local_evidence_reframes([record])
+        self.assertEqual(summary["verified_record_count"], 1)
+        record["answer"] = "证据片段写明，金帝焚天炎在异火榜上排名第三。"
+        with self.assertRaisesRegex(ValueError, "rank repair disagrees"):
+            validate_local_evidence_reframes([record])
+
+    def test_verification_wrapper_does_not_hide_a_global_claim(self):
+        result = reframe_global_claim_as_local_evidence(
+            {
+                "subcategory": "appearance_order",
+                "entities": ["萧炎", "雷尊者"],
+                "source": {"chapter_number": 1},
+            },
+            "fact_verification_correction",
+            self.located("萧炎出现。"),
+            "verification_wrapper",
+        )
+        self.assertIsNotNone(result)
 
     def test_stale_appearance_order_is_recomputed_from_literal_index(self):
         lines = [
@@ -400,6 +564,15 @@ class TeacherSftV4RepairTests(unittest.TestCase):
             {"subcategory": "speaker_attribution", "source": {}},
             "说出‘我从未见过’的是谁？",
             "是某人说的。",
+            None,
+        )
+        self.assertNotIn("global_claim_requires_index_review", flags)
+
+    def test_local_cause_with_first_time_phrase_is_not_a_global_claim(self):
+        flags = content_flags(
+            {"subcategory": "cause_reason", "source": {}},
+            "为什么萧炎轻车熟路？",
+            "因为并非是第一次前往兽域。",
             None,
         )
         self.assertNotIn("global_claim_requires_index_review", flags)

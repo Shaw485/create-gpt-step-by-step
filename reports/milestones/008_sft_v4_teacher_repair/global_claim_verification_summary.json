@@ -3,9 +3,9 @@
   "corpus_path": "data/cloud_v4/corpus.txt",
   "corpus_sha256": "50592f249d2be17054ebbe2f8ca7945063e1a8ae669706e64d2076371c4d3b00",
   "dataset_path": "data/sft/v4_teacher_repair/sft_v4_teacher_candidates.jsonl",
-  "dataset_sha256": "b0ffa959b4c71cc71ce23e09ac2cc4a80d7444e4f0bd01f9d9a898e011cfbff7",
+  "dataset_sha256": "3d7d613c48333ce3d440f158488d3a4d6aeb2d1138138d82f2a881a0b0e51104",
   "full_report_path": "data/sft/v4_teacher_repair/global_claim_verification.json",
-  "full_report_sha256": "809a96ccc0fbeac4bf85ef2eaa32f6f199531360025790b9b133b3c86b5f3042",
+  "full_report_sha256": "334ca3f4611c221ccf4529142e8baa209c38757be18eca558915abacc7bfd839",
   "human_approval_was_inferred": false,
   "limitations": [
     "Literal-name counts do not prove narrative focus or screen time.",
@@ -13,47 +13,12 @@
     "Duplicate retained chapter versions are checked separately.",
     "No review approval is written by this tool."
   ],
-  "method_counts": {
-    "chapter_literal_person_name_counts": 58,
-    "chapter_literal_person_name_counts_semantic_focus_pending": 15,
-    "literal_full_book_false_premise": 6,
-    "literal_full_book_first_occurrence": 35,
-    "literal_full_book_order": 38,
-    "semantic_absence_cannot_be_proven_by_literal_index_alone": 19,
-    "unsupported_non_chapter_false_premise": 1
-  },
+  "method_counts": {},
   "person_lexicon_size": 54,
   "schema_version": "sft_v4_global_claim_verification/1.0",
-  "selected_record_count": 172,
+  "selected_record_count": 0,
   "status": "needs_review",
-  "status_by_subcategory": {
-    "appearance_order": {
-      "index_verified": 38
-    },
-    "chapter_focus": {
-      "manual_review_required": 15
-    },
-    "co_appearance": {
-      "literal_count_supported_all_versions": 58
-    },
-    "concept_debut": {
-      "index_verified": 16
-    },
-    "false_premise": {
-      "index_verified": 6,
-      "manual_review_required": 1
-    },
-    "first_appearance": {
-      "index_verified": 19
-    },
-    "unanswerable": {
-      "manual_review_required": 19
-    }
-  },
-  "status_counts": {
-    "index_verified": 79,
-    "literal_count_supported_all_versions": 58,
-    "manual_review_required": 35
-  },
+  "status_by_subcategory": {},
+  "status_counts": {},
   "unique_chapter_number_count": 1614
 }

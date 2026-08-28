@@ -1,8 +1,7 @@
 {
   "counts": {
     "low_risk_human_review": 194,
-    "review_transformed_task": 234,
-    "verify_global_or_aggregate_claim": 172
+    "review_transformed_task": 406
   },
   "evaluation_count": 600,
   "human_approval_was_inferred": false,

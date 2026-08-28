@@ -460,6 +460,205 @@ def reframe_first_cooccurrence_as_local_evidence(
     return question, answer, "reframed_first_cooccurrence_as_local_evidence"
 
 
+def _chapter_label(record: dict[str, Any]) -> str:
+    chapter_number = record.get("source", {}).get("chapter_number")
+    return f"第{chapter_number}章" if chapter_number is not None else "当前"
+
+
+def _entities_in_evidence(
+    record: dict[str, Any], located: LocatedEvidence
+) -> list[str]:
+    evidence_text = str(located.evidence.get("text", ""))
+    return [
+        entity
+        for value in record.get("entities", [])
+        if (entity := str(value).strip()) and entity in evidence_text
+    ]
+
+
+def _source_question_variant(record: dict[str, Any], markers: Sequence[str]) -> int:
+    source_question = str(record.get("question", ""))
+    for index, marker in enumerate(markers):
+        if marker in source_question:
+            return index
+    return len(markers)
+
+
+def _scoped_local_question(record: dict[str, Any], local_question: str) -> str:
+    """Keep repaired prompts unique while making the scope change explicit."""
+
+    source_question = str(record.get("question", "")).strip().rstrip("？?!！")
+    return f"原问题是“{source_question}”。现只做局部证据核验：{local_question}"
+
+
+def _extract_rank_from_evidence(entity: str, evidence_text: str) -> str | None:
+    numeral = r"[零〇一二两三四五六七八九十百千万0-9]+"
+    for match in re.finditer(rf"(?:排名|排行)第({numeral})", evidence_text):
+        start = max(0, match.start() - 48)
+        end = min(len(evidence_text), match.end() + 48)
+        if entity in evidence_text[start:end]:
+            return match.group(1)
+    return None
+
+
+def _extract_skill_level_from_evidence(
+    entity: str, evidence_text: str
+) -> str | None:
+    match = re.search(
+        re.escape(entity) + r"[^。！？!?]{0,12}?([天地玄黄]阶(?:低级|中级|高级)?)斗技",
+        evidence_text,
+    )
+    return match.group(1) if match else None
+
+
+def reframe_global_claim_as_local_evidence(
+    record: dict[str, Any],
+    family: str,
+    located: LocatedEvidence | None,
+    existing_transformation: str | None,
+) -> tuple[str, str, str] | None:
+    """Turn unsupported global or aggregate semantics into exact local tasks.
+
+    Exact-copy and clarification transformations do not assert the quoted fact
+    and are preserved. Verification, context, and concise-answer wrappers are
+    still reframed because their inner global claim remains factual. Returned
+    tasks only assert facts visible in the attached evidence text.
+    """
+
+    safe_non_factual_transformations = {
+        "clarification_wrapper",
+        "exact_copy_instruction",
+    }
+    if (
+        located is None
+        or existing_transformation in safe_non_factual_transformations
+    ):
+        return None
+    subcategory = str(record.get("subcategory", ""))
+    if subcategory == "first_cooccurrence":
+        return reframe_first_cooccurrence_as_local_evidence(record, family, located)
+
+    entities = [str(value).strip() for value in record.get("entities", [])]
+    entities = [entity for entity in entities if entity]
+    mentioned = _entities_in_evidence(record, located)
+    chapter_label = _chapter_label(record)
+    evidence_text = str(located.evidence.get("text", ""))
+
+    if subcategory == "co_appearance" and len(entities) >= 2:
+        first, second = entities[:2]
+        if first not in mentioned or second not in mentioned:
+            return None
+        variant = _source_question_variant(record, ("出现次数最多", "戏份最多"))
+        questions = (
+            f"不统计整章出场次数，只看{chapter_label}的证据片段：其中是否同时提到{first}和{second}？",
+            f"不判断整章戏份多少，只核对{chapter_label}的证据：{first}与{second}是否都在片段中出现？",
+            f"根据{chapter_label}的当前证据片段，能否确认{first}和{second}在此处被同时提及？",
+        )
+        return (
+            _scoped_local_question(record, questions[variant]),
+            f"能确认；当前证据片段同时提到了{first}和{second}。",
+            "reframed_co_appearance_as_local_evidence",
+        )
+
+    if subcategory == "chapter_focus" and mentioned:
+        names = "、".join(mentioned)
+        return (
+            _scoped_local_question(
+                record,
+                f"不判断整章主角，只看{chapter_label}的当前证据片段：明确提到了哪位人物？",
+            ),
+            f"当前证据片段明确提到了{names}。",
+            "reframed_chapter_focus_as_local_evidence",
+        )
+
+    if subcategory == "unanswerable" and entities:
+        entity = entities[0]
+        source_question = str(record.get("question", ""))
+        if "出生日期" in source_question:
+            attribute = "出生日期"
+        elif "身高" in source_question:
+            attribute = "身高"
+        else:
+            attribute = "当前的具体年龄"
+        if entity not in mentioned:
+            return None
+        return (
+            _scoped_local_question(
+                record,
+                f"只依据{chapter_label}的当前证据片段，能否得知{entity}的{attribute}？",
+            ),
+            f"不能；片段提到了{entity}，但没有直接给出其{attribute}。",
+            "reframed_unanswerable_as_local_evidence",
+        )
+
+    if subcategory == "appearance_order" and len(entities) >= 2 and mentioned:
+        first, second = entities[:2]
+        names = "、".join(mentioned)
+        return (
+            _scoped_local_question(
+                record,
+                f"不比较全书登场先后，只看{chapter_label}的当前证据：{first}和{second}中明确出现了谁？",
+            ),
+            f"当前证据片段明确出现了{names}。",
+            "reframed_appearance_order_as_local_evidence",
+        )
+
+    if subcategory in {"concept_debut", "first_appearance"} and entities:
+        entity = entities[0]
+        if entity not in mentioned:
+            return None
+        variant = _source_question_variant(
+            record,
+            ("从第几章开始", "第一次提到", "在小说中最早", "最早出现"),
+        )
+        questions = (
+            f"先不判断首次章节；{chapter_label}的证据片段中是否出现了连续字符“{entity}”？",
+            f"不核定全书第一次出现；只看{chapter_label}的证据，能否找到连续字符“{entity}”？",
+            f"暂不判断全书最早位置；{chapter_label}的当前证据是否包含连续字符“{entity}”？",
+            f"不判断最早登场；{chapter_label}的证据片段是否写出了连续字符“{entity}”？",
+            f"仅核对当前片段：{chapter_label}的证据中有没有连续字符“{entity}”？",
+        )
+        return (
+            _scoped_local_question(record, questions[variant]),
+            f"有，当前证据片段中出现了连续字符“{entity}”。",
+            f"reframed_{subcategory}_as_local_text_evidence",
+        )
+
+    if subcategory == "false_premise" and entities:
+        entity = entities[0]
+        if entity not in mentioned:
+            return None
+        rank = _extract_rank_from_evidence(entity, evidence_text)
+        if rank is not None:
+            return (
+                _scoped_local_question(
+                    record,
+                    f"根据{chapter_label}的证据片段，{entity}在异火榜上排名第几？",
+                ),
+                f"证据片段写明，{entity}在异火榜上排名第{rank}。",
+                "reframed_false_premise_as_local_rank_evidence",
+            )
+        skill_level = _extract_skill_level_from_evidence(entity, evidence_text)
+        if skill_level is not None:
+            return (
+                _scoped_local_question(
+                    record,
+                    f"根据{chapter_label}的证据片段，{entity}属于什么等级的斗技？",
+                ),
+                f"证据片段写明，{entity}是{skill_level}斗技。",
+                "reframed_false_premise_as_local_skill_evidence",
+            )
+        return (
+            _scoped_local_question(
+                record,
+                f"不判断首次登场；只核对{chapter_label}的当前证据，其中是否出现连续字符“{entity}”？",
+            ),
+            f"有，当前证据片段中出现了连续字符“{entity}”。",
+            "reframed_false_premise_as_local_text_evidence",
+        )
+    return None
+
+
 def correct_stale_appearance_order(
     record: dict[str, Any],
     family: str,
@@ -607,13 +806,17 @@ def content_flags(
         "exact_copy_instruction",
         "local_evidence_reframe",
     }
-    marker_question = "" if record.get("subcategory") == "speaker_attribution" else question
+    marker_exempt_subcategories = {"cause_reason", "speaker_attribution"}
+    marker_text = (
+        ""
+        if record.get("subcategory") in marker_exempt_subcategories
+        else question + "\n" + answer
+    )
     if knowledge_claim_active:
         if (
             record.get("subcategory") in GLOBAL_CLAIM_SUBCATEGORIES
             or any(
-                marker in marker_question or marker in answer
-                for marker in GLOBAL_CLAIM_MARKERS
+                marker in marker_text for marker in GLOBAL_CLAIM_MARKERS
             )
             or "未明确说明" in answer
         ):
@@ -634,6 +837,68 @@ def content_flags(
     ):
         flags.append("answer_requires_semantic_evidence_review")
     return sorted(set(flags))
+
+
+def validate_local_evidence_reframes(
+    records: Sequence[dict[str, Any]],
+) -> dict[str, Any]:
+    """Fail closed when a local repair is not supported by its own evidence."""
+
+    counts: Counter[str] = Counter()
+    for record in records:
+        actions = [
+            action
+            for action in record["origin"].get("automatic_repairs", [])
+            if action.startswith("reframed_")
+        ]
+        if not actions:
+            continue
+        evidence_text = str(record.get("evidence", {}).get("text", ""))
+        if record.get("evidence", {}).get("status") != "verified_corpus":
+            raise ValueError(f"local reframe lacks verified evidence: {record['id']}")
+        entities = [
+            str(value).strip()
+            for value in record["origin"].get("source_entities", [])
+            if str(value).strip()
+        ]
+        answer = str(record["answer"])
+        for action in actions:
+            if action in {
+                "reframed_co_appearance_as_local_evidence",
+                "reframed_first_cooccurrence_as_local_evidence",
+            }:
+                required = entities[:2]
+            elif action in {
+                "reframed_appearance_order_as_local_evidence",
+                "reframed_chapter_focus_as_local_evidence",
+            }:
+                required = [entity for entity in entities if entity in answer]
+            else:
+                required = entities[:1]
+            if not required or any(entity not in evidence_text for entity in required):
+                raise ValueError(
+                    f"local reframe entity is not supported by evidence: {record['id']}"
+                )
+            if action == "reframed_false_premise_as_local_rank_evidence":
+                rank = _extract_rank_from_evidence(required[0], evidence_text)
+                if rank is None or f"排名第{rank}" not in answer:
+                    raise ValueError(
+                        f"local rank repair disagrees with evidence: {record['id']}"
+                    )
+            if action == "reframed_false_premise_as_local_skill_evidence":
+                skill_level = _extract_skill_level_from_evidence(
+                    required[0], evidence_text
+                )
+                if skill_level is None or f"{skill_level}斗技" not in answer:
+                    raise ValueError(
+                        f"local skill repair disagrees with evidence: {record['id']}"
+                    )
+            counts[action] += 1
+    return {
+        "verified_record_count": sum(counts.values()),
+        "counts_by_repair": dict(sorted(counts.items())),
+        "all_local_reframes_supported": True,
+    }
 
 
 def first_sentence(text: str) -> str:
@@ -1122,21 +1387,24 @@ def run_repair(
         question, answer, repairs = transform_task(
             source, family, transformation, located
         )
-        local_reframe = reframe_first_cooccurrence_as_local_evidence(
+        local_reframe = reframe_global_claim_as_local_evidence(
             source,
             family,
             located,
+            transformation,
         )
         if local_reframe is not None:
             question, answer, repair = local_reframe
             repairs.append(repair)
-        order_correction = correct_stale_appearance_order(
-            source,
-            family,
-            question,
-            answer,
-            locator,
-        )
+        order_correction = None
+        if local_reframe is None:
+            order_correction = correct_stale_appearance_order(
+                source,
+                family,
+                question,
+                answer,
+                locator,
+            )
         if order_correction is not None:
             question, answer, repair = order_correction
             repairs.append(repair)
@@ -1225,6 +1493,7 @@ def run_repair(
             f"v4 BPE rejected {len(vocab_errors)} teacher records: "
             f"{vocab_errors[:3]}"
         )
+    local_reframe_validation = validate_local_evidence_reframes(candidates)
     audit = quality_gate(candidates, corpus_lines, corpus_sha)
     audit.update(
         {
@@ -1244,6 +1513,7 @@ def run_repair(
                 "over_context_512": sum(length > 512 for length in sequence_lengths),
             },
             "repair_reason_counts": dict(sorted(repair_counts.items())),
+            "local_evidence_reframe_validation": local_reframe_validation,
             "repair_queue_count": len(repair_queue),
             "review_priorities": build_review_priority_summary(candidates),
             "evaluation_ai_pre_review": build_ai_pre_review_summary(candidates),
@@ -1317,6 +1587,12 @@ def run_repair(
         audit["release_ready"],
         audit["failed_gates"],
         max(sequence_lengths),
+    )
+    loggers["validation"].info(
+        "run_id=%s local_reframes_verified=%d all_supported=%s",
+        run_id,
+        local_reframe_validation["verified_record_count"],
+        local_reframe_validation["all_local_reframes_supported"],
     )
     return audit
 
