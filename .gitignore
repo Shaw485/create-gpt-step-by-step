@@ -12,6 +12,7 @@ __pycache__/
 data/raw/
 data/clean/
 data/cloud_v4/
+data/scaling_a/
 data/sft/v4/
 data/sft/v4_teacher_repair/
 data/sft/v4_mixed_chat/

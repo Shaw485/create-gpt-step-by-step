@@ -59,6 +59,17 @@ def load_tensor(path: Path) -> torch.Tensor:
     return value
 
 
+def bits_per_character(
+    token_loss: float,
+    token_count: int,
+    character_count: int,
+) -> float:
+    """Convert mean token NLL to a tokenizer-comparable character metric."""
+    if token_count <= 0 or character_count <= 0:
+        raise ValueError("token_count and character_count must be positive")
+    return token_loss * token_count / character_count / math.log(2.0)
+
+
 def get_batch(
     data: torch.Tensor,
     batch_size: int,
@@ -166,6 +177,8 @@ def main() -> int:
     parser.add_argument("--config", type=Path, default=Path("configs/local_m4_8m.json"))
     parser.add_argument("--max-steps", type=int)
     parser.add_argument("--run-dir", type=Path)
+    parser.add_argument("--data-dir", type=Path)
+    parser.add_argument("--device", choices=("cpu", "mps"))
     parser.add_argument("--resume", type=Path)
     parser.add_argument("--init-checkpoint", type=Path)
     parser.add_argument("--smoke", action="store_true")
@@ -178,6 +191,10 @@ def main() -> int:
         config["training"]["max_steps"] = args.max_steps
     if args.run_dir is not None:
         config["run_dir"] = str(args.run_dir)
+    if args.data_dir is not None:
+        config["data_dir"] = str(args.data_dir)
+    if args.device is not None:
+        config["device"] = args.device
     if args.smoke:
         config["training"].update(
             {
@@ -211,15 +228,28 @@ def main() -> int:
     sample_generator = torch.Generator().manual_seed(seed + 3)
     data_dir = Path(config["data_dir"])
     settings = config["training"]
+    evaluate_test = bool(config.get("evaluate_test_on_completion", True))
     started = time.monotonic()
 
     train_data = load_tensor(data_dir / "train_tokens.pt")
     val_data = load_tensor(data_dir / "val_tokens.pt")
-    test_data = load_tensor(data_dir / "test_tokens.pt")
+    test_data = (
+        load_tensor(data_dir / "test_tokens.pt") if evaluate_test else None
+    )
     tokenizer = BPETokenizer.load(data_dir / "tokenizer.json")
     manifest = json.loads((data_dir / "token_manifest.json").read_text(encoding="utf-8"))
     if manifest["tokenizer_sha256"] != file_sha256(data_dir / "tokenizer.json"):
         raise ValueError("tokenizer checksum does not match token manifest")
+    expected_tokens_per_step = (
+        int(settings["micro_batch_size"])
+        * int(config["model"]["block_size"])
+        * int(settings["gradient_accumulation_steps"])
+    )
+    if int(settings["tokens_per_optimizer_step"]) != expected_tokens_per_step:
+        raise ValueError(
+            "tokens_per_optimizer_step does not match micro_batch_size * "
+            "block_size * gradient_accumulation_steps"
+        )
 
     model_config = GPTConfig(vocab_size=tokenizer.vocab_size, **config["model"])
     model = GPTLanguageModelV4(model_config).to(device)
@@ -341,7 +371,7 @@ def main() -> int:
                 "vocab_size": tokenizer.vocab_size,
                 "train_tokens": len(train_data),
                 "val_tokens": len(val_data),
-                "test_tokens": len(test_data),
+                "test_tokens": len(test_data) if test_data is not None else "sealed",
                 "block_size": model_config.block_size,
                 "micro_batch": settings["micro_batch_size"],
                 "gradient_accumulation": settings["gradient_accumulation_steps"],
@@ -404,6 +434,16 @@ def main() -> int:
                         "step": step,
                         "train_loss": train_loss,
                         "val_loss": val_loss,
+                        "train_bits_per_character": bits_per_character(
+                            train_loss,
+                            int(manifest["splits"]["train"]["tokens"]),
+                            int(manifest["splits"]["train"]["characters"]),
+                        ),
+                        "val_bits_per_character": bits_per_character(
+                            val_loss,
+                            int(manifest["splits"]["val"]["tokens"]),
+                            int(manifest["splits"]["val"]["characters"]),
+                        ),
                         "learning_rate": lr,
                         "elapsed_seconds": elapsed_seconds(),
                     }
@@ -445,7 +485,21 @@ def main() -> int:
                     )
                     break
 
-        test_loss = evaluate(model, test_data, settings, eval_generator, device)
+        test_loss = (
+            evaluate(model, test_data, settings, eval_generator, device)
+            if test_data is not None
+            else None
+        )
+        test_bpc = (
+            bits_per_character(
+                test_loss,
+                int(manifest["splits"]["test"]["tokens"]),
+                int(manifest["splits"]["test"]["characters"]),
+            )
+            if test_loss is not None
+            else None
+        )
+        best_entry = min(history, key=lambda entry: float(entry["val_loss"]))
         report = {
             "status": "complete",
             "run_id": run_id,
@@ -454,8 +508,21 @@ def main() -> int:
             "parameter_count": model.parameter_count(),
             "device": str(device),
             "best_validation_loss": best_loss,
+            "best_validation_bits_per_character": float(
+                best_entry["val_bits_per_character"]
+            ),
             "best_step": best_step,
             "test_loss": test_loss,
+            "test_bits_per_character": test_bpc,
+            "test_evaluated": evaluate_test,
+            "training_token_exposures": (
+                current_step * int(settings["tokens_per_optimizer_step"])
+            ),
+            "training_tokens_per_parameter": (
+                current_step
+                * int(settings["tokens_per_optimizer_step"])
+                / model.parameter_count()
+            ),
             "stage_elapsed_seconds": time.monotonic() - started,
             "elapsed_seconds": elapsed_seconds(),
             "history": history,

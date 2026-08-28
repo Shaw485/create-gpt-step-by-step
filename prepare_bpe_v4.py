@@ -25,6 +25,10 @@ SPECIAL_TOKENS = ["<UNK>", "<BOS>", "<USER>", "<ASSISTANT>", "<EOS>", "<PAD>"]
 
 
 class JsonFormatter(logging.Formatter):
+    def __init__(self, run_id: str):
+        super().__init__()
+        self.run_id = run_id
+
     def format(self, record: logging.LogRecord) -> str:
         return json.dumps(
             {
@@ -33,13 +37,14 @@ class JsonFormatter(logging.Formatter):
                 ).isoformat(timespec="milliseconds"),
                 "level": record.levelname,
                 "module": record.name,
+                "run_id": self.run_id,
                 "message": record.getMessage(),
             },
             ensure_ascii=False,
         )
 
 
-def configure_loggers(log_dir: Path) -> dict[str, logging.Logger]:
+def configure_loggers(log_dir: Path, run_id: str) -> dict[str, logging.Logger]:
     log_dir.mkdir(parents=True, exist_ok=True)
     result = {}
     for module in ("learning", "encoding", "validation"):
@@ -54,10 +59,10 @@ def configure_loggers(log_dir: Path) -> dict[str, logging.Logger]:
             backupCount=5,
             encoding="utf-8",
         )
-        handler.setFormatter(JsonFormatter())
+        handler.setFormatter(JsonFormatter(run_id))
         logger.addHandler(handler)
         console = logging.StreamHandler()
-        console.setFormatter(JsonFormatter())
+        console.setFormatter(JsonFormatter(run_id))
         logger.addHandler(console)
         result[module] = logger
     return result
@@ -69,6 +74,16 @@ def sha256_file(path: Path) -> str:
         for chunk in iter(lambda: handle.read(1024 * 1024), b""):
             digest.update(chunk)
     return digest.hexdigest()
+
+
+def write_manifest_sidecar(manifest_path: Path) -> Path:
+    """Write the checksum beside its manifest, never beside the source data."""
+    sidecar_path = manifest_path.with_name(f"{manifest_path.name}.sha256")
+    sidecar_path.write_text(
+        f"{sha256_file(manifest_path)}  {manifest_path.name}\n",
+        encoding="utf-8",
+    )
+    return sidecar_path
 
 
 def atomic_json(path: Path, payload: dict[str, Any]) -> None:
@@ -133,18 +148,26 @@ def encode_with_eos(
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--data-dir", type=Path, default=Path("data/cloud_v4"))
+    parser.add_argument("--source-data-dir", type=Path)
+    parser.add_argument("--output-dir", type=Path)
     parser.add_argument("--num-merges", type=int, default=2000)
     parser.add_argument("--learn-characters", type=int, default=1_500_000)
     parser.add_argument("--sample-chunks", type=int, default=192)
     parser.add_argument("--min-frequency", type=int, default=3)
     parser.add_argument("--log-dir", type=Path, default=Path("logs"))
     args = parser.parse_args()
-    loggers = configure_loggers(args.log_dir)
+    source_data_dir = args.source_data_dir or args.data_dir
+    output_dir = args.output_dir or args.data_dir
+    run_id = (
+        f"bpe-v4-{args.num_merges}-{int(time.time())}-"
+        f"{hashlib.sha256(str(output_dir).encode('utf-8')).hexdigest()[:8]}"
+    )
+    loggers = configure_loggers(args.log_dir, run_id)
     started = time.monotonic()
 
     try:
         paths = {
-            split: args.data_dir / f"{split}.txt"
+            split: source_data_dir / f"{split}.txt"
             for split in ("train", "val", "test")
         }
         texts = {split: path.read_text(encoding="utf-8") for split, path in paths.items()}
@@ -187,7 +210,7 @@ def main() -> int:
             progress_callback=progress,
         )
         tokenizer = learned.with_special_tokens(SPECIAL_TOKENS)
-        tokenizer_path = args.data_dir / "tokenizer.json"
+        tokenizer_path = output_dir / "tokenizer.json"
         atomic_json(tokenizer_path, tokenizer.to_dict())
         eos_id = tokenizer.special_to_id["<EOS>"]
 
@@ -197,7 +220,7 @@ def main() -> int:
             tensor = encode_with_eos(
                 chapters[split], tokenizer, eos_id, loggers["encoding"], split
             )
-            tensor_path = args.data_dir / f"{split}_tokens.pt"
+            tensor_path = output_dir / f"{split}_tokens.pt"
             atomic_torch_save(tensor_path, tensor)
             tensors[split] = tensor
             tensor_paths[split] = tensor_path
@@ -240,6 +263,9 @@ def main() -> int:
         manifest = {
             "schema_version": "bpe-v4/v1",
             "status": "ready",
+            "run_id": run_id,
+            "source_data_dir": str(source_data_dir),
+            "output_dir": str(output_dir),
             "tokenizer_type": "character_seeded_bpe",
             "tokenizer_path": str(tokenizer_path),
             "tokenizer_sha256": sha256_file(tokenizer_path),
@@ -256,12 +282,9 @@ def main() -> int:
             "splits": split_reports,
             "elapsed_seconds": time.monotonic() - started,
         }
-        manifest_path = args.data_dir / "token_manifest.json"
+        manifest_path = output_dir / "token_manifest.json"
         atomic_json(manifest_path, manifest)
-        (args.data_dir / "token_manifest.json.sha256").write_text(
-            f"{sha256_file(manifest_path)}  token_manifest.json\n",
-            encoding="utf-8",
-        )
+        write_manifest_sidecar(manifest_path)
         loggers["validation"].info(
             "complete vocab=%d merges=%d eos_id=%d elapsed_seconds=%.2f",
             tokenizer.vocab_size,

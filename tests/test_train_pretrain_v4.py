@@ -1,6 +1,6 @@
 import unittest
 
-from train_pretrain_v4 import learning_rate
+from train_pretrain_v4 import bits_per_character, learning_rate
 
 
 class ContinuedLearningRateTests(unittest.TestCase):
@@ -24,6 +24,12 @@ class ContinuedLearningRateTests(unittest.TestCase):
         }
         self.assertAlmostEqual(learning_rate(99, settings), 3e-4)
         self.assertAlmostEqual(learning_rate(3000, settings), 3e-5)
+
+    def test_bits_per_character_normalizes_different_token_counts(self):
+        one_token_per_character = bits_per_character(1.0, 100, 100)
+        half_as_many_tokens = bits_per_character(2.0, 50, 100)
+
+        self.assertAlmostEqual(one_token_per_character, half_as_many_tokens)
 
 
 if __name__ == "__main__":
