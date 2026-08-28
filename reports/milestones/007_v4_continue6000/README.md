@@ -51,6 +51,7 @@ Step 2600 因出现连续 10 个“试”而被自动否决；Step 5000 因连�
 - 曲线：`pretrain_v4_loss_curve.png` / `pretrain_v4_loss_curve.svg`
 - 所选模型独立评估：`selected_model_evaluation.json`
 - 40 组固定小说样本：`story_harness_samples.md`
+- 固定 10 个非小说问题的 Step 6000 输出：`general_prompt10_evaluation.json`
 - 自动门槛汇总：`story_harness_summary.csv` / `story_harness_report.json`
 - 人工复核表：`manual_review_template.csv`
 - 文件与 checkpoint 校验：`SHA256SUMS.md`
@@ -60,3 +61,5 @@ Step 2600 因出现连续 10 个“试”而被自动否决；Step 5000 因连�
 ## 下一步
 
 先填写人工复核表，不因 Loss 下降而盲目追加训练。若 Step 6000 的人工评分优于较早候选，就冻结它作为 v4 SFT 初始化点；SFT 仍需使用独立的问答/指令评测 Harness，不能沿用小说续写指标代替回答质量。
+
+补充的固定 10 题覆盖天气、写作指令、作品事实、概括、日常表达和简单推测。Step 6000 对 10 题均未直接作答，仍然把输入当作小说前缀续写；这份结果保留为正式的 SFT 前行为基线。

@@ -1,0 +1,63 @@
+{
+  "checkpoint": "runs/pretrain_v4_m4_continue6000/best.pt",
+  "checkpoint_sha256": "5d6397b3bb97b8a14369117e2f1e1e9f9addf515da1117e2f0f35dfe8ac8af44",
+  "checkpoint_step": 6000,
+  "checkpoint_validation_loss": 4.775948882102966,
+  "device": "mps",
+  "generation": {
+    "max_new_tokens": 128,
+    "temperature": 0.7,
+    "top_k": 20
+  },
+  "parameter_count": 8105025,
+  "run_id": "local-v4-selected-eval-20260828T053709Z-0eda80f1",
+  "sample_max_characters": 30,
+  "samples": [
+    {
+      "continuation": "？”\n\n    “这么，老夫若是想想想让我想想去？”\n\n  ",
+      "prompt": "今天天气怎么样"
+    },
+    {
+      "continuation": "大部分。\n\n    将那些人群人群人群人群都是有些感到感到惊",
+      "prompt": "请给我写一句开头"
+    },
+    {
+      "continuation": "面面那副清醒的人群，并未有丝毫心态。\n\n    在这边的路上",
+      "prompt": "萧炎现在在哪里"
+    },
+    {
+      "continuation": "东西。\n\n    “嘿，这次可没多大的手段？”\n\n    “",
+      "prompt": "这本书接下来会发生什么"
+    },
+    {
+      "continuation": "东西…就不休！”\n\n    药老声音中传出一道声音之中传出。",
+      "prompt": "萧炎被称为什么"
+    },
+    {
+      "continuation": "了，我想把你？”\n\n    听着这幅度，海波东那副不愿意的少",
+      "prompt": "我今天有点累"
+    },
+    {
+      "continuation": "报，若琳导师在后面上面上许多。\n\n    虽然这三年时间，可",
+      "prompt": "请用三句话概括这段剧情"
+    },
+    {
+      "continuation": "都不起的麻烦，所以。\n\n    “走吧...”\n\n    听",
+      "prompt": "斗气大陆最强人物是谁"
+    },
+    {
+      "continuation": "？！\n\n    雷尊者面色也是掠过一抹惊诧之色，旋即沉声道：",
+      "prompt": "小猫看到雨会怎样"
+    },
+    {
+      "continuation": "？”\n\n    海波东笑着点了点头，旋即目光转向周围那些目光",
+      "prompt": "你觉得主角会复仇吗"
+    }
+  ],
+  "schema_version": "selected-pretrain-evaluation-v4/v1",
+  "selection_rule": "minimum validation loss; test split was not used for selection",
+  "test_batches": 20,
+  "test_loss": 4.74755163192749,
+  "test_tokens_per_batch": 1024,
+  "tokenizer_sha256": "86bc44516339d7eee774da6c2b9e4bae8e85c0fd58b9192b6e234f884befaee0"
+}

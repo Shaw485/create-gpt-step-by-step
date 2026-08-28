@@ -6,11 +6,12 @@
 | `corpus_manifest.json` | `d6d25d26600c36d69259a66b3a6f6133d3ed2281b408956768734bb6c4e81013` |
 | `effective_config.json` | `4fe5ec470c28b115f28e134e7f6b68bcf879a1420540e0ce77e14a278b1c54ff` |
 | `fixed_prompt_samples.md` | `7df80b6bc43a934e51709facee5268bcd5bb838c842c601602fb499e62b287e8` |
+| `general_prompt10_evaluation.json` | `2c2af046e7c4e5250233e3555c68d77eb893648ef472a4f91831187a203f697b` |
 | `manual_review_template.csv` | `2957186943c3ef0f09d44d0dc7775fe3be2360b163f91156b89e18c2122af0ef` |
 | `missing_chapters_audit.json` | `6f6e5a37bf6137353a502a6c69a2a6fe1316f04641fe9c3550b32a3853cd74d5` |
 | `pretrain_v4_loss.csv` | `52da0b1ddede57bec8b1f0c1892cf0cbb53c378315b67667710cf7efa4b017dc` |
 | `pretrain_v4_loss_curve.png` | `a236328d37b7fdede996d373cf6879c8fb552674dda44a99c67e531dd96de0b3` |
-| `pretrain_v4_loss_curve.svg` | `3f5fd532432ef91588a6800ff10dbc738e54d6796499a4c1f08197353ca1b922` |
+| `pretrain_v4_loss_curve.svg` | `13318973593338d1ec2240caa8a1c607cc1a147fde60e8c2e7a1cb4c3cdf79ef` |
 | `pretrain_v4_report.json` | `015a06c655585b493f2292de0ffc98ff9ad71d5aa126090583ad53b98c53503e` |
 | `sample_history.json` | `a19f93472ef5073ee936bb16ab26e7ab612ad8a7274eeb9e0338af2a59f8e383` |
 | `selected_model_evaluation.json` | `7a617f6a32eb6bfc9d85c9e20ccd3f44310ebf82907c39b5d9f561223043b9e4` |
