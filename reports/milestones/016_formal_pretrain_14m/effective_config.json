@@ -1,0 +1,72 @@
+{
+  "config_version": "formal-pretrain-14m-bpe3000-1.0.0",
+  "data_dir": "data/scaling_a/bpe_3000",
+  "device": "mps",
+  "evaluate_test_on_completion": false,
+  "generation": {
+    "max_new_tokens": 256,
+    "temperature": 0.7,
+    "top_k": 20
+  },
+  "logging": {
+    "backup_count": 5,
+    "console": true,
+    "max_bytes": 10485760,
+    "module_levels": {
+      "checkpoint": "INFO",
+      "data": "INFO",
+      "gpu": "INFO",
+      "orchestrator": "INFO",
+      "preflight": "INFO",
+      "pretrain": "INFO",
+      "sft": "OFF",
+      "validation": "INFO"
+    }
+  },
+  "model": {
+    "block_size": 512,
+    "dropout": 0.1,
+    "embedding_size": 320,
+    "ffn_multiplier": 4,
+    "num_heads": 8,
+    "num_layers": 10,
+    "tie_embeddings": true
+  },
+  "quality_guard": {
+    "activation_step": 2000,
+    "enabled": true,
+    "policy": "Starting at step 2000, stop only after a prior PASS regresses to REVIEW three times; early weak samples do not stop learning.",
+    "regression_patience": 3
+  },
+  "run_dir": "runs/formal_pretrain_14m_bpe3000_6000",
+  "sample_prompt_limit": 5,
+  "sample_prompts_path": "data/story_prompt5_eval.txt",
+  "schema_version": "local-pretrain-v4/v1",
+  "seed": 42,
+  "training": {
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "checkpoint_interval": 250,
+    "early_stopping_metric": "val_bits_per_character",
+    "early_stopping_min_delta": 0.01,
+    "early_stopping_patience": 3,
+    "eval_batches": 60,
+    "eval_interval": 250,
+    "gradient_accumulation_steps": 4,
+    "gradient_clip_norm": 1.0,
+    "learning_rate": 0.0003,
+    "log_interval": 25,
+    "max_steps": 6000,
+    "micro_batch_size": 2,
+    "minimum_learning_rate": 3e-05,
+    "precision": "float32",
+    "retain_periodic_checkpoints": true,
+    "sample_interval": 250,
+    "sample_max_characters": 100,
+    "tokens_per_optimizer_step": 4096,
+    "warmup_steps": 100,
+    "weight_decay": 0.1
+  }
+}

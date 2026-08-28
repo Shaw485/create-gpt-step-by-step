@@ -6,10 +6,17 @@ import argparse
 import csv
 import json
 from pathlib import Path
-import re
-from statistics import mean
 from typing import Any
 
+from story_quality import (
+    AUTOMATIC_GATES,
+    apply_automatic_gates,
+    longest_character_run,
+    longest_corpus_overlap,
+    ngram_repetition,
+    sample_metrics,
+    summarize_samples,
+)
 from training_runtime import (
     atomic_write_json,
     atomic_write_text,
@@ -18,108 +25,20 @@ from training_runtime import (
 )
 
 
-HAN_PATTERN = re.compile(r"[\u3400-\u4dbf\u4e00-\u9fff]")
-AUTOMATIC_GATES = {
-    "minimum_mean_characters": 90,
-    "minimum_mean_han_ratio": 0.60,
-    "maximum_mean_han_ratio": 0.95,
-    "maximum_four_gram_repetition": 0.08,
-    "maximum_character_run": 5,
-    "maximum_train_overlap": 30,
-}
-
-
-def ngram_repetition(text: str, size: int = 4) -> float:
-    """Return the fraction of repeated character n-gram occurrences."""
-    if len(text) < size:
-        return 0.0
-    ngrams = [text[index : index + size] for index in range(len(text) - size + 1)]
-    return 1.0 - len(set(ngrams)) / len(ngrams)
-
-
-def longest_character_run(text: str) -> int:
-    """Measure obvious degeneration such as repeated '试试试试'."""
-    if not text:
-        return 0
-    longest = current = 1
-    for previous, current_character in zip(text, text[1:]):
-        current = current + 1 if current_character == previous else 1
-        longest = max(longest, current)
-    return longest
-
-
-def longest_corpus_overlap(text: str, corpus: str, minimum: int = 8) -> int:
-    """Find the longest generated substring copied verbatim from the train corpus."""
-    compact = text.strip()
-    if len(compact) < minimum:
-        return 0
-
-    def contains_overlap(size: int) -> bool:
-        return any(
-            compact[start : start + size] in corpus
-            for start in range(0, len(compact) - size + 1)
-        )
-
-    best = 0
-    lower = minimum
-    upper = len(compact)
-    while lower <= upper:
-        middle = (lower + upper) // 2
-        if contains_overlap(middle):
-            best = middle
-            lower = middle + 1
-        else:
-            upper = middle - 1
-    return best
-
-
-def sample_metrics(text: str, corpus: str) -> dict[str, float | int]:
-    visible = text.replace("\n", "")
-    return {
-        "characters": len(text),
-        "han_ratio": (len(HAN_PATTERN.findall(visible)) / len(visible) if visible else 0.0),
-        "four_gram_repetition": ngram_repetition(visible, 4),
-        "longest_character_run": longest_character_run(visible),
-        "longest_train_overlap": longest_corpus_overlap(visible, corpus),
-        "paragraphs": len([part for part in text.split("\n\n") if part.strip()]),
-    }
-
-
-def apply_automatic_gates(summary: dict[str, Any], prompt_count: int) -> dict[str, Any]:
-    """Apply hard safety/degeneration gates without inventing a quality score."""
-    checks = {
-        "all_prompts_present": summary["sample_count"] == prompt_count,
-        "generation_length": summary["mean_characters"] >= AUTOMATIC_GATES[
-            "minimum_mean_characters"
-        ],
-        "han_ratio": AUTOMATIC_GATES["minimum_mean_han_ratio"]
-        <= summary["mean_han_ratio"]
-        <= AUTOMATIC_GATES["maximum_mean_han_ratio"],
-        "four_gram_repetition": summary["mean_four_gram_repetition"]
-        <= AUTOMATIC_GATES["maximum_four_gram_repetition"],
-        "character_run": summary["maximum_character_run"]
-        <= AUTOMATIC_GATES["maximum_character_run"],
-        "train_overlap": summary["maximum_train_overlap"]
-        <= AUTOMATIC_GATES["maximum_train_overlap"],
-    }
-    return {
-        "status": "PASS" if all(checks.values()) else "REVIEW",
-        "checks": checks,
-    }
-
-
 def _load_records(
-    baseline_path: Path,
+    baseline_path: Path | None,
     history_path: Path,
     selected_evaluation_path: Path | None,
     allowed_prompts: set[str],
 ) -> list[dict[str, Any]]:
-    baseline = json.loads(baseline_path.read_text(encoding="utf-8"))
-    records = [
-        {"step": int(baseline["checkpoint_step"]), **sample}
-        for sample in baseline["samples"]
-        if sample["prompt"] in allowed_prompts
-    ]
+    records = []
+    if baseline_path is not None:
+        baseline = json.loads(baseline_path.read_text(encoding="utf-8"))
+        records.extend(
+            {"step": int(baseline["checkpoint_step"]), **sample}
+            for sample in baseline["samples"]
+            if sample["prompt"] in allowed_prompts
+        )
     history = json.loads(history_path.read_text(encoding="utf-8"))
     for milestone in history.get("history", []):
         for sample in milestone["samples"]:
@@ -146,6 +65,11 @@ def main() -> int:
         "--baseline",
         type=Path,
         default=Path("runs/pretrain_v4_m4_continue6000/story_baseline_step2600.json"),
+    )
+    parser.add_argument(
+        "--omit-baseline",
+        action="store_true",
+        help="Analyze only the supplied training history and selected checkpoint.",
     )
     parser.add_argument(
         "--history",
@@ -183,7 +107,7 @@ def main() -> int:
     }
     corpus = args.corpus.read_text(encoding="utf-8")
     records = _load_records(
-        args.baseline,
+        None if args.omit_baseline else args.baseline,
         args.history,
         args.selected_evaluation,
         prompts,
@@ -198,22 +122,8 @@ def main() -> int:
     summary = []
     for step in steps:
         rows = [record for record in measured if record["step"] == step]
-        entry = {
-            "step": step,
-            "sample_count": len(rows),
-            "mean_characters": mean(row["characters"] for row in rows),
-            "mean_han_ratio": mean(row["han_ratio"] for row in rows),
-            "mean_four_gram_repetition": mean(
-                row["four_gram_repetition"] for row in rows
-            ),
-            "maximum_character_run": max(
-                row["longest_character_run"] for row in rows
-            ),
-            "maximum_train_overlap": max(
-                row["longest_train_overlap"] for row in rows
-            ),
-        }
-        entry["automatic_gates"] = apply_automatic_gates(entry, len(prompts))
+        aggregated = summarize_samples(rows, corpus, prompt_count=len(prompts))
+        entry = {"step": step, **aggregated["summary"]}
         summary.append(entry)
 
     report = {

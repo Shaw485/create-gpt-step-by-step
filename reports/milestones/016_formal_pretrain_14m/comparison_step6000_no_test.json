@@ -1,0 +1,46 @@
+{
+  "checkpoint": "runs/formal_pretrain_14m_bpe3000_6000/checkpoints/step_06000.pt",
+  "checkpoint_sha256": "bfc05c0c045e473316d0f44a3e766570ac7325ab42f8d10570106bc2c9daaab5",
+  "checkpoint_step": 6000,
+  "checkpoint_validation_bits_per_character": 3.7531531349649643,
+  "checkpoint_validation_loss": 4.4480469703674315,
+  "device": "mps",
+  "generation": {
+    "max_new_tokens": 256,
+    "temperature": 0.7,
+    "top_k": 20
+  },
+  "parameter_count": 14880745,
+  "run_id": "local-v4-selected-eval-20260828T185551Z-1975a4db",
+  "sample_max_characters": 100,
+  "samples": [
+    {
+      "continuation": "手掌缓缓抚起，手掌猛的一握，一团火焰，迅速凝聚，火焰便是出现在了萧炎体内。\n\n    “吼！”\n\n    见到这团火焰，萧炎也是一笑，刚欲说话，一道璀璨光芒，突然在一道诡异浮现，徐徐的从其中弥漫而出，",
+      "prompt": "萧炎微微一笑，"
+    },
+    {
+      "continuation": "随着时间的寂静，周围那山壁处那巨大的山壁，骤然间变得扭曲了起来，旋即一股令人眼花缭乱，带着许些裂缝。\n\n    深邃的空气犹如那在山壁上方面而来的白色衣袍，忽然从山壁中渗透而出。\n\n    此时的山壁",
+      "prompt": "夜色笼罩着山谷，"
+    },
+    {
+      "continuation": "脸庞上浮现一抹笑意，缓缓起身子，对着自己走去：“我知道你对我好好好。”\n\n    没有理会萧炎的念头，纳兰嫣然微笑道。\n\n    “什么？”\n\n    “小家伙，怎么了？”\n\n    “她似乎不在你对",
+      "prompt": "望着眼前的黑袍少年，"
+    },
+    {
+      "continuation": "\n\n    ……\n\n    第一百八十七章 六品\n\n    第三百六品，九品，四品玄丹，九品，七品，品质量还高，七品玄丹…\n\n    第一品雏丹，那名长老也是一名七品雏丹！\n\n    七品玄丹…\n\n ",
+      "prompt": "药老沉吟片刻，道："
+    },
+    {
+      "continuation": "都是投射而退，整片天地。\n\n    “咳...”\n\n\n",
+      "prompt": "广场之上，无数道目光"
+    }
+  ],
+  "schema_version": "selected-pretrain-evaluation-v4/v1",
+  "selection_rule": "raw minimum validation BPC alternative retained for comparison; test remained sealed",
+  "test_batches": 0,
+  "test_bits_per_character": null,
+  "test_evaluated": false,
+  "test_loss": null,
+  "test_tokens_per_batch": 0,
+  "tokenizer_sha256": "e70cf3dc0ed185a6b22ab7dc08b6a850eeb59864ba161dd156c644e003862822"
+}

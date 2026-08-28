@@ -1,6 +1,10 @@
 import unittest
 
-from train_pretrain_v4 import bits_per_character, learning_rate
+from train_pretrain_v4 import (
+    bits_per_character,
+    early_stopping_metric,
+    learning_rate,
+)
 
 
 class ContinuedLearningRateTests(unittest.TestCase):
@@ -30,6 +34,24 @@ class ContinuedLearningRateTests(unittest.TestCase):
         half_as_many_tokens = bits_per_character(2.0, 50, 100)
 
         self.assertAlmostEqual(one_token_per_character, half_as_many_tokens)
+
+    def test_formal_training_can_select_on_validation_bpc(self):
+        name, value = early_stopping_metric(
+            {"val_loss": 4.0, "val_bits_per_character": 3.25},
+            {"early_stopping_metric": "val_bits_per_character"},
+        )
+
+        self.assertEqual(name, "val_bits_per_character")
+        self.assertEqual(value, 3.25)
+
+    def test_old_configs_still_select_on_validation_loss(self):
+        name, value = early_stopping_metric(
+            {"val_loss": 4.0, "val_bits_per_character": 3.25},
+            {},
+        )
+
+        self.assertEqual(name, "val_loss")
+        self.assertEqual(value, 4.0)
 
 
 if __name__ == "__main__":

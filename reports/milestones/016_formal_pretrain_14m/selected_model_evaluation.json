@@ -1,0 +1,46 @@
+{
+  "checkpoint": "runs/formal_pretrain_14m_bpe3000_6000/checkpoints/step_05750.pt",
+  "checkpoint_sha256": "bfe4fec5e6045d4c06d22393e7c2079fdc03897be71829c9d9dcbaf0fcaf5c1e",
+  "checkpoint_step": 5750,
+  "checkpoint_validation_bits_per_character": 3.761229497144957,
+  "checkpoint_validation_loss": 4.457618665695191,
+  "device": "mps",
+  "generation": {
+    "max_new_tokens": 256,
+    "temperature": 0.7,
+    "top_k": 20
+  },
+  "parameter_count": 14880745,
+  "run_id": "local-v4-selected-eval-20260828T185429Z-636c4ef1",
+  "sample_max_characters": 100,
+  "samples": [
+    {
+      "continuation": "道：““磐门，“磐门”可要比赛“火能”的新生”大赛的新生，队员，内院中，有着“火能猎捕赛”，所以我们是有些意外。”\n\n    “算了，前提起他们了，内院的内院，能不需要“火能”炼制丹药，内院的新生，内",
+      "prompt": "萧炎微微一笑，"
+    },
+    {
+      "continuation": "随着时间的推移，那山顶处，有着几道黑影人群便是闪掠而出，最后重重的落在山坡上，\n\n    突然出现的道人影，忽然发现，那道黑影人影出现了一片庞大的能量罩，脸庞之上顿时浮现了一抹惊涛骇然。\n\n    “",
+      "prompt": "夜色笼罩着山谷，"
+    },
+    {
+      "continuation": "略微噙着一抹冷笑，道：“没想到你竟然也没资格？”\n\n    “岩枭小友，怎么样？难道是谁？那是想干什么？可真是有何人？我说，为什么会比了多少人？难道是个个个年轻人？我能和她和你相抗衡吧？”中年人笑道。",
+      "prompt": "望着眼前的黑袍少年，"
+    },
+    {
+      "continuation": "回事之后，萧炎将药老给了回去，抬头望着药老那有些恍惚的药老，笑着点了点头。\n\n    “这个小家伙...是需要炼药师炼药师的价格，至少需要炼药师或者炼药师公会的价格，能有一万的价值。”药老微微笑道。\n",
+      "prompt": "药老沉吟片刻，道："
+    },
+    {
+      "continuation": "中，有着一道苍老声音响起，旋即一道道苍老人影闪掠而来，旋即一道道目光便是投向那在场目光中，缓缓转移。\n\n    广场上的身影缓缓出现，而瞧得萧炎出现时，众人心中也是不由得一沉，这人居然便是那副模样，居",
+      "prompt": "广场之上，无数道目光"
+    }
+  ],
+  "schema_version": "selected-pretrain-evaluation-v4/v1",
+  "selection_rule": "validation BPC min-delta reference plus automatic Harness and manual sample review; test remained sealed",
+  "test_batches": 0,
+  "test_bits_per_character": null,
+  "test_evaluated": false,
+  "test_loss": null,
+  "test_tokens_per_batch": 0,
+  "tokenizer_sha256": "e70cf3dc0ed185a6b22ab7dc08b6a850eeb59864ba161dd156c644e003862822"
+}

@@ -10,6 +10,7 @@ from evaluate_story_harness_v4 import (
     longest_corpus_overlap,
     ngram_repetition,
     sample_metrics,
+    summarize_samples,
 )
 
 
@@ -77,6 +78,20 @@ class StoryHarnessMetricTests(unittest.TestCase):
 
         self.assertEqual(len(records), 1)
         self.assertEqual(records[0]["continuation"], "发布候选样本")
+
+    def test_summarizes_one_checkpoint_for_training_time_diagnostics(self):
+        result = summarize_samples(
+            [
+                {"prompt": "开头一", "continuation": "少年缓缓走入山谷。" * 10},
+                {"prompt": "开头二", "continuation": "夜色笼罩着安静城池。" * 10},
+            ],
+            "训练语料中没有这些完整续写。",
+            prompt_count=2,
+        )
+
+        self.assertEqual(result["summary"]["sample_count"], 2)
+        self.assertEqual(len(result["samples"]), 2)
+        self.assertIn("automatic_gates", result["summary"])
 
 
 if __name__ == "__main__":

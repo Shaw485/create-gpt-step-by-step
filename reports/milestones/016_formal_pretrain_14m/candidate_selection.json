@@ -1,0 +1,42 @@
+{
+  "schema_version": "formal-pretrain-candidate-selection/v1",
+  "selected_step": 5750,
+  "selected_checkpoint": "runs/formal_pretrain_14m_bpe3000_6000/checkpoints/step_05750.pt",
+  "selection_status": "accepted_as_sft_initializer_not_release_model",
+  "test_split_evaluated": false,
+  "selection_policy": [
+    "validation BPC must improve by at least 0.01 to replace the stable reference",
+    "automatic generation gates can veto a mechanically degenerate candidate",
+    "manual sample review is required because automatic metrics do not measure semantics"
+  ],
+  "candidates": [
+    {
+      "step": 5750,
+      "validation_loss": 4.457618665695191,
+      "validation_bits_per_character": 3.761229497144957,
+      "independent_harness_status": "PASS",
+      "mean_characters": 100.0,
+      "mean_four_gram_repetition": 0.025420896097484613,
+      "maximum_character_run": 4,
+      "maximum_train_overlap": 13,
+      "decision": "SELECT"
+    },
+    {
+      "step": 6000,
+      "validation_loss": 4.4480469703674315,
+      "validation_bits_per_character": 3.7531531349649643,
+      "bpc_improvement_over_step_5750": 0.008076362179992636,
+      "independent_harness_status": "REVIEW",
+      "mean_characters": 85.4,
+      "mean_four_gram_repetition": 0.05481497274516911,
+      "maximum_character_run": 4,
+      "maximum_train_overlap": 12,
+      "decision": "KEEP_AS_ALTERNATIVE"
+    }
+  ],
+  "manual_review": {
+    "step_5750": "All five continuations reached the configured display length, but grammar, repetition, and entity consistency are still imperfect.",
+    "step_6000": "Raw validation BPC is slightly lower, but one prompt stopped early and another produced chapter-heading-like text.",
+    "conclusion": "Step 5750 is the more stable SFT initialization point. Neither checkpoint is a finished chat model."
+  }
+}

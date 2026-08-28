@@ -16,7 +16,14 @@ import torch
 
 from bpe_tokenizer import BPETokenizer
 from gpt_model_v4 import GPTConfig, GPTLanguageModelV4
-from train_pretrain_v4 import evaluate, generate_sample, load_config, load_tensor, select_device
+from train_pretrain_v4 import (
+    bits_per_character,
+    evaluate,
+    generate_sample,
+    load_config,
+    load_tensor,
+    select_device,
+)
 from training_runtime import (
     atomic_write_json,
     canonical_json_sha256,
@@ -42,6 +49,16 @@ def main() -> int:
     parser.add_argument("--temperature", type=float)
     parser.add_argument("--top-k", type=int)
     parser.add_argument("--max-new-tokens", type=int)
+    parser.add_argument(
+        "--skip-test",
+        action="store_true",
+        help="Keep the test split sealed and evaluate only fixed generation prompts.",
+    )
+    parser.add_argument(
+        "--selection-rule",
+        default="minimum validation loss; test split was not used for selection",
+        help="Human-readable rule that selected the supplied checkpoint.",
+    )
     args = parser.parse_args()
 
     config = load_config(args.config)
@@ -61,7 +78,8 @@ def main() -> int:
     device = select_device(config["device"])
     data_dir = Path(config["data_dir"])
     tokenizer = BPETokenizer.load(data_dir / "tokenizer.json")
-    test_data = load_tensor(data_dir / "test_tokens.pt")
+    test_data = None if args.skip_test else load_tensor(data_dir / "test_tokens.pt")
+    manifest = json.loads((data_dir / "token_manifest.json").read_text(encoding="utf-8"))
     model_config = GPTConfig(vocab_size=tokenizer.vocab_size, **config["model"])
     model = GPTLanguageModelV4(model_config)
 
@@ -95,10 +113,30 @@ def main() -> int:
     if args.max_new_tokens is not None:
         generation["max_new_tokens"] = args.max_new_tokens
     test_generator = torch.Generator().manual_seed(int(config["seed"]) + 4001)
-    test_loss = evaluate(model, test_data, settings, test_generator, device)
+    test_loss = (
+        evaluate(model, test_data, settings, test_generator, device)
+        if test_data is not None
+        else None
+    )
+    test_bpc = (
+        bits_per_character(
+            test_loss,
+            int(manifest["splits"]["test"]["tokens"]),
+            int(manifest["splits"]["test"]["characters"]),
+        )
+        if test_loss is not None
+        else None
+    )
     loggers["validation"].info(
-        "validation-selected checkpoint test evaluation complete",
-        extra={"context": {"step": checkpoint["step"], "test_loss": test_loss}},
+        "validation-selected checkpoint evaluation complete",
+        extra={
+            "context": {
+                "step": checkpoint["step"],
+                "test_evaluated": test_data is not None,
+                "test_loss": test_loss,
+                "test_bits_per_character": test_bpc,
+            }
+        },
     )
 
     sample_generator = torch.Generator().manual_seed(int(config["seed"]) + 4002)
@@ -115,19 +153,32 @@ def main() -> int:
         )
         samples.append({"prompt": prompt, "continuation": continuation})
 
+    matching_history = [
+        entry
+        for entry in checkpoint.get("history", [])
+        if int(entry.get("step", -1)) == int(checkpoint["step"])
+    ]
+    checkpoint_validation = matching_history[-1] if matching_history else {}
     report = {
         "schema_version": "selected-pretrain-evaluation-v4/v1",
-        "selection_rule": "minimum validation loss; test split was not used for selection",
+        "selection_rule": args.selection_rule,
         "run_id": run_id,
         "device": str(device),
         "checkpoint": str(checkpoint_path),
         "checkpoint_sha256": file_sha256(checkpoint_path),
         "checkpoint_step": int(checkpoint["step"]),
-        "checkpoint_validation_loss": float(checkpoint["best_metric"]),
+        "checkpoint_validation_loss": checkpoint_validation.get("val_loss"),
+        "checkpoint_validation_bits_per_character": checkpoint_validation.get(
+            "val_bits_per_character"
+        ),
         "test_loss": test_loss,
-        "test_batches": int(settings["eval_batches"]),
+        "test_bits_per_character": test_bpc,
+        "test_evaluated": test_data is not None,
+        "test_batches": int(settings["eval_batches"]) if test_data is not None else 0,
         "test_tokens_per_batch": (
             int(settings["micro_batch_size"]) * model_config.block_size
+            if test_data is not None
+            else 0
         ),
         "parameter_count": model.parameter_count(),
         "tokenizer_sha256": file_sha256(data_dir / "tokenizer.json"),

@@ -29,6 +29,11 @@ def main() -> int:
         default=Path("reports/milestones/006_v4_local_pretrain"),
     )
     parser.add_argument(
+        "--evaluation",
+        type=Path,
+        help="Selected checkpoint evaluation; defaults to RUN_DIR/selected_model_evaluation.json.",
+    )
+    parser.add_argument(
         "--milestone-name",
         default="M006",
         help="Label written into the checksum archive, for example M007.",
@@ -37,18 +42,21 @@ def main() -> int:
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
     report = json.loads((args.run_dir / "report.json").read_text(encoding="utf-8"))
-    evaluation = json.loads(
-        (args.run_dir / "selected_model_evaluation.json").read_text(encoding="utf-8")
-    )
+    evaluation_path = args.evaluation or args.run_dir / "selected_model_evaluation.json"
+    evaluation = json.loads(evaluation_path.read_text(encoding="utf-8"))
     samples = json.loads((args.run_dir / "samples.json").read_text(encoding="utf-8"))
+    effective_config = json.loads(
+        (args.run_dir / "effective_config.json").read_text(encoding="utf-8")
+    )
+    data_dir = Path(effective_config["data_dir"])
 
     copied = {
         "pretrain_v4_report.json": args.run_dir / "report.json",
-        "selected_model_evaluation.json": args.run_dir / "selected_model_evaluation.json",
+        "selected_model_evaluation.json": evaluation_path,
         "sample_history.json": args.run_dir / "samples.json",
         "effective_config.json": args.run_dir / "effective_config.json",
         "corpus_manifest.json": Path("data/cloud_v4/corpus_manifest.json"),
-        "token_manifest.json": Path("data/cloud_v4/token_manifest.json"),
+        "token_manifest.json": data_dir / "token_manifest.json",
         "chapter_pair_review.json": Path(
             "data/clean/v4/reports/chapter_pair_review.json"
         ),
@@ -65,7 +73,15 @@ def main() -> int:
     with csv_path.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(
             handle,
-            fieldnames=["step", "train_loss", "val_loss", "learning_rate", "elapsed_seconds"],
+            fieldnames=[
+                "step",
+                "train_loss",
+                "val_loss",
+                "train_bits_per_character",
+                "val_bits_per_character",
+                "learning_rate",
+                "elapsed_seconds",
+            ],
             lineterminator="\n",
         )
         writer.writeheader()
@@ -74,19 +90,33 @@ def main() -> int:
     steps = [entry["step"] for entry in report["history"]]
     train_loss = [entry["train_loss"] for entry in report["history"]]
     val_loss = [entry["val_loss"] for entry in report["history"]]
+    has_bpc = all("val_bits_per_character" in entry for entry in report["history"])
+    if has_bpc:
+        train_values = [entry["train_bits_per_character"] for entry in report["history"]]
+        val_values = [entry["val_bits_per_character"] for entry in report["history"]]
+        selected_value = evaluation["checkpoint_validation_bits_per_character"]
+        y_label = "Bits per character"
+    else:
+        train_values = train_loss
+        val_values = val_loss
+        selected_value = evaluation["checkpoint_validation_loss"]
+        y_label = "Cross-entropy loss (BPE token)"
     figure, axis = plt.subplots(figsize=(9, 5))
-    axis.plot(steps, train_loss, label="Train loss", linewidth=2)
-    axis.plot(steps, val_loss, label="Validation loss", linewidth=2)
+    axis.plot(steps, train_values, label="Train", linewidth=2)
+    axis.plot(steps, val_values, label="Validation", linewidth=2)
     axis.scatter(
         [evaluation["checkpoint_step"]],
-        [evaluation["checkpoint_validation_loss"]],
+        [selected_value],
         color="#d62728",
         zorder=3,
         label=f"Selected step {evaluation['checkpoint_step']}",
     )
-    axis.set_title("v4 local pretraining: 8.1M GPT on Apple M4")
+    parameter_millions = report["parameter_count"] / 1_000_000
+    axis.set_title(
+        f"v4 local pretraining: {parameter_millions:.2f}M GPT on {report['device'].upper()}"
+    )
     axis.set_xlabel("Optimizer step")
-    axis.set_ylabel("Cross-entropy loss (BPE token)")
+    axis.set_ylabel(y_label)
     axis.grid(alpha=0.25)
     axis.legend()
     figure.tight_layout()
@@ -102,8 +132,7 @@ def main() -> int:
     atomic_write_text(svg_path, normalized_svg + "\n")
 
     sample_max_characters = int(
-        json.loads((args.run_dir / "effective_config.json").read_text(encoding="utf-8"))
-        ["training"]
+        effective_config["training"]
         .get("sample_max_characters", 30)
     )
     sample_column = f"最多{sample_max_characters}字续写"
@@ -137,9 +166,10 @@ def main() -> int:
     ]
     for name in checksum_names:
         checksum_rows.append(f"| `{name}` | `{file_sha256(args.output_dir / name)}` |")
+    selected_checkpoint = Path(evaluation["checkpoint"])
     checksum_rows.extend(
         [
-            f"| `{args.run_dir}/best.pt` | `{file_sha256(args.run_dir / 'best.pt')}` |",
+            f"| `{selected_checkpoint}` | `{file_sha256(selected_checkpoint)}` |",
             f"| `{args.run_dir}/latest.pt` | `{file_sha256(args.run_dir / 'latest.pt')}` |",
         ]
     )

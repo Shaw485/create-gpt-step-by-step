@@ -1,4 +1,4 @@
-"""Run resumable local v4 pretraining on the 8.1M-parameter GPT."""
+"""Run resumable local v4 pretraining for a configured GPT architecture."""
 
 from __future__ import annotations
 
@@ -14,6 +14,7 @@ import torch
 
 from bpe_tokenizer import BPETokenizer
 from gpt_model_v4 import GPTConfig, GPTLanguageModelV4
+from story_quality import summarize_samples
 from training_runtime import (
     EarlyStopping,
     EmergencyCheckpointHook,
@@ -68,6 +69,19 @@ def bits_per_character(
     if token_count <= 0 or character_count <= 0:
         raise ValueError("token_count and character_count must be positive")
     return token_loss * token_count / character_count / math.log(2.0)
+
+
+def early_stopping_metric(
+    validation_entry: dict[str, Any],
+    settings: dict[str, Any],
+) -> tuple[str, float]:
+    """Return the configured validation-only checkpoint selection metric."""
+    metric_name = str(settings.get("early_stopping_metric", "val_loss"))
+    if metric_name not in {"val_loss", "val_bits_per_character"}:
+        raise ValueError(
+            "early_stopping_metric must be 'val_loss' or 'val_bits_per_character'"
+        )
+    return metric_name, float(validation_entry[metric_name])
 
 
 def get_batch(
@@ -265,9 +279,14 @@ def main() -> int:
     )
     history: list[dict[str, Any]] = []
     samples: list[dict[str, Any]] = []
+    quality_history: list[dict[str, Any]] = []
+    quality_has_passed = False
+    quality_bad_evaluations = 0
     start_step = 1
-    best_loss = float("inf")
+    best_metric = float("inf")
     best_step = -1
+    lowest_validation_metric = float("inf")
+    lowest_validation_step = -1
     elapsed_offset = 0.0
     initial_checkpoint: dict[str, Any] | None = None
     if args.resume:
@@ -281,10 +300,19 @@ def main() -> int:
             restore_cuda_rng=False,
         )
         start_step = resumed.step + 1
-        best_loss = resumed.best_metric
+        best_metric = resumed.best_metric
         best_step = int(resumed.early_stopping_state.get("best_step", resumed.step))
         history = resumed.history
         samples = list(resumed.extra.get("samples", []))
+        quality_history = list(resumed.extra.get("quality_history", []))
+        quality_state = resumed.extra.get("quality_guard_state", {})
+        quality_has_passed = bool(quality_state.get("has_passed", False))
+        quality_bad_evaluations = int(quality_state.get("bad_evaluations", 0))
+        if history:
+            metric_name = str(settings.get("early_stopping_metric", "val_loss"))
+            lowest_entry = min(history, key=lambda entry: float(entry[metric_name]))
+            lowest_validation_metric = float(lowest_entry[metric_name])
+            lowest_validation_step = int(lowest_entry["step"])
         if "eval_generator_state" in resumed.extra:
             eval_generator.set_state(resumed.extra["eval_generator_state"].cpu())
         if "sample_generator_state" in resumed.extra:
@@ -304,15 +332,30 @@ def main() -> int:
             )
         model.load_state_dict(checkpoint["model_state_dict"], strict=True)
         start_step = int(checkpoint["step"]) + 1
-        best_loss = float(checkpoint["best_metric"])
         best_step = int(checkpoint["step"])
         history = [dict(entry) for entry in checkpoint["history"]]
         samples = list(checkpoint.get("extra", {}).get("samples", []))
+        quality_history = list(
+            checkpoint.get("extra", {}).get("quality_history", [])
+        )
+        metric_name = str(settings.get("early_stopping_metric", "val_loss"))
+        matching_entries = [
+            entry for entry in history if int(entry.get("step", -1)) == best_step
+        ]
+        best_metric = (
+            float(matching_entries[-1][metric_name])
+            if matching_entries and metric_name in matching_entries[-1]
+            else float(checkpoint["best_metric"])
+        )
+        if history:
+            lowest_entry = min(history, key=lambda entry: float(entry[metric_name]))
+            lowest_validation_metric = float(lowest_entry[metric_name])
+            lowest_validation_step = int(lowest_entry["step"])
         elapsed_offset = max(
             (float(entry.get("elapsed_seconds", 0.0)) for entry in history),
             default=0.0,
         )
-        early_stopping.best_metric = best_loss
+        early_stopping.best_metric = best_metric
         early_stopping.best_step = best_step
         initial_checkpoint = {
             "path": str(args.init_checkpoint),
@@ -335,13 +378,21 @@ def main() -> int:
             model,
             optimizer,
             step=current_step,
-            best_metric=best_loss,
+            best_metric=best_metric,
             history=history,
             sampling_generator=batch_generator,
             config_sha256=config_hash,
             early_stopping_state=early_stopping.state_dict(),
             extra={
                 "samples": samples,
+                "quality_history": quality_history,
+                "quality_guard_state": {
+                    "has_passed": quality_has_passed,
+                    "bad_evaluations": quality_bad_evaluations,
+                },
+                "selection_metric": settings.get("early_stopping_metric", "val_loss"),
+                "lowest_validation_metric": lowest_validation_metric,
+                "lowest_validation_step": lowest_validation_step,
                 "model_config": model_config.to_dict(),
                 "parameter_count": model.parameter_count(),
                 "token_manifest_sha256": file_sha256(data_dir / "token_manifest.json"),
@@ -362,6 +413,18 @@ def main() -> int:
         for line in prompts_path.read_text(encoding="utf-8").splitlines()
         if line.strip()
     ][: int(config.get("sample_prompt_limit", 10))]
+    quality_guard = dict(config.get("quality_guard", {}))
+    quality_guard_enabled = bool(quality_guard.get("enabled", False))
+    quality_guard_patience = int(quality_guard.get("regression_patience", 3))
+    quality_guard_activation_step = int(quality_guard.get("activation_step", 0))
+    if quality_guard_patience <= 0:
+        raise ValueError("quality_guard.regression_patience must be positive")
+    if quality_guard_activation_step < 0:
+        raise ValueError("quality_guard.activation_step cannot be negative")
+    train_text_path = Path(manifest["splits"]["train"]["text_path"])
+    train_corpus = train_text_path.read_text(encoding="utf-8")
+    if file_sha256(train_text_path) != manifest["splits"]["train"]["text_sha256"]:
+        raise ValueError("training text checksum does not match token manifest")
     loggers["data"].info(
         "formal tensors loaded",
         extra={
@@ -424,12 +487,11 @@ def main() -> int:
                     )
 
                 should_stop = False
+                stop_reason: str | None = None
+                lowest_validation_improved = False
                 if step % int(settings["eval_interval"]) == 0 or step == int(settings["max_steps"]):
                     train_loss = evaluate(model, train_data, settings, eval_generator, device)
                     val_loss = evaluate(model, val_data, settings, eval_generator, device)
-                    decision = early_stopping.update(val_loss, step)
-                    best_loss = decision.best_metric
-                    best_step = decision.best_step
                     entry = {
                         "step": step,
                         "train_loss": train_loss,
@@ -447,14 +509,30 @@ def main() -> int:
                         "learning_rate": lr,
                         "elapsed_seconds": elapsed_seconds(),
                     }
+                    metric_name, metric_value = early_stopping_metric(entry, settings)
+                    lowest_validation_improved = metric_value < lowest_validation_metric
+                    if lowest_validation_improved:
+                        lowest_validation_metric = metric_value
+                        lowest_validation_step = step
+                    decision = early_stopping.update(metric_value, step)
+                    best_metric = decision.best_metric
+                    best_step = decision.best_step
                     history.append(entry)
                     loggers["validation"].info(
                         "validation complete",
-                        extra={"context": {**entry, "best_val_loss": best_loss}},
+                        extra={
+                            "context": {
+                                **entry,
+                                "selection_metric": metric_name,
+                                "selection_value": metric_value,
+                                "best_selection_value": best_metric,
+                                "bad_evaluations": decision.bad_evaluations,
+                            }
+                        },
                     )
-                    if decision.improved:
-                        atomic_save_checkpoint(run_dir / "best.pt", payload())
                     should_stop = decision.should_stop
+                    if should_stop:
+                        stop_reason = "validation_early_stopping"
 
                 if step % int(settings["sample_interval"]) == 0 or step == int(settings["max_steps"]):
                     step_samples = []
@@ -471,6 +549,52 @@ def main() -> int:
                         step_samples.append({"prompt": prompt, "continuation": continuation})
                     samples.append({"step": step, "samples": step_samples})
                     atomic_write_json(run_dir / "samples.json", {"history": samples})
+                    quality_result = summarize_samples(
+                        step_samples,
+                        train_corpus,
+                        prompt_count=len(prompts),
+                    )
+                    quality_entry = {"step": step, **quality_result["summary"]}
+                    quality_history.append(quality_entry)
+                    quality_status = quality_entry["automatic_gates"]["status"]
+                    quality_guard_active = step >= quality_guard_activation_step
+                    if quality_guard_active:
+                        if quality_status == "PASS":
+                            quality_has_passed = True
+                            quality_bad_evaluations = 0
+                        elif quality_has_passed:
+                            quality_bad_evaluations += 1
+                    atomic_write_json(
+                        run_dir / "quality_history.json",
+                        {
+                            "selection_policy": (
+                                "automatic metrics veto mechanical degeneration only; "
+                                "semantic quality remains a manual review"
+                            ),
+                            "history": quality_history,
+                        },
+                    )
+                    loggers["validation"].info(
+                        "fixed-prompt quality diagnostics complete",
+                        extra={
+                            "context": {
+                                **quality_entry,
+                                "guard_has_passed": quality_has_passed,
+                                "guard_bad_evaluations": quality_bad_evaluations,
+                                "guard_active": quality_guard_active,
+                            }
+                        },
+                    )
+                    if (
+                        quality_guard_enabled
+                        and quality_has_passed
+                        and quality_bad_evaluations >= quality_guard_patience
+                    ):
+                        should_stop = True
+                        stop_reason = "quality_guard_regression"
+
+                if lowest_validation_improved:
+                    atomic_save_checkpoint(run_dir / "best.pt", payload())
 
                 if step % int(settings["checkpoint_interval"]) == 0 or step == int(settings["max_steps"]):
                     result = atomic_save_checkpoint(run_dir / "latest.pt", payload())
@@ -478,10 +602,32 @@ def main() -> int:
                         "latest checkpoint saved",
                         extra={"context": {"step": step, "sha256": result.sha256}},
                     )
+                    if bool(settings.get("retain_periodic_checkpoints", False)):
+                        periodic_path = run_dir / "checkpoints" / f"step_{step:05d}.pt"
+                        periodic_result = atomic_save_checkpoint(periodic_path, payload())
+                        loggers["checkpoint"].info(
+                            "periodic checkpoint retained",
+                            extra={
+                                "context": {
+                                    "step": step,
+                                    "path": str(periodic_path),
+                                    "sha256": periodic_result.sha256,
+                                }
+                            },
+                        )
                 if should_stop:
                     loggers["orchestrator"].info(
                         "early stopping requested",
-                        extra={"context": {"step": step, "best_val_loss": best_loss}},
+                        extra={
+                            "context": {
+                                "step": step,
+                                "reason": stop_reason,
+                                "selection_metric": settings.get(
+                                    "early_stopping_metric", "val_loss"
+                                ),
+                                "best_selection_value": best_metric,
+                            }
+                        },
                     )
                     break
 
@@ -499,7 +645,17 @@ def main() -> int:
             if test_loss is not None
             else None
         )
-        best_entry = min(history, key=lambda entry: float(entry["val_loss"]))
+        metric_name = str(settings.get("early_stopping_metric", "val_loss"))
+        best_entries = [
+            entry
+            for entry in history
+            if int(entry["step"]) == lowest_validation_step
+        ]
+        best_entry = (
+            best_entries[-1]
+            if best_entries
+            else min(history, key=lambda entry: float(entry[metric_name]))
+        )
         report = {
             "status": "complete",
             "run_id": run_id,
@@ -507,11 +663,15 @@ def main() -> int:
             "final_step": current_step,
             "parameter_count": model.parameter_count(),
             "device": str(device),
-            "best_validation_loss": best_loss,
+            "selection_metric": metric_name,
+            "best_selection_value": lowest_validation_metric,
+            "best_validation_loss": float(best_entry["val_loss"]),
             "best_validation_bits_per_character": float(
                 best_entry["val_bits_per_character"]
             ),
-            "best_step": best_step,
+            "best_step": lowest_validation_step,
+            "early_stopping_reference_value": best_metric,
+            "early_stopping_reference_step": best_step,
             "test_loss": test_loss,
             "test_bits_per_character": test_bpc,
             "test_evaluated": evaluate_test,
@@ -527,6 +687,14 @@ def main() -> int:
             "elapsed_seconds": elapsed_seconds(),
             "history": history,
             "samples_path": str(run_dir / "samples.json"),
+            "quality_history_path": str(run_dir / "quality_history.json"),
+            "quality_guard": {
+                "enabled": quality_guard_enabled,
+                "has_passed": quality_has_passed,
+                "bad_evaluations": quality_bad_evaluations,
+                "regression_patience": quality_guard_patience,
+                "activation_step": quality_guard_activation_step,
+            },
             "latest_checkpoint": str(run_dir / "latest.pt"),
             "best_checkpoint": str(
                 run_dir / "best.pt" if (run_dir / "best.pt").is_file() else args.init_checkpoint

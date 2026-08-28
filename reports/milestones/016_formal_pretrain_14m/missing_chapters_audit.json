@@ -1,0 +1,185 @@
+{
+  "schema_version": "1.0",
+  "status": "verified",
+  "source_path": "data/clean/doupo_stage3.txt",
+  "source_sha256": "6166b4deab4b283cef5e30d6d23dfc33c553e6b97c63a6f9fc23af14fb523b4d",
+  "formal_corpus_path": "data/cloud_v4/corpus.txt",
+  "formal_corpus_sha256": "50592f249d2be17054ebbe2f8ca7945063e1a8ae669706e64d2076371c4d3b00",
+  "initial_parser_missing_count": 26,
+  "initial_parser_missing_numbers": [
+    87,
+    94,
+    242,
+    243,
+    274,
+    295,
+    377,
+    378,
+    379,
+    380,
+    381,
+    382,
+    385,
+    396,
+    470,
+    566,
+    740,
+    741,
+    742,
+    743,
+    1010,
+    1284,
+    1335,
+    1344,
+    1434,
+    1445
+  ],
+  "recovered_by_audited_heading_repairs_count": 17,
+  "recovered_numbers": [
+    87,
+    242,
+    243,
+    274,
+    377,
+    378,
+    379,
+    380,
+    381,
+    382,
+    470,
+    566,
+    1284,
+    1335,
+    1344,
+    1434,
+    1445
+  ],
+  "heading_repair_line_count": 29,
+  "final_missing_count": 9,
+  "final_missing_numbers": [
+    94,
+    295,
+    385,
+    396,
+    740,
+    741,
+    742,
+    743,
+    1010
+  ],
+  "requested_prior_count": 20,
+  "count_reconciliation": "重新从未修改的 stage3 计算得到初始 26 个编号缺口；经 29 行标题修复恢复 17 个章节编号，最终只剩 9 个没有独立标题。此前的 20 不是当前输入和解析规则下可复现的数字，因此不作为冻结依据。",
+  "gaps": [
+    {
+      "chapter_number": 94,
+      "classification": "absent_as_independent_heading_in_source",
+      "previous_chapter": {
+        "number": 93,
+        "title": "第九十三章 半路毁药",
+        "source_line": 7311
+      },
+      "next_chapter": {
+        "number": 95,
+        "title": "第九十五章 眼光挺差",
+        "source_line": 7380
+      },
+      "action": "保留缺口，不伪造或从未授权来源补写正文。"
+    },
+    {
+      "chapter_number": 295,
+      "classification": "absent_as_independent_heading_in_source",
+      "previous_chapter": {
+        "number": 294,
+        "title": "第两百九十四章 结束",
+        "source_line": 29534
+      },
+      "next_chapter": {
+        "number": 296,
+        "title": "第两百九十六章 黑马",
+        "source_line": 29628
+      },
+      "action": "保留缺口，不伪造或从未授权来源补写正文。"
+    },
+    {
+      "chapter_number": 385,
+      "classification": "absent_as_independent_heading_in_source",
+      "previous_chapter": {
+        "number": 384,
+        "title": "第三百八十四章  玩火",
+        "source_line": 42678
+      },
+      "next_chapter": {
+        "number": 386,
+        "title": "第三百八十六章 丹火之技",
+        "source_line": 42786
+      },
+      "action": "保留缺口，不伪造或从未授权来源补写正文。"
+    },
+    {
+      "chapter_number": 396,
+      "classification": "absent_as_independent_heading_in_source",
+      "previous_chapter": {
+        "number": 395,
+        "title": "第三百九十五章 　以一敌三",
+        "source_line": 43629
+      },
+      "next_chapter": {
+        "number": 397,
+        "title": "第三百九十七章 毫不留情",
+        "source_line": 43735
+      },
+      "action": "保留缺口，不伪造或从未授权来源补写正文。"
+    },
+    {
+      "chapter_number": 740,
+      "classification": "absent_as_independent_heading_in_source",
+      "previous_chapter": {
+        "number": 739,
+        "title": "第七百三十九章  身法较技 【第二更！】",
+        "source_line": 76425
+      },
+      "next_chapter": null,
+      "action": "保留缺口，不伪造或从未授权来源补写正文。"
+    },
+    {
+      "chapter_number": 741,
+      "classification": "absent_as_independent_heading_in_source",
+      "previous_chapter": null,
+      "next_chapter": null,
+      "action": "保留缺口，不伪造或从未授权来源补写正文。"
+    },
+    {
+      "chapter_number": 742,
+      "classification": "absent_as_independent_heading_in_source",
+      "previous_chapter": null,
+      "next_chapter": null,
+      "action": "保留缺口，不伪造或从未授权来源补写正文。"
+    },
+    {
+      "chapter_number": 743,
+      "classification": "absent_as_independent_heading_in_source",
+      "previous_chapter": null,
+      "next_chapter": {
+        "number": 744,
+        "title": "第七百四十四章  爆！ 【第三更！】",
+        "source_line": 76520
+      },
+      "action": "保留缺口，不伪造或从未授权来源补写正文。"
+    },
+    {
+      "chapter_number": 1010,
+      "classification": "absent_as_independent_heading_in_source",
+      "previous_chapter": {
+        "number": 1009,
+        "title": "第一千零九章   大会落幕",
+        "source_line": 104539
+      },
+      "next_chapter": {
+        "number": 1011,
+        "title": "第一千零十一章 吸收",
+        "source_line": 104640
+      },
+      "action": "保留缺口，不伪造或从未授权来源补写正文。"
+    }
+  ]
+}

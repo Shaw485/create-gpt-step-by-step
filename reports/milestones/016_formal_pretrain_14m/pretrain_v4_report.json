@@ -1,0 +1,250 @@
+{
+  "best_checkpoint": "runs/formal_pretrain_14m_bpe3000_6000/best.pt",
+  "best_selection_value": 3.761229497144957,
+  "best_step": 5750,
+  "best_validation_bits_per_character": 3.761229497144957,
+  "best_validation_loss": 4.457618665695191,
+  "config_sha256": "faac0f759a5ce9cd5e827f95c511b7f9bbbda06f6e7642e5e0d90d5ec5635974",
+  "device": "mps",
+  "elapsed_seconds": 5512.992239333995,
+  "final_step": 6000,
+  "history": [
+    {
+      "elapsed_seconds": 169.5513714999979,
+      "learning_rate": 0.0002995696209491512,
+      "step": 250,
+      "train_bits_per_character": 5.921758651267776,
+      "train_loss": 7.015101106961568,
+      "val_bits_per_character": 5.914875678244785,
+      "val_loss": 7.010011021296183
+    },
+    {
+      "elapsed_seconds": 363.59634008399735,
+      "learning_rate": 0.000296949457625412,
+      "step": 500,
+      "train_bits_per_character": 5.545494206202966,
+      "train_loss": 6.569366439183553,
+      "val_bits_per_character": 5.56986986505196,
+      "val_loss": 6.601127608617147
+    },
+    {
+      "elapsed_seconds": 564.4406048340024,
+      "learning_rate": 0.00029199453600058946,
+      "step": 750,
+      "train_bits_per_character": 5.2295015125871425,
+      "train_loss": 6.195031579335531,
+      "val_bits_per_character": 5.270182450106351,
+      "val_loss": 6.245953265825907
+    },
+    {
+      "elapsed_seconds": 784.135677667,
+      "learning_rate": 0.00028479253013263714,
+      "step": 1000,
+      "train_bits_per_character": 4.978056963782037,
+      "train_loss": 5.897162477175395,
+      "val_bits_per_character": 5.006885712339649,
+      "val_loss": 5.933907310167949
+    },
+    {
+      "elapsed_seconds": 987.7608660419937,
+      "learning_rate": 0.0002754708747476028,
+      "step": 1250,
+      "train_bits_per_character": 4.757447859424592,
+      "train_loss": 5.635822010040283,
+      "val_bits_per_character": 4.795124009370567,
+      "val_loss": 5.682938067118327
+    },
+    {
+      "elapsed_seconds": 1207.2298616250046,
+      "learning_rate": 0.00026419451036651406,
+      "step": 1500,
+      "train_bits_per_character": 4.582261577803849,
+      "train_loss": 5.428290843963623,
+      "val_bits_per_character": 4.646712862765032,
+      "val_loss": 5.507048694292704
+    },
+    {
+      "elapsed_seconds": 1451.5881957090023,
+      "learning_rate": 0.0002511629647920507,
+      "step": 1750,
+      "train_bits_per_character": 4.430835569227061,
+      "train_loss": 5.248906842867533,
+      "val_bits_per_character": 4.535005731766053,
+      "val_loss": 5.374659061431885
+    },
+    {
+      "elapsed_seconds": 1681.5726138750033,
+      "learning_rate": 0.0002366068225961652,
+      "step": 2000,
+      "train_bits_per_character": 4.305095869087099,
+      "train_loss": 5.099951648712159,
+      "val_bits_per_character": 4.3993198724824145,
+      "val_loss": 5.2138510545094805
+    },
+    {
+      "elapsed_seconds": 1923.9118104590016,
+      "learning_rate": 0.00022078364507873102,
+      "step": 2250,
+      "train_bits_per_character": 4.173548370251189,
+      "train_loss": 4.9441163539886475,
+      "val_bits_per_character": 4.311689520883919,
+      "val_loss": 5.1099960009257
+    },
+    {
+      "elapsed_seconds": 2141.7074769589963,
+      "learning_rate": 0.0002039734128908488,
+      "step": 2500,
+      "train_bits_per_character": 4.088046988795661,
+      "train_loss": 4.84282873471578,
+      "val_bits_per_character": 4.187752273438831,
+      "val_loss": 4.963111853599548
+    },
+    {
+      "elapsed_seconds": 2368.2879558340064,
+      "learning_rate": 0.00018647357196257468,
+      "step": 2750,
+      "train_bits_per_character": 3.9921543935798405,
+      "train_loss": 4.729231357574463,
+      "val_bits_per_character": 4.112739246984367,
+      "val_loss": 4.874210214614868
+    },
+    {
+      "elapsed_seconds": 2605.2281978340034,
+      "learning_rate": 0.00016859377039409956,
+      "step": 3000,
+      "train_bits_per_character": 3.886907682648707,
+      "train_loss": 4.604552801450094,
+      "val_bits_per_character": 4.10653623646784,
+      "val_loss": 4.866858720779419
+    },
+    {
+      "elapsed_seconds": 2822.9089910839975,
+      "learning_rate": 0.00015065037943760566,
+      "step": 3250,
+      "train_bits_per_character": 3.8799816514060566,
+      "train_loss": 4.59634800752004,
+      "val_bits_per_character": 3.9885242081616203,
+      "val_loss": 4.726996843020121
+    },
+    {
+      "elapsed_seconds": 3179.206497334002,
+      "learning_rate": 0.00013296089551739947,
+      "step": 3500,
+      "train_bits_per_character": 3.7624075344145655,
+      "train_loss": 4.457066019376119,
+      "val_bits_per_character": 3.976575336541716,
+      "val_loss": 4.712835645675659
+    },
+    {
+      "elapsed_seconds": 3447.088619375005,
+      "learning_rate": 0.00011583832234086899,
+      "step": 3750,
+      "train_bits_per_character": 3.7719739757799777,
+      "train_loss": 4.46839872598648,
+      "val_bits_per_character": 3.90404730436982,
+      "val_loss": 4.626879096031189
+    },
+    {
+      "elapsed_seconds": 3686.8590137919964,
+      "learning_rate": 9.958563250509222e-05,
+      "step": 4000,
+      "train_bits_per_character": 3.7128784263856662,
+      "train_loss": 4.398392283916474,
+      "val_bits_per_character": 3.886463289877516,
+      "val_loss": 4.606039412816366
+    },
+    {
+      "elapsed_seconds": 3941.644735541995,
+      "learning_rate": 8.449040659730228e-05,
+      "step": 4250,
+      "train_bits_per_character": 3.6618870222560154,
+      "train_loss": 4.337986266613006,
+      "val_bits_per_character": 3.8698168430784143,
+      "val_loss": 4.586310887336731
+    },
+    {
+      "elapsed_seconds": 4219.082093584002,
+      "learning_rate": 7.081974464677707e-05,
+      "step": 4500,
+      "train_bits_per_character": 3.608435633988108,
+      "train_loss": 4.274666074911753,
+      "val_bits_per_character": 3.806862253090075,
+      "val_loss": 4.511700296401978
+    },
+    {
+      "elapsed_seconds": 4452.350782209003,
+      "learning_rate": 5.881553996664326e-05,
+      "step": 4750,
+      "train_bits_per_character": 3.6306321257175838,
+      "train_loss": 4.300960735479991,
+      "val_bits_per_character": 3.8132737915472905,
+      "val_loss": 4.519298926989237
+    },
+    {
+      "elapsed_seconds": 4680.317445167006,
+      "learning_rate": 4.869019901183616e-05,
+      "step": 5000,
+      "train_bits_per_character": 3.5625357519201604,
+      "train_loss": 4.220291634400685,
+      "val_bits_per_character": 3.803017532175944,
+      "val_loss": 4.507143727938334
+    },
+    {
+      "elapsed_seconds": 4874.398585500006,
+      "learning_rate": 4.062288298749425e-05,
+      "step": 5250,
+      "train_bits_per_character": 3.552057100874586,
+      "train_loss": 4.207878295580546,
+      "val_bits_per_character": 3.784484469788666,
+      "val_loss": 4.485179281234741
+    },
+    {
+      "elapsed_seconds": 5089.461794542003,
+      "learning_rate": 3.475633771004035e-05,
+      "step": 5500,
+      "train_bits_per_character": 3.5544629998174644,
+      "train_loss": 4.2107283989588415,
+      "val_bits_per_character": 3.7792567064359903,
+      "val_loss": 4.478983600934346
+    },
+    {
+      "elapsed_seconds": 5318.969571709007,
+      "learning_rate": 3.1194367814459045e-05,
+      "step": 5750,
+      "train_bits_per_character": 3.5463857864576465,
+      "train_loss": 4.201159878571828,
+      "val_bits_per_character": 3.761229497144957,
+      "val_loss": 4.457618665695191
+    },
+    {
+      "elapsed_seconds": 5508.455233083994,
+      "learning_rate": 3e-05,
+      "step": 6000,
+      "train_bits_per_character": 3.5316230237400816,
+      "train_loss": 4.183671446641286,
+      "val_bits_per_character": 3.7531531349649643,
+      "val_loss": 4.4480469703674315
+    }
+  ],
+  "initial_checkpoint": null,
+  "latest_checkpoint": "runs/formal_pretrain_14m_bpe3000_6000/latest.pt",
+  "parameter_count": 14880745,
+  "quality_guard": {
+    "activation_step": 2000,
+    "bad_evaluations": 0,
+    "enabled": true,
+    "has_passed": true,
+    "regression_patience": 3
+  },
+  "quality_history_path": "runs/formal_pretrain_14m_bpe3000_6000/quality_history.json",
+  "run_id": "local-v4-20260828T170833Z-a90848b3",
+  "samples_path": "runs/formal_pretrain_14m_bpe3000_6000/samples.json",
+  "selection_metric": "val_bits_per_character",
+  "stage_elapsed_seconds": 5512.992238666993,
+  "status": "complete",
+  "test_bits_per_character": null,
+  "test_evaluated": false,
+  "test_loss": null,
+  "training_token_exposures": 24576000,
+  "training_tokens_per_parameter": 1.6515302157250864
+}
