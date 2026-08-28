@@ -1,0 +1,30 @@
+{
+  "clean_training_candidate_count": 690,
+  "counts": {
+    "P0_evaluation_human_review": 600,
+    "P1_training_provenance_review": 679,
+    "P2_training_semantic_review": 1031,
+    "clean_training_candidate": 690
+  },
+  "counts_by_split": {
+    "test": {
+      "P0_evaluation_human_review": 300
+    },
+    "train": {
+      "P1_training_provenance_review": 679,
+      "P2_training_semantic_review": 1031,
+      "clean_training_candidate": 690
+    },
+    "val": {
+      "P0_evaluation_human_review": 300
+    }
+  },
+  "human_approval_was_inferred": false,
+  "policy": {
+    "P0_evaluation_human_review": "All validation and test records require real human approval before release.",
+    "P1_training_provenance_review": "Review missing, mismatched, or fuzzy-rebound corpus evidence before training.",
+    "P2_training_semantic_review": "Review transformed tasks, global claims, aggregation claims, and grammar.",
+    "P3_training_other_review": "Review remaining non-clean training candidates.",
+    "clean_training_candidate": "No automatic repair flag; still a candidate rather than a human-approved fact."
+  }
+}

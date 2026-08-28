@@ -13,6 +13,7 @@ data/raw/
 data/clean/
 data/cloud_v4/
 data/sft/v4/
+data/sft/v4_teacher_repair/
 logs/
 **/logs/
 checkpoints/

@@ -1,0 +1,148 @@
+{
+  "actual": {
+    "evaluation_record_count": 600,
+    "fact_count": 2963,
+    "maximum_questions_per_fact": 2,
+    "most_common_answer": "是萧炎说的。",
+    "most_common_answer_count": 36,
+    "most_common_answer_share": 0.012,
+    "record_count": 3000,
+    "split_counts": {
+      "test": 300,
+      "train": 2400,
+      "val": 300
+    },
+    "task_family_counts": {
+      "ambiguity_unknown_clarification": 300,
+      "context_understanding": 450,
+      "continuation_rewrite_instruction": 450,
+      "conversation_control": 150,
+      "direct_fact": 750,
+      "fact_verification_correction": 300,
+      "relationship_reason_timeline": 600
+    },
+    "topic_count": 1760,
+    "unapproved_evaluation_count": 600,
+    "unique_answer_count": 2470,
+    "verified_evidence_count": 2908,
+    "verified_evidence_share": 0.9693333333333334
+  },
+  "corpus_path": "data/cloud_v4/corpus.txt",
+  "corpus_sha256": "50592f249d2be17054ebbe2f8ca7945063e1a8ae669706e64d2076371c4d3b00",
+  "dataset_path": "data/sft/v4_teacher_repair/sft_v4_teacher_candidates.jsonl",
+  "dataset_sha256": "074f1c64a118f74e307530f03af1f14918e73ab2ecc83c7fa464796763a05d00",
+  "failed_gates": [
+    "val_test_human_review"
+  ],
+  "gaps": {
+    "records_missing": 0,
+    "split_deficits": {
+      "test": 0,
+      "train": 0,
+      "val": 0
+    },
+    "task_family_deficits": {
+      "ambiguity_unknown_clarification": 0,
+      "context_understanding": 0,
+      "continuation_rewrite_instruction": 0,
+      "conversation_control": 0,
+      "direct_fact": 0,
+      "fact_verification_correction": 0,
+      "relationship_reason_timeline": 0
+    },
+    "topics_missing": 0,
+    "unapproved_evaluation_count": 600
+  },
+  "leakage": {
+    "chapters": [],
+    "groups": [],
+    "topics": []
+  },
+  "quality_gates": [
+    {
+      "actual": 3000,
+      "expected": 3000,
+      "name": "record_count",
+      "passed": true
+    },
+    {
+      "actual": {
+        "test": 300,
+        "train": 2400,
+        "val": 300
+      },
+      "expected": {
+        "test": 300,
+        "train": 2400,
+        "val": 300
+      },
+      "name": "split_counts",
+      "passed": true
+    },
+    {
+      "actual": {
+        "ambiguity_unknown_clarification": 300,
+        "context_understanding": 450,
+        "continuation_rewrite_instruction": 450,
+        "conversation_control": 150,
+        "direct_fact": 750,
+        "fact_verification_correction": 300,
+        "relationship_reason_timeline": 600
+      },
+      "expected": {
+        "ambiguity_unknown_clarification": 300,
+        "context_understanding": 450,
+        "continuation_rewrite_instruction": 450,
+        "conversation_control": 150,
+        "direct_fact": 750,
+        "fact_verification_correction": 300,
+        "relationship_reason_timeline": 600
+      },
+      "name": "task_family_counts",
+      "passed": true
+    },
+    {
+      "actual": 1760,
+      "expected": 1200,
+      "name": "minimum_topic_count",
+      "passed": true
+    },
+    {
+      "actual": 2,
+      "expected": 2,
+      "name": "maximum_questions_per_fact",
+      "passed": true
+    },
+    {
+      "actual": 0.012,
+      "expected": "<2.00%",
+      "name": "maximum_identical_answer_share",
+      "passed": true
+    },
+    {
+      "actual": 0.9693333333333334,
+      "expected": ">=70%",
+      "name": "minimum_verified_evidence_share",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "name": "topic_chapter_group_leakage",
+      "passed": true
+    },
+    {
+      "actual": 600,
+      "expected": "all approved with reviewer and reviewed_at",
+      "name": "val_test_human_review",
+      "passed": false
+    }
+  ],
+  "release_ready": false,
+  "schema_version": "sft_v4_candidate/1.0",
+  "warnings": [
+    "Imported or generated candidates are not human-approved by default.",
+    "A passing candidate audit is required before cloud release export.",
+    "Absence and behavioral claims do not count toward the 70% corpus-provenance gate."
+  ]
+}

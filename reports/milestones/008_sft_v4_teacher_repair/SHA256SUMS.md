@@ -1,0 +1,7 @@
+# M008 报告文件哈希
+
+```text
+76dc37fc1703042382356a096118edfe4badf6e072db6bae0097b182092dd342  automatic_audit.json
+b550f7d3e6e5f180505eca54d193dbbb0dfe6f8d4d29dbcd10ca9996da284430  independent_validation.json
+afc509295162ba53de7e7ac7247aca8683c875278905043e991ddb5a06e44cbf  review_priority_summary.json
+```
