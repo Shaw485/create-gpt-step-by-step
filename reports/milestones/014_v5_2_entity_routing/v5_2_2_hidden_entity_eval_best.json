@@ -1,0 +1,218 @@
+{
+  "checkpoint": "runs/sft_v5_2_2_core_probe1000/best.pt",
+  "checkpoint_sha256": "c6659b60b731cb5b9249bcd10f2ea67b8a961ff73712fa72f18fd049716a8248",
+  "checkpoint_step": 750,
+  "data": "data/cloud_v4/sft_v5_2_2_core_routing_tensors.pt",
+  "data_sha256": "1110a2005e8588ea4326981fb2d88322674020655ffe8040757e46ad1fdef052",
+  "max_new_tokens": 40,
+  "results": [
+    {
+      "category": "已知实体",
+      "generated_answer": "萧炎是《斗破苍穹》的主要人物，故事主要围绕他展开。",
+      "id": "hidden_xiaoyan_identity",
+      "passed": true,
+      "question": "小说萧炎是谁？",
+      "score_reason": "应识别已知实体及其关键身份，不得拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "已知实体",
+      "generated_answer": "在这部小说中，药老就是药尘，也是萧炎的重要老师。",
+      "id": "hidden_xiaoyan_role",
+      "passed": false,
+      "question": "不展开剧情，先说萧炎的基本角色定位。",
+      "score_reason": "应识别已知实体及其关键身份，不得拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "已知实体",
+      "generated_answer": "药尘又称药老，是萧炎的重要老师。",
+      "id": "hidden_yaochen_identity",
+      "passed": true,
+      "question": "小说药尘是谁？",
+      "score_reason": "应识别已知实体及其关键身份，不得拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "已知实体",
+      "generated_answer": "在这部小说中，药尘又称药老，是萧炎的重要老师。",
+      "id": "hidden_yaochen_role",
+      "passed": true,
+      "question": "药尘在萧炎成长中是什么身份？",
+      "score_reason": "应识别已知实体及其关键身份，不得拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "已知实体",
+      "generated_answer": "药老就是药尘，也是萧炎的重要老师。",
+      "id": "hidden_yaolao_alias",
+      "passed": true,
+      "question": "大家所说的药老本名叫什么？",
+      "score_reason": "应识别已知实体及其关键身份，不得拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "已知实体",
+      "generated_answer": "在这部小说中，异火是小说中的特殊火焰力量，和炼药、修炼有关。",
+      "id": "hidden_yihuo_concept",
+      "passed": true,
+      "question": "异火在这部小说中属于哪类设定？",
+      "score_reason": "应识别已知实体及其关键身份，不得拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "已知实体",
+      "generated_answer": "在这部小说中，萧战是萧炎的父亲。",
+      "id": "hidden_xiaozhan_relation",
+      "passed": true,
+      "question": "萧战和萧炎是什么亲属关系？",
+      "score_reason": "应识别已知实体及其关键身份，不得拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "已知实体",
+      "generated_answer": "简单概括，无法核实这个名称药老，是萧炎的重要老师。",
+      "id": "hidden_guhename",
+      "passed": false,
+      "question": "小说里被称为丹王的人物叫什么？",
+      "score_reason": "应识别已知实体及其关键身份，不得拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "已知实体",
+      "generated_answer": "在。你想聊什么，或者想让我帮你做什么？",
+      "id": "hidden_yunshan",
+      "passed": false,
+      "question": "云山主要和哪个宗门有关？",
+      "score_reason": "应识别已知实体及其关键身份，不得拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "已知实体",
+      "generated_answer": "韩枫是小说中与药尘有关的重要人物。",
+      "id": "hidden_hanfeng",
+      "passed": true,
+      "question": "韩枫与哪位老师辈人物有关？",
+      "score_reason": "应识别已知实体及其关键身份，不得拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "不存在实体",
+      "generated_answer": "当前语料中没有找到该名称；片段提到了萧炎和目标。",
+      "id": "hidden_unknown_01",
+      "passed": true,
+      "question": "只按本项目语料判断，书中能确认九星猫皇的身份吗？",
+      "score_reason": "应点名实体并基于语料缺失作有依据的拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "不存在实体",
+      "generated_answer": "当前语料中没有找到该名称；片段提到了自然核实这个名称；当前语料中没有找到该名称；片段提到了萧炎",
+      "id": "hidden_unknown_02",
+      "passed": false,
+      "question": "只按本项目语料判断，书中能确认青木灵舟的身份吗？",
+      "score_reason": "应点名实体并基于语料缺失作有依据的拒答；必须生成EOS",
+      "stopped_on_eos": false
+    },
+    {
+      "category": "不存在实体",
+      "generated_answer": "当前语料中没有找到该名称；片段提到了紫研和紫研。",
+      "id": "hidden_unknown_03",
+      "passed": true,
+      "question": "只按本项目语料判断，书中能确认星河炼药塔的身份吗？",
+      "score_reason": "应点名实体并基于语料缺失作有依据的拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "不存在实体",
+      "generated_answer": "当前语料中没有找到该名称；片段提到了萧炎和目标。",
+      "id": "hidden_unknown_04",
+      "passed": true,
+      "question": "只按本项目语料判断，书中能确认北海药王的身份吗？",
+      "score_reason": "应点名实体并基于语料缺失作有依据的拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "不存在实体",
+      "generated_answer": "当前语料中没有找到该名称；片段提到了样本书是《斗破苍穹》。",
+      "id": "hidden_unknown_05",
+      "passed": true,
+      "question": "只按本项目语料判断，书中能确认玄风石碑的身份吗？",
+      "score_reason": "应点名实体并基于语料缺失作有依据的拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "不存在实体",
+      "generated_answer": "当前语料中没有找到该名称；片段提到了海波东和目标。",
+      "id": "hidden_unknown_06",
+      "passed": true,
+      "question": "只按本项目语料判断，书中能确认风雪猫王的身份吗？",
+      "score_reason": "应点名实体并基于语料缺失作有依据的拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "不存在实体",
+      "generated_answer": "当前语料中没有找到该名称；片段提到了韩枫和韩枫。",
+      "id": "hidden_unknown_07",
+      "passed": true,
+      "question": "只按本项目语料判断，书中能确认青铜火莲的身份吗？",
+      "score_reason": "应点名实体并基于语料缺失作有依据的拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "不存在实体",
+      "generated_answer": "当前语料中没有找到该名称；片段提到了美杜莎和紫研。",
+      "id": "hidden_unknown_08",
+      "passed": true,
+      "question": "只按本项目语料判断，书中能确认天河药典的身份吗？",
+      "score_reason": "应点名实体并基于语料缺失作有依据的拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "不存在实体",
+      "generated_answer": "当前语料中没有找到该名称；片段提到了自然核实这个名称；当前语料中没有找到该名称；当前的是《",
+      "id": "hidden_unknown_09",
+      "passed": false,
+      "question": "只按本项目语料判断，书中能确认南山火典的身份吗？",
+      "score_reason": "应点名实体并基于语料缺失作有依据的拒答；必须生成EOS",
+      "stopped_on_eos": false
+    },
+    {
+      "category": "不存在实体",
+      "generated_answer": "当前语料中没有找到该名称；片段提到了样本和目标。",
+      "id": "hidden_unknown_10",
+      "passed": true,
+      "question": "只按本项目语料判断，书中能确认白银斗帝的身份吗？",
+      "score_reason": "应点名实体并基于语料缺失作有依据的拒答",
+      "stopped_on_eos": true
+    }
+  ],
+  "schema_version": "sft-v5-hidden-entity-eval/v1",
+  "seed": 20260828,
+  "status": "complete",
+  "summary": {
+    "accuracy": 0.75,
+    "by_category": {
+      "不存在实体": {
+        "accuracy": 0.8,
+        "passed": 8,
+        "total": 10
+      },
+      "已知实体": {
+        "accuracy": 0.7,
+        "passed": 7,
+        "total": 10
+      }
+    },
+    "eos_count": 18,
+    "failure_counts": {
+      "不存在实体": 2,
+      "已知实体": 3
+    },
+    "passed": 15,
+    "total": 20
+  },
+  "temperature": 0.3,
+  "test_records_consumed": 0,
+  "top_k": 1
+}

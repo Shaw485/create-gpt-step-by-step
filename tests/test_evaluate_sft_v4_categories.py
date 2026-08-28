@@ -110,6 +110,17 @@ class EvaluateSftV4CategoriesTests(unittest.TestCase):
 
         self.assertFalse(score["passed"])
 
+    def test_known_entity_rejects_generic_or_wrong_role(self):
+        item = next(row for row in EVAL_ITEMS if row["id"] == "novel_entity_xiaoyan")
+
+        generic = score_item(item, "萧炎是小说中的人物。", True)
+        wrong = score_item(item, "萧炎是小说中被称为丹王的人物。", True)
+        correct = score_item(item, "萧炎是这部小说的主要人物。", True)
+
+        self.assertFalse(generic["passed"])
+        self.assertFalse(wrong["passed"])
+        self.assertTrue(correct["passed"])
+
     def test_every_metric_requires_eos(self):
         item = {
             "metric": "all_required",

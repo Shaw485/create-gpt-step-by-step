@@ -1,0 +1,1510 @@
+{
+  "batch_size": 4,
+  "best_checkpoint": "runs/sft_v5_2_2_core_probe1000/best.pt",
+  "best_selection_score": 16.432827850251822,
+  "data_path": "data/cloud_v4/sft_v5_2_2_core_routing_tensors.pt",
+  "data_sha256": "1110a2005e8588ea4326981fb2d88322674020655ffe8040757e46ad1fdef052",
+  "device": "cpu",
+  "elapsed_seconds": 146.75497583400283,
+  "history": [
+    {
+      "behavior_passed": 7,
+      "behavior_results": [
+        {
+          "category": "小说人物",
+          "generated_answer": "现有资料不足，无法确定。",
+          "id": "novel_entity_xiaoyan",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "现有资料不足，无法确定。",
+          "id": "novel_entity_yaochen",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "药老是药老。",
+          "id": "novel_entity_yaolao",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "我没有足够可靠的信息，不能硬编。",
+          "id": "novel_entity_xiaoyan_one_sentence",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "药老是小说中出现的一个人物。",
+          "id": "novel_entity_yihuo",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "第14章的标题是《大量》。",
+          "id": "novel_fact_chapter300",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "是药老说的。",
+          "id": "novel_fact_speaker_yaolao",
+          "metric": "exact_any",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "第1章的标题是《大量》。",
+          "id": "novel_fact_title_direct",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "第14章的标题是《大量》。",
+          "id": "novel_fact_no_unknown_for_known",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "应该说明资料不足，不能编造。",
+          "id": "novel_fact_not_weather",
+          "metric": "exact_any",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "是紫研。",
+          "id": "evidence_hanfeng_ziyan",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "是，片段同时提到了药老和药老。",
+          "id": "evidence_yaolao_only",
+          "metric": "all_required",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "能确认；当前证据片段同时提到了小医仙和紫研。",
+          "id": "evidence_no_birthdate",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "现有资料不足，无法确定。",
+          "id": "evidence_copy_question",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "片段中的两个人是紫研。",
+          "id": "evidence_two_names_no_extra",
+          "metric": "all_required",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "现有资料不足，无法确定。",
+          "id": "chat_weather",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我是一个本地训练出来的迷你GPT实验模型。",
+          "id": "chat_news",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我是一个本地训练出来的迷你GPT实验模型。",
+          "id": "chat_stock",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "第一千四百二十七章《九品，丹丹丹丹丹丹丹丹丹丹丹丹丹丹丹丹丹丹丹丹",
+          "id": "chat_exchange_rate",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "第一千四百二十七章《与《与《与》里，原文里，原文里，原文里，原文里",
+          "id": "chat_restaurant",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "验证集不参与参与参数更新，用来观察模型是否真的泛化。",
+          "id": "instruction_ack_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "先学习概念，再做小练习，最后用自己的话总结GPToken。",
+          "id": "instruction_repeat_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "先学习概念，再做小练习，最后用自己的话总结论。",
+          "id": "instruction_two_advice",
+          "metric": "two_advice",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "是否真的泛化。",
+          "id": "instruction_test_not_train",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "验证集不参与参与参与参与参与参与参数更新，用来观察模型是否真的",
+          "id": "instruction_validation_one_sentence",
+          "metric": "validation_role",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+          "id": "general_encourage",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+          "id": "general_plan_today",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "把任务切小，关掉干扰，先学习，最后五分钟记录问题。",
+          "id": "general_python_focus",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "验证集不参与参与参与参与参与参数更新，用来观察模型是否真的泛化",
+          "id": "general_explain_sft",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "验证集不参与参与参与参与参与参数更新，用来观察模型是否真的泛化",
+          "id": "general_explain_bpe",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        }
+      ],
+      "behavior_total": 30,
+      "coverage": {
+        "by_pool": {
+          "contrast": {
+            "coverage": 0.0,
+            "cycles_started": 0,
+            "draws": 0,
+            "records": 28,
+            "seen_records": 0
+          },
+          "core": {
+            "coverage": 0.0,
+            "cycles_started": 0,
+            "draws": 0,
+            "records": 100,
+            "seen_records": 0
+          },
+          "known": {
+            "coverage": 0.0,
+            "cycles_started": 0,
+            "draws": 0,
+            "records": 104,
+            "seen_records": 0
+          },
+          "replay": {
+            "coverage": 0.0,
+            "cycles_started": 0,
+            "draws": 0,
+            "records": 3247,
+            "seen_records": 0
+          }
+        },
+        "coverage": 0.0,
+        "draws": 0,
+        "records": 3479,
+        "seen_records": 0
+      },
+      "entity_passed": 0,
+      "eos_count": 25,
+      "selection_score": 8.22826606134661,
+      "step": 0,
+      "train_loss": 2.520511266621812,
+      "val_loss": 2.173393865339076
+    },
+    {
+      "behavior_passed": 6,
+      "behavior_results": [
+        {
+          "category": "小说人物",
+          "generated_answer": "萧炎是《斗破苍穹》的主要人物，故事主要人物，故事主要围绕他展开",
+          "id": "novel_entity_xiaoyan",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "药尘是小说中出现的重要人物。",
+          "id": "novel_entity_yaochen",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "药老是小说中出现的重要人物。",
+          "id": "novel_entity_yaolao",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "我没有足够可靠的信息，不能硬编。",
+          "id": "novel_entity_xiaoyan_one_sentence",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "异火是小说中的重要人物。",
+          "id": "novel_entity_yihuo",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "第14章的标题是《斗破苍穹》。",
+          "id": "novel_fact_chapter300",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "是萧炎说的。",
+          "id": "novel_fact_speaker_yaolao",
+          "metric": "exact_any",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "在第14章的标题是《斗破苍穹》。",
+          "id": "novel_fact_title_direct",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "简单概括，故事主要围绕他展开。",
+          "id": "novel_fact_no_unknown_for_known",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "我不能直接查询实时天气。你告诉我城市和预报，我可以帮你判断。",
+          "id": "novel_fact_not_weather",
+          "metric": "exact_any",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "是，和紫研。",
+          "id": "evidence_hanfeng_ziyan",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "是，片段同时提到了药老和药老。",
+          "id": "evidence_yaolao_only",
+          "metric": "all_required",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "能确认；当前语料中没有直接给出其出生日期。",
+          "id": "evidence_no_birthdate",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "现有关的主要人物，故事主要人物。",
+          "id": "evidence_copy_question",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "当前人是《斗破苍穹》的主要人物，故事主要人物。",
+          "id": "evidence_two_names_no_extra",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "简单概括，小医仙是《斗破苍穹》中的重要人物。",
+          "id": "chat_weather",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "简单概括，药老是小说中出现的重要人物。",
+          "id": "chat_news",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我是小说中的重要人物。",
+          "id": "chat_stock",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "简单概括，药尘是小说中出现的重要人物。",
+          "id": "chat_exchange_rate",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "简单概括，无法核心概括，无法确定。",
+          "id": "chat_restaurant",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "简单概括，无法确定。",
+          "id": "instruction_ack_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "先学习概念，再做小练习，最后记录问题。",
+          "id": "instruction_repeat_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "先复盘哪一句话说清楚你想通过写代码解决什么问题。",
+          "id": "instruction_two_advice",
+          "metric": "two_advice",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "能确认其中提到了萧炎和目标。",
+          "id": "instruction_test_not_train",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "验证集不参与参与参数更新，用来观察模型是否真的泛化。",
+          "id": "instruction_validation_one_sentence",
+          "metric": "validation_role",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+          "id": "general_encourage",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+          "id": "general_plan_today",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "把任务切小，关掉干扰，先专注二十五分钟，再休息五分钟。",
+          "id": "general_python_focus",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "验证集不参与参数更新，用来观察模型是否真的泛化。",
+          "id": "general_explain_sft",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "简单概括，无法确定。",
+          "id": "general_explain_bpe",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        }
+      ],
+      "behavior_total": 30,
+      "coverage": {
+        "by_pool": {
+          "contrast": {
+            "coverage": 1.0,
+            "cycles_started": 2,
+            "draws": 50,
+            "records": 28,
+            "seen_records": 28
+          },
+          "core": {
+            "coverage": 1.0,
+            "cycles_started": 4,
+            "draws": 350,
+            "records": 100,
+            "seen_records": 100
+          },
+          "known": {
+            "coverage": 1.0,
+            "cycles_started": 2,
+            "draws": 150,
+            "records": 104,
+            "seen_records": 104
+          },
+          "replay": {
+            "coverage": 0.13858946720049276,
+            "cycles_started": 1,
+            "draws": 450,
+            "records": 3247,
+            "seen_records": 450
+          }
+        },
+        "coverage": 0.19603334291463065,
+        "draws": 1000,
+        "records": 3479,
+        "seen_records": 682
+      },
+      "entity_passed": 0,
+      "eos_count": 29,
+      "selection_score": 7.431199260578043,
+      "step": 250,
+      "train_loss": 1.8492296550941765,
+      "val_loss": 1.880073942195723
+    },
+    {
+      "behavior_passed": 11,
+      "behavior_results": [
+        {
+          "category": "小说人物",
+          "generated_answer": "萧炎是《斗破苍穹》的主要人物，故事主要围绕他展开。",
+          "id": "novel_entity_xiaoyan",
+          "metric": "known_entity",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "药尘是小说中被称药老，是萧炎的重要老师。",
+          "id": "novel_entity_yaochen",
+          "metric": "known_entity",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "药老是小说中，萧炎是《斗破苍穹》的主要人物，故事主要围绕他展开。",
+          "id": "novel_entity_yaolao",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "我没有足够可靠的信息，不能硬编。",
+          "id": "novel_entity_xiaoyan_one_sentence",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "异火是小说中的特殊火焰力量，和炼药、修炼有关。",
+          "id": "novel_entity_yihuo",
+          "metric": "known_entity",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "第14章的标题是《斗破苍穹》。",
+          "id": "novel_fact_chapter300",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "是药老说的。",
+          "id": "novel_fact_speaker_yaolao",
+          "metric": "exact_any",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "在第14章的标题是《斗破苍穹》。",
+          "id": "novel_fact_title_direct",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "简单概括，药老就是药尘，也是萧炎的重要老师。",
+          "id": "novel_fact_no_unknown_for_known",
+          "metric": "all_required",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "我不能直接查询实时天气。你告诉我城市和预报，我可以帮你判断。",
+          "id": "novel_fact_not_weather",
+          "metric": "exact_any",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "是，和紫研。",
+          "id": "evidence_hanfeng_ziyan",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "是，和药老。",
+          "id": "evidence_yaolao_only",
+          "metric": "all_required",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "能确认；当前语料中没有直接给出生日期。",
+          "id": "evidence_no_birthdate",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "有关的主要围绕他展开。",
+          "id": "evidence_copy_question",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "当前证据片段同时提到了韩枫和韩枫。",
+          "id": "evidence_two_names_no_extra",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "简单概括，药尘是小说中的重要人物。",
+          "id": "chat_weather",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "简单概括，药尘是小说中与药尘有关的重要人物。",
+          "id": "chat_news",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我是小说中的重要人物。",
+          "id": "chat_stock",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "简单概括，药尘是小说中与药尘有关的重要人物。",
+          "id": "chat_exchange_rate",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "简单概括，无法核实时天气和后果的主要围绕。",
+          "id": "chat_restaurant",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "简单概括，药老就是药尘，也是萧炎的重要老师。",
+          "id": "instruction_ack_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "先学习概念，再做一个练习，最后用自己的话总结GPToken。",
+          "id": "instruction_repeat_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "先学习概念，再动手练习，最后记录问题。",
+          "id": "instruction_two_advice",
+          "metric": "two_advice",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "能确认其中提到了萧炎和目标。",
+          "id": "instruction_test_not_train",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "验证集不参与参数更新，用来观察模型是否真的泛化。",
+          "id": "instruction_validation_one_sentence",
+          "metric": "validation_role",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+          "id": "general_encourage",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+          "id": "general_plan_today",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "把任务切小，关掉干扰，先专注二十五分钟，再休息五分钟。",
+          "id": "general_python_focus",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "验证集不参与参数更新，用来观察模型是否真的泛化。",
+          "id": "general_explain_sft",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "简单概括，药尘是小说中与药尘有关的重要人物。",
+          "id": "general_explain_bpe",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        }
+      ],
+      "behavior_total": 30,
+      "coverage": {
+        "by_pool": {
+          "contrast": {
+            "coverage": 1.0,
+            "cycles_started": 4,
+            "draws": 100,
+            "records": 28,
+            "seen_records": 28
+          },
+          "core": {
+            "coverage": 1.0,
+            "cycles_started": 7,
+            "draws": 700,
+            "records": 100,
+            "seen_records": 100
+          },
+          "known": {
+            "coverage": 1.0,
+            "cycles_started": 3,
+            "draws": 300,
+            "records": 104,
+            "seen_records": 104
+          },
+          "replay": {
+            "coverage": 0.2771789344009855,
+            "cycles_started": 1,
+            "draws": 900,
+            "records": 3247,
+            "seen_records": 900
+          }
+        },
+        "coverage": 0.3253808565679793,
+        "draws": 2000,
+        "records": 3479,
+        "seen_records": 1132
+      },
+      "entity_passed": 3,
+      "eos_count": 30,
+      "selection_score": 15.482250180704296,
+      "step": 500,
+      "train_loss": 1.6900063590824324,
+      "val_loss": 1.7749819295704177
+    },
+    {
+      "behavior_passed": 11,
+      "behavior_results": [
+        {
+          "category": "小说人物",
+          "generated_answer": "萧炎是《斗破苍穹》的主要人物，故事主要围绕他展开。",
+          "id": "novel_entity_xiaoyan",
+          "metric": "known_entity",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "药尘是小说中被称药老，是萧炎的重要老师。",
+          "id": "novel_entity_yaochen",
+          "metric": "known_entity",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "药老就是药尘，也是萧炎的重要老师。",
+          "id": "novel_entity_yaolao",
+          "metric": "known_entity",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "我没有足够可靠的信息，不能硬编。",
+          "id": "novel_entity_xiaoyan_one_sentence",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "在这部小说中，异火是小说中的特殊火焰力量，和炼药、修炼有关。",
+          "id": "novel_entity_yihuo",
+          "metric": "known_entity",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "第14章的标题是《斗破苍穹》。",
+          "id": "novel_fact_chapter300",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "是药老说的。",
+          "id": "novel_fact_speaker_yaolao",
+          "metric": "exact_any",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "第1章的标题是《斗破苍穹》。",
+          "id": "novel_fact_title_direct",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "萧炎是《斗破苍穹》的主要人物，故事主要围绕他展开。",
+          "id": "novel_fact_no_unknown_for_known",
+          "metric": "all_required",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "我不能直接看到实时天气。你告诉我城市和预报，我可以帮你判断。",
+          "id": "novel_fact_not_weather",
+          "metric": "exact_any",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "是，片段中出现了韩枫。",
+          "id": "evidence_hanfeng_ziyan",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "是，片段同时提到了药老和药老。",
+          "id": "evidence_yaolao_only",
+          "metric": "all_required",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "不能确认它在小说中与药尘。",
+          "id": "evidence_no_birthdate",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "有关的主要围绕他展开。",
+          "id": "evidence_copy_question",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "当前人是韩枫和韩枫。",
+          "id": "evidence_two_names_no_extra",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "简单概括，药尘又称药老，是萧炎的重要老师。",
+          "id": "chat_weather",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "简单概括，药尘又称药老，是萧炎的重要老师。",
+          "id": "chat_news",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我是小说中被称药老，是萧炎的重要老师。",
+          "id": "chat_stock",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "在这部小说中，药老就是药尘，也是萧炎的重要老师。",
+          "id": "chat_exchange_rate",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "在这部小说中，药尘又称药老，是萧炎的重要老师。",
+          "id": "chat_restaurant",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "简单概括，药老就是药尘，也是萧炎的重要老师。",
+          "id": "instruction_ack_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "简单概括，药老就是药尘，也是萧炎的重要老师。",
+          "id": "instruction_repeat_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "先学习概念，再动手练习，最后记录问题。",
+          "id": "instruction_two_advice",
+          "metric": "two_advice",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "能确认其中提到了萧炎和目标。",
+          "id": "instruction_test_not_train",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "简单概括，药老就是药尘，也是萧炎的重要老师。",
+          "id": "instruction_validation_one_sentence",
+          "metric": "validation_role",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+          "id": "general_encourage",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+          "id": "general_plan_today",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "把任务切小，关掉干扰，先专注二十五分钟，再休息五分钟。",
+          "id": "general_python_focus",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "预训练是让模型先学习大量文本里的语言规律，主要目标是预测下一个",
+          "id": "general_explain_sft",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "在这部小说中，药老就是药尘，也是萧炎的重要老师。",
+          "id": "general_explain_bpe",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        }
+      ],
+      "behavior_total": 30,
+      "coverage": {
+        "by_pool": {
+          "contrast": {
+            "coverage": 1.0,
+            "cycles_started": 6,
+            "draws": 150,
+            "records": 28,
+            "seen_records": 28
+          },
+          "core": {
+            "coverage": 1.0,
+            "cycles_started": 11,
+            "draws": 1050,
+            "records": 100,
+            "seen_records": 100
+          },
+          "known": {
+            "coverage": 1.0,
+            "cycles_started": 5,
+            "draws": 450,
+            "records": 104,
+            "seen_records": 104
+          },
+          "replay": {
+            "coverage": 0.41576840160147827,
+            "cycles_started": 1,
+            "draws": 1350,
+            "records": 3247,
+            "seen_records": 1350
+          }
+        },
+        "coverage": 0.45472837022132795,
+        "draws": 3000,
+        "records": 3479,
+        "seen_records": 1582
+      },
+      "entity_passed": 4,
+      "eos_count": 29,
+      "selection_score": 16.432827850251822,
+      "step": 750,
+      "train_loss": 1.5995867381073499,
+      "val_loss": 1.7172149748177576
+    },
+    {
+      "behavior_passed": 10,
+      "behavior_results": [
+        {
+          "category": "小说人物",
+          "generated_answer": "萧炎是《斗破苍穹》的主要人物，故事主要围绕他展开。",
+          "id": "novel_entity_xiaoyan",
+          "metric": "known_entity",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "药尘又称药老，是萧炎的重要老师。",
+          "id": "novel_entity_yaochen",
+          "metric": "known_entity",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "药老就是药尘，也是萧炎的重要老师。",
+          "id": "novel_entity_yaolao",
+          "metric": "known_entity",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "我没有足够可靠的信息，不能硬编。",
+          "id": "novel_entity_xiaoyan_one_sentence",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "异火是小说中的特殊火焰力量，和炼药、修炼有关。",
+          "id": "novel_entity_yihuo",
+          "metric": "known_entity",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "第14章的标题是《斗破苍穹》。",
+          "id": "novel_fact_chapter300",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "是萧炎说的。",
+          "id": "novel_fact_speaker_yaolao",
+          "metric": "exact_any",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "第14章的标题是《斗破苍穹》。",
+          "id": "novel_fact_title_direct",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "萧炎是《斗破苍穹》的主要人物，故事主要围绕他展开。",
+          "id": "novel_fact_no_unknown_for_known",
+          "metric": "all_required",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "我不能直接查询实时天气。你告诉我城市和天气预报，我可以帮你判断。",
+          "id": "novel_fact_not_weather",
+          "metric": "exact_any",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "是，片段中出现了韩枫。",
+          "id": "evidence_hanfeng_ziyan",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "是，片段同时提到了药老和药老。",
+          "id": "evidence_yaolao_only",
+          "metric": "all_required",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "不能确认它在小说中与云韵，和云韵。",
+          "id": "evidence_no_birthdate",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "现有语料，无法核实这个名称；需要新的可靠证据后才能介绍。",
+          "id": "evidence_copy_question",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "当前证据片段中出现了韩枫。",
+          "id": "evidence_two_names_no_extra",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我不能直接查询实时天气。你告诉我城市和天气预报，我可以帮你判断。",
+          "id": "chat_weather",
+          "metric": "boundary",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "你好，我在。你想聊什么，或者想让我帮你做什么？",
+          "id": "chat_news",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我是小说中与药尘有关的重要人物。",
+          "id": "chat_stock",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "简单概括，药尘又称药老，是萧炎的重要老师。",
+          "id": "chat_exchange_rate",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我没有足够可靠的信息，不能硬编。",
+          "id": "chat_restaurant",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "我没有足够可靠的信息，不能硬编。",
+          "id": "instruction_ack_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "简单概括，萧炎是《斗破苍穹》的主要人物，故事主要围绕他展开。",
+          "id": "instruction_repeat_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "先学习概念，再动手练习，最后记录问题。",
+          "id": "instruction_two_advice",
+          "metric": "two_advice",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "能确认模型当前证据现有，当前证据片段明确认；当前证据片段同时提到了",
+          "id": "instruction_test_not_train",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "简单概括，药老就是药尘，也是萧炎的重要老师。",
+          "id": "instruction_validation_one_sentence",
+          "metric": "validation_role",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+          "id": "general_encourage",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+          "id": "general_plan_today",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "把任务切小，关掉干扰，先专注二十五分钟，再休息五分钟。",
+          "id": "general_python_focus",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "验证集不参数更新，用来观察模型是否真的泛化。",
+          "id": "general_explain_sft",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "简单概括，药尘又称药老，是萧炎的重要老师。",
+          "id": "general_explain_bpe",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        }
+      ],
+      "behavior_total": 30,
+      "coverage": {
+        "by_pool": {
+          "contrast": {
+            "coverage": 1.0,
+            "cycles_started": 8,
+            "draws": 200,
+            "records": 28,
+            "seen_records": 28
+          },
+          "core": {
+            "coverage": 1.0,
+            "cycles_started": 14,
+            "draws": 1400,
+            "records": 100,
+            "seen_records": 100
+          },
+          "known": {
+            "coverage": 1.0,
+            "cycles_started": 6,
+            "draws": 600,
+            "records": 104,
+            "seen_records": 104
+          },
+          "replay": {
+            "coverage": 0.554357868801971,
+            "cycles_started": 1,
+            "draws": 1800,
+            "records": 3247,
+            "seen_records": 1800
+          }
+        },
+        "coverage": 0.5840758838746767,
+        "draws": 4000,
+        "records": 3479,
+        "seen_records": 2032
+      },
+      "entity_passed": 4,
+      "eos_count": 29,
+      "selection_score": 15.433362205149264,
+      "step": 1000,
+      "train_loss": 1.5444311678875966,
+      "val_loss": 1.6637794850735166
+    }
+  ],
+  "initialization_policy": "fresh_optimizer_from_model_checkpoint",
+  "latest_checkpoint": "runs/sft_v5_2_2_core_probe1000/latest.pt",
+  "latest_checkpoint_sha256": "7bed42ae0a4be04bd0caafaa1afb8915f7a2fcca4e94c72a3dd327969b6c8bfb",
+  "learning_rate": 2e-05,
+  "loss_csv": "reports/milestones/014_v5_2_entity_routing/v5_2_2_probe1000_report_loss.csv",
+  "optimizer_steps_this_run": 1000,
+  "parameter_count": 8105025,
+  "run_id": "sft-v5-20260828T140944Z-7b80a46f",
+  "sampler_coverage": {
+    "by_pool": {
+      "contrast": {
+        "coverage": 1.0,
+        "cycles_started": 8,
+        "draws": 200,
+        "records": 28,
+        "seen_records": 28
+      },
+      "core": {
+        "coverage": 1.0,
+        "cycles_started": 14,
+        "draws": 1400,
+        "records": 100,
+        "seen_records": 100
+      },
+      "known": {
+        "coverage": 1.0,
+        "cycles_started": 6,
+        "draws": 600,
+        "records": 104,
+        "seen_records": 104
+      },
+      "replay": {
+        "coverage": 0.554357868801971,
+        "cycles_started": 1,
+        "draws": 1800,
+        "records": 3247,
+        "seen_records": 1800
+      }
+    },
+    "coverage": 0.5840758838746767,
+    "draws": 4000,
+    "records": 3479,
+    "seen_records": 2032
+  },
+  "sampling_strategy": "mixture",
+  "schema_version": "sft-v5-report/v1",
+  "signature_sha256": "f124bb731665fda15edaf00249897502ca25b3a78cbc5c60233322f6f56cfcaa",
+  "source_checkpoint": "runs/sft_v5_1_no_math_continue3000_cumulative5000/latest.pt",
+  "start_step": 0,
+  "status": "complete",
+  "target_step": 1000,
+  "test_records_consumed": 0,
+  "validation_policy": {
+    "behavior": "fixed 30-item no-math diagnostic suite",
+    "selection": "total_passed + entity_passed + 0.05*eos - 0.01*val_loss",
+    "train": "fixed stratified 160 records",
+    "validation": "all 495 records"
+  },
+  "weight_decay": 0.05
+}

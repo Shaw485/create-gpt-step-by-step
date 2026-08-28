@@ -1,0 +1,60 @@
+{
+  "schema_version": "m014-optimization-assessment/v1",
+  "status": "complete_with_remaining_failures",
+  "date": "2026-08-28",
+  "model_parameters": 8105025,
+  "selected_artifacts": {
+    "public_protocol_checkpoint": "runs/sft_v5_2_2_core_probe1000/best.pt",
+    "public_protocol_step": 750,
+    "development_candidate_checkpoint": "runs/sft_v5_2_2_core_probe1000/latest.pt",
+    "development_candidate_step": 1000,
+    "training_data": "data/cloud_v4/sft_v5_2_2_core_routing_tensors.pt",
+    "architecture_decision": "docs/adr/0001-single-novel-maximum-effect.md"
+  },
+  "before_after": {
+    "m013_latest": {
+      "public_total": "7/30",
+      "public_entity": "0/5",
+      "public_eos": "25/30",
+      "hidden_total": "0/20",
+      "hidden_known": "0/10",
+      "hidden_unknown": "0/10"
+    },
+    "v5_2_2_latest": {
+      "public_total": "10/30",
+      "public_entity": "4/5",
+      "public_eos": "29/30",
+      "hidden_total": "19/20",
+      "hidden_known": "9/10",
+      "hidden_unknown": "10/10",
+      "hidden_eos": "20/20",
+      "full_validation_loss": 1.6637794850735166
+    }
+  },
+  "fixed_examples": [
+    {
+      "question": "小说萧炎是谁？",
+      "answer": "萧炎是《斗破苍穹》的主要人物，故事主要围绕他展开。",
+      "passed": true
+    },
+    {
+      "question": "小说药尘是谁？",
+      "answer": "药尘又称药老，是萧炎的重要老师。",
+      "passed": true
+    },
+    {
+      "question": "小说里被称为丹王的人物叫什么？",
+      "answer": "简单概括，无法核实这个名称为丹王的人物。",
+      "passed": false,
+      "expected": "古河"
+    }
+  ],
+  "acceptance": {
+    "entity_routing_repair": "passed",
+    "general_chat_release_gate": "failed",
+    "general_chat_score": "10/30",
+    "general_chat_required": "18/30",
+    "hidden_suite_future_use": "consumed_for_best_latest_comparison; freeze a new suite before further tuning"
+  },
+  "maximum_effect_decision": "Keep the 8.1M model, perform controlled continuation pretraining from the pure M007 checkpoint, rerun v5.2.2 SFT from scratch, and add chapter/entity retrieval for reliable full-book factual QA."
+}

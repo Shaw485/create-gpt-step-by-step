@@ -1,0 +1,1468 @@
+{
+  "batch_size": 4,
+  "best_checkpoint": "runs/sft_v5_2_entity_repair_probe1000_resume/best.pt",
+  "best_selection_score": 13.43141576220739,
+  "data_path": "data/cloud_v4/sft_v5_2_entity_routing_tensors.pt",
+  "data_sha256": "9d8749f788cfc50902ea7c9f0c921f576eff3c4cb2d483f6100365dd53cf2bfd",
+  "device": "cpu",
+  "elapsed_seconds": 136.84686054100166,
+  "history": [
+    {
+      "behavior_passed": 7,
+      "behavior_results": [
+        {
+          "category": "小说人物",
+          "generated_answer": "现有资料不足，无法确定。",
+          "id": "novel_entity_xiaoyan",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "现有资料不足，无法确定。",
+          "id": "novel_entity_yaochen",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "药老是药老。",
+          "id": "novel_entity_yaolao",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "我没有足够可靠的信息，不能硬编。",
+          "id": "novel_entity_xiaoyan_one_sentence",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "药老是小说中出现的一个人物。",
+          "id": "novel_entity_yihuo",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "第14章的标题是《大量》。",
+          "id": "novel_fact_chapter300",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "是药老说的。",
+          "id": "novel_fact_speaker_yaolao",
+          "metric": "exact_any",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "第1章的标题是《大量》。",
+          "id": "novel_fact_title_direct",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "第14章的标题是《大量》。",
+          "id": "novel_fact_no_unknown_for_known",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "应该说明资料不足，不能编造。",
+          "id": "novel_fact_not_weather",
+          "metric": "exact_any",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "是紫研。",
+          "id": "evidence_hanfeng_ziyan",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "是，片段同时提到了药老和药老。",
+          "id": "evidence_yaolao_only",
+          "metric": "all_required",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "能确认；当前证据片段同时提到了小医仙和紫研。",
+          "id": "evidence_no_birthdate",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "现有资料不足，无法确定。",
+          "id": "evidence_copy_question",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "片段中的两个人是紫研。",
+          "id": "evidence_two_names_no_extra",
+          "metric": "all_required",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "现有资料不足，无法确定。",
+          "id": "chat_weather",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我是一个本地训练出来的迷你GPT实验模型。",
+          "id": "chat_news",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我是一个本地训练出来的迷你GPT实验模型。",
+          "id": "chat_stock",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "第一千四百二十七章《九品，丹丹丹丹丹丹丹丹丹丹丹丹丹丹丹丹丹丹丹丹",
+          "id": "chat_exchange_rate",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "第一千四百二十七章《与《与《与》里，原文里，原文里，原文里，原文里",
+          "id": "chat_restaurant",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "验证集不参与参与参数更新，用来观察模型是否真的泛化。",
+          "id": "instruction_ack_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "先学习概念，再做小练习，最后用自己的话总结GPToken。",
+          "id": "instruction_repeat_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "先学习概念，再做小练习，最后用自己的话总结论。",
+          "id": "instruction_two_advice",
+          "metric": "two_advice",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "是否真的泛化。",
+          "id": "instruction_test_not_train",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "验证集不参与参与参与参与参与参与参数更新，用来观察模型是否真的",
+          "id": "instruction_validation_one_sentence",
+          "metric": "validation_role",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+          "id": "general_encourage",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+          "id": "general_plan_today",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "把任务切小，关掉干扰，先学习，最后五分钟记录问题。",
+          "id": "general_python_focus",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "验证集不参与参与参与参与参与参数更新，用来观察模型是否真的泛化",
+          "id": "general_explain_sft",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "验证集不参与参与参与参与参与参数更新，用来观察模型是否真的泛化",
+          "id": "general_explain_bpe",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        }
+      ],
+      "behavior_total": 30,
+      "coverage": {
+        "by_pool": {
+          "contrast": {
+            "coverage": 0.0,
+            "cycles_started": 0,
+            "draws": 0,
+            "records": 28,
+            "seen_records": 0
+          },
+          "known": {
+            "coverage": 0.0,
+            "cycles_started": 0,
+            "draws": 0,
+            "records": 164,
+            "seen_records": 0
+          },
+          "replay": {
+            "coverage": 0.0,
+            "cycles_started": 0,
+            "draws": 0,
+            "records": 3227,
+            "seen_records": 0
+          }
+        },
+        "coverage": 0.0,
+        "draws": 0,
+        "records": 3419,
+        "seen_records": 0
+      },
+      "entity_passed": 0,
+      "eos_count": 25,
+      "selection_score": 8.228041211331705,
+      "step": 0,
+      "train_loss": 2.484840795685928,
+      "val_loss": 2.1958788668295517
+    },
+    {
+      "behavior_passed": 7,
+      "behavior_results": [
+        {
+          "category": "小说人物",
+          "generated_answer": "萧炎是小说中被称为人物。",
+          "id": "novel_entity_xiaoyan",
+          "metric": "known_entity",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "现有语料，无法确定。",
+          "id": "novel_entity_yaochen",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "药老是小说中出现的重要人物。",
+          "id": "novel_entity_yaolao",
+          "metric": "known_entity",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "我没有足够可靠的信息，不能硬编。",
+          "id": "novel_entity_xiaoyan_one_sentence",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "药老是小说中与丹。",
+          "id": "novel_entity_yihuo",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "第14章的标题是《斗破苍穹》。",
+          "id": "novel_fact_chapter300",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "是药老说的。",
+          "id": "novel_fact_speaker_yaolao",
+          "metric": "exact_any",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "在小说第14章的标题是《斗破苍穹》。",
+          "id": "novel_fact_title_direct",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "在小说中与“小说中出现的重要人物。",
+          "id": "novel_fact_no_unknown_for_known",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "我不能直接看到实时天气和路况。你告诉我城市和天气预报，我可以帮你判断。",
+          "id": "novel_fact_not_weather",
+          "metric": "exact_any",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "片段，和紫研。",
+          "id": "evidence_hanfeng_ziyan",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "是，片段同时提到了药老和药老。",
+          "id": "evidence_yaolao_only",
+          "metric": "all_required",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "不能确认其中提到了云韵。",
+          "id": "evidence_no_birthdate",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "正确。证据支持“魂玉”。",
+          "id": "evidence_copy_question",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "当前十分钟。",
+          "id": "evidence_two_names_no_extra",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我不能直接查？",
+          "id": "chat_weather",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "你好，我在。你想聊什么，或者想让我帮你做什么？",
+          "id": "chat_news",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我是小说中与“小说中出现的重要人物。",
+          "id": "chat_stock",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我是小说中出现的重要人物。",
+          "id": "chat_exchange_rate",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我没有足够可靠的信息，不能硬编。",
+          "id": "chat_restaurant",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "先用一句话说，故事实时天气和路况。你告诉我城市和天气预报，我可以帮你",
+          "id": "instruction_ack_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "先学习概念，再做小练习，最后记录问题。",
+          "id": "instruction_repeat_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "先学习概念，再动手练习，最后记录问题。",
+          "id": "instruction_two_advice",
+          "metric": "two_advice",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "当前证据现有语料不足，用来观察模型是否真的泛化。",
+          "id": "instruction_test_not_train",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "验证据现有语料，无法核实体验证据后果的具体点，再回到一个练习，最后用自己",
+          "id": "instruction_validation_one_sentence",
+          "metric": "validation_role",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+          "id": "general_encourage",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+          "id": "general_plan_today",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "把任务切小，关掉干扰，先专注二十五分钟，再休息五分钟。",
+          "id": "general_python_focus",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "验证集不参与参数更新，用来观察模型是否真的泛化。",
+          "id": "general_explain_sft",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "EOEOEOToken，用来告诉模型答案已经生成完了。",
+          "id": "general_explain_bpe",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        }
+      ],
+      "behavior_total": 30,
+      "coverage": {
+        "by_pool": {
+          "contrast": {
+            "coverage": 1.0,
+            "cycles_started": 4,
+            "draws": 100,
+            "records": 28,
+            "seen_records": 28
+          },
+          "known": {
+            "coverage": 1.0,
+            "cycles_started": 3,
+            "draws": 400,
+            "records": 164,
+            "seen_records": 164
+          },
+          "replay": {
+            "coverage": 0.1549426712116517,
+            "cycles_started": 1,
+            "draws": 500,
+            "records": 3227,
+            "seen_records": 500
+          }
+        },
+        "coverage": 0.20239836209417958,
+        "draws": 1000,
+        "records": 3419,
+        "seen_records": 692
+      },
+      "entity_passed": 2,
+      "eos_count": 28,
+      "selection_score": 10.380561082810303,
+      "step": 250,
+      "train_loss": 1.808925818593816,
+      "val_loss": 1.943891718969757
+    },
+    {
+      "behavior_passed": 10,
+      "behavior_results": [
+        {
+          "category": "小说人物",
+          "generated_answer": "萧炎是小说中被称为丹王的人物。",
+          "id": "novel_entity_xiaoyan",
+          "metric": "known_entity",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "现有语料，无法核实时天气和药尘。",
+          "id": "novel_entity_yaochen",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "药老是小说中被称为丹王的人物。",
+          "id": "novel_entity_yaolao",
+          "metric": "known_entity",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "我没有足够可靠的信息，不能硬编。",
+          "id": "novel_entity_xiaoyan_one_sentence",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "异火是小说中被称为丹王的人物。",
+          "id": "novel_entity_yihuo",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "第14章的标题是《斗破苍穹》。",
+          "id": "novel_fact_chapter300",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "是药老说的。",
+          "id": "novel_fact_speaker_yaolao",
+          "metric": "exact_any",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "，证据片段同时提到了萧炎和路况。",
+          "id": "novel_fact_title_direct",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "简单说中被称为丹王的人物。",
+          "id": "novel_fact_no_unknown_for_known",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "我不能直接看到实时天气和路况。你告诉我城市和预报，我可以帮你判断。",
+          "id": "novel_fact_not_weather",
+          "metric": "exact_any",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "和紫研。",
+          "id": "evidence_hanfeng_ziyan",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "是，片段同时提到了药老和药老。",
+          "id": "evidence_yaolao_only",
+          "metric": "all_required",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "不能确认它在小说中与云韵，和云韵。",
+          "id": "evidence_no_birthdate",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "有语料，魂玉是《斗破苍穹》中的重要人物。",
+          "id": "evidence_copy_question",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "片段中的重要人物。",
+          "id": "evidence_two_names_no_extra",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我不能直接看到实时天气。你告诉我城市和预报，我可以帮你判断。",
+          "id": "chat_weather",
+          "metric": "boundary",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "你好，我在。你想聊什么，或者想让我帮你做什么？",
+          "id": "chat_news",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我是小说中被称为丹王的人物。",
+          "id": "chat_stock",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "你是小说中被称为丹王的人物。",
+          "id": "chat_exchange_rate",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我没有足够可靠的信息，不能硬编。",
+          "id": "chat_restaurant",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "我没有足够可靠的信息，不能硬编。",
+          "id": "instruction_ack_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "先学习概念，再做一个练习，最后复盘哪里没懂。",
+          "id": "instruction_repeat_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "先学习概念，再动手练习，最后记录问题。",
+          "id": "instruction_two_advice",
+          "metric": "two_advice",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "能确认其中提到了萧炎和目标。",
+          "id": "instruction_test_not_train",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "验证集不参与参数更新，用来观察模型是否真的泛化。",
+          "id": "instruction_validation_one_sentence",
+          "metric": "validation_role",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+          "id": "general_encourage",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+          "id": "general_plan_today",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "把任务切小，关掉干扰，先专注二十五分钟，再休息五分钟。",
+          "id": "general_python_focus",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "预训练是让模型先学习大量文本里的语料，用来告诉模型答案已经生成",
+          "id": "general_explain_sft",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "是小说中被称为丹王的人物。",
+          "id": "general_explain_bpe",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        }
+      ],
+      "behavior_total": 30,
+      "coverage": {
+        "by_pool": {
+          "contrast": {
+            "coverage": 1.0,
+            "cycles_started": 8,
+            "draws": 200,
+            "records": 28,
+            "seen_records": 28
+          },
+          "known": {
+            "coverage": 1.0,
+            "cycles_started": 5,
+            "draws": 800,
+            "records": 164,
+            "seen_records": 164
+          },
+          "replay": {
+            "coverage": 0.3098853424233034,
+            "cycles_started": 1,
+            "draws": 1000,
+            "records": 3227,
+            "seen_records": 1000
+          }
+        },
+        "coverage": 0.34863995320269087,
+        "draws": 2000,
+        "records": 3419,
+        "seen_records": 1192
+      },
+      "entity_passed": 2,
+      "eos_count": 29,
+      "selection_score": 13.43141576220739,
+      "step": 500,
+      "train_loss": 1.6386922548059664,
+      "val_loss": 1.8584237792609726
+    },
+    {
+      "behavior_passed": 7,
+      "behavior_results": [
+        {
+          "category": "小说人物",
+          "generated_answer": "萧炎是一个本地训练出来的迷你GPT实验模型。",
+          "id": "novel_entity_xiaoyan",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "药尘是小说中被称为丹王的人物。",
+          "id": "novel_entity_yaochen",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "药老是萧炎的重要人物。",
+          "id": "novel_entity_yaolao",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "我没有足够可靠的信息，不能硬编。",
+          "id": "novel_entity_xiaoyan_one_sentence",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "异火是小说中被称为丹王的人物。",
+          "id": "novel_entity_yihuo",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "第14章的标题是《斗破苍穹》。",
+          "id": "novel_fact_chapter300",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "是药老说的。",
+          "id": "novel_fact_speaker_yaolao",
+          "metric": "exact_any",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "，证据片段同时提到了萧炎和标题。",
+          "id": "novel_fact_title_direct",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "简单说中被称为丹王的人物。",
+          "id": "novel_fact_no_unknown_for_known",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "我不能直接看到实时天气。你告诉我城市和预报，我可以帮你判断。",
+          "id": "novel_fact_not_weather",
+          "metric": "exact_any",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "和紫研，证据片段同时提到了韩枫和紫研。",
+          "id": "evidence_hanfeng_ziyan",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "是，片段同时提到了药老和药老。",
+          "id": "evidence_yaolao_only",
+          "metric": "all_required",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "不能确认它在小说中与药尘有关的重要人物。",
+          "id": "evidence_no_birthdate",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "有语料，魂玉是《斗破苍穹》中的重要人物。",
+          "id": "evidence_copy_question",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "当前证据片段同时提到了韩枫和韩枫。",
+          "id": "evidence_two_names_no_extra",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "天气预训练的核心概念，再做小练习，最后复盘哪里没懂。",
+          "id": "chat_weather",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我是小说中被称为丹王的人物。",
+          "id": "chat_news",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我是小说中被称为丹王的人物。",
+          "id": "chat_stock",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "你好，我在。你想聊什么，或者想让我帮你做什么？",
+          "id": "chat_exchange_rate",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我没有足够可靠的信息，不能硬编。",
+          "id": "chat_restaurant",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "确定看真实验证集不足，无法确定其首次出现章节。",
+          "id": "instruction_ack_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "这句话需要念，再做一个练习，最后复盘哪里没懂。",
+          "id": "instruction_repeat_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "先用一句话说清楚你想通过写代码解决什么问题。",
+          "id": "instruction_two_advice",
+          "metric": "two_advice",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "能确认其中提到了萧炎和目标。",
+          "id": "instruction_test_not_train",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "验证集不参与参数更新，用来观察模型是否真的泛化。",
+          "id": "instruction_validation_one_sentence",
+          "metric": "validation_role",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+          "id": "general_encourage",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+          "id": "general_plan_today",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "把任务切小，关掉干扰，先专注二十五分钟，再休息五分钟。",
+          "id": "general_python_focus",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "验证集不参数更新，用来观察模型是否真的泛化。",
+          "id": "general_explain_sft",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "简单问题和答案是让模型学习的核实表示模型，无法核实表示参数据后才能",
+          "id": "general_explain_bpe",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        }
+      ],
+      "behavior_total": 30,
+      "coverage": {
+        "by_pool": {
+          "contrast": {
+            "coverage": 1.0,
+            "cycles_started": 11,
+            "draws": 300,
+            "records": 28,
+            "seen_records": 28
+          },
+          "known": {
+            "coverage": 1.0,
+            "cycles_started": 8,
+            "draws": 1200,
+            "records": 164,
+            "seen_records": 164
+          },
+          "replay": {
+            "coverage": 0.4648280136349551,
+            "cycles_started": 1,
+            "draws": 1500,
+            "records": 3227,
+            "seen_records": 1500
+          }
+        },
+        "coverage": 0.4948815443112021,
+        "draws": 3000,
+        "records": 3419,
+        "seen_records": 1692
+      },
+      "entity_passed": 0,
+      "eos_count": 29,
+      "selection_score": 8.432161231652499,
+      "step": 750,
+      "train_loss": 1.5563334521099097,
+      "val_loss": 1.7838768347500396
+    },
+    {
+      "behavior_passed": 8,
+      "behavior_results": [
+        {
+          "category": "小说人物",
+          "generated_answer": "萧炎是《斗破苍穹》的主要人物，故事主要人物，故事主要围绕他展开",
+          "id": "novel_entity_xiaoyan",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "药尘是小说中被称为丹王的人物。",
+          "id": "novel_entity_yaochen",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "药老是萧炎的重要老师。",
+          "id": "novel_entity_yaolao",
+          "metric": "known_entity",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "我没有足够可靠的信息，不能硬编。",
+          "id": "novel_entity_xiaoyan_one_sentence",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "异火是小说中被称为丹王的人物。",
+          "id": "novel_entity_yihuo",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "第14章的标题是《斗破苍穹》。",
+          "id": "novel_fact_chapter300",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "是药老说的。",
+          "id": "novel_fact_speaker_yaolao",
+          "metric": "exact_any",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "，证据片段同时提到了萧炎和标。",
+          "id": "novel_fact_title_direct",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "简单说中被称为丹王的人物。",
+          "id": "novel_fact_no_unknown_for_known",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "我不能直接查询实时天气。你告诉我城市和天气预报，我可以帮你判断。",
+          "id": "novel_fact_not_weather",
+          "metric": "exact_any",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "是，片段中出现了韩枫。",
+          "id": "evidence_hanfeng_ziyan",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "是，片段同时提到了药老和药老。",
+          "id": "evidence_yaolao_only",
+          "metric": "all_required",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "不能确认它在小说中与药尘有关的重要人物。",
+          "id": "evidence_no_birthdate",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "有语料，魂玉是《斗破苍穹》中的重要人物。",
+          "id": "evidence_copy_question",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "当前证据片段明确出现了韩枫。",
+          "id": "evidence_two_names_no_extra",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我不能直接查询实时天气。你告诉我城市和天气预报，我可以帮你判断。",
+          "id": "chat_weather",
+          "metric": "boundary",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我是小说中被称为丹王的人物。",
+          "id": "chat_news",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我是小说中被称为丹王的人物。",
+          "id": "chat_stock",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我是一个本地训练出来的迷你GPT实验模型。",
+          "id": "chat_exchange_rate",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我是小说中被称为丹王的人物。",
+          "id": "chat_restaurant",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "药老就是药尘。",
+          "id": "instruction_ack_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "这句话需要纠正：萧炎是《斗破苍穹》中的重要人物。",
+          "id": "instruction_repeat_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "先学习概念，再做小练习，最后复盘哪里没懂。",
+          "id": "instruction_two_advice",
+          "metric": "two_advice",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "能确认模型当前证据片段明确出现了古河。",
+          "id": "instruction_test_not_train",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "验证集不参数更新，用来观察模型是否真的泛化。",
+          "id": "instruction_validation_one_sentence",
+          "metric": "validation_role",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+          "id": "general_encourage",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+          "id": "general_plan_today",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "把任务切小，关掉干扰，先专注二十五分钟，再休息五分钟。",
+          "id": "general_python_focus",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "EOE是结束Token，用来告诉模型答案已经生成完了。",
+          "id": "general_explain_sft",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "EOE是结束Token，用来告诉模型答案已经生成完了。",
+          "id": "general_explain_bpe",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        }
+      ],
+      "behavior_total": 30,
+      "coverage": {
+        "by_pool": {
+          "contrast": {
+            "coverage": 1.0,
+            "cycles_started": 15,
+            "draws": 400,
+            "records": 28,
+            "seen_records": 28
+          },
+          "known": {
+            "coverage": 1.0,
+            "cycles_started": 10,
+            "draws": 1600,
+            "records": 164,
+            "seen_records": 164
+          },
+          "replay": {
+            "coverage": 0.6197706848466068,
+            "cycles_started": 1,
+            "draws": 2000,
+            "records": 3227,
+            "seen_records": 2000
+          }
+        },
+        "coverage": 0.6411231354197133,
+        "draws": 4000,
+        "records": 3419,
+        "seen_records": 2192
+      },
+      "entity_passed": 1,
+      "eos_count": 29,
+      "selection_score": 10.432703764810471,
+      "step": 1000,
+      "train_loss": 1.4644025565309222,
+      "val_loss": 1.729623518952876
+    }
+  ],
+  "initialization_policy": "full_resume_model_optimizer_rng_sampler",
+  "latest_checkpoint": "runs/sft_v5_2_entity_repair_probe1000_resume/latest.pt",
+  "latest_checkpoint_sha256": "0043b9a0278c771188653873bf57d683047ae41a9fe7380363b59365dd2dcd4a",
+  "learning_rate": 2e-05,
+  "loss_csv": "reports/milestones/014_v5_2_entity_routing/probe1000_resume_report_loss.csv",
+  "optimizer_steps_this_run": 500,
+  "parameter_count": 8105025,
+  "run_id": "sft-v5-20260828T135029Z-d82318a4",
+  "sampler_coverage": {
+    "by_pool": {
+      "contrast": {
+        "coverage": 1.0,
+        "cycles_started": 15,
+        "draws": 400,
+        "records": 28,
+        "seen_records": 28
+      },
+      "known": {
+        "coverage": 1.0,
+        "cycles_started": 10,
+        "draws": 1600,
+        "records": 164,
+        "seen_records": 164
+      },
+      "replay": {
+        "coverage": 0.6197706848466068,
+        "cycles_started": 1,
+        "draws": 2000,
+        "records": 3227,
+        "seen_records": 2000
+      }
+    },
+    "coverage": 0.6411231354197133,
+    "draws": 4000,
+    "records": 3419,
+    "seen_records": 2192
+  },
+  "sampling_strategy": "mixture",
+  "schema_version": "sft-v5-report/v1",
+  "signature_sha256": "db9841b889eb7e1541c47e7d4a247c25d3b1b311cb4f07370f2e754460812c89",
+  "source_checkpoint": "runs/sft_v5_2_entity_repair_probe500/latest.pt",
+  "start_step": 500,
+  "status": "complete",
+  "target_step": 1000,
+  "test_records_consumed": 0,
+  "validation_policy": {
+    "behavior": "fixed 30-item no-math diagnostic suite",
+    "selection": "total_passed + entity_passed + 0.05*eos - 0.01*val_loss",
+    "train": "fixed stratified 160 records",
+    "validation": "all 495 records"
+  },
+  "weight_decay": 0.05
+}

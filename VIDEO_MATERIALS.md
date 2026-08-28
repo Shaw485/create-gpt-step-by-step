@@ -48,6 +48,7 @@
 | M011 | v4 混合聊天SFT 2000步实验 | 已完成 | [混合数据、Loss曲线和小说/非小说样本](reports/milestones/011_v4_mixed_chat_sft/README.md) |
 | M012 | v5定向补强SFT数据与100步安全试训 | 已完成 | [补强配额、试训Loss和分类型诊断](reports/milestones/012_v5_repair_sft/README.md) |
 | M013 | v5.1去数学、污染修复与严格零提示重合SFT | 已完成，行为门未通过 | [数据审计、严格评估与累计5000步结果](reports/milestones/013_v5_1_no_math_sft/README.md) |
+| M014 | v5.2已知实体路由修复与可恢复训练Harness | 核心实体修复通过，综合聊天未达标 | [数据、训练、隐藏评估与上限路线](reports/milestones/014_v5_2_entity_routing/README.md) |
 
 ## 视频中的核心对比表
 

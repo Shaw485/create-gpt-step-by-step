@@ -1,0 +1,625 @@
+{
+  "batch_size": 4,
+  "best_checkpoint": "runs/sft_v5_2_harness_smoke1_cpu_v2/best.pt",
+  "best_selection_score": 8.228041211118676,
+  "data_path": "data/cloud_v4/sft_v5_2_entity_routing_tensors.pt",
+  "data_sha256": "9d8749f788cfc50902ea7c9f0c921f576eff3c4cb2d483f6100365dd53cf2bfd",
+  "device": "cpu",
+  "elapsed_seconds": 46.764992833006545,
+  "history": [
+    {
+      "behavior_passed": 7,
+      "behavior_results": [
+        {
+          "category": "小说人物",
+          "generated_answer": "现有资料不足，无法确定。",
+          "id": "novel_entity_xiaoyan",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "现有资料不足，无法确定。",
+          "id": "novel_entity_yaochen",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "药老是药老。",
+          "id": "novel_entity_yaolao",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "我没有足够可靠的信息，不能硬编。",
+          "id": "novel_entity_xiaoyan_one_sentence",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "药老是小说中出现的一个人物。",
+          "id": "novel_entity_yihuo",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "第14章的标题是《大量》。",
+          "id": "novel_fact_chapter300",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "是药老说的。",
+          "id": "novel_fact_speaker_yaolao",
+          "metric": "exact_any",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "第1章的标题是《大量》。",
+          "id": "novel_fact_title_direct",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "第14章的标题是《大量》。",
+          "id": "novel_fact_no_unknown_for_known",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "应该说明资料不足，不能编造。",
+          "id": "novel_fact_not_weather",
+          "metric": "exact_any",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "是紫研。",
+          "id": "evidence_hanfeng_ziyan",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "是，片段同时提到了药老和药老。",
+          "id": "evidence_yaolao_only",
+          "metric": "all_required",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "能确认；当前证据片段同时提到了小医仙和紫研。",
+          "id": "evidence_no_birthdate",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "现有资料不足，无法确定。",
+          "id": "evidence_copy_question",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "片段中的两个人是紫研。",
+          "id": "evidence_two_names_no_extra",
+          "metric": "all_required",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "现有资料不足，无法确定。",
+          "id": "chat_weather",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我是一个本地训练出来的迷你GPT实验模型。",
+          "id": "chat_news",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我是一个本地训练出来的迷你GPT实验模型。",
+          "id": "chat_stock",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "第一千四百二十七章《九品，丹丹丹丹丹丹丹丹丹丹丹丹丹丹丹丹丹丹丹丹",
+          "id": "chat_exchange_rate",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "第一千四百二十七章《与《与《与》里，原文里，原文里，原文里，原文里",
+          "id": "chat_restaurant",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "验证集不参与参与参数更新，用来观察模型是否真的泛化。",
+          "id": "instruction_ack_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "先学习概念，再做小练习，最后用自己的话总结GPToken。",
+          "id": "instruction_repeat_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "先学习概念，再做小练习，最后用自己的话总结论。",
+          "id": "instruction_two_advice",
+          "metric": "two_advice",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "是否真的泛化。",
+          "id": "instruction_test_not_train",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "验证集不参与参与参与参与参与参与参数更新，用来观察模型是否真的",
+          "id": "instruction_validation_one_sentence",
+          "metric": "validation_role",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+          "id": "general_encourage",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+          "id": "general_plan_today",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "把任务切小，关掉干扰，先学习，最后五分钟记录问题。",
+          "id": "general_python_focus",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "验证集不参与参与参与参与参与参数更新，用来观察模型是否真的泛化",
+          "id": "general_explain_sft",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "验证集不参与参与参与参与参与参数更新，用来观察模型是否真的泛化",
+          "id": "general_explain_bpe",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        }
+      ],
+      "behavior_total": 30,
+      "coverage": {
+        "by_pool": {
+          "contrast": {
+            "coverage": 0.0,
+            "cycles_started": 0,
+            "draws": 0,
+            "records": 28,
+            "seen_records": 0
+          },
+          "known": {
+            "coverage": 0.0,
+            "cycles_started": 0,
+            "draws": 0,
+            "records": 164,
+            "seen_records": 0
+          },
+          "replay": {
+            "coverage": 0.0,
+            "cycles_started": 0,
+            "draws": 0,
+            "records": 3227,
+            "seen_records": 0
+          }
+        },
+        "coverage": 0.0,
+        "draws": 0,
+        "records": 3419,
+        "seen_records": 0
+      },
+      "entity_passed": 0,
+      "eos_count": 25,
+      "selection_score": 8.228041211118676,
+      "step": 0,
+      "train_loss": 2.572649733301555,
+      "val_loss": 2.1958788881323614
+    },
+    {
+      "behavior_passed": 6,
+      "behavior_results": [
+        {
+          "category": "小说人物",
+          "generated_answer": "现有资料不足，无法确定。",
+          "id": "novel_entity_xiaoyan",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "现有资料不足，无法确定。",
+          "id": "novel_entity_yaochen",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "药老是药老。",
+          "id": "novel_entity_yaolao",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "我没有足够可靠的信息，不能硬编。",
+          "id": "novel_entity_xiaoyan_one_sentence",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "药老是小说中出现的一个人物。",
+          "id": "novel_entity_yihuo",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "第14章的标题是《大量》。",
+          "id": "novel_fact_chapter300",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "是药老说的。",
+          "id": "novel_fact_speaker_yaolao",
+          "metric": "exact_any",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "第1章的标题是《大量》。",
+          "id": "novel_fact_title_direct",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "第14章的标题是《大量》。",
+          "id": "novel_fact_no_unknown_for_known",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "我不能直接查询实时天气。你告诉我城市和天气预报，我可以帮你判断。",
+          "id": "novel_fact_not_weather",
+          "metric": "exact_any",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "是紫研。",
+          "id": "evidence_hanfeng_ziyan",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "是，片段同时提到了药老和药老。",
+          "id": "evidence_yaolao_only",
+          "metric": "all_required",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "能确认；当前证据片段同时提到了小医仙和紫研。",
+          "id": "evidence_no_birthdate",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "现有资料不足，无法确定。",
+          "id": "evidence_copy_question",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "片段中的两个人是紫研。",
+          "id": "evidence_two_names_no_extra",
+          "metric": "all_required",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "现有资料不足，无法确定。",
+          "id": "chat_weather",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我是一个本地训练出来的迷你GPT实验模型。",
+          "id": "chat_news",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我是一个本地训练出来的迷你GPT实验模型。",
+          "id": "chat_stock",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我是一个本地训练出来的迷你GPT实验模型。",
+          "id": "chat_exchange_rate",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "我是小说中出现的一个人物。",
+          "id": "chat_restaurant",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "验证集不参与参与参数更新，用来观察模型是否真的泛化。",
+          "id": "instruction_ack_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "先学习概念，再做小练习，最后用自己的话总结GPToken。",
+          "id": "instruction_repeat_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "先学习概念，再做小练习，最后用自己的话总结论。",
+          "id": "instruction_two_advice",
+          "metric": "two_advice",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "是否真的泛化。",
+          "id": "instruction_test_not_train",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "验证集不参与参与参与参与参与参与参与参数更新，用来观察模型是",
+          "id": "instruction_validation_one_sentence",
+          "metric": "validation_role",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+          "id": "general_encourage",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+          "id": "general_plan_today",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "把任务切小，关掉干扰，先学习，最后五分钟记录问题。",
+          "id": "general_python_focus",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "验证集不参与参与参与参与参与参数更新，用来观察模型是否真的泛化",
+          "id": "general_explain_sft",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "验证集不参与参与参与参与参与参数更新，用来观察模型是否真的泛化",
+          "id": "general_explain_bpe",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        }
+      ],
+      "behavior_total": 30,
+      "coverage": {
+        "by_pool": {
+          "contrast": {
+            "coverage": 0.0,
+            "cycles_started": 0,
+            "draws": 0,
+            "records": 28,
+            "seen_records": 0
+          },
+          "known": {
+            "coverage": 0.012195121951219513,
+            "cycles_started": 1,
+            "draws": 2,
+            "records": 164,
+            "seen_records": 2
+          },
+          "replay": {
+            "coverage": 0.0006197706848466068,
+            "cycles_started": 1,
+            "draws": 2,
+            "records": 3227,
+            "seen_records": 2
+          }
+        },
+        "coverage": 0.00116993272886809,
+        "draws": 4,
+        "records": 3419,
+        "seen_records": 4
+      },
+      "entity_passed": 0,
+      "eos_count": 27,
+      "selection_score": 7.328090450348637,
+      "step": 1,
+      "train_loss": 2.559906652669587,
+      "val_loss": 2.190954965136279
+    }
+  ],
+  "initialization_policy": "fresh_optimizer_from_model_checkpoint",
+  "latest_checkpoint": "runs/sft_v5_2_harness_smoke1_cpu_v2/latest.pt",
+  "latest_checkpoint_sha256": "c4fa14dc59396177b0b90d9aa131cdaaaf58f00856beab3e6a32efe6334b8382",
+  "learning_rate": 2e-05,
+  "loss_csv": "reports/milestones/014_v5_2_entity_routing/smoke1_cpu_v2_report_loss.csv",
+  "optimizer_steps_this_run": 1,
+  "parameter_count": 8105025,
+  "run_id": "sft-v5-20260828T134347Z-222c34e5",
+  "sampler_coverage": {
+    "by_pool": {
+      "contrast": {
+        "coverage": 0.0,
+        "cycles_started": 0,
+        "draws": 0,
+        "records": 28,
+        "seen_records": 0
+      },
+      "known": {
+        "coverage": 0.012195121951219513,
+        "cycles_started": 1,
+        "draws": 2,
+        "records": 164,
+        "seen_records": 2
+      },
+      "replay": {
+        "coverage": 0.0006197706848466068,
+        "cycles_started": 1,
+        "draws": 2,
+        "records": 3227,
+        "seen_records": 2
+      }
+    },
+    "coverage": 0.00116993272886809,
+    "draws": 4,
+    "records": 3419,
+    "seen_records": 4
+  },
+  "sampling_strategy": "mixture",
+  "schema_version": "sft-v5-report/v1",
+  "signature_sha256": "db9841b889eb7e1541c47e7d4a247c25d3b1b311cb4f07370f2e754460812c89",
+  "source_checkpoint": "runs/sft_v5_1_no_math_continue3000_cumulative5000/latest.pt",
+  "start_step": 0,
+  "status": "complete",
+  "target_step": 1,
+  "test_records_consumed": 0,
+  "validation_policy": {
+    "behavior": "fixed 30-item no-math diagnostic suite",
+    "selection": "total_passed + entity_passed + 0.05*eos - 0.01*val_loss",
+    "train": "fixed stratified 64 records",
+    "validation": "all 495 records"
+  },
+  "weight_decay": 0.05
+}

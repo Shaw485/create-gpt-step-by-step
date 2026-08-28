@@ -1,0 +1,218 @@
+{
+  "checkpoint": "runs/sft_v5_2_entity_repair_probe1000_resume/latest.pt",
+  "checkpoint_sha256": "0043b9a0278c771188653873bf57d683047ae41a9fe7380363b59365dd2dcd4a",
+  "checkpoint_step": 1000,
+  "data": "data/cloud_v4/sft_v5_2_entity_routing_tensors.pt",
+  "data_sha256": "9d8749f788cfc50902ea7c9f0c921f576eff3c4cb2d483f6100365dd53cf2bfd",
+  "max_new_tokens": 40,
+  "results": [
+    {
+      "category": "已知实体",
+      "generated_answer": "萧炎是一个本地训练出来的迷你GPT实验模型。",
+      "id": "hidden_xiaoyan_identity",
+      "passed": false,
+      "question": "小说萧炎是谁？",
+      "score_reason": "应识别已知实体及其关键身份，不得拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "已知实体",
+      "generated_answer": "简单概括，药老就是药尘。",
+      "id": "hidden_xiaoyan_role",
+      "passed": false,
+      "question": "不展开剧情，先说萧炎的基本角色定位。",
+      "score_reason": "应识别已知实体及其关键身份，不得拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "已知实体",
+      "generated_answer": "药尘是萧炎的重要人物。",
+      "id": "hidden_yaochen_identity",
+      "passed": false,
+      "question": "小说药尘是谁？",
+      "score_reason": "应识别已知实体及其关键身份，不得拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "已知实体",
+      "generated_answer": "在小说设定中，药尘是萧炎的重要人物。",
+      "id": "hidden_yaochen_role",
+      "passed": false,
+      "question": "药尘在萧炎成长中是什么身份？",
+      "score_reason": "应识别已知实体及其关键身份，不得拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "已知实体",
+      "generated_answer": "药老就是药尘。",
+      "id": "hidden_yaolao_alias",
+      "passed": true,
+      "question": "大家所说的药老本名叫什么？",
+      "score_reason": "应识别已知实体及其关键身份，不得拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "已知实体",
+      "generated_answer": "在小说设定中，药老就是药尘。",
+      "id": "hidden_yihuo_concept",
+      "passed": false,
+      "question": "异火在这部小说中属于哪类设定？",
+      "score_reason": "应识别已知实体及其关键身份，不得拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "已知实体",
+      "generated_answer": "在小说设定中，萧战是萧炎的父亲。",
+      "id": "hidden_xiaozhan_relation",
+      "passed": true,
+      "question": "萧战和萧炎是什么亲属关系？",
+      "score_reason": "应识别已知实体及其关键身份，不得拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "已知实体",
+      "generated_answer": "应该说中被称为丹王的人物。",
+      "id": "hidden_guhename",
+      "passed": false,
+      "question": "小说里被称为丹王的人物叫什么？",
+      "score_reason": "应识别已知实体及其关键身份，不得拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "已知实体",
+      "generated_answer": "最先要知道的是：云山是云岚宗的重要人物。",
+      "id": "hidden_yunshan",
+      "passed": true,
+      "question": "云山主要和哪个宗门有关？",
+      "score_reason": "应识别已知实体及其关键身份，不得拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "已知实体",
+      "generated_answer": "先要知道的是：韩枫是小说中与药尘有关的重要人物。",
+      "id": "hidden_hanfeng",
+      "passed": true,
+      "question": "韩枫与哪位老师辈人物有关？",
+      "score_reason": "应识别已知实体及其关键身份，不得拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "不存在实体",
+      "generated_answer": "当前语料中没有找到天气预报，我可以帮你判断。",
+      "id": "hidden_unknown_01",
+      "passed": false,
+      "question": "只按本项目语料判断，书中能确认九星猫皇的身份吗？",
+      "score_reason": "应点名实体并基于语料缺失作有依据的拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "不存在实体",
+      "generated_answer": "当前语料中没有找到青阳小说明，并独立完成一个小练习，就算开始学会了。",
+      "id": "hidden_unknown_02",
+      "passed": false,
+      "question": "只按本项目语料判断，书中能确认青木灵舟的身份吗？",
+      "score_reason": "应点名实体并基于语料缺失作有依据的拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "不存在实体",
+      "generated_answer": "当前语料中没有找到天气预报，我可以帮你判断。",
+      "id": "hidden_unknown_03",
+      "passed": false,
+      "question": "只按本项目语料判断，书中能确认星河炼药塔的身份吗？",
+      "score_reason": "应点名实体并基于语料缺失作有依据的拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "不存在实体",
+      "generated_answer": "当前语料中没有找到青海王，因此不能确认它在本书中的身份。",
+      "id": "hidden_unknown_04",
+      "passed": false,
+      "question": "只按本项目语料判断，书中能确认北海药王的身份吗？",
+      "score_reason": "应点名实体并基于语料缺失作有依据的拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "不存在实体",
+      "generated_answer": "当前语料中没有找到青海王，因此不能确认它在本书中的身份。",
+      "id": "hidden_unknown_05",
+      "passed": false,
+      "question": "只按本项目语料判断，书中能确认玄风石碑的身份吗？",
+      "score_reason": "应点名实体并基于语料缺失作有依据的拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "不存在实体",
+      "generated_answer": "当前语料中没有找到青阳小说明训练。",
+      "id": "hidden_unknown_06",
+      "passed": false,
+      "question": "只按本项目语料判断，书中能确认风雪猫王的身份吗？",
+      "score_reason": "应点名实体并基于语料缺失作有依据的拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "不存在实体",
+      "generated_answer": "当前语料中没有找到青阳小说明，并独立完成一个小说明，并独立完成一个小练习，就算开始学会了。",
+      "id": "hidden_unknown_07",
+      "passed": false,
+      "question": "只按本项目语料判断，书中能确认青铜火莲的身份吗？",
+      "score_reason": "应点名实体并基于语料缺失作有依据的拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "不存在实体",
+      "generated_answer": "当前语料中没有找到天气预报，我可以帮你判断。",
+      "id": "hidden_unknown_08",
+      "passed": false,
+      "question": "只按本项目语料判断，书中能确认天河药典的身份吗？",
+      "score_reason": "应点名实体并基于语料缺失作有依据的拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "不存在实体",
+      "generated_answer": "当前语料中没有找到青阳小说明，并独立完成一个小练习，就算开始学会了。",
+      "id": "hidden_unknown_09",
+      "passed": false,
+      "question": "只按本项目语料判断，书中能确认南山火典的身份吗？",
+      "score_reason": "应点名实体并基于语料缺失作有依据的拒答",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "不存在实体",
+      "generated_answer": "当前语料中没有找到青阳小说明，并独立完成一个小说明，并独立完成一个小练习，就算开始学会了。",
+      "id": "hidden_unknown_10",
+      "passed": false,
+      "question": "只按本项目语料判断，书中能确认白银斗帝的身份吗？",
+      "score_reason": "应点名实体并基于语料缺失作有依据的拒答",
+      "stopped_on_eos": true
+    }
+  ],
+  "schema_version": "sft-v5-hidden-entity-eval/v1",
+  "seed": 20260828,
+  "status": "complete",
+  "summary": {
+    "accuracy": 0.2,
+    "by_category": {
+      "不存在实体": {
+        "accuracy": 0.0,
+        "passed": 0,
+        "total": 10
+      },
+      "已知实体": {
+        "accuracy": 0.4,
+        "passed": 4,
+        "total": 10
+      }
+    },
+    "eos_count": 20,
+    "failure_counts": {
+      "不存在实体": 10,
+      "已知实体": 6
+    },
+    "passed": 4,
+    "total": 20
+  },
+  "temperature": 0.3,
+  "test_records_consumed": 0,
+  "top_k": 1
+}

@@ -66,7 +66,7 @@ EVAL_ITEMS = [
         "question": "萧炎是谁？",
         "metric": "known_entity",
         "required_any": ["萧炎"],
-        "required_context_any": ["主要", "人物", "主角"],
+        "required_context_any": ["主要", "主角", "核心"],
         "forbidden_any": UNKNOWN_REFUSAL_MARKERS,
     },
     {
@@ -75,7 +75,7 @@ EVAL_ITEMS = [
         "question": "药尘是谁？",
         "metric": "known_entity",
         "required_any": ["药尘", "药老"],
-        "required_context_any": ["药老", "老师", "人物"],
+        "required_context_any": ["药老", "老师"],
         "forbidden_any": UNKNOWN_REFUSAL_MARKERS,
     },
     {
@@ -84,7 +84,7 @@ EVAL_ITEMS = [
         "question": "药老是谁？",
         "metric": "known_entity",
         "required_any": ["药老", "药尘"],
-        "required_context_any": ["药尘", "老师", "人物"],
+        "required_context_any": ["药尘", "老师"],
         "forbidden_any": UNKNOWN_REFUSAL_MARKERS,
     },
     {
@@ -93,7 +93,7 @@ EVAL_ITEMS = [
         "question": "请用一句话介绍萧炎。",
         "metric": "known_entity",
         "required_any": ["萧炎"],
-        "required_context_any": ["主要", "人物", "主角"],
+        "required_context_any": ["主要", "主角", "核心"],
         "forbidden_any": UNKNOWN_REFUSAL_MARKERS + ["天气", "新闻"],
     },
     {
