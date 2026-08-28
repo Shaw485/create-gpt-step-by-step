@@ -1,6 +1,6 @@
 # Model Card：Doupo GPT v4
 
-> 状态：v4 预训练完成，SFT 尚未开始。以下预训练数字来自 M006 正式运行；SFT 字段将在下一阶段补充。
+> 状态：v4 预训练已续训至累计 6,000 步，SFT 尚未开始。以下预训练数字来自 M006 与 M007 正式运行；SFT 字段将在下一阶段补充。
 
 ## 模型简介
 
@@ -29,7 +29,7 @@ Doupo GPT v4 是一个用于学习 GPT 原理的中文 Decoder-only Transformer�
 - 语料按完整章节分组为 train/validation/test；同章版本不得跨集合。
 - BPE 合并规则只能从训练章节学习。
 - SFT v4 尚未冻结；验证和测试记录必须全部审核，主题不得跨集合泄漏。
-- 预训练模型、Tokenizer 和语料清单的 SHA-256 已记录在 M006；原始语料与可逆 Token 张量不公开。
+- 预训练模型、Tokenizer 和语料清单的 SHA-256 已记录在 M006/M007；原始语料与可逆 Token 张量不公开。
 
 ## 预期用途
 
@@ -50,18 +50,19 @@ Doupo GPT v4 是一个用于学习 GPT 原理的中文 Decoder-only Transformer�
 | 项目 | 正式结果 |
 |---|---|
 | 预训练 Token | Train 3,416,400；Validation 195,068；Test 184,808 |
-| 预训练 Step / 约当 Epoch | 3,000 / 约3.60 |
-| 最佳 Validation Loss | 5.0447（Step 2,600） |
-| 所选模型 Test Loss | 4.9958 |
+| 预训练 Step / 约当 Epoch | 6,000 / 约7.19 |
+| 最佳 Validation Loss | 4.7759（Step 6,000） |
+| 所选模型 Test Loss | 4.7476 |
+| 固定小说提示词自动门槛 | REVIEW（发布候选出现连续重复） |
 | SFT Step / Epoch | 待填写 |
 | SFT 六类指标 | 待填写 |
 | EOS 停止率 | 待填写 |
 | 50题固定回归 | 待填写 |
 | 300题隐藏测试 | 待填写 |
-| 正式训练设备 / 耗时 | Apple M4 MPS / 2,201.6秒 |
-| Best Checkpoint SHA-256 | `1cb34b5bbf6cbef13c2f7239f80c8bf5caa4e773ef0967166803cf33e194c559` |
+| 正式训练设备 / 累计耗时 | Apple M4 MPS / 4,057.5秒 |
+| Best Checkpoint SHA-256 | `5d6397b3bb97b8a14369117e2f1e1e9f9addf515da1117e2f0f35dfe8ac8af44` |
 
-测试结果必须同时报告严格正确率、分项表现和失败样本，不能只展示最好看的生成文本。
+测试结果必须同时报告严格正确率、分项表现和失败样本，不能只展示最好看的生成文本。预训练 checkpoint 的选择协议是：Validation Loss 先筛选，自动质量门槛可以否决，最终语义质量由人工盲评决定；Test Loss 只做一次最终报告，不参与选模。
 
 ## 已知限制
 

@@ -27,6 +27,7 @@ from training_runtime import (
     configure_module_loggers,
     file_sha256,
     generate_run_id,
+    load_checkpoint,
     restore_checkpoint,
 )
 
@@ -85,9 +86,12 @@ def learning_rate(step: int, settings: dict[str, Any]) -> float:
     minimum = float(settings["minimum_learning_rate"])
     warmup = int(settings["warmup_steps"])
     maximum_steps = int(settings["max_steps"])
-    if step < warmup:
-        return maximum * (step + 1) / max(1, warmup)
-    progress = min(1.0, (step - warmup) / max(1, maximum_steps - warmup))
+    schedule_start = int(settings.get("schedule_start_step", 0))
+    schedule_step = max(0, step - schedule_start)
+    schedule_length = max(1, maximum_steps - schedule_start)
+    if schedule_step < warmup:
+        return maximum * (schedule_step + 1) / max(1, warmup)
+    progress = min(1.0, (schedule_step - warmup) / max(1, schedule_length - warmup))
     return minimum + 0.5 * (maximum - minimum) * (1.0 + math.cos(math.pi * progress))
 
 
@@ -163,8 +167,11 @@ def main() -> int:
     parser.add_argument("--max-steps", type=int)
     parser.add_argument("--run-dir", type=Path)
     parser.add_argument("--resume", type=Path)
+    parser.add_argument("--init-checkpoint", type=Path)
     parser.add_argument("--smoke", action="store_true")
     args = parser.parse_args()
+    if args.resume and args.init_checkpoint:
+        parser.error("--resume and --init-checkpoint cannot be used together")
 
     config = load_config(args.config)
     if args.max_steps is not None:
@@ -230,6 +237,9 @@ def main() -> int:
     samples: list[dict[str, Any]] = []
     start_step = 1
     best_loss = float("inf")
+    best_step = -1
+    elapsed_offset = 0.0
+    initial_checkpoint: dict[str, Any] | None = None
     if args.resume:
         resumed = restore_checkpoint(
             args.resume,
@@ -242,6 +252,7 @@ def main() -> int:
         )
         start_step = resumed.step + 1
         best_loss = resumed.best_metric
+        best_step = int(resumed.early_stopping_state.get("best_step", resumed.step))
         history = resumed.history
         samples = list(resumed.extra.get("samples", []))
         if "eval_generator_state" in resumed.extra:
@@ -250,8 +261,44 @@ def main() -> int:
             sample_generator.set_state(resumed.extra["sample_generator_state"].cpu())
         if resumed.early_stopping_state:
             early_stopping.load_state_dict(resumed.early_stopping_state)
+        elapsed_offset = max(
+            (float(entry.get("elapsed_seconds", 0.0)) for entry in history),
+            default=0.0,
+        )
+    elif args.init_checkpoint:
+        checkpoint = load_checkpoint(args.init_checkpoint, map_location="cpu")
+        checkpoint_config = checkpoint.get("extra", {}).get("model_config")
+        if checkpoint_config != model_config.to_dict():
+            raise ValueError(
+                "initial checkpoint model configuration does not match the current model"
+            )
+        model.load_state_dict(checkpoint["model_state_dict"], strict=True)
+        start_step = int(checkpoint["step"]) + 1
+        best_loss = float(checkpoint["best_metric"])
+        best_step = int(checkpoint["step"])
+        history = [dict(entry) for entry in checkpoint["history"]]
+        samples = list(checkpoint.get("extra", {}).get("samples", []))
+        elapsed_offset = max(
+            (float(entry.get("elapsed_seconds", 0.0)) for entry in history),
+            default=0.0,
+        )
+        early_stopping.best_metric = best_loss
+        early_stopping.best_step = best_step
+        initial_checkpoint = {
+            "path": str(args.init_checkpoint),
+            "step": int(checkpoint["step"]),
+            "sha256": file_sha256(args.init_checkpoint),
+            "optimizer_policy": "fresh AdamW state for the lower-learning-rate phase",
+        }
+        loggers["checkpoint"].info(
+            "model initialized from validation-selected checkpoint",
+            extra={"context": initial_checkpoint},
+        )
 
     current_step = max(0, start_step - 1)
+
+    def elapsed_seconds() -> float:
+        return elapsed_offset + time.monotonic() - started
 
     def payload() -> dict[str, Any]:
         return build_checkpoint_payload(
@@ -270,6 +317,7 @@ def main() -> int:
                 "token_manifest_sha256": file_sha256(data_dir / "token_manifest.json"),
                 "eval_generator_state": eval_generator.get_state(),
                 "sample_generator_state": sample_generator.get_state(),
+                "initial_checkpoint": initial_checkpoint,
             },
         )
 
@@ -278,12 +326,12 @@ def main() -> int:
         payload,
         logger=loggers["checkpoint"],
     )
-    prompts_path = Path("data/prompt10_eval.txt")
+    prompts_path = Path(config.get("sample_prompts_path", "data/prompt10_eval.txt"))
     prompts = [
         line.strip()
         for line in prompts_path.read_text(encoding="utf-8").splitlines()
         if line.strip()
-    ][:10]
+    ][: int(config.get("sample_prompt_limit", 10))]
     loggers["data"].info(
         "formal tensors loaded",
         extra={
@@ -340,7 +388,7 @@ def main() -> int:
                                 "loss": batch_loss,
                                 "learning_rate": lr,
                                 "gradient_norm": float(grad_norm.detach().cpu()),
-                                "elapsed_seconds": time.monotonic() - started,
+                                "elapsed_seconds": elapsed_seconds(),
                             }
                         },
                     )
@@ -351,12 +399,13 @@ def main() -> int:
                     val_loss = evaluate(model, val_data, settings, eval_generator, device)
                     decision = early_stopping.update(val_loss, step)
                     best_loss = decision.best_metric
+                    best_step = decision.best_step
                     entry = {
                         "step": step,
                         "train_loss": train_loss,
                         "val_loss": val_loss,
                         "learning_rate": lr,
-                        "elapsed_seconds": time.monotonic() - started,
+                        "elapsed_seconds": elapsed_seconds(),
                     }
                     history.append(entry)
                     loggers["validation"].info(
@@ -405,12 +454,17 @@ def main() -> int:
             "parameter_count": model.parameter_count(),
             "device": str(device),
             "best_validation_loss": best_loss,
+            "best_step": best_step,
             "test_loss": test_loss,
-            "elapsed_seconds": time.monotonic() - started,
+            "stage_elapsed_seconds": time.monotonic() - started,
+            "elapsed_seconds": elapsed_seconds(),
             "history": history,
             "samples_path": str(run_dir / "samples.json"),
             "latest_checkpoint": str(run_dir / "latest.pt"),
-            "best_checkpoint": str(run_dir / "best.pt"),
+            "best_checkpoint": str(
+                run_dir / "best.pt" if (run_dir / "best.pt").is_file() else args.init_checkpoint
+            ),
+            "initial_checkpoint": initial_checkpoint,
         }
         atomic_write_json(run_dir / "report.json", report)
         state_writer.mark_done(report)

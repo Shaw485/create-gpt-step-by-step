@@ -14,5 +14,6 @@ data/clean/
 data/cloud_v4/
 data/sft/v4/
 logs/
+**/logs/
 checkpoints/
 runs/

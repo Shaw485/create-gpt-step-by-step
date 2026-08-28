@@ -28,6 +28,11 @@ def main() -> int:
         type=Path,
         default=Path("reports/milestones/006_v4_local_pretrain"),
     )
+    parser.add_argument(
+        "--milestone-name",
+        default="M006",
+        help="Label written into the checksum archive, for example M007.",
+    )
     args = parser.parse_args()
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
@@ -96,15 +101,23 @@ def main() -> int:
     )
     atomic_write_text(svg_path, normalized_svg + "\n")
 
-    # Produce a compact table containing every fixed prompt at every 500-step sample.
-    sample_rows = ["| Step | 问题 | 最多30字续写 |", "|---:|---|---|"]
+    sample_max_characters = int(
+        json.loads((args.run_dir / "effective_config.json").read_text(encoding="utf-8"))
+        ["training"]
+        .get("sample_max_characters", 30)
+    )
+    sample_column = f"最多{sample_max_characters}字续写"
+
+    # Produce a compact table containing every fixed prompt at every saved sample step.
+    sample_rows = [f"| Step | 提示词 | {sample_column} |", "|---:|---|---|"]
     for milestone in samples["history"]:
         for item in milestone["samples"]:
             continuation = item["continuation"].replace("\n", "↵").replace("|", "\\|")
             prompt = item["prompt"].replace("|", "\\|")
             sample_rows.append(f"| {milestone['step']} | {prompt} | {continuation} |")
-    sample_rows.extend(["", "## 验证集选出的最佳模型（Step 2600）", ""])
-    sample_rows.extend(["| 问题 | 最多30字续写 |", "|---|---|"])
+    selected_step = evaluation["checkpoint_step"]
+    sample_rows.extend(["", f"## 验证集选出的最佳模型（Step {selected_step}）", ""])
+    sample_rows.extend([f"| 提示词 | {sample_column} |", "|---|---|"])
     for item in evaluation["samples"]:
         continuation = item["continuation"].replace("\n", "↵").replace("|", "\\|")
         prompt = item["prompt"].replace("|", "\\|")
@@ -116,13 +129,18 @@ def main() -> int:
         for path in args.output_dir.iterdir()
         if path.is_file() and path.name not in {"SHA256SUMS.md", "README.md"}
     )
-    checksum_rows = ["# M006 SHA-256", "", "| 文件 | SHA-256 |", "|---|---|"]
+    checksum_rows = [
+        f"# {args.milestone_name} SHA-256",
+        "",
+        "| 文件 | SHA-256 |",
+        "|---|---|",
+    ]
     for name in checksum_names:
         checksum_rows.append(f"| `{name}` | `{file_sha256(args.output_dir / name)}` |")
     checksum_rows.extend(
         [
-            f"| `runs/pretrain_v4_m4/best.pt` | `{file_sha256(args.run_dir / 'best.pt')}` |",
-            f"| `runs/pretrain_v4_m4/latest.pt` | `{file_sha256(args.run_dir / 'latest.pt')}` |",
+            f"| `{args.run_dir}/best.pt` | `{file_sha256(args.run_dir / 'best.pt')}` |",
+            f"| `{args.run_dir}/latest.pt` | `{file_sha256(args.run_dir / 'latest.pt')}` |",
         ]
     )
     atomic_write_text(args.output_dir / "SHA256SUMS.md", "\n".join(checksum_rows) + "\n")

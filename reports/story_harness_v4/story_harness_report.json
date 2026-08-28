@@ -1,0 +1,626 @@
+{
+  "protocol": {
+    "automatic_gates": {
+      "maximum_character_run": 5,
+      "maximum_four_gram_repetition": 0.08,
+      "maximum_mean_han_ratio": 0.95,
+      "maximum_train_overlap": 30,
+      "minimum_mean_characters": 90,
+      "minimum_mean_han_ratio": 0.6
+    },
+    "automatic_metrics_are_diagnostic_not_semantic_quality_scores": true,
+    "manual_dimensions": [
+      "fluency",
+      "coherence",
+      "prompt_relevance"
+    ],
+    "prompt_count": 5,
+    "selection_policy": "validation loss shortlists checkpoints; automatic gates can veto; manual semantic review chooses among passing candidates"
+  },
+  "run_id": "story-harness-v4-20260828T050912Z-268ab1d5",
+  "samples": [
+    {
+      "characters": 100,
+      "continuation": "待得萧炎心中也是略微有些变化，并未发现，这次的实力也不会在他们一年时间，那么他们的战局势，但他还会对他如今她所受的好奇的差距。\n\n    两人一行人在天空上，萧炎目光注视下，对着众人也是忍不住的皱了望",
+      "four_gram_repetition": 0.0,
+      "han_ratio": 0.8877551020408163,
+      "longest_character_run": 4,
+      "longest_train_overlap": 10,
+      "paragraphs": 2,
+      "prompt": "夜色笼罩着山谷，",
+      "step": 2600
+    },
+    {
+      "characters": 100,
+      "continuation": "中，顿时响起的巨龙的紫火浪，猛然间便是化为一道金色的火焰，瞬间爆裂开。\n\n    “噗嗤！”\n\n    血海中急速扩散而出，在一道巨龙般的刺，宛如血雾气旋中暴涌而出，最后犹如潮般的刺眼光波浪般，犹如一",
+      "four_gram_repetition": 0.010752688172043001,
+      "han_ratio": 0.8020833333333334,
+      "longest_character_run": 4,
+      "longest_train_overlap": 10,
+      "paragraphs": 3,
+      "prompt": "广场之上，无数道目光",
+      "step": 2600
+    },
+    {
+      "characters": 100,
+      "continuation": "忽然微微抽搐，忽然睁开了摊手，笑道：“你，若不是什么好。”\n\n    无奈的摇了摇头，轻哼了一声，道：“这女子，是我也好，难道不是不好在下去试试试试试试试试试试。”\n\n    “嗯。”\n\n    站在",
+      "four_gram_repetition": 0.13186813186813184,
+      "han_ratio": 0.6808510638297872,
+      "longest_character_run": 10,
+      "longest_train_overlap": 12,
+      "paragraphs": 4,
+      "prompt": "望着眼前的黑袍少年，",
+      "step": 2600
+    },
+    {
+      "characters": 100,
+      "continuation": "\n\n    “呃？”\n\n    药老沉吟了片刻，萧炎心中也是略微有些阴沉，笑着点了点头，道：“老师是什么事都不是他也清楚，想起来的好吧...我们的麻烦。”\n\n    “呃，我也太多谢你说不定你说什么？",
+      "four_gram_repetition": 0.05494505494505497,
+      "han_ratio": 0.6914893617021277,
+      "longest_character_run": 4,
+      "longest_train_overlap": 11,
+      "paragraphs": 3,
+      "prompt": "药老沉吟片刻，道：",
+      "step": 2600
+    },
+    {
+      "characters": 100,
+      "continuation": "道。\n\n    “这家伙，果然不像是否则的麻烦，别说一月票，希望你一辈？”\n\n    “老师，请我不想你了。”药老道。\n\n    “放心吧，老师说，请他说我来我来！”听得萧炎的喝声，沉声道：“你是我便",
+      "four_gram_repetition": 0.06593406593406592,
+      "han_ratio": 0.6595744680851063,
+      "longest_character_run": 4,
+      "longest_train_overlap": 11,
+      "paragraphs": 4,
+      "prompt": "萧炎微微一笑，",
+      "step": 2600
+    },
+    {
+      "characters": 100,
+      "continuation": "众人眼中顿时一转，脸色也是紧皱，冷笑，手掌，沉声道：“你是什么？”\n\n    “老师，老夫也太大事？”\n\n    对于这种事，萧炎倒是有些疑惑的道。\n\n    萧炎笑了笑，声音刚刚落下，一声便是突然响",
+      "four_gram_repetition": 0.04395604395604391,
+      "han_ratio": 0.7021276595744681,
+      "longest_character_run": 4,
+      "longest_train_overlap": 12,
+      "paragraphs": 4,
+      "prompt": "夜色笼罩着山谷，",
+      "step": 3000
+    },
+    {
+      "characters": 100,
+      "continuation": "在天空的声响，瞬间便是浮现而出，最后一道漆黑的雷鸣声响起，旋即一道身影，宛如火海般的巨殿中响彻而起。\n\n    天空上那四种血海海之中，几乎被震荡然在天际之上，血雾气自其中弥漫而出的狂暴能量罩上，宛如",
+      "four_gram_repetition": 0.0,
+      "han_ratio": 0.8775510204081632,
+      "longest_character_run": 4,
+      "longest_train_overlap": 10,
+      "paragraphs": 2,
+      "prompt": "广场之上，无数道目光",
+      "step": 3000
+    },
+    {
+      "characters": 100,
+      "continuation": "微笑道：“小家伙，的确要是什么不对你。”\n\n    “别说，没多说什么，云岚宗对你还在我也好，萧家出什么，别。”\n\n    “不起你是我会把我去吧。”\n\n    轻笑了一声，她有些尴尬的摇了摇头，道。",
+      "four_gram_repetition": 0.07692307692307687,
+      "han_ratio": 0.6808510638297872,
+      "longest_character_run": 4,
+      "longest_train_overlap": 10,
+      "paragraphs": 4,
+      "prompt": "望着眼前的黑袍少年，",
+      "step": 3000
+    },
+    {
+      "characters": 100,
+      "continuation": "“黑线便是脱离去，那家伙的模样，就犹如被吞天蟒的毒龙兽般的巨蟒，迅速的落进那毒蛇蟒。\n\n    手掌轻轻的落进纳戒，萧炎脸色微变，心神一动，化为了一番的晶柱一般，对着萧炎脑袋一振动，顿时犹如一般，在萧",
+      "four_gram_repetition": 0.0,
+      "han_ratio": 0.8469387755102041,
+      "longest_character_run": 4,
+      "longest_train_overlap": 12,
+      "paragraphs": 2,
+      "prompt": "药老沉吟片刻，道：",
+      "step": 3000
+    },
+    {
+      "characters": 100,
+      "continuation": "道：“这段时间也要将你！”\n\n    就在黑暗自其中的霎那间，那道巨大的血气从空间之中弥漫而出，直接是被震得喷射而出，将其上空空，瞬间便是被那道道道道黑色光泽的暴掠去。\n\n    天空之上，空间，\n\n",
+      "four_gram_repetition": 0.01098901098901095,
+      "han_ratio": 0.7978723404255319,
+      "longest_character_run": 4,
+      "longest_train_overlap": 9,
+      "paragraphs": 3,
+      "prompt": "萧炎微微一笑，",
+      "step": 3000
+    },
+    {
+      "characters": 100,
+      "continuation": "广场上升空空荡的城市。\n\n    虽然没有出乎了场的战场地目光扫过，众人便是被那被人耳边的广场上空旷城。\n\n    城中那被那广场上，周围那张黑皇城的广场的学员顿时惊呼的四处的视线，在场的广场上，有着",
+      "four_gram_repetition": 0.043010752688172005,
+      "han_ratio": 0.8541666666666666,
+      "longest_character_run": 4,
+      "longest_train_overlap": 8,
+      "paragraphs": 3,
+      "prompt": "夜色笼罩着山谷，",
+      "step": 3500
+    },
+    {
+      "characters": 100,
+      "continuation": "注视着广场的天空。\n\n    天空之上传来看似也是缓缓的睁开双眼，眉头微皱着许些惊异，轻声道：“你，能与你还要求你！”\n\n    天空上，白袍老者微微一缩，身形一动，化为一圈巨嘴，带着些许寒意气流逝，",
+      "four_gram_repetition": 0.032258064516129004,
+      "han_ratio": 0.78125,
+      "longest_character_run": 4,
+      "longest_train_overlap": 10,
+      "paragraphs": 3,
+      "prompt": "广场之上，无数道目光",
+      "step": 3500
+    },
+    {
+      "characters": 100,
+      "continuation": "低声道：“我还不错了，我是我会的？那人都得不然，你可不会好？”\n\n    雅妃微笑着点了点头，道：“你想起我说着什么话的？”\n\n    “不说我想说，请我也要来找我。”萧鼎微微点头，轻声道：“你想起这",
+      "four_gram_repetition": 0.07526881720430112,
+      "han_ratio": 0.71875,
+      "longest_character_run": 4,
+      "longest_train_overlap": 14,
+      "paragraphs": 3,
+      "prompt": "望着眼前的黑袍少年，",
+      "step": 3500
+    },
+    {
+      "characters": 100,
+      "continuation": "\"\n\n    药老，萧炎目光瞥着眼睛微微一皱，半晌，望着萧炎目光一行人，轻声道：“你是我还想想将你了。”\n\n    听得萧炎点了点头，目光紧皱了皱，他知道你能听说过萧炎哥哥说说话，心中也是不对你知道，",
+      "four_gram_repetition": 0.021505376344086002,
+      "han_ratio": 0.78125,
+      "longest_character_run": 4,
+      "longest_train_overlap": 9,
+      "paragraphs": 3,
+      "prompt": "药老沉吟片刻，道：",
+      "step": 3500
+    },
+    {
+      "characters": 100,
+      "continuation": "目光注视着痕迹的少年，目光望向远处的小医仙，低声道。\n\n    “不客气的好，老夫在你不够！”\n\n    闻言，苏千也是冷笑的冷笑，道：“你也算是什么？”\n\n    紫研轻松，后者却是冷笑一声，道：“",
+      "four_gram_repetition": 0.04395604395604391,
+      "han_ratio": 0.6914893617021277,
+      "longest_character_run": 4,
+      "longest_train_overlap": 11,
+      "paragraphs": 4,
+      "prompt": "萧炎微微一笑，",
+      "step": 3500
+    },
+    {
+      "characters": 100,
+      "continuation": "山谷中央的山壁上，顿时一行人在城之外的天山谷之中，却是有些感到惊叹。\n\n    “这里是我会的丹城的魔兽山脉，每一次之边，比不上你所知比试。”\n\n    “这个名的是我也不是什么？”闻言，萧炎只得摇了",
+      "four_gram_repetition": 0.032258064516129004,
+      "han_ratio": 0.7916666666666666,
+      "longest_character_run": 4,
+      "longest_train_overlap": 10,
+      "paragraphs": 3,
+      "prompt": "夜色笼罩着山谷，",
+      "step": 4000
+    },
+    {
+      "characters": 100,
+      "continuation": "注视着许些诧异的面。\n\n    大厅中的广场之上，萧炎目光扫向那张着茶杯，冲着萧炎笑道。\n\n    “小公主？”\n\n    萧炎点了点头，然后目光在天空之上，青灵丹也是缓缓的从纳戒中取出一个小时之后，",
+      "four_gram_repetition": 0.03296703296703296,
+      "han_ratio": 0.7659574468085106,
+      "longest_character_run": 4,
+      "longest_train_overlap": 15,
+      "paragraphs": 4,
+      "prompt": "广场之上，无数道目光",
+      "step": 4000
+    },
+    {
+      "characters": 100,
+      "continuation": "忽然有些凝重的笑道。\n\n    “哦。”望着萧炎目光中，萧炎轻微变。\n\n    听出这两股气势，海波东虽然对其实力比赛的天赋，依然有些难以掩饰的对其上那些在他们对萧炎所幸。\n\n    从萧炎身旁，纳兰",
+      "four_gram_repetition": 0.04395604395604391,
+      "han_ratio": 0.7659574468085106,
+      "longest_character_run": 4,
+      "longest_train_overlap": 8,
+      "paragraphs": 4,
+      "prompt": "望着眼前的黑袍少年，",
+      "step": 4000
+    },
+    {
+      "characters": 100,
+      "continuation": "\n\n    药老的眼眸微眯，轻松了一口气，旋即目光中，突然睁开双眼，轻笑，旋即目光扫过萧炎眉头一挑，轻微皱，笑道：“我会有多谢，否则更新作。”\n\n    萧炎轻笑道：“我想来吧，等你，你可还得去。”\n",
+      "four_gram_repetition": 0.05434782608695654,
+      "han_ratio": 0.7263157894736842,
+      "longest_character_run": 4,
+      "longest_train_overlap": 11,
+      "paragraphs": 2,
+      "prompt": "药老沉吟片刻，道：",
+      "step": 4000
+    },
+    {
+      "characters": 100,
+      "continuation": "道：“老师，的确不是什么人。”\n\n    听得这名长老的女，老者也是微微一笑，轻声道。\n\n    “放心吧”\n\n    “薰儿，欣蓝也是点了点头，道：“那老祖宗派人。”\n\n    “古域，中州上也太古",
+      "four_gram_repetition": 0.101123595505618,
+      "han_ratio": 0.6195652173913043,
+      "longest_character_run": 4,
+      "longest_train_overlap": 11,
+      "paragraphs": 5,
+      "prompt": "萧炎微微一笑，",
+      "step": 4000
+    },
+    {
+      "characters": 100,
+      "continuation": "众人都是有些惊诧异的道:“”，既然他还没理会他一句话，也只能让他知道他出云帝国的资格。”\n\n    听着萧炎的背影，云韵与紫研微微闪烁，一声喝道。\n\n    薰儿的脸颊上扫过，紫研也是忍不住的摇头，对",
+      "four_gram_repetition": 0.010752688172043001,
+      "han_ratio": 0.7916666666666666,
+      "longest_character_run": 4,
+      "longest_train_overlap": 9,
+      "paragraphs": 3,
+      "prompt": "夜色笼罩着山谷，",
+      "step": 4500
+    },
+    {
+      "characters": 100,
+      "continuation": "紧紧的盯着那遥遥遥遥的广场，遥远处，天空浮现而出，旋即一道苍老的广场之上，那里。\n\n    广场的广场上，有着不少目光在无数道目光扫视，广场之上，突然响起，旋即突然出现在了萧炎三人身上。\n\n    广",
+      "four_gram_repetition": 0.053763440860215006,
+      "han_ratio": 0.8125,
+      "longest_character_run": 4,
+      "longest_train_overlap": 9,
+      "paragraphs": 3,
+      "prompt": "广场之上，无数道目光",
+      "step": 4500
+    },
+    {
+      "characters": 100,
+      "continuation": "忽然从其中，被自己面前的白长长长的吐而出，然后缓缓收回了愣了扬。\n\n    雅妃，纳兰桀等人从萧炎等人在大厅中走出口，略微有些无奈的摇了摇头，轻笑道：“如果是想了，我想将自己离开加玛帝国的家族的萧家，",
+      "four_gram_repetition": 0.0,
+      "han_ratio": 0.8571428571428571,
+      "longest_character_run": 4,
+      "longest_train_overlap": 10,
+      "paragraphs": 2,
+      "prompt": "望着眼前的黑袍少年，",
+      "step": 4500
+    },
+    {
+      "characters": 100,
+      "continuation": "““焚决””“”这是否则”这“焚决””“”“””\n\n    唐震目光瞥那突然响起，一道低低的突然响起，旋即一道惊诧的声音，出现在了那道道黑暗自主意味道：“呵呵””\n\n    风尊者一眼，苏千脸庞上也是",
+      "four_gram_repetition": 0.09677419354838712,
+      "han_ratio": 0.6770833333333334,
+      "longest_character_run": 4,
+      "longest_train_overlap": 9,
+      "paragraphs": 3,
+      "prompt": "药老沉吟片刻，道：",
+      "step": 4500
+    },
+    {
+      "characters": 100,
+      "continuation": "道：“这是他也要好。”\n\n    “小友，请你有那么...”一旁的紫研点了点头，道。\n\n    “哦？”\n\n    “看来这小家伙都没多强。”\n\n    “看来这小子还真的是这家伙说是什么话。\n\n  ",
+      "four_gram_repetition": 0.14942528735632188,
+      "han_ratio": 0.5777777777777777,
+      "longest_character_run": 4,
+      "longest_train_overlap": 9,
+      "paragraphs": 5,
+      "prompt": "萧炎微微一笑，",
+      "step": 4500
+    },
+    {
+      "characters": 100,
+      "continuation": "后者身体上的冰凉的声响，瞬间化为一丝丝丝丝丝丝丝丝丝丝丝丝丝丝丝般的水波从其体质般，在这一刻间流流淌而出，然后狠狠的击下风云翼体的消散。\n\n    这股无形火焰罩的扩散而出，萧炎那火焰，隐隐间，迅速的",
+      "four_gram_repetition": 0.11578947368421055,
+      "han_ratio": 0.8877551020408163,
+      "longest_character_run": 15,
+      "longest_train_overlap": 8,
+      "paragraphs": 2,
+      "prompt": "夜色笼罩着山谷，",
+      "step": 5000
+    },
+    {
+      "characters": 100,
+      "continuation": "死死的盯着周围的那股炽热气势。\n\n    众人脸色微变，那股气息的气势，如雷电般，在场中的那股气势，几乎是在无数道目光注视下，隐隐有着一个方的铁青山谷中，犹如一条条足有千丈宽敞的石般的影，迅速消失在广",
+      "four_gram_repetition": 0.0,
+      "han_ratio": 0.8775510204081632,
+      "longest_character_run": 4,
+      "longest_train_overlap": 11,
+      "paragraphs": 2,
+      "prompt": "广场之上，无数道目光",
+      "step": 5000
+    },
+    {
+      "characters": 100,
+      "continuation": "冲着他笑笑，声音道：“你没去你，我也要好...”\n\n    “这个名字...”\n\n    海波东轻笑道：“小兄弟姐，您还敢对你是什么说不想说了，她是我来？”\n\n    “放心吧，这位？”\n    “哦",
+      "four_gram_repetition": 0.1333333333333333,
+      "han_ratio": 0.5698924731182796,
+      "longest_character_run": 4,
+      "longest_train_overlap": 9,
+      "paragraphs": 4,
+      "prompt": "望着眼前的黑袍少年，",
+      "step": 5000
+    },
+    {
+      "characters": 100,
+      "continuation": "\n    “没想到我们也没有了””这句话到此处,他也并没有什么时候,不过他也是不急,他也是没有什么事的麻烦,也不会出乎他的心情报,也不会太虚古龙一族,我也会在药族之中,你,我会在这种情况,你不下去,也",
+      "four_gram_repetition": 0.02083333333333337,
+      "han_ratio": 0.8282828282828283,
+      "longest_character_run": 4,
+      "longest_train_overlap": 0,
+      "paragraphs": 1,
+      "prompt": "药老沉吟片刻，道：",
+      "step": 5000
+    },
+    {
+      "characters": 100,
+      "continuation": "低声道：“我是你能在你？”\n\n    药老笑了笑，道：“萧炎哥哥，我是我是你是你是我？”\n\n    摇了摇头，萧炎也不敢回答话，别想什么时候，我也知道我都没有问题？”\n\n    “呃…”\n\n    药",
+      "four_gram_repetition": 0.101123595505618,
+      "han_ratio": 0.6304347826086957,
+      "longest_character_run": 4,
+      "longest_train_overlap": 12,
+      "paragraphs": 5,
+      "prompt": "萧炎微微一笑，",
+      "step": 5000
+    },
+    {
+      "characters": 100,
+      "continuation": "其中的那层的山谷中。\n\n    “哦…”\n\n    瞧着眉头微微一怔，萧炎笑了笑。望着那在海波东的背影。望着那被萧炎的目光扫过。脸庞上也是闪过一抹惊讶。\n\n    被呆滞了愣。小医仙那忽然有些惊诧异的",
+      "four_gram_repetition": 0.04395604395604391,
+      "han_ratio": 0.7659574468085106,
+      "longest_character_run": 4,
+      "longest_train_overlap": 10,
+      "paragraphs": 4,
+      "prompt": "夜色笼罩着山谷，",
+      "step": 5500
+    },
+    {
+      "characters": 100,
+      "continuation": "的注视着一道道目光中，缓缓扫过。\n\n    “不过是否则是一名斗王强者？竟然能够在内院之内的那位实力强大的强者？我来找个。”海波东笑眯的道。\n\n    “这个家伙，若不是那老家伙不信心。”目光一扫，法",
+      "four_gram_repetition": 0.032258064516129004,
+      "han_ratio": 0.78125,
+      "longest_character_run": 4,
+      "longest_train_overlap": 10,
+      "paragraphs": 3,
+      "prompt": "广场之上，无数道目光",
+      "step": 5500
+    },
+    {
+      "characters": 100,
+      "continuation": "轻笑道：“火能”那么，若琳导师在大厅中级强者地人来看，每一个人流转移的少年，正在内院中的那枚炼药师大会的价格外方圆，依然是看其上升起一个颇为罕见。\n\n    广场，白衣袍男子在场的广场上有着些许森白润",
+      "four_gram_repetition": 0.0,
+      "han_ratio": 0.8673469387755102,
+      "longest_character_run": 4,
+      "longest_train_overlap": 0,
+      "paragraphs": 2,
+      "prompt": "望着眼前的黑袍少年，",
+      "step": 5500
+    },
+    {
+      "characters": 100,
+      "continuation": "”药老缓缓的道。\n\n    “不想吧，我也能有资格说完成的消息。”药老笑了笑，萧炎微微皱了摆手，道：“你能与你也能与他出什么？”\n\n    萧炎笑着点了点头，道：“你知道这所谓的“药老的身份，不过以我",
+      "four_gram_repetition": 0.032258064516129004,
+      "han_ratio": 0.7395833333333334,
+      "longest_character_run": 4,
+      "longest_train_overlap": 16,
+      "paragraphs": 3,
+      "prompt": "药老沉吟片刻，道：",
+      "step": 5500
+    },
+    {
+      "characters": 100,
+      "continuation": "道：“这是什么时候，难道是否则一场。”\n\n    一旁，白程脸庞上却是有些发麻麻的笑容，忽然响起了张脸庞，那被黑暗暗的白，冷艳羡之意。\n\n    眼睛死死的盯着那张清秀的美丽的女子。\n\n    微微皱",
+      "four_gram_repetition": 0.03296703296703296,
+      "han_ratio": 0.7553191489361702,
+      "longest_character_run": 4,
+      "longest_train_overlap": 13,
+      "paragraphs": 4,
+      "prompt": "萧炎微微一笑，",
+      "step": 5500
+    },
+    {
+      "characters": 100,
+      "continuation": "广场上有着两座山峰的森林之中，有着不少势力的学员，有着一个人类的名为的魔兽界中，可在加玛帝国之中所见的存在。\n\n    当然，在这种修炼室中，萧炎便是没有丝毫的好处境的灯，最让得他们心中暗叹了一口气，",
+      "four_gram_repetition": 0.0,
+      "han_ratio": 0.8775510204081632,
+      "longest_character_run": 4,
+      "longest_train_overlap": 9,
+      "paragraphs": 2,
+      "prompt": "夜色笼罩着山谷，",
+      "step": 6000
+    },
+    {
+      "characters": 100,
+      "continuation": "注视着众多目光目光注视下，目光望向那道道道道削瘦身影，冷笑，道：“我倒是没错吧，那便能让你！”\n\n    “嘿，老夫也不是什么事。”\n\n    众人一惊人的身形，却是突然从那道道人影暴射而过，那名老者",
+      "four_gram_repetition": 0.021505376344086002,
+      "han_ratio": 0.7708333333333334,
+      "longest_character_run": 4,
+      "longest_train_overlap": 8,
+      "paragraphs": 3,
+      "prompt": "广场之上，无数道目光",
+      "step": 6000
+    },
+    {
+      "characters": 100,
+      "continuation": "脸庞一皱，有些苍白的低声道：“我来试试试试试试试试试试试试，别说不定，没事吧？”\n\n    “不说不定是我们的消息，老夫也能再说是否则，我说你来？”\n\n    药老轻吐了一口气，萧炎无奈的摇了摇头，道",
+      "four_gram_repetition": 0.11827956989247312,
+      "han_ratio": 0.7708333333333334,
+      "longest_character_run": 12,
+      "longest_train_overlap": 15,
+      "paragraphs": 3,
+      "prompt": "望着眼前的黑袍少年，",
+      "step": 6000
+    },
+    {
+      "characters": 100,
+      "continuation": "”\n\n    “这家伙，现在的你所说，绝对是我现在，他也能与我来看我也好奇怪我。”\n\n    “若是你还以为我们的下去？”闻言，萧炎也是一怔，低声笑道。\n\n    “老师？”闻言，萧炎一愣，旋即道：“",
+      "four_gram_repetition": 0.09890109890109888,
+      "han_ratio": 0.6595744680851063,
+      "longest_character_run": 4,
+      "longest_train_overlap": 12,
+      "paragraphs": 4,
+      "prompt": "药老沉吟片刻，道：",
+      "step": 6000
+    },
+    {
+      "characters": 100,
+      "continuation": "道：“你有好运，别说，你也没事吧？”\n\n    萧炎笑了笑，道：“若是有事吧？”\n\n    “呃...”\n\n    药老摇了摇头，道。\n\n    药老点了点头，道：“萧炎哥哥，若琳导师也不会是好。”\n",
+      "four_gram_repetition": 0.125,
+      "han_ratio": 0.5604395604395604,
+      "longest_character_run": 4,
+      "longest_train_overlap": 13,
+      "paragraphs": 5,
+      "prompt": "萧炎微微一笑，",
+      "step": 6000
+    }
+  ],
+  "schema_version": "story-evaluation-harness-v4/v1",
+  "summary": [
+    {
+      "automatic_gates": {
+        "checks": {
+          "all_prompts_present": true,
+          "character_run": false,
+          "four_gram_repetition": true,
+          "generation_length": true,
+          "han_ratio": true,
+          "train_overlap": true
+        },
+        "status": "REVIEW"
+      },
+      "maximum_character_run": 10,
+      "maximum_train_overlap": 12,
+      "mean_characters": 100,
+      "mean_four_gram_repetition": 0.052699988183859146,
+      "mean_han_ratio": 0.7443506657982342,
+      "sample_count": 5,
+      "step": 2600
+    },
+    {
+      "automatic_gates": {
+        "checks": {
+          "all_prompts_present": true,
+          "character_run": true,
+          "four_gram_repetition": true,
+          "generation_length": true,
+          "han_ratio": true,
+          "train_overlap": true
+        },
+        "status": "PASS"
+      },
+      "maximum_character_run": 4,
+      "maximum_train_overlap": 12,
+      "mean_characters": 100,
+      "mean_four_gram_repetition": 0.026373626373626346,
+      "mean_han_ratio": 0.781068171949631,
+      "sample_count": 5,
+      "step": 3000
+    },
+    {
+      "automatic_gates": {
+        "checks": {
+          "all_prompts_present": true,
+          "character_run": true,
+          "four_gram_repetition": true,
+          "generation_length": true,
+          "han_ratio": true,
+          "train_overlap": true
+        },
+        "status": "PASS"
+      },
+      "maximum_character_run": 4,
+      "maximum_train_overlap": 14,
+      "mean_characters": 100,
+      "mean_four_gram_repetition": 0.04319981094174641,
+      "mean_han_ratio": 0.7653812056737589,
+      "sample_count": 5,
+      "step": 3500
+    },
+    {
+      "automatic_gates": {
+        "checks": {
+          "all_prompts_present": true,
+          "character_run": true,
+          "four_gram_repetition": true,
+          "generation_length": true,
+          "han_ratio": true,
+          "train_overlap": true
+        },
+        "status": "PASS"
+      },
+      "maximum_character_run": 4,
+      "maximum_train_overlap": 15,
+      "mean_characters": 100,
+      "mean_four_gram_repetition": 0.05293051260635608,
+      "mean_han_ratio": 0.7338925134297353,
+      "sample_count": 5,
+      "step": 4000
+    },
+    {
+      "automatic_gates": {
+        "checks": {
+          "all_prompts_present": true,
+          "character_run": true,
+          "four_gram_repetition": true,
+          "generation_length": true,
+          "han_ratio": true,
+          "train_overlap": true
+        },
+        "status": "PASS"
+      },
+      "maximum_character_run": 4,
+      "maximum_train_overlap": 10,
+      "mean_characters": 100,
+      "mean_four_gram_repetition": 0.0621431219873934,
+      "mean_han_ratio": 0.7432341269841269,
+      "sample_count": 5,
+      "step": 4500
+    },
+    {
+      "automatic_gates": {
+        "checks": {
+          "all_prompts_present": true,
+          "character_run": false,
+          "four_gram_repetition": true,
+          "generation_length": true,
+          "han_ratio": true,
+          "train_overlap": true
+        },
+        "status": "REVIEW"
+      },
+      "maximum_character_run": 15,
+      "maximum_train_overlap": 12,
+      "mean_characters": 100,
+      "mean_four_gram_repetition": 0.07421594717129905,
+      "mean_han_ratio": 0.7587832412917567,
+      "sample_count": 5,
+      "step": 5000
+    },
+    {
+      "automatic_gates": {
+        "checks": {
+          "all_prompts_present": true,
+          "character_run": true,
+          "four_gram_repetition": true,
+          "generation_length": true,
+          "han_ratio": true,
+          "train_overlap": true
+        },
+        "status": "PASS"
+      },
+      "maximum_character_run": 4,
+      "maximum_train_overlap": 16,
+      "mean_characters": 100,
+      "mean_four_gram_repetition": 0.028287841191066976,
+      "mean_han_ratio": 0.7818913735707049,
+      "sample_count": 5,
+      "step": 5500
+    },
+    {
+      "automatic_gates": {
+        "checks": {
+          "all_prompts_present": true,
+          "character_run": false,
+          "four_gram_repetition": true,
+          "generation_length": true,
+          "han_ratio": true,
+          "train_overlap": true
+        },
+        "status": "REVIEW"
+      },
+      "maximum_character_run": 12,
+      "maximum_train_overlap": 15,
+      "mean_characters": 100,
+      "mean_four_gram_repetition": 0.0727372090275316,
+      "mean_han_ratio": 0.7278463431198994,
+      "sample_count": 5,
+      "step": 6000
+    }
+  ]
+}

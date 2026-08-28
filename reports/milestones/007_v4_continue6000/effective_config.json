@@ -1,0 +1,64 @@
+{
+  "config_version": "1.1.0",
+  "data_dir": "data/cloud_v4",
+  "device": "mps",
+  "generation": {
+    "max_new_tokens": 256,
+    "temperature": 0.7,
+    "top_k": 20
+  },
+  "logging": {
+    "backup_count": 5,
+    "console": true,
+    "max_bytes": 10485760,
+    "module_levels": {
+      "checkpoint": "INFO",
+      "data": "INFO",
+      "gpu": "INFO",
+      "orchestrator": "INFO",
+      "preflight": "INFO",
+      "pretrain": "INFO",
+      "sft": "OFF",
+      "validation": "INFO"
+    }
+  },
+  "model": {
+    "block_size": 512,
+    "dropout": 0.1,
+    "embedding_size": 256,
+    "ffn_multiplier": 4,
+    "num_heads": 8,
+    "num_layers": 8,
+    "tie_embeddings": true
+  },
+  "run_dir": "runs/pretrain_v4_m4_continue6000",
+  "sample_prompt_limit": 5,
+  "sample_prompts_path": "data/story_prompt5_eval.txt",
+  "schema_version": "local-pretrain-v4/v1",
+  "seed": 42,
+  "training": {
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "checkpoint_interval": 250,
+    "early_stopping_min_delta": 0.002,
+    "early_stopping_patience": 8,
+    "eval_batches": 20,
+    "eval_interval": 250,
+    "gradient_accumulation_steps": 4,
+    "gradient_clip_norm": 1.0,
+    "learning_rate": 5e-05,
+    "log_interval": 10,
+    "max_steps": 6000,
+    "micro_batch_size": 2,
+    "minimum_learning_rate": 1e-05,
+    "precision": "float32",
+    "sample_interval": 500,
+    "sample_max_characters": 100,
+    "schedule_start_step": 2600,
+    "tokens_per_optimizer_step": 4096,
+    "warmup_steps": 0,
+    "weight_decay": 0.1
+  }
+}

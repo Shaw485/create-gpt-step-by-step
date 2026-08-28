@@ -1,0 +1,43 @@
+{
+  "checkpoint": "runs/pretrain_v4_m4_continue6000/best.pt",
+  "checkpoint_sha256": "5d6397b3bb97b8a14369117e2f1e1e9f9addf515da1117e2f0f35dfe8ac8af44",
+  "checkpoint_step": 6000,
+  "checkpoint_validation_loss": 4.775948882102966,
+  "device": "mps",
+  "generation": {
+    "max_new_tokens": 256,
+    "temperature": 0.7,
+    "top_k": 20
+  },
+  "parameter_count": 8105025,
+  "run_id": "local-v4-selected-eval-20260828T050222Z-7b14338f",
+  "sample_max_characters": 100,
+  "samples": [
+    {
+      "continuation": "道：“你有好运，别说，你也没事吧？”\n\n    萧炎笑了笑，道：“若是有事吧？”\n\n    “呃...”\n\n    药老摇了摇头，道。\n\n    药老点了点头，道：“萧炎哥哥，若琳导师也不会是好。”\n",
+      "prompt": "萧炎微微一笑，"
+    },
+    {
+      "continuation": "广场上有着两座山峰的森林之中，有着不少势力的学员，有着一个人类的名为的魔兽界中，可在加玛帝国之中所见的存在。\n\n    当然，在这种修炼室中，萧炎便是没有丝毫的好处境的灯，最让得他们心中暗叹了一口气，",
+      "prompt": "夜色笼罩着山谷，"
+    },
+    {
+      "continuation": "脸庞一皱，有些苍白的低声道：“我来试试试试试试试试试试试试，别说不定，没事吧？”\n\n    “不说不定是我们的消息，老夫也能再说是否则，我说你来？”\n\n    药老轻吐了一口气，萧炎无奈的摇了摇头，道",
+      "prompt": "望着眼前的黑袍少年，"
+    },
+    {
+      "continuation": "”\n\n    “这家伙，现在的你所说，绝对是我现在，他也能与我来看我也好奇怪我。”\n\n    “若是你还以为我们的下去？”闻言，萧炎也是一怔，低声笑道。\n\n    “老师？”闻言，萧炎一愣，旋即道：“",
+      "prompt": "药老沉吟片刻，道："
+    },
+    {
+      "continuation": "注视着众多目光目光注视下，目光望向那道道道道削瘦身影，冷笑，道：“我倒是没错吧，那便能让你！”\n\n    “嘿，老夫也不是什么事。”\n\n    众人一惊人的身形，却是突然从那道道人影暴射而过，那名老者",
+      "prompt": "广场之上，无数道目光"
+    }
+  ],
+  "schema_version": "selected-pretrain-evaluation-v4/v1",
+  "selection_rule": "minimum validation loss; test split was not used for selection",
+  "test_batches": 20,
+  "test_loss": 4.74755163192749,
+  "test_tokens_per_batch": 1024,
+  "tokenizer_sha256": "86bc44516339d7eee774da6c2b9e4bae8e85c0fd58b9192b6e234f884befaee0"
+}

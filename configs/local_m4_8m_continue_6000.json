@@ -1,0 +1,61 @@
+{
+  "schema_version": "local-pretrain-v4/v1",
+  "config_version": "1.1.0",
+  "seed": 42,
+  "device": "mps",
+  "data_dir": "data/cloud_v4",
+  "run_dir": "runs/pretrain_v4_m4_continue6000",
+  "sample_prompts_path": "data/story_prompt5_eval.txt",
+  "sample_prompt_limit": 5,
+  "model": {
+    "block_size": 512,
+    "embedding_size": 256,
+    "num_layers": 8,
+    "num_heads": 8,
+    "ffn_multiplier": 4,
+    "dropout": 0.1,
+    "tie_embeddings": true
+  },
+  "training": {
+    "max_steps": 6000,
+    "schedule_start_step": 2600,
+    "micro_batch_size": 2,
+    "gradient_accumulation_steps": 4,
+    "tokens_per_optimizer_step": 4096,
+    "precision": "float32",
+    "learning_rate": 0.00005,
+    "minimum_learning_rate": 0.00001,
+    "warmup_steps": 0,
+    "weight_decay": 0.1,
+    "betas": [0.9, 0.95],
+    "gradient_clip_norm": 1.0,
+    "log_interval": 10,
+    "eval_interval": 250,
+    "eval_batches": 20,
+    "checkpoint_interval": 250,
+    "sample_interval": 500,
+    "sample_max_characters": 100,
+    "early_stopping_patience": 8,
+    "early_stopping_min_delta": 0.002
+  },
+  "generation": {
+    "temperature": 0.7,
+    "top_k": 20,
+    "max_new_tokens": 256
+  },
+  "logging": {
+    "max_bytes": 10485760,
+    "backup_count": 5,
+    "console": true,
+    "module_levels": {
+      "preflight": "INFO",
+      "data": "INFO",
+      "pretrain": "INFO",
+      "validation": "INFO",
+      "checkpoint": "INFO",
+      "gpu": "INFO",
+      "sft": "OFF",
+      "orchestrator": "INFO"
+    }
+  }
+}

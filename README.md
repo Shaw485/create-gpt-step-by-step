@@ -10,8 +10,9 @@
 - 已完成字符级模型 10,000 步预训练及多轮 SFT 对照。
 - 已完成手写 BPE、812 万参数模型 10,000 步预训练及 BPE SFT。
 - 已完成正式 v4 语料审核、按章节 train/validation/test 切分、每章 EOS 和 BPE 张量生成。
-- 已在 Apple M4/MPS 上从随机权重训练 810 万参数模型 3,000 步；最佳验证 Loss 为 5.0447，所选模型 Test Loss 为 4.9958。
-- 下一阶段是为 v4 Tokenizer 准备并审核 SFT 数据，保存同一固定题基线后开始指令微调。
+- 已在 Apple M4/MPS 上把 810 万参数模型训练到累计 6,000 步；最佳验证 Loss 为 4.7759，独立 Test Loss 为 4.7476。
+- 已建立小说续写评测 Harness：验证 Loss 负责筛选，重复退化、中文比例、训练集复现和固定提示词负责自动否决，语义连贯性仍由人工复核；Step 6000 发布候选因连续重复而被标记为 `REVIEW`。
+- 下一阶段先完成人工样本复核，再为 v4 Tokenizer 准备并审核 SFT 数据，保存同一固定题基线后开始指令微调。
 
 完整路线见 [ROADMAP.md](ROADMAP.md)，当前任务见 [TODO.md](TODO.md)，实验材料入口见 [VIDEO_MATERIALS.md](VIDEO_MATERIALS.md)。
 
@@ -28,7 +29,7 @@
 | Micro Batch / 梯度累积 | 2 / 4 |
 | 权重共享 | Token Embedding 与输出层共享 |
 
-本次正式训练配置和结果见 [M006 里程碑](reports/milestones/006_v4_local_pretrain/README.md)。云端扩展备选见 [CLOUD_TRAINING_PLAN.md](CLOUD_TRAINING_PLAN.md)。
+从零训练阶段见 [M006 里程碑](reports/milestones/006_v4_local_pretrain/README.md)，低学习率续训与全局评测见 [M007 里程碑](reports/milestones/007_v4_continue6000/README.md)。云端扩展备选见 [CLOUD_TRAINING_PLAN.md](CLOUD_TRAINING_PLAN.md)。
 模型用途、评测和发布边界见 [MODEL_CARD.md](MODEL_CARD.md)。
 
 ## 本地验证
@@ -54,7 +55,7 @@ python -m unittest discover -s tests -v
 
 ## 日志与调试
 
-训练采用分模块轮转 JSONL 日志。数据、预训练、验证、Checkpoint、GPU、SFT 和编排日志能够分别调节级别；默认不记录密码、访问令牌、密钥和完整授权头。正式本机训练日志位于 `runs/pretrain_v4_m4/logs/`，配置见 `configs/local_m4_8m.json`。
+训练采用分模块轮转 JSONL 日志。数据、预训练、验证、Checkpoint、GPU、SFT 和编排日志能够分别调节级别；默认不记录密码、访问令牌、密钥和完整授权头。首阶段日志位于 `runs/pretrain_v4_m4/logs/`，续训日志位于 `runs/pretrain_v4_m4_continue6000/logs/`；配置分别见 `configs/local_m4_8m.json` 和 `configs/local_m4_8m_continue_6000.json`。
 
 ## 重要说明
 

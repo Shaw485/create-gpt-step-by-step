@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "status": "ready",
+  "source_sha256": "6166b4deab4b283cef5e30d6d23dfc33c553e6b97c63a6f9fc23af14fb523b4d",
+  "version_audit_sha256": "305b1c602142c5000a6c3533ceae8e7cf42b6c7c720a77c84b082340533fb63e",
+  "corpus_report_path": "data/clean/v4/reports/corpus_v4_report.json",
+  "split_method": "sha256-seeded version-group shuffle with whole-group boundaries",
+  "split_seed": 42,
+  "artifacts": [
+    {
+      "path": "data/cloud_v4/corpus.txt",
+      "sha256": "50592f249d2be17054ebbe2f8ca7945063e1a8ae669706e64d2076371c4d3b00",
+      "size_bytes": 17179036
+    },
+    {
+      "path": "data/cloud_v4/train.txt",
+      "sha256": "3d16cb630d5fd25319513238296497b60870f7e078dac2477a9739c35ae3a777",
+      "size_bytes": 15461983
+    },
+    {
+      "path": "data/cloud_v4/val.txt",
+      "sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+      "size_bytes": 883042
+    },
+    {
+      "path": "data/cloud_v4/test.txt",
+      "sha256": "7f3f3f39c798615197fb15fcfc508188cd67517a66f31ba3134236470e1c8451",
+      "size_bytes": 833989
+    }
+  ],
+  "splits": {
+    "train": {
+      "path": "data/cloud_v4/train.txt",
+      "chapter_section_count": 1599,
+      "unique_chapter_number_count": 1455,
+      "characters": 5508660,
+      "character_ratio": 0.9000673989322375,
+      "sha256": "3d16cb630d5fd25319513238296497b60870f7e078dac2477a9739c35ae3a777",
+      "first_source_line": 124,
+      "last_source_line": 195309
+    },
+    "val": {
+      "path": "data/cloud_v4/val.txt",
+      "chapter_section_count": 92,
+      "unique_chapter_number_count": 80,
+      "characters": 314610,
+      "character_ratio": 0.05140455289999224,
+      "sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+      "first_source_line": 13,
+      "last_source_line": 195448
+    },
+    "test": {
+      "path": "data/cloud_v4/test.txt",
+      "chapter_section_count": 84,
+      "unique_chapter_number_count": 79,
+      "characters": 297005,
+      "character_ratio": 0.04852804816777024,
+      "sha256": "7f3f3f39c798615197fb15fcfc508188cd67517a66f31ba3134236470e1c8451",
+      "first_source_line": 1569,
+      "last_source_line": 194690
+    }
+  }
+}

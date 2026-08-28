@@ -38,6 +38,10 @@ def main() -> int:
     parser.add_argument("--checkpoint", type=Path)
     parser.add_argument("--output", type=Path)
     parser.add_argument("--prompts", type=Path, default=Path("data/prompt10_eval.txt"))
+    parser.add_argument("--sample-max-characters", type=int)
+    parser.add_argument("--temperature", type=float)
+    parser.add_argument("--top-k", type=int)
+    parser.add_argument("--max-new-tokens", type=int)
     args = parser.parse_args()
 
     config = load_config(args.config)
@@ -80,7 +84,16 @@ def main() -> int:
         },
     )
 
-    settings: dict[str, Any] = config["training"]
+    settings: dict[str, Any] = dict(config["training"])
+    generation: dict[str, Any] = dict(config["generation"])
+    if args.sample_max_characters is not None:
+        settings["sample_max_characters"] = args.sample_max_characters
+    if args.temperature is not None:
+        generation["temperature"] = args.temperature
+    if args.top_k is not None:
+        generation["top_k"] = args.top_k
+    if args.max_new_tokens is not None:
+        generation["max_new_tokens"] = args.max_new_tokens
     test_generator = torch.Generator().manual_seed(int(config["seed"]) + 4001)
     test_loss = evaluate(model, test_data, settings, test_generator, device)
     loggers["validation"].info(
@@ -96,7 +109,7 @@ def main() -> int:
             tokenizer,
             prompt,
             settings,
-            config["generation"],
+            generation,
             sample_generator,
             device,
         )
@@ -118,7 +131,7 @@ def main() -> int:
         ),
         "parameter_count": model.parameter_count(),
         "tokenizer_sha256": file_sha256(data_dir / "tokenizer.json"),
-        "generation": dict(config["generation"]),
+        "generation": generation,
         "sample_max_characters": int(settings["sample_max_characters"]),
         "samples": samples,
     }
