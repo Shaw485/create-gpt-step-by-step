@@ -4,7 +4,7 @@
 
 本阶段直接复用教师模型生成的3000条原始JSONL，避免重新生成整批回答；原文件只读，SHA-256为`9b7f475ae0af689c96a4001fe5fda4c5bf8b0578ee3e8401680904183250fe63`。修复后的文件仍是`candidate`，不是正式训练集。
 
-自动结构检查只剩一个失败门槛：独立真人审核。经用户明确授权，Codex已作为AI审核员完成600条验证/测试记录的逐条决定，其中521条直接通过、79条修改后通过、0条拒绝。决定如实标记为`Codex AI reviewer`，因此不能冒充独立真人审核；本阶段仍不能写成“已完成人类验收”。
+自动结构检查只剩一个失败门槛：独立真人审核。经用户明确授权，Codex已作为AI审核员完成600条验证/测试记录的逐条决定，其中521条直接通过、79条修改后通过、0条拒绝。决定如实标记为`Codex AI reviewer`，因此不能冒充独立真人审核；本阶段仍不能写成“已完成人类验收”。这些AI决定已被合并成新的冻结副本，并生成2999条training-ready候选供下一步安全试跑。
 
 ## 自动修复完成了什么
 
@@ -30,6 +30,9 @@
 | 跨集合主题/章节/组泄漏 | 0 / 0 / 0 |
 | val/test未批准 | 600 |
 | 全部复核队列 | 2287 |
+| AI审核合并后修改记录 | 79 |
+| 冻结阶段去重问句 | 19 |
+| training-ready记录 | 2999 |
 
 训练候选的互斥风险分层为：713条无自动风险标记，9条优先复核证据，1678条优先复核语义或任务改写。600条val/test无论自动标记如何，都属于决定发布门槛的P0真人审核对象。“无自动风险标记”只表示机器未发现已知问题，不表示事实已经过人工认证。
 
@@ -46,6 +49,10 @@
 完整候选、原始快照、证据文本、复核CSV和日志位于Git忽略目录`data/sft/v4_teacher_repair/`，不会随代码提交。该目录包含：
 
 - `sft_v4_teacher_candidates.jsonl`：3000条候选。
+- `sft_v4_teacher_ai_reviewed_candidates.jsonl`：合并600条Codex AI审核决定后的3000条冻结副本。
+- `sft_v4_teacher_ai_training_ready.jsonl`：排除1条证据章节漂移样本后的2999条SFT候选。
+- `sft_v4_teacher_ai_review_sidecar.json`：AI审核修改、冻结去重和训练证据处理明细。
+- `sft_v4_teacher_ai_review_freeze_report.json`：AI审核合并与training-ready生成报告。
 - `sft_v4_teacher_repair_queue.jsonl`：2287条待复核记录。
 - `manual_review_val_test.csv`：600条发布门槛审核表。
 - `review_priority_summary.json`：互斥优先级统计。
@@ -54,6 +61,7 @@
 - `global_claim_verification.json`：全局断言扫描结果；当前活动断言为0条。
 - `sft_v4_teacher_audit.json`与`independent_validation.json`：构建器和独立验证器报告。
 - `logs/`与`validation_logs/`：数据、构建和验证分模块轮转日志。
+- `freeze_logs/`：AI审核合并、training-ready输出和冻结验证日志。
 
 仓库只归档不含长篇原文的统计报告。原始小说、教师数据、修复后的完整问答和证据原文不提交。
 
@@ -72,6 +80,14 @@
 启动后访问`http://127.0.0.1:8765`。决定保存在Git忽略目录`data/sft/v4_teacher_repair/human_review_decisions.jsonl`。每条决定记录实际审核主体、时间和对应候选SHA-256；候选发生变化时旧决定会拒绝加载，防止把过期审核错误套到新数据。当前文件含600条`Codex AI reviewer`决定：521条直接通过、79条修改后通过。它证明AI审核已完成，但不自动满足独立真人治理门槛。
 
 审核日志位于`data/sft/v4_teacher_repair/review_logs/`，分为UI、数据保存和验证三类。分别使用`SFT_REVIEW_UI_LOG_LEVEL`、`SFT_REVIEW_DATA_LOG_LEVEL`和`SFT_REVIEW_VALIDATION_LOG_LEVEL`调节；默认按10MB轮转并保留5份。日志只记录记录ID、决定类型和数量，不写审核人、备注、问题或答案正文。
+
+合并AI审核并生成training-ready候选：
+
+```bash
+.venv/bin/python finalize_sft_v4_ai_review.py
+```
+
+该脚本会校验每条审核决定的候选SHA-256，拒绝过期决定；79条修改后通过只更新问答，不改原始教师文件。若修改后问题文本重复，会加轻量任务角度前缀并写入sidecar。训练集里8条模糊重绑证据已由正式v4语料再次验证；1条证据章节漂移记录保留在完整冻结副本中，但从training-ready文件排除。
 
 复现自动修复：
 
@@ -99,5 +115,5 @@
 ## 下一步验收顺序
 
 1. 由数据所有者决定是否接受已完成的600条Codex AI审核；若发布协议坚持独立真人签字，则再对79条修改记录和风险抽样做人审。
-2. 再处理训练集9条证据风险与1678条语义/任务改写风险；无法确认的记录删除或改成诚实未知任务。
-3. 重新运行双重验证；只有所有门槛通过后才冻结正式SFT张量并做20步安全试跑。
+2. 使用2999条training-ready候选重新编码SFT张量，保留SFT前基线并做20步安全试跑。
+3. 安全试跑通过后再进入正式SFT；训练报告必须继续同时记录Loss、固定题输出和人工语义抽样。

@@ -1,0 +1,164 @@
+{
+  "decision_counts": {
+    "approved": 521,
+    "modified_approved": 79
+  },
+  "disambiguated_question_count": 19,
+  "evidence": {
+    "corpus_path": "data/clean/v4/preview/corpus.txt",
+    "corpus_sha256": "50592f249d2be17054ebbe2f8ca7945063e1a8ae669706e64d2076371c4d3b00",
+    "verified_evidence_count": 2999,
+    "verified_evidence_share": 0.9996666666666667
+  },
+  "governance_note": "These are Codex AI review decisions. They do not satisfy the independent human review gate.",
+  "modified_record_count": 79,
+  "output_path": "data/sft/v4_teacher_repair/sft_v4_teacher_ai_reviewed_candidates.jsonl",
+  "output_sha256": "9c7f6015a8f5c9b42790a388ff7081d8100da7ec2ed8a447062b241ba1ee1f35",
+  "quality_gate_actual": {
+    "evaluation_record_count": 600,
+    "fact_count": 2963,
+    "maximum_questions_per_fact": 2,
+    "most_common_answer": "当前证据片段明确提到了萧炎。",
+    "most_common_answer_count": 55,
+    "most_common_answer_share": 0.018333333333333333,
+    "record_count": 3000,
+    "split_counts": {
+      "test": 300,
+      "train": 2400,
+      "val": 300
+    },
+    "task_family_counts": {
+      "ambiguity_unknown_clarification": 300,
+      "context_understanding": 450,
+      "continuation_rewrite_instruction": 450,
+      "conversation_control": 150,
+      "direct_fact": 750,
+      "fact_verification_correction": 300,
+      "relationship_reason_timeline": 600
+    },
+    "topic_count": 1760,
+    "unapproved_evaluation_count": 600,
+    "unique_answer_count": 2107,
+    "verified_evidence_count": 2999,
+    "verified_evidence_share": 0.9996666666666667
+  },
+  "quality_gate_failed_gates": [
+    "val_test_human_review"
+  ],
+  "quality_gate_release_ready": false,
+  "record_count": 3000,
+  "run_id": "c0842c501396",
+  "schema_version": "sft_v4_ai_review_freeze_report/1.0",
+  "sidecar_path": "data/sft/v4_teacher_repair/sft_v4_teacher_ai_review_sidecar.json",
+  "sidecar_sha256": "7d7457b22c93bf0f7d9aae1718956e5e5192cd087c98e5f6d97d1df7601308f1",
+  "split_counts": {
+    "test": 300,
+    "train": 2400,
+    "val": 300
+  },
+  "status": "ai_review_frozen_human_gate_not_satisfied",
+  "train_provenance_resolutions": {
+    "counts": {
+      "unresolved_missing_evidence": 1,
+      "verified_fuzzy_rebind": 8
+    },
+    "sample_unresolved_record_ids": [
+      "v4_aa3eb65166d8940ae2f1"
+    ],
+    "unresolved_record_count": 1
+  },
+  "train_risks": {
+    "sample_train_risk_ids": [
+      "v4_547a13f5d7fcccbe2538",
+      "v4_1acb1df2a7b12208c1eb",
+      "v4_a4630803c6ddfd85b0a0",
+      "v4_9f5fc7d961f84aeff031",
+      "v4_9c773419cc98ff85012c",
+      "v4_253b4826473a01013e24",
+      "v4_13127674dcfd122982d3",
+      "v4_663041181c3732d109fb",
+      "v4_ed2b46b77968a5694071",
+      "v4_773e16835957feeecefa",
+      "v4_bc4458f248bbbf453837",
+      "v4_62aa2f6a85709c3e9571",
+      "v4_6f9ce1e473e526e5d5c8",
+      "v4_e6650a1429d41cad603c",
+      "v4_242cc9af56b9fddea60c",
+      "v4_cb0ba5c0f0f71d2386a9",
+      "v4_df3efc4d41bc48cf6f83",
+      "v4_c6a1ebee65f337c093f2",
+      "v4_96271578d468b270e3b1",
+      "v4_cbab51af77c57cf02992"
+    ],
+    "train_clean_record_count": 715,
+    "train_record_count": 2400,
+    "train_risk_flag_counts": {
+      "evidence_absent_from_frozen_v4": 1,
+      "third_fact_variant_split_for_review": 81,
+      "transformed_task_requires_review": 1615
+    },
+    "train_risk_record_count": 1685
+  },
+  "train_semantic_audit": {
+    "automatic_repair_counts": {
+      "clarification_wrapper": 160,
+      "concise_answer_instruction": 117,
+      "contextualized_repeated_chapter_focus_answer": 67,
+      "corrected_future_realm_as_unknown_current_state": 2,
+      "exact_copy_instruction": 379,
+      "freeze_ai_verified_fuzzy_chapter_rebind": 8,
+      "rebased_stale_chapter_to_verified_corpus": 201,
+      "reclassified_as_context": 148,
+      "reframed_appearance_order_as_local_evidence": 142,
+      "reframed_chapter_focus_as_local_evidence": 67,
+      "reframed_co_appearance_as_local_evidence": 180,
+      "reframed_concept_debut_as_local_text_evidence": 65,
+      "reframed_false_premise_as_local_rank_evidence": 8,
+      "reframed_false_premise_as_local_skill_evidence": 5,
+      "reframed_false_premise_as_local_text_evidence": 37,
+      "reframed_first_appearance_as_local_text_evidence": 91,
+      "reframed_first_cooccurrence_as_local_evidence": 172,
+      "reframed_unanswerable_as_local_evidence": 74,
+      "relationship_example_reclassified_as_context_understanding": 148,
+      "removed_unasked_chapter_locate_padding": 145,
+      "removed_unasked_chapter_order_padding": 90,
+      "removed_unasked_chapter_title_padding": 310,
+      "removed_unsupported_chapter_skill_aggregation": 58,
+      "removed_unsupported_faction_place_aggregation": 55,
+      "repaired_cause_question_grammar": 50,
+      "repaired_incomplete_kinship_answer": 1,
+      "verification_wrapper": 193
+    },
+    "local_reframes": {
+      "all_local_reframes_supported": true,
+      "counts_by_repair": {
+        "reframed_appearance_order_as_local_evidence": 142,
+        "reframed_chapter_focus_as_local_evidence": 67,
+        "reframed_co_appearance_as_local_evidence": 180,
+        "reframed_concept_debut_as_local_text_evidence": 65,
+        "reframed_false_premise_as_local_rank_evidence": 8,
+        "reframed_false_premise_as_local_skill_evidence": 5,
+        "reframed_false_premise_as_local_text_evidence": 37,
+        "reframed_first_appearance_as_local_text_evidence": 91,
+        "reframed_first_cooccurrence_as_local_evidence": 172,
+        "reframed_unanswerable_as_local_evidence": 74
+      },
+      "verified_record_count": 841
+    },
+    "sample_unresolved_evidence_record_ids": [
+      "v4_aa3eb65166d8940ae2f1"
+    ],
+    "template_checks": {
+      "clarification_wrapper": 160,
+      "concise_answer_instruction": 117,
+      "exact_copy_instruction": 379,
+      "reclassified_as_context": 148,
+      "verification_wrapper": 193
+    },
+    "training_recommendation": "exclude_unresolved_evidence_records_before_sft",
+    "unresolved_evidence_record_count": 1
+  },
+  "training_ready_path": "data/sft/v4_teacher_repair/sft_v4_teacher_ai_training_ready.jsonl",
+  "training_ready_record_count": 2999,
+  "training_ready_sha256": "d12e7584576bde36582ad443b0b1df7eee3a54827698bdb845f7e0cbc27b1565"
+}
