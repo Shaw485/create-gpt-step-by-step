@@ -401,6 +401,7 @@ def content_flags(
     question: str,
     answer: str,
     located: LocatedEvidence | None,
+    transformation: str | None = None,
 ) -> list[str]:
     flags: list[str] = []
     if located is None:
@@ -411,18 +412,27 @@ def content_flags(
         flags.append("fuzzy_chapter_rebind_requires_review")
     if any(pattern.search(question) for pattern in SUSPICIOUS_QUESTION_PATTERNS):
         flags.append("question_grammar_requires_review")
-    if (
-        record.get("subcategory") in GLOBAL_CLAIM_SUBCATEGORIES
-        or any(marker in question or marker in answer for marker in GLOBAL_CLAIM_MARKERS)
-        or "未明确说明" in answer
-    ):
-        flags.append("global_claim_requires_index_review")
-    if (
-        record.get("subcategory") in AGGREGATION_SUBCATEGORIES
-        or "唯一被反复提及" in answer
-        or "出现次数最多" in answer
-    ):
-        flags.append("aggregation_claim_requires_full_chapter_review")
+    knowledge_claim_active = transformation not in {
+        "clarification_wrapper",
+        "exact_copy_instruction",
+    }
+    marker_question = "" if record.get("subcategory") == "speaker_attribution" else question
+    if knowledge_claim_active:
+        if (
+            record.get("subcategory") in GLOBAL_CLAIM_SUBCATEGORIES
+            or any(
+                marker in marker_question or marker in answer
+                for marker in GLOBAL_CLAIM_MARKERS
+            )
+            or "未明确说明" in answer
+        ):
+            flags.append("global_claim_requires_index_review")
+        if (
+            record.get("subcategory") in AGGREGATION_SUBCATEGORIES
+            or "唯一被反复提及" in answer
+            or "出现次数最多" in answer
+        ):
+            flags.append("aggregation_claim_requires_full_chapter_review")
     if (
         record.get("subcategory") == "realm_state"
         and "尚未达到" not in answer
@@ -916,7 +926,7 @@ def run_repair(
         )
         if chapter_rebased:
             repairs.append("rebased_stale_chapter_to_verified_corpus")
-        flags = content_flags(source, question, answer, located)
+        flags = content_flags(source, question, answer, located, transformation)
         if transformation:
             flags.append("transformed_task_requires_review")
         for repair in repairs:
@@ -955,6 +965,7 @@ def run_repair(
                 "source_record_id": source["id"],
                 "source_category": source["category"],
                 "source_subcategory": source["subcategory"],
+                "source_entities": source.get("entities", []),
                 "target_task_family": family,
                 "task_transformation": transformation,
                 "source_chapter_number": source_meta.get("chapter_number"),

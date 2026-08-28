@@ -31,9 +31,9 @@
   "corpus_sha256": "50592f249d2be17054ebbe2f8ca7945063e1a8ae669706e64d2076371c4d3b00",
   "evaluation_ai_pre_review": {
     "counts": {
-      "low_risk_human_review": 197,
-      "review_transformed_task": 148,
-      "verify_global_or_aggregate_claim": 255
+      "low_risk_human_review": 198,
+      "review_transformed_task": 185,
+      "verify_global_or_aggregate_claim": 217
     },
     "evaluation_count": 600,
     "human_approval_was_inferred": false,
@@ -155,7 +155,7 @@
   "release_ready": false,
   "repair_queue_count": 2292,
   "repair_reason_counts": {
-    "aggregation_claim_requires_full_chapter_review": 364,
+    "aggregation_claim_requires_full_chapter_review": 320,
     "clarification_wrapper": 207,
     "concise_answer_instruction": 150,
     "contextualized_repeated_chapter_focus_answer": 82,
@@ -163,7 +163,7 @@
     "evidence_absent_from_frozen_v4": 1,
     "exact_copy_instruction": 450,
     "fuzzy_chapter_rebind_requires_review": 8,
-    "global_claim_requires_index_review": 912,
+    "global_claim_requires_index_review": 754,
     "rebased_stale_chapter_to_verified_corpus": 137,
     "reclassified_as_context": 200,
     "relationship_example_reclassified_as_context_understanding": 200,

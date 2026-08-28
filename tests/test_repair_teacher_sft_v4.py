@@ -6,6 +6,7 @@ from repair_teacher_sft_v4 import (
     assign_grouped_splits,
     ai_pre_review,
     build_ai_pre_review_summary,
+    content_flags,
     build_review_priority_summary,
     first_sentence,
     mapped_family,
@@ -239,6 +240,27 @@ class TeacherSftV4RepairTests(unittest.TestCase):
         summary = build_ai_pre_review_summary(rows)
         self.assertEqual(summary["evaluation_count"], 4)
         self.assertFalse(summary["human_approval_was_inferred"])
+
+    def test_copy_and_clarification_tasks_do_not_assert_quoted_global_claims(self):
+        record = {"subcategory": "first_appearance", "source": {}}
+        for transformation in ("exact_copy_instruction", "clarification_wrapper"):
+            flags = content_flags(
+                record,
+                "请原样重复：某人最早在哪章出现？",
+                "某人最早在哪章出现？",
+                None,
+                transformation,
+            )
+            self.assertNotIn("global_claim_requires_index_review", flags)
+
+    def test_speaker_quote_with_never_is_not_a_global_claim(self):
+        flags = content_flags(
+            {"subcategory": "speaker_attribution", "source": {}},
+            "说出‘我从未见过’的是谁？",
+            "是某人说的。",
+            None,
+        )
+        self.assertNotIn("global_claim_requires_index_review", flags)
 
 
 if __name__ == "__main__":
