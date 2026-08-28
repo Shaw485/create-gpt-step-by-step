@@ -1,0 +1,20 @@
+{
+  "schema_version": "sft_v4_ai_review_summary/1.0",
+  "reviewer": "Codex AI reviewer",
+  "reviewed_at": "2026-08-28T15:59:52+08:00",
+  "record_count": 600,
+  "decision_counts": {
+    "approved": 521,
+    "modified_approved": 79,
+    "rejected": 0
+  },
+  "modified_topic_count": 34,
+  "automatic_checks": {
+    "all_evaluation_evidence_verified": true,
+    "all_local_reframes_supported": true,
+    "all_exact_copy_tasks_match": true,
+    "all_600_records_received_a_decision": true
+  },
+  "status": "ai_review_complete_human_gate_not_satisfied",
+  "governance_note": "The user authorized Codex to act as reviewer. These are real AI-review decisions and must not be represented as independent human review."
+}

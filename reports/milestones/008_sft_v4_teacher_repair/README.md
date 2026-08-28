@@ -4,7 +4,7 @@
 
 本阶段直接复用教师模型生成的3000条原始JSONL，避免重新生成整批回答；原文件只读，SHA-256为`9b7f475ae0af689c96a4001fe5fda4c5bf8b0578ee3e8401680904183250fe63`。修复后的文件仍是`candidate`，不是正式训练集。
 
-自动结构检查只剩一个失败门槛：600条验证/测试记录尚未完成真人审核。因此本阶段状态是`needs_review`，不能开始正式SFT，也不能把自动修复写成“3000条高质量数据已经验收”。
+自动结构检查只剩一个失败门槛：独立真人审核。经用户明确授权，Codex已作为AI审核员完成600条验证/测试记录的逐条决定，其中521条直接通过、79条修改后通过、0条拒绝。决定如实标记为`Codex AI reviewer`，因此不能冒充独立真人审核；本阶段仍不能写成“已完成人类验收”。
 
 ## 自动修复完成了什么
 
@@ -50,6 +50,7 @@
 - `manual_review_val_test.csv`：600条发布门槛审核表。
 - `review_priority_summary.json`：互斥优先级统计。
 - `evaluation_ai_pre_review_summary.json`：600条评估记录的AI预审分层。
+- `ai_review_summary.json`：用户授权的Codex AI审核统计，不冒充独立真人结论。
 - `global_claim_verification.json`：全局断言扫描结果；当前活动断言为0条。
 - `sft_v4_teacher_audit.json`与`independent_validation.json`：构建器和独立验证器报告。
 - `logs/`与`validation_logs/`：数据、构建和验证分模块轮转日志。
@@ -68,7 +69,7 @@
 .venv/bin/python review_sft_v4.py
 ```
 
-启动后访问`http://127.0.0.1:8765`。决定保存在Git忽略目录`data/sft/v4_teacher_repair/human_review_decisions.jsonl`。每条决定记录真实审核人、真实点击时间和对应候选SHA-256；候选发生变化时旧决定会拒绝加载，防止把过期审核错误套到新数据。只有600条全部经过真实操作且没有拒绝项，才能进入正式数据冻结。
+启动后访问`http://127.0.0.1:8765`。决定保存在Git忽略目录`data/sft/v4_teacher_repair/human_review_decisions.jsonl`。每条决定记录实际审核主体、时间和对应候选SHA-256；候选发生变化时旧决定会拒绝加载，防止把过期审核错误套到新数据。当前文件含600条`Codex AI reviewer`决定：521条直接通过、79条修改后通过。它证明AI审核已完成，但不自动满足独立真人治理门槛。
 
 审核日志位于`data/sft/v4_teacher_repair/review_logs/`，分为UI、数据保存和验证三类。分别使用`SFT_REVIEW_UI_LOG_LEVEL`、`SFT_REVIEW_DATA_LOG_LEVEL`和`SFT_REVIEW_VALIDATION_LOG_LEVEL`调节；默认按10MB轮转并保留5份。日志只记录记录ID、决定类型和数量，不写审核人、备注、问题或答案正文。
 
@@ -97,6 +98,6 @@
 
 ## 下一步验收顺序
 
-1. 人工审核406条评估集任务改写和194条低风险记录，填写真实的决定、审核人和审核时间。
+1. 由数据所有者决定是否接受已完成的600条Codex AI审核；若发布协议坚持独立真人签字，则再对79条修改记录和风险抽样做人审。
 2. 再处理训练集9条证据风险与1678条语义/任务改写风险；无法确认的记录删除或改成诚实未知任务。
 3. 重新运行双重验证；只有所有门槛通过后才冻结正式SFT张量并做20步安全试跑。
