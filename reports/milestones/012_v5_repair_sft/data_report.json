@@ -1,0 +1,101 @@
+{
+  "base_records": 5999,
+  "base_sha256": "50e38ec19541ecd35ea6da64c25ce32ccd655acd74013eb9a380071c07133a95",
+  "base_split_counts": {
+    "test": 600,
+    "train": 4799,
+    "val": 600
+  },
+  "encodable_repair_candidates": 4989,
+  "final_split_counts": {
+    "test": 800,
+    "train": 6399,
+    "val": 800
+  },
+  "output_path": "data/sft/v5_repair/sft_v5_repair_training_ready.jsonl",
+  "output_sha256": "5baa071aa180e6afa473badb2258661daca2cae74cce45c21ae0e5275a8f1c40",
+  "purpose": "Repair M011 failures by adding targeted known-entity, fact, evidence, arithmetic, realtime-boundary, and concept samples.",
+  "raw_repair_candidates": 5440,
+  "rejected_repair_candidate_characters": {
+    "拟": 35
+  },
+  "rejected_repair_candidate_reasons": {
+    "duplicate_question": 416,
+    "tokenizer_missing_character": 35
+  },
+  "repair_family_splits": {
+    "arithmetic_repair": {
+      "test": 40,
+      "train": 320,
+      "val": 40
+    },
+    "capability_boundary_specific": {
+      "test": 25,
+      "train": 200,
+      "val": 25
+    },
+    "concept_explanation_repair": {
+      "test": 25,
+      "train": 200,
+      "val": 25
+    },
+    "evidence_entity_match": {
+      "test": 40,
+      "train": 320,
+      "val": 40
+    },
+    "novel_fact_anchor": {
+      "test": 25,
+      "train": 200,
+      "val": 25
+    },
+    "novel_known_entity": {
+      "test": 45,
+      "train": 360,
+      "val": 45
+    }
+  },
+  "repair_records": 2000,
+  "repair_split_counts": {
+    "test": 200,
+    "train": 1600,
+    "val": 200
+  },
+  "schema_version": "sft_v5_repair/1.0",
+  "status": "complete",
+  "summary": {
+    "max_answer_tokens": 75,
+    "max_question_tokens": 89,
+    "split_counts": {
+      "test": 800,
+      "train": 6399,
+      "val": 800
+    },
+    "task_family_counts": {
+      "ambiguity_unknown_clarification": 300,
+      "arithmetic_repair": 400,
+      "basic_reasoning": 400,
+      "capability_boundary": 400,
+      "capability_boundary_specific": 250,
+      "concept_explanation_repair": 250,
+      "context_understanding": 450,
+      "continuation_rewrite_instruction": 450,
+      "conversation_control": 150,
+      "direct_fact": 749,
+      "domain_switching": 300,
+      "evidence_entity_match": 400,
+      "fact_verification_correction": 300,
+      "general_chat": 450,
+      "honest_unknown_general": 300,
+      "instruction_following": 350,
+      "novel_fact_anchor": 250,
+      "novel_known_entity": 450,
+      "project_explanation": 450,
+      "relationship_reason_timeline": 600,
+      "study_planning": 350
+    }
+  },
+  "test_records_consumed_for_training": 0,
+  "tokenizer_sha256": "86bc44516339d7eee774da6c2b9e4bae8e85c0fd58b9192b6e234f884befaee0",
+  "total_records": 7999
+}

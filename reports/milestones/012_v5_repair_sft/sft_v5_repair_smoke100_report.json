@@ -1,0 +1,459 @@
+{
+  "best_checkpoint": "runs/sft_v5_repair_smoke100/best.pt",
+  "best_val_loss": 5.140461683273315,
+  "data_path": "data/cloud_v4/sft_v5_repair_tensors.pt",
+  "data_sha256": "9ba003074f133cfd3c1d343211e2d095875fcae44e3edc9b0ab9c84eb050dd0b",
+  "device": "cpu",
+  "elapsed_seconds": 10.915942542000266,
+  "eval_batches": 2,
+  "eval_interval": 50,
+  "final_train_loss": 4.761522054672241,
+  "final_val_loss": 5.140461683273315,
+  "init_checkpoint": "runs/pretrain_v4_m4_continue6000/best.pt",
+  "init_checkpoint_sha256": "5d6397b3bb97b8a14369117e2f1e1e9f9addf515da1117e2f0f35dfe8ac8af44",
+  "initial_train_loss": 7.149245500564575,
+  "initial_val_loss": 6.381054401397705,
+  "latest_checkpoint": "runs/sft_v5_repair_smoke100/latest.pt",
+  "latest_checkpoint_sha256": "8c93cd17d34c78548131743aaedfdd4fe2430a4e33f0469b33ea5af675a06c2b",
+  "learning_rate": 5e-05,
+  "loss_csv": "reports/milestones/012_v5_repair_sft/sft_v5_repair_smoke100_report_loss.csv",
+  "loss_history": [
+    {
+      "step": 0,
+      "train_loss": 7.149245500564575,
+      "val_loss": 6.381054401397705
+    },
+    {
+      "step": 50,
+      "train_loss": 4.039522051811218,
+      "val_loss": 5.149800062179565
+    },
+    {
+      "step": 100,
+      "train_loss": 4.761522054672241,
+      "val_loss": 5.140461683273315
+    }
+  ],
+  "micro_batch_size": 1,
+  "monitor_outputs": [
+    {
+      "expected_answer": "当前证据片段明确出现了药尘。",
+      "generated_answer": "能算”。",
+      "id": "v4_547a13f5d7fcccbe2538",
+      "question": "原问题是“雷尊者与药尘相比，谁更早出现在故事里”。现只做局部证据核验：不比较全书登场先后，只看第351章的当前证据：药尘和雷尊者中明确出现了谁？",
+      "split": "train",
+      "stopped_on_eos": true,
+      "task_family": "relationship_reason_timeline"
+    },
+    {
+      "expected_answer": "有，当前证据片段中出现了连续字符“花宗”。",
+      "generated_answer": "萧炎先是一怔。",
+      "id": "v4_d521e32f5277864ff748",
+      "question": "原问题是“花宗最早出现是在第几章”。现只做局部证据核验：不判断最早登场；第915章的证据片段是否写出了连续字符“花宗”？",
+      "split": "train",
+      "stopped_on_eos": true,
+      "task_family": "direct_fact"
+    },
+    {
+      "expected_answer": "先找出卡住的具体点，再回到一个最小例子重新做。",
+      "generated_answer": "是萧炎和欣蓝。",
+      "id": "mixed_chat_193ba041311b7f6f",
+      "question": "像聊天一样回答：我学监督微调卡住了。",
+      "split": "train",
+      "stopped_on_eos": true,
+      "task_family": "study_planning"
+    },
+    {
+      "expected_answer": "BPE是一种常见分词方法，会把频繁一起出现的字符逐步合并成更长的Token。",
+      "generated_answer": "是我说了一声是萧炎和薰儿是药老。",
+      "id": "mixed_chat_811cbd5eebd59b56",
+      "question": "我想学BPE，先给我一个简单解释。",
+      "split": "train",
+      "stopped_on_eos": true,
+      "task_family": "project_explanation"
+    },
+    {
+      "expected_answer": "韩枫是小说中被提到的重要人物。",
+      "generated_answer": "是什么？",
+      "id": "v5_repair_b55a5b8127933cbb",
+      "question": "用一句话回答：如果用户问韩枫，应该怎么答？",
+      "split": "train",
+      "stopped_on_eos": true,
+      "task_family": "novel_known_entity"
+    },
+    {
+      "expected_answer": "请先说明作品名称、具体人物和故事阶段，我再核对与“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”相关的内容。",
+      "generated_answer": "据片段中提到了药老。",
+      "id": "v4_159d93c40620f3747687",
+      "question": "参考原问题“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”，如果用户只说“请介绍相关人物”，但没有说明作品、人物和故事阶段，应该先怎么回应？",
+      "split": "val",
+      "stopped_on_eos": true,
+      "task_family": "ambiguity_unknown_clarification"
+    },
+    {
+      "expected_answer": "有，当前证据片段中出现了连续字符“化生火”。",
+      "generated_answer": "片处。",
+      "id": "v4_ce3b33fba6cd5ec2892b",
+      "question": "原问题是“化生火最早出现在小说的第几章”。现只做局部证据核验：不判断最早登场；第840章的证据片段是否写出了连续字符“化生火”？",
+      "split": "val",
+      "stopped_on_eos": true,
+      "task_family": "direct_fact"
+    },
+    {
+      "expected_answer": "现有资料不足，无法确定。",
+      "generated_answer": "。",
+      "id": "mixed_chat_89fb744820456809",
+      "question": "像聊天一样回答：云海真人是谁？",
+      "split": "val",
+      "stopped_on_eos": true,
+      "task_family": "honest_unknown_general"
+    },
+    {
+      "expected_answer": "现有资料不足，无法确定。",
+      "generated_answer": "我说。",
+      "id": "mixed_chat_9fb46ee0d0d37168",
+      "question": "自然一点回答：北海药王是谁？",
+      "split": "val",
+      "stopped_on_eos": true,
+      "task_family": "honest_unknown_general"
+    },
+    {
+      "expected_answer": "小医仙是小说中被提到的重要人物。",
+      "generated_answer": "一样。",
+      "id": "v5_repair_cacb2924bb111c77",
+      "question": "请简短回答：如果用户问小医仙，应该怎么答？",
+      "split": "val",
+      "stopped_on_eos": true,
+      "task_family": "novel_known_entity"
+    }
+  ],
+  "parameter_count": 8105025,
+  "payload_summary": {
+    "max_sequence_length": 149,
+    "mean_sequence_length": 48.70771346418302,
+    "min_sequence_length": 12,
+    "split_counts": {
+      "test": 800,
+      "train": 6399,
+      "val": 800
+    },
+    "supervised_tokens": 157815,
+    "task_family_counts": {
+      "ambiguity_unknown_clarification": 300,
+      "arithmetic_repair": 400,
+      "basic_reasoning": 400,
+      "capability_boundary": 400,
+      "capability_boundary_specific": 250,
+      "concept_explanation_repair": 250,
+      "context_understanding": 450,
+      "continuation_rewrite_instruction": 450,
+      "conversation_control": 150,
+      "direct_fact": 749,
+      "domain_switching": 300,
+      "evidence_entity_match": 400,
+      "fact_verification_correction": 300,
+      "general_chat": 450,
+      "honest_unknown_general": 300,
+      "instruction_following": 350,
+      "novel_fact_anchor": 250,
+      "novel_known_entity": 450,
+      "project_explanation": 450,
+      "relationship_reason_timeline": 600,
+      "study_planning": 350
+    }
+  },
+  "run_id": "sft-v4-20260828T102247Z-e5e90830",
+  "sample_history": [
+    {
+      "samples": [
+        {
+          "expected_answer": "当前证据片段明确出现了药尘。",
+          "generated_answer": "？”\n\n    雷赢面色凝重的望着那张着一抹淡淡的道，旋即目光转向萧炎，笑道：“没想到你所料你所说，果然有些麻烦。”",
+          "id": "v4_547a13f5d7fcccbe2538",
+          "question": "原问题是“雷尊者与药尘相比，谁更早出现在故事里”。现只做局部证据核验：不比较全书登场先后，只看第351章的当前证据：药尘和雷尊者中明确出现了谁？",
+          "split": "train",
+          "stopped_on_eos": false,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "有，当前证据片段中出现了连续字符“花宗”。",
+          "generated_answer": "!”\n\n    话音一落的天空，旋即一道人影便是在天际响起，然后直接对着那道人影对着那道路对着黑袍",
+          "id": "v4_d521e32f5277864ff748",
+          "question": "原问题是“花宗最早出现是在第几章”。现只做局部证据核验：不判断最早登场；第915章的证据片段是否写出了连续字符“花宗”？",
+          "split": "train",
+          "stopped_on_eos": false,
+          "task_family": "direct_fact"
+        },
+        {
+          "expected_answer": "先找出卡住的具体点，再回到一个最小例子重新做。",
+          "generated_answer": "，原来是个好好运气丹，我能算好奇怪？”\n\n    “这个小友，你就不好。”萧炎无奈的摇了摇头：“",
+          "id": "mixed_chat_193ba041311b7f6f",
+          "question": "像聊天一样回答：我学监督微调卡住了。",
+          "split": "train",
+          "stopped_on_eos": false,
+          "task_family": "study_planning"
+        },
+        {
+          "expected_answer": "BPE是一种常见分词方法，会把频繁一起出现的字符逐步合并成更长的Token。",
+          "generated_answer": "的道。\n\n    “不愿意。”望着萧炎的目光中，顿时浮现一抹惊呼声：“不过你是我来回事？”\n\n    “",
+          "id": "mixed_chat_811cbd5eebd59b56",
+          "question": "我想学BPE，先给我一个简单解释。",
+          "split": "train",
+          "stopped_on_eos": false,
+          "task_family": "project_explanation"
+        },
+        {
+          "expected_answer": "韩枫是小说中被提到的重要人物。",
+          "generated_answer": "。”\n\n    云山的柳擎，苏千脸色也是闪过一抹惊诧，韩枫脸庞之上，顿时一阵怒火，声音中急速涌动，瞬间",
+          "id": "v5_repair_b55a5b8127933cbb",
+          "question": "用一句话回答：如果用户问韩枫，应该怎么答？",
+          "split": "train",
+          "stopped_on_eos": false,
+          "task_family": "novel_known_entity"
+        },
+        {
+          "expected_answer": "请先说明作品名称、具体人物和故事阶段，我再核对与“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”相关的内容。",
+          "generated_answer": "的道。\n\n    一旁的薰儿也是有些愕然的点了点头，目光在下方广场上，道：“我这“强榜”也算是很难？”\n\n    ",
+          "id": "v4_159d93c40620f3747687",
+          "question": "参考原问题“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”，如果用户只说“请介绍相关人物”，但没有说明作品、人物和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "有，当前证据片段中出现了连续字符“化生火”。",
+          "generated_answer": "果…这两个月票！\n\n    ……\n\n",
+          "id": "v4_ce3b33fba6cd5ec2892b",
+          "question": "原问题是“化生火最早出现在小说的第几章”。现只做局部证据核验：不判断最早登场；第840章的证据片段是否写出了连续字符“化生火”？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "direct_fact"
+        },
+        {
+          "expected_answer": "现有资料不足，无法确定。",
+          "generated_answer": "难道是萧炎？”\n\n    “这个小家伙，果然有些不起？你要看看吧...我来吧...难道你是什么？”\n",
+          "id": "mixed_chat_89fb744820456809",
+          "question": "像聊天一样回答：云海真人是谁？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "honest_unknown_general"
+        },
+        {
+          "expected_answer": "现有资料不足，无法确定。",
+          "generated_answer": "金鼠蛇是那枚金龙凰纹的龙凰灵龙凰，龙凰血兽的龙本源”便是如同蛇一般，弥漫",
+          "id": "mixed_chat_9fb46ee0d0d37168",
+          "question": "自然一点回答：北海药王是谁？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "honest_unknown_general"
+        },
+        {
+          "expected_answer": "小医仙是小说中被提到的重要人物。",
+          "generated_answer": "是否是我来找到这里。”闻言，萧炎眉头微笑道：“若是说你是我想将你打击败。”\n\n    “老师",
+          "id": "v5_repair_cacb2924bb111c77",
+          "question": "请简短回答：如果用户问小医仙，应该怎么答？",
+          "split": "val",
+          "stopped_on_eos": false,
+          "task_family": "novel_known_entity"
+        }
+      ],
+      "step": 0
+    },
+    {
+      "samples": [
+        {
+          "expected_answer": "当前证据片段明确出现了药尘。",
+          "generated_answer": "文字，",
+          "id": "v4_547a13f5d7fcccbe2538",
+          "question": "原问题是“雷尊者与药尘相比，谁更早出现在故事里”。现只做局部证据核验：不比较全书登场先后，只看第351章的当前证据：药尘和雷尊者中明确出现了谁？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "有，当前证据片段中出现了连续字符“花宗”。",
+          "generated_answer": "我！）\n\n",
+          "id": "v4_d521e32f5277864ff748",
+          "question": "原问题是“花宗最早出现是在第几章”。现只做局部证据核验：不判断最早登场；第915章的证据片段是否写出了连续字符“花宗”？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "direct_fact"
+        },
+        {
+          "expected_answer": "先找出卡住的具体点，再回到一个最小例子重新做。",
+          "generated_answer": "是否则一切。",
+          "id": "mixed_chat_193ba041311b7f6f",
+          "question": "像聊天一样回答：我学监督微调卡住了。",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "study_planning"
+        },
+        {
+          "expected_answer": "BPE是一种常见分词方法，会把频繁一起出现的字符逐步合并成更长的Token。",
+          "generated_answer": "是说不定是说。",
+          "id": "mixed_chat_811cbd5eebd59b56",
+          "question": "我想学BPE，先给我一个简单解释。",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "project_explanation"
+        },
+        {
+          "expected_answer": "韩枫是小说中被提到的重要人物。",
+          "generated_answer": "是你说到的说。",
+          "id": "v5_repair_b55a5b8127933cbb",
+          "question": "用一句话回答：如果用户问韩枫，应该怎么答？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "novel_known_entity"
+        },
+        {
+          "expected_answer": "请先说明作品名称、具体人物和故事阶段，我再核对与“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”相关的内容。",
+          "generated_answer": "第四位是，定要是想是否有说。",
+          "id": "v4_159d93c40620f3747687",
+          "question": "参考原问题“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”，如果用户只说“请介绍相关人物”，但没有说明作品、人物和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "有，当前证据片段中出现了连续字符“化生火”。",
+          "generated_answer": "是完成了么。",
+          "id": "v4_ce3b33fba6cd5ec2892b",
+          "question": "原问题是“化生火最早出现在小说的第几章”。现只做局部证据核验：不判断最早登场；第840章的证据片段是否写出了连续字符“化生火”？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "direct_fact"
+        },
+        {
+          "expected_answer": "现有资料不足，无法确定。",
+          "generated_answer": "请说。",
+          "id": "mixed_chat_89fb744820456809",
+          "question": "像聊天一样回答：云海真人是谁？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "honest_unknown_general"
+        },
+        {
+          "expected_answer": "现有资料不足，无法确定。",
+          "generated_answer": "是花灵活。",
+          "id": "mixed_chat_9fb46ee0d0d37168",
+          "question": "自然一点回答：北海药王是谁？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "honest_unknown_general"
+        },
+        {
+          "expected_answer": "小医仙是小说中被提到的重要人物。",
+          "generated_answer": "有。",
+          "id": "v5_repair_cacb2924bb111c77",
+          "question": "请简短回答：如果用户问小医仙，应该怎么答？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "novel_known_entity"
+        }
+      ],
+      "step": 50
+    },
+    {
+      "samples": [
+        {
+          "expected_answer": "当前证据片段明确出现了药尘。",
+          "generated_answer": "能算”。",
+          "id": "v4_547a13f5d7fcccbe2538",
+          "question": "原问题是“雷尊者与药尘相比，谁更早出现在故事里”。现只做局部证据核验：不比较全书登场先后，只看第351章的当前证据：药尘和雷尊者中明确出现了谁？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "relationship_reason_timeline"
+        },
+        {
+          "expected_answer": "有，当前证据片段中出现了连续字符“花宗”。",
+          "generated_answer": "萧炎先是一怔。",
+          "id": "v4_d521e32f5277864ff748",
+          "question": "原问题是“花宗最早出现是在第几章”。现只做局部证据核验：不判断最早登场；第915章的证据片段是否写出了连续字符“花宗”？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "direct_fact"
+        },
+        {
+          "expected_answer": "先找出卡住的具体点，再回到一个最小例子重新做。",
+          "generated_answer": "是萧炎和欣蓝。",
+          "id": "mixed_chat_193ba041311b7f6f",
+          "question": "像聊天一样回答：我学监督微调卡住了。",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "study_planning"
+        },
+        {
+          "expected_answer": "BPE是一种常见分词方法，会把频繁一起出现的字符逐步合并成更长的Token。",
+          "generated_answer": "是我说了一声是萧炎和薰儿是药老。",
+          "id": "mixed_chat_811cbd5eebd59b56",
+          "question": "我想学BPE，先给我一个简单解释。",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "project_explanation"
+        },
+        {
+          "expected_answer": "韩枫是小说中被提到的重要人物。",
+          "generated_answer": "是什么？",
+          "id": "v5_repair_b55a5b8127933cbb",
+          "question": "用一句话回答：如果用户问韩枫，应该怎么答？",
+          "split": "train",
+          "stopped_on_eos": true,
+          "task_family": "novel_known_entity"
+        },
+        {
+          "expected_answer": "请先说明作品名称、具体人物和故事阶段，我再核对与“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”相关的内容。",
+          "generated_answer": "据片段中提到了药老。",
+          "id": "v4_159d93c40620f3747687",
+          "question": "参考原问题“第五百五十八章中，紫研为什么没有反对接受免费的本源锻体？”，如果用户只说“请介绍相关人物”，但没有说明作品、人物和故事阶段，应该先怎么回应？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "ambiguity_unknown_clarification"
+        },
+        {
+          "expected_answer": "有，当前证据片段中出现了连续字符“化生火”。",
+          "generated_answer": "片处。",
+          "id": "v4_ce3b33fba6cd5ec2892b",
+          "question": "原问题是“化生火最早出现在小说的第几章”。现只做局部证据核验：不判断最早登场；第840章的证据片段是否写出了连续字符“化生火”？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "direct_fact"
+        },
+        {
+          "expected_answer": "现有资料不足，无法确定。",
+          "generated_answer": "。",
+          "id": "mixed_chat_89fb744820456809",
+          "question": "像聊天一样回答：云海真人是谁？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "honest_unknown_general"
+        },
+        {
+          "expected_answer": "现有资料不足，无法确定。",
+          "generated_answer": "我说。",
+          "id": "mixed_chat_9fb46ee0d0d37168",
+          "question": "自然一点回答：北海药王是谁？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "honest_unknown_general"
+        },
+        {
+          "expected_answer": "小医仙是小说中被提到的重要人物。",
+          "generated_answer": "一样。",
+          "id": "v5_repair_cacb2924bb111c77",
+          "question": "请简短回答：如果用户问小医仙，应该怎么答？",
+          "split": "val",
+          "stopped_on_eos": true,
+          "task_family": "novel_known_entity"
+        }
+      ],
+      "step": 100
+    }
+  ],
+  "schema_version": "sft-v4-report/v1",
+  "stage": "sft_v4_formal",
+  "status": "complete",
+  "steps": 100,
+  "test_records_consumed": 0,
+  "weight_decay": 0.05
+}

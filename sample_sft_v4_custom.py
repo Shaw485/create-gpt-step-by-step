@@ -34,6 +34,7 @@ DEFAULT_MAX_NEW_TOKENS = 30
 DEFAULT_TEMPERATURE = 0.8
 DEFAULT_TOP_K = 20
 DEFAULT_SEED = 20260828
+DEFAULT_TITLE = "M011 mixed chat SFT checkpoint 小说/非小说样本"
 
 DEFAULT_PROMPTS = [
     {"category": "小说问题", "question": "小说第三百章的标题是什么？"},
@@ -119,6 +120,7 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--temperature", type=float, default=DEFAULT_TEMPERATURE)
     parser.add_argument("--top-k", type=int, default=DEFAULT_TOP_K)
     parser.add_argument("--seed", type=int, default=DEFAULT_SEED)
+    parser.add_argument("--title", default=DEFAULT_TITLE)
     return parser.parse_args(argv)
 
 
@@ -193,13 +195,14 @@ def main(argv: Sequence[str] | None = None) -> int:
         "temperature": args.temperature,
         "top_k": args.top_k,
         "seed": args.seed,
+        "title": args.title,
         "samples": samples,
     }
     atomic_write_json(args.output_json, report)
     atomic_write_text(
         args.output_md,
         render_markdown(
-            title="M011 mixed chat SFT checkpoint 小说/非小说样本",
+            title=args.title,
             checkpoint_step=checkpoint_step,
             checkpoint_sha256=checkpoint_sha256,
             samples=samples,
