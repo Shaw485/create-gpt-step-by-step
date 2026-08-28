@@ -55,7 +55,13 @@ python -m unittest discover -s tests -v
 
 ## 日志与调试
 
-训练采用分模块轮转 JSONL 日志。数据、预训练、验证、Checkpoint、GPU、SFT 和编排日志能够分别调节级别；默认不记录密码、访问令牌、密钥和完整授权头。首阶段日志位于 `runs/pretrain_v4_m4/logs/`，续训日志位于 `runs/pretrain_v4_m4_continue6000/logs/`；配置分别见 `configs/local_m4_8m.json` 和 `configs/local_m4_8m_continue_6000.json`。M008 SFT数据修复日志位于被Git忽略的`data/sft/v4_teacher_repair/logs/`，数据、构建和验证可分别通过环境变量调节日志级别。
+训练采用分模块轮转 JSONL 日志。数据、预训练、验证、Checkpoint、GPU、SFT 和编排日志能够分别调节级别；默认不记录密码、访问令牌、密钥和完整授权头。首阶段日志位于 `runs/pretrain_v4_m4/logs/`，续训日志位于 `runs/pretrain_v4_m4_continue6000/logs/`；配置分别见 `configs/local_m4_8m.json` 和 `configs/local_m4_8m_continue_6000.json`。M008 SFT数据修复日志位于被Git忽略的`data/sft/v4_teacher_repair/logs/`；真人审核工具使用`review_logs/`分别记录UI、数据保存和验证事件，不记录审核人或审核正文。
+
+M008本地真人审核页面可用以下命令启动，只监听`127.0.0.1:8765`：
+
+```bash
+.venv/bin/python review_sft_v4.py
+```
 
 ## 重要说明
 

@@ -60,6 +60,18 @@
 
 `SFT_V4_DATA_LOG_LEVEL`、`SFT_V4_BUILD_LOG_LEVEL`和`SFT_V4_VALIDATION_LOG_LEVEL`可分别控制数据、构建和验证日志级别；`SFT_V4_CONSOLE_LOG=0`可关闭终端日志。每个日志文件按10MB轮转并保留5份。日志记录run ID、文件哈希和计数，不记录密码、令牌、私钥或授权头。
 
+## 本地真人审核工具
+
+`review_sft_v4.py`在`127.0.0.1`提供浏览器审核页，默认按406条任务改写、194条低风险记录的顺序展示问题、答案、原文证据和风险标记。审核人可以选择“通过”“修改后通过”或“拒绝”；后两种必须填写说明。每次决定立即原子写入独立文件，不修改教师原始数据或候选JSONL。
+
+```bash
+.venv/bin/python review_sft_v4.py
+```
+
+启动后访问`http://127.0.0.1:8765`。决定保存在Git忽略目录`data/sft/v4_teacher_repair/human_review_decisions.jsonl`。每条决定记录真实审核人、真实点击时间和对应候选SHA-256；候选发生变化时旧决定会拒绝加载，防止把过期审核错误套到新数据。只有600条全部经过真实操作且没有拒绝项，才能进入正式数据冻结。
+
+审核日志位于`data/sft/v4_teacher_repair/review_logs/`，分为UI、数据保存和验证三类。分别使用`SFT_REVIEW_UI_LOG_LEVEL`、`SFT_REVIEW_DATA_LOG_LEVEL`和`SFT_REVIEW_VALIDATION_LOG_LEVEL`调节；默认按10MB轮转并保留5份。日志只记录记录ID、决定类型和数量，不写审核人、备注、问题或答案正文。
+
 复现自动修复：
 
 ```bash
