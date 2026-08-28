@@ -64,6 +64,7 @@
 - `sft_v4_step500_report.json`：完整机器可读报告。
 - `sft_v4_step500_report_loss.csv`：Loss数据表。
 - `sft_v4_step500_report_loss_curve.png` / `.svg`：Loss曲线。
+- `novel_vs_general_samples.md`：小说问题与非小说问题的固定样本对比。
 - `runs/sft_v4_step500/best.pt`：本阶段最佳验证checkpoint，本机保留，不提交GitHub。
 - `runs/sft_v4_step500/latest.pt`：本阶段最后checkpoint，本机保留，不提交GitHub。
 - `runs/sft_v4_step500/logs/`：data、sft、validation、checkpoint、orchestrator等独立JSONL日志。
