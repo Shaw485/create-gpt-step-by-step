@@ -6,8 +6,10 @@
 |---|---|
 | `e9dc68772b334db31c4c9c8834fb6b714bebe1a3e96e78b33c729793d9832542` | `.gitignore` |
 | `ba88f4c8ab59923197924c787887ae17d8e7bdfb604beac8d0121e84f79f1e20` | `build_sft_v4_mixed_chat.py` |
+| `4b5a4d3707d0328327e4209816c01008a33e2b4ee8cf4f75f27b4f2dbfdb3742` | `sample_sft_v4_custom.py` |
 | `f4ca0963e52a29c5e0c8b1dcecd84c666a8676abb5b9397e1394c4a50db37fb8` | `tests/test_build_sft_v4_mixed_chat.py` |
-| `ac69c1b077f2c8d0fcb8adbf834bbe44c43f0b42b7c6c12b94c0d928c9e204ed` | `reports/milestones/011_v4_mixed_chat_sft/README.md` |
+| `685b07a206a252327259953acfa600126685b77570f9458f5ee49fc31f7ca620` | `tests/test_sample_sft_v4_custom.py` |
+| `cbfc5d52f70e8b3393bc82cfa88863743d59d53a496c31fba14be9b74d9f1b04` | `reports/milestones/011_v4_mixed_chat_sft/README.md` |
 | `35922d2f5e8d834933f1a856eed4b45e06a6427f326c45e9d282fa01360ac5f5` | `reports/milestones/011_v4_mixed_chat_sft/data_report.json` |
 | `d447fdca00c8e3da6c3e8481e744aa98b62935ed332409ebde1f5bab12f8f126` | `reports/milestones/011_v4_mixed_chat_sft/tensor_report.json` |
 | `08235d220175f4946590805ae6fafb373f2a34c71125873bbddea4c778e06534` | `reports/milestones/011_v4_mixed_chat_sft/sft_v4_mixed_chat_smoke100_report.json` |
@@ -27,6 +29,18 @@
 | `aacb669fa790a275559112204640de4d74e0e7113cd125f3a03b0dad6376ae57` | `reports/milestones/011_v4_mixed_chat_sft/sft_v4_mixed_chat_step2000_report_loss_curve.svg` |
 | `50736d5807e3539c9c74afaf37a73f6079b02ab90d087c15e266449319017d62` | `reports/milestones/011_v4_mixed_chat_sft/novel_vs_general_step2000_samples.json` |
 | `c7c679b361668ff11324fe56f0df4b07f8ca57b9a183df2966b2334b650ad375` | `reports/milestones/011_v4_mixed_chat_sft/novel_vs_general_step2000_samples.md` |
+| `b002ace715bc0ea3b20c18f56a93f5ac2f21473e14c880a7388fe62b39b80b10` | `reports/milestones/011_v4_mixed_chat_sft/sft_v4_mixed_chat_step5000_report.json` |
+| `eeeb746ad70de7e5013eb07dce3141231ab8fc39e3aca06aa6b637e8c0fca4f9` | `reports/milestones/011_v4_mixed_chat_sft/sft_v4_mixed_chat_step5000_report_loss.csv` |
+| `42163afdfa66c8b2482a36f0e6ef56de956c9803da2453ae30b62df51427a396` | `reports/milestones/011_v4_mixed_chat_sft/sft_v4_mixed_chat_step5000_report_loss_curve.png` |
+| `50d360b677a448aac8315c20268262edfd467516d499dd8604fe4eff7ccae0a1` | `reports/milestones/011_v4_mixed_chat_sft/sft_v4_mixed_chat_step5000_report_loss_curve.svg` |
+| `bc3a400673a465ccfd0fbb0dcee7a4eb134f23e8948e3b4bfe4bc7cd69f101f4` | `reports/milestones/011_v4_mixed_chat_sft/sft_v4_mixed_chat_step5000_checkpoint_compare.json` |
+| `02786f838a53c20b91e22128259626d242a54c7853fab387cd3a9a6d06819f2d` | `reports/milestones/011_v4_mixed_chat_sft/sft_v4_mixed_chat_step5000_checkpoint_compare.md` |
+| `85954e0c7ab2b20dc4170b29a01e6d0fe8def9c9dcf8c7f173534b9d00bd103d` | `reports/milestones/011_v4_mixed_chat_sft/novel_vs_general_step5000_best_samples.json` |
+| `63f49072efd5fcfe33c632b397fa71b6166d01addc1ece1dba88c9023ee69486` | `reports/milestones/011_v4_mixed_chat_sft/novel_vs_general_step5000_best_samples.md` |
+| `1d02ff2d208b6b14cfd356ce11167cce428ad74195a1280b3e60a8ff7339089e` | `reports/milestones/011_v4_mixed_chat_sft/novel_vs_general_step5000_latest_samples.json` |
+| `a7049937c8d1429ed8ee66388a884f023dc4df39bfb26792e629c5cc6f01643a` | `reports/milestones/011_v4_mixed_chat_sft/novel_vs_general_step5000_latest_samples.md` |
+| `bc55cdbba0cc2ef0239eeb3ae840d516ad9c5a766f714257bb762089434142d6` | `reports/milestones/011_v4_mixed_chat_sft/novel_vs_general_step5000_latest_lowtemp_samples.json` |
+| `f0234ae8f579cdb4bfd653659fafd7638f182a2e52aaa6ab429cc9f6b70370e1` | `reports/milestones/011_v4_mixed_chat_sft/novel_vs_general_step5000_latest_lowtemp_samples.md` |
 
 本机忽略文件的关键哈希：
 
@@ -35,4 +49,5 @@
 | `50e38ec19541ecd35ea6da64c25ce32ccd655acd74013eb9a380071c07133a95` | `data/sft/v4_mixed_chat/sft_v4_mixed_chat_training_ready.jsonl` |
 | `73e46a1a3031e6e3d422d10922520c4759bc18a324f8c2fd35524c689f622573` | `data/cloud_v4/sft_v4_mixed_chat_tensors.pt` |
 | `5d6397b3bb97b8a14369117e2f1e1e9f9addf515da1117e2f0f35dfe8ac8af44` | `runs/pretrain_v4_m4_continue6000/best.pt` |
-| `bb2d77f543173f7994000c2c3fafefb80d4334fc080c7d9ad7a009ea9f39c1e7` | `runs/sft_v4_mixed_chat_step2000/latest.pt` |
+| `486132768a282e9508021580e9a2397d79c27b98f5886aef568eeaa9643dec6c` | `runs/sft_v4_mixed_chat_step5000/best.pt` |
+| `58621347c6a6850269d7d1115c7d4c6e4d8b529a62210079c5464f76b96fe50c` | `runs/sft_v4_mixed_chat_step5000/latest.pt` |

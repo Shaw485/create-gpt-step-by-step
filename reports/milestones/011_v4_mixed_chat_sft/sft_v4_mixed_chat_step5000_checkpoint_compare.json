@@ -1,0 +1,27 @@
+{
+  "batch_size": 2,
+  "data": "data/cloud_v4/sft_v4_mixed_chat_tensors.pt",
+  "data_sha256": "73e46a1a3031e6e3d422d10922520c4759bc18a324f8c2fd35524c689f622573",
+  "eval_batches": 100,
+  "eval_split": "val",
+  "items": [
+    {
+      "checkpoint": "runs/sft_v4_mixed_chat_step5000/best.pt",
+      "checkpoint_sha256": "486132768a282e9508021580e9a2397d79c27b98f5886aef568eeaa9643dec6c",
+      "checkpoint_step": 3500,
+      "label": "best_step3500",
+      "val_loss_100_batches": 1.1291605842486023
+    },
+    {
+      "checkpoint": "runs/sft_v4_mixed_chat_step5000/latest.pt",
+      "checkpoint_sha256": "58621347c6a6850269d7d1115c7d4c6e4d8b529a62210079c5464f76b96fe50c",
+      "checkpoint_step": 5000,
+      "label": "latest_step5000",
+      "val_loss_100_batches": 0.9791005393350497
+    }
+  ],
+  "schema_version": "sft-v4-checkpoint-compare/v1",
+  "seed": 20260828,
+  "status": "complete",
+  "test_records_consumed": 0
+}

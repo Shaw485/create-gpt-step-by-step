@@ -1,0 +1,88 @@
+{
+  "checkpoint": "runs/sft_v4_mixed_chat_step5000/best.pt",
+  "checkpoint_sha256": "486132768a282e9508021580e9a2397d79c27b98f5886aef568eeaa9643dec6c",
+  "checkpoint_step": 3500,
+  "data": "data/cloud_v4/sft_v4_mixed_chat_tensors.pt",
+  "data_sha256": "73e46a1a3031e6e3d422d10922520c4759bc18a324f8c2fd35524c689f622573",
+  "device": "cpu",
+  "max_new_tokens": 30,
+  "samples": [
+    {
+      "category": "小说问题",
+      "generated_answer": "第264章的标题是《不足》。",
+      "question": "小说第三百章的标题是什么？",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "generated_answer": "现有资料不足，无法确定。",
+      "question": "萧炎是谁？",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "generated_answer": "现有资料不足，无法确定。",
+      "question": "药尘是谁？",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "generated_answer": "现有资料不足，无法确定。",
+      "question": "异火是什么？",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "generated_answer": "我不能直接看到实时天气。你告诉我城市和预报，我可以帮你判断。",
+      "question": "请用一句话介绍萧炎。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "generated_answer": "是，证据片段同时提到了萧炎和苏千。",
+      "question": "根据证据片段，韩枫和紫研是否都被提到？",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "generated_answer": "我不能直接看到实时天气。你告诉我城市和预报，我可以帮你判断。",
+      "question": "今天天气怎么样？",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "generated_answer": "原文把频繁一新，用来告诉模型答案已经生成完了。",
+      "question": "请写一句鼓励学习的话。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "generated_answer": "230加4加3等于3。",
+      "question": "一加一等于几？",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "generated_answer": "我没有足够可靠的信息，不能硬编。",
+      "question": "请介绍人工智能。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "generated_answer": "先定一个小目标，再做一个练习，最后用自己的话总结数学会了。",
+      "question": "我应该如何安排今天的学习？",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "generated_answer": "模型学习大量文本里的语可靠的语，否则不要盘次数学会了。",
+      "question": "请用一句话解释什么是监督微调。",
+      "stopped_on_eos": true
+    }
+  ],
+  "schema_version": "sft-v4-custom-samples/v1",
+  "seed": 20260828,
+  "status": "complete",
+  "temperature": 0.8,
+  "top_k": 20
+}
