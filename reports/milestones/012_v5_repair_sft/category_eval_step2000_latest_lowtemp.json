@@ -1,15 +1,15 @@
 {
-  "checkpoint": "runs/sft_v4_mixed_chat_step5000/latest.pt",
-  "checkpoint_sha256": "58621347c6a6850269d7d1115c7d4c6e4d8b529a62210079c5464f76b96fe50c",
-  "checkpoint_step": 5000,
-  "data": "data/cloud_v4/sft_v4_mixed_chat_tensors.pt",
-  "data_sha256": "73e46a1a3031e6e3d422d10922520c4759bc18a324f8c2fd35524c689f622573",
+  "checkpoint": "runs/sft_v5_repair_step2000/latest.pt",
+  "checkpoint_sha256": "53ecfb7a362f9a9ffc1ef18361d4eb8e81eeba8a2551e9153d95711dfaec08bb",
+  "checkpoint_step": 2000,
+  "data": "data/cloud_v4/sft_v5_repair_tensors.pt",
+  "data_sha256": "9ba003074f133cfd3c1d343211e2d095875fcae44e3edc9b0ab9c84eb050dd0b",
   "device": "cpu",
   "max_new_tokens": 30,
   "results": [
     {
       "category": "小说人物",
-      "generated_answer": "现有资料不足，无法确定。",
+      "generated_answer": "第300。",
       "id": "novel_entity_xiaoyan",
       "metric": "known_entity",
       "passed": false,
@@ -19,7 +19,7 @@
     },
     {
       "category": "小说人物",
-      "generated_answer": "现有资料不足，无法确定。",
+      "generated_answer": "30。",
       "id": "novel_entity_yaochen",
       "metric": "known_entity",
       "passed": false,
@@ -29,17 +29,17 @@
     },
     {
       "category": "小说人物",
-      "generated_answer": "现有资料不足，无法确定。",
+      "generated_answer": "药老是小说中被提到的人物。",
       "id": "novel_entity_yaolao",
       "metric": "known_entity",
-      "passed": false,
+      "passed": true,
       "question": "药老是谁？",
       "score_reason": "must mention known entity and avoid unknown refusal",
       "stopped_on_eos": true
     },
     {
       "category": "小说人物",
-      "generated_answer": "我没有足够可靠的信息，不能硬编。",
+      "generated_answer": "答案是230。",
       "id": "novel_entity_xiaoyan_one_sentence",
       "metric": "known_entity",
       "passed": false,
@@ -49,17 +49,17 @@
     },
     {
       "category": "小说人物",
-      "generated_answer": "现有资料不足，无法确定。",
+      "generated_answer": "异火是小说中被提到的重要人物。",
       "id": "novel_entity_yihuo",
       "metric": "known_entity",
-      "passed": false,
+      "passed": true,
       "question": "异火是什么？",
       "score_reason": "must mention known entity and avoid unknown refusal",
       "stopped_on_eos": true
     },
     {
       "category": "小说事实",
-      "generated_answer": "第1章的标题是《大更！】》。",
+      "generated_answer": "第3000章的标题是《收场》。",
       "id": "novel_fact_chapter300",
       "metric": "all_required",
       "passed": false,
@@ -69,17 +69,17 @@
     },
     {
       "category": "小说事实",
-      "generated_answer": "是萧炎说的。",
+      "generated_answer": "是药老说的。",
       "id": "novel_fact_speaker_yaolao",
       "metric": "exact_any",
-      "passed": false,
+      "passed": true,
       "question": "第159章中说出“准备突破吧。这是你的机缘。万”这句话的是谁？",
       "score_reason": "must contain one expected phrase and avoid forbidden phrases",
       "stopped_on_eos": true
     },
     {
       "category": "小说事实",
-      "generated_answer": "《不足，用户》是小说第142章的标题。",
+      "generated_answer": "是，第30000章的标题是《收场》。",
       "id": "novel_fact_title_direct",
       "metric": "all_required",
       "passed": false,
@@ -89,7 +89,7 @@
     },
     {
       "category": "小说事实",
-      "generated_answer": "第103章的标题是《斗破苍穹》。",
+      "generated_answer": "第390章的标题是《收场》。",
       "id": "novel_fact_no_unknown_for_known",
       "metric": "all_required",
       "passed": false,
@@ -99,13 +99,13 @@
     },
     {
       "category": "小说事实",
-      "generated_answer": "天气。你告诉我城市和天气预报，我可以帮你判断。",
+      "generated_answer": "我不能直接看到实时天气和天气和天气。你告诉我城市和天气预报，我可以帮你判",
       "id": "novel_fact_not_weather",
       "metric": "exact_any",
       "passed": false,
       "question": "回答小说人物问题时，应该直接说天气吗？",
       "score_reason": "must contain one expected phrase and avoid forbidden phrases",
-      "stopped_on_eos": true
+      "stopped_on_eos": false
     },
     {
       "category": "证据判断",
@@ -119,7 +119,7 @@
     },
     {
       "category": "证据判断",
-      "generated_answer": "是药老和药老。",
+      "generated_answer": "是药老和萧炎。",
       "id": "evidence_yaolao_only",
       "metric": "all_required",
       "passed": true,
@@ -129,7 +129,7 @@
     },
     {
       "category": "证据判断",
-      "generated_answer": "不能直接给出生成一个小练习，就算开始学会了。",
+      "generated_answer": "能确定其首次出现章节。",
       "id": "evidence_no_birthdate",
       "metric": "all_required",
       "passed": false,
@@ -139,17 +139,17 @@
     },
     {
       "category": "证据判断",
-      "generated_answer": "小说里哪一章的标题是什么？",
+      "generated_answer": "九十九十九章《斗破苍穹》第九百九百九十九章《斗破苍穹》的第一千一",
       "id": "evidence_copy_question",
       "metric": "all_required",
       "passed": false,
       "question": "请原样重复以下问题，不要回答：“阴阳命魂丹属于几品丹药？”",
       "score_reason": "must contain all required phrases and avoid forbidden phrases",
-      "stopped_on_eos": true
+      "stopped_on_eos": false
     },
     {
       "category": "证据判断",
-      "generated_answer": "正确，证据片段同时提到了韩枫和韩枫。",
+      "generated_answer": "片段中提到的是韩枫和韩枫。",
       "id": "evidence_two_names_no_extra",
       "metric": "all_required",
       "passed": false,
@@ -159,23 +159,23 @@
     },
     {
       "category": "能力边界",
-      "generated_answer": "我不能直接看到实时天气。你告诉我城市，我可以帮你分析天气预报。",
+      "generated_answer": "我不能直接看到实时天气和天气和天气。你告诉我城市和天气和天气和天气和",
       "id": "chat_weather",
       "metric": "boundary",
       "passed": true,
       "question": "今天天气怎么样？",
       "score_reason": "must state topic-specific capability boundary without leaking novel patterns",
-      "stopped_on_eos": true
+      "stopped_on_eos": false
     },
     {
       "category": "能力边界",
-      "generated_answer": "验证集不参数更新，用来观察模型是否真的泛化。",
+      "generated_answer": "我不能直接看到实时天气和天气和天气和天气和天气和天气和天气和天气",
       "id": "chat_news",
       "metric": "boundary",
       "passed": false,
       "question": "今天有什么新闻？",
       "score_reason": "must state topic-specific capability boundary without leaking novel patterns",
-      "stopped_on_eos": true
+      "stopped_on_eos": false
     },
     {
       "category": "能力边界",
@@ -189,7 +189,7 @@
     },
     {
       "category": "能力边界",
-      "generated_answer": "我不能直接看到实时天气和路况。你告诉我城市和预报，我可以帮你判断。",
+      "generated_answer": "第300。",
       "id": "chat_exchange_rate",
       "metric": "boundary",
       "passed": false,
@@ -199,67 +199,67 @@
     },
     {
       "category": "能力边界",
-      "generated_answer": "我不能直接看到你最早出现是在第几章？",
+      "generated_answer": "我不能直接看到实时天气和天气和天气和天气和天气和天气和天气和天气",
       "id": "chat_restaurant",
       "metric": "boundary",
       "passed": false,
       "question": "附近哪家店最好吃？",
       "score_reason": "must state topic-specific capability boundary without leaking novel patterns",
-      "stopped_on_eos": true
+      "stopped_on_eos": false
     },
     {
       "category": "基础数学",
-      "generated_answer": "2加8等于22。",
+      "generated_answer": "1加3加5等于2加1。",
       "id": "math_1_plus_1",
       "metric": "math_exact",
       "passed": false,
       "question": "一加一等于几？",
-      "score_reason": "found numbers [2, 8, 22], expected only 2",
+      "score_reason": "found numbers [1, 3, 5, 2, 1], expected only 2",
       "stopped_on_eos": true
     },
     {
       "category": "基础数学",
-      "generated_answer": "2加3等于22。",
+      "generated_answer": "1加2加1等于2。",
       "id": "math_2_plus_3",
       "metric": "math_exact",
       "passed": false,
       "question": "2加3等于几？",
-      "score_reason": "found numbers [2, 3, 22], expected only 5",
+      "score_reason": "found numbers [1, 2, 1, 2], expected only 5",
       "stopped_on_eos": true
     },
     {
       "category": "基础数学",
-      "generated_answer": "2加3等于22。",
+      "generated_answer": "1加2加2等于2等于2。",
       "id": "math_7_plus_8",
       "metric": "math_exact",
       "passed": false,
       "question": "7加8等于几？",
-      "score_reason": "found numbers [2, 3, 22], expected only 15",
+      "score_reason": "found numbers [1, 2, 2, 2, 2], expected only 15",
       "stopped_on_eos": true
     },
     {
       "category": "基础数学",
-      "generated_answer": "答案是23。",
+      "generated_answer": "答案是22。",
       "id": "math_10_plus_9",
       "metric": "math_exact",
       "passed": false,
       "question": "请直接回答：10加9是多少？",
-      "score_reason": "found numbers [23], expected only 19",
+      "score_reason": "found numbers [22], expected only 19",
       "stopped_on_eos": true
     },
     {
       "category": "基础数学",
-      "generated_answer": "一共有12个。",
+      "generated_answer": "一共有323个。",
       "id": "math_apple_6_plus_4",
       "metric": "math_exact",
       "passed": false,
       "question": "如果有6个苹果，又来了4个，一共有几个？",
-      "score_reason": "found numbers [12], expected only 10",
+      "score_reason": "found numbers [323], expected only 10",
       "stopped_on_eos": true
     },
     {
       "category": "通用聊天",
-      "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+      "generated_answer": "请先看用户是否明确问小说。",
       "id": "general_encourage",
       "metric": "chat_quality",
       "passed": true,
@@ -269,50 +269,50 @@
     },
     {
       "category": "通用聊天",
-      "generated_answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+      "generated_answer": "先看用户是小说章节号。",
       "id": "general_plan_today",
       "metric": "chat_quality",
-      "passed": true,
+      "passed": false,
       "question": "我应该如何安排今天的学习？",
       "score_reason": "must stop, be non-empty, and avoid novel/unknown-refusal leakage",
       "stopped_on_eos": true
     },
     {
       "category": "通用聊天",
-      "generated_answer": "把任务切小，关掉干扰，先专注二十五分钟，再休息五分钟。",
+      "generated_answer": "先看用户是否明确问小说章节，否则不要强行回答章节号。",
       "id": "general_python_focus",
       "metric": "chat_quality",
-      "passed": true,
+      "passed": false,
       "question": "学习Python时总是分心怎么办？",
       "score_reason": "must stop, be non-empty, and avoid novel/unknown-refusal leakage",
       "stopped_on_eos": true
     },
     {
       "category": "通用聊天",
-      "generated_answer": "EOEOE把Token编号，让模型能在连续空间里计算含义和位置关系",
+      "generated_answer": "GGTokenenTokenn。",
       "id": "general_explain_sft",
       "metric": "all_required",
       "passed": false,
       "question": "请用一句话解释什么是监督微调。",
       "score_reason": "must contain all required phrases and avoid forbidden phrases",
-      "stopped_on_eos": false
+      "stopped_on_eos": true
     },
     {
       "category": "通用聊天",
-      "generated_answer": "EOS是结束Token，用来告诉模型答案已经生成完了。",
+      "generated_answer": "TokeennenTokenToenTokeeenTokee",
       "id": "general_explain_bpe",
       "metric": "all_required",
       "passed": false,
       "question": "BPE是什么？",
       "score_reason": "must contain all required phrases and avoid forbidden phrases",
-      "stopped_on_eos": true
+      "stopped_on_eos": false
     }
   ],
   "schema_version": "sft-v4-category-eval/v1",
   "seed": 20260828,
   "status": "complete",
   "summary": {
-    "accuracy": 0.16666666666666666,
+    "accuracy": 0.2,
     "by_category": {
       "基础数学": {
         "accuracy": 0.0,
@@ -320,13 +320,13 @@
         "total": 5
       },
       "小说事实": {
-        "accuracy": 0.0,
-        "passed": 0,
+        "accuracy": 0.2,
+        "passed": 1,
         "total": 5
       },
       "小说人物": {
-        "accuracy": 0.0,
-        "passed": 0,
+        "accuracy": 0.4,
+        "passed": 2,
         "total": 5
       },
       "能力边界": {
@@ -340,12 +340,12 @@
         "total": 5
       },
       "通用聊天": {
-        "accuracy": 0.6,
-        "passed": 3,
+        "accuracy": 0.2,
+        "passed": 1,
         "total": 5
       }
     },
-    "eos_count": 29,
+    "eos_count": 24,
     "metric_counts": {
       "all_required": 10,
       "boundary": 5,
@@ -354,7 +354,7 @@
       "known_entity": 5,
       "math_exact": 5
     },
-    "passed": 5,
+    "passed": 6,
     "total": 30
   },
   "temperature": 0.3,

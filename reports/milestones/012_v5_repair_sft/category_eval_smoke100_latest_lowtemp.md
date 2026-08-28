@@ -30,7 +30,7 @@ Checkpoint SHA-256：`8c93cd17d34c78548131743aaedfdd4fe2430a4e33f0469b33ea5af675
 | 3 | 小说人物 | 药老是谁？ | 我说是萧炎是萧炎是药老说到萧炎是萧炎是萧炎是药老。 | 是 | must mention known entity and avoid unknown refusal |
 | 4 | 小说人物 | 请用一句话介绍萧炎。 | 是萧炎和萧炎和萧炎和萧炎和薰儿。 | 是 | must mention known entity and avoid unknown refusal |
 | 5 | 小说人物 | 异火是什么？ | 我是你是你是我说你是我是我是我是我是我说中提到的是萧炎是萧炎是萧炎 | 否 | must mention known entity and avoid unknown refusal |
-| 6 | 小说事实 | 小说第三百章的标题是什么？ | 我说中提到的是萧炎是萧炎和萧炎和药老。 | 否 | must contain one expected phrase and avoid forbidden phrases |
+| 6 | 小说事实 | 小说第三百章的标题是什么？ | 我说中提到的是萧炎是萧炎和萧炎和药老。 | 否 | must contain all required phrases and avoid forbidden phrases |
 | 7 | 小说事实 | 第159章中说出“准备突破吧。这是你的机缘。万”这句话的是谁？ | 我说。 | 否 | must contain one expected phrase and avoid forbidden phrases |
 | 8 | 小说事实 | 第300章的标题是《收场》吗？ | 是我说是萧炎和你是萧炎和萧炎和薰儿。 | 否 | must contain all required phrases and avoid forbidden phrases |
 | 9 | 小说事实 | 萧炎是不是斗破苍穹里的主要人物？ | 是萧炎和萧炎和萧炎和萧炎和萧炎和萧炎和萧炎和萧炎和萧炎和萧炎和萧炎和萧炎和萧炎是萧炎和萧炎 | 是 | must contain all required phrases and avoid forbidden phrases |

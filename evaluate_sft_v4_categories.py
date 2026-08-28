@@ -98,8 +98,8 @@ EVAL_ITEMS = [
         "id": "novel_fact_chapter300",
         "category": "小说事实",
         "question": "小说第三百章的标题是什么？",
-        "metric": "exact_any",
-        "required_any": ["收场", "第300章"],
+        "metric": "all_required",
+        "required_all": ["第300章", "收场"],
         "forbidden_any": ["资料不足", "无法确定"],
     },
     {
@@ -115,7 +115,7 @@ EVAL_ITEMS = [
         "category": "小说事实",
         "question": "第300章的标题是《收场》吗？",
         "metric": "all_required",
-        "required_all": ["是", "收场"],
+        "required_all": ["是", "第300章", "收场"],
         "forbidden_any": ["不是", "无法确定"],
     },
     {

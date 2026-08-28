@@ -7,10 +7,10 @@
 | `e9dc68772b334db31c4c9c8834fb6b714bebe1a3e96e78b33c729793d9832542` | `.gitignore` |
 | `ba88f4c8ab59923197924c787887ae17d8e7bdfb604beac8d0121e84f79f1e20` | `build_sft_v4_mixed_chat.py` |
 | `4b5a4d3707d0328327e4209816c01008a33e2b4ee8cf4f75f27b4f2dbfdb3742` | `sample_sft_v4_custom.py` |
-| `4e09b407a86cbab6e829818e9b5bc62b8939902a9172fa031750a9d416f0b072` | `evaluate_sft_v4_categories.py` |
+| `6a2ef9af578707b693e0b17fd5617a0b7e3410ee8ee4f42ad23c96ba8912d956` | `evaluate_sft_v4_categories.py` |
 | `f4ca0963e52a29c5e0c8b1dcecd84c666a8676abb5b9397e1394c4a50db37fb8` | `tests/test_build_sft_v4_mixed_chat.py` |
 | `685b07a206a252327259953acfa600126685b77570f9458f5ee49fc31f7ca620` | `tests/test_sample_sft_v4_custom.py` |
-| `b19a61d82266751e475d717c2d355f367b0ac4b92142baae2c223ab5349ce171` | `tests/test_evaluate_sft_v4_categories.py` |
+| `d96f087b6c11070213049cc8d4355fbe41568e780604ebef5b3da3e0766a7e9b` | `tests/test_evaluate_sft_v4_categories.py` |
 | `9b9b0253f01b68bcd55804a4115f972627ff2326fa9006b71a93e7f1ea87dfa9` | `reports/milestones/011_v4_mixed_chat_sft/README.md` |
 | `35922d2f5e8d834933f1a856eed4b45e06a6427f326c45e9d282fa01360ac5f5` | `reports/milestones/011_v4_mixed_chat_sft/data_report.json` |
 | `d447fdca00c8e3da6c3e8481e744aa98b62935ed332409ebde1f5bab12f8f126` | `reports/milestones/011_v4_mixed_chat_sft/tensor_report.json` |
@@ -43,8 +43,8 @@
 | `a7049937c8d1429ed8ee66388a884f023dc4df39bfb26792e629c5cc6f01643a` | `reports/milestones/011_v4_mixed_chat_sft/novel_vs_general_step5000_latest_samples.md` |
 | `bc55cdbba0cc2ef0239eeb3ae840d516ad9c5a766f714257bb762089434142d6` | `reports/milestones/011_v4_mixed_chat_sft/novel_vs_general_step5000_latest_lowtemp_samples.json` |
 | `f0234ae8f579cdb4bfd653659fafd7638f182a2e52aaa6ab429cc9f6b70370e1` | `reports/milestones/011_v4_mixed_chat_sft/novel_vs_general_step5000_latest_lowtemp_samples.md` |
-| `67b992f6ff383e368b69554b7aea953257679d62764ea6a95b4aebcc7aba387e` | `reports/milestones/011_v4_mixed_chat_sft/category_eval_step5000_latest_lowtemp.json` |
-| `be7b586120887f0b94ffb566140f43dcd6410f359f6b2c9f205e2c34f078d9e2` | `reports/milestones/011_v4_mixed_chat_sft/category_eval_step5000_latest_lowtemp.md` |
+| `afdddd5e5869242ee62f20385471ac303190dd9faf3cc183b31b9d2edd674c91` | `reports/milestones/011_v4_mixed_chat_sft/category_eval_step5000_latest_lowtemp.json` |
+| `eab6bd36d0e17ce7fe0e8b7cd67f52429c0ad9f305cc76ad1c5321890c1ea6e4` | `reports/milestones/011_v4_mixed_chat_sft/category_eval_step5000_latest_lowtemp.md` |
 
 本机忽略文件的关键哈希：
 

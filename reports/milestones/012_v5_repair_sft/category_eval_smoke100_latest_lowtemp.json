@@ -61,10 +61,10 @@
       "category": "小说事实",
       "generated_answer": "我说中提到的是萧炎是萧炎和萧炎和药老。",
       "id": "novel_fact_chapter300",
-      "metric": "exact_any",
+      "metric": "all_required",
       "passed": false,
       "question": "小说第三百章的标题是什么？",
-      "score_reason": "must contain one expected phrase and avoid forbidden phrases",
+      "score_reason": "must contain all required phrases and avoid forbidden phrases",
       "stopped_on_eos": true
     },
     {
@@ -347,10 +347,10 @@
     },
     "eos_count": 22,
     "metric_counts": {
-      "all_required": 9,
+      "all_required": 10,
       "boundary": 5,
       "chat_quality": 3,
-      "exact_any": 3,
+      "exact_any": 2,
       "known_entity": 5,
       "math_exact": 5
     },

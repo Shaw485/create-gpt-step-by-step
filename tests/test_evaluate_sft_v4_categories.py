@@ -51,6 +51,17 @@ class EvaluateSftV4CategoriesTests(unittest.TestCase):
 
         self.assertFalse(score["passed"])
 
+    def test_chapter_title_rejects_wrong_chapter_number(self):
+        item = {
+            "metric": "all_required",
+            "required_all": ["是", "第300章", "收场"],
+            "forbidden_any": [],
+        }
+
+        score = score_item(item, "是，第30000章的标题是《收场》。", True)
+
+        self.assertFalse(score["passed"])
+
     def test_chat_quality_rejects_unknown_refusal(self):
         item = {"metric": "chat_quality"}
 

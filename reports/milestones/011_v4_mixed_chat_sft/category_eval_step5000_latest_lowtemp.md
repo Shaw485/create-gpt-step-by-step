@@ -30,7 +30,7 @@ Checkpoint SHA-256：`58621347c6a6850269d7d1115c7d4c6e4d8b529a62210079c5464f76b9
 | 3 | 小说人物 | 药老是谁？ | 现有资料不足，无法确定。 | 否 | must mention known entity and avoid unknown refusal |
 | 4 | 小说人物 | 请用一句话介绍萧炎。 | 我没有足够可靠的信息，不能硬编。 | 否 | must mention known entity and avoid unknown refusal |
 | 5 | 小说人物 | 异火是什么？ | 现有资料不足，无法确定。 | 否 | must mention known entity and avoid unknown refusal |
-| 6 | 小说事实 | 小说第三百章的标题是什么？ | 第1章的标题是《大更！】》。 | 否 | must contain one expected phrase and avoid forbidden phrases |
+| 6 | 小说事实 | 小说第三百章的标题是什么？ | 第1章的标题是《大更！】》。 | 否 | must contain all required phrases and avoid forbidden phrases |
 | 7 | 小说事实 | 第159章中说出“准备突破吧。这是你的机缘。万”这句话的是谁？ | 是萧炎说的。 | 否 | must contain one expected phrase and avoid forbidden phrases |
 | 8 | 小说事实 | 第300章的标题是《收场》吗？ | 《不足，用户》是小说第142章的标题。 | 否 | must contain all required phrases and avoid forbidden phrases |
 | 9 | 小说事实 | 萧炎是不是斗破苍穹里的主要人物？ | 第103章的标题是《斗破苍穹》。 | 否 | must contain all required phrases and avoid forbidden phrases |
