@@ -1,0 +1,13 @@
+run_label,step,train_loss,val_loss,coverage,active_phase,source_report
+formal2000,0,5.856426777942201,5.897454011051649,0.0,phase1_route_eos_core,reports/milestones/020_sft_v7_vertical/formal_train_report.json
+formal2000,250,4.574565984793808,4.443955884972154,0.125,phase1_route_eos_core,reports/milestones/020_sft_v7_vertical/formal_train_report.json
+formal2000,500,4.175485072954832,4.0808462273722075,0.05,phase2_full_vertical_mix,reports/milestones/020_sft_v7_vertical/formal_train_report.json
+formal2000,750,3.8771015484923,3.8350438793199,0.175,phase2_full_vertical_mix,reports/milestones/020_sft_v7_vertical/formal_train_report.json
+formal2000,1000,3.661783512467235,3.6713935057397498,0.3,phase2_full_vertical_mix,reports/milestones/020_sft_v7_vertical/formal_train_report.json
+formal2000,1250,3.51350151836878,3.563222477994605,0.425,phase2_full_vertical_mix,reports/milestones/020_sft_v7_vertical/formal_train_report.json
+formal2000,1500,3.3913438939183473,3.481479330800355,0.55,phase2_full_vertical_mix,reports/milestones/020_sft_v7_vertical/formal_train_report.json
+formal2000,1750,3.3051557683836017,3.4124568679777396,0.675,phase2_full_vertical_mix,reports/milestones/020_sft_v7_vertical/formal_train_report.json
+formal2000,2000,3.218449502075856,3.3561811674355195,0.8,phase2_full_vertical_mix,reports/milestones/020_sft_v7_vertical/formal_train_report.json
+smoke20,0,5.856426777942201,5.897454011051649,0.0,phase1_route_eos_core,reports/milestones/020_sft_v7_vertical/smoke_train_report.json
+smoke20,10,5.662440268516824,5.695113681752724,0.0,phase2_full_vertical_mix,reports/milestones/020_sft_v7_vertical/smoke_train_report.json
+smoke20,20,5.534054981564734,5.556195024489633,0.0025,phase2_full_vertical_mix,reports/milestones/020_sft_v7_vertical/smoke_train_report.json

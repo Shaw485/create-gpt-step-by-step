@@ -1,0 +1,327 @@
+{
+  "schema_version": "m020-fixed-sample-milestone-review/v1",
+  "status": "ai_assisted_review_complete_not_independent_human",
+  "review_date": "2026-08-29",
+  "review_scope": "nonsealed_fixed_prompt_outputs_only",
+  "logging_omitted_reason": "This is a document-only, reproducible review of immutable JSON artifacts; no runtime service or persistent diagnostic path was added.",
+  "sources": {
+    "prompt_set": {
+      "path": "configs/sft_v7_fixed_prompts.json",
+      "sha256": "de8bd99d03aa3d53698378ad9f6ac0d43e7d0e1d8a8e94e51d36700765ee65e9"
+    },
+    "pretrain_5750": {
+      "path": "reports/milestones/020_sft_v7_vertical/fixed_samples_step05750.json",
+      "sha256": "11d25c7e886b469fde9f67d57e5290d1229f0858b942a7d0077b833af648eae6",
+      "checkpoint_mode": "pretrain-baseline",
+      "checkpoint_step": 5750
+    },
+    "sft_500": {
+      "path": "reports/milestones/020_sft_v7_vertical/fixed_samples_step00500.json",
+      "sha256": "97d3f7eef7c44af331fcff18fa3a9688976cfe23075b07887e19e89a22d9628a",
+      "checkpoint_mode": "sft-v7",
+      "checkpoint_step": 500
+    },
+    "sft_1000": {
+      "path": "reports/milestones/020_sft_v7_vertical/fixed_samples_step01000.json",
+      "sha256": "582b2c28b22b0c534b6472cb38a5f35ee8afa24be856ff3bb696dc751f596897",
+      "checkpoint_mode": "sft-v7",
+      "checkpoint_step": 1000
+    },
+    "sft_1500": {
+      "path": "reports/milestones/020_sft_v7_vertical/fixed_samples_step01500.json",
+      "sha256": "8f711b215774c385671b1cfc1b78f5f557b17786fe6ac2577481fb40848470d2",
+      "checkpoint_mode": "sft-v7",
+      "checkpoint_step": 1500
+    },
+    "sft_2000": {
+      "path": "reports/milestones/020_sft_v7_vertical/fixed_samples_step02000.json",
+      "sha256": "2c42541d60a557ad33583065560af74177d833202a0b0c7c9c6e9652355b9ab9",
+      "checkpoint_mode": "sft-v7",
+      "checkpoint_step": 2000
+    }
+  },
+  "comparison_controls": {
+    "same_prompt_set": true,
+    "same_case_order": true,
+    "same_generation_settings": true,
+    "max_new_tokens": 128,
+    "temperature": 0.3,
+    "top_k": 1,
+    "seed": 20260829,
+    "preview_definition": "Python Unicode string slice generated_text[:30]; raw newlines are preserved in JSON and rendered as ↵ in Markdown.",
+    "verification": {
+      "source_sha256_checked": 6,
+      "source_sha256_mismatches": 0,
+      "preview_30_checked": 80,
+      "preview_30_mismatches": 0
+    }
+  },
+  "rubric": {
+    "direct_answer": "The output supplies a proposition, limitation, clarification request, or requested prose that directly addresses the target instead of merely repeating topical words or unrelated novel text. This flag does not imply factual correctness.",
+    "dimension_basic_pass": {
+      "core_fact": "States the requested identity, alias relation, or concept in a factually usable form.",
+      "given_evidence": "Draws the requested conclusion from all supplied evidence without contradicting or replacing it.",
+      "expression": "Follows the requested chat, rewrite, or continuation form and produces coherent, usable text while retaining the requested content.",
+      "boundary": "Does not invent an answer; explicitly states a retrieval/domain/live-data limitation or asks for the missing clarification."
+    },
+    "severe_repetition": "A token, phrase, or sentence loop materially dominates or damages the answer.",
+    "eos_note": "EOS only records how generation stopped. It is never counted as correctness or as a basic pass by itself."
+  },
+  "summary": {
+    "case_count": 16,
+    "boundary_case_count": 6,
+    "pretrain_5750": {"basic_pass": 0, "boundary_basic_pass": 0, "severe_repetition": 16, "stopped_on_eos": 0, "truncated": 16},
+    "sft_500": {"basic_pass": 0, "boundary_basic_pass": 0, "severe_repetition": 13, "stopped_on_eos": 9, "truncated": 7},
+    "sft_1000": {"basic_pass": 0, "boundary_basic_pass": 0, "severe_repetition": 11, "stopped_on_eos": 11, "truncated": 5},
+    "sft_1500": {"basic_pass": 1, "boundary_basic_pass": 1, "severe_repetition": 8, "stopped_on_eos": 11, "truncated": 5},
+    "sft_2000": {"basic_pass": 0, "boundary_basic_pass": 0, "severe_repetition": 15, "stopped_on_eos": 7, "truncated": 9}
+  },
+  "review_limitations": [
+    "These are AI-assisted semantic judgments, not an independent human evaluation.",
+    "Only 16 fixed nonsealed prompts are reviewed; no sealed data was accessed.",
+    "The small fixed set is diagnostic and cannot estimate broad production accuracy.",
+    "Best checkpoint means least-bad output for that one prompt and does not imply that the output passed the rubric."
+  ],
+  "cases": [
+    {
+      "index": 1,
+      "id": "core_xiaoyan",
+      "category": "core_fact",
+      "rubric_dimension": "core_fact",
+      "prompt": "萧炎是谁？",
+      "checkpoints": {
+        "pretrain_5750": {"preview_30": "？\n\n    就在萧炎心中念头转动时，突然一道苍老身影便是出", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_500": {"preview_30": "原文本中出现“萧炎目光扫过那团团团团团团团团团团团团团团团团", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_1000": {"preview_30": "文本中出现“萧炎目光望着萧炎身旁那副模样的薰儿，脸颊上的笑容", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": false},
+        "sft_1500": {"preview_30": "文本中出现“萧炎点了点头，目光望向萧炎，道：萧炎？你是萧炎？", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_2000": {"preview_30": "萧炎是萧炎的老师。其余证据还包括：萧炎？萧炎？萧炎？萧炎？他", "stopped_on_eos": true, "truncated": false, "direct_answer": true, "dimension_basic_pass": false, "severe_repetition": true}
+      },
+      "ai_assisted_best": {"checkpoint": "sft_1000", "dimension_basic_pass": false, "reason": "It is finite and substantially less repetitive than the alternatives, but only quotes a scene and never identifies the protagonist."}
+    },
+    {
+      "index": 2,
+      "id": "core_yaochen",
+      "category": "core_fact",
+      "rubric_dimension": "core_fact",
+      "prompt": "药尘是谁？",
+      "checkpoints": {
+        "pretrain_5750": {"preview_30": "？\n\n    风尊者目光也是转向萧炎，道：“魂殿，魂殿，魂殿", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_500": {"preview_30": "药尘是药尘的老师，药尘是药尘的老师，药尘是药尘的老师，药尘，", "stopped_on_eos": false, "truncated": true, "direct_answer": true, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_1000": {"preview_30": "药尘是药尘的老师，药尘是药尘，药尘是药尘的老师，药尘，药尘是", "stopped_on_eos": false, "truncated": true, "direct_answer": true, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_1500": {"preview_30": "药尘是药尘的老师，药尘是药尘的老师，药尘，药尘是药尘的老师，", "stopped_on_eos": false, "truncated": true, "direct_answer": true, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_2000": {"preview_30": "药尘是药尘的老师，药尘是药尘的老师，药尘，药尘是药尘的老师，", "stopped_on_eos": false, "truncated": true, "direct_answer": true, "dimension_basic_pass": false, "severe_repetition": true}
+      },
+      "ai_assisted_best": {"checkpoint": "sft_1000", "dimension_basic_pass": false, "reason": "It at least adopts a direct-answer form, but the self-referential claim is wrong and the output loops to the limit; the SFT milestones are effectively tied failures."}
+    },
+    {
+      "index": 3,
+      "id": "core_alias",
+      "category": "core_alias",
+      "rubric_dimension": "core_fact",
+      "prompt": "药老和药尘是什么关系？",
+      "checkpoints": {
+        "pretrain_5750": {"preview_30": "？\n\n    “魂殿是魂殿的魂殿？”\n\n    药老面色凝重", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_500": {"preview_30": "药老是药老是药老是药老是药老是药老是药老是药老是药老是药老是", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_1000": {"preview_30": "药老是药老曾经的名字：药老是药老曾经的老师。药老是药老曾经的", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_1500": {"preview_30": "药老是药老曾经的名字，原文能够直接定位到药老。", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": false},
+        "sft_2000": {"preview_30": "药老是药老曾经的名字；药老是药老曾经的药老。其余证据还包括：", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true}
+      },
+      "ai_assisted_best": {"checkpoint": "sft_1500", "dimension_basic_pass": false, "reason": "It is the shortest non-looping output, but substitutes 药老 for 药尘 and therefore fails to state that the two names refer to the same person."}
+    },
+    {
+      "index": 4,
+      "id": "core_setting",
+      "category": "core_setting",
+      "rubric_dimension": "core_fact",
+      "prompt": "异火在这部小说中是什么？",
+      "checkpoints": {
+        "pretrain_5750": {"preview_30": "然的话。\n\n    以萧炎如今的实力。已经达到了斗皇巅峰的层", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_500": {"preview_30": "异火是异火。它能够吞噬异火。它能够吞噬异火。它能够吞噬异火。", "stopped_on_eos": true, "truncated": false, "direct_answer": true, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_1000": {"preview_30": "异火是异火。它能提到异火。", "stopped_on_eos": true, "truncated": false, "direct_answer": true, "dimension_basic_pass": false, "severe_repetition": false},
+        "sft_1500": {"preview_30": "异火是异火榜上地异火。这处内容涉及异火。", "stopped_on_eos": true, "truncated": false, "direct_answer": true, "dimension_basic_pass": false, "severe_repetition": false},
+        "sft_2000": {"preview_30": "异火榜上出现“异火？异火？异火？异火？异火？异火？异火？异火", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true}
+      },
+      "ai_assisted_best": {"checkpoint": "sft_500", "dimension_basic_pass": false, "reason": "It is the only milestone to offer even one domain attribute (吞噬异火), but remains tautological and repeats the sentence, so it is not a usable definition."}
+    },
+    {
+      "index": 5,
+      "id": "single_evidence",
+      "category": "given_evidence",
+      "rubric_dimension": "given_evidence",
+      "prompt": "材料写道：萧战是萧家现任族长，同时也是萧炎的父亲。根据材料，萧战和萧炎是什么关系？",
+      "checkpoints": {
+        "pretrain_5750": {"preview_30": "然的话，他可是有些感到诧异。\n\n    “父亲，萧家，萧家，", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_500": {"preview_30": "原文写道“萧战的说明确是萧战的萧战，萧战的萧战，萧战，萧战的", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_1000": {"preview_30": "原文写道“萧战族长，萧战族长，萧战族长，萧战族长，萧战族长，", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_1500": {"preview_30": "原文写道“萧战的名字，萧战与萧战的关系有关。", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": false},
+        "sft_2000": {"preview_30": "文本中出现“萧战族长，萧战族长，萧战族长，萧战族长，萧战族长", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true}
+      },
+      "ai_assisted_best": {"checkpoint": "pretrain_5750", "dimension_basic_pass": false, "reason": "It at least surfaces the supplied keyword 父亲, whereas every SFT milestone drops the explicit relation; it still never states the father-son answer and loops."}
+    },
+    {
+      "index": 6,
+      "id": "rag_two_passages",
+      "category": "rag",
+      "rubric_dimension": "given_evidence",
+      "prompt": "片段一说药尘是老师曾经的名字；片段二说药老是萧炎的老师。综合两段，药尘、药老和萧炎是什么关系？",
+      "checkpoints": {
+        "pretrain_5750": {"preview_30": "然的话，他自然不会再说，魂殿的名头，恐怕连魂殿都要强上许多。", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_500": {"preview_30": "片段可核对：“药老也是点了点头，药老也是点了点头，药老是药老", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_1000": {"preview_30": "文本中出现“药老也是药老所说的药老，药老也是药老曾经的老师。", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_1500": {"preview_30": "片段可核对：“药老笑了笑，道：药老也是药老所说的药老，药尘是", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": false},
+        "sft_2000": {"preview_30": "文本中出现“药老也是知道药老曾经的老师。药老也是知道药老曾经", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true}
+      },
+      "ai_assisted_best": {"checkpoint": "sft_2000", "dimension_basic_pass": false, "reason": "It recovers the correct partial statement that 药老 is 萧炎's teacher, but omits the 药尘 alias inference and repeats self-relations."}
+    },
+    {
+      "index": 7,
+      "id": "chat_natural",
+      "category": "vertical_chat",
+      "rubric_dimension": "expression",
+      "prompt": "不用列清单，简单聊聊萧炎这个人物。",
+      "checkpoints": {
+        "pretrain_5750": {"preview_30": "坷。\n\n    站在原地上，望着那些人群人群人群，人群人群人", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_500": {"preview_30": "原文写道“萧炎目光扫过那在咫尺的尺，嘴角也是浮现一抹冷笑，手", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": false},
+        "sft_1000": {"preview_30": "材料表述为“萧炎目光扫过，瞧得萧炎与萧薰儿，萧薰儿也是一怔，", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_1500": {"preview_30": "材料表述为“萧炎点了点头，目光望着萧炎与薰儿，笑道：萧炎先生", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_2000": {"preview_30": "这处写的是“萧炎点了点头，目光望着萧炎与薰儿，轻声道：萧炎？", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true}
+      },
+      "ai_assisted_best": {"checkpoint": "sft_500", "dimension_basic_pass": false, "reason": "It is finite and comparatively coherent, but quotes an action scene instead of naturally discussing the character."}
+    },
+    {
+      "index": 8,
+      "id": "chat_multiturn",
+      "category": "vertical_multiturn",
+      "rubric_dimension": "expression",
+      "prompt": "我们聊聊药老。 / 他和萧炎是什么关系？",
+      "checkpoints": {
+        "pretrain_5750": {"preview_30": "？\n\n    药老沉默了一会，轻声道：“我知道你所说的那个神", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_500": {"preview_30": "片段可核对：“药老也是知道药老是药老是药老是药老。药老是药老", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_1000": {"preview_30": "药老是药老是药老曾经的名字：“药老也是药老曾经的老师。药老是", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_1500": {"preview_30": "原文写道“萧炎点了点头，目光也是转向了药老，道：萧炎先生，先", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_2000": {"preview_30": "药老是药老曾经的名字：药老是药老曾经的名字，老师是药老曾经的", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true}
+      },
+      "ai_assisted_best": {"checkpoint": "sft_1500", "dimension_basic_pass": false, "reason": "It at least keeps both 药老 and 萧炎 in a finite response, but never states their teacher-student relationship and does not use the prior turn correctly."}
+    },
+    {
+      "index": 9,
+      "id": "rewrite",
+      "category": "novel_expression",
+      "rubric_dimension": "expression",
+      "prompt": "把“萧炎走进大厅”改写成一句更有小说画面感的话。",
+      "checkpoints": {
+        "pretrain_5750": {"preview_30": "却是忽然有些发麻。\n\n    大厅内。大厅内。都是有着几分诧", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_500": {"preview_30": "片段可核对：“萧炎微微点头”。相关对象是萧炎。", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": false},
+        "sft_1000": {"preview_30": "原文写道“听得萧炎这话，大厅内顿时响起一道苍老声音，旋即一道", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": false},
+        "sft_1500": {"preview_30": "这处写的是“闻言。萧炎微微点了点头。目光盯着那在房间中走过的", "stopped_on_eos": true, "truncated": false, "direct_answer": true, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_2000": {"preview_30": "这处写的是“萧炎微微点了点头，他知道萧炎在黑角域中地域地域地", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true}
+      },
+      "ai_assisted_best": {"checkpoint": "sft_1500", "dimension_basic_pass": false, "reason": "It most clearly attempts a novel-style movement sentence, but changes the hall to a room, loses the walk-in action, and duplicates clauses."}
+    },
+    {
+      "index": 10,
+      "id": "continuation",
+      "category": "novel_expression",
+      "rubric_dimension": "expression",
+      "prompt": "续写一小段：夜色笼罩着山谷，",
+      "checkpoints": {
+        "pretrain_5750": {"preview_30": "，如水般的飞掠而来，最后在山林中停顿了两步。\n\n    山林", "stopped_on_eos": false, "truncated": true, "direct_answer": true, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_500": {"preview_30": "片段可核对：“萧炎笑了笑，目光扫过那在森林中出现的森林，眉头", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_1000": {"preview_30": "原文写道“在森林中，萧炎与紫研，萧厉也是迅速跟上，然后在森林", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_1500": {"preview_30": "这处写的是“山洞之中，萧炎缓缓睁开，眼眸微眯，眼眸微眯，眼眸", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_2000": {"preview_30": "可复查的原句是“在石塔中缓缓停下，萧炎盘坐在石塔中坐下，缓缓", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true}
+      },
+      "ai_assisted_best": {"checkpoint": "pretrain_5750", "dimension_basic_pass": false, "reason": "It is the only output that syntactically continues the supplied comma and stays near a mountain/forest scene at first, but it soon collapses into 山 repetition and truncates."}
+    },
+    {
+      "index": 11,
+      "id": "boundary_first_chapter",
+      "category": "retrieval_boundary",
+      "rubric_dimension": "boundary",
+      "prompt": "萧炎第一次见到药老是第几章？",
+      "checkpoints": {
+        "pretrain_5750": {"preview_30": "？\n\n    想到此处，萧炎眉头一皱，轻声道：“老师，老师，", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_500": {"preview_30": "文本中出现“药老目光扫过药老，片刻后，萧炎眉头一皱，道：药老", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_1000": {"preview_30": "文本中出现“药老也是点了点头，药老也是点了点头，药老是药老曾", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_1500": {"preview_30": "文本中出现“药老也是点了点头，他知道药老曾经的老师，并不是药", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": false},
+        "sft_2000": {"preview_30": "文本中出现“萧炎目光望着药老那副殿主，道：药老？药老目光一转", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true}
+      },
+      "ai_assisted_best": {"checkpoint": "sft_1500", "dimension_basic_pass": false, "reason": "It is finite and least repetitive, but neither gives a verifiable chapter nor states that a chapter index must be searched."}
+    },
+    {
+      "index": 12,
+      "id": "boundary_global_count",
+      "category": "retrieval_boundary",
+      "rubric_dimension": "boundary",
+      "prompt": "萧炎在全书一共出现了多少次？",
+      "checkpoints": {
+        "pretrain_5750": {"preview_30": "？\n\n    想到此处，萧炎眉头一皱，轻声道：“我想办法？”", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_500": {"preview_30": "原文写道“萧炎笑了笑，目光望向那紧闭的石碑，眼眸微眯，眼眸微", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_1000": {"preview_30": "材料表述为“在全书出现之后，萧炎与小医仙与小医仙有关的首次交", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": false},
+        "sft_1500": {"preview_30": "这处写的是“萧炎点了点头，目光也是转向了萧炎，道：萧炎先生，", "stopped_on_eos": true, "truncated": false, "direct_answer": true, "dimension_basic_pass": true, "severe_repetition": false},
+        "sft_2000": {"preview_30": "这处写的是“萧炎点了点头，目光也是转向了萧炎，道：萧炎？萧炎", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true}
+      },
+      "ai_assisted_best": {"checkpoint": "sft_1500", "dimension_basic_pass": true, "reason": "Despite an awkward quoted lead-in, it explicitly says the answer requires searching the original text and avoids inventing a count. This is the only basic pass in the 80 outputs."}
+    },
+    {
+      "index": 13,
+      "id": "boundary_ambiguous",
+      "category": "clarification_boundary",
+      "rubric_dimension": "boundary",
+      "prompt": "游乐园在哪里？",
+      "checkpoints": {
+        "pretrain_5750": {"preview_30": "禾禾？\n\n    就在萧炎心中念头转动时，其身形便是陡然加快", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_500": {"preview_30": "原文写道“萧炎目光扫过那在咫尺的尺，嘴角也是浮现一抹冷笑，手", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": false},
+        "sft_1000": {"preview_30": "文本中出现“听得萧炎这般说话，大厅内顿时响起一道苍老声音，旋", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": false},
+        "sft_1500": {"preview_30": "文本中出现“听得萧炎这话，大厅内顿时响起一道苍老声音，旋即一", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": false},
+        "sft_2000": {"preview_30": "文本中出现“听得萧炎这话，周围那些人都是忍不住的有些惊异，人", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": false}
+      },
+      "ai_assisted_best": {"checkpoint": "sft_2000", "dimension_basic_pass": false, "reason": "It is finite and shortest among the post-SFT outputs, but still substitutes an unrelated novel fragment instead of asking which amusement park and city the user means."}
+    },
+    {
+      "index": 14,
+      "id": "boundary_outside_knowledge",
+      "category": "outside_domain",
+      "rubric_dimension": "boundary",
+      "prompt": "绿巨人是谁？",
+      "checkpoints": {
+        "pretrain_5750": {"preview_30": "？\n\n    巨大的巨蟒，巨大的巨蟒，巨蟒，巨蟒，巨蟒巨蟒，", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_500": {"preview_30": "原文本中出现“黑炎烬，黑炎烬，黑炎烬，黑炎烬，火海之中出现了", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_1000": {"preview_30": "原文写道“黑衣人群人群人群，黑衣人群人群人群，黑衣人群人群人", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_1500": {"preview_30": "原文写道“黑衣人？黑衣人？黑衣人？这人？黑衣人？这人？这人？", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_2000": {"preview_30": "文本中出现“黑衣人？黑衣人？黑衣人？黑衣人？黑衣人？黑衣人？", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true}
+      },
+      "ai_assisted_best": {"checkpoint": "sft_1000", "dimension_basic_pass": false, "reason": "It at least stops on EOS, but it still hallucinates an unrelated domain fragment rather than stating the model's novel-domain limitation."}
+    },
+    {
+      "index": 15,
+      "id": "boundary_live_weather",
+      "category": "outside_domain",
+      "rubric_dimension": "boundary",
+      "prompt": "北京今天的天气怎么样？",
+      "checkpoints": {
+        "pretrain_5750": {"preview_30": "？\n\n    天北城，天北城，天北城，天北城，天北城，天北城", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_500": {"preview_30": "原文本中出现“天目露沉吟了片刻，雷尊者也是点了点头，目光望向", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_1000": {"preview_30": "原文写道“天目山脉，天目山脉之中也是有着不少强者，他们所展现", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_1500": {"preview_30": "这处写的是“天目山脉，天山血潭之所，天山血潭之地域，天山血潭", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_2000": {"preview_30": "文本中出现“天目山脉，天目山脉之中也是逐渐的变得暗红，天目山", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true}
+      },
+      "ai_assisted_best": {"checkpoint": "sft_1500", "dimension_basic_pass": false, "reason": "No checkpoint shows live-weather boundary behavior; step 1500 is only a least-bad length choice and still maps 北京天气 to unrelated novel geography."}
+    },
+    {
+      "index": 16,
+      "id": "boundary_math",
+      "category": "outside_domain",
+      "rubric_dimension": "boundary",
+      "prompt": "请计算二加二。",
+      "checkpoints": {
+        "pretrain_5750": {"preview_30": "。\n\n    站在原地上。萧炎望着那在咫尺的巨大树枝。心中也", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_500": {"preview_30": "这处写的是“萧炎笑了笑，目光望向萧炎，道：“这处写的是“萧炎", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_1000": {"preview_30": "这处写的是“萧炎微微点头，旋即目光望向萧炎，道：萧炎先生，二", "stopped_on_eos": false, "truncated": true, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true},
+        "sft_1500": {"preview_30": "这处写的是“萧炎点了点头，旋即将手中卷轴收入纳戒，道：萧炎先", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": false},
+        "sft_2000": {"preview_30": "这处写的是“萧炎点了点头，道：萧炎点了点头，道：萧炎先生，请", "stopped_on_eos": true, "truncated": false, "direct_answer": false, "dimension_basic_pass": false, "severe_repetition": true}
+      },
+      "ai_assisted_best": {"checkpoint": "sft_1500", "dimension_basic_pass": false, "reason": "It stops and avoids a long loop, but still outputs an unrelated novel fragment instead of a concise domain-boundary response."}
+    }
+  ]
+}

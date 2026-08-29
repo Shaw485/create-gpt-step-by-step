@@ -20,6 +20,7 @@ from training_runtime import (
     assert_finite_tensor,
     atomic_save_checkpoint,
     build_checkpoint_payload,
+    close_module_loggers,
     configure_module_loggers,
     file_sha256,
     load_checkpoint,
@@ -56,6 +57,26 @@ class FakeScaler:
 
 
 class TrainingRuntimeTests(unittest.TestCase):
+    def test_configure_module_loggers_supports_explicit_feature_modules(self):
+        with tempfile.TemporaryDirectory() as directory:
+            loggers = configure_module_loggers(
+                Path(directory),
+                "custom-modules",
+                {"generation": "DEBUG", "evaluation": "OFF"},
+                console=False,
+            )
+            try:
+                self.assertIn("generation", loggers)
+                self.assertIn("evaluation", loggers)
+                loggers["generation"].debug("generated case_id=case-1")
+                self.assertTrue(loggers["evaluation"].disabled)
+            finally:
+                close_module_loggers(loggers)
+
+            generation_log = Path(directory) / "custom-modules.generation.jsonl"
+            self.assertTrue(generation_log.is_file())
+            self.assertIn("case_id=case-1", generation_log.read_text(encoding="utf-8"))
+
     def test_module_log_levels_can_be_overridden_independently(self):
         variable = "GPT_LOG_LEVEL_VALIDATION"
         previous = os.environ.get(variable)

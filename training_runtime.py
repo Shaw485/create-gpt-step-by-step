@@ -264,7 +264,8 @@ def configure_module_loggers(
     directory.mkdir(parents=True, exist_ok=True)
     formatter = JsonLogFormatter(run_id)
     result: dict[str, logging.Logger] = {}
-    for module in DEFAULT_LOG_MODULES:
+    modules = tuple(dict.fromkeys((*DEFAULT_LOG_MODULES, *module_levels.keys())))
+    for module in modules:
         level, disabled = _parse_log_level(module_levels.get(module, "INFO"))
         logger = logging.getLogger(f"cloud.{module}")
         for existing_handler in logger.handlers:

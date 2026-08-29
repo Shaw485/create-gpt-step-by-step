@@ -54,6 +54,23 @@
 | M017 | 1488万模型的SFT数据准入审查 | 已完成，v5.2.2需重构后才能正式训练 | [全量风险、Token规模、维度缺口与v6配额](reports/milestones/017_sft_data_readiness_audit/README.md) |
 | M018 | 一万条SFT v6、独立审计与2000步正式训练 | 训练完成，行为门未通过 | [数据门槛、Loss曲线、公开诊断与失败样本](reports/milestones/018_sft_v6_10000/README.md) |
 | M019 | 单本小说纯预训练能力审计 | Step 5750形成语言基座；当前配置进入实用平台期 | [三Checkpoint对照、固定续写、Cloze与AI复核](reports/milestones/019_pretrain_capability_audit/README.md) |
+| M020 | 小说垂直SFT v7 | 实验完成；自动门失败、外部复核pending、无发布候选 | [数据、曲线、节点对比、保持评估与不发布结论](reports/milestones/020_sft_v7_vertical/README.md) |
+
+## M020 已冻结视频素材
+
+| 素材 | 已完成事实 | 文件 |
+|---|---|---|
+| v7数据与编码 | 10,000条，8000/800/600/600；清单SHA `422c35fa...`，Train+Val/Public张量SHA `81a06541...` / `bf287053...` | [M020说明](reports/milestones/020_sft_v7_vertical/README.md)、[编码报告](reports/milestones/020_sft_v7_vertical/tensor_report.json) |
+| Step 5750 public基线 | Loss 5.86808865；EOS 7.1667%；空回答1.1667%；截断92.8333%；机械重复85.5% | [公开评估](reports/milestones/020_sft_v7_vertical/public_eval_step05750.md) |
+| Step 5750固定16题 | 0/16 EOS，16/16达到128 Token上限；保留完整输入与输出 | [完整16题](reports/milestones/020_sft_v7_vertical/fixed_samples_step05750.md) |
+| 20步smoke | 两阶段切换通过；Validation Loss 5.897454→5.556195；public/sealed训练消耗0 | [训练报告](reports/milestones/020_sft_v7_vertical/smoke_train_report.json)、[固定16题](reports/milestones/020_sft_v7_vertical/fixed_samples_smoke20.md) |
+| 2000步正式训练 | Validation Loss从5.897454降至3.356181；每250步曲线已归档 | [正式报告](reports/milestones/020_sft_v7_vertical/formal_train_report.json)、[SVG曲线](reports/milestones/020_sft_v7_vertical/sft_v7_loss_curve.svg)、[CSV](reports/milestones/020_sft_v7_vertical/sft_v7_loss_curve.csv) |
+| Public节点对比 | Step500/1000/1500/2000 Loss为4.034095/3.611000/3.419921/3.294267；所有自动行为门失败 | [汇总表](reports/milestones/020_sft_v7_vertical/checkpoint_comparison.md) |
+| 固定16题AI辅助复核 | 基本通过0/0/1/0；严重重复13/11/8/15，Step2000明显反弹 | [逐题复核](reports/milestones/020_sft_v7_vertical/fixed_samples_milestone_review.md) |
+| 预训练保持 | BPC退化6.007%/8.995%/10.217%/12.084%，四节点均只有13/16续写非空 | [Step500](reports/milestones/020_sft_v7_vertical/pretrain_retention_step00500.md)、[Step1000](reports/milestones/020_sft_v7_vertical/pretrain_retention_step01000.md)、[Step1500](reports/milestones/020_sft_v7_vertical/pretrain_retention_step01500.md)、[Step2000](reports/milestones/020_sft_v7_vertical/pretrain_retention_step02000.md) |
+| 最终决定 | 严格候选`[]`，必需产物缺失0、完整性错误0，`release_ready=false` | [机器可读汇总](reports/milestones/020_sft_v7_vertical/checkpoint_comparison.json)、[SHA索引](reports/milestones/020_sft_v7_vertical/SHA256SUMS.md) |
+
+视频表述必须区分三件事：纯预训练Step5750只是最低可用小说语言基座，20步smoke只证明训练链路安全可运行，2000步正式SFT虽改善Loss、EOS与截断，却没有通过行为和保持门。Step1000是保守诊断候选，Step1500是行为较优研究候选，Step2000已排除；它们都不是发布候选，独立真人复核仍未完成。
 
 ## 视频中的核心对比表
 
@@ -104,3 +121,5 @@ M017在正式SFT前重新审查4516条v5.2.2数据。虽然文件结构、BPE 30
 M018按新目标构造10000条SFT v6并完成独立审计、BPE多轮编码、2步冒烟和2000步正式训练。结构指标全部通过，训练集337900个监督Token无放回覆盖一轮，完整验证Loss从6.1353降至2.5940；然而公开生成完全匹配仍为0，模型会把自然聊天的“可以先……”模板和小说抽取答案串在一起。项目因此选择公开指标较好的Step2000作为当前轮次产物，但不把它标记为发布候选。这一阶段适合在视频中直接展示“10K、零泄漏、Loss下降仍不等于高质量”：数据规模与结构合格之后，还要审查回答分布、模板多样性和真实生成。
 
 M019回到第一性原理，先暂停宽泛SFT，单独审计纯预训练模型到底学到了什么。56条探针只来自正式train/validation，test继续封存；同一Harness比较Step 250、5750和6000。Step 5750的Validation BPC比Step 250改善36.41%，固定窗口Top-1由7.81%升到24.17%，16条续写没有机械退化，但Codex AI流畅度和局部连贯度只有2.3125/5与2.0625/5，说明它只是最低可用语言基座。Step 6000的BPC只再改善0.00808，重复与AI评分反而变差，因此按冻结规则保留Step 5750。这段素材适合解释“预训练、SFT和检索各自负责什么”：预训练学小说语言分布，SFT学有限交互任务，精确全书事实交给检索；不能要求单本小说底座变成通用ChatGPT，也不能把实用平台期说成理论极限。
+
+M020把M019的能力边界落实为新数据和新验收：不再把数学、通用百科或项目问答塞进后训练，而是用10,000条六维数据训练小说核心问答、给定证据理解、RAG组合、垂直多轮、小说表达和需要证据时的边界行为。纯预训练Step5750在新public上只有7.17% EOS、92.83%截断和85.5%机械重复；正式SFT到Step2000后变为82.33%/17.67%/42.17%，但固定16题AI辅助基本通过在四个正式节点只有0/0/1/0，严重重复还在Step2000反弹到15/16。这个完整素材最适合解释“优化指标之间会冲突”：Step1000仍在10% BPC保持线内却有空续写和行为门失败，Step1500行为样本相对最好却越过BPC线，Step2000 Loss最低却不是最好模型；最终严格候选为空、外部复核pending、本轮不发布也不启封sealed test。

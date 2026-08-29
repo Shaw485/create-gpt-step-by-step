@@ -1,0 +1,563 @@
+{
+  "checkpoints": [
+    {
+      "checkpoint_mode": "pretrain-baseline",
+      "display_name": "Pretrain baseline Step 5750",
+      "expected_step": 5750,
+      "fixed_samples": {
+        "case_count": 16,
+        "checkpoint_mode": "pretrain-baseline",
+        "checkpoint_sha256": "bfe4fec5e6045d4c06d22393e7c2079fdc03897be71829c9d9dcbaf0fcaf5c1e",
+        "checkpoint_step": 5750,
+        "contains_sample_bodies": false,
+        "empty_count": 0,
+        "eos_count": 0,
+        "eos_rate": 0.0,
+        "path": "reports/milestones/020_sft_v7_vertical/fixed_samples_step05750.json",
+        "prompt_set_sha256": "de8bd99d03aa3d53698378ad9f6ac0d43e7d0e1d8a8e94e51d36700765ee65e9",
+        "public_tensor_sha256": "bf28705327c416b7a8de37a913ca85b0a28ac5faa4839b7b412ce69817c90166",
+        "required": true,
+        "schema_version": "sft-v7-fixed-samples/v1",
+        "sft_dataset_manifest_sha256": "422c35fa130a3e6fc3f656019515fc7c1115616aa396712ea501751aeda1b9e9",
+        "sha256": "11d25c7e886b469fde9f67d57e5290d1229f0858b942a7d0077b833af648eae6",
+        "status": "present",
+        "truncated_count": 16,
+        "truncation_rate": 1.0
+      },
+      "integrity_errors": [],
+      "key": "baseline_step05750",
+      "public": {
+        "automatic_gate_state": "failed",
+        "automatic_gates": {
+          "failed": 11,
+          "passed": 4,
+          "total": 15
+        },
+        "checkpoint_mode": "pretrain-baseline",
+        "checkpoint_sha256": "bfe4fec5e6045d4c06d22393e7c2079fdc03897be71829c9d9dcbaf0fcaf5c1e",
+        "checkpoint_step": 5750,
+        "declared_candidate_eligible": false,
+        "external_gate_state": "pending",
+        "external_gates": {
+          "failed": 0,
+          "passed": 0,
+          "pending": 8,
+          "total": 8
+        },
+        "generation_quality": {
+          "empty_rate": 0.011666666666666667,
+          "eos_rate": 0.07166666666666667,
+          "mechanical_repetition_rate": 0.855,
+          "meta_phrase_rate": 0.0,
+          "truncation_rate": 0.9283333333333333
+        },
+        "path": "reports/milestones/020_sft_v7_vertical/public_eval_step05750.json",
+        "public_tensor_sha256": "bf28705327c416b7a8de37a913ca85b0a28ac5faa4839b7b412ce69817c90166",
+        "records": 600,
+        "required": true,
+        "schema_version": "sft-v7-public-evaluation/v1",
+        "sft_dataset_manifest_sha256": "422c35fa130a3e6fc3f656019515fc7c1115616aa396712ea501751aeda1b9e9",
+        "sha256": "faab83c2cced2bac4f7b1c03422666d4ed6c8795b57e293cf9d39403a1666a05",
+        "status": "present",
+        "teacher_forced_loss": 5.868088647511828,
+        "teacher_forced_perplexity": 353.57253226911814
+      },
+      "retention": null,
+      "strict_candidate_eligible": false,
+      "summary_status": "automatic_public_gates_failed"
+    },
+    {
+      "checkpoint_mode": "sft-v7",
+      "display_name": "SFT v7 smoke Step 20",
+      "expected_step": 20,
+      "fixed_samples": {
+        "case_count": 16,
+        "checkpoint_mode": "sft-v7",
+        "checkpoint_sha256": "4e71f15fcd19dc54c72d3701f00439e5e3d695f2f99b5a1f77c8ff3c75cff9e4",
+        "checkpoint_step": 20,
+        "contains_sample_bodies": false,
+        "empty_count": 0,
+        "eos_count": 1,
+        "eos_rate": 0.0625,
+        "path": "reports/milestones/020_sft_v7_vertical/fixed_samples_smoke20.json",
+        "prompt_set_sha256": "de8bd99d03aa3d53698378ad9f6ac0d43e7d0e1d8a8e94e51d36700765ee65e9",
+        "public_tensor_sha256": "bf28705327c416b7a8de37a913ca85b0a28ac5faa4839b7b412ce69817c90166",
+        "required": true,
+        "schema_version": "sft-v7-fixed-samples/v1",
+        "sft_dataset_manifest_sha256": "422c35fa130a3e6fc3f656019515fc7c1115616aa396712ea501751aeda1b9e9",
+        "sha256": "153554f2f051457a422abe7b3292a2ed06ec640b34496685e7d3aa8d9c158218",
+        "status": "present",
+        "truncated_count": 15,
+        "truncation_rate": 0.9375
+      },
+      "integrity_errors": [],
+      "key": "smoke_step00020",
+      "public": {
+        "expected_paths": [
+          "reports/milestones/020_sft_v7_vertical/public_eval_smoke20.json",
+          "reports/milestones/020_sft_v7_vertical/public_eval_step00020.json"
+        ],
+        "required": false,
+        "status": "not_run_optional"
+      },
+      "retention": {
+        "expected_paths": [
+          "reports/milestones/020_sft_v7_vertical/pretrain_retention_smoke20.json",
+          "reports/milestones/020_sft_v7_vertical/pretrain_retention_step00020.json"
+        ],
+        "required": false,
+        "status": "not_run_optional"
+      },
+      "strict_candidate_eligible": false,
+      "summary_status": "engineering_smoke_complete_public_not_run_optional"
+    },
+    {
+      "checkpoint_mode": "sft-v7",
+      "display_name": "SFT v7 Step 500",
+      "expected_step": 500,
+      "fixed_samples": {
+        "case_count": 16,
+        "checkpoint_mode": "sft-v7",
+        "checkpoint_sha256": "67e1e3ce4bf258da37bb1e74669e6eeeac9e0599fbf8f252472238845b5848ea",
+        "checkpoint_step": 500,
+        "contains_sample_bodies": false,
+        "empty_count": 0,
+        "eos_count": 9,
+        "eos_rate": 0.5625,
+        "path": "reports/milestones/020_sft_v7_vertical/fixed_samples_step00500.json",
+        "prompt_set_sha256": "de8bd99d03aa3d53698378ad9f6ac0d43e7d0e1d8a8e94e51d36700765ee65e9",
+        "public_tensor_sha256": "bf28705327c416b7a8de37a913ca85b0a28ac5faa4839b7b412ce69817c90166",
+        "required": true,
+        "schema_version": "sft-v7-fixed-samples/v1",
+        "sft_dataset_manifest_sha256": "422c35fa130a3e6fc3f656019515fc7c1115616aa396712ea501751aeda1b9e9",
+        "sha256": "97d3f7eef7c44af331fcff18fa3a9688976cfe23075b07887e19e89a22d9628a",
+        "status": "present",
+        "truncated_count": 7,
+        "truncation_rate": 0.4375
+      },
+      "integrity_errors": [],
+      "key": "sft_step00500",
+      "public": {
+        "automatic_gate_state": "failed",
+        "automatic_gates": {
+          "failed": 11,
+          "passed": 4,
+          "total": 15
+        },
+        "checkpoint_mode": "sft-v7",
+        "checkpoint_sha256": "67e1e3ce4bf258da37bb1e74669e6eeeac9e0599fbf8f252472238845b5848ea",
+        "checkpoint_step": 500,
+        "declared_candidate_eligible": false,
+        "external_gate_state": "pending",
+        "external_gates": {
+          "failed": 0,
+          "passed": 0,
+          "pending": 8,
+          "total": 8
+        },
+        "generation_quality": {
+          "empty_rate": 0.0,
+          "eos_rate": 0.7333333333333333,
+          "mechanical_repetition_rate": 0.4166666666666667,
+          "meta_phrase_rate": 0.0,
+          "truncation_rate": 0.26666666666666666
+        },
+        "path": "reports/milestones/020_sft_v7_vertical/public_eval_step00500.json",
+        "public_tensor_sha256": "bf28705327c416b7a8de37a913ca85b0a28ac5faa4839b7b412ce69817c90166",
+        "records": 600,
+        "required": true,
+        "schema_version": "sft-v7-public-evaluation/v1",
+        "sft_dataset_manifest_sha256": "422c35fa130a3e6fc3f656019515fc7c1115616aa396712ea501751aeda1b9e9",
+        "sha256": "feee32308e1252576d3e06e4f79853e11457aaee513185c62326ff5af6661f5c",
+        "status": "present",
+        "teacher_forced_loss": 4.03409536657363,
+        "teacher_forced_perplexity": 56.49179275195413
+      },
+      "retention": {
+        "automatic_gate_state": "failed",
+        "automatic_gates": {
+          "failed": 1,
+          "passed": 3,
+          "total": 4
+        },
+        "checkpoint_sha256": "67e1e3ce4bf258da37bb1e74669e6eeeac9e0599fbf8f252472238845b5848ea",
+        "checkpoint_step": 500,
+        "declared_candidate_eligible": false,
+        "external_review_state": "pending",
+        "external_reviews": {
+          "failed": 0,
+          "passed": 0,
+          "pending": 4,
+          "total": 4
+        },
+        "fixed_window_bpc": 3.9704306256012374,
+        "fixed_window_loss": 4.705553245544434,
+        "path": "reports/milestones/020_sft_v7_vertical/pretrain_retention_step00500.json",
+        "relative_bpc_degradation": 0.06007034235486993,
+        "required": false,
+        "schema_version": "sft-v7-pretrain-retention/v1",
+        "sealed_body_reads": 0,
+        "sft_dataset_manifest_sha256": "422c35fa130a3e6fc3f656019515fc7c1115616aa396712ea501751aeda1b9e9",
+        "sha256": "a6f9337d430d180eafd6abb3139ea444bdab86d527bdc10e5d95587db87fbf94",
+        "status": "present"
+      },
+      "strict_candidate_eligible": false,
+      "summary_status": "automatic_public_gates_failed"
+    },
+    {
+      "checkpoint_mode": "sft-v7",
+      "display_name": "SFT v7 Step 1000",
+      "expected_step": 1000,
+      "fixed_samples": {
+        "case_count": 16,
+        "checkpoint_mode": "sft-v7",
+        "checkpoint_sha256": "ce135646b7f5ef8dec863faa3750a2437c82e442e31786cec2cd6ec9eeb84447",
+        "checkpoint_step": 1000,
+        "contains_sample_bodies": false,
+        "empty_count": 0,
+        "eos_count": 11,
+        "eos_rate": 0.6875,
+        "path": "reports/milestones/020_sft_v7_vertical/fixed_samples_step01000.json",
+        "prompt_set_sha256": "de8bd99d03aa3d53698378ad9f6ac0d43e7d0e1d8a8e94e51d36700765ee65e9",
+        "public_tensor_sha256": "bf28705327c416b7a8de37a913ca85b0a28ac5faa4839b7b412ce69817c90166",
+        "required": true,
+        "schema_version": "sft-v7-fixed-samples/v1",
+        "sft_dataset_manifest_sha256": "422c35fa130a3e6fc3f656019515fc7c1115616aa396712ea501751aeda1b9e9",
+        "sha256": "582b2c28b22b0c534b6472cb38a5f35ee8afa24be856ff3bb696dc751f596897",
+        "status": "present",
+        "truncated_count": 5,
+        "truncation_rate": 0.3125
+      },
+      "integrity_errors": [],
+      "key": "sft_step01000",
+      "public": {
+        "automatic_gate_state": "failed",
+        "automatic_gates": {
+          "failed": 10,
+          "passed": 5,
+          "total": 15
+        },
+        "checkpoint_mode": "sft-v7",
+        "checkpoint_sha256": "ce135646b7f5ef8dec863faa3750a2437c82e442e31786cec2cd6ec9eeb84447",
+        "checkpoint_step": 1000,
+        "declared_candidate_eligible": false,
+        "external_gate_state": "pending",
+        "external_gates": {
+          "failed": 0,
+          "passed": 0,
+          "pending": 8,
+          "total": 8
+        },
+        "generation_quality": {
+          "empty_rate": 0.0,
+          "eos_rate": 0.7616666666666667,
+          "mechanical_repetition_rate": 0.41833333333333333,
+          "meta_phrase_rate": 0.0,
+          "truncation_rate": 0.23833333333333334
+        },
+        "path": "reports/milestones/020_sft_v7_vertical/public_eval_step01000.json",
+        "public_tensor_sha256": "bf28705327c416b7a8de37a913ca85b0a28ac5faa4839b7b412ce69817c90166",
+        "records": 600,
+        "required": true,
+        "schema_version": "sft-v7-public-evaluation/v1",
+        "sft_dataset_manifest_sha256": "422c35fa130a3e6fc3f656019515fc7c1115616aa396712ea501751aeda1b9e9",
+        "sha256": "7dec5c2aa7e7e25fae809f2f1159a6f04485b42e6cb1b1e0e07185a97678a209",
+        "status": "present",
+        "teacher_forced_loss": 3.6110003337213303,
+        "teacher_forced_perplexity": 37.0030497055312
+      },
+      "retention": {
+        "automatic_gate_state": "failed",
+        "automatic_gates": {
+          "failed": 1,
+          "passed": 3,
+          "total": 4
+        },
+        "checkpoint_sha256": "ce135646b7f5ef8dec863faa3750a2437c82e442e31786cec2cd6ec9eeb84447",
+        "checkpoint_step": 1000,
+        "declared_candidate_eligible": false,
+        "external_review_state": "pending",
+        "external_reviews": {
+          "failed": 0,
+          "passed": 0,
+          "pending": 4,
+          "total": 4
+        },
+        "fixed_window_bpc": 4.082349154591349,
+        "fixed_window_loss": 4.838193416595459,
+        "path": "reports/milestones/020_sft_v7_vertical/pretrain_retention_step01000.json",
+        "relative_bpc_degradation": 0.08995161331258517,
+        "required": false,
+        "schema_version": "sft-v7-pretrain-retention/v1",
+        "sealed_body_reads": 0,
+        "sft_dataset_manifest_sha256": "422c35fa130a3e6fc3f656019515fc7c1115616aa396712ea501751aeda1b9e9",
+        "sha256": "fb82fb1d3f122e9fc06f4d1bf14296bbd23a7f99e54f58ef94360e38314de0e9",
+        "status": "present"
+      },
+      "strict_candidate_eligible": false,
+      "summary_status": "automatic_public_gates_failed"
+    },
+    {
+      "checkpoint_mode": "sft-v7",
+      "display_name": "SFT v7 Step 1500",
+      "expected_step": 1500,
+      "fixed_samples": {
+        "case_count": 16,
+        "checkpoint_mode": "sft-v7",
+        "checkpoint_sha256": "91945d1b6c989a5cb4654c9f75f0f861c3bffbc8c74df5926b9313dbaf389f68",
+        "checkpoint_step": 1500,
+        "contains_sample_bodies": false,
+        "empty_count": 0,
+        "eos_count": 11,
+        "eos_rate": 0.6875,
+        "path": "reports/milestones/020_sft_v7_vertical/fixed_samples_step01500.json",
+        "prompt_set_sha256": "de8bd99d03aa3d53698378ad9f6ac0d43e7d0e1d8a8e94e51d36700765ee65e9",
+        "public_tensor_sha256": "bf28705327c416b7a8de37a913ca85b0a28ac5faa4839b7b412ce69817c90166",
+        "required": true,
+        "schema_version": "sft-v7-fixed-samples/v1",
+        "sft_dataset_manifest_sha256": "422c35fa130a3e6fc3f656019515fc7c1115616aa396712ea501751aeda1b9e9",
+        "sha256": "8f711b215774c385671b1cfc1b78f5f557b17786fe6ac2577481fb40848470d2",
+        "status": "present",
+        "truncated_count": 5,
+        "truncation_rate": 0.3125
+      },
+      "integrity_errors": [],
+      "key": "sft_step01500",
+      "public": {
+        "automatic_gate_state": "failed",
+        "automatic_gates": {
+          "failed": 11,
+          "passed": 4,
+          "total": 15
+        },
+        "checkpoint_mode": "sft-v7",
+        "checkpoint_sha256": "91945d1b6c989a5cb4654c9f75f0f861c3bffbc8c74df5926b9313dbaf389f68",
+        "checkpoint_step": 1500,
+        "declared_candidate_eligible": false,
+        "external_gate_state": "pending",
+        "external_gates": {
+          "failed": 0,
+          "passed": 0,
+          "pending": 8,
+          "total": 8
+        },
+        "generation_quality": {
+          "empty_rate": 0.0,
+          "eos_rate": 0.795,
+          "mechanical_repetition_rate": 0.395,
+          "meta_phrase_rate": 0.0,
+          "truncation_rate": 0.205
+        },
+        "path": "reports/milestones/020_sft_v7_vertical/public_eval_step01500.json",
+        "public_tensor_sha256": "bf28705327c416b7a8de37a913ca85b0a28ac5faa4839b7b412ce69817c90166",
+        "records": 600,
+        "required": true,
+        "schema_version": "sft-v7-public-evaluation/v1",
+        "sft_dataset_manifest_sha256": "422c35fa130a3e6fc3f656019515fc7c1115616aa396712ea501751aeda1b9e9",
+        "sha256": "1ebb9bc998d41d8b71d9781d0e26d72c88992ec151a8bcfb8a66d8d16895b1eb",
+        "status": "present",
+        "teacher_forced_loss": 3.4199211426650122,
+        "teacher_forced_perplexity": 30.567004493494654
+      },
+      "retention": {
+        "automatic_gate_state": "failed",
+        "automatic_gates": {
+          "failed": 2,
+          "passed": 2,
+          "total": 4
+        },
+        "checkpoint_sha256": "91945d1b6c989a5cb4654c9f75f0f861c3bffbc8c74df5926b9313dbaf389f68",
+        "checkpoint_step": 1500,
+        "declared_candidate_eligible": false,
+        "external_review_state": "pending",
+        "external_reviews": {
+          "failed": 0,
+          "passed": 0,
+          "pending": 4,
+          "total": 4
+        },
+        "fixed_window_bpc": 4.128125372824248,
+        "fixed_window_loss": 4.8924450715382894,
+        "path": "reports/milestones/020_sft_v7_vertical/pretrain_retention_step01500.json",
+        "relative_bpc_degradation": 0.10217346426773481,
+        "required": false,
+        "schema_version": "sft-v7-pretrain-retention/v1",
+        "sealed_body_reads": 0,
+        "sft_dataset_manifest_sha256": "422c35fa130a3e6fc3f656019515fc7c1115616aa396712ea501751aeda1b9e9",
+        "sha256": "2ad7359b35c4d81d2fba2415b422e898b631c708036c9f36cca15fa1fe8bae9c",
+        "status": "present"
+      },
+      "strict_candidate_eligible": false,
+      "summary_status": "automatic_public_gates_failed"
+    },
+    {
+      "checkpoint_mode": "sft-v7",
+      "display_name": "SFT v7 Step 2000",
+      "expected_step": 2000,
+      "fixed_samples": {
+        "case_count": 16,
+        "checkpoint_mode": "sft-v7",
+        "checkpoint_sha256": "04f727e839dbb30f690f8c7373b23b4d3976f4997aa7700c5e1c4be01845b73f",
+        "checkpoint_step": 2000,
+        "contains_sample_bodies": false,
+        "empty_count": 0,
+        "eos_count": 7,
+        "eos_rate": 0.4375,
+        "path": "reports/milestones/020_sft_v7_vertical/fixed_samples_step02000.json",
+        "prompt_set_sha256": "de8bd99d03aa3d53698378ad9f6ac0d43e7d0e1d8a8e94e51d36700765ee65e9",
+        "public_tensor_sha256": "bf28705327c416b7a8de37a913ca85b0a28ac5faa4839b7b412ce69817c90166",
+        "required": true,
+        "schema_version": "sft-v7-fixed-samples/v1",
+        "sft_dataset_manifest_sha256": "422c35fa130a3e6fc3f656019515fc7c1115616aa396712ea501751aeda1b9e9",
+        "sha256": "2c42541d60a557ad33583065560af74177d833202a0b0c7c9c6e9652355b9ab9",
+        "status": "present",
+        "truncated_count": 9,
+        "truncation_rate": 0.5625
+      },
+      "integrity_errors": [],
+      "key": "sft_step02000",
+      "public": {
+        "automatic_gate_state": "failed",
+        "automatic_gates": {
+          "failed": 11,
+          "passed": 4,
+          "total": 15
+        },
+        "checkpoint_mode": "sft-v7",
+        "checkpoint_sha256": "04f727e839dbb30f690f8c7373b23b4d3976f4997aa7700c5e1c4be01845b73f",
+        "checkpoint_step": 2000,
+        "declared_candidate_eligible": false,
+        "external_gate_state": "pending",
+        "external_gates": {
+          "failed": 0,
+          "passed": 0,
+          "pending": 8,
+          "total": 8
+        },
+        "generation_quality": {
+          "empty_rate": 0.0,
+          "eos_rate": 0.8233333333333334,
+          "mechanical_repetition_rate": 0.4216666666666667,
+          "meta_phrase_rate": 0.0,
+          "truncation_rate": 0.17666666666666667
+        },
+        "path": "reports/milestones/020_sft_v7_vertical/public_eval_step02000.json",
+        "public_tensor_sha256": "bf28705327c416b7a8de37a913ca85b0a28ac5faa4839b7b412ce69817c90166",
+        "records": 600,
+        "required": true,
+        "schema_version": "sft-v7-public-evaluation/v1",
+        "sft_dataset_manifest_sha256": "422c35fa130a3e6fc3f656019515fc7c1115616aa396712ea501751aeda1b9e9",
+        "sha256": "c8b82377c2664ec76243df88c11aed2b6bd2471b5cf9d8042a10a1439c0f9c1b",
+        "status": "present",
+        "teacher_forced_loss": 3.2942667144662128,
+        "teacher_forced_perplexity": 26.957639173632145
+      },
+      "retention": {
+        "automatic_gate_state": "failed",
+        "automatic_gates": {
+          "failed": 2,
+          "passed": 2,
+          "total": 4
+        },
+        "checkpoint_sha256": "04f727e839dbb30f690f8c7373b23b4d3976f4997aa7700c5e1c4be01845b73f",
+        "checkpoint_step": 2000,
+        "declared_candidate_eligible": false,
+        "external_review_state": "pending",
+        "external_reviews": {
+          "failed": 0,
+          "passed": 0,
+          "pending": 4,
+          "total": 4
+        },
+        "fixed_window_bpc": 4.198036944968416,
+        "fixed_window_loss": 4.975300725301107,
+        "path": "reports/milestones/020_sft_v7_vertical/pretrain_retention_step02000.json",
+        "relative_bpc_degradation": 0.12083924418076696,
+        "required": true,
+        "schema_version": "sft-v7-pretrain-retention/v1",
+        "sealed_body_reads": 0,
+        "sft_dataset_manifest_sha256": "422c35fa130a3e6fc3f656019515fc7c1115616aa396712ea501751aeda1b9e9",
+        "sha256": "a42284f312f244d91c2471267557da060a445bc8848669dfab478fd2bdd7fe67",
+        "status": "present"
+      },
+      "strict_candidate_eligible": false,
+      "summary_status": "automatic_public_gates_failed"
+    }
+  ],
+  "decision_policy": {
+    "automatic_and_external_gates_separate": true,
+    "external_pending_is_never_passed": true,
+    "loss_is_auxiliary_not_release_proof": true,
+    "missing_metrics_are_pending_not_zero": true,
+    "release_decision_requires_independent_review": true
+  },
+  "generated_at_utc": "2026-08-29T09:52:46+00:00",
+  "integrity_error_count": 0,
+  "logging": {
+    "environment_override": "GPT_M020_SUMMARY_LOG_LEVEL_<MODULE>",
+    "modules": [
+      "discovery",
+      "validation",
+      "rendering",
+      "orchestrator"
+    ],
+    "production_default": "INFO",
+    "sample_or_evidence_bodies_logged": false,
+    "sensitive_fields_redacted": true
+  },
+  "loss_history_points": 12,
+  "outputs": {
+    "loss_csv": {
+      "path": "reports/milestones/020_sft_v7_vertical/sft_v7_loss_curve.csv",
+      "sha256": "e190d2d76ff6e263f703c5fdbc4a2680e7db91ced22932031156d7deede6ea79"
+    },
+    "loss_svg": {
+      "path": "reports/milestones/020_sft_v7_vertical/sft_v7_loss_curve.svg",
+      "sha256": "541c4e1ffadceab4a3d6a4419275fe1e25fd547e0370181ba0d57b1e196a36ec"
+    }
+  },
+  "pending_required_artifacts": [],
+  "release_ready": false,
+  "release_ready_reason": "summary tool does not replace independent release review",
+  "run_id": "sft-v7-m020-summary-20260829T095246Z-2cb25c3f",
+  "schema_version": "sft-v7-m020-checkpoint-comparison/v1",
+  "scope": {
+    "checkpoint_body_reads": 0,
+    "file_only": true,
+    "model_loaded": false,
+    "raw_corpus_body_reads": 0,
+    "sample_bodies_copied_to_summary": false,
+    "sealed_body_reads": 0,
+    "tensor_body_reads": 0
+  },
+  "status": "automatic_gates_failed_external_review_pending",
+  "strict_candidate_keys": [],
+  "training_reports": {
+    "formal2000": {
+      "best_val_loss": 3.3561811674355195,
+      "history_points": 9,
+      "path": "reports/milestones/020_sft_v7_vertical/formal_train_report.json",
+      "public_records_consumed": 0,
+      "required": true,
+      "schema_version": "sft-v7-train-report/v1",
+      "sealed_records_consumed": 0,
+      "sha256": "c1cd7f1562706859638d8b295c7076b3c2c5c9e0c315f38383817ff2425cf8aa",
+      "status": "present",
+      "status_in_report": "training_complete_public_evaluation_pending",
+      "target_step": 2000
+    },
+    "smoke20": {
+      "best_val_loss": 5.556195024489633,
+      "history_points": 3,
+      "path": "reports/milestones/020_sft_v7_vertical/smoke_train_report.json",
+      "public_records_consumed": 0,
+      "required": true,
+      "schema_version": "sft-v7-train-report/v1",
+      "sealed_records_consumed": 0,
+      "sha256": "6c68880b7c396862072eeaeeba5c5951d1b152f7b1d4093a842187f20915cd56",
+      "status": "present",
+      "status_in_report": "training_complete_public_evaluation_pending",
+      "target_step": 20
+    }
+  }
+}

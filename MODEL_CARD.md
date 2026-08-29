@@ -1,10 +1,10 @@
-# Model Card：Doupo GPT v4
+# Model Card：Doupo GPT（M020 小说垂直实验）
 
-> 状态：v4 预训练已续训至累计6,000步，v5.1无数学SFT已训练至累计5,000步。数据门通过，但严格行为评估仅7/30，模型尚未达到发布门槛。
+> 状态：M020 的数据、基线、20 步安全试跑、2,000 步正式训练、public 评估、固定样本 AI 辅助复核和预训练保持评估均已完成。自动门失败、独立外部复核仍为 `pending`，严格候选为空，当前没有可发布的 M020 模型。
 
 ## 模型简介
 
-Doupo GPT v4 是一个用于学习 GPT 原理的中文 Decoder-only Transformer。它只使用已获授权的《斗破苍穹》作为预训练知识来源，随后使用小说证据问答与通用行为指令数据进行 SFT。
+Doupo GPT 是一个用于学习 GPT 原理的中文 Decoder-only Transformer。当前正式模型只使用已获授权的《斗破苍穹》作为预训练知识来源，M020 后训练也只覆盖小说核心事实、给定证据问答、RAG 证据组合、垂直聊天、小说表达任务和需要证据时的边界行为。
 
 它的目标是展示 Tokenizer、预训练、SFT、验证、生成和无人值守训练的完整链路，不是通用聊天模型，也不是原作品或成熟商业大模型的替代品。
 
@@ -12,14 +12,14 @@ Doupo GPT v4 是一个用于学习 GPT 原理的中文 Decoder-only Transformer�
 
 | 项目 | 配置 |
 |---|---:|
-| 参数量 | 8,105,025 |
-| Transformer 层数 | 8 |
-| Embedding | 256 |
+| 参数量 | 14,880,745 |
+| Transformer 层数 | 10 |
+| Embedding | 320 |
 | Attention Heads | 8 |
-| Head Dimension | 32 |
-| FFN Hidden | 1024 |
+| Head Dimension | 40 |
+| FFN Hidden | 1,280 |
 | Context Length | 512 BPE Token |
-| Tokenizer | 字符起步 BPE，训练集学习2000次合并 |
+| Tokenizer | 字符起步 BPE，训练集学习 3,000 次合并；词表 7,465（含 6 个特殊 Token） |
 | Weight Tying | 开启 |
 
 ## 数据
@@ -28,9 +28,10 @@ Doupo GPT v4 是一个用于学习 GPT 原理的中文 Decoder-only Transformer�
 - 原始语料、清洗全文和可还原全文的 Token 张量不随源码仓库发布。
 - 语料按完整章节分组为 train/validation/test；同章版本不得跨集合。
 - BPE 合并规则只能从训练章节学习。
-- 当前SFT v5.1共4676条，按语义组切分为3629/520/527；测试记录不参与训练。
-- 当前SFT训练目标中数学/算术和数学话题记录均为0；冻结评估的完整提示及子串包装重合为0。同主题、同知识的不同问法仍有意保留，因此公开诊断不是完全盲测。
-- 预训练模型、Tokenizer 和语料清单的 SHA-256 已记录在 M006/M007；原始语料与可逆 Token 张量不公开。
+- 当前 SFT v7 共 10,000 条，按语义组和证据来源切分为 8,000 train / 800 val / 600 public diagnostic / 600 sealed test；六个任务维度与冻结配额一致。
+- Train + Val 张量 SHA-256 为 `81a0654150e8834cf4bd0ef30cbdb7975eac93fe5f1acf8208c715b0badfef47`，Public 张量 SHA-256 为 `bf28705327c416b7a8de37a913ca85b0a28ac5faa4839b7b412ce69817c90166`，两者物理分离；数据清单 SHA-256 为 `422c35fa130a3e6fc3f656019515fc7c1115616aa396712ea501751aeda1b9e9`。
+- 数学、通用百科和项目概念不是当前训练目标。训练器拒绝 public、test 或 sealed 字段；sealed 只在新数据发布的独立构建验证中读取一次，随后冻结，不参与日常验证、训练或选模。
+- 正式 SFT 必须从纯预训练 Step 5750 全新初始化；旧 810 万参数模型、M013 和 M018 SFT 权重只作为历史对照，不是当前基座。
 
 ## 预期用途
 
@@ -50,22 +51,27 @@ Doupo GPT v4 是一个用于学习 GPT 原理的中文 Decoder-only Transformer�
 
 | 项目 | 正式结果 |
 |---|---|
-| 预训练 Token | Train 3,416,400；Validation 195,068；Test 184,808 |
-| 预训练 Step / 约当 Epoch | 6,000 / 约7.19 |
-| 最佳 Validation Loss | 4.7759（Step 6,000） |
-| 所选模型 Test Loss | 4.7476 |
-| 固定小说提示词自动门槛 | REVIEW（发布候选出现连续重复） |
-| SFT Step / 约当训练集遍历 | 5,000 / 约1.38次（每步随机抽1条） |
-| SFT最佳 / 最终 Validation Loss | 1.0625（累计约4,500步）/ 1.7516（累计5,000步） |
-| SFT 六类严格指标 | 7/30：人物0、事实2、证据2、能力边界0、指令0、通用聊天3 |
-| EOS 停止率 | 25/30（累计5,000步latest） |
-| 12题固定展示 | 已保存；仍有已知人物过度拒答和指令失败 |
-| SFT隐藏测试 | 527条已隔离，0条参与训练；尚未做发布级最终测试 |
-| 正式训练设备 / 累计耗时 | Apple M4 MPS / 4,057.5秒 |
-| Best Checkpoint SHA-256 | `5d6397b3bb97b8a14369117e2f1e1e9f9addf515da1117e2f0f35dfe8ac8af44` |
-| SFT best-val / latest SHA-256 | `21a6c2ecc96ad7307ccb18a66fadba87eb18ad8c87eb09a70b567a5119a75f51` / `5433ea3f5b2583ab963433b3cc08b327d170e3f5f5c5c726a4911435801f4530` |
+| 正式预训练 Step | 6,000；选择 Step 5,750 作为 SFT 基座 |
+| Step 5750 Validation Loss / BPC | 4.4576 / 3.7612 |
+| 预训练 Token 暴露量 | 24,576,000（约 7.62 遍 train Token） |
+| 纯预训练 Harness | Step 5750 `PASS`，但人工辅助评分只表明最低可用小说语言基座 |
+| M020 Public 基线 | Loss 5.86808865；EOS 7.1667%；空回答 1.1667%；截断 92.8333%；机械重复 85.5% |
+| 冻结 16 题基线 | 0/16 EOS，16/16 达到 128 Token 上限 |
+| M020 Smoke | 20 步两阶段链路通过；最佳 Validation Loss 5.556195 |
+| Smoke 数据隔离 | Public 0 条、Sealed 0 条参与训练 |
+| M020 正式 SFT | 2,000 步完成；Validation Loss 5.897454 → 3.356181 |
+| Public Step 500 / 1000 / 1500 / 2000 Loss | 4.034095 / 3.611000 / 3.419921 / 3.294267 |
+| Public Step 2000 生成 | EOS 82.33%；截断 17.67%；机械重复 42.17% |
+| 固定 16 题 AI 辅助基本通过 | Step 500/1000/1500/2000 为 0/0/1/0；不是独立真人审核 |
+| 预训练保持 BPC 相对退化 | Step 500/1000/1500/2000 为 6.007% / 8.995% / 10.217% / 12.084%；各节点仅 13/16 续写非空 |
+| 候选解释 | Step 1000：保守诊断；Step 1500：行为较优研究；Step 2000：排除；三者都不是发布候选 |
+| 自动与外部门禁 | `automatic_gates_failed_external_review_pending`；严格候选 `[]` |
+| 汇总完整性 | 必需产物缺失 0；完整性错误 0；`release_ready=false` |
+| Sealed test | 冻结；未用于训练或选模，最终候选前不启封 |
 
 测试结果必须同时报告严格正确率、分项表现和失败样本，不能只展示最好看的生成文本。预训练 checkpoint 的选择协议是：Validation Loss 先筛选，自动质量门槛可以否决，最终语义质量由人工盲评决定；Test Loss 只做一次最终报告，不参与选模。
+
+完整节点对比见 [M020 checkpoint comparison](reports/milestones/020_sft_v7_vertical/checkpoint_comparison.md)，Loss 曲线见 [sft_v7_loss_curve.svg](reports/milestones/020_sft_v7_vertical/sft_v7_loss_curve.svg)，固定 16 题复核见 [fixed_samples_milestone_review.md](reports/milestones/020_sft_v7_vertical/fixed_samples_milestone_review.md)。
 
 ## 已知限制
 
@@ -77,6 +83,6 @@ Doupo GPT v4 是一个用于学习 GPT 原理的中文 Decoder-only Transformer�
 
 ## 发布与许可证
 
-- 当前SFT权重因行为门未通过而不作为可靠聊天模型发布；若后续达标，只发布经验证、行为门和人工复核共同选定的checkpoint。
+- M020 正式训练已经完成，但自动行为门失败、保持门未全过、独立外部门未完成，因此没有 checkpoint 可作为可靠聊天模型发布；若后续新实验达标，只发布经验证、行为门、预训练保持评估和人工复核共同选定的 checkpoint。
 - 模型权重通过 GitHub Release 或 Git LFS 发布，并附带哈希与本文件。
 - 代码许可证、模型权重许可证和数据授权说明可能不同；正式发布前必须分别确定。目前许可证尚未选择。

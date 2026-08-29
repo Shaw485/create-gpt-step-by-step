@@ -1,0 +1,593 @@
+{
+  "schema_version": "m020-fixed-sample-pair-review/v1",
+  "status": "ai_review_complete_not_independent_human",
+  "review_date": "2026-08-29",
+  "review_scope": "nonsealed_fixed_prompt_outputs_only",
+  "logging_omitted_reason": "This is a document-only, reproducible review of immutable JSON artifacts; no runtime service or persistent diagnostic path was added.",
+  "sources": {
+    "prompt_set": {
+      "path": "configs/sft_v7_fixed_prompts.json",
+      "sha256": "de8bd99d03aa3d53698378ad9f6ac0d43e7d0e1d8a8e94e51d36700765ee65e9"
+    },
+    "baseline": {
+      "path": "reports/milestones/020_sft_v7_vertical/fixed_samples_step05750.json",
+      "sha256": "11d25c7e886b469fde9f67d57e5290d1229f0858b942a7d0077b833af648eae6",
+      "checkpoint_mode": "pretrain-baseline",
+      "checkpoint_step": 5750
+    },
+    "smoke20": {
+      "path": "reports/milestones/020_sft_v7_vertical/fixed_samples_smoke20.json",
+      "sha256": "153554f2f051457a422abe7b3292a2ed06ec640b34496685e7d3aa8d9c158218",
+      "checkpoint_mode": "sft-v7",
+      "checkpoint_step": 20
+    }
+  },
+  "comparison_controls": {
+    "same_prompt_set": true,
+    "same_case_order": true,
+    "same_generation_settings": true,
+    "max_new_tokens": 128,
+    "temperature": 0.3,
+    "top_k": 1,
+    "seed": 20260829,
+    "preview_definition": "Python Unicode string slice generated_text[:30]; raw newlines are preserved in JSON and rendered as ↵ in Markdown."
+  },
+  "summary": {
+    "case_count": 16,
+    "boundary_case_count": 6,
+    "baseline": {
+      "fully_answered": 0,
+      "partially_fulfilled": 1,
+      "novel_continuation_or_prose_mode": 16,
+      "obvious_severe_repetition": 16,
+      "effective_boundary_handling": 0,
+      "stopped_on_eos": 0,
+      "truncated": 16
+    },
+    "smoke20": {
+      "fully_answered": 0,
+      "partially_fulfilled": 2,
+      "novel_continuation_or_prose_mode": 15,
+      "obvious_severe_repetition": 15,
+      "effective_boundary_handling": 0,
+      "stopped_on_eos": 1,
+      "truncated": 15
+    },
+    "conclusion": "The 20-step smoke checkpoint verifies the SFT execution path, but does not demonstrate a reliable quality gain. Neither checkpoint fully answers any of the 16 prompts, and neither handles any of the six retrieval/out-of-domain boundary cases appropriately."
+  },
+  "review_limitations": [
+    "Judgments are an AI-assisted artifact review, not an independent human evaluation.",
+    "Only the fixed 16 nonsealed prompts are reviewed; no sealed examples were accessed.",
+    "A 20-step smoke run is intentionally too short for a final model-quality conclusion."
+  ],
+  "cases": [
+    {
+      "index": 1,
+      "id": "core_xiaoyan",
+      "category": "core_fact",
+      "prompt": "萧炎是谁？",
+      "baseline": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_step05750.json#/results/0/generated_text",
+        "preview_30": "？\n\n    就在萧炎心中念头转动时，突然一道苍老身影便是出",
+        "generated_characters": 241,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "no",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "not_applicable",
+        "note": "Does not identify 萧炎; shifts into repeated novel dialogue."
+      },
+      "smoke20": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_smoke20.json#/results/0/generated_text",
+        "preview_30": "这名字，曾经在加玛帝国的加玛帝国，加玛帝国的加玛帝国，加玛帝",
+        "generated_characters": 316,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "no",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "not_applicable",
+        "note": "Starts with an answer-like phrase but never identifies the character; loops on 加玛帝国."
+      },
+      "comparison": "No substantive improvement after 20 smoke steps."
+    },
+    {
+      "index": 2,
+      "id": "core_yaochen",
+      "category": "core_fact",
+      "prompt": "药尘是谁？",
+      "baseline": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_step05750.json#/results/1/generated_text",
+        "preview_30": "？\n\n    风尊者目光也是转向萧炎，道：“魂殿，魂殿，魂殿",
+        "generated_characters": 199,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "no",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "not_applicable",
+        "note": "Does not identify 药尘 and loops on 魂殿."
+      },
+      "smoke20": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_smoke20.json#/results/1/generated_text",
+        "preview_30": "这魂殿的名字，魂殿是魂殿的魂殿，魂殿，魂殿的魂殿，魂殿，魂殿",
+        "generated_characters": 192,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "no",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "not_applicable",
+        "note": "Still does not identify 药尘 and immediately loops on 魂殿."
+      },
+      "comparison": "No substantive improvement after 20 smoke steps."
+    },
+    {
+      "index": 3,
+      "id": "core_alias",
+      "category": "core_alias",
+      "prompt": "药老和药尘是什么关系？",
+      "baseline": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_step05750.json#/results/2/generated_text",
+        "preview_30": "？\n\n    “魂殿是魂殿的魂殿？”\n\n    药老面色凝重",
+        "generated_characters": 200,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "no",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "not_applicable",
+        "note": "Does not state that 药老 and 药尘 refer to the same person."
+      },
+      "smoke20": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_smoke20.json#/results/2/generated_text",
+        "preview_30": "这名字，魂殿是魂殿的魂殿，魂殿，魂殿，魂殿的魂殿，魂殿，魂殿",
+        "generated_characters": 192,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "no",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "not_applicable",
+        "note": "Does not answer the alias relation and loops on 魂殿."
+      },
+      "comparison": "No alias knowledge is expressed by either output."
+    },
+    {
+      "index": 4,
+      "id": "core_setting",
+      "category": "core_setting",
+      "prompt": "异火在这部小说中是什么？",
+      "baseline": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_step05750.json#/results/3/generated_text",
+        "preview_30": "然的话。\n\n    以萧炎如今的实力。已经达到了斗皇巅峰的层",
+        "generated_characters": 222,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "no",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "not_applicable",
+        "note": "Ignores the requested concept and discusses 萧炎's strength."
+      },
+      "smoke20": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_smoke20.json#/results/3/generated_text",
+        "preview_30": "这“异火”药老缓缓的道。\n\n    “异火榜上排名第十的异火",
+        "generated_characters": 180,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "partial",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "not_applicable",
+        "note": "Recognizes 异火/异火榜 context, but provides no definition and degenerates into unsupported rank repetition."
+      },
+      "comparison": "Smoke output is more on-topic, but is not a correct usable answer."
+    },
+    {
+      "index": 5,
+      "id": "single_evidence",
+      "category": "given_evidence",
+      "prompt": "材料写道：萧战是萧家现任族长，同时也是萧炎的父亲。根据材料，萧战和萧炎是什么关系？",
+      "baseline": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_step05750.json#/results/4/generated_text",
+        "preview_30": "然的话，他可是有些感到诧异。\n\n    “父亲，萧家，萧家，",
+        "generated_characters": 197,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "no",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "not_applicable",
+        "note": "Echoes the word 父亲 but never states the relationship from the supplied evidence."
+      },
+      "smoke20": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_smoke20.json#/results/4/generated_text",
+        "preview_30": "”\n\n    萧战的名字，让得萧战的有些疑惑，萧战的有些疑惑",
+        "generated_characters": 201,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "no",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "not_applicable",
+        "note": "Repeats 萧战 without extracting the explicit father-son relation."
+      },
+      "comparison": "Neither checkpoint performs evidence-grounded extraction."
+    },
+    {
+      "index": 6,
+      "id": "rag_two_passages",
+      "category": "rag",
+      "prompt": "片段一说药尘是老师曾经的名字；片段二说药老是萧炎的老师。综合两段，药尘、药老和萧炎是什么关系？",
+      "baseline": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_step05750.json#/results/5/generated_text",
+        "preview_30": "然的话，他自然不会再说，魂殿的名头，恐怕连魂殿都要强上许多。",
+        "generated_characters": 245,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "no",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "not_applicable",
+        "note": "Does not combine the two supplied passages."
+      },
+      "smoke20": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_smoke20.json#/results/5/generated_text",
+        "preview_30": "记忆尤深，药老在药老身上扫过，沉吟道。\n\n    “药老所说",
+        "generated_characters": 203,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "no",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "not_applicable",
+        "note": "Mentions 药老 repeatedly but does not infer alias and teacher relations."
+      },
+      "comparison": "Neither checkpoint demonstrates two-passage synthesis."
+    },
+    {
+      "index": 7,
+      "id": "chat_natural",
+      "category": "vertical_chat",
+      "prompt": "不用列清单，简单聊聊萧炎这个人物。",
+      "baseline": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_step05750.json#/results/6/generated_text",
+        "preview_30": "坷。\n\n    站在原地上，望着那些人群人群人群，人群人群人",
+        "generated_characters": 135,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "no",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "not_applicable",
+        "note": "Produces a fragment and repeated scenery rather than conversational character discussion."
+      },
+      "smoke20": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_smoke20.json#/results/6/generated_text",
+        "preview_30": "场中的气氛，显得格外的清秀。\n\n    场中的气氛，持续了将",
+        "generated_characters": 161,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "no",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "not_applicable",
+        "note": "Produces scene narration and repeated 人群, not chat about 萧炎."
+      },
+      "comparison": "No conversational answering ability is visible."
+    },
+    {
+      "index": 8,
+      "id": "chat_multiturn",
+      "category": "vertical_multiturn",
+      "prompt": "我们聊聊药老。 / 他和萧炎是什么关系？",
+      "baseline": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_step05750.json#/results/7/generated_text",
+        "preview_30": "？\n\n    药老沉默了一会，轻声道：“我知道你所说的那个神",
+        "generated_characters": 216,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "no",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "not_applicable",
+        "note": "Does not resolve the follow-up pronoun or state teacher-student relation."
+      },
+      "smoke20": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_smoke20.json#/results/7/generated_text",
+        "preview_30": "这名字，曾经在加玛帝国的名声望，萧家，萧家的萧家，萧家，萧家",
+        "generated_characters": 198,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "no",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "not_applicable",
+        "note": "Does not use the prior turn and loops on 萧家."
+      },
+      "comparison": "No multi-turn relation answering is visible."
+    },
+    {
+      "index": 9,
+      "id": "rewrite",
+      "category": "novel_expression",
+      "prompt": "把“萧炎走进大厅”改写成一句更有小说画面感的话。",
+      "baseline": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_step05750.json#/results/8/generated_text",
+        "preview_30": "却是忽然有些发麻。\n\n    大厅内。大厅内。都是有着几分诧",
+        "generated_characters": 213,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "no",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "not_applicable",
+        "note": "Produces unrelated repeated hall descriptions, not a single rewrite preserving the action."
+      },
+      "smoke20": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_smoke20.json#/results/8/generated_text",
+        "preview_30": "这“磐门”成员。无疑是要知晓一些。\n\n    大厅内。大厅内",
+        "generated_characters": 201,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "no",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "not_applicable",
+        "note": "Still does not provide one coherent rewrite and loops on 大厅内."
+      },
+      "comparison": "Neither output satisfies the constrained rewrite request."
+    },
+    {
+      "index": 10,
+      "id": "continuation",
+      "category": "novel_expression",
+      "prompt": "续写一小段：夜色笼罩着山谷，",
+      "baseline": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_step05750.json#/results/9/generated_text",
+        "preview_30": "，如水般的飞掠而来，最后在山林中停顿了两步。\n\n    山林",
+        "generated_characters": 150,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "partial",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "not_applicable",
+        "note": "Attempts continuation, but starts with duplicate punctuation and collapses into 山 repetition."
+      },
+      "smoke20": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_smoke20.json#/results/9/generated_text",
+        "preview_30": "塔内，如云霄，云霄。\n\n    宽敞的山林，山林海，山林海，",
+        "generated_characters": 132,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "partial",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "not_applicable",
+        "note": "Attempts prose continuation but is weakly connected to the prompt and loops on 山林海."
+      },
+      "comparison": "Both attempt the expected mode; neither yields a coherent short passage."
+    },
+    {
+      "index": 11,
+      "id": "boundary_first_chapter",
+      "category": "retrieval_boundary",
+      "prompt": "萧炎第一次见到药老是第几章？",
+      "baseline": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_step05750.json#/results/10/generated_text",
+        "preview_30": "？\n\n    想到此处，萧炎眉头一皱，轻声道：“老师，老师，",
+        "generated_characters": 207,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "no",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "failed",
+        "note": "Neither gives a verified chapter nor states that indexed retrieval is required."
+      },
+      "smoke20": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_smoke20.json#/results/10/generated_text",
+        "preview_30": "这名字，药老也是忍不住的有些疑惑的问道。\n\n    “药老？",
+        "generated_characters": 188,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "no",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "failed",
+        "note": "Does not answer or acknowledge the exact-retrieval limitation."
+      },
+      "comparison": "Boundary behavior remains absent."
+    },
+    {
+      "index": 12,
+      "id": "boundary_global_count",
+      "category": "retrieval_boundary",
+      "prompt": "萧炎在全书一共出现了多少次？",
+      "baseline": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_step05750.json#/results/11/generated_text",
+        "preview_30": "？\n\n    想到此处，萧炎眉头一皱，轻声道：“我想办法？”",
+        "generated_characters": 208,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "no",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "failed",
+        "note": "Neither provides a counted result nor states that full-book indexing is required."
+      },
+      "smoke20": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_smoke20.json#/results/11/generated_text",
+        "preview_30": "这两个月时间，便是萧炎所知晓的记忆，按照萧炎所知，修炼的修炼",
+        "generated_characters": 242,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "no",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "failed",
+        "note": "Invents unrelated prose and does not acknowledge the need for a global count."
+      },
+      "comparison": "Boundary behavior remains absent."
+    },
+    {
+      "index": 13,
+      "id": "boundary_ambiguous",
+      "category": "clarification_boundary",
+      "prompt": "游乐园在哪里？",
+      "baseline": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_step05750.json#/results/12/generated_text",
+        "preview_30": "禾禾？\n\n    就在萧炎心中念头转动时，其身形便是陡然加快",
+        "generated_characters": 225,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "no",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "failed",
+        "note": "Does not ask which park or location; hallucinates an unrelated novel scene."
+      },
+      "smoke20": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_smoke20.json#/results/12/generated_text",
+        "preview_30": "这名字，“”\n\n",
+        "generated_characters": 8,
+        "generated_tokens": 7,
+        "stopped_on_eos": true,
+        "truncated": false,
+        "answer_fulfillment": "no",
+        "novel_continuation_or_prose_mode": false,
+        "repetition": "none",
+        "boundary_handling": "failed",
+        "note": "Stops on EOS, but the short fragment is not a clarification or useful refusal."
+      },
+      "comparison": "Stopping improved mechanically, but semantic boundary handling did not."
+    },
+    {
+      "index": 14,
+      "id": "boundary_outside_knowledge",
+      "category": "outside_domain",
+      "prompt": "绿巨人是谁？",
+      "baseline": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_step05750.json#/results/13/generated_text",
+        "preview_30": "？\n\n    巨大的巨蟒，巨大的巨蟒，巨蟒，巨蟒，巨蟒巨蟒，",
+        "generated_characters": 135,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "no",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "failed",
+        "note": "Does not state the novel-domain limitation and generates unrelated giant-snake prose."
+      },
+      "smoke20": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_smoke20.json#/results/13/generated_text",
+        "preview_30": "这名字，除了那神秘的神秘人之外，曾经在加玛帝国的名声望，云岚",
+        "generated_characters": 161,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "no",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "failed",
+        "note": "Hallucinates an in-domain identity instead of declining outside-domain knowledge."
+      },
+      "comparison": "Both fail the outside-domain boundary; smoke remains hallucinatory."
+    },
+    {
+      "index": 15,
+      "id": "boundary_live_weather",
+      "category": "outside_domain",
+      "prompt": "北京今天的天气怎么样？",
+      "baseline": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_step05750.json#/results/14/generated_text",
+        "preview_30": "？\n\n    天北城，天北城，天北城，天北城，天北城，天北城",
+        "generated_characters": 131,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "no",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "failed",
+        "note": "Does not state that live weather is unavailable; loops on 天北城."
+      },
+      "smoke20": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_smoke20.json#/results/14/generated_text",
+        "preview_30": "这天山血潭之地域，天山血潭之地域，天山血潭之地域，天山血潭，",
+        "generated_characters": 128,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "no",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "failed",
+        "note": "Maps a live-information request into a novel location and repeats it."
+      },
+      "comparison": "Both fail to disclose the live-information limitation."
+    },
+    {
+      "index": 16,
+      "id": "boundary_math",
+      "category": "outside_domain",
+      "prompt": "请计算二加二。",
+      "baseline": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_step05750.json#/results/15/generated_text",
+        "preview_30": "。\n\n    站在原地上。萧炎望着那在咫尺的巨大树枝。心中也",
+        "generated_characters": 195,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "no",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "failed",
+        "note": "Neither answers nor gives a concise scope limitation; emits unrelated novel prose."
+      },
+      "smoke20": {
+        "full_output_source": "reports/milestones/020_sft_v7_vertical/fixed_samples_smoke20.json#/results/15/generated_text",
+        "preview_30": "这“黑盟”“黑盟”“黑盟”“黑盟”“黑盟”“黑盟”“黑盟”“",
+        "generated_characters": 128,
+        "generated_tokens": 128,
+        "stopped_on_eos": false,
+        "truncated": true,
+        "answer_fulfillment": "no",
+        "novel_continuation_or_prose_mode": true,
+        "repetition": "severe",
+        "boundary_handling": "failed",
+        "note": "Loops on an unrelated novel entity instead of handling the out-of-scope request."
+      },
+      "comparison": "Outside-domain routing remains absent."
+    }
+  ]
+}

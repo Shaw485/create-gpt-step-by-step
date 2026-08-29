@@ -1,0 +1,215 @@
+{
+  "audit_boundary": {
+    "allowed_splits": [
+      "public_diagnostic",
+      "train",
+      "val"
+    ],
+    "maximum_records": 9400,
+    "sealed_records_declared_but_not_read": 600,
+    "sealed_split_records_in_prefix": 0
+  },
+  "audited_prefix_sha256": "185ea01fb517b4638cececa009288810a2f0cadc8cbb6afb20c2832774afcbd1",
+  "audited_records": 9400,
+  "dataset_path": "data/sft/v6/sft_v6_10000.jsonl",
+  "dimension_counts": {
+    "correction_grounded_unknown_and_capability_boundary": 470,
+    "evidence_reading_and_retrieval_qa": 1880,
+    "instruction_format_and_length_control": 846,
+    "natural_chat_and_multiturn": 1410,
+    "novel_entities_facts_relations_timeline": 3102,
+    "project_study_and_general_concepts": 752,
+    "summarization_rewrite_continuation_expression": 940
+  },
+  "domain_alignment": {
+    "domain_drift_family_counts": {
+      "natural_multiturn_support": 996,
+      "natural_single_turn_support": 498,
+      "practice_correction": 160,
+      "project_concept_explanation": 752
+    },
+    "generic_support_records": 1550,
+    "known_core_false_refusals": 0,
+    "positive_general_encyclopedia_records": 0,
+    "positive_math_records": 0,
+    "project_concept_records": 856,
+    "rag_bundle_records": 0
+  },
+  "hard_failures": [
+    "answer_opening_template_share",
+    "forbidden_answer_templates",
+    "generic_support_domain_drift",
+    "project_concept_domain_drift",
+    "rag_bundle_coverage"
+  ],
+  "privacy": {
+    "full_dataset_hashed": false,
+    "record_body_emitted": false,
+    "sealed_body_accessed": false
+  },
+  "run_id": "sft-v6-vertical-gap-20260829T065732Z-204fb35b",
+  "schema_version": "sft-v6-vertical-gap-audit/v1",
+  "split_counts": {
+    "public_diagnostic": 600,
+    "train": 8000,
+    "val": 800
+  },
+  "status": "needs_revision",
+  "task_family_counts": {
+    "curated_core_novel_identity": 300,
+    "grounded_concise_rewrite": 235,
+    "grounded_format_control": 846,
+    "grounded_next_paragraph_continuation": 470,
+    "grounded_novel_entity_fact": 2802,
+    "grounded_one_sentence_summary": 235,
+    "grounded_unknown": 100,
+    "known_novel_correction": 140,
+    "long_context_exact_paragraph_extraction": 1880,
+    "natural_multiturn_support": 940,
+    "natural_single_turn_support": 470,
+    "practice_correction": 140,
+    "project_concept_explanation": 752,
+    "realtime_boundary": 90
+  },
+  "template_statistics": {
+    "distinct_opening_fingerprints": 4619,
+    "forbidden_marker_count_unit": "assistant_messages_containing_marker",
+    "forbidden_marker_counts": {
+      "先先": 283,
+      "可以先": 966,
+      "材料写到": 235,
+      "根据这段文字，可以确认": 467,
+      "这段材料明确提到": 235
+    },
+    "largest_opening_count": 467,
+    "largest_opening_share": 0.04968085106382979,
+    "normalization": "NFKC+lower+remove_space_and_punctuation+first_12_codepoints+sha256_prefix16",
+    "opening_metric_scope": "final_answer_only",
+    "top_opening_fingerprints": [
+      {
+        "opening_sha256_prefix": "1cb9caf94729b238",
+        "records": 467,
+        "share": 0.04968085106382979
+      },
+      {
+        "opening_sha256_prefix": "64265d679eb0a919",
+        "records": 188,
+        "share": 0.02
+      },
+      {
+        "opening_sha256_prefix": "c4e6628f08d6bed3",
+        "records": 178,
+        "share": 0.018936170212765956
+      },
+      {
+        "opening_sha256_prefix": "4119eb49d40efab9",
+        "records": 177,
+        "share": 0.018829787234042553
+      },
+      {
+        "opening_sha256_prefix": "7a3c4a46c3433764",
+        "records": 170,
+        "share": 0.018085106382978722
+      },
+      {
+        "opening_sha256_prefix": "082ec92e3d4d9a85",
+        "records": 163,
+        "share": 0.017340425531914894
+      },
+      {
+        "opening_sha256_prefix": "68a4cc205f82db84",
+        "records": 102,
+        "share": 0.010851063829787235
+      },
+      {
+        "opening_sha256_prefix": "8d7aff5a595f8c79",
+        "records": 101,
+        "share": 0.01074468085106383
+      },
+      {
+        "opening_sha256_prefix": "7532e5735b5d95cc",
+        "records": 64,
+        "share": 0.006808510638297872
+      },
+      {
+        "opening_sha256_prefix": "a45390a89e0cf984",
+        "records": 60,
+        "share": 0.006382978723404255
+      },
+      {
+        "opening_sha256_prefix": "6606fa555d642924",
+        "records": 58,
+        "share": 0.006170212765957447
+      },
+      {
+        "opening_sha256_prefix": "736f0a8628d4fddf",
+        "records": 55,
+        "share": 0.005851063829787234
+      },
+      {
+        "opening_sha256_prefix": "7ec2c4f1c8bd062c",
+        "records": 50,
+        "share": 0.005319148936170213
+      },
+      {
+        "opening_sha256_prefix": "13380a9ac4a7d8dd",
+        "records": 50,
+        "share": 0.005319148936170213
+      },
+      {
+        "opening_sha256_prefix": "e3e0661fa4da4a96",
+        "records": 49,
+        "share": 0.005212765957446809
+      },
+      {
+        "opening_sha256_prefix": "2d10c4c6885b5efb",
+        "records": 49,
+        "share": 0.005212765957446809
+      },
+      {
+        "opening_sha256_prefix": "e9d0fe582ff6381b",
+        "records": 48,
+        "share": 0.005106382978723404
+      },
+      {
+        "opening_sha256_prefix": "29f86a3acc332dd3",
+        "records": 48,
+        "share": 0.005106382978723404
+      },
+      {
+        "opening_sha256_prefix": "12326572f47ea8b3",
+        "records": 48,
+        "share": 0.005106382978723404
+      },
+      {
+        "opening_sha256_prefix": "23c35134672dbe6d",
+        "records": 48,
+        "share": 0.005106382978723404
+      }
+    ]
+  },
+  "vertical_bucket_counts": {
+    "capability_boundary": 330,
+    "grounded_single_evidence": 5528,
+    "novel_expression": 940,
+    "parametric_core": 440,
+    "unmapped_or_out_of_scope": 752,
+    "vertical_interaction": 1410
+  },
+  "vertical_bucket_deltas": {
+    "capability_boundary": -140,
+    "grounded_single_evidence": 2520,
+    "novel_expression": -282,
+    "parametric_core": -1252,
+    "rag_multi_evidence": -1316,
+    "vertical_interaction": -282
+  },
+  "vertical_bucket_targets_nonsealed": {
+    "capability_boundary": 470,
+    "grounded_single_evidence": 3008,
+    "novel_expression": 1222,
+    "parametric_core": 1692,
+    "rag_multi_evidence": 1316,
+    "vertical_interaction": 1692
+  }
+}

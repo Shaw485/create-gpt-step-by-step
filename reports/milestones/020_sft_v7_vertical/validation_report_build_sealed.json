@@ -1,0 +1,173 @@
+{
+  "answer_style_split_leaks": 0,
+  "calibration": {
+    "complete_triplets_by_split": {
+      "public_diagnostic": 10,
+      "sealed_test": 10,
+      "train": 100,
+      "val": 10
+    },
+    "incomplete_triplets": 0,
+    "split_leaks": 0
+  },
+  "chapter_split_leaks": 0,
+  "dimension_counts": {
+    "capability_boundary_clarification_evidence_request": 500,
+    "multi_passage_rag_evidence_composition": 1400,
+    "novel_summary_rewrite_short_continuation": 1300,
+    "parameter_core_fact_and_correction": 1800,
+    "single_passage_grounded_qa": 3200,
+    "vertical_chat_multiturn_eos": 1800
+  },
+  "dimension_split_counts": {
+    "capability_boundary_clarification_evidence_request": {
+      "public_diagnostic": 30,
+      "sealed_test": 30,
+      "train": 400,
+      "val": 40
+    },
+    "multi_passage_rag_evidence_composition": {
+      "public_diagnostic": 84,
+      "sealed_test": 84,
+      "train": 1120,
+      "val": 112
+    },
+    "novel_summary_rewrite_short_continuation": {
+      "public_diagnostic": 78,
+      "sealed_test": 78,
+      "train": 1040,
+      "val": 104
+    },
+    "parameter_core_fact_and_correction": {
+      "public_diagnostic": 108,
+      "sealed_test": 108,
+      "train": 1440,
+      "val": 144
+    },
+    "single_passage_grounded_qa": {
+      "public_diagnostic": 192,
+      "sealed_test": 192,
+      "train": 2560,
+      "val": 256
+    },
+    "vertical_chat_multiturn_eos": {
+      "public_diagnostic": 108,
+      "sealed_test": 108,
+      "train": 1440,
+      "val": 144
+    }
+  },
+  "domain_alignment": {
+    "meta_wrapper_records": 0,
+    "positive_general_encyclopedia_records": 0,
+    "positive_math_records": 0,
+    "positive_project_concept_records": 0
+  },
+  "duplicate_canonical_questions": 0,
+  "duplicate_exact_questions": 0,
+  "duplicate_ids": 0,
+  "evidence_sha_split_leaks": 0,
+  "manifest_path": "reports/milestones/020_sft_v7_vertical/validation_manifest_build_sealed.json",
+  "p0_failures": [],
+  "p1_failures": [],
+  "prompt_template_hash_conflicts": 0,
+  "prompt_template_split_leaks": 0,
+  "prompt_text_hash_split_leaks": 0,
+  "quality": {
+    "core_entity_concept_coverage": 50,
+    "distinct_answer_openings": 7108,
+    "distinct_answer_styles": 320,
+    "distinct_prompt_templates": 211,
+    "grounding_records_by_split": {
+      "public_diagnostic": 276,
+      "sealed_test": 276,
+      "train": 3680,
+      "val": 368
+    },
+    "largest_answer_opening_count": 84,
+    "largest_answer_opening_share": 0.0084,
+    "maximum_general_exact_answer_repeat": 4,
+    "multiturn_records_by_split": {
+      "public_diagnostic": 72,
+      "sealed_test": 72,
+      "train": 960,
+      "val": 96
+    },
+    "negative_grounding_records_by_split": {
+      "public_diagnostic": 49,
+      "sealed_test": 47,
+      "train": 644,
+      "val": 65
+    },
+    "punctuation_error_records": 0,
+    "rag_bundle_records_by_split": {
+      "public_diagnostic": 84,
+      "sealed_test": 84,
+      "train": 1120,
+      "val": 112
+    },
+    "review_pending_records": 0
+  },
+  "record_body_emitted": false,
+  "records": 10000,
+  "risk_code_counts": {},
+  "risk_records": 0,
+  "risk_severity_counts": {},
+  "run_id": "sft-v7-vertical-validation-20260829T072927Z-0be20560",
+  "schema_version": "sft-v7-vertical-validation/v1",
+  "sealed_body_accessed": true,
+  "semantic_group_split_leaks": 0,
+  "split_counts": {
+    "public_diagnostic": 600,
+    "sealed_test": 600,
+    "train": 8000,
+    "val": 800
+  },
+  "status": "passed",
+  "task_family_counts": {
+    "boundary_need_evidence": 500,
+    "chat_multiturn": 1200,
+    "chat_single": 600,
+    "continuation": 300,
+    "core_correction": 300,
+    "core_fact": 600,
+    "known_core_direct": 900,
+    "passage_answer": 2640,
+    "passage_insufficient": 560,
+    "rag_compose": 1155,
+    "rag_insufficient": 245,
+    "rewrite": 500,
+    "summary": 500
+  },
+  "tokenization": {
+    "answer_33_to_96_tokens": 7909,
+    "answer_97_to_160_tokens": 1009,
+    "long_answer_share": 0.1009,
+    "max_sequence_tokens": 403,
+    "medium_answer_share": 0.7909,
+    "min_sequence_tokens": 33,
+    "performed": true,
+    "sequence_tokens_by_split": {
+      "public_diagnostic": 85275,
+      "sealed_test": 85189,
+      "train": 1144920,
+      "val": 114884
+    },
+    "sequences_over_512": 0,
+    "supervised_tokens_by_split": {
+      "public_diagnostic": 39338,
+      "sealed_test": 39546,
+      "train": 524886,
+      "val": 52760
+    },
+    "unencodable_records": 0
+  },
+  "tokenizer_path": "data/scaling_a/bpe_3000/tokenizer.json",
+  "tokenizer_sha256": "e70cf3dc0ed185a6b22ab7dc08b6a850eeb59864ba161dd156c644e003862822",
+  "validated_splits": [
+    "train",
+    "val",
+    "public_diagnostic",
+    "sealed_test"
+  ]
+}

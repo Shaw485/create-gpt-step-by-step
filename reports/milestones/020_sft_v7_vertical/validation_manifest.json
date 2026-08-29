@@ -1,0 +1,55 @@
+{
+  "aggregate": {
+    "dimension_counts": {
+      "capability_boundary_clarification_evidence_request": 470,
+      "multi_passage_rag_evidence_composition": 1316,
+      "novel_summary_rewrite_short_continuation": 1222,
+      "parameter_core_fact_and_correction": 1692,
+      "single_passage_grounded_qa": 3008,
+      "vertical_chat_multiturn_eos": 1692
+    },
+    "p0_failure_count": 0,
+    "p1_failure_count": 0,
+    "records": 9400,
+    "risk_code_counts": {},
+    "split_counts": {
+      "public_diagnostic": 600,
+      "train": 8000,
+      "val": 800
+    }
+  },
+  "corpus": {
+    "path": "data/cloud_v4/train.txt",
+    "sha256": "3d16cb630d5fd25319513238296497b60870f7e078dac2477a9739c35ae3a777"
+  },
+  "files": {
+    "public_diagnostic": {
+      "path": "data/sft/v7/public_diagnostic.jsonl",
+      "records": 600,
+      "schema_version": "sft_v7_vertical/1.0",
+      "sha256": "05e0379216660465d31d558bb737ae5f097a054578bb4128fa9423508faf06ec"
+    },
+    "train": {
+      "path": "data/sft/v7/train.jsonl",
+      "records": 8000,
+      "schema_version": "sft_v7_vertical/1.0",
+      "sha256": "0f894ef6ab5413f25a86fabbe530c6607a8bd730301a5529eef13e1579c6bb81"
+    },
+    "val": {
+      "path": "data/sft/v7/val.jsonl",
+      "records": 800,
+      "schema_version": "sft_v7_vertical/1.0",
+      "sha256": "257efe75da51df4f5de239c08e5d9d72d03dfbb6068c50b3e369b397023dd58c"
+    }
+  },
+  "record_body_emitted": false,
+  "run_id": "sft-v7-vertical-validation-20260829T075859Z-d563089c",
+  "schema_version": "sft-v7-vertical-manifest/v1",
+  "sealed_build_validation_explicitly_allowed": false,
+  "status": "passed",
+  "tokenizer": {
+    "path": "data/scaling_a/bpe_3000/tokenizer.json",
+    "sha256": "e70cf3dc0ed185a6b22ab7dc08b6a850eeb59864ba161dd156c644e003862822"
+  },
+  "validation_mode": "default_nonsealed_only"
+}

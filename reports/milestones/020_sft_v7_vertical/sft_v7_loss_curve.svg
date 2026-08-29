@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+<rect width="960" height="540" fill="#ffffff"/>
+<text x="480" y="30" text-anchor="middle" font-family="sans-serif" font-size="20">M020 SFT v7 Loss</text>
+<rect x="90" y="55" width="835" height="410" fill="#fafafa" stroke="#cccccc"/>
+<line x1="90" y1="55.00" x2="925" y2="55.00" stroke="#e6e6e6"/>
+<text x="80" y="59.00" text-anchor="end" font-family="sans-serif" font-size="11">6.112</text>
+<line x1="90" y1="137.00" x2="925" y2="137.00" stroke="#e6e6e6"/>
+<text x="80" y="141.00" text-anchor="end" font-family="sans-serif" font-size="11">5.490</text>
+<line x1="90" y1="219.00" x2="925" y2="219.00" stroke="#e6e6e6"/>
+<text x="80" y="223.00" text-anchor="end" font-family="sans-serif" font-size="11">4.869</text>
+<line x1="90" y1="301.00" x2="925" y2="301.00" stroke="#e6e6e6"/>
+<text x="80" y="305.00" text-anchor="end" font-family="sans-serif" font-size="11">4.247</text>
+<line x1="90" y1="383.00" x2="925" y2="383.00" stroke="#e6e6e6"/>
+<text x="80" y="387.00" text-anchor="end" font-family="sans-serif" font-size="11">3.626</text>
+<line x1="90" y1="465.00" x2="925" y2="465.00" stroke="#e6e6e6"/>
+<text x="80" y="469.00" text-anchor="end" font-family="sans-serif" font-size="11">3.004</text>
+<text x="90.00" y="490" text-anchor="middle" font-family="sans-serif" font-size="11">0</text>
+<text x="257.00" y="490" text-anchor="middle" font-family="sans-serif" font-size="11">400</text>
+<text x="424.00" y="490" text-anchor="middle" font-family="sans-serif" font-size="11">800</text>
+<text x="591.00" y="490" text-anchor="middle" font-family="sans-serif" font-size="11">1200</text>
+<text x="758.00" y="490" text-anchor="middle" font-family="sans-serif" font-size="11">1600</text>
+<text x="925.00" y="490" text-anchor="middle" font-family="sans-serif" font-size="11">2000</text>
+<text x="507.50" y="520" text-anchor="middle" font-family="sans-serif" font-size="13">Optimizer step</text>
+<text x="22" y="260.00" text-anchor="middle" font-family="sans-serif" font-size="13" transform="rotate(-90 22 260.00)">Mean NLL loss</text>
+<polyline points="90.00,88.69 194.38,257.81 298.75,310.46 403.12,349.83 507.50,378.23 611.88,397.80 716.25,413.91 820.62,425.28 925.00,436.72" fill="none" stroke="#1565c0" stroke-width="2.2"/>
+<circle cx="90.00" cy="88.69" r="3" fill="#1565c0"/>
+<circle cx="194.38" cy="257.81" r="3" fill="#1565c0"/>
+<circle cx="298.75" cy="310.46" r="3" fill="#1565c0"/>
+<circle cx="403.12" cy="349.83" r="3" fill="#1565c0"/>
+<circle cx="507.50" cy="378.23" r="3" fill="#1565c0"/>
+<circle cx="611.88" cy="397.80" r="3" fill="#1565c0"/>
+<circle cx="716.25" cy="413.91" r="3" fill="#1565c0"/>
+<circle cx="820.62" cy="425.28" r="3" fill="#1565c0"/>
+<circle cx="925.00" cy="436.72" r="3" fill="#1565c0"/>
+<polyline points="90.00,83.28 194.38,275.04 298.75,322.95 403.12,355.38 507.50,376.97 611.88,391.24 716.25,402.02 820.62,411.13 925.00,418.55" fill="none" stroke="#1565c0" stroke-width="2.2" stroke-dasharray="7,4"/>
+<circle cx="90.00" cy="83.28" r="3" fill="#1565c0"/>
+<circle cx="194.38" cy="275.04" r="3" fill="#1565c0"/>
+<circle cx="298.75" cy="322.95" r="3" fill="#1565c0"/>
+<circle cx="403.12" cy="355.38" r="3" fill="#1565c0"/>
+<circle cx="507.50" cy="376.97" r="3" fill="#1565c0"/>
+<circle cx="611.88" cy="391.24" r="3" fill="#1565c0"/>
+<circle cx="716.25" cy="402.02" r="3" fill="#1565c0"/>
+<circle cx="820.62" cy="411.13" r="3" fill="#1565c0"/>
+<circle cx="925.00" cy="418.55" r="3" fill="#1565c0"/>
+<line x1="100" y1="50" x2="122" y2="50" stroke="#1565c0" stroke-width="3"/>
+<text x="128" y="54" font-family="sans-serif" font-size="11">formal2000 (solid train, dashed val)</text>
+<polyline points="90.00,88.69 94.17,114.28 98.35,131.22" fill="none" stroke="#c62828" stroke-width="2.2"/>
+<circle cx="90.00" cy="88.69" r="3" fill="#c62828"/>
+<circle cx="94.17" cy="114.28" r="3" fill="#c62828"/>
+<circle cx="98.35" cy="131.22" r="3" fill="#c62828"/>
+<polyline points="90.00,83.28 94.17,109.97 98.35,128.30" fill="none" stroke="#c62828" stroke-width="2.2" stroke-dasharray="7,4"/>
+<circle cx="90.00" cy="83.28" r="3" fill="#c62828"/>
+<circle cx="94.17" cy="109.97" r="3" fill="#c62828"/>
+<circle cx="98.35" cy="128.30" r="3" fill="#c62828"/>
+<line x1="310" y1="50" x2="332" y2="50" stroke="#c62828" stroke-width="3"/>
+<text x="338" y="54" font-family="sans-serif" font-size="11">smoke20 (solid train, dashed val)</text>
+</svg>

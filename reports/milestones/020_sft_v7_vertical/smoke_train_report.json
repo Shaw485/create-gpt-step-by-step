@@ -1,0 +1,638 @@
+{
+  "batch_size": 2,
+  "best_val_checkpoint": "runs/sft_v7_vertical_smoke20/best_val.pt",
+  "best_val_loss": 5.556195024489633,
+  "current_phase": "phase2_full_vertical_mix",
+  "data_path": "data/sft/v7/train_val_tensors.pt",
+  "data_sha256": "81a0654150e8834cf4bd0ef30cbdb7975eac93fe5f1acf8208c715b0badfef47",
+  "device": "mps",
+  "elapsed_seconds": 156.64726904098643,
+  "history": [
+    {
+      "active_phase": "phase1_route_eos_core",
+      "coverage": {
+        "by_pool": {
+          "capability_boundary_clarification_evidence_request": {
+            "coverage": 0.0,
+            "cycles_started": 0,
+            "draws": 0,
+            "records": 400,
+            "seen_records": 0
+          },
+          "multi_passage_rag_evidence_composition": {
+            "coverage": 0.0,
+            "cycles_started": 0,
+            "draws": 0,
+            "records": 1120,
+            "seen_records": 0
+          },
+          "novel_summary_rewrite_short_continuation": {
+            "coverage": 0.0,
+            "cycles_started": 0,
+            "draws": 0,
+            "records": 1040,
+            "seen_records": 0
+          },
+          "parameter_core_fact_and_correction": {
+            "coverage": 0.0,
+            "cycles_started": 0,
+            "draws": 0,
+            "records": 1440,
+            "seen_records": 0
+          },
+          "single_passage_grounded_qa": {
+            "coverage": 0.0,
+            "cycles_started": 0,
+            "draws": 0,
+            "records": 2560,
+            "seen_records": 0
+          },
+          "vertical_chat_multiturn_eos": {
+            "coverage": 0.0,
+            "cycles_started": 0,
+            "draws": 0,
+            "records": 1440,
+            "seen_records": 0
+          }
+        },
+        "coverage": 0.0,
+        "draws": 0,
+        "records": 8000,
+        "seen_records": 0
+      },
+      "coverage_by_phase": {
+        "phase1_route_eos_core": {
+          "by_pool": {
+            "capability_boundary_clarification_evidence_request": {
+              "coverage": 0.0,
+              "cycles_started": 0,
+              "draws": 0,
+              "records": 400,
+              "seen_records": 0
+            },
+            "multi_passage_rag_evidence_composition": {
+              "coverage": 0.0,
+              "cycles_started": 0,
+              "draws": 0,
+              "records": 1120,
+              "seen_records": 0
+            },
+            "novel_summary_rewrite_short_continuation": {
+              "coverage": 0.0,
+              "cycles_started": 0,
+              "draws": 0,
+              "records": 1040,
+              "seen_records": 0
+            },
+            "parameter_core_fact_and_correction": {
+              "coverage": 0.0,
+              "cycles_started": 0,
+              "draws": 0,
+              "records": 1440,
+              "seen_records": 0
+            },
+            "single_passage_grounded_qa": {
+              "coverage": 0.0,
+              "cycles_started": 0,
+              "draws": 0,
+              "records": 2560,
+              "seen_records": 0
+            },
+            "vertical_chat_multiturn_eos": {
+              "coverage": 0.0,
+              "cycles_started": 0,
+              "draws": 0,
+              "records": 1440,
+              "seen_records": 0
+            }
+          },
+          "coverage": 0.0,
+          "draws": 0,
+          "records": 8000,
+          "seen_records": 0
+        },
+        "phase2_full_vertical_mix": {
+          "by_pool": {
+            "capability_boundary_clarification_evidence_request": {
+              "coverage": 0.0,
+              "cycles_started": 0,
+              "draws": 0,
+              "records": 400,
+              "seen_records": 0
+            },
+            "multi_passage_rag_evidence_composition": {
+              "coverage": 0.0,
+              "cycles_started": 0,
+              "draws": 0,
+              "records": 1120,
+              "seen_records": 0
+            },
+            "novel_summary_rewrite_short_continuation": {
+              "coverage": 0.0,
+              "cycles_started": 0,
+              "draws": 0,
+              "records": 1040,
+              "seen_records": 0
+            },
+            "parameter_core_fact_and_correction": {
+              "coverage": 0.0,
+              "cycles_started": 0,
+              "draws": 0,
+              "records": 1440,
+              "seen_records": 0
+            },
+            "single_passage_grounded_qa": {
+              "coverage": 0.0,
+              "cycles_started": 0,
+              "draws": 0,
+              "records": 2560,
+              "seen_records": 0
+            },
+            "vertical_chat_multiturn_eos": {
+              "coverage": 0.0,
+              "cycles_started": 0,
+              "draws": 0,
+              "records": 1440,
+              "seen_records": 0
+            }
+          },
+          "coverage": 0.0,
+          "draws": 0,
+          "records": 8000,
+          "seen_records": 0
+        }
+      },
+      "step": 0,
+      "train_loss": 5.856426777942201,
+      "val_loss": 5.897454011051649
+    },
+    {
+      "active_phase": "phase2_full_vertical_mix",
+      "coverage": {
+        "by_pool": {
+          "capability_boundary_clarification_evidence_request": {
+            "coverage": 0.0,
+            "cycles_started": 0,
+            "draws": 0,
+            "records": 400,
+            "seen_records": 0
+          },
+          "multi_passage_rag_evidence_composition": {
+            "coverage": 0.0,
+            "cycles_started": 0,
+            "draws": 0,
+            "records": 1120,
+            "seen_records": 0
+          },
+          "novel_summary_rewrite_short_continuation": {
+            "coverage": 0.0,
+            "cycles_started": 0,
+            "draws": 0,
+            "records": 1040,
+            "seen_records": 0
+          },
+          "parameter_core_fact_and_correction": {
+            "coverage": 0.0,
+            "cycles_started": 0,
+            "draws": 0,
+            "records": 1440,
+            "seen_records": 0
+          },
+          "single_passage_grounded_qa": {
+            "coverage": 0.0,
+            "cycles_started": 0,
+            "draws": 0,
+            "records": 2560,
+            "seen_records": 0
+          },
+          "vertical_chat_multiturn_eos": {
+            "coverage": 0.0,
+            "cycles_started": 0,
+            "draws": 0,
+            "records": 1440,
+            "seen_records": 0
+          }
+        },
+        "coverage": 0.0,
+        "draws": 0,
+        "records": 8000,
+        "seen_records": 0
+      },
+      "coverage_by_phase": {
+        "phase1_route_eos_core": {
+          "by_pool": {
+            "capability_boundary_clarification_evidence_request": {
+              "coverage": 0.0075,
+              "cycles_started": 1,
+              "draws": 3,
+              "records": 400,
+              "seen_records": 3
+            },
+            "multi_passage_rag_evidence_composition": {
+              "coverage": 0.0,
+              "cycles_started": 0,
+              "draws": 0,
+              "records": 1120,
+              "seen_records": 0
+            },
+            "novel_summary_rewrite_short_continuation": {
+              "coverage": 0.0,
+              "cycles_started": 0,
+              "draws": 0,
+              "records": 1040,
+              "seen_records": 0
+            },
+            "parameter_core_fact_and_correction": {
+              "coverage": 0.00625,
+              "cycles_started": 1,
+              "draws": 9,
+              "records": 1440,
+              "seen_records": 9
+            },
+            "single_passage_grounded_qa": {
+              "coverage": 0.0,
+              "cycles_started": 0,
+              "draws": 0,
+              "records": 2560,
+              "seen_records": 0
+            },
+            "vertical_chat_multiturn_eos": {
+              "coverage": 0.005555555555555556,
+              "cycles_started": 1,
+              "draws": 8,
+              "records": 1440,
+              "seen_records": 8
+            }
+          },
+          "coverage": 0.0025,
+          "draws": 20,
+          "records": 8000,
+          "seen_records": 20
+        },
+        "phase2_full_vertical_mix": {
+          "by_pool": {
+            "capability_boundary_clarification_evidence_request": {
+              "coverage": 0.0,
+              "cycles_started": 0,
+              "draws": 0,
+              "records": 400,
+              "seen_records": 0
+            },
+            "multi_passage_rag_evidence_composition": {
+              "coverage": 0.0,
+              "cycles_started": 0,
+              "draws": 0,
+              "records": 1120,
+              "seen_records": 0
+            },
+            "novel_summary_rewrite_short_continuation": {
+              "coverage": 0.0,
+              "cycles_started": 0,
+              "draws": 0,
+              "records": 1040,
+              "seen_records": 0
+            },
+            "parameter_core_fact_and_correction": {
+              "coverage": 0.0,
+              "cycles_started": 0,
+              "draws": 0,
+              "records": 1440,
+              "seen_records": 0
+            },
+            "single_passage_grounded_qa": {
+              "coverage": 0.0,
+              "cycles_started": 0,
+              "draws": 0,
+              "records": 2560,
+              "seen_records": 0
+            },
+            "vertical_chat_multiturn_eos": {
+              "coverage": 0.0,
+              "cycles_started": 0,
+              "draws": 0,
+              "records": 1440,
+              "seen_records": 0
+            }
+          },
+          "coverage": 0.0,
+          "draws": 0,
+          "records": 8000,
+          "seen_records": 0
+        }
+      },
+      "step": 10,
+      "train_loss": 5.662440268516824,
+      "val_loss": 5.695113681752724
+    },
+    {
+      "active_phase": "phase2_full_vertical_mix",
+      "coverage": {
+        "by_pool": {
+          "capability_boundary_clarification_evidence_request": {
+            "coverage": 0.0025,
+            "cycles_started": 1,
+            "draws": 1,
+            "records": 400,
+            "seen_records": 1
+          },
+          "multi_passage_rag_evidence_composition": {
+            "coverage": 0.0026785714285714286,
+            "cycles_started": 1,
+            "draws": 3,
+            "records": 1120,
+            "seen_records": 3
+          },
+          "novel_summary_rewrite_short_continuation": {
+            "coverage": 0.0028846153846153848,
+            "cycles_started": 1,
+            "draws": 3,
+            "records": 1040,
+            "seen_records": 3
+          },
+          "parameter_core_fact_and_correction": {
+            "coverage": 0.0020833333333333333,
+            "cycles_started": 1,
+            "draws": 3,
+            "records": 1440,
+            "seen_records": 3
+          },
+          "single_passage_grounded_qa": {
+            "coverage": 0.00234375,
+            "cycles_started": 1,
+            "draws": 6,
+            "records": 2560,
+            "seen_records": 6
+          },
+          "vertical_chat_multiturn_eos": {
+            "coverage": 0.002777777777777778,
+            "cycles_started": 1,
+            "draws": 4,
+            "records": 1440,
+            "seen_records": 4
+          }
+        },
+        "coverage": 0.0025,
+        "draws": 20,
+        "records": 8000,
+        "seen_records": 20
+      },
+      "coverage_by_phase": {
+        "phase1_route_eos_core": {
+          "by_pool": {
+            "capability_boundary_clarification_evidence_request": {
+              "coverage": 0.0075,
+              "cycles_started": 1,
+              "draws": 3,
+              "records": 400,
+              "seen_records": 3
+            },
+            "multi_passage_rag_evidence_composition": {
+              "coverage": 0.0,
+              "cycles_started": 0,
+              "draws": 0,
+              "records": 1120,
+              "seen_records": 0
+            },
+            "novel_summary_rewrite_short_continuation": {
+              "coverage": 0.0,
+              "cycles_started": 0,
+              "draws": 0,
+              "records": 1040,
+              "seen_records": 0
+            },
+            "parameter_core_fact_and_correction": {
+              "coverage": 0.00625,
+              "cycles_started": 1,
+              "draws": 9,
+              "records": 1440,
+              "seen_records": 9
+            },
+            "single_passage_grounded_qa": {
+              "coverage": 0.0,
+              "cycles_started": 0,
+              "draws": 0,
+              "records": 2560,
+              "seen_records": 0
+            },
+            "vertical_chat_multiturn_eos": {
+              "coverage": 0.005555555555555556,
+              "cycles_started": 1,
+              "draws": 8,
+              "records": 1440,
+              "seen_records": 8
+            }
+          },
+          "coverage": 0.0025,
+          "draws": 20,
+          "records": 8000,
+          "seen_records": 20
+        },
+        "phase2_full_vertical_mix": {
+          "by_pool": {
+            "capability_boundary_clarification_evidence_request": {
+              "coverage": 0.0025,
+              "cycles_started": 1,
+              "draws": 1,
+              "records": 400,
+              "seen_records": 1
+            },
+            "multi_passage_rag_evidence_composition": {
+              "coverage": 0.0026785714285714286,
+              "cycles_started": 1,
+              "draws": 3,
+              "records": 1120,
+              "seen_records": 3
+            },
+            "novel_summary_rewrite_short_continuation": {
+              "coverage": 0.0028846153846153848,
+              "cycles_started": 1,
+              "draws": 3,
+              "records": 1040,
+              "seen_records": 3
+            },
+            "parameter_core_fact_and_correction": {
+              "coverage": 0.0020833333333333333,
+              "cycles_started": 1,
+              "draws": 3,
+              "records": 1440,
+              "seen_records": 3
+            },
+            "single_passage_grounded_qa": {
+              "coverage": 0.00234375,
+              "cycles_started": 1,
+              "draws": 6,
+              "records": 2560,
+              "seen_records": 6
+            },
+            "vertical_chat_multiturn_eos": {
+              "coverage": 0.002777777777777778,
+              "cycles_started": 1,
+              "draws": 4,
+              "records": 1440,
+              "seen_records": 4
+            }
+          },
+          "coverage": 0.0025,
+          "draws": 20,
+          "records": 8000,
+          "seen_records": 20
+        }
+      },
+      "step": 20,
+      "train_loss": 5.534054981564734,
+      "val_loss": 5.556195024489633
+    }
+  ],
+  "initialization_policy": "fresh_from_frozen_pretrain_step5750",
+  "latest_checkpoint": "runs/sft_v7_vertical_smoke20/latest.pt",
+  "latest_checkpoint_sha256": "3d3b61ad5e87e7ad0d89fbaa146d8a43380429de1807a44d8b02272ed0d650a3",
+  "learning_rate": 2e-05,
+  "loss_csv": "reports/milestones/020_sft_v7_vertical/smoke_train_report_loss.csv",
+  "optimizer_steps_this_run": 20,
+  "parameter_count": 14880745,
+  "public_records_consumed": 0,
+  "run_id": "sft-v7-20260829T082856Z-d3b05cd5",
+  "sampler_coverage_by_phase": {
+    "phase1_route_eos_core": {
+      "by_pool": {
+        "capability_boundary_clarification_evidence_request": {
+          "coverage": 0.0075,
+          "cycles_started": 1,
+          "draws": 3,
+          "records": 400,
+          "seen_records": 3
+        },
+        "multi_passage_rag_evidence_composition": {
+          "coverage": 0.0,
+          "cycles_started": 0,
+          "draws": 0,
+          "records": 1120,
+          "seen_records": 0
+        },
+        "novel_summary_rewrite_short_continuation": {
+          "coverage": 0.0,
+          "cycles_started": 0,
+          "draws": 0,
+          "records": 1040,
+          "seen_records": 0
+        },
+        "parameter_core_fact_and_correction": {
+          "coverage": 0.00625,
+          "cycles_started": 1,
+          "draws": 9,
+          "records": 1440,
+          "seen_records": 9
+        },
+        "single_passage_grounded_qa": {
+          "coverage": 0.0,
+          "cycles_started": 0,
+          "draws": 0,
+          "records": 2560,
+          "seen_records": 0
+        },
+        "vertical_chat_multiturn_eos": {
+          "coverage": 0.005555555555555556,
+          "cycles_started": 1,
+          "draws": 8,
+          "records": 1440,
+          "seen_records": 8
+        }
+      },
+      "coverage": 0.0025,
+      "draws": 20,
+      "records": 8000,
+      "seen_records": 20
+    },
+    "phase2_full_vertical_mix": {
+      "by_pool": {
+        "capability_boundary_clarification_evidence_request": {
+          "coverage": 0.0025,
+          "cycles_started": 1,
+          "draws": 1,
+          "records": 400,
+          "seen_records": 1
+        },
+        "multi_passage_rag_evidence_composition": {
+          "coverage": 0.0026785714285714286,
+          "cycles_started": 1,
+          "draws": 3,
+          "records": 1120,
+          "seen_records": 3
+        },
+        "novel_summary_rewrite_short_continuation": {
+          "coverage": 0.0028846153846153848,
+          "cycles_started": 1,
+          "draws": 3,
+          "records": 1040,
+          "seen_records": 3
+        },
+        "parameter_core_fact_and_correction": {
+          "coverage": 0.0020833333333333333,
+          "cycles_started": 1,
+          "draws": 3,
+          "records": 1440,
+          "seen_records": 3
+        },
+        "single_passage_grounded_qa": {
+          "coverage": 0.00234375,
+          "cycles_started": 1,
+          "draws": 6,
+          "records": 2560,
+          "seen_records": 6
+        },
+        "vertical_chat_multiturn_eos": {
+          "coverage": 0.002777777777777778,
+          "cycles_started": 1,
+          "draws": 4,
+          "records": 1440,
+          "seen_records": 4
+        }
+      },
+      "coverage": 0.0025,
+      "draws": 20,
+      "records": 8000,
+      "seen_records": 20
+    }
+  },
+  "sampling_schedule": {
+    "phase1": {
+      "name": "phase1_route_eos_core",
+      "weights": {
+        "capability_boundary_clarification_evidence_request": 0.15,
+        "multi_passage_rag_evidence_composition": 0.0,
+        "novel_summary_rewrite_short_continuation": 0.0,
+        "parameter_core_fact_and_correction": 0.45,
+        "single_passage_grounded_qa": 0.0,
+        "vertical_chat_multiturn_eos": 0.4
+      }
+    },
+    "phase1_steps": 10,
+    "phase2": {
+      "name": "phase2_full_vertical_mix",
+      "weights": {
+        "capability_boundary_clarification_evidence_request": 0.05,
+        "multi_passage_rag_evidence_composition": 0.14,
+        "novel_summary_rewrite_short_continuation": 0.13,
+        "parameter_core_fact_and_correction": 0.18,
+        "single_passage_grounded_qa": 0.32,
+        "vertical_chat_multiturn_eos": 0.18
+      }
+    },
+    "strategy": "two_phase_dimension_weighted_epoch/v1",
+    "switch_rule": "phase1 iff completed_optimizer_steps < phase1_steps"
+  },
+  "schema_version": "sft-v7-train-report/v1",
+  "sealed_records_consumed": 0,
+  "signature_sha256": "0b17d56c1d8a38b499cec2318afdcb4b29decf366df33c8e30993549c4dbd174",
+  "source_checkpoint": "runs/formal_pretrain_14m_bpe3000_6000/checkpoints/step_05750.pt",
+  "source_checkpoint_sha256": "bfe4fec5e6045d4c06d22393e7c2079fdc03897be71829c9d9dcbaf0fcaf5c1e",
+  "start_step": 0,
+  "status": "training_complete_public_evaluation_pending",
+  "target_step": 20,
+  "validation_policy": {
+    "checkpoint_status": "provisional_only_until_public_task_gates",
+    "train": "fixed stratified 160 records",
+    "validation": "all 800 records"
+  },
+  "weight_decay": 0.05
+}

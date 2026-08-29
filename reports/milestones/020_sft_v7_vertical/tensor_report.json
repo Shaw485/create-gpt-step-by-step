@@ -1,0 +1,63 @@
+{
+  "bpe_token_manifest_path": "data/scaling_a/bpe_3000/token_manifest.json",
+  "bpe_token_manifest_sha256": "5d10245eac86e4dbafef908cb2d915bb1effcf61ad977b4de96d8d64d30809c7",
+  "max_sequence_length": 393,
+  "multiturn_records": 1128,
+  "public_binding_sha256": "5a886e0a620abb8ec28b0939f37c88ef6ead3ead8893c673ed7d1e9ba0ea271f",
+  "public_output_path": "data/sft/v7/public_diagnostic_tensors.pt",
+  "public_output_sha256": "bf28705327c416b7a8de37a913ca85b0a28ac5faa4839b7b412ce69817c90166",
+  "required_base_checkpoint": {
+    "binding_sha256": "52dd54818629abe189bc29aa2a17b4d42e64919699bf7a1f74e2e0671e1e9fca",
+    "config_canonical_sha256": "faac0f759a5ce9cd5e827f95c511b7f9bbbda06f6e7642e5e0d90d5ec5635974",
+    "parameter_count": 14880745,
+    "path": "runs/formal_pretrain_14m_bpe3000_6000/checkpoints/step_05750.pt",
+    "sha256": "bfe4fec5e6045d4c06d22393e7c2079fdc03897be71829c9d9dcbaf0fcaf5c1e",
+    "step": 5750,
+    "token_manifest_sha256": "5d10245eac86e4dbafef908cb2d915bb1effcf61ad977b4de96d8d64d30809c7"
+  },
+  "run_id": "sft-v7-tensor-20260829T075600Z-9d49705f",
+  "schema_version": "sft-v7-tensor-report/v1",
+  "sft_dataset_manifest_path": "data/sft/v7/manifest.json",
+  "sft_dataset_manifest_sha256": "422c35fa130a3e6fc3f656019515fc7c1115616aa396712ea501751aeda1b9e9",
+  "source_jsonl_paths": {
+    "public_diagnostic": "data/sft/v7/public_diagnostic.jsonl",
+    "train": "data/sft/v7/train.jsonl",
+    "val": "data/sft/v7/val.jsonl"
+  },
+  "source_jsonl_sha256": {
+    "public_diagnostic": "05e0379216660465d31d558bb737ae5f097a054578bb4128fa9423508faf06ec",
+    "train": "0f894ef6ab5413f25a86fabbe530c6607a8bd730301a5529eef13e1579c6bb81",
+    "val": "257efe75da51df4f5de239c08e5d9d72d03dfbb6068c50b3e369b397023dd58c"
+  },
+  "split_counts": {
+    "public_diagnostic": 600,
+    "train": 8000,
+    "val": 800
+  },
+  "status": "prepared",
+  "supervised_tokens": {
+    "public_diagnostic": 39338,
+    "train": 524886,
+    "val": 52760
+  },
+  "task_family_counts": {
+    "boundary_need_evidence": 470,
+    "chat_multiturn": 1128,
+    "chat_single": 564,
+    "continuation": 282,
+    "core_correction": 282,
+    "core_fact": 564,
+    "known_core_direct": 846,
+    "passage_answer": 2481,
+    "passage_insufficient": 527,
+    "rag_compose": 1085,
+    "rag_insufficient": 231,
+    "rewrite": 470,
+    "summary": 470
+  },
+  "tokenizer_path": "data/scaling_a/bpe_3000/tokenizer.json",
+  "tokenizer_sha256": "e70cf3dc0ed185a6b22ab7dc08b6a850eeb59864ba161dd156c644e003862822",
+  "train_val_binding_sha256": "48c419acfd7e064f949b4a6a8aae245378b9b7d7a5c9d1f159b8499174035b8a",
+  "train_val_output_path": "data/sft/v7/train_val_tensors.pt",
+  "train_val_output_sha256": "81a0654150e8834cf4bd0ef30cbdb7975eac93fe5f1acf8208c715b0badfef47"
+}
