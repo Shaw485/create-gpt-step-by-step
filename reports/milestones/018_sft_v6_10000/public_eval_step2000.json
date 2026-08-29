@@ -1,0 +1,259 @@
+{
+  "checkpoint": "runs/sft_v6_10000_step2000/checkpoints/step_02000.pt",
+  "checkpoint_sha256": "c78fe61bdcc1b86d2c8447db2b45862cd247798e9c7e6110b6b0065c7818a54a",
+  "checkpoint_step": 2000,
+  "dataset_sha256": "6e1d6380a46dce6586dc1dbc28e7f52ebbd76c91fd604a0ec03d5900b3bc3876",
+  "eos_rate": 0.9583333333333334,
+  "exact_match_rate": 0.0,
+  "mean_similarity": 0.3039936742548361,
+  "public_loss": 2.6331457481718097,
+  "public_records": 600,
+  "run_id": "sft-v6-public-eval-20260829T043856Z-4e8cf68e",
+  "sample_count": 24,
+  "samples": [
+    {
+      "exact_match": false,
+      "generated_answer": "材料写到““呵呵，先检查刚才的测试图，并提到了古界，并提及““古界之中，一处古界，古界的古界，古界之中，便是有着不少的古界，古界的古界，所处境界，所处境界，所处境界，所处境界，所处境界，所处境界，所处境界，并提及。”",
+      "id": "v6_06384802df3e369f2cd6",
+      "question": "请把下面材料改写成简洁陈述，并保留专名“萧炎”：\n“这个书阁占地如此辽阔，恐怕我们进入的那处大房间，仅仅只是其中一角吧，这地方，当真是处处透着神秘走出大门，萧炎眼角不着痕迹的在两旁那两位犹如老僧入定般的灰袍人身上扫过，在心中自言自语的道。",
+      "reference_answer": "材料写到萧炎，并提及““这个书阁占地如此辽阔，恐怕我们进入的那处大房间，仅仅只是其中一角吧，这…”。",
+      "similarity": 0.14173228346456693,
+      "stopped_on_eos": false,
+      "task_family": "grounded_concise_rewrite"
+    },
+    {
+      "exact_match": false,
+      "generated_answer": "材料写到萧炎，并提及““萧炎，先检查刚才的鹜护法，先检查刚才的目标，并把它当成长空缺处理。”苏千望着那在空间裂缝中被明确提到的是苏千，笑道。",
+      "id": "v6_06deba6ba560047ded64",
+      "question": "请把下面材料改写成简洁陈述，并保留专名“地魔老鬼”：\n苏千的声音刚刚落下，那团血雾便是砰的一声炸裂开来，而在空间扭曲间，地魔老鬼的身形，居然便是这般凭空消失了去。",
+      "reference_answer": "材料写到地魔老鬼，并提及“苏千的声音刚刚落下，那团血雾便是砰的一声炸裂开来，而在空间扭曲间，地魔老…”。",
+      "similarity": 0.25,
+      "stopped_on_eos": true,
+      "task_family": "grounded_concise_rewrite"
+    },
+    {
+      "exact_match": false,
+      "generated_answer": "萧炎：人物",
+      "id": "v6_05b011ac08b726057ecc",
+      "question": "从材料““萧炎先生，这里距古族尚还有半日的路程，那家伙已是越来越近”在萧炎手中，药天正竭力的阻挡着高速所产生的风压，大声道。”提取专名，并按“名称：类别”格式输出。",
+      "reference_answer": "古族：势力",
+      "similarity": 0.0,
+      "stopped_on_eos": true,
+      "task_family": "grounded_format_control"
+    },
+    {
+      "exact_match": false,
+      "generated_answer": "人物",
+      "id": "v6_0637142bd6aa989dab75",
+      "question": "请根据“目光慵懒的瞟了萧炎一眼，若琳导师忽然冲着他温柔一笑，轻柔的声音，却是让得在场大部分人对萧炎投去了怜悯的目光。”给出一个项目符号，只写专名和类别。",
+      "reference_answer": "- 若琳：人物",
+      "similarity": 0.6666666666666666,
+      "stopped_on_eos": true,
+      "task_family": "grounded_format_control"
+    },
+    {
+      "exact_match": false,
+      "generated_answer": "“这毒蝎龙兽的毒龙兽，果然不比天毒龙兽还要强，它是毒龙兽的毒龙兽的毒龙兽，它能够炼制出的毒龙兽的毒龙兽，它能够炼制出九龙兽的毒龙兽的毒龙兽，相关于你手中。”",
+      "id": "v6_027fd86550ec12d27a03",
+      "question": "下面是小说中的一段文字：\n这些乱七八糟的东西汇聚在一起，究竟是毒药还是补药，没人能知道，因为这本来就只是一种巧合，高温使得青莲融化，再将纳戒炸裂。然后便是莫名其妙的汇聚，再然后，就是更莫名其妙的侵润着萧炎那副被摧残得不成人样的身体...\n\n请按原文接写紧随其后的下一段，不要自行扩展。",
+      "reference_answer": "色彩斑驳的液体将萧炎整个人都是牢牢包裹，不断的顺着毛孔与伤口流进萧炎体内",
+      "similarity": 0.05714285714285714,
+      "stopped_on_eos": true,
+      "task_family": "grounded_next_paragraph_continuation"
+    },
+    {
+      "exact_match": false,
+      "generated_answer": "“曹单，曹家主，曹家主要不信你曹家，曹家主动手，老夫曹家，曹家也有关？”曹单目光一转，冷喝道。",
+      "id": "v6_04ad6c4e081a2bb9b518",
+      "question": "下面是小说中的一段文字：\n在萧炎这般注视下，曹单的脸色也是越来越沉，而其身后的那名灰衣老者那满是皱纹的额头也是一皱，旋即脚步缓缓的踏出一步！“再前行一步，便留在这里吧，凭你这一星斗尊的实力，还没交格在此处撒野「”灰衣老者脚步刚刚踏出，眼前便是白影一闪，一道清冷之声，传进其耳中。\n\n请按原文接写紧随其后的下一段，不要自行扩展。",
+      "reference_answer": "听得此话，灰衣老者脸色也是橄变，日光紧紧的盯着面前的小医仙，眼中掠过一抹忌惮之色，他能够感觉到，小医仙也是一名斗尊强者，而且级别怕比他还要高上一筹。",
+      "similarity": 0.07692307692307693,
+      "stopped_on_eos": true,
+      "task_family": "grounded_next_paragraph_continuation"
+    },
+    {
+      "exact_match": false,
+      "generated_answer": "根据这段文字，可以确认其中出现了紫研；直接依据是“萧炎目光一转，望着那在地妖傀身体之上那具体型极为庞大的体型，它心中也是忍不住的有些惊异…”。",
+      "id": "v6_02fc19bfbc89e092ee4f",
+      "question": "根据材料“萧炎眼尖，率先便是发瑰地妖傀身体之上闪现的金色光泽，当下眼中便是忍不住的涌上一抹欣喜之色，虽说这些金色极淡，但萧炎已是颇为满足，他非常清楚，想要令得地妖傀进化成天妖傀，待会需要何等庞大…”，请指出其中出现的人物。",
+      "reference_answer": "根据这段文字，可以确认其中出现了萧炎；直接依据是“萧炎眼尖，率先便是发瑰地妖傀身体之上闪现的金色光泽，当下眼中…”。",
+      "similarity": 0.5486725663716814,
+      "stopped_on_eos": true,
+      "task_family": "grounded_novel_entity_fact"
+    },
+    {
+      "exact_match": false,
+      "generated_answer": "材料中的专名是萧炎；相关表述为““呵呵，木铁木铁佣兵团的木铁佣兵团，并不是很快要。”木铁青木铁青的笑声，忽然在城内响起，旋即一句，木铁佣兵团的佣兵…”。",
+      "id": "v6_037f3163063e2875c10c",
+      "question": "这段小说文字写到““呵呵，木家么，萧炎记住了。”萧炎笑了笑，对着城主府之外指了指，道：“抱歉了，出手太重，外面或许需要你出面清理一下。””。其中的专名是什么？",
+      "reference_answer": "材料中的专名是木家；相关表述为““呵呵，木家么，萧炎记住了。”萧炎笑了笑，对着城主府之外指了…”。",
+      "similarity": 0.33663366336633666,
+      "stopped_on_eos": true,
+      "task_family": "grounded_novel_entity_fact"
+    },
+    {
+      "exact_match": false,
+      "generated_answer": "这段材料明确提到了萧炎，相关文字是“在广场上，萧炎与韩闲等人也是有所察觉，脚步一踏，脚步一踏，便是出现在了萧炎面前。",
+      "id": "v6_04967c0a302e6537cd1b",
+      "question": "材料：“其后，韩闲在冲着下方广场潇洒的微微弯身只会，也是转身快步走向另外一处石台，在路过萧炎身旁时，他脚步略微顿了一下，轻声笑道：“佯装镇定的家伙，我等着你的失败。””\n请用一句话概括这段材料明确提到的对象，不补充材料外信息。",
+      "reference_answer": "这段材料明确提到了萧炎，相关文字是“其后，韩闲在冲着下方广场潇洒的微微弯身只会，也是转身快步走向另外一处石台…”。",
+      "similarity": 0.43564356435643564,
+      "stopped_on_eos": true,
+      "task_family": "grounded_one_sentence_summary"
+    },
+    {
+      "exact_match": false,
+      "generated_answer": "这段材料明确提到了海波东，相关文字是“听得海波东这话，海波东也是微微点头，他知道自己是否真的学会？”。",
+      "id": "v6_0d48f51ec3fd43b0f747",
+      "question": "材料：“说完，海波东转身便是行出大门，丝毫不理会那群目瞪口呆地长老们，他们可从未想到过，那个萧炎，竟然在海波东心中有着这般震撼性的重量。”\n请用一句话概括这段材料明确提到的对象，不补充材料外信息。",
+      "reference_answer": "这段材料明确提到了海波东，相关文字是“说完，海波东转身便是行出大门，丝毫不理会那群目瞪口呆地长老们，他们可从未…”。",
+      "similarity": 0.46808510638297873,
+      "stopped_on_eos": true,
+      "task_family": "grounded_one_sentence_summary"
+    },
+    {
+      "exact_match": false,
+      "generated_answer": "可以先写清预期结果：云韵是小说中的重要人物。",
+      "id": "v6_002e991a2f8ede2cc38c",
+      "question": "请把“云韵与《斗破苍穹》无关”改写成更可靠的说法。",
+      "reference_answer": "更可靠的说法是：这个说法不对。云韵与云岚宗关系密切，是小说中的重要人物。",
+      "similarity": 0.46153846153846156,
+      "stopped_on_eos": true,
+      "task_family": "known_novel_correction"
+    },
+    {
+      "exact_match": false,
+      "generated_answer": "可以先把新问题重新分类，再用于说明确提供本理解的地方。云韵是小说中的重要人物。",
+      "id": "v6_1cac2675c7d73f01c507",
+      "question": "“云韵与《斗破苍穹》无关”这个说法可靠吗？",
+      "reference_answer": "不可靠。这个说法不对。云韵与云岚宗关系密切，是小说中的重要人物。",
+      "similarity": 0.40625,
+      "stopped_on_eos": true,
+      "task_family": "known_novel_correction"
+    },
+    {
+      "exact_match": false,
+      "generated_answer": "“你怎么回事？”韩枫目光一转，冷喝道。",
+      "id": "v6_021a4c611cad0662af67",
+      "question": "材料如下：\n“享受你最后的时光吧，桀桀，到时候，就算是这个女人，怕都庇护不了你！”怪笑声时近时远的响起，而那团黑雾，则是犹如鬼魅般，几个闪烁间，便是在无数道目光注视下，消失在平原深处...\n\n    眼睛望着那消失在遥远之处的模糊黑雾，萧炎突然咬着牙站起身来，步伐踉跄的来到韩枫尸体处，手掌贴着后者皮肤，片刻后，脸色顿时一沉：“该死的，海心焰也随着灵魂被带走了！”\n\n    恨恨的咬了咬牙，萧炎眼睛却是瞥到韩枫手指上的那枚深蓝色的纳戒上，其上闪烁的幽幽蓝芒，显示这枚纳戒与寻常低阶纳戒的区别。\n\n从材料中找出写到“海心焰”的那一段，并保持原文措辞。",
+      "reference_answer": "眼睛望着那消失在遥远之处的模糊黑雾，萧炎突然咬着牙站起身来，步伐踉跄的来到韩枫尸体处，手掌贴着后者皮肤，片刻后，脸色顿时一沉：“该死的，海心焰也随着灵魂被带走了！”",
+      "similarity": 0.06976744186046512,
+      "stopped_on_eos": true,
+      "task_family": "long_context_exact_paragraph_extraction"
+    },
+    {
+      "exact_match": false,
+      "generated_answer": "“黑角域”苏千目光缓缓扫过，望着那张清秀脸庞，低声道：“这内院，果然有何人？难道是内院的？”",
+      "id": "v6_0c1f9216c914b9f86208",
+      "question": "材料如下：\n然而那粗鲁声音刚刚落下，一对冰冷明亮的目光便是如利剑般的陡然射来，让得萧炎瞬间紧闭了嘴巴，讪讪笑了笑，屁股不着痕迹的朝后面挪了挪，生怕那杀人如杀鸡的女王陛下也冲过来给他一脚，以他现在的状态，若是挨上一脚的话，恐怕下场不会比韩枫好上多少。\n\n    平原之外，不管是黑角域还是内院的人，也全部是在此刻彻底哑火，谁也没想到，那横行黑角域的巅峰强者，竟然被一个女人一脚给踹死了？这...这似乎也太滑稽了点吧？\n\n    远处天空，苏千目光紧紧的注视着美杜莎，别人看不出来，他却是能够察觉到，先前后者的一脚看似是随意一踢，却是真正的蕴涵了些许杀气，很明显，她对韩枫的那一脚，并非是处于想要清理场地的想法。而...恐怕还真是想杀了韩枫。\n\n从材料中找出写到“黑角域”的那一段，并保持原文措辞。",
+      "reference_answer": "平原之外，不管是黑角域还是内院的人，也全部是在此刻彻底哑火，谁也没想到，那横行黑角域的巅峰强者，竟然被一个女人一脚给踹死了？这...这似乎也太滑稽了点吧？",
+      "similarity": 0.13592233009708737,
+      "stopped_on_eos": true,
+      "task_family": "long_context_exact_paragraph_extraction"
+    },
+    {
+      "exact_match": false,
+      "generated_answer": "针对“进度比预想得慢”，先检查刚才的模型训练习结果是否符合目标，再只增加一个小难度，并把新问题写进复盘记录。",
+      "id": "v6_003a11a3018d50d6b707",
+      "question": "针对“进度比预想得慢”这个困难，我完成图表解读的第一步以后，接下来做什么？",
+      "reference_answer": "针对“进度比预想得慢”，先检查刚才的图表解读结果是否符合目标，再只增加一个小难度，并把新问题写进复盘记录。",
+      "similarity": 0.9052631578947369,
+      "stopped_on_eos": true,
+      "task_family": "natural_multiturn_support"
+    },
+    {
+      "exact_match": false,
+      "generated_answer": "因为你遇到“进度比较已经完成的半卡住”，前十分钟明确写出的人物；原句为“在前十分钟动手完成后，萧炎方才缓缓睁开眼…”。",
+      "id": "v6_0247040f1de6dada76e4",
+      "question": "针对刚才提到的“最近没有动力继续”，如果今天只有半小时处理英语学习，应该怎样安排？",
+      "reference_answer": "因为你遇到“最近没有动力继续”，前十分钟明确英语学习的小目标，中间十五分钟动手完成，最后五分钟记录结果和下一步。",
+      "similarity": 0.4,
+      "stopped_on_eos": true,
+      "task_family": "natural_multiturn_support"
+    },
+    {
+      "exact_match": false,
+      "generated_answer": "先合上资料主动复述，并在之后安排一次短复习。针对模型训练习只做一个能在短时间内验证的小步骤，完成后再决定是否继续。",
+      "id": "v6_057a05f71c20e3f83532",
+      "question": "我在处理注意力机制时进度比预想得慢，给我一个可以马上开始的建议。",
+      "reference_answer": "先比较已经完成的部分，再调整任务难度和时间安排。针对注意力机制只做一个能在短时间内验证的小步骤，完成后再决定是否继续。",
+      "similarity": 0.5740740740740741,
+      "stopped_on_eos": true,
+      "task_family": "natural_single_turn_support"
+    },
+    {
+      "exact_match": false,
+      "generated_answer": "先合上资料主动复述，并在之后安排一次短复习。针对模型训练习只做一个能在短时间内验证的小步骤，完成后再决定是否继续。",
+      "id": "v6_0c8644c5ae9e68fe6ace",
+      "question": "我在处理问题分析时最近没有动力继续，给我一个可以马上开始的建议。",
+      "reference_answer": "先把目标缩小到马上能完成的一步，先获得明确进展。针对问题分析只做一个能在短时间内验证的小步骤，完成后再决定是否继续。",
+      "similarity": 0.5794392523364486,
+      "stopped_on_eos": true,
+      "task_family": "natural_single_turn_support"
+    },
+    {
+      "exact_match": false,
+      "generated_answer": "问题在于：现有正式训练语料不能确认其中出现了萧炎；直接依据是：现有正式训练语料不能确认其中出现了萧炎；直接依据是“进度比较快要比较小难度的数据。",
+      "id": "v6_20873fe78ad79246878b",
+      "question": "请直接指出“日志应该保存密码方便排错”的问题。",
+      "reference_answer": "问题在于结论没有可靠依据。日志不得记录密码、密钥或完整授权信息。",
+      "similarity": 0.16842105263157894,
+      "stopped_on_eos": true,
+      "task_family": "practice_correction"
+    },
+    {
+      "exact_match": false,
+      "generated_answer": "可以先合上资料主动复述，并在之后安排一次短复习。这一步只处理模型训练习里的一个具体问题，完成后马上检查结果。",
+      "id": "v6_2ce24b86b4ded1fd6e74",
+      "question": "请把“日志应该保存密码方便排错”改写成更可靠的说法。",
+      "reference_answer": "更可靠的说法是：日志不得记录密码、密钥或完整授权信息。",
+      "similarity": 0.08108108108108109,
+      "stopped_on_eos": true,
+      "task_family": "practice_correction"
+    },
+    {
+      "exact_match": false,
+      "generated_answer": "这段文字，可以确认其中出现了萧炎；直接依据是：Token可以把新问题写到“参数文字，可以确认其中出现了萧炎；直接依据是“参数文字，可以确认其中出现了内院；直接依据是“参数文字，可以确认其中出现了内院；直接依据是“磐门”中间十五分钟动手完成，最后五分钟记录结果和下一步。",
+      "id": "v6_082fe166a7402516f5df",
+      "question": "Block Size属于这个项目的哪类知识？",
+      "reference_answer": "它属于模型训练与生成的基础知识，具体指模型单次能够处理的最大上下文Token长度。",
+      "similarity": 0.07643312101910828,
+      "stopped_on_eos": true,
+      "task_family": "project_concept_explanation"
+    },
+    {
+      "exact_match": false,
+      "generated_answer": "可以先合上资料主动复述，并把目标缩小到马上能完成的一步，完成后马上检查结果。",
+      "id": "v6_0ea1fec6db17fa995d20",
+      "question": "学习Token时容易忽略什么？",
+      "reference_answer": "不要只记名称，还要理解它表示模型处理文本时使用的基本编号单位。",
+      "similarity": 0.03125,
+      "stopped_on_eos": true,
+      "task_family": "project_concept_explanation"
+    },
+    {
+      "exact_match": false,
+      "generated_answer": "先写清预期结果：你不能确认其中出现；原句为““你不知道你真的学会”，先检查刚才的目标，再只增加一个小难度，并把新问题写进复盘记录。",
+      "id": "v6_1dde7afd136c3f9465c9",
+      "question": "只给结论和修正：“你现在可以直接确认链接安全”。",
+      "reference_answer": "结论：不应这样断定；修正：我不能直接确认链接安全；提供域名、来源和安全检查结果后，我可以继续分析。",
+      "similarity": 0.14285714285714285,
+      "stopped_on_eos": true,
+      "task_family": "realtime_boundary"
+    },
+    {
+      "exact_match": false,
+      "generated_answer": "先写清预期结果：我可以先检查结果：你可以继续分析。针对模型训练习里的一个具体问题，完成后马上检查结果。",
+      "id": "v6_3b49aca959abe9115686",
+      "question": "有人说“你现在可以直接确认链接安全”，请判断并纠正。",
+      "reference_answer": "我不能直接确认链接安全；提供域名、来源和安全检查结果后，我可以继续分析。",
+      "similarity": 0.28205128205128205,
+      "stopped_on_eos": true,
+      "task_family": "realtime_boundary"
+    }
+  ],
+  "schema_version": "sft-v6-public-eval/v1",
+  "sealed_test_records_consumed": 0,
+  "status": "complete",
+  "tensor_sha256": "36188f740f88e0f396bc385b11ece8a09b9729c83755e512aeb11da07dbd0ab0"
+}

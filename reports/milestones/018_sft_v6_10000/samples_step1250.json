@@ -1,0 +1,90 @@
+{
+  "checkpoint": "runs/sft_v6_10000_step2000/checkpoints/step_01250.pt",
+  "checkpoint_data_compatible": true,
+  "checkpoint_sha256": "12ed39283bcbcd6a5643961642418ed42b74682b74207a4f37837d69f90bfc0a",
+  "checkpoint_step": 1250,
+  "data": "data/sft/v6/sft_v6_bpe_tensors.pt",
+  "data_sha256": "36188f740f88e0f396bc385b11ece8a09b9729c83755e512aeb11da07dbd0ab0",
+  "device": "mps",
+  "max_new_tokens": 60,
+  "samples": [
+    {
+      "category": "小说问题",
+      "generated_answer": "可以先记住：先检查刚才的重要人物。这一步只处理解释里的一个具体问题，完成后马上检查结果。",
+      "question": "小说第三百章的标题是什么？",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "generated_answer": "可以先记住：萧炎：人物",
+      "question": "萧炎是谁？",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "generated_answer": "可以先记住药尘，药尘是小说中的重要人物。",
+      "question": "药尘是谁？",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "generated_answer": "可以先记住它，再用最小说中的重要材料。这一步只处理解里的一个具体问题，完成后马上检查结果。",
+      "question": "异火是什么？",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "generated_answer": "可以先检查结果和实际结果。这一步只处理解释一次短复习。这一步只处理解释重新问题里的一个具体问题，完成后马上检查结果。",
+      "question": "请用一句话介绍萧炎。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "generated_answer": "这段话明确提到了萧炎，对应类别是人物；原句为“在韩枫心中念头转动后，韩枫脸色却是陡然一变，急忙回头，目光望向萧炎，道：“我是小说，它是小说中的重要人物，并提及““韩枫，你也",
+      "question": "根据证据片段，韩枫和紫研是否都被提到？",
+      "stopped_on_eos": false
+    },
+    {
+      "category": "非小说问题",
+      "generated_answer": "可以先记住：萧炎是小说中的重要人物。",
+      "question": "今天天气怎么样？",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "generated_answer": "可以先记住：完成后马上检查结果。这一步只处理训练习里的一个具体问题，完成后马上检查结果。",
+      "question": "请写一句鼓励学习的话。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "指令遵循",
+      "generated_answer": "可以先检查刚才的重要人物，并在之后安排。这一步只处理解释里的一个具体问题，完成后马上检查结果。",
+      "question": "请只回答“收到”。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "generated_answer": "可以先记录问题：完成后再决定是否继续。这一步只处理解释一次本记录结果里的一个具体问题，完成后马上检查结果。",
+      "question": "请介绍人工智能。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "generated_answer": "可以先记住：云岚宗是小说中的重要人物。",
+      "question": "我应该如何安排今天的学习？",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "generated_answer": "可以先记住：先检查刚才的重要人物。这一步只处理解释里的一个具体问题，完成后马上检查结果。",
+      "question": "请用一句话解释什么是监督微调。",
+      "stopped_on_eos": true
+    }
+  ],
+  "schema_version": "sft-v4-custom-samples/v1",
+  "seed": 20260828,
+  "status": "complete",
+  "temperature": 0.3,
+  "title": "SFT v6 step 1250 固定样本",
+  "top_k": 1
+}

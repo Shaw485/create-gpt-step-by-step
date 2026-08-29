@@ -1,0 +1,16 @@
+{
+  "schema_version": "sft-v6-selection/v1",
+  "status": "selected_for_iteration_not_release_ready",
+  "selected_checkpoint": "runs/sft_v6_10000_step2000/checkpoints/step_02000.pt",
+  "selected_checkpoint_sha256": "c78fe61bdcc1b86d2c8447db2b45862cd247798e9c7e6110b6b0065c7818a54a",
+  "selected_step": 2000,
+  "reason": "Lower public diagnostic loss, higher EOS rate, and higher mean text similarity than step 1250; behavior quality gate still failed.",
+  "public_diagnostic": {
+    "loss": 2.6331457481718097,
+    "eos_rate": 0.9583333333333334,
+    "exact_match_rate": 0.0,
+    "mean_similarity": 0.3039936742548361
+  },
+  "sealed_test_records_consumed": 0,
+  "release_ready": false
+}

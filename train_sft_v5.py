@@ -44,6 +44,7 @@ from training_runtime import (
     generate_run_id,
     load_checkpoint,
     restore_checkpoint,
+    resolve_module_log_levels,
 )
 
 
@@ -463,13 +464,15 @@ def main(argv: Sequence[str] | None = None) -> int:
     loggers = configure_module_loggers(
         args.run_dir / "logs",
         run_id,
-        {
-            "data": "INFO",
-            "sft": "INFO",
-            "validation": "INFO",
-            "checkpoint": "INFO",
-            "orchestrator": "INFO",
-        },
+        resolve_module_log_levels(
+            {
+                "data": "INFO",
+                "sft": "INFO",
+                "validation": "INFO",
+                "checkpoint": "INFO",
+                "orchestrator": "INFO",
+            }
+        ),
         max_bytes=int(base_config["logging"]["max_bytes"]),
         backup_count=int(base_config["logging"]["backup_count"]),
         console=bool(base_config["logging"]["console"]),

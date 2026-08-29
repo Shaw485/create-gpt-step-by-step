@@ -291,6 +291,19 @@ def configure_module_loggers(
     return result
 
 
+def resolve_module_log_levels(
+    defaults: Mapping[str, str],
+    *,
+    env_prefix: str = "GPT_LOG_LEVEL",
+) -> dict[str, str]:
+    """Apply per-module environment overrides without enabling global debug noise."""
+
+    return {
+        module: os.getenv(f"{env_prefix}_{module.upper()}", default)
+        for module, default in defaults.items()
+    }
+
+
 def close_module_loggers(loggers: Mapping[str, logging.Logger]) -> None:
     """Flush and close module handlers, which is useful between pipeline stages."""
     for logger in loggers.values():

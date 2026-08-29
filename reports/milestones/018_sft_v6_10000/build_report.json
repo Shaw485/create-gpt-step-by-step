@@ -1,0 +1,100 @@
+{
+  "chapter_partition_counts": {
+    "public_diagnostic": 96,
+    "sealed_test": 96,
+    "train": 1279,
+    "val": 128
+  },
+  "chapters": 1597,
+  "concepts": 256,
+  "corpus_path": "data/cloud_v4/train.txt",
+  "corpus_sha256": "3d16cb630d5fd25319513238296497b60870f7e078dac2477a9739c35ae3a777",
+  "dataset_path": "data/sft/v6/sft_v6_10000.jsonl",
+  "dataset_sha256": "6e1d6380a46dce6586dc1dbc28e7f52ebbd76c91fd604a0ec03d5900b3bc3876",
+  "dimension_splits": {
+    "correction_grounded_unknown_and_capability_boundary": {
+      "public_diagnostic": 30,
+      "sealed_test": 30,
+      "train": 400,
+      "val": 40
+    },
+    "evidence_reading_and_retrieval_qa": {
+      "public_diagnostic": 120,
+      "sealed_test": 120,
+      "train": 1600,
+      "val": 160
+    },
+    "instruction_format_and_length_control": {
+      "public_diagnostic": 54,
+      "sealed_test": 54,
+      "train": 720,
+      "val": 72
+    },
+    "natural_chat_and_multiturn": {
+      "public_diagnostic": 90,
+      "sealed_test": 90,
+      "train": 1200,
+      "val": 120
+    },
+    "novel_entities_facts_relations_timeline": {
+      "public_diagnostic": 198,
+      "sealed_test": 198,
+      "train": 2640,
+      "val": 264
+    },
+    "project_study_and_general_concepts": {
+      "public_diagnostic": 48,
+      "sealed_test": 48,
+      "train": 640,
+      "val": 64
+    },
+    "summarization_rewrite_continuation_expression": {
+      "public_diagnostic": 60,
+      "sealed_test": 60,
+      "train": 800,
+      "val": 80
+    }
+  },
+  "dimensions": {
+    "correction_grounded_unknown_and_capability_boundary": 500,
+    "evidence_reading_and_retrieval_qa": 2000,
+    "instruction_format_and_length_control": 900,
+    "natural_chat_and_multiturn": 1500,
+    "novel_entities_facts_relations_timeline": 3300,
+    "project_study_and_general_concepts": 800,
+    "summarization_rewrite_continuation_expression": 1000
+  },
+  "entities": 70,
+  "families": {
+    "curated_core_novel_identity": 300,
+    "grounded_concise_rewrite": 250,
+    "grounded_format_control": 900,
+    "grounded_next_paragraph_continuation": 500,
+    "grounded_novel_entity_fact": 3000,
+    "grounded_one_sentence_summary": 250,
+    "grounded_unknown": 100,
+    "known_novel_correction": 150,
+    "long_context_exact_paragraph_extraction": 2000,
+    "natural_multiturn_support": 1000,
+    "natural_single_turn_support": 500,
+    "practice_correction": 150,
+    "project_concept_explanation": 800,
+    "realtime_boundary": 100
+  },
+  "multiturn": 1000,
+  "next_gate": "validate_sft_v6.py",
+  "records": 10000,
+  "run_id": "sft-v6-build-20260829T042101Z-255ebeac",
+  "samples_path": "reports/milestones/018_sft_v6_10000/build_samples.md",
+  "schema_version": "sft-v6-build-report/v1",
+  "splits": {
+    "public_diagnostic": 600,
+    "sealed_test": 600,
+    "train": 8000,
+    "val": 800
+  },
+  "status": "built_pending_independent_validation",
+  "tokenizer_path": "data/scaling_a/bpe_3000/tokenizer.json",
+  "tokenizer_sha256": "e70cf3dc0ed185a6b22ab7dc08b6a850eeb59864ba161dd156c644e003862822",
+  "verified_corpus": 6900
+}

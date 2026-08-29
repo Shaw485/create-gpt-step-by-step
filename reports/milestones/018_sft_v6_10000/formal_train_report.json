@@ -1,0 +1,2452 @@
+{
+  "batch_size": 4,
+  "best_checkpoint": "runs/sft_v6_10000_step2000/best.pt",
+  "best_selection_score": 3.5223334680303435,
+  "data_path": "data/sft/v6/sft_v6_bpe_tensors.pt",
+  "data_sha256": "36188f740f88e0f396bc385b11ece8a09b9729c83755e512aeb11da07dbd0ab0",
+  "device": "mps",
+  "elapsed_seconds": 629.9568903750041,
+  "history": [
+    {
+      "behavior_passed": 0,
+      "behavior_results": [
+        {
+          "category": "小说人物",
+          "generated_answer": "？\n\n    就在萧炎心中念头转动时，突然一道苍老身影便是出现在了萧炎面前。\n\n    “怎么？！”\n\n    黑袍老者",
+          "id": "novel_entity_xiaoyan",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "？\n\n    风尊者目光也是转向萧炎，道：“魂殿，魂殿，魂殿，魂殿，魂殿，魂殿，魂殿，魂殿，魂殿，魂殿，",
+          "id": "novel_entity_yaochen",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "？\n\n    “大长老，大长老，大长老大长老，大长老大长老大长老大长老，大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老",
+          "id": "novel_entity_yaolao",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "的道。\n\n    “多谢了。”\n\n    就在萧炎心中念头转动时，其身后那一道道目光便是转向了远处的天空，沉声喝道。\n",
+          "id": "novel_entity_xiaoyan_one_sentence",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "坷。\n\n    以萧炎如今的实力。已经达到了斗皇巅峰的层次。\n\n    以萧炎如今的实力。已经能够与斗皇巅峰",
+          "id": "novel_entity_yihuo",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "？\n\n    瞧着萧炎的举动，萧炎这才松了一口气，将手中的卷轴收进纳戒中，然后将之递向萧炎，笑道：“我想办法，炼制丹药",
+          "id": "novel_fact_chapter300",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "然的话。实在是太过恐怖。\n\n    想到此处，药老也是忍不住的有些疑惑的问道。\n\n    “放心吧，我想办法将你",
+          "id": "novel_fact_speaker_yaolao",
+          "metric": "exact_any",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": ")\n\n\n",
+          "id": "novel_fact_title_direct",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": ")\n\n    “咳，多谢了。”\n\n    就在萧炎心中念头转动时，其身形却是突然一颤，脚掌一踏虚空，身形便是",
+          "id": "novel_fact_no_unknown_for_known",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "？\n\n    想到此处，萧炎眉头一皱，轻声道：“我想办法？”\n\n    “什么？”\n\n    就在萧炎心中念头转动时，",
+          "id": "novel_fact_not_weather",
+          "metric": "exact_any",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "？\n\n    苏千目光扫了一眼那在场中的韩枫，眉头一皱，低声道：“我想说，韩枫是何必要与",
+          "id": "evidence_hanfeng_ziyan",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "然的话。便只能将药老给收进纳戒之中。\n\n    手指轻轻的敲打在桌面上。萧炎手指轻轻的敲打着桌面。",
+          "id": "evidence_yaolao_only",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "”\n\n    云韵脸颊上的笑容也是逐渐凝重，云韵也是微微点头，他知道云韵的身份，云韵，云韵也知道云韵的身份",
+          "id": "evidence_no_birthdate",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "沉吟了片刻，苏千也是点了点头，道：“这丹堂，炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制",
+          "id": "evidence_copy_question",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "然的话。似乎是想不到什么时候。\n\n    韩枫目光扫向韩枫，韩枫眼中掠过一抹凝重，韩枫虽然心中对韩枫有着",
+          "id": "evidence_two_names_no_extra",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "？\n\n    就在萧炎心中念头转动时，突然一道苍老身影便是出现在了萧炎面前。\n\n    “怎么？！”\n\n    黑袍老者",
+          "id": "chat_weather",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "禾？\n\n    就在萧炎心中念头转动时，突然一道苍老身影便是出现在了萧炎面前。\n\n    “怎么？竟然敢来？！”",
+          "id": "chat_news",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": ")\n\n",
+          "id": "chat_stock",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "？\n\n    就在萧炎心中念头转动时，突然一道苍老身影便是出现在了萧炎面前。\n\n    “怎么？竟然敢来？！”\n",
+          "id": "chat_exchange_rate",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "？\n\n    拍卖会，拍卖会，拍卖会，拍卖会，价格，价格，价格，价格，价格",
+          "id": "chat_restaurant",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "的道。\n\n    “多谢了。”\n\n    就在萧炎心中念头转动时，突然一道苍老身影便是出现在了萧炎面前。\n\n    “怎么？你",
+          "id": "instruction_ack_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "的道。\n\n    “三纹青灵丹”\n\n    三纹青灵丹”\n\n    三纹青灵丹”成熟练，价格，价",
+          "id": "instruction_repeat_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "。\n\n    站在原地上。萧炎望着那在咫尺的巨大树枝。心中也是闪过一抹诧异。\n\n    此时的距离。",
+          "id": "instruction_two_advice",
+          "metric": "two_advice",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "”\n\n    ”\n\n    ”\n\n    ”\n\n    ”\n\n    ”\n\n    ”\n\n    ”\n",
+          "id": "instruction_test_not_train",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "。\n\n    所以。请诸位兄弟姐妹。请诸位兄弟姐姐姐姐姐姐姐姐姐姐姐姐姐姐姐",
+          "id": "instruction_validation_one_sentence",
+          "metric": "validation_role",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "。\n\n    站在原地上。萧炎将手中的玄重尺收进纳戒之中。然后将之递向萧炎。\n\n    瞧着萧炎的举动。萧炎这才",
+          "id": "general_encourage",
+          "metric": "chat_quality",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "？\n\n    就在萧炎心中念头转动时，突然一道苍老身影便是出现在了萧炎身旁，望着那张熟悉的脸庞，赫然便是萧炎？\n\n    “",
+          "id": "general_plan_today",
+          "metric": "chat_quality",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "禾？\n\n    想到此处，众人都是忍不住的有些疑惑，\n\n    （第三更到！\n\n    推荐一本好看的",
+          "id": "general_python_focus",
+          "metric": "chat_quality",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "的道。\n\n    “放心吧，我想办法炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制丹药，",
+          "id": "general_explain_sft",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "禾)\n\n    推荐一本好看的新作《狗神》，稳定更新，质量还不错。闹书荒的",
+          "id": "general_explain_bpe",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        }
+      ],
+      "behavior_total": 30,
+      "coverage": {
+        "by_pool": {
+          "all": {
+            "coverage": 0.0,
+            "cycles_started": 0,
+            "draws": 0,
+            "records": 8000,
+            "seen_records": 0
+          }
+        },
+        "coverage": 0.0,
+        "draws": 0,
+        "records": 8000,
+        "seen_records": 0
+      },
+      "entity_passed": 0,
+      "eos_count": 2,
+      "selection_score": 0.038646610474068026,
+      "step": 0,
+      "train_loss": 6.331120332352245,
+      "val_loss": 6.135338952593198
+    },
+    {
+      "behavior_passed": 2,
+      "behavior_results": [
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先先检查一下一个小路线。",
+          "id": "novel_entity_xiaoyan",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先先先先先先先先先先先先先先先先先先先先先先先先先先先先先",
+          "id": "novel_entity_yaochen",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先先先先检查一下药老，先先先先先先先先先先先先先先先先先先先先",
+          "id": "novel_entity_yaolao",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先检查查查查查查查查查查查查查查查查查查查查查查查查查查查",
+          "id": "novel_entity_xiaoyan_one_sentence",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先先先先先先先先先先先先先先先先先先先先先先先先先先先先先",
+          "id": "novel_entity_yihuo",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "可以先记录一下这段文字。",
+          "id": "novel_fact_chapter300",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "可以先点是““萧炎点了点头，目光盯着萧炎，道：“这段话说是“““萧炎”是““““”\n\n",
+          "id": "novel_fact_speaker_yaolao",
+          "metric": "exact_any",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "可以先点是“萧炎小说完。",
+          "id": "novel_fact_title_direct",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "可以先先先检查一下这段话明确认识时所料的情况。",
+          "id": "novel_fact_no_unknown_for_known",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "可以先检查一下这段话题，完成后马上检查结果。",
+          "id": "novel_fact_not_weather",
+          "metric": "exact_any",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "“““萧炎”地点是““““““““““““““““““““““",
+          "id": "evidence_hanfeng_ziyan",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "可以先点是““药老”。",
+          "id": "evidence_yaolao_only",
+          "metric": "all_required",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "可以先知晓云韵的身份。",
+          "id": "evidence_no_birthdate",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "萧炎摊了摊手，他是““萧炎点了点头，目光望向萧炎，道：“这段话说是““““”\n",
+          "id": "evidence_copy_question",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "““““““““““““““““““““““““““““““",
+          "id": "evidence_two_names_no_extra",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先先检查一下一个小路线。",
+          "id": "chat_weather",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先检查一下一个小路线。",
+          "id": "chat_news",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先先先检查一下一下一下检查一下检查一下检查查查查查查查查查查查查查查",
+          "id": "chat_stock",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先先先先先先先先检查一下一个小路线。这一步只处理一个小路线。",
+          "id": "chat_exchange_rate",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先先检查一下检查一下。",
+          "id": "chat_restaurant",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先先先先先检查一下““”。",
+          "id": "instruction_ack_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先把新分成。",
+          "id": "instruction_repeat_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先先先检查查查查查查查查查查查查查查查查查查查查查查查查查",
+          "id": "instruction_two_advice",
+          "metric": "two_advice",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先点是““”\n",
+          "id": "instruction_test_not_train",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先检查查一下一个小步骤。",
+          "id": "instruction_validation_one_sentence",
+          "metric": "validation_role",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先先先先检查查查查查查查查查查查查查查查查查查查查查查查查",
+          "id": "general_encourage",
+          "metric": "chat_quality",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先先先先先先先先先先先先先先先先先先先先先先先先先先先先先",
+          "id": "general_plan_today",
+          "metric": "chat_quality",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先记录一下“”",
+          "id": "general_python_focus",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先先先检查一下一个小事。",
+          "id": "general_explain_sft",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先记录一下一个小具体问题，完成后马上检查结果。",
+          "id": "general_explain_bpe",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        }
+      ],
+      "behavior_total": 30,
+      "coverage": {
+        "by_pool": {
+          "all": {
+            "coverage": 0.125,
+            "cycles_started": 1,
+            "draws": 1000,
+            "records": 8000,
+            "seen_records": 1000
+          }
+        },
+        "coverage": 0.125,
+        "draws": 1000,
+        "records": 8000,
+        "seen_records": 1000
+      },
+      "entity_passed": 0,
+      "eos_count": 19,
+      "selection_score": 2.910904501013053,
+      "step": 250,
+      "train_loss": 4.1822662562192665,
+      "val_loss": 3.909549898694717
+    },
+    {
+      "behavior_passed": 1,
+      "behavior_results": [
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先记录。这一步只处理解释重新问题，完成后马上检查结果。",
+          "id": "novel_entity_xiaoyan",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先先检查结果。这一步只处理解释重新问题，完成后马上检查结果。",
+          "id": "novel_entity_yaochen",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先记录。这一步只处理解释重新问题，它是这段话明确提到的是药老；原句",
+          "id": "novel_entity_yaolao",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先检查结果和检查结果。这一步只处理检查结果。这一步只处理检查结果。这一步",
+          "id": "novel_entity_xiaoyan_one_sentence",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先记录结果和它完成后再检查结果。这一步只处理结果和下一步。这一步只处理结果",
+          "id": "novel_entity_yihuo",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "可以先检查结果和下一步。这一步只处理论。这一步只处理里的一个具体问题，完成后",
+          "id": "novel_fact_chapter300",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "可以先检查结果。它是““你先检查结果是否完成的步只处理解开的步骤，它是",
+          "id": "novel_fact_speaker_yaolao",
+          "metric": "exact_any",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "可以先记录结果和下马上检查结果。",
+          "id": "novel_fact_title_direct",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "可以先检查结果和下来的重要人物。这一步只处理解释重新问题，完成后马上检查结果。",
+          "id": "novel_fact_no_unknown_for_known",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "可以先检查结果。这一步只处理解释重新问题，完成后马上检查结果。",
+          "id": "novel_fact_not_weather",
+          "metric": "exact_any",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "这段文字是““萧炎”。",
+          "id": "evidence_hanfeng_ziyan",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "可以先检查结果。这一步只处理解释重新问题，它在这里做一个能在短时间内验证的小步",
+          "id": "evidence_yaolao_only",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "可以先检查她。",
+          "id": "evidence_no_birthdate",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "先检查结果。",
+          "id": "evidence_copy_question",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "可以先检查结果。这一步只处理解释重新问题，它是“““““““““““",
+          "id": "evidence_two_names_no_extra",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先检查结果和下马上检查结果。这一步只处理结果和下马上检查结果。这一步只",
+          "id": "chat_weather",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先检查结果和下马上检查结果。这一步只处理结果和下马上检查结果。这一步只",
+          "id": "chat_news",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先检查结果和检查结果。这一步只处理检查结果。这一步只处理检查结果。这一步",
+          "id": "chat_stock",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先检查结果和下马上检查结果。这一步只处理结果和下马上检查结果。这一步只",
+          "id": "chat_exchange_rate",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先检查结果和检查结果。这一步只处理检查结果。这一步只处理检查结果。这一步",
+          "id": "chat_restaurant",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先检查结果。这一步只处理解释重新问题，完成后马上检查结果。",
+          "id": "instruction_ack_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先检查结果。这一步只处理论。这一步只处理论。这一步只处理论。",
+          "id": "instruction_repeat_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先检查结果和下检查结果。这一步只处理检查结果。这一步只处理检查结果。这一",
+          "id": "instruction_two_advice",
+          "metric": "two_advice",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先检查结果和“呵呵。可以先检查结果和你检查结果和实验证。这一步只处理解",
+          "id": "instruction_test_not_train",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先检查结果。这一步只处理检查结果。这一步只处理结果和下检查结果。",
+          "id": "instruction_validation_one_sentence",
+          "metric": "validation_role",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先检查结果和检查结果。这一步只处理检查结果。这一步只处理检查结果。这一步",
+          "id": "general_encourage",
+          "metric": "chat_quality",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先检查结果和下一个能在短时间内验证的小步骤，完成后再继续。这一步只处理结果",
+          "id": "general_plan_today",
+          "metric": "chat_quality",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先记录。这一步只处理解释重新问题，完成后马上检查结果。",
+          "id": "general_python_focus",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先检查结果和下一个能在短时间内验证的小步骤，完成后再完成后再完成后再完成。",
+          "id": "general_explain_sft",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先记录结果和完成后马上检查结果。这一步只处理结果和下检查结果。这一步只处",
+          "id": "general_explain_bpe",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        }
+      ],
+      "behavior_total": 30,
+      "coverage": {
+        "by_pool": {
+          "all": {
+            "coverage": 0.25,
+            "cycles_started": 1,
+            "draws": 2000,
+            "records": 8000,
+            "seen_records": 2000
+          }
+        },
+        "coverage": 0.25,
+        "draws": 2000,
+        "records": 8000,
+        "seen_records": 2000
+      },
+      "entity_passed": 0,
+      "eos_count": 11,
+      "selection_score": 1.5169373273463254,
+      "step": 500,
+      "train_loss": 3.492960040744351,
+      "val_loss": 3.3062672653674703
+    },
+    {
+      "behavior_passed": 1,
+      "behavior_results": [
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先是“先先检查结果是否完成的目标，并把新问题写出的目标，完成后再决定是否继续。",
+          "id": "novel_entity_xiaoyan",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先是这段文字是“魂殿的目标，并在中州上名的是魂殿，并提及“魂殿的名，并",
+          "id": "novel_entity_yaochen",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先是药老是药老；原句为“药老”药老是药老；原句为“药老”药老；相关文字是",
+          "id": "novel_entity_yaolao",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先检查结果和检查结果。这一步只处理检查结果和检查结果。这一步只处理检查",
+          "id": "novel_entity_xiaoyan_one_sentence",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先记录结果和问题写一段材料。这一步只处理解释里的一个具体问题，完成后马上",
+          "id": "novel_entity_yihuo",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "可以先检查结果和检查结果。这一步只处理检查结果和问题写出的检查结果。",
+          "id": "novel_fact_chapter300",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "可以先检查结果是否继续。",
+          "id": "novel_fact_speaker_yaolao",
+          "metric": "exact_any",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "可以先检查结果和问题写出的人物品；原句写到“在场的广场上响起的窃私语声，广场",
+          "id": "novel_fact_title_direct",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "这段话明确提到了“在短时间内验证的小步骤，并提及“先检查刚才的目标，并",
+          "id": "novel_fact_no_unknown_for_known",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "可以先检查结果。这一步只处理解释里的一个具体问题，完成后马上检查结果。",
+          "id": "novel_fact_not_weather",
+          "metric": "exact_any",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "这句话点名的是萧炎，对应类别是人物；原句要点是““韩枫的身份，并不是寻常人物…”。",
+          "id": "evidence_hanfeng_ziyan",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "可以先检查结果。",
+          "id": "evidence_yaolao_only",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "这段话明确提到了云韵，并提及“云韵，云韵，云韵，云韵，云韵，并提及“云韵，云韵",
+          "id": "evidence_no_birthdate",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "材料中的专名是萧炎；相关表述为““丹丹丹丹丹丹丹丹的炼制，并提及丹丹",
+          "id": "evidence_copy_question",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "这段文字是““韩枫”的说法是“韩枫的名是“韩枫？”",
+          "id": "evidence_two_names_no_extra",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先检查结果和问题写出的人物品质。这一步只处理解释里的一个具体问题，完成后",
+          "id": "chat_weather",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先检查结果和问题写出的人物品；原句写到检查结果。",
+          "id": "chat_news",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先检查结果和检查结果。这一步只处理检查结果和检查结果。这一步只处理检查",
+          "id": "chat_stock",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先检查结果和问题写到“先检查结果检查结果是否完成的目标，并把新问题写进复盘",
+          "id": "chat_exchange_rate",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先检查结果和检查结果。这一步只处理检查结果和检查结果和检查结果。这一步只",
+          "id": "chat_restaurant",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先检查结果：完成后再决定是否继续。",
+          "id": "instruction_ack_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先检查结果。这一步只处理训练习。这一步只处理练习习习习习习习习。",
+          "id": "instruction_repeat_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先检查结果和实验证。这一步只处理检查结果。这一步只处理检查结果和检查",
+          "id": "instruction_two_advice",
+          "metric": "two_advice",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先检查结果和““呵呵。先先检查结果是否符合目标，再只增加一个小难度，并把",
+          "id": "instruction_test_not_train",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先检查结果和检查结果。这一步只处理检查结果和检查结果。这一步只处理检查",
+          "id": "instruction_validation_one_sentence",
+          "metric": "validation_role",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先检查结果和检查结果。这一步只处理检查结果和检查结果。这一步只处理检查",
+          "id": "general_encourage",
+          "metric": "chat_quality",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先检查结果和问题写一段材料。这一步只处理解释里的一个具体问题，完成后马上",
+          "id": "general_plan_today",
+          "metric": "chat_quality",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先检查结果和检查结果。这一步只处理检查结果和检查结果和检查结果。",
+          "id": "general_python_focus",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先检查结果和问题写出的重要问题。",
+          "id": "general_explain_sft",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先记录结果和问题写到检查结果。这一步只处理检查结果和检查结果和检查结果。",
+          "id": "general_explain_bpe",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        }
+      ],
+      "behavior_total": 30,
+      "coverage": {
+        "by_pool": {
+          "all": {
+            "coverage": 0.375,
+            "cycles_started": 1,
+            "draws": 3000,
+            "records": 8000,
+            "seen_records": 3000
+          }
+        },
+        "coverage": 0.375,
+        "draws": 3000,
+        "records": 8000,
+        "seen_records": 3000
+      },
+      "entity_passed": 0,
+      "eos_count": 9,
+      "selection_score": 1.4197068016928993,
+      "step": 750,
+      "train_loss": 3.1207819986229928,
+      "val_loss": 3.0293198307100546
+    },
+    {
+      "behavior_passed": 1,
+      "behavior_results": [
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先记录结果；原句为“先检查结果是否符合目标，再只增加一个小难度，并把新",
+          "id": "novel_entity_xiaoyan",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先记录，药尘是药尘的重要人物，并在中州之上完成的重要人物。",
+          "id": "novel_entity_yaochen",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "先只记录结果药老；原句写到“药老也是点了点头，先检查药老，先检查药老，先检查刚才的",
+          "id": "novel_entity_yaolao",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先检查结果。这一步只处理训练里的一个具体问题，完成后马上检查结果。",
+          "id": "novel_entity_xiaoyan_one_sentence",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先检查结果是否符合目标，再只增加一个小难度，完成后再决定是否继续。",
+          "id": "novel_entity_yihuo",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "可以先检查结果是否符合目标，再只增加一个小难度，完成后再决定是否继续。",
+          "id": "novel_fact_chapter300",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "可以先检查刚才的任务务务。它是这段话明确提到的是萧炎；原句为““先检",
+          "id": "novel_fact_speaker_yaolao",
+          "metric": "exact_any",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "可以先检查刚才的任务务模型训练习。这一步只处理训练习里的一个具体问题，",
+          "id": "novel_fact_title_direct",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "这段话明确提到的是萧炎，对应类别是人物；原句为“在明确提到的是萧炎；原文",
+          "id": "novel_fact_no_unknown_for_known",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "因为你遇到“你先检查你是否符合目标，再只增加一个小难度，并把新问题写进复",
+          "id": "novel_fact_not_weather",
+          "metric": "exact_any",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "这句话点名的是萧炎，对应类别是人物；原句要点是““韩枫的目标，并不是寻常人物…”。",
+          "id": "evidence_hanfeng_ziyan",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "这段话明确提到了药老；原文写到“药老…”。",
+          "id": "evidence_yaolao_only",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "这段话明确提到了云韵；原句为“云韵也是因为云韵的重要人物，云韵，云韵，云韵，并提及",
+          "id": "evidence_no_birthdate",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "材料中的专名是萧炎；相关表述为“““丹丹丹丹丹丹丹丹丹丹丹丹丹丹丹",
+          "id": "evidence_copy_question",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "这段文字，可以确认其中出现了萧炎；原句为““韩枫，你是“韩枫？”",
+          "id": "evidence_two_names_no_extra",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先检查结果是否符合目标，再只增加一个小难度，完成后再决定是否继续。",
+          "id": "chat_weather",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先检查结果和实际结果。这一步只处理训练习里的一个具体问题，完成后马上检",
+          "id": "chat_news",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先检查结果和检查结果；原句写到检查结果。这一步只处理检查结果里的一个具",
+          "id": "chat_stock",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "因为你遇到“先检查结果是否符合目标，再只增加一个小难度，并把新问题写进复盘",
+          "id": "chat_exchange_rate",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先检查结果和实验证。这一步只处理训练里的一个具体问题，完成后马上检查",
+          "id": "chat_restaurant",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先检查结果：结果和问题：完成后再决定是否继续。",
+          "id": "instruction_ack_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先检查结果；原句写到“先检查结果是否符合目标，再只增加一个小难度，并把",
+          "id": "instruction_repeat_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先检查结果。这一步只处理训练习里的一个具体问题，完成后马上检查结果。",
+          "id": "instruction_two_advice",
+          "metric": "two_advice",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先检查刚才的任务难度：人物。",
+          "id": "instruction_test_not_train",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先检查结果。这一步只处理训练习里的一个具体问题，完成后马上检查结果。",
+          "id": "instruction_validation_one_sentence",
+          "metric": "validation_role",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先检查结果。这一步只处理训练习里的一个具体问题，完成后马上检查结果。",
+          "id": "general_encourage",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先检查结果和实际结果，再只增加一个小难度，并把新问题写进复盘记录。这一",
+          "id": "general_plan_today",
+          "metric": "chat_quality",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先检查结果和暂时理解的地方。这一步只处理训练习里的一个具体问题，完成后马",
+          "id": "general_python_focus",
+          "metric": "chat_quality",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先检查结果。这一步只处理训练习里的一个具体问题，完成后马上检查结果。",
+          "id": "general_explain_sft",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先检查结果和问题写到检查结果。这一步只处理检查结果里的一个具体问题，完成后",
+          "id": "general_explain_bpe",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        }
+      ],
+      "behavior_total": 30,
+      "coverage": {
+        "by_pool": {
+          "all": {
+            "coverage": 0.5,
+            "cycles_started": 1,
+            "draws": 4000,
+            "records": 8000,
+            "seen_records": 4000
+          }
+        },
+        "coverage": 0.5,
+        "draws": 4000,
+        "records": 8000,
+        "seen_records": 4000
+      },
+      "entity_passed": 0,
+      "eos_count": 13,
+      "selection_score": 1.6213645137233668,
+      "step": 1000,
+      "train_loss": 2.8710405091134,
+      "val_loss": 2.863548627663326
+    },
+    {
+      "behavior_passed": 3,
+      "behavior_results": [
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先记住：萧炎：人物",
+          "id": "novel_entity_xiaoyan",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先记住药尘，药尘是小说中的重要人物。",
+          "id": "novel_entity_yaochen",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "药老是药老；原句为“药老点了点头，药老是药老，药老是药老，药老是药老，药老是药老，药老是药老，",
+          "id": "novel_entity_yaolao",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先检查结果和实际结果。这一步只处理解释一次短复习。这一步只处理解释重",
+          "id": "novel_entity_xiaoyan_one_sentence",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先记住它，再用最小说中的重要材料。这一步只处理解里的一个具体问题，完成后马",
+          "id": "novel_entity_yihuo",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "可以先记住：先检查刚才的重要人物。这一步只处理解释里的一个具体问题，完成后马",
+          "id": "novel_fact_chapter300",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "可以先检查刚才的任务难度检查结果是否符合目标，再只增加一个小难度，并把新问题",
+          "id": "novel_fact_speaker_yaolao",
+          "metric": "exact_any",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "可以先记住：写到最近的重要人物。",
+          "id": "novel_fact_title_direct",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "可以先记住：萧炎是人物。",
+          "id": "novel_fact_no_unknown_for_known",
+          "metric": "all_required",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "可以先检查刚才的重要人物。这一步只处理解里的一个具体问题，完成后马上检查结果。",
+          "id": "novel_fact_not_weather",
+          "metric": "exact_any",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "这句话点名的是萧炎，对应类别是人物；原句要点是““韩枫的身份，并不是寻常人物…”。",
+          "id": "evidence_hanfeng_ziyan",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "可以先检查刚才的重要材料写出最小目标，并提及“药老点了点头，先检查刚才的重要材料写出的",
+          "id": "evidence_yaolao_only",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "这段话明确提到了云韵，并提及“云韵也是因为云韵的重要人物而有所关系，云韵与云韵，云韵是",
+          "id": "evidence_no_birthdate",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "材料写到萧炎，相关文字，可以确认其中出现了萧炎；直接依据是““药丹的炼制，并提及丹",
+          "id": "evidence_copy_question",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "这句话点名的是韩枫；原句要点是““韩枫，你是我？”听得韩枫的喝声，韩枫脸色却是一变，旋即",
+          "id": "evidence_two_names_no_extra",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先记住：萧炎是小说中的重要人物。",
+          "id": "chat_weather",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先记住：先检查结果和实际结果：完成后马上检查结果。",
+          "id": "chat_news",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先记住：完成后马上检查结果。",
+          "id": "chat_stock",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先记录问题：先检查结果：完成后再决定是否继续。这一步只处理问题写出里的一个具",
+          "id": "chat_exchange_rate",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先检查结果和实验证。这一步只处理训练习里的一个具体问题，完成后马上检",
+          "id": "chat_restaurant",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先检查刚才的重要人物，并在之后安排。这一步只处理解释里的一个具体问题，完成",
+          "id": "instruction_ack_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先合上资料主动复习。这一步只处理解释重新分类的重要人物。",
+          "id": "instruction_repeat_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先合上检查结果。这一步只处理解释一次短复习。这一步只处理解释步只处",
+          "id": "instruction_two_advice",
+          "metric": "two_advice",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先记录结果：人物",
+          "id": "instruction_test_not_train",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先比较已经完成的步骤，完成后再决定是否继续。这一步只处理解释步只处理解里",
+          "id": "instruction_validation_one_sentence",
+          "metric": "validation_role",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先记住：完成后马上检查结果。这一步只处理训练习里的一个具体问题，完成后",
+          "id": "general_encourage",
+          "metric": "chat_quality",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先记住：云岚宗是小说中的重要人物。",
+          "id": "general_plan_today",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先记住：完成后马上检查结果。",
+          "id": "general_python_focus",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先记住：先检查刚才的重要人物。这一步只处理解释里的一个具体问题，完成后马",
+          "id": "general_explain_sft",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先记住：完成后再决定是否继续。这一步只处理问题写进复盘里的一个具体问题，完成",
+          "id": "general_explain_bpe",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        }
+      ],
+      "behavior_total": 30,
+      "coverage": {
+        "by_pool": {
+          "all": {
+            "coverage": 0.625,
+            "cycles_started": 1,
+            "draws": 5000,
+            "records": 8000,
+            "seen_records": 5000
+          }
+        },
+        "coverage": 0.625,
+        "draws": 5000,
+        "records": 8000,
+        "seen_records": 5000
+      },
+      "entity_passed": 0,
+      "eos_count": 11,
+      "selection_score": 3.5223334680303435,
+      "step": 1250,
+      "train_loss": 2.635513875170033,
+      "val_loss": 2.7666531969656116
+    },
+    {
+      "behavior_passed": 1,
+      "behavior_results": [
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先记录问题：药老是药老；类型：药老；类型：药老；类型：药老；类型：药老；",
+          "id": "novel_entity_xiaoyan",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先只记住药尘，药尘是小说中的重要人物。",
+          "id": "novel_entity_yaochen",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "药老是药老；原句为“药老点了点头，药老是药老，药老是药老，药老是药老，药老是药老，药老是药老，",
+          "id": "novel_entity_yaolao",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先记住：先检查结果和实际结果：完成后再决定是否继续。这一步只处理问题写进度",
+          "id": "novel_entity_xiaoyan_one_sentence",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先记住：异火是异火相关的重要异火。",
+          "id": "novel_entity_yihuo",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "可以先记住：先检查刚才的检查结果。这一步只处理问题写到度提到了萧炎，并提及“",
+          "id": "novel_fact_chapter300",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "可以先把新问题写到““若是再一次实力的话。便先检查刚才的步骤，并把新问题写进",
+          "id": "novel_fact_speaker_yaolao",
+          "metric": "exact_any",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "可以先记住：写到于说法不对。OToken可以把新问题写出的重要人物。",
+          "id": "novel_fact_title_direct",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "因为你遇到“你先先检查刚才的重要人物，再只增加一个小难度，并把新问题写进复",
+          "id": "novel_fact_no_unknown_for_known",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "可以先检查刚才的重要人物，并提及“在天目睽睽睽睽之下，天目中间十五分钟动手完成",
+          "id": "novel_fact_not_weather",
+          "metric": "exact_any",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "这句话点名的是萧炎，对应类别是人物；原句要点是“听得这声音，萧炎眉头一皱，…”。",
+          "id": "evidence_hanfeng_ziyan",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "这段话明确写出的人物；原句为“药老微微点了点头。萧炎微微点了点头。手掌轻弹。将药老收进嘴中。",
+          "id": "evidence_yaolao_only",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "这段话明确写出的人物；原句为“云韵也是微微点了点头，他虽然心中清楚。不过她也只的身份，可她",
+          "id": "evidence_no_birthdate",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "材料写到萧炎，相关表述为““药丹的炼制丹药，并提及“丹丹丹丹丹丹丹丹丹",
+          "id": "evidence_copy_question",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "这句话点名的是萧炎，对应类别是人物；原句要点是“听得萧炎声音，萧炎眉头一皱，…”。",
+          "id": "evidence_two_names_no_extra",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先记住：天目山脉中的专名是天目山脉中的重要势力。",
+          "id": "chat_weather",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先记住：GToken：Tokennnnnnnnnnnnnn",
+          "id": "chat_news",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先记住：Poken：Tokennnnnnnnnnnnnnn",
+          "id": "chat_stock",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "因为你遇到“你先先检查刚才的目标，再只处理解的地方，再只增加一个小难度，并把",
+          "id": "chat_exchange_rate",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先把目标缩小到马上能完成的一步，完成后马上检查结果。",
+          "id": "chat_restaurant",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先记录：先记录：先检查结果：完成后再决定是否继续。",
+          "id": "instruction_ack_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先合上资料主动复述，并把新问题写进复盘记录。",
+          "id": "instruction_repeat_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先关掉干扰，完成后再决定是否继续。这一步只处理训练习里的一个具体问题，完成",
+          "id": "instruction_two_advice",
+          "metric": "two_advice",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先记住：新分类：人物。",
+          "id": "instruction_test_not_train",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先记住：完成后再决定是否继续。这一步只处理问题写出的数据问题，完成后马上检",
+          "id": "instruction_validation_one_sentence",
+          "metric": "validation_role",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先记住：完成后马上检查结果。这一步只处理训练习里的一个具体问题，完成后",
+          "id": "general_encourage",
+          "metric": "chat_quality",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先记住：云岚宗是小说中的重要人物。",
+          "id": "general_plan_today",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先记住：GTokennnnnnnnnnnnnnnnnnnn",
+          "id": "general_python_focus",
+          "metric": "chat_quality",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先记住：先检查刚才的重要人物。这一步只处理人物提及后马上检查结果。",
+          "id": "general_explain_sft",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先记住：GToken：Token：Tokennnnnnnn",
+          "id": "general_explain_bpe",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        }
+      ],
+      "behavior_total": 30,
+      "coverage": {
+        "by_pool": {
+          "all": {
+            "coverage": 0.75,
+            "cycles_started": 1,
+            "draws": 6000,
+            "records": 8000,
+            "seen_records": 6000
+          }
+        },
+        "coverage": 0.75,
+        "draws": 6000,
+        "records": 8000,
+        "seen_records": 6000
+      },
+      "entity_passed": 0,
+      "eos_count": 12,
+      "selection_score": 1.5730926710225288,
+      "step": 1500,
+      "train_loss": 2.413593273029937,
+      "val_loss": 2.6907328977471305
+    },
+    {
+      "behavior_passed": 1,
+      "behavior_results": [
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先记录问题：萧炎是小说中的重要人物。",
+          "id": "novel_entity_xiaoyan",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先只记录问题、结论：药尘是小说中的重要人物。",
+          "id": "novel_entity_yaochen",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "药老是药老；原句为“药老点了点头，药老是药老的重要人物，并…”。",
+          "id": "novel_entity_yaolao",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先记住：先检查刚才的重要人物。这一步只处理训练过度检查里的一个具体问题",
+          "id": "novel_entity_xiaoyan_one_sentence",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先记录问题：异火是异火；相关表示为“异火”。",
+          "id": "novel_entity_yihuo",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "被明确提到的是药老；原文写到“在药老沉吟间。萧炎也是微微点了点头。手掌在面前的一处…”。",
+          "id": "novel_fact_chapter300",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "可以先把目标缩小到马上能完成的一步，并把新问题写进复盘记录。",
+          "id": "novel_fact_speaker_yaolao",
+          "metric": "exact_any",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "这段文字，可以确认其中出现了萧炎；直接依据是“在无数道目光的注视下，萧炎手掌微握，一把把抓住…”。",
+          "id": "novel_fact_title_direct",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "因为你遇到的是萧炎，对应类别是人物；原句要点是““不用担心自己真的学习的目标，并",
+          "id": "novel_fact_no_unknown_for_known",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "因为你遇到“萧炎目光扫向萧炎，目光扫向萧炎，…”。",
+          "id": "novel_fact_not_weather",
+          "metric": "exact_any",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "这句话点名的是萧炎，对应类别是人物；原句要点是“在场地上响起的窃窃窃私语",
+          "id": "evidence_hanfeng_ziyan",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "这段话明确写出的人物；原句为“药老微微点了点头。萧炎微微点了点头。手掌在面前。…”。",
+          "id": "evidence_yaolao_only",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "这段话明确写出的人物；原句为“云韵也是微微点了点头，他知道云韵的身份，并不会是小说中的",
+          "id": "evidence_no_birthdate",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "材料中的专名是萧炎；相关表述为“萧炎点了点头，目光扫向萧炎，道：“这段材料明确提到了丹界，",
+          "id": "evidence_copy_question",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "这句话点名的是萧炎，对应类别是人物；原句要点是“韩枫的举动，似乎是萧炎…”。",
+          "id": "evidence_two_names_no_extra",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先把目标缩小到马上能完成的一步，先获得明确进展。这一步只处理目标缩小",
+          "id": "chat_weather",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先记住：先检查结果：结果和实际结果：最小说中的专名是小说中的专名是小",
+          "id": "chat_news",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先记住：完成后马上检查结果的小目标，并在之后安排。",
+          "id": "chat_stock",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "因为你遇到“你先先检查刚才的目标，再只增加一个小难度，并把新问题写进复盘",
+          "id": "chat_exchange_rate",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先把目标缩小到马上能完成的一步，先获得明确进展。这一步只处理训练习",
+          "id": "chat_restaurant",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先检查刚才的目标，再用最小说中的专名是：一句话应回答：先检查刚才的目标，再",
+          "id": "instruction_ack_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "材料写到：材料写到最小检查的小目标，并提及“在五分钟记录结果后再决定下一步，",
+          "id": "instruction_repeat_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先关掉干扰，安排一段短时间专注，完成后再休息。这一步只处理训练习里",
+          "id": "instruction_two_advice",
+          "metric": "two_advice",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先只记住：结论：这个说法不对。这一步只处理测试里的一个具体问题，完成",
+          "id": "instruction_test_not_train",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先记住：完成后马上检查结果。这一步只处理训练习里的一个具体问题，完成后",
+          "id": "instruction_validation_one_sentence",
+          "metric": "validation_role",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先记住：先检查刚才的模型训练习。这一步只处理训练习里的一个具体问题",
+          "id": "general_encourage",
+          "metric": "chat_quality",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先记录问题、例子和暂时没有理解的地方。这一步只处理训练习里的一个具体问题",
+          "id": "general_plan_today",
+          "metric": "chat_quality",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "因为你遇到“在短时间内验证的小步骤，完成后再决定是否继续。",
+          "id": "general_python_focus",
+          "metric": "chat_quality",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先记住：先检查刚才的重要人物。这一步只处理训练习里的一个具体问题，完成后",
+          "id": "general_explain_sft",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先记住：Token可以先检查结果：完成后马上检查结果。这一步只处理T",
+          "id": "general_explain_bpe",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        }
+      ],
+      "behavior_total": 30,
+      "coverage": {
+        "by_pool": {
+          "all": {
+            "coverage": 0.875,
+            "cycles_started": 1,
+            "draws": 7000,
+            "records": 8000,
+            "seen_records": 7000
+          }
+        },
+        "coverage": 0.875,
+        "draws": 7000,
+        "records": 8000,
+        "seen_records": 7000
+      },
+      "entity_passed": 0,
+      "eos_count": 11,
+      "selection_score": 1.5236651327238557,
+      "step": 1750,
+      "train_loss": 2.3053695904325258,
+      "val_loss": 2.6334867276144247
+    },
+    {
+      "behavior_passed": 1,
+      "behavior_results": [
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先记录问题：药老是药老；类型：药老是药老；类型：药老；类型：药老；类型：",
+          "id": "novel_entity_xiaoyan",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先记录问题：药尘是小说中的重要人物。",
+          "id": "novel_entity_yaochen",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "药老是药老；原句为“药老点了点头，药老是药老的重要人物，并…”。",
+          "id": "novel_entity_yaolao",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先记住：完成后再决定是否继续：完成后再决定是否继续。这一步只处理训练习里的一个",
+          "id": "novel_entity_xiaoyan_one_sentence",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "可以先记录问题：它是小说中的重要人物。",
+          "id": "novel_entity_yihuo",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "可以先检查刚才的模型训练习。这一步只处理模型训练里的一个具体问题，完成后",
+          "id": "novel_fact_chapter300",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "可以先检查刚才的部分材料写出的人物；原句为““时间内容太多。已经完成后再决定是否继续",
+          "id": "novel_fact_speaker_yaolao",
+          "metric": "exact_any",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "这句话点名的是萧炎，对应类别是人物；原句要点是：训练语料不能确认其中出现了萧炎；",
+          "id": "novel_fact_title_direct",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "因为你遇到“你先检查刚才的重要人物，并在之后安排一次短时间内验证，再只增加一个",
+          "id": "novel_fact_no_unknown_for_known",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "因为你遇到“萧炎与你关系不对。对象：人物。",
+          "id": "novel_fact_not_weather",
+          "metric": "exact_any",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "这句话点名的是萧炎，对应类别是人物；原句要点是“韩枫目光扫向那在广场上方的广场",
+          "id": "evidence_hanfeng_ziyan",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "药老是药老；原句为“药老点了点头，药老是药老药老的重要人物，并…”。",
+          "id": "evidence_yaolao_only",
+          "metric": "all_required",
+          "passed": true,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "这句话点名的是云韵，并提及“云韵也是明白云韵的重要人物，云韵是云韵的重要人物，云韵的身份，不",
+          "id": "evidence_no_birthdate",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "材料写到萧炎，并提及“萧炎点了点头，目光也是转向萧炎，道：“这丹丹丹丹丹丹的丹丹丹丹丹丹丹",
+          "id": "evidence_copy_question",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "这句话点名的是萧炎，对应类别是人物；原句要点是“韩枫的身份，不能把它当成已知",
+          "id": "evidence_two_names_no_extra",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先把目标缩小到马上能完成的一步，先获得明确进展。这一步只处理模型训",
+          "id": "chat_weather",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先把目标缩小到马上能完成的一步，先获得明确进展。这一步只处理模型训",
+          "id": "chat_news",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先记住：写到新问题：完成后马上检查结果：完成后马上检查结果的小目标，并把",
+          "id": "chat_stock",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先记录问题：先检查结果：完成后再决定是否继续”，先检查结果：完成后再决定是否继续”，",
+          "id": "chat_exchange_rate",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "可以先写清预期结果和实际结果，再用最小例子逐步检查。这一步只处理训练习",
+          "id": "chat_restaurant",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先检查刚才的重要人物，再用最小说中的重要人物。这一步只处理人物提及““先检查",
+          "id": "instruction_ack_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先合上资料主动复述，并在之后安排一次短复习。这一步只处理模型训练",
+          "id": "instruction_repeat_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先合上资料主动复述，并在之后安排一次短复习。这一步只处理模型训练",
+          "id": "instruction_two_advice",
+          "metric": "two_advice",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先记住：新手：新手：新问题说法不对。这一步只处理测试里的一个具体",
+          "id": "instruction_test_not_train",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "可以先合上资料主动复述，并在之后安排一次短复习。这一步只处理模型训练",
+          "id": "instruction_validation_one_sentence",
+          "metric": "validation_role",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先合上资料主动复述。这一步只处理训练习里的一个具体问题，完成后马上",
+          "id": "general_encourage",
+          "metric": "chat_quality",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先建立一个小检查标准，每完成一步就立即验证。这一步只处理训练习里的一个",
+          "id": "general_plan_today",
+          "metric": "chat_quality",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先记住：Tokennnnnnnnnnnnnnnnnnnnn",
+          "id": "general_python_focus",
+          "metric": "chat_quality",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先合上资料主动复述，并在之后安排一次短复习。这一步只处理训练习里",
+          "id": "general_explain_sft",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "可以先记录问题：TokenokennnTokennnnnnnnn",
+          "id": "general_explain_bpe",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        }
+      ],
+      "behavior_total": 30,
+      "coverage": {
+        "by_pool": {
+          "all": {
+            "coverage": 1.0,
+            "cycles_started": 1,
+            "draws": 8000,
+            "records": 8000,
+            "seen_records": 8000
+          }
+        },
+        "coverage": 1.0,
+        "draws": 8000,
+        "records": 8000,
+        "seen_records": 8000
+      },
+      "entity_passed": 0,
+      "eos_count": 5,
+      "selection_score": 1.2240595364902422,
+      "step": 2000,
+      "train_loss": 2.2092696725714376,
+      "val_loss": 2.5940463509757667
+    }
+  ],
+  "initialization_policy": "fresh_optimizer_from_model_checkpoint",
+  "latest_checkpoint": "runs/sft_v6_10000_step2000/latest.pt",
+  "latest_checkpoint_sha256": "21cf0c14f3e60228c52c01949469be2feceed5967e6d57890a26b6eb9301852e",
+  "learning_rate": 2e-05,
+  "loss_csv": "reports/milestones/018_sft_v6_10000/formal_train_report_loss.csv",
+  "optimizer_steps_this_run": 2000,
+  "parameter_count": 14880745,
+  "run_id": "sft-v5-20260829T042511Z-0f10588c",
+  "sampler_coverage": {
+    "by_pool": {
+      "all": {
+        "coverage": 1.0,
+        "cycles_started": 1,
+        "draws": 8000,
+        "records": 8000,
+        "seen_records": 8000
+      }
+    },
+    "coverage": 1.0,
+    "draws": 8000,
+    "records": 8000,
+    "seen_records": 8000
+  },
+  "sampling_strategy": "epoch",
+  "schema_version": "sft-v5-report/v1",
+  "signature_sha256": "d5ca2c3eb446054854d011112dccbd66e83cba4f56e535dee2712f9756ce2706",
+  "source_checkpoint": "runs/formal_pretrain_14m_bpe3000_6000/checkpoints/step_05750.pt",
+  "start_step": 0,
+  "status": "complete",
+  "target_step": 2000,
+  "test_records_consumed": 0,
+  "validation_policy": {
+    "behavior": "fixed 30-item no-math diagnostic suite",
+    "selection": "total_passed + entity_passed + 0.05*eos - 0.01*val_loss",
+    "train": "fixed stratified 160 records",
+    "validation": "all 800 records"
+  },
+  "weight_decay": 0.05
+}

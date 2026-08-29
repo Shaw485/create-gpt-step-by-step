@@ -107,8 +107,11 @@ def main(argv: Sequence[str] | None = None) -> int:
         report = json.loads(args.report.read_text(encoding="utf-8"))
         png_path = args.png or args.report.with_name(args.report.stem + "_loss_curve.png")
         svg_path = args.svg or args.report.with_name(args.report.stem + "_loss_curve.svg")
+        history = report.get("loss_history", report.get("history"))
+        if history is None:
+            raise ValueError("report contains neither loss_history nor history")
         result = plot_loss_history(
-            report["loss_history"],
+            history,
             png_path,
             svg_path,
             args.title,

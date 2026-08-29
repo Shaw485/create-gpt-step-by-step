@@ -1,0 +1,133 @@
+{
+  "answers_33_tokens_or_more": 6813,
+  "answers_97_tokens_or_more": 20,
+  "chapter_split_leaks": 0,
+  "concept_coverage": 256,
+  "corpus_path": "data/cloud_v4/train.txt",
+  "corpus_sha256": "3d16cb630d5fd25319513238296497b60870f7e078dac2477a9739c35ae3a777",
+  "dataset_path": "data/sft/v6/sft_v6_10000.jsonl",
+  "dataset_sha256": "6e1d6380a46dce6586dc1dbc28e7f52ebbd76c91fd604a0ec03d5900b3bc3876",
+  "dimension_counts": {
+    "correction_grounded_unknown_and_capability_boundary": 500,
+    "evidence_reading_and_retrieval_qa": 2000,
+    "instruction_format_and_length_control": 900,
+    "natural_chat_and_multiturn": 1500,
+    "novel_entities_facts_relations_timeline": 3300,
+    "project_study_and_general_concepts": 800,
+    "summarization_rewrite_continuation_expression": 1000
+  },
+  "dimension_split_counts": {
+    "correction_grounded_unknown_and_capability_boundary": {
+      "public_diagnostic": 30,
+      "sealed_test": 30,
+      "train": 400,
+      "val": 40
+    },
+    "evidence_reading_and_retrieval_qa": {
+      "public_diagnostic": 120,
+      "sealed_test": 120,
+      "train": 1600,
+      "val": 160
+    },
+    "instruction_format_and_length_control": {
+      "public_diagnostic": 54,
+      "sealed_test": 54,
+      "train": 720,
+      "val": 72
+    },
+    "natural_chat_and_multiturn": {
+      "public_diagnostic": 90,
+      "sealed_test": 90,
+      "train": 1200,
+      "val": 120
+    },
+    "novel_entities_facts_relations_timeline": {
+      "public_diagnostic": 198,
+      "sealed_test": 198,
+      "train": 2640,
+      "val": 264
+    },
+    "project_study_and_general_concepts": {
+      "public_diagnostic": 48,
+      "sealed_test": 48,
+      "train": 640,
+      "val": 64
+    },
+    "summarization_rewrite_continuation_expression": {
+      "public_diagnostic": 60,
+      "sealed_test": 60,
+      "train": 800,
+      "val": 80
+    }
+  },
+  "duplicate_canonical_questions": 0,
+  "duplicate_exact_questions": 0,
+  "duplicate_ids": 0,
+  "entity_coverage": 70,
+  "evidence_sha_split_leaks": 0,
+  "hard_failures": [],
+  "long_context_128_to_384_records": 2068,
+  "math_records": 0,
+  "max_answer_tokens": 131,
+  "max_sequence_tokens": 389,
+  "maximum_general_exact_answer_repeat": 1,
+  "mean_answer_tokens": 36.7728,
+  "mean_sequence_tokens": 120.3615,
+  "meta_wrapper_records": 0,
+  "min_answer_tokens": 1,
+  "min_sequence_tokens": 19,
+  "multiturn_records": 1000,
+  "pending_review_records": 0,
+  "punctuation_error_records": 0,
+  "record_level_risks": 0,
+  "records": 10000,
+  "refusal_records": 102,
+  "refusal_share": 0.0102,
+  "risk_code_counts": {},
+  "risk_queue_path": "data/sft/v6/sft_v6_validation_risks.jsonl",
+  "run_id": "sft-v6-validation-20260829T042111Z-ed586d22",
+  "schema_version": "sft-v6-validation-report/v1",
+  "semantic_group_split_leaks": 0,
+  "sequence_tokens_by_split": {
+    "public_diagnostic": 73493,
+    "sealed_test": 73808,
+    "train": 959032,
+    "val": 97282
+  },
+  "sequences_over_512": 0,
+  "split_counts": {
+    "public_diagnostic": 600,
+    "sealed_test": 600,
+    "train": 8000,
+    "val": 800
+  },
+  "status": "passed",
+  "supervised_tokens_by_split": {
+    "public_diagnostic": 25576,
+    "sealed_test": 25985,
+    "train": 337900,
+    "val": 34167
+  },
+  "task_family_counts": {
+    "curated_core_novel_identity": 300,
+    "grounded_concise_rewrite": 250,
+    "grounded_format_control": 900,
+    "grounded_next_paragraph_continuation": 500,
+    "grounded_novel_entity_fact": 3000,
+    "grounded_one_sentence_summary": 250,
+    "grounded_unknown": 100,
+    "known_novel_correction": 150,
+    "long_context_exact_paragraph_extraction": 2000,
+    "natural_multiturn_support": 1000,
+    "natural_single_turn_support": 500,
+    "practice_correction": 150,
+    "project_concept_explanation": 800,
+    "realtime_boundary": 100
+  },
+  "tokenizer_path": "data/scaling_a/bpe_3000/tokenizer.json",
+  "tokenizer_sha256": "e70cf3dc0ed185a6b22ab7dc08b6a850eeb59864ba161dd156c644e003862822",
+  "total_sequence_tokens": 1203615,
+  "unencodable_records": 0,
+  "verified_chapters": 1597,
+  "verified_corpus_records": 6900
+}

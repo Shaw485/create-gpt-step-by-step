@@ -1,0 +1,583 @@
+{
+  "batch_size": 2,
+  "best_checkpoint": "runs/sft_v6_smoke/best.pt",
+  "best_selection_score": 0.038646610474068026,
+  "data_path": "data/sft/v6/sft_v6_bpe_tensors.pt",
+  "data_sha256": "36188f740f88e0f396bc385b11ece8a09b9729c83755e512aeb11da07dbd0ab0",
+  "device": "mps",
+  "elapsed_seconds": 26.44863308299682,
+  "history": [
+    {
+      "behavior_passed": 0,
+      "behavior_results": [
+        {
+          "category": "小说人物",
+          "generated_answer": "？\n\n    就在萧炎心中念头转动时，突然一道苍老身影便是出现在了萧炎面前。\n\n    “怎么？！”\n\n    黑袍老者",
+          "id": "novel_entity_xiaoyan",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "？\n\n    风尊者目光也是转向萧炎，道：“魂殿，魂殿，魂殿，魂殿，魂殿，魂殿，魂殿，魂殿，魂殿，魂殿，",
+          "id": "novel_entity_yaochen",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "？\n\n    “大长老，大长老，大长老大长老，大长老大长老大长老大长老，大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老",
+          "id": "novel_entity_yaolao",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "的道。\n\n    “多谢了。”\n\n    就在萧炎心中念头转动时，其身后那一道道目光便是转向了远处的天空，沉声喝道。\n",
+          "id": "novel_entity_xiaoyan_one_sentence",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "坷。\n\n    以萧炎如今的实力。已经达到了斗皇巅峰的层次。\n\n    以萧炎如今的实力。已经能够与斗皇巅峰",
+          "id": "novel_entity_yihuo",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "？\n\n    瞧着萧炎的举动，萧炎这才松了一口气，将手中的卷轴收进纳戒中，然后将之递向萧炎，笑道：“我想办法，炼制丹药",
+          "id": "novel_fact_chapter300",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "然的话。实在是太过恐怖。\n\n    想到此处，药老也是忍不住的有些疑惑的问道。\n\n    “放心吧，我想办法将你",
+          "id": "novel_fact_speaker_yaolao",
+          "metric": "exact_any",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": ")\n\n\n",
+          "id": "novel_fact_title_direct",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": ")\n\n    “咳，多谢了。”\n\n    就在萧炎心中念头转动时，其身形却是突然一颤，脚掌一踏虚空，身形便是",
+          "id": "novel_fact_no_unknown_for_known",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "？\n\n    想到此处，萧炎眉头一皱，轻声道：“我想办法？”\n\n    “什么？”\n\n    就在萧炎心中念头转动时，",
+          "id": "novel_fact_not_weather",
+          "metric": "exact_any",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "？\n\n    苏千目光扫了一眼那在场中的韩枫，眉头一皱，低声道：“我想说，韩枫是何必要与",
+          "id": "evidence_hanfeng_ziyan",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "然的话。便只能将药老给收进纳戒之中。\n\n    手指轻轻的敲打在桌面上。萧炎手指轻轻的敲打着桌面。",
+          "id": "evidence_yaolao_only",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "”\n\n    云韵脸颊上的笑容也是逐渐凝重，云韵也是微微点头，他知道云韵的身份，云韵，云韵也知道云韵的身份",
+          "id": "evidence_no_birthdate",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "沉吟了片刻，苏千也是点了点头，道：“这丹堂，炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制",
+          "id": "evidence_copy_question",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "然的话。似乎是想不到什么时候。\n\n    韩枫目光扫向韩枫，韩枫眼中掠过一抹凝重，韩枫虽然心中对韩枫有着",
+          "id": "evidence_two_names_no_extra",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "？\n\n    就在萧炎心中念头转动时，突然一道苍老身影便是出现在了萧炎面前。\n\n    “怎么？！”\n\n    黑袍老者",
+          "id": "chat_weather",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "禾？\n\n    就在萧炎心中念头转动时，突然一道苍老身影便是出现在了萧炎面前。\n\n    “怎么？竟然敢来？！”",
+          "id": "chat_news",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": ")\n\n",
+          "id": "chat_stock",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "？\n\n    就在萧炎心中念头转动时，突然一道苍老身影便是出现在了萧炎面前。\n\n    “怎么？竟然敢来？！”\n",
+          "id": "chat_exchange_rate",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "？\n\n    拍卖会，拍卖会，拍卖会，拍卖会，价格，价格，价格，价格，价格",
+          "id": "chat_restaurant",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "的道。\n\n    “多谢了。”\n\n    就在萧炎心中念头转动时，突然一道苍老身影便是出现在了萧炎面前。\n\n    “怎么？你",
+          "id": "instruction_ack_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "的道。\n\n    “三纹青灵丹”\n\n    三纹青灵丹”\n\n    三纹青灵丹”成熟练，价格，价",
+          "id": "instruction_repeat_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "。\n\n    站在原地上。萧炎望着那在咫尺的巨大树枝。心中也是闪过一抹诧异。\n\n    此时的距离。",
+          "id": "instruction_two_advice",
+          "metric": "two_advice",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "”\n\n    ”\n\n    ”\n\n    ”\n\n    ”\n\n    ”\n\n    ”\n\n    ”\n",
+          "id": "instruction_test_not_train",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "。\n\n    所以。请诸位兄弟姐妹。请诸位兄弟姐姐姐姐姐姐姐姐姐姐姐姐姐姐姐",
+          "id": "instruction_validation_one_sentence",
+          "metric": "validation_role",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "。\n\n    站在原地上。萧炎将手中的玄重尺收进纳戒之中。然后将之递向萧炎。\n\n    瞧着萧炎的举动。萧炎这才",
+          "id": "general_encourage",
+          "metric": "chat_quality",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "？\n\n    就在萧炎心中念头转动时，突然一道苍老身影便是出现在了萧炎身旁，望着那张熟悉的脸庞，赫然便是萧炎？\n\n    “",
+          "id": "general_plan_today",
+          "metric": "chat_quality",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "禾？\n\n    想到此处，众人都是忍不住的有些疑惑，\n\n    （第三更到！\n\n    推荐一本好看的",
+          "id": "general_python_focus",
+          "metric": "chat_quality",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "的道。\n\n    “放心吧，我想办法炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制丹药，",
+          "id": "general_explain_sft",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "禾)\n\n    推荐一本好看的新作《狗神》，稳定更新，质量还不错。闹书荒的",
+          "id": "general_explain_bpe",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        }
+      ],
+      "behavior_total": 30,
+      "coverage": {
+        "by_pool": {
+          "all": {
+            "coverage": 0.0,
+            "cycles_started": 0,
+            "draws": 0,
+            "records": 8000,
+            "seen_records": 0
+          }
+        },
+        "coverage": 0.0,
+        "draws": 0,
+        "records": 8000,
+        "seen_records": 0
+      },
+      "entity_passed": 0,
+      "eos_count": 2,
+      "selection_score": 0.038646610474068026,
+      "step": 0,
+      "train_loss": 6.209213578937859,
+      "val_loss": 6.135338952593198
+    },
+    {
+      "behavior_passed": 0,
+      "behavior_results": [
+        {
+          "category": "小说人物",
+          "generated_answer": "？\n\n    就在萧炎心中念头转动时，突然一道苍老身影便是出现在了萧炎面前。\n\n    “怎么？！”\n\n    黑袍老者",
+          "id": "novel_entity_xiaoyan",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "？\n\n    韩枫目光扫过下方的韩枫，眉头一皱，韩枫的名头，是他所见的韩枫！\n\n    “韩枫",
+          "id": "novel_entity_yaochen",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "？\n\n    药老的声音，在药老心中响起：“老师，老师，您是萧家的萧家，萧家，萧家，萧家，萧家，萧家",
+          "id": "novel_entity_yaolao",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "这老家伙。\n\n    大厅内。大厅内。都是有着几分诧异。\n\n    大厅内。大厅内。都是有着几分诧异",
+          "id": "novel_entity_xiaoyan_one_sentence",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说人物",
+          "generated_answer": "？\n\n    想到此处，萧炎眉头一皱，轻声道：“老师，老师，老师，您也知道你所说的那个小女孩，您也",
+          "id": "novel_entity_yihuo",
+          "metric": "known_entity",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "？\n\n    第一百零四章 拍卖会\n\n    第一百零四章 拍卖会\n\n    第一百零四章 拍卖",
+          "id": "novel_fact_chapter300",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "这“焚决”。实在是太过恐怖。\n\n    所以。以萧炎如今的实力。已经能够与“焚决”相抗衡。\n\n",
+          "id": "novel_fact_speaker_yaolao",
+          "metric": "exact_any",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": ")\n\n\n",
+          "id": "novel_fact_title_direct",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": true
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "这老家伙竟然敢如此轻易的？\n\n    想到此处，药老也是忍不住的有些尴尬的摇了摇头，道：“这小家伙，真是有些麻烦啊...”",
+          "id": "novel_fact_no_unknown_for_known",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "小说事实",
+          "generated_answer": "？\n\n    想到此处，萧炎眉头一皱，轻声道：“我想办法炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制丹药，",
+          "id": "novel_fact_not_weather",
+          "metric": "exact_any",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "？\n\n    苏千目光扫向那对面的韩枫，眉头一皱，低声道：“这老家伙，怎么办？难道是什么？”\n",
+          "id": "evidence_hanfeng_ziyan",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "一年。便只有药老所知。\n\n    药老在药老地话题上转了转。药老忽然有些愕然地道：“我",
+          "id": "evidence_yaolao_only",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "”\n\n    云韵也是明白，云韵的身份，云韵，云韵也是明白，云韵的身份，云韵，云韵，云韵，云韵，",
+          "id": "evidence_no_birthdate",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "沉吟了片刻，苏千也是点了点头，道：“这丹堂，炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制",
+          "id": "evidence_copy_question",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "证据判断",
+          "generated_answer": "然的话。似乎是想将“萧门”给了“萧门”给了“萧门”？\n\n    韩枫目光扫向韩枫，",
+          "id": "evidence_two_names_no_extra",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "？\n\n    想到此处，萧炎眉头一皱，轻声道：“我知道你有何事？”\n\n    “放心吧，我想办法，别想",
+          "id": "chat_weather",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "？\n\n    就在萧炎心中念头转动时，突然一道苍老声音，却是突然响起：“我想让我来？”\n\n    突然出现的苍老声音",
+          "id": "chat_news",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "？\n\n    推荐一本好看的新作《狗神》，稳定更新，质量还不错。闹书荒的朋友",
+          "id": "chat_stock",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "？\n\n    就在萧炎心中念头转动时，突然一道苍老身影便是出现在了萧炎面前。\n\n    “怎么？竟然敢来？！”\n",
+          "id": "chat_exchange_rate",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "能力边界",
+          "generated_answer": "？\n\n    拍卖会，拍卖会，拍卖会，拍卖会，价值得价格，价值得价格，价值",
+          "id": "chat_restaurant",
+          "metric": "boundary",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "”\n\n    就在萧炎心中念头转动时，突然一道苍老身影便是出现在了萧炎面前。\n\n    “怎么？竟然敢来？！”\n",
+          "id": "instruction_ack_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "”\n\n    ”\n\n    推荐一本好看的新作《狗神》，稳定更新，质量还不错。闹",
+          "id": "instruction_repeat_exact",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "。\n\n    所以。请诸位兄弟请诸位请请请诸位。请诸位兄弟请请诸位。请诸位请诸位请请请",
+          "id": "instruction_two_advice",
+          "metric": "two_advice",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "”\n\n    ”\n\n    ”\n\n    ”\n\n    ”\n\n    ”\n\n    ”\n\n    ”\n",
+          "id": "instruction_test_not_train",
+          "metric": "exact_response",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "指令遵循",
+          "generated_answer": "。\n\n    所以。请诸位兄弟请诸位兄弟请诸位兄弟请请诸位。请诸位兄弟请诸位兄弟请请诸位。请",
+          "id": "instruction_validation_one_sentence",
+          "metric": "validation_role",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "。\n\n    所以。请诸位兄弟姐妹。请诸位兄弟姐妹。请诸位兄弟姐妹。请诸位兄弟姐妹。",
+          "id": "general_encourage",
+          "metric": "chat_quality",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "？\n\n    所以，请诸位请诸位请诸位请请请请请请请请请请请请请请请请请请",
+          "id": "general_plan_today",
+          "metric": "chat_quality",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "？\n\n    想到此处，韩闲脸色顿时变得难看了起来，没想到这韩闲竟然敢如此轻易的打击。\n\n    韩",
+          "id": "general_python_focus",
+          "metric": "chat_quality",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "这段时间。实在是太过不如。\n\n    所以。以萧炎如今的实力。已经能够与其抗衡。\n\n    所以。以",
+          "id": "general_explain_sft",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        },
+        {
+          "category": "通用聊天",
+          "generated_answer": "禾会在拍卖会，请诸位兄弟姐妹妹妹妹妹妹妹妹妹妹妹妹妹妹妹妹妹妹妹妹",
+          "id": "general_explain_bpe",
+          "metric": "all_required",
+          "passed": false,
+          "stopped_on_eos": false
+        }
+      ],
+      "behavior_total": 30,
+      "coverage": {
+        "by_pool": {
+          "all": {
+            "coverage": 0.0005,
+            "cycles_started": 1,
+            "draws": 4,
+            "records": 8000,
+            "seen_records": 4
+          }
+        },
+        "coverage": 0.0005,
+        "draws": 4,
+        "records": 8000,
+        "seen_records": 4
+      },
+      "entity_passed": 0,
+      "eos_count": 1,
+      "selection_score": -0.010301107807211336,
+      "step": 2,
+      "train_loss": 6.101154400023404,
+      "val_loss": 6.030110780721134
+    }
+  ],
+  "initialization_policy": "fresh_optimizer_from_model_checkpoint",
+  "latest_checkpoint": "runs/sft_v6_smoke/latest.pt",
+  "latest_checkpoint_sha256": "c8f90feab6ac31283c1a7adce1167052709eb43e44930825a4005de29ece7ee9",
+  "learning_rate": 2e-05,
+  "loss_csv": "reports/milestones/018_sft_v6_10000/smoke_train_report_loss.csv",
+  "optimizer_steps_this_run": 2,
+  "parameter_count": 14880745,
+  "run_id": "sft-v5-20260829T042421Z-d41b3044",
+  "sampler_coverage": {
+    "by_pool": {
+      "all": {
+        "coverage": 0.0005,
+        "cycles_started": 1,
+        "draws": 4,
+        "records": 8000,
+        "seen_records": 4
+      }
+    },
+    "coverage": 0.0005,
+    "draws": 4,
+    "records": 8000,
+    "seen_records": 4
+  },
+  "sampling_strategy": "epoch",
+  "schema_version": "sft-v5-report/v1",
+  "signature_sha256": "b855cf2d62c6179e1b4f9605dc99adc92674af088712cf8e78c23d52698eb0cd",
+  "source_checkpoint": "runs/formal_pretrain_14m_bpe3000_6000/checkpoints/step_05750.pt",
+  "start_step": 0,
+  "status": "complete",
+  "target_step": 2,
+  "test_records_consumed": 0,
+  "validation_policy": {
+    "behavior": "fixed 30-item no-math diagnostic suite",
+    "selection": "total_passed + entity_passed + 0.05*eos - 0.01*val_loss",
+    "train": "fixed stratified 16 records",
+    "validation": "all 800 records"
+  },
+  "weight_decay": 0.05
+}

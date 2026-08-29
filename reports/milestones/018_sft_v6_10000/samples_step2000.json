@@ -1,0 +1,90 @@
+{
+  "checkpoint": "runs/sft_v6_10000_step2000/checkpoints/step_02000.pt",
+  "checkpoint_data_compatible": true,
+  "checkpoint_sha256": "c78fe61bdcc1b86d2c8447db2b45862cd247798e9c7e6110b6b0065c7818a54a",
+  "checkpoint_step": 2000,
+  "data": "data/sft/v6/sft_v6_bpe_tensors.pt",
+  "data_sha256": "36188f740f88e0f396bc385b11ece8a09b9729c83755e512aeb11da07dbd0ab0",
+  "device": "mps",
+  "max_new_tokens": 60,
+  "samples": [
+    {
+      "category": "小说问题",
+      "generated_answer": "可以先检查刚才的模型训练习。这一步只处理模型训练里的一个具体问题，完成后马上检查结果。",
+      "question": "小说第三百章的标题是什么？",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "generated_answer": "可以先记录问题：药老是药老；类型：药老是药老；类型：药老；类型：药老；类型：药老；类型：药老；类型：药老；类型：药老；类型：药老；类型：药老；类型：",
+      "question": "萧炎是谁？",
+      "stopped_on_eos": false
+    },
+    {
+      "category": "小说问题",
+      "generated_answer": "可以先记录问题：药尘是小说中的重要人物。",
+      "question": "药尘是谁？",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "generated_answer": "可以先记录问题：它是小说中的重要人物。",
+      "question": "异火是什么？",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "generated_answer": "可以先记住：完成后再决定是否继续：完成后再决定是否继续。这一步只处理训练习里的一个具体问题，完成后马上检查结果。",
+      "question": "请用一句话介绍萧炎。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "小说问题",
+      "generated_answer": "这句话点名的是萧炎，对应类别是人物；原句要点是“韩枫目光一转，望向萧炎，道：“萧炎，先检查刚才的紫研，并把它当成已知小…”。",
+      "question": "根据证据片段，韩枫和紫研是否都被提到？",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "generated_answer": "可以先把目标缩小到马上能完成的一步，先获得明确进展。这一步只处理模型训练里的一个具体问题，完成后马上检查结果。",
+      "question": "今天天气怎么样？",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "generated_answer": "可以先合上资料主动复述。这一步只处理训练习里的一个具体问题，完成后马上检查结果。",
+      "question": "请写一句鼓励学习的话。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "指令遵循",
+      "generated_answer": "可以先检查刚才的重要人物，再用最小说中的重要人物。这一步只处理人物提及““先检查刚才的身份，不能把它当成已知小说人物；原句为““先检查刚才的身份，不能把它",
+      "question": "请只回答“收到”。",
+      "stopped_on_eos": false
+    },
+    {
+      "category": "非小说问题",
+      "generated_answer": "可以先把目标缩小到马上能完成的一步，先获得明确进展。这一步只处理模型训练习里的一个具体问题，完成后马上检查结果。",
+      "question": "请介绍人工智能。",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "generated_answer": "可以先建立一个小检查标准，每完成一步就立即验证。这一步只处理训练习里的一个具体问题，完成后马上检查结果。",
+      "question": "我应该如何安排今天的学习？",
+      "stopped_on_eos": true
+    },
+    {
+      "category": "非小说问题",
+      "generated_answer": "可以先合上资料主动复述，并在之后安排一次短复习。这一步只处理训练习里的一个具体问题，完成后马上检查结果。",
+      "question": "请用一句话解释什么是监督微调。",
+      "stopped_on_eos": true
+    }
+  ],
+  "schema_version": "sft-v4-custom-samples/v1",
+  "seed": 20260828,
+  "status": "complete",
+  "temperature": 0.3,
+  "title": "SFT v6 step 2000 固定样本",
+  "top_k": 1
+}

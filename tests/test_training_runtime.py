@@ -1,5 +1,6 @@
 import json
 import logging
+import os
 from pathlib import Path
 import signal
 import tempfile
@@ -24,6 +25,7 @@ from training_runtime import (
     load_checkpoint,
     load_versioned_config,
     restore_checkpoint,
+    resolve_module_log_levels,
 )
 
 
@@ -54,6 +56,22 @@ class FakeScaler:
 
 
 class TrainingRuntimeTests(unittest.TestCase):
+    def test_module_log_levels_can_be_overridden_independently(self):
+        variable = "GPT_LOG_LEVEL_VALIDATION"
+        previous = os.environ.get(variable)
+        os.environ[variable] = "DEBUG"
+        try:
+            resolved = resolve_module_log_levels(
+                {"data": "INFO", "validation": "OFF"}
+            )
+        finally:
+            if previous is None:
+                os.environ.pop(variable, None)
+            else:
+                os.environ[variable] = previous
+
+        self.assertEqual(resolved, {"data": "INFO", "validation": "DEBUG"})
+
     def test_versioned_config_requires_matching_sha256(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "config.json"
