@@ -1,0 +1,49 @@
+{
+  "schema_version": "sft-v6-target-mix/v1",
+  "status": "planned_not_built",
+  "model_parameters": 14880745,
+  "tokenizer": "data/scaling_a/bpe_3000/tokenizer.json",
+  "context_tokens": 512,
+  "target_records": 10000,
+  "acceptable_record_range": [8000, 12000],
+  "splits": {
+    "train": 8000,
+    "val": 800,
+    "public_diagnostic": 600,
+    "sealed_test": 600
+  },
+  "target_train_supervised_bpe_tokens": [300000, 500000],
+  "target_total_sequence_bpe_tokens": [800000, 1500000],
+  "primary_dimensions": {
+    "novel_entities_facts_relations_timeline": 3300,
+    "evidence_reading_and_retrieval_qa": 2000,
+    "natural_chat_and_multiturn": 1500,
+    "summarization_rewrite_continuation_expression": 1000,
+    "instruction_format_and_length_control": 900,
+    "project_study_and_general_concepts": 800,
+    "correction_grounded_unknown_and_capability_boundary": 500
+  },
+  "minimum_coverage": {
+    "multiturn_records": 1000,
+    "evidence_context_128_to_384_token_records": 1000,
+    "important_people": 60,
+    "factions_places_skills_flames_pills_and_other_concepts": 40,
+    "evidence_chapters": 1000
+  },
+  "release_gates": {
+    "p0_risk_records": 0,
+    "pending_review_records": 0,
+    "unencodable_records": 0,
+    "sequences_over_512": 0,
+    "training_meta_wrapper_records": 0,
+    "maximum_general_exact_answer_repeat": 5,
+    "maximum_refusal_share": 0.05,
+    "sealed_test_prompt_or_fact_overlap": 0,
+    "test_used_for_checkpoint_selection": false
+  },
+  "excluded_scope": [
+    "mathematics_training",
+    "PPO-style RLHF before SFT acceptance",
+    "template-only expansion used to hit a record count"
+  ]
+}

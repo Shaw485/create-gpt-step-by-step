@@ -1,0 +1,1268 @@
+{
+  "capability_dimensions": {
+    "capability_and_uncertainty": {
+      "families_present": {
+        "capability_boundary": 178,
+        "capability_boundary_specific": 10
+      },
+      "records": 188,
+      "share": 0.04163
+    },
+    "concept_explanation": {
+      "families_present": {
+        "concept_explanation_repair": 51
+      },
+      "records": 51,
+      "share": 0.011293
+    },
+    "instruction_following": {
+      "families_present": {
+        "instruction_following": 297,
+        "instruction_following_repair": 50
+      },
+      "records": 347,
+      "share": 0.076838
+    },
+    "natural_conversation": {
+      "families_present": {
+        "ambiguity_unknown_clarification": 93,
+        "conversation_control": 150,
+        "general_chat": 390,
+        "natural_conversation_repair": 95
+      },
+      "records": 728,
+      "share": 0.161205
+    },
+    "novel_factual_and_grounded_qa": {
+      "families_present": {
+        "context_understanding": 450,
+        "direct_fact": 747,
+        "evidence_entity_match": 80,
+        "fact_verification_correction": 300,
+        "novel_core_entity_v5_2": 120,
+        "novel_correction_v5_2": 40,
+        "novel_fact_anchor": 16,
+        "novel_known_entity_v5_2": 120,
+        "novel_relation_v5_2": 40,
+        "novel_unknown_grounded_v5_2": 40,
+        "relationship_reason_timeline": 600
+      },
+      "records": 2553,
+      "share": 0.565323
+    },
+    "project_and_study_assistance": {
+      "families_present": {
+        "project_explanation": 382,
+        "study_planning": 267
+      },
+      "records": 649,
+      "share": 0.143711
+    },
+    "unmapped": {
+      "families_present": {},
+      "records": 0
+    }
+  },
+  "content_shape": {
+    "chapter_number_records": 2306,
+    "chapter_order_mismatch_records": 2,
+    "meta_markers": {
+      "by_family": {
+        "ambiguity_unknown_clarification": 93,
+        "context_understanding": 294,
+        "conversation_control": 42,
+        "direct_fact": 192,
+        "fact_verification_correction": 128,
+        "novel_relation_v5_2": 8,
+        "relationship_reason_timeline": 238
+      },
+      "by_marker": {
+        "依据当前事实卡": 8,
+        "原问题是": 986,
+        "当前证据片段": 827,
+        "现只做局部证据核验": 841
+      },
+      "records": 995,
+      "share": 0.220328
+    },
+    "multi_turn_records": 0,
+    "refusal_markers": {
+      "by_family": {
+        "instruction_following": 10,
+        "novel_unknown_grounded_v5_2": 20
+      },
+      "by_marker": {
+        "不能确认": 20,
+        "无法确定": 10
+      },
+      "records": 30,
+      "share": 0.006643
+    },
+    "single_turn_records": 4516,
+    "style_prefix_records": 1299,
+    "top_exact_answers": [
+      {
+        "answer": "当前证据片段明确提到了萧炎。",
+        "count": 55,
+        "share": 0.012179
+      },
+      {
+        "answer": "可以，我们慢慢聊。你现在最想说的是什么？",
+        "count": 45,
+        "share": 0.009965
+      },
+      {
+        "answer": "我是一个本地训练出来的迷你GPT实验模型。",
+        "count": 45,
+        "share": 0.009965
+      },
+      {
+        "answer": "先把目标缩小，只做十分钟。能开始，比一次做完更重要。",
+        "count": 45,
+        "share": 0.009965
+      },
+      {
+        "answer": "先找出卡住的具体点，再回到一个最小例子重新做。",
+        "count": 45,
+        "share": 0.009965
+      },
+      {
+        "answer": "你好，我在。你想聊什么，或者想让我帮你做什么？",
+        "count": 43,
+        "share": 0.009522
+      },
+      {
+        "answer": "可以。先说最困扰你的一个点，我们只处理这一件事。",
+        "count": 43,
+        "share": 0.009522
+      },
+      {
+        "answer": "你不用一下子变得很厉害，先完成一个小步骤就很好。",
+        "count": 42,
+        "share": 0.0093
+      },
+      {
+        "answer": "能不用照抄、用自己的话解释，并独立完成一个小练习，就算开始学会了。",
+        "count": 39,
+        "share": 0.008636
+      },
+      {
+        "answer": "前十分钟复习，十五分钟练习，最后五分钟记录问题。",
+        "count": 38,
+        "share": 0.008415
+      },
+      {
+        "answer": "我不能直接确认链接安全。不要随便输入密码，可以先检查域名和来源。",
+        "count": 38,
+        "share": 0.008415
+      },
+      {
+        "answer": "能确认；当前证据片段同时提到了萧炎和药老。",
+        "count": 37,
+        "share": 0.008193
+      },
+      {
+        "answer": "我不能直接查询实时天气。你告诉我城市和天气预报，我可以帮你判断。",
+        "count": 37,
+        "share": 0.008193
+      },
+      {
+        "answer": "是萧炎说的。",
+        "count": 36,
+        "share": 0.007972
+      },
+      {
+        "answer": "我不能直接看到实时天气和路况。你告诉我城市和预报，我可以帮你判断。",
+        "count": 36,
+        "share": 0.007972
+      },
+      {
+        "answer": "我不应该乱猜实时信息。你可以看本机时间，或者告诉我时区让我帮你换算。",
+        "count": 35,
+        "share": 0.00775
+      },
+      {
+        "answer": "把任务切小，关掉干扰，先专注二十五分钟，再休息五分钟。",
+        "count": 34,
+        "share": 0.007529
+      },
+      {
+        "answer": "建议分三段：先复习概念，再动手练习，最后记录问题。",
+        "count": 33,
+        "share": 0.007307
+      },
+      {
+        "answer": "EOS是结束Token，用来告诉模型答案已经生成完了。",
+        "count": 32,
+        "share": 0.007086
+      },
+      {
+        "answer": "我不能直接获取实时比赛结果。你给我比分或队名，我可以帮你分析。",
+        "count": 32,
+        "share": 0.007086
+      }
+    ],
+    "transformed_review_flag_records": 1364,
+    "unbalanced_answer_punctuation_records": 17,
+    "unique_answer_ratio": 0.431577,
+    "verification_wrapper_records": 243
+  },
+  "dataset_path": "data/sft/v5_2_2_core_routing/sft_v5_2_2_core_routing_training_ready.jsonl",
+  "dataset_sha256": "7846765c0a23a3df9a7fa65b4c8ec4784e6687b7ec448182c51dc677901a2bf4",
+  "families": {
+    "ambiguity_unknown_clarification": {
+      "maximum_exact_answer_repeat": 1,
+      "mean_answer_characters": 24.57,
+      "mean_question_characters": 60.08,
+      "records": 93,
+      "refusal_records": 0,
+      "share": 0.020593,
+      "split_counts": {
+        "test": 12,
+        "train": 74,
+        "val": 7
+      },
+      "unique_answer_ratio": 1.0,
+      "unique_question_ratio": 1.0
+    },
+    "capability_boundary": {
+      "maximum_exact_answer_repeat": 38,
+      "mean_answer_characters": 32.42,
+      "mean_question_characters": 21.42,
+      "records": 178,
+      "refusal_records": 0,
+      "share": 0.039415,
+      "split_counts": {
+        "test": 46,
+        "train": 107,
+        "val": 25
+      },
+      "unique_answer_ratio": 0.02809,
+      "unique_question_ratio": 1.0
+    },
+    "capability_boundary_specific": {
+      "maximum_exact_answer_repeat": 1,
+      "mean_answer_characters": 34.2,
+      "mean_question_characters": 21.1,
+      "records": 10,
+      "refusal_records": 0,
+      "share": 0.002214,
+      "split_counts": {
+        "test": 2,
+        "train": 6,
+        "val": 2
+      },
+      "unique_answer_ratio": 1.0,
+      "unique_question_ratio": 1.0
+    },
+    "concept_explanation_repair": {
+      "maximum_exact_answer_repeat": 1,
+      "mean_answer_characters": 35.94,
+      "mean_question_characters": 13.75,
+      "records": 51,
+      "refusal_records": 0,
+      "share": 0.011293,
+      "split_counts": {
+        "test": 4,
+        "train": 42,
+        "val": 5
+      },
+      "unique_answer_ratio": 1.0,
+      "unique_question_ratio": 1.0
+    },
+    "context_understanding": {
+      "maximum_exact_answer_repeat": 55,
+      "mean_answer_characters": 17.15,
+      "mean_question_characters": 51.27,
+      "records": 450,
+      "refusal_records": 0,
+      "share": 0.099646,
+      "split_counts": {
+        "test": 54,
+        "train": 347,
+        "val": 49
+      },
+      "unique_answer_ratio": 0.533333,
+      "unique_question_ratio": 1.0
+    },
+    "conversation_control": {
+      "maximum_exact_answer_repeat": 4,
+      "mean_answer_characters": 21.65,
+      "mean_question_characters": 49.09,
+      "records": 150,
+      "refusal_records": 0,
+      "share": 0.033215,
+      "split_counts": {
+        "test": 18,
+        "train": 117,
+        "val": 15
+      },
+      "unique_answer_ratio": 0.92,
+      "unique_question_ratio": 1.0
+    },
+    "direct_fact": {
+      "maximum_exact_answer_repeat": 36,
+      "mean_answer_characters": 17.94,
+      "mean_question_characters": 31.77,
+      "records": 747,
+      "refusal_records": 0,
+      "share": 0.165412,
+      "split_counts": {
+        "test": 53,
+        "train": 611,
+        "val": 83
+      },
+      "unique_answer_ratio": 0.686747,
+      "unique_question_ratio": 1.0
+    },
+    "evidence_entity_match": {
+      "maximum_exact_answer_repeat": 1,
+      "mean_answer_characters": 14.4,
+      "mean_question_characters": 26.6,
+      "records": 80,
+      "refusal_records": 0,
+      "share": 0.017715,
+      "split_counts": {
+        "test": 8,
+        "train": 64,
+        "val": 8
+      },
+      "unique_answer_ratio": 1.0,
+      "unique_question_ratio": 1.0
+    },
+    "fact_verification_correction": {
+      "maximum_exact_answer_repeat": 7,
+      "mean_answer_characters": 24.95,
+      "mean_question_characters": 62.79,
+      "records": 300,
+      "refusal_records": 0,
+      "share": 0.06643,
+      "split_counts": {
+        "test": 39,
+        "train": 243,
+        "val": 18
+      },
+      "unique_answer_ratio": 0.863333,
+      "unique_question_ratio": 1.0
+    },
+    "general_chat": {
+      "maximum_exact_answer_repeat": 45,
+      "mean_answer_characters": 22.43,
+      "mean_question_characters": 16.52,
+      "records": 390,
+      "refusal_records": 0,
+      "share": 0.08636,
+      "split_counts": {
+        "test": 118,
+        "train": 226,
+        "val": 46
+      },
+      "unique_answer_ratio": 0.069231,
+      "unique_question_ratio": 1.0
+    },
+    "instruction_following": {
+      "maximum_exact_answer_repeat": 14,
+      "mean_answer_characters": 26.96,
+      "mean_question_characters": 23.22,
+      "records": 297,
+      "refusal_records": 10,
+      "share": 0.065766,
+      "split_counts": {
+        "test": 44,
+        "train": 213,
+        "val": 40
+      },
+      "unique_answer_ratio": 0.094276,
+      "unique_question_ratio": 1.0
+    },
+    "instruction_following_repair": {
+      "maximum_exact_answer_repeat": 6,
+      "mean_answer_characters": 4.32,
+      "mean_question_characters": 14.38,
+      "records": 50,
+      "refusal_records": 0,
+      "share": 0.011072,
+      "split_counts": {
+        "test": 4,
+        "train": 40,
+        "val": 6
+      },
+      "unique_answer_ratio": 0.44,
+      "unique_question_ratio": 1.0
+    },
+    "natural_conversation_repair": {
+      "maximum_exact_answer_repeat": 1,
+      "mean_answer_characters": 30.18,
+      "mean_question_characters": 14.28,
+      "records": 95,
+      "refusal_records": 0,
+      "share": 0.021036,
+      "split_counts": {
+        "test": 10,
+        "train": 75,
+        "val": 10
+      },
+      "unique_answer_ratio": 1.0,
+      "unique_question_ratio": 1.0
+    },
+    "novel_core_entity_v5_2": {
+      "maximum_exact_answer_repeat": 8,
+      "mean_answer_characters": 22.0,
+      "mean_question_characters": 15.91,
+      "records": 120,
+      "refusal_records": 0,
+      "share": 0.026572,
+      "split_counts": {
+        "test": 10,
+        "train": 100,
+        "val": 10
+      },
+      "unique_answer_ratio": 0.125,
+      "unique_question_ratio": 1.0
+    },
+    "novel_correction_v5_2": {
+      "maximum_exact_answer_repeat": 1,
+      "mean_answer_characters": 23.9,
+      "mean_question_characters": 23.1,
+      "records": 40,
+      "refusal_records": 0,
+      "share": 0.008857,
+      "split_counts": {
+        "test": 10,
+        "train": 20,
+        "val": 10
+      },
+      "unique_answer_ratio": 1.0,
+      "unique_question_ratio": 1.0
+    },
+    "novel_fact_anchor": {
+      "maximum_exact_answer_repeat": 1,
+      "mean_answer_characters": 12.88,
+      "mean_question_characters": 13.69,
+      "records": 16,
+      "refusal_records": 0,
+      "share": 0.003543,
+      "split_counts": {
+        "test": 4,
+        "train": 8,
+        "val": 4
+      },
+      "unique_answer_ratio": 1.0,
+      "unique_question_ratio": 1.0
+    },
+    "novel_known_entity_v5_2": {
+      "maximum_exact_answer_repeat": 4,
+      "mean_answer_characters": 20.2,
+      "mean_question_characters": 17.27,
+      "records": 120,
+      "refusal_records": 0,
+      "share": 0.026572,
+      "split_counts": {
+        "test": 20,
+        "train": 80,
+        "val": 20
+      },
+      "unique_answer_ratio": 0.25,
+      "unique_question_ratio": 1.0
+    },
+    "novel_relation_v5_2": {
+      "maximum_exact_answer_repeat": 1,
+      "mean_answer_characters": 17.6,
+      "mean_question_characters": 16.05,
+      "records": 40,
+      "refusal_records": 0,
+      "share": 0.008857,
+      "split_counts": {
+        "test": 8,
+        "train": 24,
+        "val": 8
+      },
+      "unique_answer_ratio": 1.0,
+      "unique_question_ratio": 1.0
+    },
+    "novel_unknown_grounded_v5_2": {
+      "maximum_exact_answer_repeat": 20,
+      "mean_answer_characters": 29.5,
+      "mean_question_characters": 29.05,
+      "records": 40,
+      "refusal_records": 20,
+      "share": 0.008857,
+      "split_counts": {
+        "test": 6,
+        "train": 28,
+        "val": 6
+      },
+      "unique_answer_ratio": 0.05,
+      "unique_question_ratio": 1.0
+    },
+    "project_explanation": {
+      "maximum_exact_answer_repeat": 32,
+      "mean_answer_characters": 31.95,
+      "mean_question_characters": 20.79,
+      "records": 382,
+      "refusal_records": 0,
+      "share": 0.084588,
+      "split_counts": {
+        "train": 329,
+        "val": 53
+      },
+      "unique_answer_ratio": 0.036649,
+      "unique_question_ratio": 1.0
+    },
+    "relationship_reason_timeline": {
+      "maximum_exact_answer_repeat": 25,
+      "mean_answer_characters": 24.01,
+      "mean_question_characters": 45.27,
+      "records": 600,
+      "refusal_records": 0,
+      "share": 0.132861,
+      "split_counts": {
+        "test": 72,
+        "train": 468,
+        "val": 60
+      },
+      "unique_answer_ratio": 0.733333,
+      "unique_question_ratio": 1.0
+    },
+    "study_planning": {
+      "maximum_exact_answer_repeat": 45,
+      "mean_answer_characters": 26.8,
+      "mean_question_characters": 18.82,
+      "records": 267,
+      "refusal_records": 0,
+      "share": 0.059123,
+      "split_counts": {
+        "train": 257,
+        "val": 10
+      },
+      "unique_answer_ratio": 0.101124,
+      "unique_question_ratio": 1.0
+    }
+  },
+  "known_entity_mentions": {
+    "云山": {
+      "test": 9,
+      "train": 45,
+      "val": 4
+    },
+    "云韵": {
+      "test": 5,
+      "train": 40,
+      "val": 4
+    },
+    "古河": {
+      "test": 11,
+      "train": 46,
+      "val": 9
+    },
+    "小医仙": {
+      "test": 8,
+      "train": 70,
+      "val": 7
+    },
+    "异火": {
+      "test": 10,
+      "train": 58,
+      "val": 8
+    },
+    "海波东": {
+      "test": 18,
+      "train": 39,
+      "val": 6
+    },
+    "紫研": {
+      "test": 7,
+      "train": 65,
+      "val": 12
+    },
+    "纳兰嫣然": {
+      "test": 6,
+      "train": 41,
+      "val": 2
+    },
+    "美杜莎": {
+      "test": 3,
+      "train": 38,
+      "val": 7
+    },
+    "药尘": {
+      "test": 13,
+      "train": 94,
+      "val": 14
+    },
+    "药老": {
+      "test": 30,
+      "train": 167,
+      "val": 25
+    },
+    "萧战": {
+      "test": 8,
+      "train": 59,
+      "val": 8
+    },
+    "萧炎": {
+      "test": 99,
+      "train": 674,
+      "val": 99
+    },
+    "萧薰儿": {
+      "test": 4,
+      "train": 23,
+      "val": 4
+    },
+    "韩枫": {
+      "test": 9,
+      "train": 69,
+      "val": 10
+    }
+  },
+  "provenance_and_review": {
+    "evidence_source_counts": {
+      "codex_curated_natural_conversation_v2": 95,
+      "codex_curated_positive_instruction_v2": 50,
+      "codex_curated_project_concepts_v3": 51,
+      "codex_curated_realtime_boundary_v3": 10,
+      "codex_generated_general_chat_v1": 1514,
+      "curated_entity_corrections_v1": 40,
+      "curated_known_novel_entities_v3": 240,
+      "curated_novel_fact_anchors_v2": 16,
+      "curated_novel_relations_v3": 40,
+      "missing": 2340,
+      "negative_entity_lookup_v1": 40,
+      "synthetic_balanced_entity_extraction_v2": 80
+    },
+    "evidence_status_counts": {
+      "codex_curated_repair": 662,
+      "synthetic_instruction": 1514,
+      "verified_corpus": 2340
+    },
+    "records_with_chapter_provenance": 2340,
+    "review_status_counts": {
+      "codex_generated": 1816,
+      "codex_generated_and_rule_checked": 360,
+      "pending": 2340
+    },
+    "unique_evidence_chapters": 928
+  },
+  "record_count": 4516,
+  "record_integrity": {
+    "blank_required_fields": {},
+    "duplicate_exact_question_answer_pairs": {
+      "duplicate_record_count": 0,
+      "duplicate_value_count": 0,
+      "maximum_repeat": 1,
+      "samples": []
+    },
+    "duplicate_exact_questions": {
+      "duplicate_record_count": 0,
+      "duplicate_value_count": 0,
+      "maximum_repeat": 1,
+      "samples": []
+    },
+    "duplicate_ids": {
+      "duplicate_record_count": 0,
+      "duplicate_value_count": 0,
+      "maximum_repeat": 1,
+      "samples": []
+    },
+    "duplicate_normalized_questions": {
+      "duplicate_record_count": 0,
+      "duplicate_value_count": 0,
+      "maximum_repeat": 1,
+      "samples": []
+    },
+    "duplicate_style_stripped_questions": {
+      "duplicate_record_count": 1199,
+      "duplicate_value_count": 312,
+      "maximum_repeat": 14,
+      "samples": [
+        {
+          "count": 14,
+          "value": "今天适合出门吗"
+        },
+        {
+          "count": 14,
+          "value": "明天会下雨吗"
+        },
+        {
+          "count": 14,
+          "value": "这个链接安全吗"
+        },
+        {
+          "count": 11,
+          "value": "现在几点了"
+        },
+        {
+          "count": 10,
+          "value": "今天的比赛谁赢了"
+        },
+        {
+          "count": 7,
+          "value": "下午好你是谁"
+        },
+        {
+          "count": 7,
+          "value": "下午好陪我聊两句"
+        },
+        {
+          "count": 7,
+          "value": "今天的比赛谁赢了不要编造"
+        },
+        {
+          "count": 7,
+          "value": "今天适合出门吗不要编造"
+        },
+        {
+          "count": 7,
+          "value": "你好"
+        },
+        {
+          "count": 7,
+          "value": "你能帮我一起想想写代码吗"
+        },
+        {
+          "count": 7,
+          "value": "你能帮我一起想想学习吗"
+        },
+        {
+          "count": 7,
+          "value": "你能直接知道明天会下雨吗的答案吗"
+        },
+        {
+          "count": 7,
+          "value": "关于写代码给我一个开场建议"
+        },
+        {
+          "count": 7,
+          "value": "关于复盘项目给我一个开场建议"
+        },
+        {
+          "count": 7,
+          "value": "关于整理资料给我一个开场建议"
+        },
+        {
+          "count": 7,
+          "value": "关于训练模型给我一个开场建议"
+        },
+        {
+          "count": 7,
+          "value": "反向传播在手搓gpt项目里有什么作用"
+        },
+        {
+          "count": 7,
+          "value": "嗨陪我聊两句"
+        },
+        {
+          "count": 7,
+          "value": "在吗你是谁"
+        }
+      ]
+    },
+    "invalid_splits": {},
+    "missing_required_fields": {}
+  },
+  "risk_queue": {
+    "flag_counts": {
+      "chapter_order_mismatch": 2,
+      "high_exact_answer_repetition": 1600,
+      "meta_evidence_wrapper": 995,
+      "pending_semantic_review": 2340,
+      "style_prefix_template": 1299,
+      "transformed_task_requires_review": 1364,
+      "unbalanced_answer_punctuation": 17,
+      "verification_wrapper": 243,
+      "very_short_answer": 236
+    },
+    "path": "data/sft/v6_readiness/sft_v5_2_2_risk_queue.jsonl",
+    "priority_counts": {
+      "P0": 19,
+      "P1": 1499,
+      "P2": 2371
+    },
+    "records": 3889
+  },
+  "run_id": "sft-readiness-audit-20260829T025543Z-45999c42",
+  "schema_version": "sft-readiness-audit/v1",
+  "split_counts": {
+    "test": 542,
+    "train": 3479,
+    "val": 495
+  },
+  "split_isolation": {
+    "evidence_chapter": {
+      "record_count": 0,
+      "samples": [],
+      "value_count": 0
+    },
+    "evidence_sha256": {
+      "record_count": 320,
+      "samples": [
+        {
+          "records": 24,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "07da8b3946dc7b998ce64b7fe1ad0f160e47e5cf3628c59da9022bbd336ca611"
+        },
+        {
+          "records": 24,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "339ea833474a0f8ace43084c79cd0a097f8e6d02f170c418c067b4fbb98aa9dd"
+        },
+        {
+          "records": 24,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "4ab16e44633b0777153570649c036d80d26c97ca970023071fb16ac530906389"
+        },
+        {
+          "records": 24,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "85e73614a0ca7a33bbdfa6bca149168fbfa925cee3e656c675d86ad3a227be41"
+        },
+        {
+          "records": 24,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "cd68e1acef1da9ccf85e8664b4a64932fa94e0305a036099a597dfb2aa766ff9"
+        },
+        {
+          "records": 12,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "44b7f075031b7ab7168675e9fea7383a11281ae6d2905cfd65e848a2ad747167"
+        },
+        {
+          "records": 12,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "63d0ba3bd1914ee026288c8aae35b7c70606e7d1d430d279c3ce3f7709fb1726"
+        },
+        {
+          "records": 12,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "6d0923c03d5b5554c41817ded91457ce73ef52f3d1f5a0db23acc5d02d2e3121"
+        },
+        {
+          "records": 12,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "6eba16383047efaa010cbf0b2dee06b63bcc9d8d0bd7e620d48313a83a5470e6"
+        },
+        {
+          "records": 12,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "7416c535c7cb062dd87390fedc48142572288ad8a7b71ef0694610cc87ee7f79"
+        },
+        {
+          "records": 12,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "9abea70c79151cff150d8edfe37fe51796b8ea0047465fdaecc29733aeb8e528"
+        },
+        {
+          "records": 12,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "bd427071a42a7d7c660778c26d85f36481820503e6c5ea1e629d100ebdc8b3fd"
+        },
+        {
+          "records": 12,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "ccccb115815111c149e88a4cb1f4650a2ca407b8e440ab8b79041770c4c76570"
+        },
+        {
+          "records": 12,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "cea163b21ad947426ffb005c19bbea023f1e5f3d41de054df20ab18f8ab32085"
+        },
+        {
+          "records": 12,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "dca65e5bf48340b17b6f7b3a8b0810ba1fd4e4cccedcbbadba967e597d549a5b"
+        },
+        {
+          "records": 5,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "110d7b9bb87036f8fa85cbf7adb9b1dfd76ac8839b588eafa9d800135698ece2"
+        },
+        {
+          "records": 5,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "2b50de19a9a60d390883138e9139278bb5aea762b5510caa8745c4007202d550"
+        },
+        {
+          "records": 5,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "2cae4ef07194b84aaa1af04dfe8c193a4dac8e93cd34810dd0c286bd2f6f83ec"
+        },
+        {
+          "records": 5,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "30b5dcdf61df577c93c85a52ff48c4ebc9f3e235aac401ee71f4ce699d8b031e"
+        },
+        {
+          "records": 5,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "518b018c0c3ebcaf468dd52eaf63b33b8804bb326c9dad670ac1917c925096e7"
+        }
+      ],
+      "value_count": 33
+    },
+    "exact_question": {
+      "record_count": 0,
+      "samples": [],
+      "value_count": 0
+    },
+    "exact_question_answer_pair": {
+      "record_count": 0,
+      "samples": [],
+      "value_count": 0
+    },
+    "fact_id": {
+      "record_count": 0,
+      "samples": [],
+      "value_count": 0
+    },
+    "group_id": {
+      "record_count": 0,
+      "samples": [],
+      "value_count": 0
+    },
+    "normalized_question": {
+      "record_count": 0,
+      "samples": [],
+      "value_count": 0
+    },
+    "style_stripped_question": {
+      "record_count": 984,
+      "samples": [
+        {
+          "records": 14,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "今天适合出门吗"
+        },
+        {
+          "records": 14,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "明天会下雨吗"
+        },
+        {
+          "records": 14,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "这个链接安全吗"
+        },
+        {
+          "records": 11,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "现在几点了"
+        },
+        {
+          "records": 10,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "今天的比赛谁赢了"
+        },
+        {
+          "records": 7,
+          "splits": [
+            "test",
+            "train"
+          ],
+          "value": "下午好你是谁"
+        },
+        {
+          "records": 7,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "下午好陪我聊两句"
+        },
+        {
+          "records": 7,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "今天的比赛谁赢了不要编造"
+        },
+        {
+          "records": 7,
+          "splits": [
+            "test",
+            "train"
+          ],
+          "value": "今天适合出门吗不要编造"
+        },
+        {
+          "records": 7,
+          "splits": [
+            "test",
+            "train"
+          ],
+          "value": "你好"
+        },
+        {
+          "records": 7,
+          "splits": [
+            "test",
+            "train"
+          ],
+          "value": "你能帮我一起想想写代码吗"
+        },
+        {
+          "records": 7,
+          "splits": [
+            "test",
+            "train"
+          ],
+          "value": "你能帮我一起想想学习吗"
+        },
+        {
+          "records": 7,
+          "splits": [
+            "test",
+            "train"
+          ],
+          "value": "你能直接知道明天会下雨吗的答案吗"
+        },
+        {
+          "records": 7,
+          "splits": [
+            "test",
+            "train"
+          ],
+          "value": "关于写代码给我一个开场建议"
+        },
+        {
+          "records": 7,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "关于复盘项目给我一个开场建议"
+        },
+        {
+          "records": 7,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "关于整理资料给我一个开场建议"
+        },
+        {
+          "records": 7,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "关于训练模型给我一个开场建议"
+        },
+        {
+          "records": 7,
+          "splits": [
+            "train",
+            "val"
+          ],
+          "value": "反向传播在手搓gpt项目里有什么作用"
+        },
+        {
+          "records": 7,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "嗨陪我聊两句"
+        },
+        {
+          "records": 7,
+          "splits": [
+            "test",
+            "train",
+            "val"
+          ],
+          "value": "在吗你是谁"
+        }
+      ],
+      "value_count": 172
+    },
+    "topic_id": {
+      "record_count": 0,
+      "samples": [],
+      "value_count": 0
+    }
+  },
+  "status": "complete",
+  "task_family_counts": {
+    "ambiguity_unknown_clarification": 93,
+    "capability_boundary": 178,
+    "capability_boundary_specific": 10,
+    "concept_explanation_repair": 51,
+    "context_understanding": 450,
+    "conversation_control": 150,
+    "direct_fact": 747,
+    "evidence_entity_match": 80,
+    "fact_verification_correction": 300,
+    "general_chat": 390,
+    "instruction_following": 297,
+    "instruction_following_repair": 50,
+    "natural_conversation_repair": 95,
+    "novel_core_entity_v5_2": 120,
+    "novel_correction_v5_2": 40,
+    "novel_fact_anchor": 16,
+    "novel_known_entity_v5_2": 120,
+    "novel_relation_v5_2": 40,
+    "novel_unknown_grounded_v5_2": 40,
+    "project_explanation": 382,
+    "relationship_reason_timeline": 600,
+    "study_planning": 267
+  },
+  "tokenization": {
+    "answer_tokens": {
+      "max": 66,
+      "mean": 18.46,
+      "min": 2,
+      "p50": 17.0,
+      "p90": 29.0,
+      "p95": 35.0,
+      "p99": 53.85
+    },
+    "answers_at_least_128": 0,
+    "answers_at_most_16": 1836,
+    "merge_count": 3000,
+    "question_tokens": {
+      "max": 75,
+      "mean": 26.41,
+      "min": 1,
+      "p50": 18.0,
+      "p90": 61.0,
+      "p95": 65.0,
+      "p99": 67.0
+    },
+    "questions_at_least_128": 0,
+    "sequence_tokens": {
+      "max": 127,
+      "mean": 48.88,
+      "min": 12,
+      "p50": 43.0,
+      "p90": 80.0,
+      "p95": 86.0,
+      "p99": 89.0
+    },
+    "sequence_tokens_by_split": {
+      "test": 25865,
+      "train": 172212,
+      "val": 22646
+    },
+    "sequences_over_256": 0,
+    "sequences_over_384": 0,
+    "sequences_over_512": 0,
+    "supervised_tokens_by_split": {
+      "test": 9843,
+      "train": 68789,
+      "val": 9259
+    },
+    "unencodable_records": 0,
+    "unencodable_samples": [],
+    "vocab_size": 7465
+  },
+  "tokenizer_path": "data/scaling_a/bpe_3000/tokenizer.json",
+  "tokenizer_sha256": "e70cf3dc0ed185a6b22ab7dc08b6a850eeb59864ba161dd156c644e003862822"
+}
