@@ -1,0 +1,4903 @@
+{
+  "checkpoint": {
+    "path": "runs/formal_pretrain_14m_bpe3000_6000/checkpoints/step_00250.pt",
+    "provenance": {
+      "config_signature_matches": true,
+      "formal_initial_checkpoint_check": true,
+      "initial_checkpoint": null,
+      "model_config_matches": true,
+      "post_training_markers_absent": true,
+      "token_manifest_matches": true,
+      "token_manifest_sha256": "5d10245eac86e4dbafef908cb2d915bb1effcf61ad977b4de96d8d64d30809c7"
+    },
+    "sha256": "20fa8bb335d8e05716e4773152bec0c70f15a1291ce7752b2fa54215fd171358",
+    "step": 250
+  },
+  "cloze": {
+    "by_frequency_tier": {
+      "high": {
+        "case_count": 6,
+        "metrics": {
+          "context_lift": {
+            "mean_correct_margin": -0.06403565406799316,
+            "mean_reciprocal_rank": 0.7638888888888888,
+            "top1_accuracy": 0.6666666666666666
+          },
+          "mean_token_log_probability": {
+            "mean_correct_margin": 0.07623537381490071,
+            "mean_reciprocal_rank": 0.6666666666666666,
+            "top1_accuracy": 0.5
+          },
+          "per_character_log_probability": {
+            "mean_correct_margin": 0.05134787824418807,
+            "mean_reciprocal_rank": 0.6666666666666666,
+            "top1_accuracy": 0.5
+          },
+          "total_log_probability": {
+            "mean_correct_margin": 0.07623537381490071,
+            "mean_reciprocal_rank": 0.6666666666666666,
+            "top1_accuracy": 0.5
+          }
+        }
+      },
+      "low": {
+        "case_count": 6,
+        "metrics": {
+          "context_lift": {
+            "mean_correct_margin": -0.24070564905802408,
+            "mean_reciprocal_rank": 0.6388888888888888,
+            "top1_accuracy": 0.5
+          },
+          "mean_token_log_probability": {
+            "mean_correct_margin": -0.8493409156799316,
+            "mean_reciprocal_rank": 0.4861111111111111,
+            "top1_accuracy": 0.16666666666666666
+          },
+          "per_character_log_probability": {
+            "mean_correct_margin": -1.646365185578664,
+            "mean_reciprocal_rank": 0.3611111111111111,
+            "top1_accuracy": 0
+          },
+          "total_log_probability": {
+            "mean_correct_margin": -4.967670838038127,
+            "mean_reciprocal_rank": 0.3611111111111111,
+            "top1_accuracy": 0
+          }
+        }
+      }
+    },
+    "case_count": 12,
+    "cases": [
+      {
+        "candidate_metadata": [
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "low",
+            "text": "赤火长老",
+            "train_count": 95
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "low",
+            "text": "唐火儿",
+            "train_count": 90
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "low",
+            "text": "青城长老",
+            "train_count": 27
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "low",
+            "text": "通玄长老",
+            "train_count": 81
+          }
+        ],
+        "candidates": [
+          "赤火长老",
+          "唐火儿",
+          "青城长老",
+          "通玄长老"
+        ],
+        "capability": "corpus_entity_prediction",
+        "context": "“既然没有了问题，那么便先请诸位先行回客房休息一下，赤火.\"”见到再没有了什么问题，唐震对着",
+        "correct": "赤火长老",
+        "correct_margin_over_best_incorrect": -0.04346942901611328,
+        "correct_rank": 2,
+        "entity": {
+          "entity_type": "person_speaker",
+          "frequency_tier": "low",
+          "text": "赤火长老",
+          "train_attribution_count": 5,
+          "train_chapter_count": 12,
+          "train_count": 95
+        },
+        "evidence": {
+          "answer_char_end": 50,
+          "answer_char_start": 46,
+          "chapter_char_end": 2337,
+          "chapter_char_start": 2287,
+          "offset_interval": "zero_based_end_exclusive",
+          "offset_unit": "utf8_decoded_unicode_codepoint",
+          "sha256": "61b338b27e9f6bc487620c8e8f0490413ffeaabc1510d7afbbb425f470f11b32",
+          "split_char_end": 195267,
+          "split_char_start": 195217,
+          "text": "“既然没有了问题，那么便先请诸位先行回客房休息一下，赤火.\"”见到再没有了什么问题，唐震对着赤火长老"
+        },
+        "expected": {
+          "candidate_index": 0,
+          "text": "赤火长老"
+        },
+        "frequency_tier": "low",
+        "id": "pretrain_0b16731a1d777f090b8e",
+        "metadata": {
+          "chapter_sha256": "8f9ef485226cabc0db219e9c804e0aee9c5dd4060a71c9cc2e6313127d466d26",
+          "distractor_matching": {
+            "correct_character_length": 4,
+            "correct_train_count": 95,
+            "distractors": [
+              {
+                "character_length": 4,
+                "character_length_delta": 0,
+                "text": "通玄长老",
+                "train_count": 81,
+                "train_count_ratio": 1.1728395061728396,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 4,
+                "character_length_delta": 0,
+                "text": "青城长老",
+                "train_count": 27,
+                "train_count_ratio": 3.5185185185185186,
+                "within_narrow_train_frequency_band": false
+              },
+              {
+                "character_length": 3,
+                "character_length_delta": 1,
+                "text": "唐火儿",
+                "train_count": 90,
+                "train_count_ratio": 1.0555555555555556,
+                "within_narrow_train_frequency_band": true
+              }
+            ],
+            "exact_character_length_matches": 2,
+            "narrow_train_frequency_matches": 2,
+            "narrow_train_frequency_ratio_max": 2.0,
+            "strategy": "same_entity_type_and_frequency_tier_then_minimum_character_length_delta_then_minimum_relative_train_frequency_gap",
+            "token_length_correction": "Character length is only a build-time proxy. The evaluator must correct token-length effects with total log-probability, mean token log-probability, rank, and reciprocal-rank metrics under the formal protocol.",
+            "tokenizer_used_for_matching": false
+          },
+          "evidence": {
+            "answer_char_end": 50,
+            "answer_char_start": 46,
+            "chapter_char_end": 2337,
+            "chapter_char_start": 2287,
+            "offset_interval": "zero_based_end_exclusive",
+            "offset_unit": "utf8_decoded_unicode_codepoint",
+            "sha256": "61b338b27e9f6bc487620c8e8f0490413ffeaabc1510d7afbbb425f470f11b32",
+            "split_char_end": 195267,
+            "split_char_start": 195217,
+            "text": "“既然没有了问题，那么便先请诸位先行回客房休息一下，赤火.\"”见到再没有了什么问题，唐震对着赤火长老"
+          },
+          "frequency_tier": "low",
+          "source": {
+            "chapter_number": 1027,
+            "chapter_section_id": "section-0057-line-5625",
+            "chapter_sha256": "8f9ef485226cabc0db219e9c804e0aee9c5dd4060a71c9cc2e6313127d466d26",
+            "chapter_title": "第一千零二十七章 争取",
+            "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+            "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+            "role": "held_out",
+            "source_line": 5673,
+            "split": "val"
+          },
+          "source_split": "val",
+          "train_chapter_count": 12,
+          "train_count": 95
+        },
+        "predicted": "青城长老",
+        "probe_metadata": {
+          "candidates": [
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "low",
+              "text": "赤火长老",
+              "train_count": 95
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "low",
+              "text": "唐火儿",
+              "train_count": 90
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "low",
+              "text": "青城长老",
+              "train_count": 27
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "low",
+              "text": "通玄长老",
+              "train_count": 81
+            }
+          ],
+          "capability": "corpus_entity_prediction",
+          "distractor_matching": {
+            "correct_character_length": 4,
+            "correct_train_count": 95,
+            "distractors": [
+              {
+                "character_length": 4,
+                "character_length_delta": 0,
+                "text": "通玄长老",
+                "train_count": 81,
+                "train_count_ratio": 1.1728395061728396,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 4,
+                "character_length_delta": 0,
+                "text": "青城长老",
+                "train_count": 27,
+                "train_count_ratio": 3.5185185185185186,
+                "within_narrow_train_frequency_band": false
+              },
+              {
+                "character_length": 3,
+                "character_length_delta": 1,
+                "text": "唐火儿",
+                "train_count": 90,
+                "train_count_ratio": 1.0555555555555556,
+                "within_narrow_train_frequency_band": true
+              }
+            ],
+            "exact_character_length_matches": 2,
+            "narrow_train_frequency_matches": 2,
+            "narrow_train_frequency_ratio_max": 2.0,
+            "strategy": "same_entity_type_and_frequency_tier_then_minimum_character_length_delta_then_minimum_relative_train_frequency_gap",
+            "token_length_correction": "Character length is only a build-time proxy. The evaluator must correct token-length effects with total log-probability, mean token log-probability, rank, and reciprocal-rank metrics under the formal protocol.",
+            "tokenizer_used_for_matching": false
+          },
+          "entity": {
+            "entity_type": "person_speaker",
+            "frequency_tier": "low",
+            "text": "赤火长老",
+            "train_attribution_count": 5,
+            "train_chapter_count": 12,
+            "train_count": 95
+          },
+          "evidence": {
+            "answer_char_end": 50,
+            "answer_char_start": 46,
+            "chapter_char_end": 2337,
+            "chapter_char_start": 2287,
+            "offset_interval": "zero_based_end_exclusive",
+            "offset_unit": "utf8_decoded_unicode_codepoint",
+            "sha256": "61b338b27e9f6bc487620c8e8f0490413ffeaabc1510d7afbbb425f470f11b32",
+            "split_char_end": 195267,
+            "split_char_start": 195217,
+            "text": "“既然没有了问题，那么便先请诸位先行回客房休息一下，赤火.\"”见到再没有了什么问题，唐震对着赤火长老"
+          },
+          "expected": {
+            "candidate_index": 0,
+            "text": "赤火长老"
+          },
+          "id": "pretrain_0b16731a1d777f090b8e",
+          "probe_type": "cloze_candidate_ranking",
+          "prompt": "“既然没有了问题，那么便先请诸位先行回客房休息一下，赤火.\"”见到再没有了什么问题，唐震对着",
+          "source": {
+            "chapter_number": 1027,
+            "chapter_section_id": "section-0057-line-5625",
+            "chapter_sha256": "8f9ef485226cabc0db219e9c804e0aee9c5dd4060a71c9cc2e6313127d466d26",
+            "chapter_title": "第一千零二十七章 争取",
+            "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+            "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+            "role": "held_out",
+            "source_line": 5673,
+            "split": "val"
+          }
+        },
+        "probe_type": "cloze_candidate_ranking",
+        "rankings": {
+          "context_lift": {
+            "correct_margin_over_best_incorrect": -2.3131113052368164,
+            "correct_rank": 4,
+            "ordered_candidates": [
+              "通玄长老",
+              "青城长老",
+              "唐火儿",
+              "赤火长老"
+            ],
+            "predicted": "通玄长老",
+            "reciprocal_rank": 0.25,
+            "top1_correct": false
+          },
+          "mean_token_log_probability": {
+            "correct_margin_over_best_incorrect": -0.04346942901611328,
+            "correct_rank": 2,
+            "ordered_candidates": [
+              "青城长老",
+              "赤火长老",
+              "通玄长老",
+              "唐火儿"
+            ],
+            "predicted": "青城长老",
+            "reciprocal_rank": 0.5,
+            "top1_correct": false
+          },
+          "per_character_log_probability": {
+            "correct_margin_over_best_incorrect": -0.03260207176208496,
+            "correct_rank": 2,
+            "ordered_candidates": [
+              "青城长老",
+              "赤火长老",
+              "通玄长老",
+              "唐火儿"
+            ],
+            "predicted": "青城长老",
+            "reciprocal_rank": 0.5,
+            "top1_correct": false
+          },
+          "total_log_probability": {
+            "correct_margin_over_best_incorrect": -0.13040828704833984,
+            "correct_rank": 2,
+            "ordered_candidates": [
+              "青城长老",
+              "赤火长老",
+              "通玄长老",
+              "唐火儿"
+            ],
+            "predicted": "青城长老",
+            "reciprocal_rank": 0.5,
+            "top1_correct": false
+          }
+        },
+        "scores": [
+          {
+            "candidate": "赤火长老",
+            "character_count": 4,
+            "context_lift": 1.5855402946472168,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 0.3963850736618042,
+            "mean_token_log_probability": -7.0785706837972,
+            "neutral_mean_token_log_probability": -7.6070841153462725,
+            "neutral_per_character_log_probability": -5.705313086509705,
+            "neutral_total_log_probability": -22.82125234603882,
+            "per_character_log_probability": -5.3089280128479,
+            "token_count": 3,
+            "total_log_probability": -21.2357120513916
+          },
+          {
+            "candidate": "唐火儿",
+            "character_count": 3,
+            "context_lift": 2.193735122680664,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 0.7312450408935547,
+            "mean_token_log_probability": -7.671453793843587,
+            "neutral_mean_token_log_probability": -8.402698834737143,
+            "neutral_per_character_log_probability": -8.402698834737143,
+            "neutral_total_log_probability": -25.208096504211426,
+            "per_character_log_probability": -7.671453793843587,
+            "token_count": 3,
+            "total_log_probability": -23.01436138153076
+          },
+          {
+            "candidate": "青城长老",
+            "character_count": 4,
+            "context_lift": 3.1593942642211914,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 0.7898485660552979,
+            "mean_token_log_probability": -7.035101254781087,
+            "neutral_mean_token_log_probability": -8.08823267618815,
+            "neutral_per_character_log_probability": -6.066174507141113,
+            "neutral_total_log_probability": -24.264698028564453,
+            "per_character_log_probability": -5.276325941085815,
+            "token_count": 3,
+            "total_log_probability": -21.10530376434326
+          },
+          {
+            "candidate": "通玄长老",
+            "character_count": 4,
+            "context_lift": 3.898651599884033,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 0.9746628999710083,
+            "mean_token_log_probability": -7.585041522979736,
+            "neutral_mean_token_log_probability": -8.884592056274414,
+            "neutral_per_character_log_probability": -6.6634440422058105,
+            "neutral_total_log_probability": -26.653776168823242,
+            "per_character_log_probability": -5.688781142234802,
+            "token_count": 3,
+            "total_log_probability": -22.75512456893921
+          }
+        ],
+        "source": {
+          "chapter_number": 1027,
+          "chapter_section_id": "section-0057-line-5625",
+          "chapter_sha256": "8f9ef485226cabc0db219e9c804e0aee9c5dd4060a71c9cc2e6313127d466d26",
+          "chapter_title": "第一千零二十七章 争取",
+          "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+          "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+          "role": "held_out",
+          "source_line": 5673,
+          "split": "val"
+        },
+        "top1_correct": false
+      },
+      {
+        "candidate_metadata": [
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "high",
+            "text": "法犸",
+            "train_count": 466
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "high",
+            "text": "萧玉",
+            "train_count": 454
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "high",
+            "text": "青鳞",
+            "train_count": 465
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "high",
+            "text": "萧玄",
+            "train_count": 473
+          }
+        ],
+        "candidates": [
+          "法犸",
+          "萧玉",
+          "青鳞",
+          "萧玄"
+        ],
+        "capability": "corpus_entity_prediction",
+        "context": "听得入水声音’萧炎这才转过头，目光看向池中，只见得",
+        "correct": "青鳞",
+        "correct_margin_over_best_incorrect": -0.6415500640869141,
+        "correct_rank": 4,
+        "entity": {
+          "entity_type": "person_speaker",
+          "frequency_tier": "high",
+          "text": "青鳞",
+          "train_attribution_count": 5,
+          "train_chapter_count": 89,
+          "train_count": 465
+        },
+        "evidence": {
+          "answer_char_end": 27,
+          "answer_char_start": 25,
+          "chapter_char_end": 3207,
+          "chapter_char_start": 3180,
+          "offset_interval": "zero_based_end_exclusive",
+          "offset_unit": "utf8_decoded_unicode_codepoint",
+          "sha256": "8cdd2ee180d3b6c308a3e44fc1de5062f5a0adedab768c11b420ac6de67eda5b",
+          "split_char_end": 246037,
+          "split_char_start": 246010,
+          "text": "听得入水声音’萧炎这才转过头，目光看向池中，只见得青鳞"
+        },
+        "expected": {
+          "candidate_index": 2,
+          "text": "青鳞"
+        },
+        "frequency_tier": "high",
+        "id": "pretrain_17c2e1593f0ed495d483",
+        "metadata": {
+          "chapter_sha256": "43b5a476547e548fec19a24536997423d914676df93354d18f08a75098f537f8",
+          "distractor_matching": {
+            "correct_character_length": 2,
+            "correct_train_count": 465,
+            "distractors": [
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "法犸",
+                "train_count": 466,
+                "train_count_ratio": 1.0021505376344086,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "萧玄",
+                "train_count": 473,
+                "train_count_ratio": 1.0172043010752687,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "萧玉",
+                "train_count": 454,
+                "train_count_ratio": 1.024229074889868,
+                "within_narrow_train_frequency_band": true
+              }
+            ],
+            "exact_character_length_matches": 3,
+            "narrow_train_frequency_matches": 3,
+            "narrow_train_frequency_ratio_max": 2.0,
+            "strategy": "same_entity_type_and_frequency_tier_then_minimum_character_length_delta_then_minimum_relative_train_frequency_gap",
+            "token_length_correction": "Character length is only a build-time proxy. The evaluator must correct token-length effects with total log-probability, mean token log-probability, rank, and reciprocal-rank metrics under the formal protocol.",
+            "tokenizer_used_for_matching": false
+          },
+          "evidence": {
+            "answer_char_end": 27,
+            "answer_char_start": 25,
+            "chapter_char_end": 3207,
+            "chapter_char_start": 3180,
+            "offset_interval": "zero_based_end_exclusive",
+            "offset_unit": "utf8_decoded_unicode_codepoint",
+            "sha256": "8cdd2ee180d3b6c308a3e44fc1de5062f5a0adedab768c11b420ac6de67eda5b",
+            "split_char_end": 246037,
+            "split_char_start": 246010,
+            "text": "听得入水声音’萧炎这才转过头，目光看向池中，只见得青鳞"
+          },
+          "frequency_tier": "high",
+          "source": {
+            "chapter_number": 1249,
+            "chapter_section_id": "section-0072-line-6999",
+            "chapter_sha256": "43b5a476547e548fec19a24536997423d914676df93354d18f08a75098f537f8",
+            "chapter_title": "第一千两百四十九章  神秘纹身【第三更！】",
+            "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+            "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+            "role": "held_out",
+            "source_line": 7108,
+            "split": "val"
+          },
+          "source_split": "val",
+          "train_chapter_count": 89,
+          "train_count": 465
+        },
+        "predicted": "萧玄",
+        "probe_metadata": {
+          "candidates": [
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "high",
+              "text": "法犸",
+              "train_count": 466
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "high",
+              "text": "萧玉",
+              "train_count": 454
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "high",
+              "text": "青鳞",
+              "train_count": 465
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "high",
+              "text": "萧玄",
+              "train_count": 473
+            }
+          ],
+          "capability": "corpus_entity_prediction",
+          "distractor_matching": {
+            "correct_character_length": 2,
+            "correct_train_count": 465,
+            "distractors": [
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "法犸",
+                "train_count": 466,
+                "train_count_ratio": 1.0021505376344086,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "萧玄",
+                "train_count": 473,
+                "train_count_ratio": 1.0172043010752687,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "萧玉",
+                "train_count": 454,
+                "train_count_ratio": 1.024229074889868,
+                "within_narrow_train_frequency_band": true
+              }
+            ],
+            "exact_character_length_matches": 3,
+            "narrow_train_frequency_matches": 3,
+            "narrow_train_frequency_ratio_max": 2.0,
+            "strategy": "same_entity_type_and_frequency_tier_then_minimum_character_length_delta_then_minimum_relative_train_frequency_gap",
+            "token_length_correction": "Character length is only a build-time proxy. The evaluator must correct token-length effects with total log-probability, mean token log-probability, rank, and reciprocal-rank metrics under the formal protocol.",
+            "tokenizer_used_for_matching": false
+          },
+          "entity": {
+            "entity_type": "person_speaker",
+            "frequency_tier": "high",
+            "text": "青鳞",
+            "train_attribution_count": 5,
+            "train_chapter_count": 89,
+            "train_count": 465
+          },
+          "evidence": {
+            "answer_char_end": 27,
+            "answer_char_start": 25,
+            "chapter_char_end": 3207,
+            "chapter_char_start": 3180,
+            "offset_interval": "zero_based_end_exclusive",
+            "offset_unit": "utf8_decoded_unicode_codepoint",
+            "sha256": "8cdd2ee180d3b6c308a3e44fc1de5062f5a0adedab768c11b420ac6de67eda5b",
+            "split_char_end": 246037,
+            "split_char_start": 246010,
+            "text": "听得入水声音’萧炎这才转过头，目光看向池中，只见得青鳞"
+          },
+          "expected": {
+            "candidate_index": 2,
+            "text": "青鳞"
+          },
+          "id": "pretrain_17c2e1593f0ed495d483",
+          "probe_type": "cloze_candidate_ranking",
+          "prompt": "听得入水声音’萧炎这才转过头，目光看向池中，只见得",
+          "source": {
+            "chapter_number": 1249,
+            "chapter_section_id": "section-0072-line-6999",
+            "chapter_sha256": "43b5a476547e548fec19a24536997423d914676df93354d18f08a75098f537f8",
+            "chapter_title": "第一千两百四十九章  神秘纹身【第三更！】",
+            "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+            "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+            "role": "held_out",
+            "source_line": 7108,
+            "split": "val"
+          }
+        },
+        "probe_type": "cloze_candidate_ranking",
+        "rankings": {
+          "context_lift": {
+            "correct_margin_over_best_incorrect": -1.0588035583496094,
+            "correct_rank": 4,
+            "ordered_candidates": [
+              "法犸",
+              "萧玄",
+              "萧玉",
+              "青鳞"
+            ],
+            "predicted": "法犸",
+            "reciprocal_rank": 0.25,
+            "top1_correct": false
+          },
+          "mean_token_log_probability": {
+            "correct_margin_over_best_incorrect": -0.6415500640869141,
+            "correct_rank": 4,
+            "ordered_candidates": [
+              "萧玄",
+              "萧玉",
+              "法犸",
+              "青鳞"
+            ],
+            "predicted": "萧玄",
+            "reciprocal_rank": 0.25,
+            "top1_correct": false
+          },
+          "per_character_log_probability": {
+            "correct_margin_over_best_incorrect": -0.32077503204345703,
+            "correct_rank": 4,
+            "ordered_candidates": [
+              "萧玄",
+              "萧玉",
+              "法犸",
+              "青鳞"
+            ],
+            "predicted": "萧玄",
+            "reciprocal_rank": 0.25,
+            "top1_correct": false
+          },
+          "total_log_probability": {
+            "correct_margin_over_best_incorrect": -0.6415500640869141,
+            "correct_rank": 4,
+            "ordered_candidates": [
+              "萧玄",
+              "萧玉",
+              "法犸",
+              "青鳞"
+            ],
+            "predicted": "萧玄",
+            "reciprocal_rank": 0.25,
+            "top1_correct": false
+          }
+        },
+        "scores": [
+          {
+            "candidate": "法犸",
+            "character_count": 2,
+            "context_lift": 2.265186309814453,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 1.1325931549072266,
+            "mean_token_log_probability": -8.350239753723145,
+            "neutral_mean_token_log_probability": -10.615426063537598,
+            "neutral_per_character_log_probability": -5.307713031768799,
+            "neutral_total_log_probability": -10.615426063537598,
+            "per_character_log_probability": -4.175119876861572,
+            "token_count": 1,
+            "total_log_probability": -8.350239753723145
+          },
+          {
+            "candidate": "萧玉",
+            "character_count": 2,
+            "context_lift": 1.872645378112793,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 0.9363226890563965,
+            "mean_token_log_probability": -8.296623229980469,
+            "neutral_mean_token_log_probability": -10.169268608093262,
+            "neutral_per_character_log_probability": -5.084634304046631,
+            "neutral_total_log_probability": -10.169268608093262,
+            "per_character_log_probability": -4.148311614990234,
+            "token_count": 1,
+            "total_log_probability": -8.296623229980469
+          },
+          {
+            "candidate": "青鳞",
+            "character_count": 2,
+            "context_lift": 1.2063827514648438,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 0.6031913757324219,
+            "mean_token_log_probability": -8.815633773803711,
+            "neutral_mean_token_log_probability": -10.022016525268555,
+            "neutral_per_character_log_probability": -5.011008262634277,
+            "neutral_total_log_probability": -10.022016525268555,
+            "per_character_log_probability": -4.4078168869018555,
+            "token_count": 1,
+            "total_log_probability": -8.815633773803711
+          },
+          {
+            "candidate": "萧玄",
+            "character_count": 2,
+            "context_lift": 2.179934501647949,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 1.0899672508239746,
+            "mean_token_log_probability": -8.174083709716797,
+            "neutral_mean_token_log_probability": -10.354018211364746,
+            "neutral_per_character_log_probability": -5.177009105682373,
+            "neutral_total_log_probability": -10.354018211364746,
+            "per_character_log_probability": -4.087041854858398,
+            "token_count": 1,
+            "total_log_probability": -8.174083709716797
+          }
+        ],
+        "source": {
+          "chapter_number": 1249,
+          "chapter_section_id": "section-0072-line-6999",
+          "chapter_sha256": "43b5a476547e548fec19a24536997423d914676df93354d18f08a75098f537f8",
+          "chapter_title": "第一千两百四十九章  神秘纹身【第三更！】",
+          "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+          "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+          "role": "held_out",
+          "source_line": 7108,
+          "split": "val"
+        },
+        "top1_correct": false
+      },
+      {
+        "candidate_metadata": [
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "low",
+            "text": "古南海",
+            "train_count": 67
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "low",
+            "text": "柳长老",
+            "train_count": 68
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "low",
+            "text": "姚坊主",
+            "train_count": 58
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "low",
+            "text": "盛长老",
+            "train_count": 72
+          }
+        ],
+        "candidates": [
+          "古南海",
+          "柳长老",
+          "姚坊主",
+          "盛长老"
+        ],
+        "capability": "corpus_entity_prediction",
+        "context": "听得丰晨那低沉的声音，萧炎心头却是微感凛然，目光有些奇异的看了萧晨背影一眼，到得现在，他方才发现，似乎至始至终，他都没有看清楚过这位先祖的真实实力，在幻境时，萧晨虽然能够击败紫研与",
+        "correct": "古南海",
+        "correct_margin_over_best_incorrect": 0.1837470531463623,
+        "correct_rank": 1,
+        "entity": {
+          "entity_type": "person_speaker",
+          "frequency_tier": "low",
+          "text": "古南海",
+          "train_attribution_count": 5,
+          "train_chapter_count": 16,
+          "train_count": 67
+        },
+        "evidence": {
+          "answer_char_end": 93,
+          "answer_char_start": 90,
+          "chapter_char_end": 596,
+          "chapter_char_start": 503,
+          "offset_interval": "zero_based_end_exclusive",
+          "offset_unit": "utf8_decoded_unicode_codepoint",
+          "sha256": "9101bcac9c4b375116490e7b5314d6ca63bfd1e80a618ec42e3a439eb51c9eb5",
+          "split_char_end": 291736,
+          "split_char_start": 291643,
+          "text": "听得丰晨那低沉的声音，萧炎心头却是微感凛然，目光有些奇异的看了萧晨背影一眼，到得现在，他方才发现，似乎至始至终，他都没有看清楚过这位先祖的真实实力，在幻境时，萧晨虽然能够击败紫研与古南海"
+        },
+        "expected": {
+          "candidate_index": 0,
+          "text": "古南海"
+        },
+        "frequency_tier": "low",
+        "id": "pretrain_3e997e421f24e4583e33",
+        "metadata": {
+          "chapter_sha256": "d8d3aeee659d651ac5308586ce4595c22ead0a1b85ad947910e051d2690ca229",
+          "distractor_matching": {
+            "correct_character_length": 3,
+            "correct_train_count": 67,
+            "distractors": [
+              {
+                "character_length": 3,
+                "character_length_delta": 0,
+                "text": "柳长老",
+                "train_count": 68,
+                "train_count_ratio": 1.0149253731343284,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 3,
+                "character_length_delta": 0,
+                "text": "盛长老",
+                "train_count": 72,
+                "train_count_ratio": 1.0746268656716418,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 3,
+                "character_length_delta": 0,
+                "text": "姚坊主",
+                "train_count": 58,
+                "train_count_ratio": 1.1551724137931034,
+                "within_narrow_train_frequency_band": true
+              }
+            ],
+            "exact_character_length_matches": 3,
+            "narrow_train_frequency_matches": 3,
+            "narrow_train_frequency_ratio_max": 2.0,
+            "strategy": "same_entity_type_and_frequency_tier_then_minimum_character_length_delta_then_minimum_relative_train_frequency_gap",
+            "token_length_correction": "Character length is only a build-time proxy. The evaluator must correct token-length effects with total log-probability, mean token log-probability, rank, and reciprocal-rank metrics under the formal protocol.",
+            "tokenizer_used_for_matching": false
+          },
+          "evidence": {
+            "answer_char_end": 93,
+            "answer_char_start": 90,
+            "chapter_char_end": 596,
+            "chapter_char_start": 503,
+            "offset_interval": "zero_based_end_exclusive",
+            "offset_unit": "utf8_decoded_unicode_codepoint",
+            "sha256": "9101bcac9c4b375116490e7b5314d6ca63bfd1e80a618ec42e3a439eb51c9eb5",
+            "split_char_end": 291736,
+            "split_char_start": 291643,
+            "text": "听得丰晨那低沉的声音，萧炎心头却是微感凛然，目光有些奇异的看了萧晨背影一眼，到得现在，他方才发现，似乎至始至终，他都没有看清楚过这位先祖的真实实力，在幻境时，萧晨虽然能够击败紫研与古南海"
+          },
+          "frequency_tier": "low",
+          "source": {
+            "chapter_number": 1491,
+            "chapter_section_id": "section-0086-line-8656",
+            "chapter_sha256": "d8d3aeee659d651ac5308586ce4595c22ead0a1b85ad947910e051d2690ca229",
+            "chapter_title": "第一千四百九十一章   魂魔老人",
+            "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+            "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+            "role": "held_out",
+            "source_line": 8673,
+            "split": "val"
+          },
+          "source_split": "val",
+          "train_chapter_count": 16,
+          "train_count": 67
+        },
+        "predicted": "古南海",
+        "probe_metadata": {
+          "candidates": [
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "low",
+              "text": "古南海",
+              "train_count": 67
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "low",
+              "text": "柳长老",
+              "train_count": 68
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "low",
+              "text": "姚坊主",
+              "train_count": 58
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "low",
+              "text": "盛长老",
+              "train_count": 72
+            }
+          ],
+          "capability": "corpus_entity_prediction",
+          "distractor_matching": {
+            "correct_character_length": 3,
+            "correct_train_count": 67,
+            "distractors": [
+              {
+                "character_length": 3,
+                "character_length_delta": 0,
+                "text": "柳长老",
+                "train_count": 68,
+                "train_count_ratio": 1.0149253731343284,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 3,
+                "character_length_delta": 0,
+                "text": "盛长老",
+                "train_count": 72,
+                "train_count_ratio": 1.0746268656716418,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 3,
+                "character_length_delta": 0,
+                "text": "姚坊主",
+                "train_count": 58,
+                "train_count_ratio": 1.1551724137931034,
+                "within_narrow_train_frequency_band": true
+              }
+            ],
+            "exact_character_length_matches": 3,
+            "narrow_train_frequency_matches": 3,
+            "narrow_train_frequency_ratio_max": 2.0,
+            "strategy": "same_entity_type_and_frequency_tier_then_minimum_character_length_delta_then_minimum_relative_train_frequency_gap",
+            "token_length_correction": "Character length is only a build-time proxy. The evaluator must correct token-length effects with total log-probability, mean token log-probability, rank, and reciprocal-rank metrics under the formal protocol.",
+            "tokenizer_used_for_matching": false
+          },
+          "entity": {
+            "entity_type": "person_speaker",
+            "frequency_tier": "low",
+            "text": "古南海",
+            "train_attribution_count": 5,
+            "train_chapter_count": 16,
+            "train_count": 67
+          },
+          "evidence": {
+            "answer_char_end": 93,
+            "answer_char_start": 90,
+            "chapter_char_end": 596,
+            "chapter_char_start": 503,
+            "offset_interval": "zero_based_end_exclusive",
+            "offset_unit": "utf8_decoded_unicode_codepoint",
+            "sha256": "9101bcac9c4b375116490e7b5314d6ca63bfd1e80a618ec42e3a439eb51c9eb5",
+            "split_char_end": 291736,
+            "split_char_start": 291643,
+            "text": "听得丰晨那低沉的声音，萧炎心头却是微感凛然，目光有些奇异的看了萧晨背影一眼，到得现在，他方才发现，似乎至始至终，他都没有看清楚过这位先祖的真实实力，在幻境时，萧晨虽然能够击败紫研与古南海"
+          },
+          "expected": {
+            "candidate_index": 0,
+            "text": "古南海"
+          },
+          "id": "pretrain_3e997e421f24e4583e33",
+          "probe_type": "cloze_candidate_ranking",
+          "prompt": "听得丰晨那低沉的声音，萧炎心头却是微感凛然，目光有些奇异的看了萧晨背影一眼，到得现在，他方才发现，似乎至始至终，他都没有看清楚过这位先祖的真实实力，在幻境时，萧晨虽然能够击败紫研与",
+          "source": {
+            "chapter_number": 1491,
+            "chapter_section_id": "section-0086-line-8656",
+            "chapter_sha256": "d8d3aeee659d651ac5308586ce4595c22ead0a1b85ad947910e051d2690ca229",
+            "chapter_title": "第一千四百九十一章   魂魔老人",
+            "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+            "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+            "role": "held_out",
+            "source_line": 8673,
+            "split": "val"
+          }
+        },
+        "probe_type": "cloze_candidate_ranking",
+        "rankings": {
+          "context_lift": {
+            "correct_margin_over_best_incorrect": -0.5234227180480957,
+            "correct_rank": 3,
+            "ordered_candidates": [
+              "柳长老",
+              "盛长老",
+              "古南海",
+              "姚坊主"
+            ],
+            "predicted": "柳长老",
+            "reciprocal_rank": 0.3333333333333333,
+            "top1_correct": false
+          },
+          "mean_token_log_probability": {
+            "correct_margin_over_best_incorrect": 0.1837470531463623,
+            "correct_rank": 1,
+            "ordered_candidates": [
+              "古南海",
+              "盛长老",
+              "柳长老",
+              "姚坊主"
+            ],
+            "predicted": "古南海",
+            "reciprocal_rank": 1.0,
+            "top1_correct": true
+          },
+          "per_character_log_probability": {
+            "correct_margin_over_best_incorrect": -4.707709312438965,
+            "correct_rank": 3,
+            "ordered_candidates": [
+              "柳长老",
+              "盛长老",
+              "古南海",
+              "姚坊主"
+            ],
+            "predicted": "柳长老",
+            "reciprocal_rank": 0.3333333333333333,
+            "top1_correct": false
+          },
+          "total_log_probability": {
+            "correct_margin_over_best_incorrect": -14.123127937316895,
+            "correct_rank": 3,
+            "ordered_candidates": [
+              "柳长老",
+              "盛长老",
+              "古南海",
+              "姚坊主"
+            ],
+            "predicted": "柳长老",
+            "reciprocal_rank": 0.3333333333333333,
+            "top1_correct": false
+          }
+        },
+        "scores": [
+          {
+            "candidate": "古南海",
+            "character_count": 3,
+            "context_lift": 1.765256404876709,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 0.5884188016255697,
+            "mean_token_log_probability": -7.757541656494141,
+            "neutral_mean_token_log_probability": -8.34596045811971,
+            "neutral_per_character_log_probability": -8.34596045811971,
+            "neutral_total_log_probability": -25.03788137435913,
+            "per_character_log_probability": -7.757541656494141,
+            "token_count": 3,
+            "total_log_probability": -23.272624969482422
+          },
+          {
+            "candidate": "柳长老",
+            "character_count": 3,
+            "context_lift": 2.2886791229248047,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 0.7628930409749349,
+            "mean_token_log_probability": -9.149497032165527,
+            "neutral_mean_token_log_probability": -11.438176155090332,
+            "neutral_per_character_log_probability": -3.812725385030111,
+            "neutral_total_log_probability": -11.438176155090332,
+            "per_character_log_probability": -3.049832344055176,
+            "token_count": 1,
+            "total_log_probability": -9.149497032165527
+          },
+          {
+            "candidate": "姚坊主",
+            "character_count": 3,
+            "context_lift": 1.1226654052734375,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 0.3742218017578125,
+            "mean_token_log_probability": -9.428037643432617,
+            "neutral_mean_token_log_probability": -9.80225944519043,
+            "neutral_per_character_log_probability": -9.80225944519043,
+            "neutral_total_log_probability": -29.40677833557129,
+            "per_character_log_probability": -9.428037643432617,
+            "token_count": 3,
+            "total_log_probability": -28.28411293029785
+          },
+          {
+            "candidate": "盛长老",
+            "character_count": 3,
+            "context_lift": 1.891350269317627,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 0.6304500897725424,
+            "mean_token_log_probability": -7.941288709640503,
+            "neutral_mean_token_log_probability": -8.886963844299316,
+            "neutral_per_character_log_probability": -5.924642562866211,
+            "neutral_total_log_probability": -17.773927688598633,
+            "per_character_log_probability": -5.294192473093669,
+            "token_count": 2,
+            "total_log_probability": -15.882577419281006
+          }
+        ],
+        "source": {
+          "chapter_number": 1491,
+          "chapter_section_id": "section-0086-line-8656",
+          "chapter_sha256": "d8d3aeee659d651ac5308586ce4595c22ead0a1b85ad947910e051d2690ca229",
+          "chapter_title": "第一千四百九十一章   魂魔老人",
+          "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+          "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+          "role": "held_out",
+          "source_line": 8673,
+          "split": "val"
+        },
+        "top1_correct": true
+      },
+      {
+        "candidate_metadata": [
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "high",
+            "text": "苏千",
+            "train_count": 981
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "high",
+            "text": "海波东",
+            "train_count": 1163
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "high",
+            "text": "风尊者",
+            "train_count": 526
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "high",
+            "text": "小医仙",
+            "train_count": 2317
+          }
+        ],
+        "candidates": [
+          "苏千",
+          "海波东",
+          "风尊者",
+          "小医仙"
+        ],
+        "capability": "corpus_entity_prediction",
+        "context": "目光与那漆黑如墨的眸子对视了一眼。半晌后。",
+        "correct": "海波东",
+        "correct_margin_over_best_incorrect": -0.4762868881225586,
+        "correct_rank": 2,
+        "entity": {
+          "entity_type": "person_speaker",
+          "frequency_tier": "high",
+          "text": "海波东",
+          "train_attribution_count": 26,
+          "train_chapter_count": 164,
+          "train_count": 1163
+        },
+        "evidence": {
+          "answer_char_end": 24,
+          "answer_char_start": 21,
+          "chapter_char_end": 2777,
+          "chapter_char_start": 2753,
+          "offset_interval": "zero_based_end_exclusive",
+          "offset_unit": "utf8_decoded_unicode_codepoint",
+          "sha256": "784c6ef55906a04c02aacee1d66e754e8d83fcc4a512eff8bd747541b690b92b",
+          "split_char_end": 41417,
+          "split_char_start": 41393,
+          "text": "目光与那漆黑如墨的眸子对视了一眼。半晌后。海波东"
+        },
+        "expected": {
+          "candidate_index": 1,
+          "text": "海波东"
+        },
+        "frequency_tier": "high",
+        "id": "pretrain_554190fad629b2b52332",
+        "metadata": {
+          "chapter_sha256": "88bd8f2a32de21686e66afc425406efa4c63760ed297370bdf16132f0aff1871",
+          "distractor_matching": {
+            "correct_character_length": 3,
+            "correct_train_count": 1163,
+            "distractors": [
+              {
+                "character_length": 3,
+                "character_length_delta": 0,
+                "text": "小医仙",
+                "train_count": 2317,
+                "train_count_ratio": 1.9922613929492692,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 3,
+                "character_length_delta": 0,
+                "text": "风尊者",
+                "train_count": 526,
+                "train_count_ratio": 2.211026615969582,
+                "within_narrow_train_frequency_band": false
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 1,
+                "text": "苏千",
+                "train_count": 981,
+                "train_count_ratio": 1.1855249745158003,
+                "within_narrow_train_frequency_band": true
+              }
+            ],
+            "exact_character_length_matches": 2,
+            "narrow_train_frequency_matches": 2,
+            "narrow_train_frequency_ratio_max": 2.0,
+            "strategy": "same_entity_type_and_frequency_tier_then_minimum_character_length_delta_then_minimum_relative_train_frequency_gap",
+            "token_length_correction": "Character length is only a build-time proxy. The evaluator must correct token-length effects with total log-probability, mean token log-probability, rank, and reciprocal-rank metrics under the formal protocol.",
+            "tokenizer_used_for_matching": false
+          },
+          "evidence": {
+            "answer_char_end": 24,
+            "answer_char_start": 21,
+            "chapter_char_end": 2777,
+            "chapter_char_start": 2753,
+            "offset_interval": "zero_based_end_exclusive",
+            "offset_unit": "utf8_decoded_unicode_codepoint",
+            "sha256": "784c6ef55906a04c02aacee1d66e754e8d83fcc4a512eff8bd747541b690b92b",
+            "split_char_end": 41417,
+            "split_char_start": 41393,
+            "text": "目光与那漆黑如墨的眸子对视了一眼。半晌后。海波东"
+          },
+          "frequency_tier": "high",
+          "source": {
+            "chapter_number": 246,
+            "chapter_section_id": "section-0013-line-1157",
+            "chapter_sha256": "88bd8f2a32de21686e66afc425406efa4c63760ed297370bdf16132f0aff1871",
+            "chapter_title": "第两百四十六章 墨家",
+            "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+            "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+            "role": "held_out",
+            "source_line": 1226,
+            "split": "val"
+          },
+          "source_split": "val",
+          "train_chapter_count": 164,
+          "train_count": 1163
+        },
+        "predicted": "小医仙",
+        "probe_metadata": {
+          "candidates": [
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "high",
+              "text": "苏千",
+              "train_count": 981
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "high",
+              "text": "海波东",
+              "train_count": 1163
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "high",
+              "text": "风尊者",
+              "train_count": 526
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "high",
+              "text": "小医仙",
+              "train_count": 2317
+            }
+          ],
+          "capability": "corpus_entity_prediction",
+          "distractor_matching": {
+            "correct_character_length": 3,
+            "correct_train_count": 1163,
+            "distractors": [
+              {
+                "character_length": 3,
+                "character_length_delta": 0,
+                "text": "小医仙",
+                "train_count": 2317,
+                "train_count_ratio": 1.9922613929492692,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 3,
+                "character_length_delta": 0,
+                "text": "风尊者",
+                "train_count": 526,
+                "train_count_ratio": 2.211026615969582,
+                "within_narrow_train_frequency_band": false
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 1,
+                "text": "苏千",
+                "train_count": 981,
+                "train_count_ratio": 1.1855249745158003,
+                "within_narrow_train_frequency_band": true
+              }
+            ],
+            "exact_character_length_matches": 2,
+            "narrow_train_frequency_matches": 2,
+            "narrow_train_frequency_ratio_max": 2.0,
+            "strategy": "same_entity_type_and_frequency_tier_then_minimum_character_length_delta_then_minimum_relative_train_frequency_gap",
+            "token_length_correction": "Character length is only a build-time proxy. The evaluator must correct token-length effects with total log-probability, mean token log-probability, rank, and reciprocal-rank metrics under the formal protocol.",
+            "tokenizer_used_for_matching": false
+          },
+          "entity": {
+            "entity_type": "person_speaker",
+            "frequency_tier": "high",
+            "text": "海波东",
+            "train_attribution_count": 26,
+            "train_chapter_count": 164,
+            "train_count": 1163
+          },
+          "evidence": {
+            "answer_char_end": 24,
+            "answer_char_start": 21,
+            "chapter_char_end": 2777,
+            "chapter_char_start": 2753,
+            "offset_interval": "zero_based_end_exclusive",
+            "offset_unit": "utf8_decoded_unicode_codepoint",
+            "sha256": "784c6ef55906a04c02aacee1d66e754e8d83fcc4a512eff8bd747541b690b92b",
+            "split_char_end": 41417,
+            "split_char_start": 41393,
+            "text": "目光与那漆黑如墨的眸子对视了一眼。半晌后。海波东"
+          },
+          "expected": {
+            "candidate_index": 1,
+            "text": "海波东"
+          },
+          "id": "pretrain_554190fad629b2b52332",
+          "probe_type": "cloze_candidate_ranking",
+          "prompt": "目光与那漆黑如墨的眸子对视了一眼。半晌后。",
+          "source": {
+            "chapter_number": 246,
+            "chapter_section_id": "section-0013-line-1157",
+            "chapter_sha256": "88bd8f2a32de21686e66afc425406efa4c63760ed297370bdf16132f0aff1871",
+            "chapter_title": "第两百四十六章 墨家",
+            "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+            "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+            "role": "held_out",
+            "source_line": 1226,
+            "split": "val"
+          }
+        },
+        "probe_type": "cloze_candidate_ranking",
+        "rankings": {
+          "context_lift": {
+            "correct_margin_over_best_incorrect": 0.4313468933105469,
+            "correct_rank": 1,
+            "ordered_candidates": [
+              "海波东",
+              "小医仙",
+              "苏千",
+              "风尊者"
+            ],
+            "predicted": "海波东",
+            "reciprocal_rank": 1.0,
+            "top1_correct": true
+          },
+          "mean_token_log_probability": {
+            "correct_margin_over_best_incorrect": -0.4762868881225586,
+            "correct_rank": 2,
+            "ordered_candidates": [
+              "小医仙",
+              "海波东",
+              "苏千",
+              "风尊者"
+            ],
+            "predicted": "小医仙",
+            "reciprocal_rank": 0.5,
+            "top1_correct": false
+          },
+          "per_character_log_probability": {
+            "correct_margin_over_best_incorrect": -0.158762296040853,
+            "correct_rank": 2,
+            "ordered_candidates": [
+              "小医仙",
+              "海波东",
+              "风尊者",
+              "苏千"
+            ],
+            "predicted": "小医仙",
+            "reciprocal_rank": 0.5,
+            "top1_correct": false
+          },
+          "total_log_probability": {
+            "correct_margin_over_best_incorrect": -0.4762868881225586,
+            "correct_rank": 2,
+            "ordered_candidates": [
+              "小医仙",
+              "海波东",
+              "苏千",
+              "风尊者"
+            ],
+            "predicted": "小医仙",
+            "reciprocal_rank": 0.5,
+            "top1_correct": false
+          }
+        },
+        "scores": [
+          {
+            "candidate": "苏千",
+            "character_count": 2,
+            "context_lift": 1.3449273109436035,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 0.6724636554718018,
+            "mean_token_log_probability": -7.443386554718018,
+            "neutral_mean_token_log_probability": -8.788313865661621,
+            "neutral_per_character_log_probability": -4.3941569328308105,
+            "neutral_total_log_probability": -8.788313865661621,
+            "per_character_log_probability": -3.721693277359009,
+            "token_count": 1,
+            "total_log_probability": -7.443386554718018
+          },
+          {
+            "candidate": "海波东",
+            "character_count": 3,
+            "context_lift": 3.0621519088745117,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 1.0207173029581706,
+            "mean_token_log_probability": -6.7785186767578125,
+            "neutral_mean_token_log_probability": -9.840670585632324,
+            "neutral_per_character_log_probability": -3.280223528544108,
+            "neutral_total_log_probability": -9.840670585632324,
+            "per_character_log_probability": -2.2595062255859375,
+            "token_count": 1,
+            "total_log_probability": -6.7785186767578125
+          },
+          {
+            "candidate": "风尊者",
+            "character_count": 3,
+            "context_lift": 1.3083114624023438,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 0.43610382080078125,
+            "mean_token_log_probability": -8.231082916259766,
+            "neutral_mean_token_log_probability": -9.53939437866211,
+            "neutral_per_character_log_probability": -3.179798126220703,
+            "neutral_total_log_probability": -9.53939437866211,
+            "per_character_log_probability": -2.743694305419922,
+            "token_count": 1,
+            "total_log_probability": -8.231082916259766
+          },
+          {
+            "candidate": "小医仙",
+            "character_count": 3,
+            "context_lift": 2.630805015563965,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 0.8769350051879883,
+            "mean_token_log_probability": -6.302231788635254,
+            "neutral_mean_token_log_probability": -8.933036804199219,
+            "neutral_per_character_log_probability": -2.9776789347330728,
+            "neutral_total_log_probability": -8.933036804199219,
+            "per_character_log_probability": -2.1007439295450845,
+            "token_count": 1,
+            "total_log_probability": -6.302231788635254
+          }
+        ],
+        "source": {
+          "chapter_number": 246,
+          "chapter_section_id": "section-0013-line-1157",
+          "chapter_sha256": "88bd8f2a32de21686e66afc425406efa4c63760ed297370bdf16132f0aff1871",
+          "chapter_title": "第两百四十六章 墨家",
+          "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+          "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+          "role": "held_out",
+          "source_line": 1226,
+          "split": "val"
+        },
+        "top1_correct": false
+      },
+      {
+        "candidate_metadata": [
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "low",
+            "text": "通玄长老",
+            "train_count": 81
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "low",
+            "text": "赤火长老",
+            "train_count": 95
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "low",
+            "text": "苏长老",
+            "train_count": 76
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "low",
+            "text": "青城长老",
+            "train_count": 27
+          }
+        ],
+        "candidates": [
+          "通玄长老",
+          "赤火长老",
+          "苏长老",
+          "青城长老"
+        ],
+        "capability": "corpus_entity_prediction",
+        "context": "在那全场无数道目光的注视下，这绘画族纹的工作足足持续了将近十分钟时间方才结束，而待得那最后一笔终于落下时，即便是以",
+        "correct": "通玄长老",
+        "correct_margin_over_best_incorrect": -0.39377355575561523,
+        "correct_rank": 3,
+        "entity": {
+          "entity_type": "person_speaker",
+          "frequency_tier": "low",
+          "text": "通玄长老",
+          "train_attribution_count": 3,
+          "train_chapter_count": 10,
+          "train_count": 81
+        },
+        "evidence": {
+          "answer_char_end": 61,
+          "answer_char_start": 57,
+          "chapter_char_end": 725,
+          "chapter_char_start": 664,
+          "offset_interval": "zero_based_end_exclusive",
+          "offset_unit": "utf8_decoded_unicode_codepoint",
+          "sha256": "2202ac85f5bef1663d15ffd601edb778a348b045f7a0fa01ff8f1779ddaf4387",
+          "split_char_end": 250682,
+          "split_char_start": 250621,
+          "text": "在那全场无数道目光的注视下，这绘画族纹的工作足足持续了将近十分钟时间方才结束，而待得那最后一笔终于落下时，即便是以通玄长老"
+        },
+        "expected": {
+          "candidate_index": 0,
+          "text": "通玄长老"
+        },
+        "frequency_tier": "low",
+        "id": "pretrain_8080c958ff2717e93e80",
+        "metadata": {
+          "chapter_sha256": "766dfc268ecd52506be8503b24796c5c2643a25bc557fcf0c2993fdbe82dc1c5",
+          "distractor_matching": {
+            "correct_character_length": 4,
+            "correct_train_count": 81,
+            "distractors": [
+              {
+                "character_length": 4,
+                "character_length_delta": 0,
+                "text": "赤火长老",
+                "train_count": 95,
+                "train_count_ratio": 1.1728395061728396,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 4,
+                "character_length_delta": 0,
+                "text": "青城长老",
+                "train_count": 27,
+                "train_count_ratio": 3.0,
+                "within_narrow_train_frequency_band": false
+              },
+              {
+                "character_length": 3,
+                "character_length_delta": 1,
+                "text": "苏长老",
+                "train_count": 76,
+                "train_count_ratio": 1.0657894736842106,
+                "within_narrow_train_frequency_band": true
+              }
+            ],
+            "exact_character_length_matches": 2,
+            "narrow_train_frequency_matches": 2,
+            "narrow_train_frequency_ratio_max": 2.0,
+            "strategy": "same_entity_type_and_frequency_tier_then_minimum_character_length_delta_then_minimum_relative_train_frequency_gap",
+            "token_length_correction": "Character length is only a build-time proxy. The evaluator must correct token-length effects with total log-probability, mean token log-probability, rank, and reciprocal-rank metrics under the formal protocol.",
+            "tokenizer_used_for_matching": false
+          },
+          "evidence": {
+            "answer_char_end": 61,
+            "answer_char_start": 57,
+            "chapter_char_end": 725,
+            "chapter_char_start": 664,
+            "offset_interval": "zero_based_end_exclusive",
+            "offset_unit": "utf8_decoded_unicode_codepoint",
+            "sha256": "2202ac85f5bef1663d15ffd601edb778a348b045f7a0fa01ff8f1779ddaf4387",
+            "split_char_end": 250682,
+            "split_char_start": 250621,
+            "text": "在那全场无数道目光的注视下，这绘画族纹的工作足足持续了将近十分钟时间方才结束，而待得那最后一笔终于落下时，即便是以通玄长老"
+          },
+          "frequency_tier": "low",
+          "source": {
+            "chapter_number": 1315,
+            "chapter_section_id": "section-0074-line-7265",
+            "chapter_sha256": "766dfc268ecd52506be8503b24796c5c2643a25bc557fcf0c2993fdbe82dc1c5",
+            "chapter_title": "第一千三百一十五章   七彩族纹【第三更！】",
+            "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+            "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+            "role": "held_out",
+            "source_line": 7290,
+            "split": "val"
+          },
+          "source_split": "val",
+          "train_chapter_count": 10,
+          "train_count": 81
+        },
+        "predicted": "青城长老",
+        "probe_metadata": {
+          "candidates": [
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "low",
+              "text": "通玄长老",
+              "train_count": 81
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "low",
+              "text": "赤火长老",
+              "train_count": 95
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "low",
+              "text": "苏长老",
+              "train_count": 76
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "low",
+              "text": "青城长老",
+              "train_count": 27
+            }
+          ],
+          "capability": "corpus_entity_prediction",
+          "distractor_matching": {
+            "correct_character_length": 4,
+            "correct_train_count": 81,
+            "distractors": [
+              {
+                "character_length": 4,
+                "character_length_delta": 0,
+                "text": "赤火长老",
+                "train_count": 95,
+                "train_count_ratio": 1.1728395061728396,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 4,
+                "character_length_delta": 0,
+                "text": "青城长老",
+                "train_count": 27,
+                "train_count_ratio": 3.0,
+                "within_narrow_train_frequency_band": false
+              },
+              {
+                "character_length": 3,
+                "character_length_delta": 1,
+                "text": "苏长老",
+                "train_count": 76,
+                "train_count_ratio": 1.0657894736842106,
+                "within_narrow_train_frequency_band": true
+              }
+            ],
+            "exact_character_length_matches": 2,
+            "narrow_train_frequency_matches": 2,
+            "narrow_train_frequency_ratio_max": 2.0,
+            "strategy": "same_entity_type_and_frequency_tier_then_minimum_character_length_delta_then_minimum_relative_train_frequency_gap",
+            "token_length_correction": "Character length is only a build-time proxy. The evaluator must correct token-length effects with total log-probability, mean token log-probability, rank, and reciprocal-rank metrics under the formal protocol.",
+            "tokenizer_used_for_matching": false
+          },
+          "entity": {
+            "entity_type": "person_speaker",
+            "frequency_tier": "low",
+            "text": "通玄长老",
+            "train_attribution_count": 3,
+            "train_chapter_count": 10,
+            "train_count": 81
+          },
+          "evidence": {
+            "answer_char_end": 61,
+            "answer_char_start": 57,
+            "chapter_char_end": 725,
+            "chapter_char_start": 664,
+            "offset_interval": "zero_based_end_exclusive",
+            "offset_unit": "utf8_decoded_unicode_codepoint",
+            "sha256": "2202ac85f5bef1663d15ffd601edb778a348b045f7a0fa01ff8f1779ddaf4387",
+            "split_char_end": 250682,
+            "split_char_start": 250621,
+            "text": "在那全场无数道目光的注视下，这绘画族纹的工作足足持续了将近十分钟时间方才结束，而待得那最后一笔终于落下时，即便是以通玄长老"
+          },
+          "expected": {
+            "candidate_index": 0,
+            "text": "通玄长老"
+          },
+          "id": "pretrain_8080c958ff2717e93e80",
+          "probe_type": "cloze_candidate_ranking",
+          "prompt": "在那全场无数道目光的注视下，这绘画族纹的工作足足持续了将近十分钟时间方才结束，而待得那最后一笔终于落下时，即便是以",
+          "source": {
+            "chapter_number": 1315,
+            "chapter_section_id": "section-0074-line-7265",
+            "chapter_sha256": "766dfc268ecd52506be8503b24796c5c2643a25bc557fcf0c2993fdbe82dc1c5",
+            "chapter_title": "第一千三百一十五章   七彩族纹【第三更！】",
+            "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+            "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+            "role": "held_out",
+            "source_line": 7290,
+            "split": "val"
+          }
+        },
+        "probe_type": "cloze_candidate_ranking",
+        "rankings": {
+          "context_lift": {
+            "correct_margin_over_best_incorrect": 1.2077574729919434,
+            "correct_rank": 1,
+            "ordered_candidates": [
+              "通玄长老",
+              "青城长老",
+              "赤火长老",
+              "苏长老"
+            ],
+            "predicted": "通玄长老",
+            "reciprocal_rank": 1.0,
+            "top1_correct": true
+          },
+          "mean_token_log_probability": {
+            "correct_margin_over_best_incorrect": -0.39377355575561523,
+            "correct_rank": 3,
+            "ordered_candidates": [
+              "青城长老",
+              "赤火长老",
+              "通玄长老",
+              "苏长老"
+            ],
+            "predicted": "青城长老",
+            "reciprocal_rank": 0.3333333333333333,
+            "top1_correct": false
+          },
+          "per_character_log_probability": {
+            "correct_margin_over_best_incorrect": -0.2953301668167114,
+            "correct_rank": 4,
+            "ordered_candidates": [
+              "青城长老",
+              "赤火长老",
+              "苏长老",
+              "通玄长老"
+            ],
+            "predicted": "青城长老",
+            "reciprocal_rank": 0.25,
+            "top1_correct": false
+          },
+          "total_log_probability": {
+            "correct_margin_over_best_incorrect": -5.867389678955078,
+            "correct_rank": 4,
+            "ordered_candidates": [
+              "苏长老",
+              "青城长老",
+              "赤火长老",
+              "通玄长老"
+            ],
+            "predicted": "苏长老",
+            "reciprocal_rank": 0.25,
+            "top1_correct": false
+          }
+        },
+        "scores": [
+          {
+            "candidate": "通玄长老",
+            "character_count": 4,
+            "context_lift": 3.869943618774414,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 0.9674859046936035,
+            "mean_token_log_probability": -7.594610850016276,
+            "neutral_mean_token_log_probability": -8.884592056274414,
+            "neutral_per_character_log_probability": -6.6634440422058105,
+            "neutral_total_log_probability": -26.653776168823242,
+            "per_character_log_probability": -5.695958137512207,
+            "token_count": 3,
+            "total_log_probability": -22.783832550048828
+          },
+          {
+            "candidate": "赤火长老",
+            "character_count": 4,
+            "context_lift": 1.1975998878479004,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 0.2993999719619751,
+            "mean_token_log_probability": -7.207884152730306,
+            "neutral_mean_token_log_probability": -7.6070841153462725,
+            "neutral_per_character_log_probability": -5.705313086509705,
+            "neutral_total_log_probability": -22.82125234603882,
+            "per_character_log_probability": -5.4059131145477295,
+            "token_count": 3,
+            "total_log_probability": -21.623652458190918
+          },
+          {
+            "candidate": "苏长老",
+            "character_count": 3,
+            "context_lift": 0.7515606880187988,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 0.2505202293395996,
+            "mean_token_log_probability": -8.458221435546875,
+            "neutral_mean_token_log_probability": -8.834001779556274,
+            "neutral_per_character_log_probability": -5.889334519704183,
+            "neutral_total_log_probability": -17.66800355911255,
+            "per_character_log_probability": -5.638814290364583,
+            "token_count": 2,
+            "total_log_probability": -16.91644287109375
+          },
+          {
+            "candidate": "青城长老",
+            "character_count": 4,
+            "context_lift": 2.6621861457824707,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 0.6655465364456177,
+            "mean_token_log_probability": -7.200837294260661,
+            "neutral_mean_token_log_probability": -8.08823267618815,
+            "neutral_per_character_log_probability": -6.066174507141113,
+            "neutral_total_log_probability": -24.264698028564453,
+            "per_character_log_probability": -5.400627970695496,
+            "token_count": 3,
+            "total_log_probability": -21.602511882781982
+          }
+        ],
+        "source": {
+          "chapter_number": 1315,
+          "chapter_section_id": "section-0074-line-7265",
+          "chapter_sha256": "766dfc268ecd52506be8503b24796c5c2643a25bc557fcf0c2993fdbe82dc1c5",
+          "chapter_title": "第一千三百一十五章   七彩族纹【第三更！】",
+          "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+          "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+          "role": "held_out",
+          "source_line": 7290,
+          "split": "val"
+        },
+        "top1_correct": false
+      },
+      {
+        "candidate_metadata": [
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "high",
+            "text": "云山",
+            "train_count": 692
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "high",
+            "text": "云韵",
+            "train_count": 670
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "high",
+            "text": "萧厉",
+            "train_count": 708
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "high",
+            "text": "古河",
+            "train_count": 610
+          }
+        ],
+        "candidates": [
+          "云山",
+          "云韵",
+          "萧厉",
+          "古河"
+        ],
+        "capability": "corpus_entity_prediction",
+        "context": "在广场上所有人都是将目光投注向天际那不知道有多厚实的火云时，一处火云突然猛烈的波动了起来，旋即两道身影自其中一前一后的暴掠而出。爽然出现的两道身影，自然是立刻将全场目光吸扯了逝坐瑰。不讨在众人瞧清楚时，原来并非是萧炎与",
+        "correct": "云山",
+        "correct_margin_over_best_incorrect": 0.14478158950805664,
+        "correct_rank": 1,
+        "entity": {
+          "entity_type": "person_speaker",
+          "frequency_tier": "high",
+          "text": "云山",
+          "train_attribution_count": 10,
+          "train_chapter_count": 89,
+          "train_count": 692
+        },
+        "evidence": {
+          "answer_char_end": 111,
+          "answer_char_start": 109,
+          "chapter_char_end": 1983,
+          "chapter_char_start": 1872,
+          "offset_interval": "zero_based_end_exclusive",
+          "offset_unit": "utf8_decoded_unicode_codepoint",
+          "sha256": "3e0a419d68c746342efaa8b3a69eb82f394fb7f38835d2ac9f8d8723895834ef",
+          "split_char_end": 128095,
+          "split_char_start": 127984,
+          "text": "在广场上所有人都是将目光投注向天际那不知道有多厚实的火云时，一处火云突然猛烈的波动了起来，旋即两道身影自其中一前一后的暴掠而出。爽然出现的两道身影，自然是立刻将全场目光吸扯了逝坐瑰。不讨在众人瞧清楚时，原来并非是萧炎与云山"
+        },
+        "expected": {
+          "candidate_index": 0,
+          "text": "云山"
+        },
+        "frequency_tier": "high",
+        "id": "pretrain_9a1cf7d762874554bf35",
+        "metadata": {
+          "chapter_sha256": "9e1bfa27a58a49964d9818880d55520b725beee986adb147a0e806da84dd4245",
+          "distractor_matching": {
+            "correct_character_length": 2,
+            "correct_train_count": 692,
+            "distractors": [
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "萧厉",
+                "train_count": 708,
+                "train_count_ratio": 1.023121387283237,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "云韵",
+                "train_count": 670,
+                "train_count_ratio": 1.0328358208955224,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "古河",
+                "train_count": 610,
+                "train_count_ratio": 1.1344262295081968,
+                "within_narrow_train_frequency_band": true
+              }
+            ],
+            "exact_character_length_matches": 3,
+            "narrow_train_frequency_matches": 3,
+            "narrow_train_frequency_ratio_max": 2.0,
+            "strategy": "same_entity_type_and_frequency_tier_then_minimum_character_length_delta_then_minimum_relative_train_frequency_gap",
+            "token_length_correction": "Character length is only a build-time proxy. The evaluator must correct token-length effects with total log-probability, mean token log-probability, rank, and reciprocal-rank metrics under the formal protocol.",
+            "tokenizer_used_for_matching": false
+          },
+          "evidence": {
+            "answer_char_end": 111,
+            "answer_char_start": 109,
+            "chapter_char_end": 1983,
+            "chapter_char_start": 1872,
+            "offset_interval": "zero_based_end_exclusive",
+            "offset_unit": "utf8_decoded_unicode_codepoint",
+            "sha256": "3e0a419d68c746342efaa8b3a69eb82f394fb7f38835d2ac9f8d8723895834ef",
+            "split_char_end": 128095,
+            "split_char_start": 127984,
+            "text": "在广场上所有人都是将目光投注向天际那不知道有多厚实的火云时，一处火云突然猛烈的波动了起来，旋即两道身影自其中一前一后的暴掠而出。爽然出现的两道身影，自然是立刻将全场目光吸扯了逝坐瑰。不讨在众人瞧清楚时，原来并非是萧炎与云山"
+          },
+          "frequency_tier": "high",
+          "source": {
+            "chapter_number": 688,
+            "chapter_section_id": "section-0037-line-3491",
+            "chapter_sha256": "9e1bfa27a58a49964d9818880d55520b725beee986adb147a0e806da84dd4245",
+            "chapter_title": "第六百八十八章   杀？",
+            "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+            "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+            "role": "held_out",
+            "source_line": 3539,
+            "split": "val"
+          },
+          "source_split": "val",
+          "train_chapter_count": 89,
+          "train_count": 692
+        },
+        "predicted": "云山",
+        "probe_metadata": {
+          "candidates": [
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "high",
+              "text": "云山",
+              "train_count": 692
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "high",
+              "text": "云韵",
+              "train_count": 670
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "high",
+              "text": "萧厉",
+              "train_count": 708
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "high",
+              "text": "古河",
+              "train_count": 610
+            }
+          ],
+          "capability": "corpus_entity_prediction",
+          "distractor_matching": {
+            "correct_character_length": 2,
+            "correct_train_count": 692,
+            "distractors": [
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "萧厉",
+                "train_count": 708,
+                "train_count_ratio": 1.023121387283237,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "云韵",
+                "train_count": 670,
+                "train_count_ratio": 1.0328358208955224,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "古河",
+                "train_count": 610,
+                "train_count_ratio": 1.1344262295081968,
+                "within_narrow_train_frequency_band": true
+              }
+            ],
+            "exact_character_length_matches": 3,
+            "narrow_train_frequency_matches": 3,
+            "narrow_train_frequency_ratio_max": 2.0,
+            "strategy": "same_entity_type_and_frequency_tier_then_minimum_character_length_delta_then_minimum_relative_train_frequency_gap",
+            "token_length_correction": "Character length is only a build-time proxy. The evaluator must correct token-length effects with total log-probability, mean token log-probability, rank, and reciprocal-rank metrics under the formal protocol.",
+            "tokenizer_used_for_matching": false
+          },
+          "entity": {
+            "entity_type": "person_speaker",
+            "frequency_tier": "high",
+            "text": "云山",
+            "train_attribution_count": 10,
+            "train_chapter_count": 89,
+            "train_count": 692
+          },
+          "evidence": {
+            "answer_char_end": 111,
+            "answer_char_start": 109,
+            "chapter_char_end": 1983,
+            "chapter_char_start": 1872,
+            "offset_interval": "zero_based_end_exclusive",
+            "offset_unit": "utf8_decoded_unicode_codepoint",
+            "sha256": "3e0a419d68c746342efaa8b3a69eb82f394fb7f38835d2ac9f8d8723895834ef",
+            "split_char_end": 128095,
+            "split_char_start": 127984,
+            "text": "在广场上所有人都是将目光投注向天际那不知道有多厚实的火云时，一处火云突然猛烈的波动了起来，旋即两道身影自其中一前一后的暴掠而出。爽然出现的两道身影，自然是立刻将全场目光吸扯了逝坐瑰。不讨在众人瞧清楚时，原来并非是萧炎与云山"
+          },
+          "expected": {
+            "candidate_index": 0,
+            "text": "云山"
+          },
+          "id": "pretrain_9a1cf7d762874554bf35",
+          "probe_type": "cloze_candidate_ranking",
+          "prompt": "在广场上所有人都是将目光投注向天际那不知道有多厚实的火云时，一处火云突然猛烈的波动了起来，旋即两道身影自其中一前一后的暴掠而出。爽然出现的两道身影，自然是立刻将全场目光吸扯了逝坐瑰。不讨在众人瞧清楚时，原来并非是萧炎与",
+          "source": {
+            "chapter_number": 688,
+            "chapter_section_id": "section-0037-line-3491",
+            "chapter_sha256": "9e1bfa27a58a49964d9818880d55520b725beee986adb147a0e806da84dd4245",
+            "chapter_title": "第六百八十八章   杀？",
+            "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+            "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+            "role": "held_out",
+            "source_line": 3539,
+            "split": "val"
+          }
+        },
+        "probe_type": "cloze_candidate_ranking",
+        "rankings": {
+          "context_lift": {
+            "correct_margin_over_best_incorrect": 0.5488142967224121,
+            "correct_rank": 1,
+            "ordered_candidates": [
+              "云山",
+              "萧厉",
+              "古河",
+              "云韵"
+            ],
+            "predicted": "云山",
+            "reciprocal_rank": 1.0,
+            "top1_correct": true
+          },
+          "mean_token_log_probability": {
+            "correct_margin_over_best_incorrect": 0.14478158950805664,
+            "correct_rank": 1,
+            "ordered_candidates": [
+              "云山",
+              "萧厉",
+              "古河",
+              "云韵"
+            ],
+            "predicted": "云山",
+            "reciprocal_rank": 1.0,
+            "top1_correct": true
+          },
+          "per_character_log_probability": {
+            "correct_margin_over_best_incorrect": 0.07239079475402832,
+            "correct_rank": 1,
+            "ordered_candidates": [
+              "云山",
+              "萧厉",
+              "古河",
+              "云韵"
+            ],
+            "predicted": "云山",
+            "reciprocal_rank": 1.0,
+            "top1_correct": true
+          },
+          "total_log_probability": {
+            "correct_margin_over_best_incorrect": 0.14478158950805664,
+            "correct_rank": 1,
+            "ordered_candidates": [
+              "云山",
+              "萧厉",
+              "古河",
+              "云韵"
+            ],
+            "predicted": "云山",
+            "reciprocal_rank": 1.0,
+            "top1_correct": true
+          }
+        },
+        "scores": [
+          {
+            "candidate": "云山",
+            "character_count": 2,
+            "context_lift": 3.1003990173339844,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 1.5501995086669922,
+            "mean_token_log_probability": -7.4777631759643555,
+            "neutral_mean_token_log_probability": -10.57816219329834,
+            "neutral_per_character_log_probability": -5.28908109664917,
+            "neutral_total_log_probability": -10.57816219329834,
+            "per_character_log_probability": -3.7388815879821777,
+            "token_count": 1,
+            "total_log_probability": -7.4777631759643555
+          },
+          {
+            "candidate": "云韵",
+            "character_count": 2,
+            "context_lift": 1.989903450012207,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 0.9949517250061035,
+            "mean_token_log_probability": -8.140029907226562,
+            "neutral_mean_token_log_probability": -10.12993335723877,
+            "neutral_per_character_log_probability": -5.064966678619385,
+            "neutral_total_log_probability": -10.12993335723877,
+            "per_character_log_probability": -4.070014953613281,
+            "token_count": 1,
+            "total_log_probability": -8.140029907226562
+          },
+          {
+            "candidate": "萧厉",
+            "character_count": 2,
+            "context_lift": 2.5515847206115723,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 1.2757923603057861,
+            "mean_token_log_probability": -7.622544765472412,
+            "neutral_mean_token_log_probability": -10.174129486083984,
+            "neutral_per_character_log_probability": -5.087064743041992,
+            "neutral_total_log_probability": -10.174129486083984,
+            "per_character_log_probability": -3.811272382736206,
+            "token_count": 1,
+            "total_log_probability": -7.622544765472412
+          },
+          {
+            "candidate": "古河",
+            "character_count": 2,
+            "context_lift": 2.4991636276245117,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 1.2495818138122559,
+            "mean_token_log_probability": -7.933328628540039,
+            "neutral_mean_token_log_probability": -10.43249225616455,
+            "neutral_per_character_log_probability": -5.216246128082275,
+            "neutral_total_log_probability": -10.43249225616455,
+            "per_character_log_probability": -3.9666643142700195,
+            "token_count": 1,
+            "total_log_probability": -7.933328628540039
+          }
+        ],
+        "source": {
+          "chapter_number": 688,
+          "chapter_section_id": "section-0037-line-3491",
+          "chapter_sha256": "9e1bfa27a58a49964d9818880d55520b725beee986adb147a0e806da84dd4245",
+          "chapter_title": "第六百八十八章   杀？",
+          "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+          "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+          "role": "held_out",
+          "source_line": 3539,
+          "split": "val"
+        },
+        "top1_correct": true
+      },
+      {
+        "candidate_metadata": [
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "high",
+            "text": "薰儿",
+            "train_count": 2778
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "high",
+            "text": "苏千",
+            "train_count": 981
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "high",
+            "text": "紫研",
+            "train_count": 1535
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "high",
+            "text": "药老",
+            "train_count": 3501
+          }
+        ],
+        "candidates": [
+          "薰儿",
+          "苏千",
+          "紫研",
+          "药老"
+        ],
+        "capability": "corpus_entity_prediction",
+        "context": "“我不太清楚。现在连我也只是模糊的感应。连他究竟是谁。都尚还分辩不出。”",
+        "correct": "药老",
+        "correct_margin_over_best_incorrect": 0.7725372314453125,
+        "correct_rank": 1,
+        "entity": {
+          "entity_type": "person_speaker",
+          "frequency_tier": "high",
+          "text": "药老",
+          "train_attribution_count": 193,
+          "train_chapter_count": 537,
+          "train_count": 3501
+        },
+        "evidence": {
+          "answer_char_end": 38,
+          "answer_char_start": 36,
+          "chapter_char_end": 2173,
+          "chapter_char_start": 2135,
+          "offset_interval": "zero_based_end_exclusive",
+          "offset_unit": "utf8_decoded_unicode_codepoint",
+          "sha256": "b7024180843bca917ae4df5d4876dcc0c511162ef1c7a023c446d63e9114ff53",
+          "split_char_end": 44410,
+          "split_char_start": 44372,
+          "text": "“我不太清楚。现在连我也只是模糊的感应。连他究竟是谁。都尚还分辩不出。”药老"
+        },
+        "expected": {
+          "candidate_index": 3,
+          "text": "药老"
+        },
+        "frequency_tier": "high",
+        "id": "pretrain_a793ee20fd7526250ff4",
+        "metadata": {
+          "chapter_sha256": "f90b93b2ed71620c8b0afff55f68de3efed1c749372789cde9b51f767cc7cdc3",
+          "distractor_matching": {
+            "correct_character_length": 2,
+            "correct_train_count": 3501,
+            "distractors": [
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "薰儿",
+                "train_count": 2778,
+                "train_count_ratio": 1.2602591792656588,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "紫研",
+                "train_count": 1535,
+                "train_count_ratio": 2.2807817589576547,
+                "within_narrow_train_frequency_band": false
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "苏千",
+                "train_count": 981,
+                "train_count_ratio": 3.5688073394495414,
+                "within_narrow_train_frequency_band": false
+              }
+            ],
+            "exact_character_length_matches": 3,
+            "narrow_train_frequency_matches": 1,
+            "narrow_train_frequency_ratio_max": 2.0,
+            "strategy": "same_entity_type_and_frequency_tier_then_minimum_character_length_delta_then_minimum_relative_train_frequency_gap",
+            "token_length_correction": "Character length is only a build-time proxy. The evaluator must correct token-length effects with total log-probability, mean token log-probability, rank, and reciprocal-rank metrics under the formal protocol.",
+            "tokenizer_used_for_matching": false
+          },
+          "evidence": {
+            "answer_char_end": 38,
+            "answer_char_start": 36,
+            "chapter_char_end": 2173,
+            "chapter_char_start": 2135,
+            "offset_interval": "zero_based_end_exclusive",
+            "offset_unit": "utf8_decoded_unicode_codepoint",
+            "sha256": "b7024180843bca917ae4df5d4876dcc0c511162ef1c7a023c446d63e9114ff53",
+            "split_char_end": 44410,
+            "split_char_start": 44372,
+            "text": "“我不太清楚。现在连我也只是模糊的感应。连他究竟是谁。都尚还分辩不出。”药老"
+          },
+          "frequency_tier": "high",
+          "source": {
+            "chapter_number": 258,
+            "chapter_section_id": "section-0014-line-1245",
+            "chapter_sha256": "f90b93b2ed71620c8b0afff55f68de3efed1c749372789cde9b51f767cc7cdc3",
+            "chapter_title": "第两百五十八章 神秘的青衣女人",
+            "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+            "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+            "role": "held_out",
+            "source_line": 1302,
+            "split": "val"
+          },
+          "source_split": "val",
+          "train_chapter_count": 537,
+          "train_count": 3501
+        },
+        "predicted": "药老",
+        "probe_metadata": {
+          "candidates": [
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "high",
+              "text": "薰儿",
+              "train_count": 2778
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "high",
+              "text": "苏千",
+              "train_count": 981
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "high",
+              "text": "紫研",
+              "train_count": 1535
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "high",
+              "text": "药老",
+              "train_count": 3501
+            }
+          ],
+          "capability": "corpus_entity_prediction",
+          "distractor_matching": {
+            "correct_character_length": 2,
+            "correct_train_count": 3501,
+            "distractors": [
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "薰儿",
+                "train_count": 2778,
+                "train_count_ratio": 1.2602591792656588,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "紫研",
+                "train_count": 1535,
+                "train_count_ratio": 2.2807817589576547,
+                "within_narrow_train_frequency_band": false
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "苏千",
+                "train_count": 981,
+                "train_count_ratio": 3.5688073394495414,
+                "within_narrow_train_frequency_band": false
+              }
+            ],
+            "exact_character_length_matches": 3,
+            "narrow_train_frequency_matches": 1,
+            "narrow_train_frequency_ratio_max": 2.0,
+            "strategy": "same_entity_type_and_frequency_tier_then_minimum_character_length_delta_then_minimum_relative_train_frequency_gap",
+            "token_length_correction": "Character length is only a build-time proxy. The evaluator must correct token-length effects with total log-probability, mean token log-probability, rank, and reciprocal-rank metrics under the formal protocol.",
+            "tokenizer_used_for_matching": false
+          },
+          "entity": {
+            "entity_type": "person_speaker",
+            "frequency_tier": "high",
+            "text": "药老",
+            "train_attribution_count": 193,
+            "train_chapter_count": 537,
+            "train_count": 3501
+          },
+          "evidence": {
+            "answer_char_end": 38,
+            "answer_char_start": 36,
+            "chapter_char_end": 2173,
+            "chapter_char_start": 2135,
+            "offset_interval": "zero_based_end_exclusive",
+            "offset_unit": "utf8_decoded_unicode_codepoint",
+            "sha256": "b7024180843bca917ae4df5d4876dcc0c511162ef1c7a023c446d63e9114ff53",
+            "split_char_end": 44410,
+            "split_char_start": 44372,
+            "text": "“我不太清楚。现在连我也只是模糊的感应。连他究竟是谁。都尚还分辩不出。”药老"
+          },
+          "expected": {
+            "candidate_index": 3,
+            "text": "药老"
+          },
+          "id": "pretrain_a793ee20fd7526250ff4",
+          "probe_type": "cloze_candidate_ranking",
+          "prompt": "“我不太清楚。现在连我也只是模糊的感应。连他究竟是谁。都尚还分辩不出。”",
+          "source": {
+            "chapter_number": 258,
+            "chapter_section_id": "section-0014-line-1245",
+            "chapter_sha256": "f90b93b2ed71620c8b0afff55f68de3efed1c749372789cde9b51f767cc7cdc3",
+            "chapter_title": "第两百五十八章 神秘的青衣女人",
+            "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+            "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+            "role": "held_out",
+            "source_line": 1302,
+            "split": "val"
+          }
+        },
+        "probe_type": "cloze_candidate_ranking",
+        "rankings": {
+          "context_lift": {
+            "correct_margin_over_best_incorrect": 0.8301601409912109,
+            "correct_rank": 1,
+            "ordered_candidates": [
+              "药老",
+              "薰儿",
+              "苏千",
+              "紫研"
+            ],
+            "predicted": "药老",
+            "reciprocal_rank": 1.0,
+            "top1_correct": true
+          },
+          "mean_token_log_probability": {
+            "correct_margin_over_best_incorrect": 0.7725372314453125,
+            "correct_rank": 1,
+            "ordered_candidates": [
+              "药老",
+              "薰儿",
+              "苏千",
+              "紫研"
+            ],
+            "predicted": "药老",
+            "reciprocal_rank": 1.0,
+            "top1_correct": true
+          },
+          "per_character_log_probability": {
+            "correct_margin_over_best_incorrect": 0.38626861572265625,
+            "correct_rank": 1,
+            "ordered_candidates": [
+              "药老",
+              "薰儿",
+              "苏千",
+              "紫研"
+            ],
+            "predicted": "药老",
+            "reciprocal_rank": 1.0,
+            "top1_correct": true
+          },
+          "total_log_probability": {
+            "correct_margin_over_best_incorrect": 0.7725372314453125,
+            "correct_rank": 1,
+            "ordered_candidates": [
+              "药老",
+              "薰儿",
+              "苏千",
+              "紫研"
+            ],
+            "predicted": "药老",
+            "reciprocal_rank": 1.0,
+            "top1_correct": true
+          }
+        },
+        "scores": [
+          {
+            "candidate": "薰儿",
+            "character_count": 2,
+            "context_lift": 2.8046908378601074,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 1.4023454189300537,
+            "mean_token_log_probability": -6.488473415374756,
+            "neutral_mean_token_log_probability": -9.293164253234863,
+            "neutral_per_character_log_probability": -4.646582126617432,
+            "neutral_total_log_probability": -9.293164253234863,
+            "per_character_log_probability": -3.244236707687378,
+            "token_count": 1,
+            "total_log_probability": -6.488473415374756
+          },
+          {
+            "candidate": "苏千",
+            "character_count": 2,
+            "context_lift": 1.5295443534851074,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 0.7647721767425537,
+            "mean_token_log_probability": -7.258769512176514,
+            "neutral_mean_token_log_probability": -8.788313865661621,
+            "neutral_per_character_log_probability": -4.3941569328308105,
+            "neutral_total_log_probability": -8.788313865661621,
+            "per_character_log_probability": -3.629384756088257,
+            "token_count": 1,
+            "total_log_probability": -7.258769512176514
+          },
+          {
+            "candidate": "紫研",
+            "character_count": 2,
+            "context_lift": 1.4218816757202148,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 0.7109408378601074,
+            "mean_token_log_probability": -8.204333305358887,
+            "neutral_mean_token_log_probability": -9.626214981079102,
+            "neutral_per_character_log_probability": -4.813107490539551,
+            "neutral_total_log_probability": -9.626214981079102,
+            "per_character_log_probability": -4.102166652679443,
+            "token_count": 1,
+            "total_log_probability": -8.204333305358887
+          },
+          {
+            "candidate": "药老",
+            "character_count": 2,
+            "context_lift": 3.6348509788513184,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 1.8174254894256592,
+            "mean_token_log_probability": -5.715936183929443,
+            "neutral_mean_token_log_probability": -9.350787162780762,
+            "neutral_per_character_log_probability": -4.675393581390381,
+            "neutral_total_log_probability": -9.350787162780762,
+            "per_character_log_probability": -2.8579680919647217,
+            "token_count": 1,
+            "total_log_probability": -5.715936183929443
+          }
+        ],
+        "source": {
+          "chapter_number": 258,
+          "chapter_section_id": "section-0014-line-1245",
+          "chapter_sha256": "f90b93b2ed71620c8b0afff55f68de3efed1c749372789cde9b51f767cc7cdc3",
+          "chapter_title": "第两百五十八章 神秘的青衣女人",
+          "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+          "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+          "role": "held_out",
+          "source_line": 1302,
+          "split": "val"
+        },
+        "top1_correct": true
+      },
+      {
+        "candidate_metadata": [
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "high",
+            "text": "药老",
+            "train_count": 3501
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "high",
+            "text": "薰儿",
+            "train_count": 2778
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "high",
+            "text": "萧炎",
+            "train_count": 44194
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "high",
+            "text": "紫研",
+            "train_count": 1535
+          }
+        ],
+        "candidates": [
+          "药老",
+          "薰儿",
+          "萧炎",
+          "紫研"
+        ],
+        "capability": "corpus_entity_prediction",
+        "context": "听得那响彻全场的喝彩欢呼声，废墟中心处，白山，琥嘉，吴昊三人背靠着石壁，略微抽搐的脸庞显示出他们身体所传来的剧痛，先前",
+        "correct": "萧炎",
+        "correct_margin_over_best_incorrect": 1.5628690719604492,
+        "correct_rank": 1,
+        "entity": {
+          "entity_type": "person_speaker",
+          "frequency_tier": "high",
+          "text": "萧炎",
+          "train_attribution_count": 383,
+          "train_chapter_count": 1586,
+          "train_count": 44194
+        },
+        "evidence": {
+          "answer_char_end": 61,
+          "answer_char_start": 59,
+          "chapter_char_end": 1886,
+          "chapter_char_start": 1825,
+          "offset_interval": "zero_based_end_exclusive",
+          "offset_unit": "utf8_decoded_unicode_codepoint",
+          "sha256": "3da4b3a14e03b93de268bdad701d7a5cfb8bf70adb3f7e76aca5ce8bb83d92de",
+          "split_char_end": 78843,
+          "split_char_start": 78782,
+          "text": "听得那响彻全场的喝彩欢呼声，废墟中心处，白山，琥嘉，吴昊三人背靠着石壁，略微抽搐的脸庞显示出他们身体所传来的剧痛，先前萧炎"
+        },
+        "expected": {
+          "candidate_index": 2,
+          "text": "萧炎"
+        },
+        "frequency_tier": "high",
+        "id": "pretrain_e1872f26b13afff732b8",
+        "metadata": {
+          "chapter_sha256": "6b47ffe5b4ad7f920d339d3327c4e504cb4dbaad3f7cce6f27b201c24efe91e2",
+          "distractor_matching": {
+            "correct_character_length": 2,
+            "correct_train_count": 44194,
+            "distractors": [
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "药老",
+                "train_count": 3501,
+                "train_count_ratio": 12.623250499857184,
+                "within_narrow_train_frequency_band": false
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "薰儿",
+                "train_count": 2778,
+                "train_count_ratio": 15.908567314614832,
+                "within_narrow_train_frequency_band": false
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "紫研",
+                "train_count": 1535,
+                "train_count_ratio": 28.79087947882736,
+                "within_narrow_train_frequency_band": false
+              }
+            ],
+            "exact_character_length_matches": 3,
+            "narrow_train_frequency_matches": 0,
+            "narrow_train_frequency_ratio_max": 2.0,
+            "strategy": "same_entity_type_and_frequency_tier_then_minimum_character_length_delta_then_minimum_relative_train_frequency_gap",
+            "token_length_correction": "Character length is only a build-time proxy. The evaluator must correct token-length effects with total log-probability, mean token log-probability, rank, and reciprocal-rank metrics under the formal protocol.",
+            "tokenizer_used_for_matching": false
+          },
+          "evidence": {
+            "answer_char_end": 61,
+            "answer_char_start": 59,
+            "chapter_char_end": 1886,
+            "chapter_char_start": 1825,
+            "offset_interval": "zero_based_end_exclusive",
+            "offset_unit": "utf8_decoded_unicode_codepoint",
+            "sha256": "3da4b3a14e03b93de268bdad701d7a5cfb8bf70adb3f7e76aca5ce8bb83d92de",
+            "split_char_end": 78843,
+            "split_char_start": 78782,
+            "text": "听得那响彻全场的喝彩欢呼声，废墟中心处，白山，琥嘉，吴昊三人背靠着石壁，略微抽搐的脸庞显示出他们身体所传来的剧痛，先前萧炎"
+          },
+          "frequency_tier": "high",
+          "source": {
+            "chapter_number": 398,
+            "chapter_section_id": "section-0023-line-2203",
+            "chapter_sha256": "6b47ffe5b4ad7f920d339d3327c4e504cb4dbaad3f7cce6f27b201c24efe91e2",
+            "chapter_title": "第三百九十八章 比赛落幕【第一更！】",
+            "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+            "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+            "role": "held_out",
+            "source_line": 2237,
+            "split": "val"
+          },
+          "source_split": "val",
+          "train_chapter_count": 1586,
+          "train_count": 44194
+        },
+        "predicted": "萧炎",
+        "probe_metadata": {
+          "candidates": [
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "high",
+              "text": "药老",
+              "train_count": 3501
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "high",
+              "text": "薰儿",
+              "train_count": 2778
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "high",
+              "text": "萧炎",
+              "train_count": 44194
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "high",
+              "text": "紫研",
+              "train_count": 1535
+            }
+          ],
+          "capability": "corpus_entity_prediction",
+          "distractor_matching": {
+            "correct_character_length": 2,
+            "correct_train_count": 44194,
+            "distractors": [
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "药老",
+                "train_count": 3501,
+                "train_count_ratio": 12.623250499857184,
+                "within_narrow_train_frequency_band": false
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "薰儿",
+                "train_count": 2778,
+                "train_count_ratio": 15.908567314614832,
+                "within_narrow_train_frequency_band": false
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "紫研",
+                "train_count": 1535,
+                "train_count_ratio": 28.79087947882736,
+                "within_narrow_train_frequency_band": false
+              }
+            ],
+            "exact_character_length_matches": 3,
+            "narrow_train_frequency_matches": 0,
+            "narrow_train_frequency_ratio_max": 2.0,
+            "strategy": "same_entity_type_and_frequency_tier_then_minimum_character_length_delta_then_minimum_relative_train_frequency_gap",
+            "token_length_correction": "Character length is only a build-time proxy. The evaluator must correct token-length effects with total log-probability, mean token log-probability, rank, and reciprocal-rank metrics under the formal protocol.",
+            "tokenizer_used_for_matching": false
+          },
+          "entity": {
+            "entity_type": "person_speaker",
+            "frequency_tier": "high",
+            "text": "萧炎",
+            "train_attribution_count": 383,
+            "train_chapter_count": 1586,
+            "train_count": 44194
+          },
+          "evidence": {
+            "answer_char_end": 61,
+            "answer_char_start": 59,
+            "chapter_char_end": 1886,
+            "chapter_char_start": 1825,
+            "offset_interval": "zero_based_end_exclusive",
+            "offset_unit": "utf8_decoded_unicode_codepoint",
+            "sha256": "3da4b3a14e03b93de268bdad701d7a5cfb8bf70adb3f7e76aca5ce8bb83d92de",
+            "split_char_end": 78843,
+            "split_char_start": 78782,
+            "text": "听得那响彻全场的喝彩欢呼声，废墟中心处，白山，琥嘉，吴昊三人背靠着石壁，略微抽搐的脸庞显示出他们身体所传来的剧痛，先前萧炎"
+          },
+          "expected": {
+            "candidate_index": 2,
+            "text": "萧炎"
+          },
+          "id": "pretrain_e1872f26b13afff732b8",
+          "probe_type": "cloze_candidate_ranking",
+          "prompt": "听得那响彻全场的喝彩欢呼声，废墟中心处，白山，琥嘉，吴昊三人背靠着石壁，略微抽搐的脸庞显示出他们身体所传来的剧痛，先前",
+          "source": {
+            "chapter_number": 398,
+            "chapter_section_id": "section-0023-line-2203",
+            "chapter_sha256": "6b47ffe5b4ad7f920d339d3327c4e504cb4dbaad3f7cce6f27b201c24efe91e2",
+            "chapter_title": "第三百九十八章 比赛落幕【第一更！】",
+            "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+            "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+            "role": "held_out",
+            "source_line": 2237,
+            "split": "val"
+          }
+        },
+        "probe_type": "cloze_candidate_ranking",
+        "rankings": {
+          "context_lift": {
+            "correct_margin_over_best_incorrect": 0.11444568634033203,
+            "correct_rank": 1,
+            "ordered_candidates": [
+              "萧炎",
+              "药老",
+              "薰儿",
+              "紫研"
+            ],
+            "predicted": "萧炎",
+            "reciprocal_rank": 1.0,
+            "top1_correct": true
+          },
+          "mean_token_log_probability": {
+            "correct_margin_over_best_incorrect": 1.5628690719604492,
+            "correct_rank": 1,
+            "ordered_candidates": [
+              "萧炎",
+              "药老",
+              "薰儿",
+              "紫研"
+            ],
+            "predicted": "萧炎",
+            "reciprocal_rank": 1.0,
+            "top1_correct": true
+          },
+          "per_character_log_probability": {
+            "correct_margin_over_best_incorrect": 0.7814345359802246,
+            "correct_rank": 1,
+            "ordered_candidates": [
+              "萧炎",
+              "药老",
+              "薰儿",
+              "紫研"
+            ],
+            "predicted": "萧炎",
+            "reciprocal_rank": 1.0,
+            "top1_correct": true
+          },
+          "total_log_probability": {
+            "correct_margin_over_best_incorrect": 1.5628690719604492,
+            "correct_rank": 1,
+            "ordered_candidates": [
+              "萧炎",
+              "药老",
+              "薰儿",
+              "紫研"
+            ],
+            "predicted": "萧炎",
+            "reciprocal_rank": 1.0,
+            "top1_correct": true
+          }
+        },
+        "scores": [
+          {
+            "candidate": "药老",
+            "character_count": 2,
+            "context_lift": 3.3498401641845703,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 1.6749200820922852,
+            "mean_token_log_probability": -6.000946998596191,
+            "neutral_mean_token_log_probability": -9.350787162780762,
+            "neutral_per_character_log_probability": -4.675393581390381,
+            "neutral_total_log_probability": -9.350787162780762,
+            "per_character_log_probability": -3.0004734992980957,
+            "token_count": 1,
+            "total_log_probability": -6.000946998596191
+          },
+          {
+            "candidate": "薰儿",
+            "character_count": 2,
+            "context_lift": 3.290398120880127,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 1.6451990604400635,
+            "mean_token_log_probability": -6.002766132354736,
+            "neutral_mean_token_log_probability": -9.293164253234863,
+            "neutral_per_character_log_probability": -4.646582126617432,
+            "neutral_total_log_probability": -9.293164253234863,
+            "per_character_log_probability": -3.001383066177368,
+            "token_count": 1,
+            "total_log_probability": -6.002766132354736
+          },
+          {
+            "candidate": "萧炎",
+            "character_count": 2,
+            "context_lift": 3.4642858505249023,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 1.7321429252624512,
+            "mean_token_log_probability": -4.438077926635742,
+            "neutral_mean_token_log_probability": -7.9023637771606445,
+            "neutral_per_character_log_probability": -3.9511818885803223,
+            "neutral_total_log_probability": -7.9023637771606445,
+            "per_character_log_probability": -2.219038963317871,
+            "token_count": 1,
+            "total_log_probability": -4.438077926635742
+          },
+          {
+            "candidate": "紫研",
+            "character_count": 2,
+            "context_lift": 2.01808500289917,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 1.009042501449585,
+            "mean_token_log_probability": -7.608129978179932,
+            "neutral_mean_token_log_probability": -9.626214981079102,
+            "neutral_per_character_log_probability": -4.813107490539551,
+            "neutral_total_log_probability": -9.626214981079102,
+            "per_character_log_probability": -3.804064989089966,
+            "token_count": 1,
+            "total_log_probability": -7.608129978179932
+          }
+        ],
+        "source": {
+          "chapter_number": 398,
+          "chapter_section_id": "section-0023-line-2203",
+          "chapter_sha256": "6b47ffe5b4ad7f920d339d3327c4e504cb4dbaad3f7cce6f27b201c24efe91e2",
+          "chapter_title": "第三百九十八章 比赛落幕【第一更！】",
+          "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+          "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+          "role": "held_out",
+          "source_line": 2237,
+          "split": "val"
+        },
+        "top1_correct": true
+      },
+      {
+        "candidate_metadata": [
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "low",
+            "text": "韩冲",
+            "train_count": 97
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "low",
+            "text": "烛坤",
+            "train_count": 110
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "low",
+            "text": "魂风",
+            "train_count": 103
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "low",
+            "text": "范凌",
+            "train_count": 109
+          }
+        ],
+        "candidates": [
+          "韩冲",
+          "烛坤",
+          "魂风",
+          "范凌"
+        ],
+        "capability": "corpus_entity_prediction",
+        "context": "“太虚古龙一族，紫研完全能够打理，她有着你留给她的源气，要达到斗帝，也只是时间问题，我就先去那片位面给她探探路吧。”",
+        "correct": "烛坤",
+        "correct_margin_over_best_incorrect": -1.6908385753631592,
+        "correct_rank": 3,
+        "entity": {
+          "entity_type": "person_speaker",
+          "frequency_tier": "low",
+          "text": "烛坤",
+          "train_attribution_count": 4,
+          "train_chapter_count": 15,
+          "train_count": 110
+        },
+        "evidence": {
+          "answer_char_end": 60,
+          "answer_char_start": 58,
+          "chapter_char_end": 1705,
+          "chapter_char_start": 1645,
+          "offset_interval": "zero_based_end_exclusive",
+          "offset_unit": "utf8_decoded_unicode_codepoint",
+          "sha256": "1c2900755cdff36365c37600f03fcb74c40d80f0884324028efb1a455570db43",
+          "split_char_end": 313386,
+          "split_char_start": 313326,
+          "text": "“太虚古龙一族，紫研完全能够打理，她有着你留给她的源气，要达到斗帝，也只是时间问题，我就先去那片位面给她探探路吧。”烛坤"
+        },
+        "expected": {
+          "candidate_index": 1,
+          "text": "烛坤"
+        },
+        "frequency_tier": "low",
+        "id": "pretrain_e7962b122a29e827f0f2",
+        "metadata": {
+          "chapter_sha256": "258f644e2a5a6be406bc39220bade053c825c4d13697590bc4044f0f0dda12fc",
+          "distractor_matching": {
+            "correct_character_length": 2,
+            "correct_train_count": 110,
+            "distractors": [
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "范凌",
+                "train_count": 109,
+                "train_count_ratio": 1.0091743119266054,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "魂风",
+                "train_count": 103,
+                "train_count_ratio": 1.0679611650485437,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "韩冲",
+                "train_count": 97,
+                "train_count_ratio": 1.134020618556701,
+                "within_narrow_train_frequency_band": true
+              }
+            ],
+            "exact_character_length_matches": 3,
+            "narrow_train_frequency_matches": 3,
+            "narrow_train_frequency_ratio_max": 2.0,
+            "strategy": "same_entity_type_and_frequency_tier_then_minimum_character_length_delta_then_minimum_relative_train_frequency_gap",
+            "token_length_correction": "Character length is only a build-time proxy. The evaluator must correct token-length effects with total log-probability, mean token log-probability, rank, and reciprocal-rank metrics under the formal protocol.",
+            "tokenizer_used_for_matching": false
+          },
+          "evidence": {
+            "answer_char_end": 60,
+            "answer_char_start": 58,
+            "chapter_char_end": 1705,
+            "chapter_char_start": 1645,
+            "offset_interval": "zero_based_end_exclusive",
+            "offset_unit": "utf8_decoded_unicode_codepoint",
+            "sha256": "1c2900755cdff36365c37600f03fcb74c40d80f0884324028efb1a455570db43",
+            "split_char_end": 313386,
+            "split_char_start": 313326,
+            "text": "“太虚古龙一族，紫研完全能够打理，她有着你留给她的源气，要达到斗帝，也只是时间问题，我就先去那片位面给她探探路吧。”烛坤"
+          },
+          "frequency_tier": "low",
+          "source": {
+            "chapter_number": 1,
+            "chapter_section_id": "section-0092-line-9313",
+            "chapter_sha256": "258f644e2a5a6be406bc39220bade053c825c4d13697590bc4044f0f0dda12fc",
+            "chapter_title": "第一章  五帝破空",
+            "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+            "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+            "role": "held_out",
+            "source_line": 9375,
+            "split": "val"
+          },
+          "source_split": "val",
+          "train_chapter_count": 15,
+          "train_count": 110
+        },
+        "predicted": "魂风",
+        "probe_metadata": {
+          "candidates": [
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "low",
+              "text": "韩冲",
+              "train_count": 97
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "low",
+              "text": "烛坤",
+              "train_count": 110
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "low",
+              "text": "魂风",
+              "train_count": 103
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "low",
+              "text": "范凌",
+              "train_count": 109
+            }
+          ],
+          "capability": "corpus_entity_prediction",
+          "distractor_matching": {
+            "correct_character_length": 2,
+            "correct_train_count": 110,
+            "distractors": [
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "范凌",
+                "train_count": 109,
+                "train_count_ratio": 1.0091743119266054,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "魂风",
+                "train_count": 103,
+                "train_count_ratio": 1.0679611650485437,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "韩冲",
+                "train_count": 97,
+                "train_count_ratio": 1.134020618556701,
+                "within_narrow_train_frequency_band": true
+              }
+            ],
+            "exact_character_length_matches": 3,
+            "narrow_train_frequency_matches": 3,
+            "narrow_train_frequency_ratio_max": 2.0,
+            "strategy": "same_entity_type_and_frequency_tier_then_minimum_character_length_delta_then_minimum_relative_train_frequency_gap",
+            "token_length_correction": "Character length is only a build-time proxy. The evaluator must correct token-length effects with total log-probability, mean token log-probability, rank, and reciprocal-rank metrics under the formal protocol.",
+            "tokenizer_used_for_matching": false
+          },
+          "entity": {
+            "entity_type": "person_speaker",
+            "frequency_tier": "low",
+            "text": "烛坤",
+            "train_attribution_count": 4,
+            "train_chapter_count": 15,
+            "train_count": 110
+          },
+          "evidence": {
+            "answer_char_end": 60,
+            "answer_char_start": 58,
+            "chapter_char_end": 1705,
+            "chapter_char_start": 1645,
+            "offset_interval": "zero_based_end_exclusive",
+            "offset_unit": "utf8_decoded_unicode_codepoint",
+            "sha256": "1c2900755cdff36365c37600f03fcb74c40d80f0884324028efb1a455570db43",
+            "split_char_end": 313386,
+            "split_char_start": 313326,
+            "text": "“太虚古龙一族，紫研完全能够打理，她有着你留给她的源气，要达到斗帝，也只是时间问题，我就先去那片位面给她探探路吧。”烛坤"
+          },
+          "expected": {
+            "candidate_index": 1,
+            "text": "烛坤"
+          },
+          "id": "pretrain_e7962b122a29e827f0f2",
+          "probe_type": "cloze_candidate_ranking",
+          "prompt": "“太虚古龙一族，紫研完全能够打理，她有着你留给她的源气，要达到斗帝，也只是时间问题，我就先去那片位面给她探探路吧。”",
+          "source": {
+            "chapter_number": 1,
+            "chapter_section_id": "section-0092-line-9313",
+            "chapter_sha256": "258f644e2a5a6be406bc39220bade053c825c4d13697590bc4044f0f0dda12fc",
+            "chapter_title": "第一章  五帝破空",
+            "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+            "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+            "role": "held_out",
+            "source_line": 9375,
+            "split": "val"
+          }
+        },
+        "probe_type": "cloze_candidate_ranking",
+        "rankings": {
+          "context_lift": {
+            "correct_margin_over_best_incorrect": 0.11214494705200195,
+            "correct_rank": 1,
+            "ordered_candidates": [
+              "烛坤",
+              "魂风",
+              "范凌",
+              "韩冲"
+            ],
+            "predicted": "烛坤",
+            "reciprocal_rank": 1.0,
+            "top1_correct": true
+          },
+          "mean_token_log_probability": {
+            "correct_margin_over_best_incorrect": -1.6908385753631592,
+            "correct_rank": 3,
+            "ordered_candidates": [
+              "魂风",
+              "韩冲",
+              "烛坤",
+              "范凌"
+            ],
+            "predicted": "魂风",
+            "reciprocal_rank": 0.3333333333333333,
+            "top1_correct": false
+          },
+          "per_character_log_probability": {
+            "correct_margin_over_best_incorrect": -1.6908385753631592,
+            "correct_rank": 3,
+            "ordered_candidates": [
+              "魂风",
+              "韩冲",
+              "烛坤",
+              "范凌"
+            ],
+            "predicted": "魂风",
+            "reciprocal_rank": 0.3333333333333333,
+            "top1_correct": false
+          },
+          "total_log_probability": {
+            "correct_margin_over_best_incorrect": -3.3816771507263184,
+            "correct_rank": 3,
+            "ordered_candidates": [
+              "魂风",
+              "韩冲",
+              "烛坤",
+              "范凌"
+            ],
+            "predicted": "魂风",
+            "reciprocal_rank": 0.3333333333333333,
+            "top1_correct": false
+          }
+        },
+        "scores": [
+          {
+            "candidate": "韩冲",
+            "character_count": 2,
+            "context_lift": -0.5114631652832031,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": -0.25573158264160156,
+            "mean_token_log_probability": -9.116652965545654,
+            "neutral_mean_token_log_probability": -8.860921382904053,
+            "neutral_per_character_log_probability": -8.860921382904053,
+            "neutral_total_log_probability": -17.721842765808105,
+            "per_character_log_probability": -9.116652965545654,
+            "token_count": 2,
+            "total_log_probability": -18.23330593109131
+          },
+          {
+            "candidate": "烛坤",
+            "character_count": 2,
+            "context_lift": 0.15302276611328125,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 0.07651138305664062,
+            "mean_token_log_probability": -9.733275413513184,
+            "neutral_mean_token_log_probability": -9.809786796569824,
+            "neutral_per_character_log_probability": -9.809786796569824,
+            "neutral_total_log_probability": -19.61957359313965,
+            "per_character_log_probability": -9.733275413513184,
+            "token_count": 2,
+            "total_log_probability": -19.466550827026367
+          },
+          {
+            "candidate": "魂风",
+            "character_count": 2,
+            "context_lift": 0.0408778190612793,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 0.02043890953063965,
+            "mean_token_log_probability": -8.042436838150024,
+            "neutral_mean_token_log_probability": -8.062875747680664,
+            "neutral_per_character_log_probability": -8.062875747680664,
+            "neutral_total_log_probability": -16.125751495361328,
+            "per_character_log_probability": -8.042436838150024,
+            "token_count": 2,
+            "total_log_probability": -16.08487367630005
+          },
+          {
+            "candidate": "范凌",
+            "character_count": 2,
+            "context_lift": -0.0962686538696289,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": -0.04813432693481445,
+            "mean_token_log_probability": -10.982354640960693,
+            "neutral_mean_token_log_probability": -10.934220314025879,
+            "neutral_per_character_log_probability": -10.934220314025879,
+            "neutral_total_log_probability": -21.868440628051758,
+            "per_character_log_probability": -10.982354640960693,
+            "token_count": 2,
+            "total_log_probability": -21.964709281921387
+          }
+        ],
+        "source": {
+          "chapter_number": 1,
+          "chapter_section_id": "section-0092-line-9313",
+          "chapter_sha256": "258f644e2a5a6be406bc39220bade053c825c4d13697590bc4044f0f0dda12fc",
+          "chapter_title": "第一章  五帝破空",
+          "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+          "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+          "role": "held_out",
+          "source_line": 9375,
+          "split": "val"
+        },
+        "top1_correct": false
+      },
+      {
+        "candidate_metadata": [
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "low",
+            "text": "罗成",
+            "train_count": 70
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "low",
+            "text": "严狮",
+            "train_count": 41
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "low",
+            "text": "谷尼",
+            "train_count": 72
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "low",
+            "text": "古华",
+            "train_count": 38
+          }
+        ],
+        "candidates": [
+          "罗成",
+          "严狮",
+          "谷尼",
+          "古华"
+        ],
+        "capability": "corpus_entity_prediction",
+        "context": "如此可怕的力量反馈”直接是在瞬间擢毁了",
+        "correct": "古华",
+        "correct_margin_over_best_incorrect": -0.13652467727661133,
+        "correct_rank": 2,
+        "entity": {
+          "entity_type": "person_speaker",
+          "frequency_tier": "low",
+          "text": "古华",
+          "train_attribution_count": 4,
+          "train_chapter_count": 14,
+          "train_count": 38
+        },
+        "evidence": {
+          "answer_char_end": 21,
+          "answer_char_start": 19,
+          "chapter_char_end": 2706,
+          "chapter_char_start": 2685,
+          "offset_interval": "zero_based_end_exclusive",
+          "offset_unit": "utf8_decoded_unicode_codepoint",
+          "sha256": "040ae03d860f5ecf367b2fbbf7a4fc9e07546b4540fc8d38bf64aefc80eb5bf8",
+          "split_char_end": 266678,
+          "split_char_start": 266657,
+          "text": "如此可怕的力量反馈”直接是在瞬间擢毁了古华"
+        },
+        "expected": {
+          "candidate_index": 3,
+          "text": "古华"
+        },
+        "frequency_tier": "low",
+        "id": "pretrain_e7ceb9476799d2bd2b36",
+        "metadata": {
+          "chapter_sha256": "df78b834133acbee9c21f803a61dcab11e6114f7f9eb71cf4e8c989b2a0f488c",
+          "distractor_matching": {
+            "correct_character_length": 2,
+            "correct_train_count": 38,
+            "distractors": [
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "严狮",
+                "train_count": 41,
+                "train_count_ratio": 1.0789473684210527,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "罗成",
+                "train_count": 70,
+                "train_count_ratio": 1.8421052631578947,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "谷尼",
+                "train_count": 72,
+                "train_count_ratio": 1.894736842105263,
+                "within_narrow_train_frequency_band": true
+              }
+            ],
+            "exact_character_length_matches": 3,
+            "narrow_train_frequency_matches": 3,
+            "narrow_train_frequency_ratio_max": 2.0,
+            "strategy": "same_entity_type_and_frequency_tier_then_minimum_character_length_delta_then_minimum_relative_train_frequency_gap",
+            "token_length_correction": "Character length is only a build-time proxy. The evaluator must correct token-length effects with total log-probability, mean token log-probability, rank, and reciprocal-rank metrics under the formal protocol.",
+            "tokenizer_used_for_matching": false
+          },
+          "evidence": {
+            "answer_char_end": 21,
+            "answer_char_start": 19,
+            "chapter_char_end": 2706,
+            "chapter_char_start": 2685,
+            "offset_interval": "zero_based_end_exclusive",
+            "offset_unit": "utf8_decoded_unicode_codepoint",
+            "sha256": "040ae03d860f5ecf367b2fbbf7a4fc9e07546b4540fc8d38bf64aefc80eb5bf8",
+            "split_char_end": 266678,
+            "split_char_start": 266657,
+            "text": "如此可怕的力量反馈”直接是在瞬间擢毁了古华"
+          },
+          "frequency_tier": "low",
+          "source": {
+            "chapter_number": 1397,
+            "chapter_section_id": "section-0078-line-7736",
+            "chapter_sha256": "df78b834133acbee9c21f803a61dcab11e6114f7f9eb71cf4e8c989b2a0f488c",
+            "chapter_title": "第一千三百九十七章 轰杀半圣傀儡",
+            "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+            "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+            "role": "held_out",
+            "source_line": 7812,
+            "split": "val"
+          },
+          "source_split": "val",
+          "train_chapter_count": 14,
+          "train_count": 38
+        },
+        "predicted": "罗成",
+        "probe_metadata": {
+          "candidates": [
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "low",
+              "text": "罗成",
+              "train_count": 70
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "low",
+              "text": "严狮",
+              "train_count": 41
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "low",
+              "text": "谷尼",
+              "train_count": 72
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "low",
+              "text": "古华",
+              "train_count": 38
+            }
+          ],
+          "capability": "corpus_entity_prediction",
+          "distractor_matching": {
+            "correct_character_length": 2,
+            "correct_train_count": 38,
+            "distractors": [
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "严狮",
+                "train_count": 41,
+                "train_count_ratio": 1.0789473684210527,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "罗成",
+                "train_count": 70,
+                "train_count_ratio": 1.8421052631578947,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "谷尼",
+                "train_count": 72,
+                "train_count_ratio": 1.894736842105263,
+                "within_narrow_train_frequency_band": true
+              }
+            ],
+            "exact_character_length_matches": 3,
+            "narrow_train_frequency_matches": 3,
+            "narrow_train_frequency_ratio_max": 2.0,
+            "strategy": "same_entity_type_and_frequency_tier_then_minimum_character_length_delta_then_minimum_relative_train_frequency_gap",
+            "token_length_correction": "Character length is only a build-time proxy. The evaluator must correct token-length effects with total log-probability, mean token log-probability, rank, and reciprocal-rank metrics under the formal protocol.",
+            "tokenizer_used_for_matching": false
+          },
+          "entity": {
+            "entity_type": "person_speaker",
+            "frequency_tier": "low",
+            "text": "古华",
+            "train_attribution_count": 4,
+            "train_chapter_count": 14,
+            "train_count": 38
+          },
+          "evidence": {
+            "answer_char_end": 21,
+            "answer_char_start": 19,
+            "chapter_char_end": 2706,
+            "chapter_char_start": 2685,
+            "offset_interval": "zero_based_end_exclusive",
+            "offset_unit": "utf8_decoded_unicode_codepoint",
+            "sha256": "040ae03d860f5ecf367b2fbbf7a4fc9e07546b4540fc8d38bf64aefc80eb5bf8",
+            "split_char_end": 266678,
+            "split_char_start": 266657,
+            "text": "如此可怕的力量反馈”直接是在瞬间擢毁了古华"
+          },
+          "expected": {
+            "candidate_index": 3,
+            "text": "古华"
+          },
+          "id": "pretrain_e7ceb9476799d2bd2b36",
+          "probe_type": "cloze_candidate_ranking",
+          "prompt": "如此可怕的力量反馈”直接是在瞬间擢毁了",
+          "source": {
+            "chapter_number": 1397,
+            "chapter_section_id": "section-0078-line-7736",
+            "chapter_sha256": "df78b834133acbee9c21f803a61dcab11e6114f7f9eb71cf4e8c989b2a0f488c",
+            "chapter_title": "第一千三百九十七章 轰杀半圣傀儡",
+            "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+            "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+            "role": "held_out",
+            "source_line": 7812,
+            "split": "val"
+          }
+        },
+        "probe_type": "cloze_candidate_ranking",
+        "rankings": {
+          "context_lift": {
+            "correct_margin_over_best_incorrect": 0.4866452217102051,
+            "correct_rank": 1,
+            "ordered_candidates": [
+              "古华",
+              "罗成",
+              "严狮",
+              "谷尼"
+            ],
+            "predicted": "古华",
+            "reciprocal_rank": 1.0,
+            "top1_correct": true
+          },
+          "mean_token_log_probability": {
+            "correct_margin_over_best_incorrect": -0.13652467727661133,
+            "correct_rank": 2,
+            "ordered_candidates": [
+              "罗成",
+              "古华",
+              "严狮",
+              "谷尼"
+            ],
+            "predicted": "罗成",
+            "reciprocal_rank": 0.5,
+            "top1_correct": false
+          },
+          "per_character_log_probability": {
+            "correct_margin_over_best_incorrect": -0.13652467727661133,
+            "correct_rank": 2,
+            "ordered_candidates": [
+              "罗成",
+              "古华",
+              "严狮",
+              "谷尼"
+            ],
+            "predicted": "罗成",
+            "reciprocal_rank": 0.5,
+            "top1_correct": false
+          },
+          "total_log_probability": {
+            "correct_margin_over_best_incorrect": -0.27304935455322266,
+            "correct_rank": 2,
+            "ordered_candidates": [
+              "罗成",
+              "古华",
+              "严狮",
+              "谷尼"
+            ],
+            "predicted": "罗成",
+            "reciprocal_rank": 0.5,
+            "top1_correct": false
+          }
+        },
+        "scores": [
+          {
+            "candidate": "罗成",
+            "character_count": 2,
+            "context_lift": 2.0937037467956543,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 1.0468518733978271,
+            "mean_token_log_probability": -7.738425254821777,
+            "neutral_mean_token_log_probability": -8.785277128219604,
+            "neutral_per_character_log_probability": -8.785277128219604,
+            "neutral_total_log_probability": -17.57055425643921,
+            "per_character_log_probability": -7.738425254821777,
+            "token_count": 2,
+            "total_log_probability": -15.476850509643555
+          },
+          {
+            "candidate": "严狮",
+            "character_count": 2,
+            "context_lift": 2.014492988586426,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 1.007246494293213,
+            "mean_token_log_probability": -8.534013748168945,
+            "neutral_mean_token_log_probability": -9.541260242462158,
+            "neutral_per_character_log_probability": -9.541260242462158,
+            "neutral_total_log_probability": -19.082520484924316,
+            "per_character_log_probability": -8.534013748168945,
+            "token_count": 2,
+            "total_log_probability": -17.06802749633789
+          },
+          {
+            "candidate": "谷尼",
+            "character_count": 2,
+            "context_lift": 1.0852766036987305,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 0.5426383018493652,
+            "mean_token_log_probability": -10.035976886749268,
+            "neutral_mean_token_log_probability": -10.578615188598633,
+            "neutral_per_character_log_probability": -10.578615188598633,
+            "neutral_total_log_probability": -21.157230377197266,
+            "per_character_log_probability": -10.035976886749268,
+            "token_count": 2,
+            "total_log_probability": -20.071953773498535
+          },
+          {
+            "candidate": "古华",
+            "character_count": 2,
+            "context_lift": 2.5803489685058594,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 1.2901744842529297,
+            "mean_token_log_probability": -7.874949932098389,
+            "neutral_mean_token_log_probability": -9.165124416351318,
+            "neutral_per_character_log_probability": -9.165124416351318,
+            "neutral_total_log_probability": -18.330248832702637,
+            "per_character_log_probability": -7.874949932098389,
+            "token_count": 2,
+            "total_log_probability": -15.749899864196777
+          }
+        ],
+        "source": {
+          "chapter_number": 1397,
+          "chapter_section_id": "section-0078-line-7736",
+          "chapter_sha256": "df78b834133acbee9c21f803a61dcab11e6114f7f9eb71cf4e8c989b2a0f488c",
+          "chapter_title": "第一千三百九十七章 轰杀半圣傀儡",
+          "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+          "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+          "role": "held_out",
+          "source_line": 7812,
+          "split": "val"
+        },
+        "top1_correct": false
+      },
+      {
+        "candidate_metadata": [
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "low",
+            "text": "范凌",
+            "train_count": 109
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "low",
+            "text": "韩冲",
+            "train_count": 97
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "low",
+            "text": "烛坤",
+            "train_count": 110
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "low",
+            "text": "魂风",
+            "train_count": 103
+          }
+        ],
+        "candidates": [
+          "范凌",
+          "韩冲",
+          "烛坤",
+          "魂风"
+        ],
+        "capability": "corpus_entity_prediction",
+        "context": "在这个价格之下，拍卖场中略微安静了一会，一道妩媚入骨的咯咯笑声，便是响起：“",
+        "correct": "范凌",
+        "correct_margin_over_best_incorrect": -3.015186309814453,
+        "correct_rank": 4,
+        "entity": {
+          "entity_type": "person_speaker",
+          "frequency_tier": "low",
+          "text": "范凌",
+          "train_attribution_count": 2,
+          "train_chapter_count": 12,
+          "train_count": 109
+        },
+        "evidence": {
+          "answer_char_end": 40,
+          "answer_char_start": 38,
+          "chapter_char_end": 1481,
+          "chapter_char_start": 1441,
+          "offset_interval": "zero_based_end_exclusive",
+          "offset_unit": "utf8_decoded_unicode_codepoint",
+          "sha256": "f4b9ca3628aa9b0b0719fe4d100f1f78553c350c29813e1fd84ebdbde21d0116",
+          "split_char_end": 71224,
+          "split_char_start": 71184,
+          "text": "在这个价格之下，拍卖场中略微安静了一会，一道妩媚入骨的咯咯笑声，便是响起：“范凌"
+        },
+        "expected": {
+          "candidate_index": 0,
+          "text": "范凌"
+        },
+        "frequency_tier": "low",
+        "id": "pretrain_f0d434b12744727aab57",
+        "metadata": {
+          "chapter_sha256": "f35ad8e8e8a0ee5cb28e205c590964f6c3f44a1068429ab4532d3174f4ffe243",
+          "distractor_matching": {
+            "correct_character_length": 2,
+            "correct_train_count": 109,
+            "distractors": [
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "烛坤",
+                "train_count": 110,
+                "train_count_ratio": 1.0091743119266054,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "魂风",
+                "train_count": 103,
+                "train_count_ratio": 1.058252427184466,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "韩冲",
+                "train_count": 97,
+                "train_count_ratio": 1.1237113402061856,
+                "within_narrow_train_frequency_band": true
+              }
+            ],
+            "exact_character_length_matches": 3,
+            "narrow_train_frequency_matches": 3,
+            "narrow_train_frequency_ratio_max": 2.0,
+            "strategy": "same_entity_type_and_frequency_tier_then_minimum_character_length_delta_then_minimum_relative_train_frequency_gap",
+            "token_length_correction": "Character length is only a build-time proxy. The evaluator must correct token-length effects with total log-probability, mean token log-probability, rank, and reciprocal-rank metrics under the formal protocol.",
+            "tokenizer_used_for_matching": false
+          },
+          "evidence": {
+            "answer_char_end": 40,
+            "answer_char_start": 38,
+            "chapter_char_end": 1481,
+            "chapter_char_start": 1441,
+            "offset_interval": "zero_based_end_exclusive",
+            "offset_unit": "utf8_decoded_unicode_codepoint",
+            "sha256": "f4b9ca3628aa9b0b0719fe4d100f1f78553c350c29813e1fd84ebdbde21d0116",
+            "split_char_end": 71224,
+            "split_char_start": 71184,
+            "text": "在这个价格之下，拍卖场中略微安静了一会，一道妩媚入骨的咯咯笑声，便是响起：“范凌"
+          },
+          "frequency_tier": "low",
+          "source": {
+            "chapter_number": 362,
+            "chapter_section_id": "section-0021-line-2012",
+            "chapter_sha256": "f35ad8e8e8a0ee5cb28e205c590964f6c3f44a1068429ab4532d3174f4ffe243",
+            "chapter_title": "第三百六十二章  雷蝠天翼的争夺以及残破地图",
+            "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+            "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+            "role": "held_out",
+            "source_line": 2052,
+            "split": "val"
+          },
+          "source_split": "val",
+          "train_chapter_count": 12,
+          "train_count": 109
+        },
+        "predicted": "魂风",
+        "probe_metadata": {
+          "candidates": [
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "low",
+              "text": "范凌",
+              "train_count": 109
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "low",
+              "text": "韩冲",
+              "train_count": 97
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "low",
+              "text": "烛坤",
+              "train_count": 110
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "low",
+              "text": "魂风",
+              "train_count": 103
+            }
+          ],
+          "capability": "corpus_entity_prediction",
+          "distractor_matching": {
+            "correct_character_length": 2,
+            "correct_train_count": 109,
+            "distractors": [
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "烛坤",
+                "train_count": 110,
+                "train_count_ratio": 1.0091743119266054,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "魂风",
+                "train_count": 103,
+                "train_count_ratio": 1.058252427184466,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "韩冲",
+                "train_count": 97,
+                "train_count_ratio": 1.1237113402061856,
+                "within_narrow_train_frequency_band": true
+              }
+            ],
+            "exact_character_length_matches": 3,
+            "narrow_train_frequency_matches": 3,
+            "narrow_train_frequency_ratio_max": 2.0,
+            "strategy": "same_entity_type_and_frequency_tier_then_minimum_character_length_delta_then_minimum_relative_train_frequency_gap",
+            "token_length_correction": "Character length is only a build-time proxy. The evaluator must correct token-length effects with total log-probability, mean token log-probability, rank, and reciprocal-rank metrics under the formal protocol.",
+            "tokenizer_used_for_matching": false
+          },
+          "entity": {
+            "entity_type": "person_speaker",
+            "frequency_tier": "low",
+            "text": "范凌",
+            "train_attribution_count": 2,
+            "train_chapter_count": 12,
+            "train_count": 109
+          },
+          "evidence": {
+            "answer_char_end": 40,
+            "answer_char_start": 38,
+            "chapter_char_end": 1481,
+            "chapter_char_start": 1441,
+            "offset_interval": "zero_based_end_exclusive",
+            "offset_unit": "utf8_decoded_unicode_codepoint",
+            "sha256": "f4b9ca3628aa9b0b0719fe4d100f1f78553c350c29813e1fd84ebdbde21d0116",
+            "split_char_end": 71224,
+            "split_char_start": 71184,
+            "text": "在这个价格之下，拍卖场中略微安静了一会，一道妩媚入骨的咯咯笑声，便是响起：“范凌"
+          },
+          "expected": {
+            "candidate_index": 0,
+            "text": "范凌"
+          },
+          "id": "pretrain_f0d434b12744727aab57",
+          "probe_type": "cloze_candidate_ranking",
+          "prompt": "在这个价格之下，拍卖场中略微安静了一会，一道妩媚入骨的咯咯笑声，便是响起：“",
+          "source": {
+            "chapter_number": 362,
+            "chapter_section_id": "section-0021-line-2012",
+            "chapter_sha256": "f35ad8e8e8a0ee5cb28e205c590964f6c3f44a1068429ab4532d3174f4ffe243",
+            "chapter_title": "第三百六十二章  雷蝠天翼的争夺以及残破地图",
+            "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+            "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+            "role": "held_out",
+            "source_line": 2052,
+            "split": "val"
+          }
+        },
+        "probe_type": "cloze_candidate_ranking",
+        "rankings": {
+          "context_lift": {
+            "correct_margin_over_best_incorrect": -0.4142475128173828,
+            "correct_rank": 4,
+            "ordered_candidates": [
+              "烛坤",
+              "魂风",
+              "韩冲",
+              "范凌"
+            ],
+            "predicted": "烛坤",
+            "reciprocal_rank": 0.25,
+            "top1_correct": false
+          },
+          "mean_token_log_probability": {
+            "correct_margin_over_best_incorrect": -3.015186309814453,
+            "correct_rank": 4,
+            "ordered_candidates": [
+              "魂风",
+              "韩冲",
+              "烛坤",
+              "范凌"
+            ],
+            "predicted": "魂风",
+            "reciprocal_rank": 0.25,
+            "top1_correct": false
+          },
+          "per_character_log_probability": {
+            "correct_margin_over_best_incorrect": -3.015186309814453,
+            "correct_rank": 4,
+            "ordered_candidates": [
+              "魂风",
+              "韩冲",
+              "烛坤",
+              "范凌"
+            ],
+            "predicted": "魂风",
+            "reciprocal_rank": 0.25,
+            "top1_correct": false
+          },
+          "total_log_probability": {
+            "correct_margin_over_best_incorrect": -6.030372619628906,
+            "correct_rank": 4,
+            "ordered_candidates": [
+              "魂风",
+              "韩冲",
+              "烛坤",
+              "范凌"
+            ],
+            "predicted": "魂风",
+            "reciprocal_rank": 0.25,
+            "top1_correct": false
+          }
+        },
+        "scores": [
+          {
+            "candidate": "范凌",
+            "character_count": 2,
+            "context_lift": 1.4475269317626953,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 0.7237634658813477,
+            "mean_token_log_probability": -10.210456848144531,
+            "neutral_mean_token_log_probability": -10.934220314025879,
+            "neutral_per_character_log_probability": -10.934220314025879,
+            "neutral_total_log_probability": -21.868440628051758,
+            "per_character_log_probability": -10.210456848144531,
+            "token_count": 2,
+            "total_log_probability": -20.420913696289062
+          },
+          {
+            "candidate": "韩冲",
+            "character_count": 2,
+            "context_lift": 1.524742603302002,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 0.762371301651001,
+            "mean_token_log_probability": -8.098550081253052,
+            "neutral_mean_token_log_probability": -8.860921382904053,
+            "neutral_per_character_log_probability": -8.860921382904053,
+            "neutral_total_log_probability": -17.721842765808105,
+            "per_character_log_probability": -8.098550081253052,
+            "token_count": 2,
+            "total_log_probability": -16.197100162506104
+          },
+          {
+            "candidate": "烛坤",
+            "character_count": 2,
+            "context_lift": 1.8617744445800781,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 0.9308872222900391,
+            "mean_token_log_probability": -8.878899574279785,
+            "neutral_mean_token_log_probability": -9.809786796569824,
+            "neutral_per_character_log_probability": -9.809786796569824,
+            "neutral_total_log_probability": -19.61957359313965,
+            "per_character_log_probability": -8.878899574279785,
+            "token_count": 2,
+            "total_log_probability": -17.75779914855957
+          },
+          {
+            "candidate": "魂风",
+            "character_count": 2,
+            "context_lift": 1.7352104187011719,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 0.8676052093505859,
+            "mean_token_log_probability": -7.195270538330078,
+            "neutral_mean_token_log_probability": -8.062875747680664,
+            "neutral_per_character_log_probability": -8.062875747680664,
+            "neutral_total_log_probability": -16.125751495361328,
+            "per_character_log_probability": -7.195270538330078,
+            "token_count": 2,
+            "total_log_probability": -14.390541076660156
+          }
+        ],
+        "source": {
+          "chapter_number": 362,
+          "chapter_section_id": "section-0021-line-2012",
+          "chapter_sha256": "f35ad8e8e8a0ee5cb28e205c590964f6c3f44a1068429ab4532d3174f4ffe243",
+          "chapter_title": "第三百六十二章  雷蝠天翼的争夺以及残破地图",
+          "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+          "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+          "role": "held_out",
+          "source_line": 2052,
+          "split": "val"
+        },
+        "top1_correct": false
+      },
+      {
+        "candidate_metadata": [
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "high",
+            "text": "雅妃",
+            "train_count": 610
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "high",
+            "text": "吴昊",
+            "train_count": 534
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "high",
+            "text": "古河",
+            "train_count": 610
+          },
+          {
+            "entity_type": "person_speaker",
+            "frequency_tier": "high",
+            "text": "柳擎",
+            "train_count": 571
+          }
+        ],
+        "candidates": [
+          "雅妃",
+          "吴昊",
+          "古河",
+          "柳擎"
+        ],
+        "capability": "corpus_entity_prediction",
+        "context": "贝崌斗气铠甲凝聚的速度极快，显然，能够走到这一步，他也的确是拥有不错的实力，但是...怪就怪他运气差，遇见了连",
+        "correct": "柳擎",
+        "correct_margin_over_best_incorrect": -0.9049386978149414,
+        "correct_rank": 4,
+        "entity": {
+          "entity_type": "person_speaker",
+          "frequency_tier": "high",
+          "text": "柳擎",
+          "train_attribution_count": 11,
+          "train_chapter_count": 66,
+          "train_count": 571
+        },
+        "evidence": {
+          "answer_char_end": 57,
+          "answer_char_start": 55,
+          "chapter_char_end": 1063,
+          "chapter_char_start": 1006,
+          "offset_interval": "zero_based_end_exclusive",
+          "offset_unit": "utf8_decoded_unicode_codepoint",
+          "sha256": "a763f089ae681941a604e96abe285bcda389b4edc6cdbd0d2174ea67d32cd268",
+          "split_char_end": 96740,
+          "split_char_start": 96683,
+          "text": "贝崌斗气铠甲凝聚的速度极快，显然，能够走到这一步，他也的确是拥有不错的实力，但是...怪就怪他运气差，遇见了连柳擎"
+        },
+        "expected": {
+          "candidate_index": 3,
+          "text": "柳擎"
+        },
+        "frequency_tier": "high",
+        "id": "pretrain_f498bd2bf22853c44fc1",
+        "metadata": {
+          "chapter_sha256": "393b6836a01436fc94eec3873ca432c64559a4317f90c08a4b7c7b22b3cb9992",
+          "distractor_matching": {
+            "correct_character_length": 2,
+            "correct_train_count": 571,
+            "distractors": [
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "吴昊",
+                "train_count": 534,
+                "train_count_ratio": 1.0692883895131087,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "雅妃",
+                "train_count": 610,
+                "train_count_ratio": 1.0683012259194395,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "古河",
+                "train_count": 610,
+                "train_count_ratio": 1.0683012259194395,
+                "within_narrow_train_frequency_band": true
+              }
+            ],
+            "exact_character_length_matches": 3,
+            "narrow_train_frequency_matches": 3,
+            "narrow_train_frequency_ratio_max": 2.0,
+            "strategy": "same_entity_type_and_frequency_tier_then_minimum_character_length_delta_then_minimum_relative_train_frequency_gap",
+            "token_length_correction": "Character length is only a build-time proxy. The evaluator must correct token-length effects with total log-probability, mean token log-probability, rank, and reciprocal-rank metrics under the formal protocol.",
+            "tokenizer_used_for_matching": false
+          },
+          "evidence": {
+            "answer_char_end": 57,
+            "answer_char_start": 55,
+            "chapter_char_end": 1063,
+            "chapter_char_start": 1006,
+            "offset_interval": "zero_based_end_exclusive",
+            "offset_unit": "utf8_decoded_unicode_codepoint",
+            "sha256": "a763f089ae681941a604e96abe285bcda389b4edc6cdbd0d2174ea67d32cd268",
+            "split_char_end": 96740,
+            "split_char_start": 96683,
+            "text": "贝崌斗气铠甲凝聚的速度极快，显然，能够走到这一步，他也的确是拥有不错的实力，但是...怪就怪他运气差，遇见了连柳擎"
+          },
+          "frequency_tier": "high",
+          "source": {
+            "chapter_number": 531,
+            "chapter_section_id": "section-0028-line-2676",
+            "chapter_sha256": "393b6836a01436fc94eec3873ca432c64559a4317f90c08a4b7c7b22b3cb9992",
+            "chapter_title": "第五百三十一章  贝崌",
+            "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+            "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+            "role": "held_out",
+            "source_line": 2702,
+            "split": "val"
+          },
+          "source_split": "val",
+          "train_chapter_count": 66,
+          "train_count": 571
+        },
+        "predicted": "古河",
+        "probe_metadata": {
+          "candidates": [
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "high",
+              "text": "雅妃",
+              "train_count": 610
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "high",
+              "text": "吴昊",
+              "train_count": 534
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "high",
+              "text": "古河",
+              "train_count": 610
+            },
+            {
+              "entity_type": "person_speaker",
+              "frequency_tier": "high",
+              "text": "柳擎",
+              "train_count": 571
+            }
+          ],
+          "capability": "corpus_entity_prediction",
+          "distractor_matching": {
+            "correct_character_length": 2,
+            "correct_train_count": 571,
+            "distractors": [
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "吴昊",
+                "train_count": 534,
+                "train_count_ratio": 1.0692883895131087,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "雅妃",
+                "train_count": 610,
+                "train_count_ratio": 1.0683012259194395,
+                "within_narrow_train_frequency_band": true
+              },
+              {
+                "character_length": 2,
+                "character_length_delta": 0,
+                "text": "古河",
+                "train_count": 610,
+                "train_count_ratio": 1.0683012259194395,
+                "within_narrow_train_frequency_band": true
+              }
+            ],
+            "exact_character_length_matches": 3,
+            "narrow_train_frequency_matches": 3,
+            "narrow_train_frequency_ratio_max": 2.0,
+            "strategy": "same_entity_type_and_frequency_tier_then_minimum_character_length_delta_then_minimum_relative_train_frequency_gap",
+            "token_length_correction": "Character length is only a build-time proxy. The evaluator must correct token-length effects with total log-probability, mean token log-probability, rank, and reciprocal-rank metrics under the formal protocol.",
+            "tokenizer_used_for_matching": false
+          },
+          "entity": {
+            "entity_type": "person_speaker",
+            "frequency_tier": "high",
+            "text": "柳擎",
+            "train_attribution_count": 11,
+            "train_chapter_count": 66,
+            "train_count": 571
+          },
+          "evidence": {
+            "answer_char_end": 57,
+            "answer_char_start": 55,
+            "chapter_char_end": 1063,
+            "chapter_char_start": 1006,
+            "offset_interval": "zero_based_end_exclusive",
+            "offset_unit": "utf8_decoded_unicode_codepoint",
+            "sha256": "a763f089ae681941a604e96abe285bcda389b4edc6cdbd0d2174ea67d32cd268",
+            "split_char_end": 96740,
+            "split_char_start": 96683,
+            "text": "贝崌斗气铠甲凝聚的速度极快，显然，能够走到这一步，他也的确是拥有不错的实力，但是...怪就怪他运气差，遇见了连柳擎"
+          },
+          "expected": {
+            "candidate_index": 3,
+            "text": "柳擎"
+          },
+          "id": "pretrain_f498bd2bf22853c44fc1",
+          "probe_type": "cloze_candidate_ranking",
+          "prompt": "贝崌斗气铠甲凝聚的速度极快，显然，能够走到这一步，他也的确是拥有不错的实力，但是...怪就怪他运气差，遇见了连",
+          "source": {
+            "chapter_number": 531,
+            "chapter_section_id": "section-0028-line-2676",
+            "chapter_sha256": "393b6836a01436fc94eec3873ca432c64559a4317f90c08a4b7c7b22b3cb9992",
+            "chapter_title": "第五百三十一章  贝崌",
+            "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+            "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+            "role": "held_out",
+            "source_line": 2702,
+            "split": "val"
+          }
+        },
+        "probe_type": "cloze_candidate_ranking",
+        "rankings": {
+          "context_lift": {
+            "correct_margin_over_best_incorrect": -1.2501773834228516,
+            "correct_rank": 3,
+            "ordered_candidates": [
+              "古河",
+              "吴昊",
+              "柳擎",
+              "雅妃"
+            ],
+            "predicted": "古河",
+            "reciprocal_rank": 0.3333333333333333,
+            "top1_correct": false
+          },
+          "mean_token_log_probability": {
+            "correct_margin_over_best_incorrect": -0.9049386978149414,
+            "correct_rank": 4,
+            "ordered_candidates": [
+              "古河",
+              "吴昊",
+              "雅妃",
+              "柳擎"
+            ],
+            "predicted": "古河",
+            "reciprocal_rank": 0.25,
+            "top1_correct": false
+          },
+          "per_character_log_probability": {
+            "correct_margin_over_best_incorrect": -0.4524693489074707,
+            "correct_rank": 4,
+            "ordered_candidates": [
+              "古河",
+              "吴昊",
+              "雅妃",
+              "柳擎"
+            ],
+            "predicted": "古河",
+            "reciprocal_rank": 0.25,
+            "top1_correct": false
+          },
+          "total_log_probability": {
+            "correct_margin_over_best_incorrect": -0.9049386978149414,
+            "correct_rank": 4,
+            "ordered_candidates": [
+              "古河",
+              "吴昊",
+              "雅妃",
+              "柳擎"
+            ],
+            "predicted": "古河",
+            "reciprocal_rank": 0.25,
+            "top1_correct": false
+          }
+        },
+        "scores": [
+          {
+            "candidate": "雅妃",
+            "character_count": 2,
+            "context_lift": 1.6300010681152344,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 0.8150005340576172,
+            "mean_token_log_probability": -8.250944137573242,
+            "neutral_mean_token_log_probability": -9.880945205688477,
+            "neutral_per_character_log_probability": -4.940472602844238,
+            "neutral_total_log_probability": -9.880945205688477,
+            "per_character_log_probability": -4.125472068786621,
+            "token_count": 1,
+            "total_log_probability": -8.250944137573242
+          },
+          {
+            "candidate": "吴昊",
+            "character_count": 2,
+            "context_lift": 1.817805290222168,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 0.908902645111084,
+            "mean_token_log_probability": -8.234286308288574,
+            "neutral_mean_token_log_probability": -10.052091598510742,
+            "neutral_per_character_log_probability": -5.026045799255371,
+            "neutral_total_log_probability": -10.052091598510742,
+            "per_character_log_probability": -4.117143154144287,
+            "token_count": 1,
+            "total_log_probability": -8.234286308288574
+          },
+          {
+            "candidate": "古河",
+            "character_count": 2,
+            "context_lift": 2.9685802459716797,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 1.4842901229858398,
+            "mean_token_log_probability": -7.463912010192871,
+            "neutral_mean_token_log_probability": -10.43249225616455,
+            "neutral_per_character_log_probability": -5.216246128082275,
+            "neutral_total_log_probability": -10.43249225616455,
+            "per_character_log_probability": -3.7319560050964355,
+            "token_count": 1,
+            "total_log_probability": -7.463912010192871
+          },
+          {
+            "candidate": "柳擎",
+            "character_count": 2,
+            "context_lift": 1.7184028625488281,
+            "context_lift_mean_token": "[REDACTED]",
+            "context_lift_per_character": 0.8592014312744141,
+            "mean_token_log_probability": -8.368850708007812,
+            "neutral_mean_token_log_probability": -10.08725357055664,
+            "neutral_per_character_log_probability": -5.04362678527832,
+            "neutral_total_log_probability": -10.08725357055664,
+            "per_character_log_probability": -4.184425354003906,
+            "token_count": 1,
+            "total_log_probability": -8.368850708007812
+          }
+        ],
+        "source": {
+          "chapter_number": 531,
+          "chapter_section_id": "section-0028-line-2676",
+          "chapter_sha256": "393b6836a01436fc94eec3873ca432c64559a4317f90c08a4b7c7b22b3cb9992",
+          "chapter_title": "第五百三十一章  贝崌",
+          "file_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+          "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/data/cloud_v4/val.txt",
+          "role": "held_out",
+          "source_line": 2702,
+          "split": "val"
+        },
+        "top1_correct": false
+      }
+    ],
+    "diagnostic_not_qa_hard_gate": true,
+    "mean_correct_margin": -0.38655277093251544,
+    "mean_reciprocal_rank": 0.5763888888888888,
+    "metrics": {
+      "context_lift": {
+        "mean_correct_margin": -0.15237065156300864,
+        "mean_reciprocal_rank": 0.7013888888888888,
+        "top1_accuracy": 0.5833333333333334
+      },
+      "mean_token_log_probability": {
+        "mean_correct_margin": -0.38655277093251544,
+        "mean_reciprocal_rank": 0.5763888888888888,
+        "top1_accuracy": 0.3333333333333333
+      },
+      "per_character_log_probability": {
+        "mean_correct_margin": -0.797508653667238,
+        "mean_reciprocal_rank": 0.5138888888888888,
+        "top1_accuracy": 0.25
+      },
+      "total_log_probability": {
+        "mean_correct_margin": -2.445717732111613,
+        "mean_reciprocal_rank": 0.5138888888888888,
+        "top1_accuracy": 0.25
+      }
+    },
+    "neutral_context": "\n",
+    "primary_diagnostic_metric": "mean_token_log_probability",
+    "ranking_metrics": [
+      "total_log_probability",
+      "mean_token_log_probability",
+      "per_character_log_probability",
+      "context_lift"
+    ],
+    "score_policy": "validation-prefix ranking reports total, mean-token, per-character, and neutral-prior-corrected context lift; higher is better",
+    "top1_accuracy": 0.3333333333333333,
+    "validation_prefix_ranking_not_entity_knowledge_hard_gate": true
+  },
+  "config": {
+    "canonical_sha256": "faac0f759a5ce9cd5e827f95c511b7f9bbbda06f6e7642e5e0d90d5ec5635974",
+    "path": "configs/formal_pretrain_14m_bpe3000.json"
+  },
+  "data": {
+    "manifest_path": "data/scaling_a/bpe_3000/token_manifest.json",
+    "manifest_schema": "bpe-v4/v1",
+    "manifest_sha256": "5d10245eac86e4dbafef908cb2d915bb1effcf61ad977b4de96d8d64d30809c7",
+    "tokenizer_path": "data/scaling_a/bpe_3000/tokenizer.json",
+    "tokenizer_sha256": "e70cf3dc0ed185a6b22ab7dc08b6a850eeb59864ba161dd156c644e003862822"
+  },
+  "degeneration_thresholds": {
+    "maximum_character_run": 6,
+    "maximum_four_gram_repetition": 0.2,
+    "minimum_characters_for_unique_ratio": 20,
+    "minimum_unique_character_ratio": 0.1
+  },
+  "device": "mps",
+  "generation_settings": {
+    "max_characters": 120,
+    "max_new_tokens": 256,
+    "prompt_count": 16,
+    "prompt_limit_policy": "all_validated_artifact_prompts",
+    "prompt_path": "data/eval/pretrain_capability_prompts.txt",
+    "seed": 42,
+    "temperature": 0.7,
+    "top_k": 20
+  },
+  "generation_summary": {
+    "empty_rate": 0,
+    "eos_stop_rate": 0,
+    "maximum_character_run": 12,
+    "mean_characters": 120.0,
+    "mean_four_gram_repetition": 0.012983858655674453,
+    "mechanical_degeneration_rate": 0.125,
+    "sample_count": 16,
+    "stop_reason_counts": {
+      "eos": 0,
+      "max_characters": 16,
+      "max_new_tokens": 0
+    }
+  },
+  "generations": [
+    {
+      "characters": 120,
+      "content_characters": 93,
+      "continuation": "\n\n\n\n\n\n\n\n    有着在四一火，魂殿也是那心一强。\n\n    这黑光光的惊的惊，将其被心动。\n\n\n    九惊火道的人在大了能大心的惊中心的惊之的天，见到一人有些火的灵，魂，逐渐的大的一人一人,那变得一的大的心的惊，两心的人的位，\n\n",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": false,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": false,
+      "four_gram_repetition": 0.0,
+      "generated_tokens": 102,
+      "longest_character_run": 2,
+      "mechanically_degenerate": false,
+      "prompt": "“短短两年时间，你不仅取得了丹会冠军，还晋入了斗尊层次，这等神速，即便是老夫都是汗颜啊。”对于周围的那些视线，唐震却是犹若未闻，目光在萧炎身上扫了扫，叹道，他所说，倒的确是有着几分真心话，当年首次见到萧炎时，后者方才晋入斗宗没多久，",
+      "prompt_index": 1,
+      "stop_reason": "max_characters",
+      "unique_character_ratio": 0.4731182795698925
+    },
+    {
+      "characters": 120,
+      "content_characters": 102,
+      "continuation": "他萧炎萧炎”\n    一人人大着你你也也也他便是一人也是也是便是一不人也是这一强，被人，有着有着人所人那一大，那天的小行着人，\n\n\n\n\n\n    被被，萧炎有人一天一小人，将人一大人一一强的大中的山，其中的位，将将不强，两也是被大动。\n\n ",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": false,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": false,
+      "four_gram_repetition": 0.0,
+      "generated_tokens": 102,
+      "longest_character_run": 3,
+      "mechanically_degenerate": false,
+      "prompt": "闻言，那小丹塔的大长老却是愣了愣，旋即笑着摇了摇头，轻叹道：“老大年龄太大，血已冷却,若是联盟要固守一域，让老大来倒也无所谓，但这个联盟,显然是需要活力，",
+      "prompt_index": 2,
+      "stop_reason": "max_characters",
+      "unique_character_ratio": 0.3137254901960784
+    },
+    {
+      "characters": 120,
+      "content_characters": 63,
+      "continuation": "\n\n    那轻。\n\n\n\n\n\n    黑红。\n    座一大的位。\n\n    两不人有不不眼的一行。你你是小位的灵的好的心的位。\n    “这些多。\n\n\n        有多。也有的名。\n    “从多不有些地的有些。\n\n\n\n\n    有不",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": false,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": false,
+      "four_gram_repetition": 0.0,
+      "generated_tokens": 88,
+      "longest_character_run": 2,
+      "mechanically_degenerate": false,
+      "prompt": "一株株药材被萧炎丢掷而进。然后另外一只手。控制着将鼎中所提炼而出地精华材料。装盛进入玉瓶之中。在这般双手齐用。首发灵魂力量开至巅峰地情况下。石台之上所摆放地药材。",
+      "prompt_index": 3,
+      "stop_reason": "max_characters",
+      "unique_character_ratio": 0.47619047619047616
+    },
+    {
+      "characters": 120,
+      "content_characters": 72,
+      "continuation": "被被小地的地大出。\n    有对对一灵灵的的地的地。\n\n\n\n    巨大的的身的惊着不不。\n\n    四行的大的行的高着在一有些灵。\n\n    “小不大地一一的小。\n\n\n\n\n    望着那有位。\n\n\n    两分的灵。\n    座小大。\n\n",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": false,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": false,
+      "four_gram_repetition": 0.0,
+      "generated_tokens": 92,
+      "longest_character_run": 2,
+      "mechanically_degenerate": false,
+      "prompt": "天空上的女子，一套素裙包裹着丰满娇躯，手持一把模样有些奇异，并且散发着青色光芒的长剑，一头青丝被挽成高贵的凤凰发饰，美丽动人的容颜平静恬然，",
+      "prompt_index": 4,
+      "stop_reason": "max_characters",
+      "unique_character_ratio": 0.3888888888888889
+    },
+    {
+      "characters": 120,
+      "content_characters": 99,
+      "continuation": "一火动，能萧炎会是不有些小。\n\n\n\n\n\n\n    见到萧炎人所名着一一惊，魂殿，两一心光，其中一分天，也是一出现了有的心大，四自不的大动，他你便是那不分的人了一名的山的心动，那大，\n\n\n\n\n\n    一道被人，那火的山之火，对在在被在火道，",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": false,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": false,
+      "four_gram_repetition": 0.0,
+      "generated_tokens": 100,
+      "longest_character_run": 2,
+      "mechanically_degenerate": false,
+      "prompt": "手掌缓缓紧握，充盈的力量之感，令得萧炎嘴角忍不住的泛起一抹笑意，这将进七天休养，总算是将体内彻底枯竭的斗气以及受创的灵魂调养完好，而且，在先前收功间，",
+      "prompt_index": 5,
+      "stop_reason": "max_characters",
+      "unique_character_ratio": 0.48484848484848486
+    },
+    {
+      "characters": 120,
+      "content_characters": 76,
+      "continuation": "\n\n\n    “这人有些大眼。\n\n\n\n    萧炎对有些大动。\n    大的灵大的人的有些对一对在一对人地的有些对小人有些大地人。萧炎在地在好。药老了地好。\n    在在将那不的对。\n\n\n\n\n    将被地的地小。\n    在地。\n\n   ",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": false,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": false,
+      "four_gram_repetition": 0.0273972602739726,
+      "generated_tokens": 88,
+      "longest_character_run": 2,
+      "mechanically_degenerate": false,
+      "prompt": "没有理会古特的目光。萧炎自顾自的细细打量着手掌上那不断散发着冰冷寒气的小玉瓶。小心翼翼的揭开瓶盖。露出了里面那将近约有半瓶左右的乳白水液。在那水液之上。还能隐隐的看见有着许些结冰状的东西。轻吸了一口从中渗发而出的寒气。",
+      "prompt_index": 6,
+      "stop_reason": "max_characters",
+      "unique_character_ratio": 0.34210526315789475
+    },
+    {
+      "characters": 120,
+      "content_characters": 92,
+      "continuation": "\n\n\n\n    这些一有些人被不名的皱得那不心，两不名。\n    一对人也被人便是人在多不心。\n\n    那心强的出现。\n\n\n\n\n    被天了大的一心的行着小人人那对在能萧炎一大着将一一大不不一人那小不不人是这小人他萧炎那被小能量动，萧炎",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": false,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": false,
+      "four_gram_repetition": 0.0,
+      "generated_tokens": 99,
+      "longest_character_run": 2,
+      "mechanically_degenerate": false,
+      "prompt": "此次，倒真的是轮到丘陵略微有些变色了，此话别人说出来他或许还不会理会，但这易尘，却基本已确定是下一任的天冥宗宗主，如此，他的话，就不得不加一些重量了，毕竟虽说丹塔强横，但类似天冥宗这等庞大势力，也是极度强横，惹上了，也是有些麻烦。",
+      "prompt_index": 7,
+      "stop_reason": "max_characters",
+      "unique_character_ratio": 0.41304347826086957
+    },
+    {
+      "characters": 120,
+      "content_characters": 101,
+      "continuation": "\n\n\n\n    见到不位，那天心的大的一一一的眼的一人一人的惊的惊，能被惊。\n\n\n\n\n\n\n    大地位，将被一有些强的惊能量的一被小强，魂殿，魂殿的惊出，其中的出现，萧炎能够将不大不眼的大动在多,便是一的强，被一不人，见到了被心，被不地被",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": false,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": false,
+      "four_gram_repetition": 0.0,
+      "generated_tokens": 101,
+      "longest_character_run": 3,
+      "mechanically_degenerate": false,
+      "prompt": "然而天才的道路，貌似总是曲折的，三年之前，这名声望达到巅峰的天才少年，却是突兀的接受到了有生以来最残酷的打击，不仅辛辛苦苦修炼十数载方才凝聚的斗之气旋，一夜之间，化为乌有，",
+      "prompt_index": 8,
+      "stop_reason": "max_characters",
+      "unique_character_ratio": 0.39603960396039606
+    },
+    {
+      "characters": 120,
+      "content_characters": 107,
+      "continuation": "有着有有一的高，“那场的小的强的名，\n\n\n    被一人一强声的山，对的高的的火中大灵着大的山的对一的强着不小，他们被的小动，那被位，五心的位的灵大，能便是便是一对也是一天的分能量，其中一大。\n\n    “一惊大，将便是天，他便是那强，他们",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": false,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": false,
+      "four_gram_repetition": 0.0,
+      "generated_tokens": 102,
+      "longest_character_run": 2,
+      "mechanically_degenerate": false,
+      "prompt": "闻言，萧炎心头顿时一凛，旋即眼神有些炽热的望着曹颖玉手保持的那个奇异手印，他曾经听天火尊者所说这东西，不过令得他有些疑惑的是，天火尊者所说的魂技是灵魂的修炼之法，",
+      "prompt_index": 9,
+      "stop_reason": "max_characters",
+      "unique_character_ratio": 0.3644859813084112
+    },
+    {
+      "characters": 120,
+      "content_characters": 79,
+      "continuation": "两强着不天，这些一的位。\n\n\n\n\n\n\n\n\n\n\n    四对不不惊的山，\n\n\n\n    “被大的心人人的分上，将将一的灵的强，\n    一道被人心的强出人天心的强的小山的人的心的位的天的心。\n\n\n    两人也是一人不惊了他，\n\n    将有",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": false,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": false,
+      "four_gram_repetition": 0.0,
+      "generated_tokens": 101,
+      "longest_character_run": 2,
+      "mechanically_degenerate": false,
+      "prompt": "“兽域之中，附属族群最多的，便是九幽地冥蟒族，他们的数量，是三大族群中最为庞大的，当然，换取数量的后果，便是导致如今的九幽地冥蟒的血脉，越来越不精纯……”慕青鸾摊了摊手，道：“天妖凰族，对于血脉的管制就极为的严苛，",
+      "prompt_index": 10,
+      "stop_reason": "max_characters",
+      "unique_character_ratio": 0.4177215189873418
+    },
+    {
+      "characters": 120,
+      "content_characters": 70,
+      "continuation": "两的天。\n\n    有在轻眼的小一眼的位的不地的行，\n\n\n    从小人一位的位，四名的对他是一的分大。\n\n\n\n    这有些的对对一位的灵着小大的的灵。\n\n\n\n\n\n\n\n\n    在有些的小。\n\n\n\n    一位的强。\n\n\n\n    一道惊",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": false,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": false,
+      "four_gram_repetition": 0.0,
+      "generated_tokens": 99,
+      "longest_character_run": 2,
+      "mechanically_degenerate": false,
+      "prompt": "在萧炎松气之时，体内因为替云芝压制欲火而大量消耗的斗气，顿时差点被欲火再次冲出，脸庞涨红着，萧炎微弓着身体，望着那趟在石床上没有丝毫防备的美丽女人，他脚步忽然有些忍不住的前踏了一步，低头望着那娇艳欲滴的诱人红唇，眼瞳中闪过一抹炽热，",
+      "prompt_index": 11,
+      "stop_reason": "max_characters",
+      "unique_character_ratio": 0.44285714285714284
+    },
+    {
+      "characters": 120,
+      "content_characters": 99,
+      "continuation": ",会是能够有对，能那在小大，这些位，“是萧炎也是一人也是对。\n\n\n\n\n    再不大的位了将不强的惊的强，对”\n    将对在那不的火了便是将将在一分。\n\n\n    “这些人是在一小不地地的人便是便是一的强的名的行的场了他们不人人也是便是有",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": false,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": false,
+      "four_gram_repetition": 0.0,
+      "generated_tokens": 98,
+      "longest_character_run": 2,
+      "mechanically_degenerate": false,
+      "prompt": "虽然金银二老号称联手可与斗宗强者相战，不过却仅仅只能与一些初级斗宗强者相抗衡，而遇见苏千那种强者，只要被对方稍稍拖延一阵时间，便是会迅速落入下风，对于苏千，金银二老或许还不会如何忌惮，可对于这个有着妖孽般容颜的美人，",
+      "prompt_index": 12,
+      "stop_reason": "max_characters",
+      "unique_character_ratio": 0.3939393939393939
+    },
+    {
+      "characters": 120,
+      "content_characters": 97,
+      "continuation": "逐渐的在对也是天人不心人那一的位。\n\n\n\n\n    ------------\n    “再在在被小之一一的眼的惊的对在两火的分的一的天天的分的分动！\n\n\n\n\n    黑之的出现，见到的惊的大地之一名，被的山，一一被对被名上得是人便是将有的一",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": true,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": false,
+      "four_gram_repetition": 0.08510638297872342,
+      "generated_tokens": 92,
+      "longest_character_run": 12,
+      "mechanically_degenerate": true,
+      "prompt": "面对着萧炎以及药老两位斗圣强者所率领的星陨阁反攻”冥河盟方面，几乎是彻彻底底的溃败”之中甚至连有效的反抗都是未曾形成，便是直接被星陨阁占据了冥河盟，也就是天冥宗的总部宗门，而伴随着天冥宗的宗主，被萧炎随手一掌拍死时，谁都明白，",
+      "prompt_index": 13,
+      "stop_reason": "max_characters",
+      "unique_character_ratio": 0.44329896907216493
+    },
+    {
+      "characters": 120,
+      "content_characters": 87,
+      "continuation": "他们也是有着有着人，两不的强，一的强的的天的强的人人，““在一小动。\n\n    “在天，两的人，五一天之一不不强的天的位在大，\n    他们，\n\n\n    便是大，两山，“那不人，他们”\n\n\n\n    ------------\n\n\n\n\n  ",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": true,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": false,
+      "four_gram_repetition": 0.09523809523809523,
+      "generated_tokens": 88,
+      "longest_character_run": 12,
+      "mechanically_degenerate": true,
+      "prompt": "喜台处，见到萧炎并未直接被云山击杀，云韵也是悄悄松了二口气，不过当其看见云山那滴血的手掌时，俏脸上也是闪过一道复杂情绪，她不想看见萧炎死在云山手中。但同样也并不想看见云山被萧炎所杀，",
+      "prompt_index": 14,
+      "stop_reason": "max_characters",
+      "unique_character_ratio": 0.3218390804597701
+    },
+    {
+      "characters": 120,
+      "content_characters": 102,
+      "continuation": "也\n    “也是有人不不人大人的火一的火的山，一在对，两道，魂的的灵的大动，旋即一心在两黑的小火，\n\n\n\n\n    萧炎萧炎的道，萧炎，见到便是在大火，见到一的灵，见到在一被也是有便是黑的出现，那那惊的惊的天的大的一心，萧炎一惊，\n\n\n\n",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": false,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": false,
+      "four_gram_repetition": 0.0,
+      "generated_tokens": 96,
+      "longest_character_run": 2,
+      "mechanically_degenerate": false,
+      "prompt": "望着那悬浮天际，缓缓转动的火焰黑盘，药老脸庞上也是掠过一抹震动之色从那火盘中央的黑暗中”他嗅到了一种相当可怕的味道，若是人被绞入其中，",
+      "prompt_index": 15,
+      "stop_reason": "max_characters",
+      "unique_character_ratio": 0.3431372549019608
+    },
+    {
+      "characters": 120,
+      "content_characters": 98,
+      "continuation": "\n    “这那一场，这是也萧炎他他是有有人一一人，四大的大之不地不一分着多的名的行，这在将一天。\n    有是不。\n\n\n    “那不在人也是被小人也是有着一地人的人人也是不。\n    那大人,都是一一大的不天，萧炎一天人他他便是是一的不",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": false,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": false,
+      "four_gram_repetition": 0.0,
+      "generated_tokens": 95,
+      "longest_character_run": 2,
+      "mechanically_degenerate": false,
+      "prompt": "而在外界胡乱猜测时，那远古种族之中，却也是因为这件事出现了巨大的分歧，这些远古种族,彼此间比较的了解，不过他们也并非是什么盟友般的存在，只能说是似敌似友，毕竟这些种族，",
+      "prompt_index": 16,
+      "stop_reason": "max_characters",
+      "unique_character_ratio": 0.336734693877551
+    }
+  ],
+  "interpretation": {
+    "automatic_metrics_cover": [
+      "validation next-token diagnostic",
+      "empty output",
+      "character and n-gram repetition",
+      "EOS stopping behaviour",
+      "validation-prefix candidate ranking"
+    ],
+    "excluded_as_pretraining_hard_gates": [
+      "chat question answering",
+      "general world knowledge",
+      "instruction following",
+      "out-of-domain refusal",
+      "validation-prefix ranking as proof of stored entity knowledge"
+    ],
+    "manual_review_dimensions": [
+      "fluency",
+      "local coherence",
+      "prompt continuation relevance",
+      "character and world consistency",
+      "verbatim memorization risk"
+    ]
+  },
+  "logging": {
+    "directory": "reports/milestones/019_pretrain_capability_audit/step_00250/logs",
+    "environment_override": "GPT_AUDIT_LOG_LEVEL_<MODULE>",
+    "modules": [
+      "data",
+      "checkpoint",
+      "validation",
+      "generation",
+      "cloze",
+      "orchestrator"
+    ],
+    "production_default": "INFO",
+    "rotation_backup_count": 3,
+    "rotation_max_bytes": 2097152,
+    "sensitive_fields_redacted": true
+  },
+  "mechanical_checks": {
+    "all_fixed_prompts_generated": true,
+    "finite_validation_diagnostic_loss": true,
+    "no_empty_generation": true,
+    "no_mechanical_degeneration": false,
+    "pure_pretraining_provenance": true
+  },
+  "model": {
+    "config": {
+      "block_size": 512,
+      "dropout": 0.1,
+      "embedding_size": 320,
+      "ffn_multiplier": 4,
+      "initialization_std": 0.02,
+      "layer_norm_epsilon": 1e-05,
+      "num_heads": 8,
+      "num_layers": 10,
+      "tie_embeddings": true,
+      "vocab_size": 7465
+    },
+    "parameter_count": 14880745
+  },
+  "probe_provenance": {
+    "artifact_path": "data/eval/pretrain_capability_probes.json",
+    "artifact_sha256": "f95d594eaa8d08ef340a704c7b9103627ab949e88c1796fe3db0527cfc54f36e",
+    "build_input_sha256_matches": {
+      "train": true,
+      "val": true
+    },
+    "declared_prompts_sha256": "032fd93f12ffba3df3d4d9ad4bc1898a6a86ec416a812cd85a0c0f1928a253a7",
+    "formal_status_eligible": true,
+    "mode": "validated_artifact",
+    "probe_count": 56,
+    "prompts_path": "data/eval/pretrain_capability_prompts.txt",
+    "prompts_sha256": "032fd93f12ffba3df3d4d9ad4bc1898a6a86ec416a812cd85a0c0f1928a253a7",
+    "schema_version": "pretrain-capability-probes/v1",
+    "usage_checks": {
+      "sft_false": true,
+      "test_false": true,
+      "training_allowed_false": true
+    },
+    "validation_cloze_count": 12,
+    "validation_continuation_count": 16,
+    "validation_passed": true
+  },
+  "run_id": "pretrain-capability-audit-20260829T055104Z-57bc512c",
+  "schema_version": "pretrain-capability-audit/v1",
+  "scope": {
+    "automatic_metrics_are_not_semantic_quality_scores": true,
+    "base_lm_is_not_a_chat_model": true,
+    "formal_requested": true,
+    "formal_status_eligible": true,
+    "model_type": "base_causal_language_model",
+    "qa_format_is_not_a_pretraining_hard_gate": true,
+    "training_domain": "single_novel"
+  },
+  "status": "FORMAL_MECHANICAL_REVIEW_REQUIRED",
+  "validation_diagnostic": {
+    "first_start": 0,
+    "interpretation": "validation diagnostic, not an untouched final-test estimate",
+    "last_start": 183490,
+    "loss": 6.9987174352010095,
+    "perplexity": 1095.2275569222404,
+    "split": "val",
+    "tensor_path": "data/scaling_a/bpe_3000/val_tokens.pt",
+    "tensor_sha256": "f678203005119c241178130790ece08423717cbce0f8949926d3a79a1b18e328",
+    "tokens_evaluated": 30720,
+    "top1_accuracy": 0.07805989583333334,
+    "window_selection": "deterministic_evenly_spaced",
+    "windows_evaluated": 60
+  }
+}

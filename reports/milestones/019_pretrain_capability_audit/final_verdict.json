@@ -1,0 +1,50 @@
+{
+  "schema_version": "pretrain-capability-final-verdict/v1",
+  "date": "2026-08-29",
+  "selected_checkpoint_step": 5750,
+  "selected_checkpoint_sha256": "bfe4fec5e6045d4c06d22393e7c2079fdc03897be71829c9d9dcbaf0fcaf5c1e",
+  "test_split_read": false,
+  "language_base": {
+    "status": "passed_with_caveats",
+    "validation_bpc_relative_improvement": 0.3641067535909586,
+    "next_token_top1_improvement": 0.16363932291666666,
+    "empty_rate": 0.0,
+    "mechanical_degeneration_rate": 0.0,
+    "ai_assisted_fluency_mean": 2.3125,
+    "ai_assisted_local_coherence_mean": 2.0625,
+    "minimum_ai_score_each": 2.0,
+    "interpretation": "Step 5750形成了可用于垂直后训练的最低小说语言基座，但只是边缘通过。"
+  },
+  "practical_plateau": {
+    "status": "passed_for_current_configuration",
+    "step5750_to_6000_validation_bpc_improvement": 0.008076362179992636,
+    "step5750_to_6000_next_token_top1_improvement": 0.001660156249999989,
+    "step5750_to_6000_context_lift_mrr_improvement": -0.02083333333333326,
+    "step5750_mechanical_degeneration_rate": 0.0,
+    "step6000_mechanical_degeneration_rate": 0.0625,
+    "step5750_ai_fluency_mean": 2.3125,
+    "step6000_ai_fluency_mean": 2.125,
+    "step5750_ai_local_coherence_mean": 2.0625,
+    "step6000_ai_local_coherence_mean": 2.0,
+    "interpretation": "当前语料、学习率、重复曝光和1488万参数配置在约Step 5750进入实用平台期；这不是理论极限或语料绝对上限。"
+  },
+  "mature_novel_generator": {
+    "status": "not_met",
+    "reason": "没有独立真人四维4/5验收，且当前AI流畅度与局部连贯度明显低于4/5。"
+  },
+  "review": {
+    "reviewer_type": "Codex AI",
+    "independent_human_review": false,
+    "scoring_scale": "1=几乎不可读；2=主题可辨但严重病句或漂移；3=大体可读但有明显错误；4=基本流畅连贯；5=成熟文本",
+    "sample_count_per_checkpoint": 16,
+    "seed_count": 1
+  },
+  "next_action": "保留Step 5750，停止在当前配置上盲目追加预训练Step；进入小说垂直SFT与章节/实体检索准备。",
+  "prohibited_claims": [
+    "达到理论极限",
+    "达到语料绝对上限",
+    "成熟小说生成器",
+    "通用ChatGPT",
+    "已掌握整本小说全部事实"
+  ]
+}

@@ -1,0 +1,605 @@
+{
+  "checkpoints": [
+    {
+      "audit_path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/reports/milestones/019_pretrain_capability_audit/step_00250/audit.json",
+      "audit_sha256": "722056ecd754b0bcf90b9fdbce9f84b4bdd20d3c159a139f15c55d4e07c9704b",
+      "audit_status": "FORMAL_MECHANICAL_REVIEW_REQUIRED",
+      "checkpoint_path_declared": "runs/formal_pretrain_14m_bpe3000_6000/checkpoints/step_00250.pt",
+      "checkpoint_sha256_declared": "20fa8bb335d8e05716e4773152bec0c70f15a1291ce7752b2fa54215fd171358",
+      "cloze": {
+        "case_count": 12,
+        "metrics": {
+          "context_lift": {
+            "high": {
+              "mean_reciprocal_rank": 0.7638888888888888,
+              "top1_accuracy": 0.6666666666666666
+            },
+            "low": {
+              "mean_reciprocal_rank": 0.6388888888888888,
+              "top1_accuracy": 0.5
+            },
+            "overall": {
+              "mean_reciprocal_rank": 0.7013888888888888,
+              "top1_accuracy": 0.5833333333333334
+            }
+          },
+          "mean_token_log_probability": {
+            "high": {
+              "mean_reciprocal_rank": 0.6666666666666666,
+              "top1_accuracy": 0.5
+            },
+            "low": {
+              "mean_reciprocal_rank": 0.4861111111111111,
+              "top1_accuracy": 0.16666666666666666
+            },
+            "overall": {
+              "mean_reciprocal_rank": 0.5763888888888888,
+              "top1_accuracy": 0.3333333333333333
+            }
+          },
+          "per_character_log_probability": {
+            "high": {
+              "mean_reciprocal_rank": 0.6666666666666666,
+              "top1_accuracy": 0.5
+            },
+            "low": {
+              "mean_reciprocal_rank": 0.3611111111111111,
+              "top1_accuracy": 0.0
+            },
+            "overall": {
+              "mean_reciprocal_rank": 0.5138888888888888,
+              "top1_accuracy": 0.25
+            }
+          },
+          "total_log_probability": {
+            "high": {
+              "mean_reciprocal_rank": 0.6666666666666666,
+              "top1_accuracy": 0.5
+            },
+            "low": {
+              "mean_reciprocal_rank": 0.3611111111111111,
+              "top1_accuracy": 0.0
+            },
+            "overall": {
+              "mean_reciprocal_rank": 0.5138888888888888,
+              "top1_accuracy": 0.25
+            }
+          }
+        },
+        "primary_metric": "mean_token_log_probability"
+      },
+      "generation": {
+        "empty_rate": 0.0,
+        "eos_stop_rate": 0.0,
+        "maximum_character_run": 12,
+        "mean_four_gram_repetition": 0.012983858655674453,
+        "mean_unique_character_ratio": 0.39699837502979485,
+        "mechanical_degeneration_rate": 0.125,
+        "sample_count": 16
+      },
+      "step": 250,
+      "validation_diagnostic": {
+        "fixed_window_validation_token_loss_nats": 6.9987174352010095,
+        "metric_separation": "token_bits_per_token is fixed-window loss/ln(2); BPC is independently loaded from full-validation training history and includes token/character ratio",
+        "next_token_top1_accuracy": 0.07805989583333334,
+        "split": "val",
+        "token_bits_per_token_value": 10.097014936347621,
+        "token_perplexity": 1095.2275569222404,
+        "tokens_evaluated": 30720,
+        "training_history_train_token_loss": 7.015101106961568,
+        "training_history_validation_token_loss": 7.010011021296183,
+        "validation_bits_per_character": 5.914875678244785,
+        "validation_bpc_source": "frozen_full_validation_training_history",
+        "windows_evaluated": 60
+      }
+    },
+    {
+      "audit_path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/reports/milestones/019_pretrain_capability_audit/step_05750/audit.json",
+      "audit_sha256": "274d6f8b2c32ed5e54987ff1ee8586b2e38fa1837b71fc25cf84ca2cfc02ab62",
+      "audit_status": "FORMAL_AUDIT_COMPLETE_MANUAL_REVIEW_REQUIRED",
+      "checkpoint_path_declared": "runs/formal_pretrain_14m_bpe3000_6000/checkpoints/step_05750.pt",
+      "checkpoint_sha256_declared": "bfe4fec5e6045d4c06d22393e7c2079fdc03897be71829c9d9dcbaf0fcaf5c1e",
+      "cloze": {
+        "case_count": 12,
+        "metrics": {
+          "context_lift": {
+            "high": {
+              "mean_reciprocal_rank": 1.0,
+              "top1_accuracy": 1.0
+            },
+            "low": {
+              "mean_reciprocal_rank": 0.6388888888888888,
+              "top1_accuracy": 0.3333333333333333
+            },
+            "overall": {
+              "mean_reciprocal_rank": 0.8194444444444444,
+              "top1_accuracy": 0.6666666666666666
+            }
+          },
+          "mean_token_log_probability": {
+            "high": {
+              "mean_reciprocal_rank": 0.8888888888888888,
+              "top1_accuracy": 0.8333333333333334
+            },
+            "low": {
+              "mean_reciprocal_rank": 0.7222222222222222,
+              "top1_accuracy": 0.5
+            },
+            "overall": {
+              "mean_reciprocal_rank": 0.8055555555555556,
+              "top1_accuracy": 0.6666666666666666
+            }
+          },
+          "per_character_log_probability": {
+            "high": {
+              "mean_reciprocal_rank": 0.8888888888888888,
+              "top1_accuracy": 0.8333333333333334
+            },
+            "low": {
+              "mean_reciprocal_rank": 0.7222222222222222,
+              "top1_accuracy": 0.5
+            },
+            "overall": {
+              "mean_reciprocal_rank": 0.8055555555555556,
+              "top1_accuracy": 0.6666666666666666
+            }
+          },
+          "total_log_probability": {
+            "high": {
+              "mean_reciprocal_rank": 0.8888888888888888,
+              "top1_accuracy": 0.8333333333333334
+            },
+            "low": {
+              "mean_reciprocal_rank": 0.7222222222222222,
+              "top1_accuracy": 0.5
+            },
+            "overall": {
+              "mean_reciprocal_rank": 0.8055555555555556,
+              "top1_accuracy": 0.6666666666666666
+            }
+          }
+        },
+        "primary_metric": "mean_token_log_probability"
+      },
+      "generation": {
+        "empty_rate": 0.0,
+        "eos_stop_rate": 0.0,
+        "maximum_character_run": 3,
+        "mean_four_gram_repetition": 0.020601770601770604,
+        "mean_unique_character_ratio": 0.6363992739573234,
+        "mechanical_degeneration_rate": 0.0,
+        "sample_count": 16
+      },
+      "step": 5750,
+      "validation_diagnostic": {
+        "fixed_window_validation_token_loss_nats": 4.438906606038412,
+        "metric_separation": "token_bits_per_token is fixed-window loss/ln(2); BPC is independently loaded from full-validation training history and includes token/character ratio",
+        "next_token_top1_accuracy": 0.24169921875,
+        "split": "val",
+        "token_bits_per_token_value": 6.403988547500877,
+        "token_perplexity": 84.68229992070408,
+        "tokens_evaluated": 30720,
+        "training_history_train_token_loss": 4.201159878571828,
+        "training_history_validation_token_loss": 4.457618665695191,
+        "validation_bits_per_character": 3.761229497144957,
+        "validation_bpc_source": "frozen_full_validation_training_history",
+        "windows_evaluated": 60
+      }
+    },
+    {
+      "audit_path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/reports/milestones/019_pretrain_capability_audit/step_06000/audit.json",
+      "audit_sha256": "2ac053faafc3c94de7fdf44989f31dbcde3859e978b4d098f09644bcd0b87c5d",
+      "audit_status": "FORMAL_MECHANICAL_REVIEW_REQUIRED",
+      "checkpoint_path_declared": "runs/formal_pretrain_14m_bpe3000_6000/checkpoints/step_06000.pt",
+      "checkpoint_sha256_declared": "bfc05c0c045e473316d0f44a3e766570ac7325ab42f8d10570106bc2c9daaab5",
+      "cloze": {
+        "case_count": 12,
+        "metrics": {
+          "context_lift": {
+            "high": {
+              "mean_reciprocal_rank": 1.0,
+              "top1_accuracy": 1.0
+            },
+            "low": {
+              "mean_reciprocal_rank": 0.5972222222222222,
+              "top1_accuracy": 0.3333333333333333
+            },
+            "overall": {
+              "mean_reciprocal_rank": 0.7986111111111112,
+              "top1_accuracy": 0.6666666666666666
+            }
+          },
+          "mean_token_log_probability": {
+            "high": {
+              "mean_reciprocal_rank": 0.9166666666666666,
+              "top1_accuracy": 0.8333333333333334
+            },
+            "low": {
+              "mean_reciprocal_rank": 0.75,
+              "top1_accuracy": 0.5
+            },
+            "overall": {
+              "mean_reciprocal_rank": 0.8333333333333334,
+              "top1_accuracy": 0.6666666666666666
+            }
+          },
+          "per_character_log_probability": {
+            "high": {
+              "mean_reciprocal_rank": 0.9166666666666666,
+              "top1_accuracy": 0.8333333333333334
+            },
+            "low": {
+              "mean_reciprocal_rank": 0.7222222222222222,
+              "top1_accuracy": 0.5
+            },
+            "overall": {
+              "mean_reciprocal_rank": 0.8194444444444444,
+              "top1_accuracy": 0.6666666666666666
+            }
+          },
+          "total_log_probability": {
+            "high": {
+              "mean_reciprocal_rank": 0.9166666666666666,
+              "top1_accuracy": 0.8333333333333334
+            },
+            "low": {
+              "mean_reciprocal_rank": 0.7222222222222222,
+              "top1_accuracy": 0.5
+            },
+            "overall": {
+              "mean_reciprocal_rank": 0.8194444444444444,
+              "top1_accuracy": 0.6666666666666666
+            }
+          }
+        },
+        "primary_metric": "mean_token_log_probability"
+      },
+      "generation": {
+        "empty_rate": 0.0,
+        "eos_stop_rate": 0.0,
+        "maximum_character_run": 4,
+        "mean_four_gram_repetition": 0.02815732049603016,
+        "mean_unique_character_ratio": 0.626042102403472,
+        "mechanical_degeneration_rate": 0.0625,
+        "sample_count": 16
+      },
+      "step": 6000,
+      "validation_diagnostic": {
+        "fixed_window_validation_token_loss_nats": 4.430016867319742,
+        "metric_separation": "token_bits_per_token is fixed-window loss/ln(2); BPC is independently loaded from full-validation training history and includes token/character ratio",
+        "next_token_top1_accuracy": 0.243359375,
+        "split": "val",
+        "token_bits_per_token_value": 6.391163365536654,
+        "token_perplexity": 83.93283262025388,
+        "tokens_evaluated": 30720,
+        "training_history_train_token_loss": 4.183671446641286,
+        "training_history_validation_token_loss": 4.4480469703674315,
+        "validation_bits_per_character": 3.7531531349649643,
+        "validation_bpc_source": "frozen_full_validation_training_history",
+        "windows_evaluated": 60
+      }
+    }
+  ],
+  "deltas": {
+    "250_to_5750": {
+      "cloze": {
+        "context_lift": {
+          "high": {
+            "mrr_delta": 0.23611111111111116,
+            "top1_delta": 0.33333333333333337
+          },
+          "low": {
+            "mrr_delta": 0.0,
+            "top1_delta": -0.16666666666666669
+          },
+          "overall": {
+            "mrr_delta": 0.11805555555555558,
+            "top1_delta": 0.08333333333333326
+          }
+        },
+        "mean_token_log_probability": {
+          "high": {
+            "mrr_delta": 0.2222222222222222,
+            "top1_delta": 0.33333333333333337
+          },
+          "low": {
+            "mrr_delta": 0.2361111111111111,
+            "top1_delta": 0.33333333333333337
+          },
+          "overall": {
+            "mrr_delta": 0.22916666666666674,
+            "top1_delta": 0.3333333333333333
+          }
+        },
+        "per_character_log_probability": {
+          "high": {
+            "mrr_delta": 0.2222222222222222,
+            "top1_delta": 0.33333333333333337
+          },
+          "low": {
+            "mrr_delta": 0.3611111111111111,
+            "top1_delta": 0.5
+          },
+          "overall": {
+            "mrr_delta": 0.29166666666666674,
+            "top1_delta": 0.41666666666666663
+          }
+        },
+        "total_log_probability": {
+          "high": {
+            "mrr_delta": 0.2222222222222222,
+            "top1_delta": 0.33333333333333337
+          },
+          "low": {
+            "mrr_delta": 0.3611111111111111,
+            "top1_delta": 0.5
+          },
+          "overall": {
+            "mrr_delta": 0.29166666666666674,
+            "top1_delta": 0.41666666666666663
+          }
+        }
+      },
+      "delta_direction": "to_minus_from",
+      "from_step": 250,
+      "generation": {
+        "empty_rate_delta": 0.0,
+        "eos_stop_rate_delta": 0.0,
+        "mean_four_gram_repetition_delta": 0.007617911946096151,
+        "mean_unique_character_ratio_delta": 0.23940089892752858,
+        "mechanical_degeneration_rate_delta": -0.125
+      },
+      "to_step": 5750,
+      "validation": {
+        "fixed_window_token_loss_delta": -2.559810829162598,
+        "next_token_top1_delta": 0.16363932291666666,
+        "token_bits_per_token_delta": -3.6930263888467447,
+        "token_perplexity_delta": -1010.5452570015364,
+        "validation_bpc_delta": -2.153646181099828,
+        "validation_bpc_improvement": 2.153646181099828,
+        "validation_bpc_relative_improvement": 0.3641067535909586
+      }
+    },
+    "5750_to_6000": {
+      "cloze": {
+        "context_lift": {
+          "high": {
+            "mrr_delta": 0.0,
+            "top1_delta": 0.0
+          },
+          "low": {
+            "mrr_delta": -0.04166666666666663,
+            "top1_delta": 0.0
+          },
+          "overall": {
+            "mrr_delta": -0.02083333333333326,
+            "top1_delta": 0.0
+          }
+        },
+        "mean_token_log_probability": {
+          "high": {
+            "mrr_delta": 0.02777777777777779,
+            "top1_delta": 0.0
+          },
+          "low": {
+            "mrr_delta": 0.02777777777777779,
+            "top1_delta": 0.0
+          },
+          "overall": {
+            "mrr_delta": 0.02777777777777779,
+            "top1_delta": 0.0
+          }
+        },
+        "per_character_log_probability": {
+          "high": {
+            "mrr_delta": 0.02777777777777779,
+            "top1_delta": 0.0
+          },
+          "low": {
+            "mrr_delta": 0.0,
+            "top1_delta": 0.0
+          },
+          "overall": {
+            "mrr_delta": 0.01388888888888884,
+            "top1_delta": 0.0
+          }
+        },
+        "total_log_probability": {
+          "high": {
+            "mrr_delta": 0.02777777777777779,
+            "top1_delta": 0.0
+          },
+          "low": {
+            "mrr_delta": 0.0,
+            "top1_delta": 0.0
+          },
+          "overall": {
+            "mrr_delta": 0.01388888888888884,
+            "top1_delta": 0.0
+          }
+        }
+      },
+      "delta_direction": "to_minus_from",
+      "from_step": 5750,
+      "generation": {
+        "empty_rate_delta": 0.0,
+        "eos_stop_rate_delta": 0.0,
+        "mean_four_gram_repetition_delta": 0.007555549894259557,
+        "mean_unique_character_ratio_delta": -0.010357171553851408,
+        "mechanical_degeneration_rate_delta": 0.0625
+      },
+      "to_step": 6000,
+      "validation": {
+        "fixed_window_token_loss_delta": -0.008889738718669271,
+        "next_token_top1_delta": 0.001660156249999989,
+        "token_bits_per_token_delta": -0.012825181964222665,
+        "token_perplexity_delta": -0.7494673004502062,
+        "validation_bpc_delta": -0.008076362179992636,
+        "validation_bpc_improvement": 0.008076362179992636,
+        "validation_bpc_relative_improvement": 0.0021472665217911256
+      }
+    }
+  },
+  "frozen_gates": {
+    "language_base": {
+      "automatic_conditions": [
+        {
+          "name": "validation_bpc_relative_improvement",
+          "observed": 0.3641067535909586,
+          "operator": ">=",
+          "passed": true,
+          "source": "frozen_full_validation_training_history",
+          "threshold": 0.2
+        },
+        {
+          "name": "validation_next_token_top1_improvement",
+          "observed": 0.16363932291666666,
+          "operator": ">",
+          "passed": true,
+          "source": "fixed_60_window_validation_diagnostic",
+          "threshold": 0.0
+        },
+        {
+          "name": "step5750_empty_rate",
+          "observed": 0.0,
+          "operator": "==",
+          "passed": true,
+          "source": "fixed_16_prompt_generation",
+          "threshold": 0.0
+        },
+        {
+          "name": "step5750_mechanical_degeneration_rate",
+          "observed": 0.0,
+          "operator": "<=",
+          "passed": true,
+          "source": "fixed_16_prompt_generation",
+          "threshold": 0.25
+        }
+      ],
+      "automatic_conditions_passed": true,
+      "final_status": "manual_review_required",
+      "manual_condition": {
+        "name": "ai_assisted_fluency_and_local_coherence_means",
+        "observed": null,
+        "required_minimum_each": 2.0,
+        "status": "not_scored_by_automatic_summarizer"
+      }
+    },
+    "mature_novel_generator": {
+      "observed": null,
+      "required_independent_human_score_each": 4.0,
+      "status": "not_assessed_requires_independent_human_review"
+    },
+    "practical_plateau": {
+      "automatic_numeric_conditions": [
+        {
+          "name": "step5750_to_6000_validation_bpc_improvement",
+          "observed": 0.008076362179992636,
+          "operator": "<",
+          "passed": true,
+          "source": "frozen_full_validation_training_history",
+          "threshold": 0.01
+        },
+        {
+          "name": "step5750_to_6000_next_token_top1_improvement",
+          "observed": 0.001660156249999989,
+          "operator": "<",
+          "passed": true,
+          "source": "fixed_60_window_validation_diagnostic",
+          "threshold": 0.005
+        },
+        {
+          "name": "step5750_to_6000_context_lift_mrr_improvement",
+          "observed": -0.02083333333333326,
+          "operator": "<=",
+          "passed": true,
+          "source": "validation_prefix_cloze_context_lift",
+          "threshold": 0.05
+        }
+      ],
+      "automatic_numeric_conditions_passed": true,
+      "final_status": "manual_review_required",
+      "manual_condition": {
+        "name": "fixed_generation_semantic_results_show_no_consistent_improvement",
+        "observed": null,
+        "status": "manual_review_required_no_subjective_score_inferred"
+      },
+      "mechanical_observation": {
+        "improved": false,
+        "step5750_rate": 0.0,
+        "step6000_rate": 0.0625
+      }
+    }
+  },
+  "inputs": {
+    "audits": {
+      "250": {
+        "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/reports/milestones/019_pretrain_capability_audit/step_00250/audit.json",
+        "sha256": "722056ecd754b0bcf90b9fdbce9f84b4bdd20d3c159a139f15c55d4e07c9704b"
+      },
+      "5750": {
+        "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/reports/milestones/019_pretrain_capability_audit/step_05750/audit.json",
+        "sha256": "274d6f8b2c32ed5e54987ff1ee8586b2e38fa1837b71fc25cf84ca2cfc02ab62"
+      },
+      "6000": {
+        "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/reports/milestones/019_pretrain_capability_audit/step_06000/audit.json",
+        "sha256": "2ac053faafc3c94de7fdf44989f31dbcde3859e978b4d098f09644bcd0b87c5d"
+      }
+    },
+    "bpc_source": {
+      "definition": "token_nats * token_count / original_character_count / ln(2); loaded from frozen full-validation training history",
+      "forbidden_substitution": "fixed-window validation token loss / ln(2) is bits per BPE token, not BPC",
+      "format": "pretrain_v4_report_json_history",
+      "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/reports/milestones/016_formal_pretrain_14m/pretrain_v4_report.json",
+      "sha256": "b8f5ca80eaafb00df3c32e0493079ca6a70feba7c1cf9ed03a2ad85a588236ae",
+      "test_read": false
+    },
+    "protocol": {
+      "frozen": true,
+      "path": "/Users/bytedance/Documents/ChatGPT/game/create-gpt-step-by-step/docs/pretrain_capability_audit_protocol.md",
+      "sha256": "6544867cd76ab093c70c417aceea3e43cd71521a975127372d8e68ce6d3fa92c",
+      "thresholds": {
+        "language_base_maximum_mechanical_degeneration_rate": 0.25,
+        "language_base_minimum_ai_review_score": 2.0,
+        "language_base_minimum_bpc_relative_improvement": 0.2,
+        "mature_generator_minimum_independent_human_score": 4.0,
+        "plateau_maximum_bpc_improvement": 0.01,
+        "plateau_maximum_context_lift_mrr_improvement": 0.05,
+        "plateau_maximum_top1_improvement": 0.005
+      }
+    },
+    "shared_comparison_contracts": {
+      "case_contract_sha256": "92a6d393e9f51403e642326c7608889edb47c1dfbf8b951eb86fb91b27d2e608",
+      "config_sha256": "faac0f759a5ce9cd5e827f95c511b7f9bbbda06f6e7642e5e0d90d5ec5635974",
+      "probe_artifact_sha256": "f95d594eaa8d08ef340a704c7b9103627ab949e88c1796fe3db0527cfc54f36e",
+      "prompt_contract_sha256": "cb9128b76f524893c6155381e9cc4341f5cd3da62e37f7cf286f0155d0434e89",
+      "prompts_sha256": "032fd93f12ffba3df3d4d9ad4bc1898a6a86ec416a812cd85a0c0f1928a253a7",
+      "token_manifest_sha256": "5d10245eac86e4dbafef908cb2d915bb1effcf61ad977b4de96d8d64d30809c7",
+      "tokenizer_sha256": "e70cf3dc0ed185a6b22ab7dc08b6a850eeb59864ba161dd156c644e003862822",
+      "validation_tensor_sha256": "f678203005119c241178130790ece08423717cbce0f8949926d3a79a1b18e328"
+    }
+  },
+  "interpretation_limits": {
+    "automatic_outputs": "validation token diagnostics, full-history BPC, mechanical generation diagnostics, and validation-prefix cloze ranking",
+    "not_automatically_scored": [
+      "fluency",
+      "local coherence",
+      "prompt continuation relevance",
+      "character and world consistency",
+      "mature generator status"
+    ]
+  },
+  "run_id": "pretrain-capability-summary-formal-v2",
+  "schema_version": "pretrain-capability-comparison/v1",
+  "scope": {
+    "comparison_steps": [
+      250,
+      5750,
+      6000
+    ],
+    "fixed_window_token_diagnostic_is_not_bpc": true,
+    "model_type": "single_novel_base_causal_language_model",
+    "subjective_manual_scores_inferred": false,
+    "test_read": false
+  }
+}
