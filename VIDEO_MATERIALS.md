@@ -55,6 +55,7 @@
 | M018 | 一万条SFT v6、独立审计与2000步正式训练 | 训练完成，行为门未通过 | [数据门槛、Loss曲线、公开诊断与失败样本](reports/milestones/018_sft_v6_10000/README.md) |
 | M019 | 单本小说纯预训练能力审计 | Step 5750形成语言基座；当前配置进入实用平台期 | [三Checkpoint对照、固定续写、Cloze与AI复核](reports/milestones/019_pretrain_capability_audit/README.md) |
 | M020 | 小说垂直SFT v7 | 实验完成；自动门失败、外部复核pending、无发布候选 | [数据、曲线、节点对比、保持评估与不发布结论](reports/milestones/020_sft_v7_vertical/README.md) |
+| M021 | SFT v7.1语义密度与遗忘控制Canary | 有限问答容量已证明；0.25回放为最优诊断节点，但保持门差1条、无候选 | [审计、Canary、三档回放、语义复核与A0计划](reports/milestones/021_sft_v7_1_canary/README.md) |
 
 ## M020 已冻结视频素材
 
@@ -71,6 +72,22 @@
 | 最终决定 | 严格候选`[]`，必需产物缺失0、完整性错误0，`release_ready=false` | [机器可读汇总](reports/milestones/020_sft_v7_vertical/checkpoint_comparison.json)、[SHA索引](reports/milestones/020_sft_v7_vertical/SHA256SUMS.md) |
 
 视频表述必须区分三件事：纯预训练Step5750只是最低可用小说语言基座，20步smoke只证明训练链路安全可运行，2000步正式SFT虽改善Loss、EOS与截断，却没有通过行为和保持门。Step1000是保守诊断候选，Step1500是行为较优研究候选，Step2000已排除；它们都不是发布候选，独立真人复核仍未完成。
+
+## M021 已冻结视频素材
+
+| 素材 | 可展示事实 | 文件 |
+|---|---|---|
+| v7语义密度审计 | 固定开头49.95%，裸核心问0/18，核心相对密度0.6188，证据高复制66.01% | [审计报告](reports/milestones/021_sft_v7_1_canary/semantic_density_audit.md) |
+| Canary数据与张量 | 8个fact ID、64条Train、16条Dev/Selection；assistant-only与EOS通过 | [数据报告](reports/milestones/021_sft_v7_1_canary/canary_data_report.md)、[张量报告](reports/milestones/021_sft_v7_1_canary/canary_tensor_report.md) |
+| 高LR容量证明 | Step375严格问答100%/100%，但BPC退化43.64%、续写只有9/16非空 | [问答](reports/milestones/021_sft_v7_1_canary/canary_best375_generation_eval.md)、[保持](reports/milestones/021_sft_v7_1_canary/pretrain_retention_best375.md) |
+| 三档联合回放 | 0.50/0.25/0.10的问答、BPC、非空、机械退化完整对照 | [机器可读表](reports/milestones/021_sft_v7_1_canary/canary_tradeoff.csv)、[里程碑结论](reports/milestones/021_sft_v7_1_canary/README.md) |
+| 0.25当前最优诊断 | 严格87.50%/68.75%，命题95.31%/87.50%，BPC退化2.33%，15/16非空 | [问答](reports/milestones/021_sft_v7_1_canary/canary_replay_w025_step00400_generation_eval.md)、[保持](reports/milestones/021_sft_v7_1_canary/pretrain_retention_replay_w025_step00400.md) |
+| 指标审核 | 13条严格失败中8条语义等价、5条真错误；exact不能冒充语义 | [逐条语义复核](reports/milestones/021_sft_v7_1_canary/canary_replay_w025_semantic_review.md) |
+| 下一训练计划 | A0 3920条，结构化命题评分，回放0.20/0.25/0.30，RAG并行 | [M021训练计划](docs/m021_sft_v7_1_training_plan.md) |
+
+推荐视频核心表述：
+
+> 64条高质量问答已经证明小模型不是“只能续写”：高学习率能把未见改写也答对，却会迅速忘掉小说语言。加入预训练Train Token回放后，0.25权重把BPC退化压到2.33%，命题问答达到95.31%/87.50%，但仍有一条小说提示立刻EOS。真正的训练目标不是某一个Loss最低，而是问答语义、关系方向、EOS、重复和预训练保持在同一个checkpoint同时过门。
 
 ## 视频中的核心对比表
 

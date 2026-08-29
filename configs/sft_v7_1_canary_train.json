@@ -1,0 +1,65 @@
+{
+  "schema_version": "sft-v7.1-canary-training-config/v1",
+  "config_version": "1.0.0",
+  "experiment": "m021_sft_v7_1_canary",
+  "base_model_config": "configs/formal_pretrain_14m_bpe3000.json",
+  "base_checkpoint": "runs/formal_pretrain_14m_bpe3000_6000/checkpoints/step_05750.pt",
+  "data": {
+    "tensor_path": "data/sft/v7_1_canary/train_eval_tensors.pt",
+    "train_records": 64,
+    "holdout_eval_records": 16,
+    "assistant_only_loss": true,
+    "holdout_used_for_optimization": false,
+    "holdout_eval_role": "unseen_question_development_selection",
+    "holdout_is_blind_test": false,
+    "holdout_used_for_teacher_loss": true,
+    "holdout_used_for_checkpoint_selection": true
+  },
+  "training": {
+    "target_steps": 400,
+    "batch_size": 8,
+    "learning_rate": 0.0001,
+    "minimum_learning_rate": 0.00001,
+    "warmup_steps": 20,
+    "weight_decay": 0.01,
+    "betas": [0.9, 0.95],
+    "gradient_clip": 1.0,
+    "eval_interval": 25,
+    "checkpoint_interval": 50,
+    "eval_batch_size": 16,
+    "log_interval": 10,
+    "seed": 42,
+    "sampler": "deterministic_shuffled_epoch/v1"
+  },
+  "generation": {
+    "max_new_tokens": 48,
+    "temperature": 0.3,
+    "top_k": 1,
+    "generation_batch_size": 8,
+    "seed": 20260829
+  },
+  "gates": {
+    "train_exact_answer_rate_min": 0.95,
+    "holdout_exact_answer_rate_min": 0.75,
+    "per_fact_train_exact_min": 7,
+    "per_fact_holdout_exact_min": 1,
+    "holdout_eos_count_min": 15,
+    "severe_repetition_count_max": 0,
+    "self_relation_error_count_max": 0
+  },
+  "logging": {
+    "max_bytes": 1048576,
+    "backup_count": 3,
+    "console": true,
+    "module_levels": {
+      "data": "INFO",
+      "encoding": "INFO",
+      "training": "INFO",
+      "validation": "INFO",
+      "checkpoint": "INFO",
+      "generation": "INFO",
+      "artifact": "INFO",
+      "orchestrator": "INFO"
+    }
+  }
+}

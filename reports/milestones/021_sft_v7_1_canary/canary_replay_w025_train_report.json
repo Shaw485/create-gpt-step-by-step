@@ -1,0 +1,655 @@
+{
+  "base_checkpoint_step": 5750,
+  "best_development_teacher_loss": 0.11077246069908142,
+  "canary_dataset_manifest_sha256": "68908fdabe4f8ae470f6bcd4ec6d11b59304829119835af901df7bf9888ef50d",
+  "canary_tensor_sha256": "8511bea2aa449f9dc29cc268239951786d512d9895f29a8730ccb7179f26914e",
+  "development_consumption": {
+    "checkpoint_selection_events": 17,
+    "checkpoint_selection_records_per_evaluation": 16,
+    "optimizer_records_per_step": 0,
+    "records": 16,
+    "role": "canary_dev_unseen_wording",
+    "teacher_evaluation_events": 17,
+    "teacher_forward_records_total": 272,
+    "teacher_loss_records_per_evaluation": 16
+  },
+  "device": "mps",
+  "elapsed_seconds": 386.4678234170133,
+  "history": [
+    {
+      "development_teacher_loss": 5.818234443664551,
+      "holdout_teacher_loss": 5.818234443664551,
+      "joint_total_loss": 0.0,
+      "learning_rate": 0.0,
+      "pretrain_next_token_loss": 0.0,
+      "replay_consumption": {
+        "batch_size": 4,
+        "batches": 0,
+        "block_size": 128,
+        "optimizer_split": "train",
+        "strategy": "deterministic_random_train_windows/v1",
+        "target_tokens": 0,
+        "test_batches": 0,
+        "validation_batches": 0,
+        "windows": 0
+      },
+      "sft_assistant_only_loss": 0.0,
+      "sft_sampler_coverage": {
+        "coverage": 0.0,
+        "draws": 0,
+        "epochs_started": 0,
+        "maximum_draws_per_record": 0,
+        "minimum_draws_per_record": 0,
+        "records": 64,
+        "seen_records": 0,
+        "strategy": "deterministic_shuffled_epoch/v1"
+      },
+      "step": 0,
+      "train_teacher_loss": 5.8871568520863855
+    },
+    {
+      "development_teacher_loss": 3.95143985748291,
+      "holdout_teacher_loss": 3.95143985748291,
+      "joint_total_loss": 5.565950393676758,
+      "learning_rate": 9.996155912742854e-06,
+      "pretrain_next_token_loss": 4.867928504943848,
+      "replay_consumption": {
+        "batch_size": 4,
+        "batches": 25,
+        "block_size": 128,
+        "optimizer_split": "train",
+        "strategy": "deterministic_random_train_windows/v1",
+        "target_tokens": 12800,
+        "test_batches": 0,
+        "validation_batches": 0,
+        "windows": 100
+      },
+      "sft_assistant_only_loss": 4.348968029022217,
+      "sft_sampler_coverage": {
+        "coverage": 1.0,
+        "draws": 200,
+        "epochs_started": 4,
+        "maximum_draws_per_record": 4,
+        "minimum_draws_per_record": 3,
+        "records": 64,
+        "seen_records": 64,
+        "strategy": "deterministic_shuffled_epoch/v1"
+      },
+      "step": 25,
+      "train_teacher_loss": 3.9846025705337524
+    },
+    {
+      "development_teacher_loss": 2.508854389190674,
+      "holdout_teacher_loss": 2.508854389190674,
+      "joint_total_loss": 4.122675895690918,
+      "learning_rate": 9.862301196726988e-06,
+      "pretrain_next_token_loss": 4.352357864379883,
+      "replay_consumption": {
+        "batch_size": 4,
+        "batches": 50,
+        "block_size": 128,
+        "optimizer_split": "train",
+        "strategy": "deterministic_random_train_windows/v1",
+        "target_tokens": 25600,
+        "test_batches": 0,
+        "validation_batches": 0,
+        "windows": 200
+      },
+      "sft_assistant_only_loss": 3.0345866680145264,
+      "sft_sampler_coverage": {
+        "coverage": 1.0,
+        "draws": 400,
+        "epochs_started": 7,
+        "maximum_draws_per_record": 7,
+        "minimum_draws_per_record": 6,
+        "records": 64,
+        "seen_records": 64,
+        "strategy": "deterministic_shuffled_epoch/v1"
+      },
+      "step": 50,
+      "train_teacher_loss": 2.5259798871146306
+    },
+    {
+      "development_teacher_loss": 1.6446529626846313,
+      "holdout_teacher_loss": 1.6446529626846313,
+      "joint_total_loss": 2.8242220878601074,
+      "learning_rate": 9.542759418513906e-06,
+      "pretrain_next_token_loss": 4.571870803833008,
+      "replay_consumption": {
+        "batch_size": 4,
+        "batches": 75,
+        "block_size": 128,
+        "optimizer_split": "train",
+        "strategy": "deterministic_random_train_windows/v1",
+        "target_tokens": 38400,
+        "test_batches": 0,
+        "validation_batches": 0,
+        "windows": 300
+      },
+      "sft_assistant_only_loss": 1.6812543869018555,
+      "sft_sampler_coverage": {
+        "coverage": 1.0,
+        "draws": 600,
+        "epochs_started": 10,
+        "maximum_draws_per_record": 10,
+        "minimum_draws_per_record": 9,
+        "records": 64,
+        "seen_records": 64,
+        "strategy": "deterministic_shuffled_epoch/v1"
+      },
+      "step": 75,
+      "train_teacher_loss": 1.6380974120563931
+    },
+    {
+      "development_teacher_loss": 1.0322628021240234,
+      "holdout_teacher_loss": 1.0322628021240234,
+      "joint_total_loss": 2.574399709701538,
+      "learning_rate": 9.051132292283772e-06,
+      "pretrain_next_token_loss": 4.823266983032227,
+      "replay_consumption": {
+        "batch_size": 4,
+        "batches": 100,
+        "block_size": 128,
+        "optimizer_split": "train",
+        "strategy": "deterministic_random_train_windows/v1",
+        "target_tokens": 51200,
+        "test_batches": 0,
+        "validation_batches": 0,
+        "windows": 400
+      },
+      "sft_assistant_only_loss": 1.3685829639434814,
+      "sft_sampler_coverage": {
+        "coverage": 1.0,
+        "draws": 800,
+        "epochs_started": 13,
+        "maximum_draws_per_record": 13,
+        "minimum_draws_per_record": 12,
+        "records": 64,
+        "seen_records": 64,
+        "strategy": "deterministic_shuffled_epoch/v1"
+      },
+      "step": 100,
+      "train_teacher_loss": 1.0127408623695373
+    },
+    {
+      "development_teacher_loss": 0.6257821917533875,
+      "holdout_teacher_loss": 0.6257821917533875,
+      "joint_total_loss": 1.955378770828247,
+      "learning_rate": 8.408346570374234e-06,
+      "pretrain_next_token_loss": 4.879804611206055,
+      "replay_consumption": {
+        "batch_size": 4,
+        "batches": 125,
+        "block_size": 128,
+        "optimizer_split": "train",
+        "strategy": "deterministic_random_train_windows/v1",
+        "target_tokens": 64000,
+        "test_batches": 0,
+        "validation_batches": 0,
+        "windows": 500
+      },
+      "sft_assistant_only_loss": 0.7354276180267334,
+      "sft_sampler_coverage": {
+        "coverage": 1.0,
+        "draws": 1000,
+        "epochs_started": 16,
+        "maximum_draws_per_record": 16,
+        "minimum_draws_per_record": 15,
+        "records": 64,
+        "seen_records": 64,
+        "strategy": "deterministic_shuffled_epoch/v1"
+      },
+      "step": 125,
+      "train_teacher_loss": 0.6070693830649058
+    },
+    {
+      "development_teacher_loss": 0.4023077189922333,
+      "holdout_teacher_loss": 0.4023077189922333,
+      "joint_total_loss": 1.7396540641784668,
+      "learning_rate": 7.641763268666832e-06,
+      "pretrain_next_token_loss": 4.576678276062012,
+      "replay_consumption": {
+        "batch_size": 4,
+        "batches": 150,
+        "block_size": 128,
+        "optimizer_split": "train",
+        "strategy": "deterministic_random_train_windows/v1",
+        "target_tokens": 76800,
+        "test_batches": 0,
+        "validation_batches": 0,
+        "windows": 600
+      },
+      "sft_assistant_only_loss": 0.5954844951629639,
+      "sft_sampler_coverage": {
+        "coverage": 1.0,
+        "draws": 1200,
+        "epochs_started": 19,
+        "maximum_draws_per_record": 19,
+        "minimum_draws_per_record": 18,
+        "records": 64,
+        "seen_records": 64,
+        "strategy": "deterministic_shuffled_epoch/v1"
+      },
+      "step": 150,
+      "train_teacher_loss": 0.3824284715784921
+    },
+    {
+      "development_teacher_loss": 0.2767634391784668,
+      "holdout_teacher_loss": 0.2767634391784668,
+      "joint_total_loss": 1.5525574684143066,
+      "learning_rate": 6.784013009120974e-06,
+      "pretrain_next_token_loss": 4.277949810028076,
+      "replay_consumption": {
+        "batch_size": 4,
+        "batches": 175,
+        "block_size": 128,
+        "optimizer_split": "train",
+        "strategy": "deterministic_random_train_windows/v1",
+        "target_tokens": 89600,
+        "test_batches": 0,
+        "validation_batches": 0,
+        "windows": 700
+      },
+      "sft_assistant_only_loss": 0.4830699563026428,
+      "sft_sampler_coverage": {
+        "coverage": 1.0,
+        "draws": 1400,
+        "epochs_started": 22,
+        "maximum_draws_per_record": 22,
+        "minimum_draws_per_record": 21,
+        "records": 64,
+        "seen_records": 64,
+        "strategy": "deterministic_shuffled_epoch/v1"
+      },
+      "step": 175,
+      "train_teacher_loss": 0.26001855962806275
+    },
+    {
+      "development_teacher_loss": 0.21183007955551147,
+      "holdout_teacher_loss": 0.21183007955551147,
+      "joint_total_loss": 1.4811724424362183,
+      "learning_rate": 5.871607054625496e-06,
+      "pretrain_next_token_loss": 4.679359436035156,
+      "replay_consumption": {
+        "batch_size": 4,
+        "batches": 200,
+        "block_size": 128,
+        "optimizer_split": "train",
+        "strategy": "deterministic_random_train_windows/v1",
+        "target_tokens": 102400,
+        "test_batches": 0,
+        "validation_batches": 0,
+        "windows": 800
+      },
+      "sft_assistant_only_loss": 0.3113325834274292,
+      "sft_sampler_coverage": {
+        "coverage": 1.0,
+        "draws": 1600,
+        "epochs_started": 25,
+        "maximum_draws_per_record": 25,
+        "minimum_draws_per_record": 25,
+        "records": 64,
+        "seen_records": 64,
+        "strategy": "deterministic_shuffled_epoch/v1"
+      },
+      "step": 200,
+      "train_teacher_loss": 0.1926576261719068
+    },
+    {
+      "development_teacher_loss": 0.1741407960653305,
+      "holdout_teacher_loss": 0.1741407960653305,
+      "joint_total_loss": 1.3429503440856934,
+      "learning_rate": 4.943383159287935e-06,
+      "pretrain_next_token_loss": 4.3204264640808105,
+      "replay_consumption": {
+        "batch_size": 4,
+        "batches": 225,
+        "block_size": 128,
+        "optimizer_split": "train",
+        "strategy": "deterministic_random_train_windows/v1",
+        "target_tokens": 115200,
+        "test_batches": 0,
+        "validation_batches": 0,
+        "windows": 900
+      },
+      "sft_assistant_only_loss": 0.26284366846084595,
+      "sft_sampler_coverage": {
+        "coverage": 1.0,
+        "draws": 1800,
+        "epochs_started": 29,
+        "maximum_draws_per_record": 29,
+        "minimum_draws_per_record": 28,
+        "records": 64,
+        "seen_records": 64,
+        "strategy": "deterministic_shuffled_epoch/v1"
+      },
+      "step": 225,
+      "train_teacher_loss": 0.15456611348523033
+    },
+    {
+      "development_teacher_loss": 0.15442205965518951,
+      "holdout_teacher_loss": 0.15442205965518951,
+      "joint_total_loss": 1.4439383745193481,
+      "learning_rate": 4.038852388578925e-06,
+      "pretrain_next_token_loss": 4.93381404876709,
+      "replay_consumption": {
+        "batch_size": 4,
+        "batches": 250,
+        "block_size": 128,
+        "optimizer_split": "train",
+        "strategy": "deterministic_random_train_windows/v1",
+        "target_tokens": 128000,
+        "test_batches": 0,
+        "validation_batches": 0,
+        "windows": 1000
+      },
+      "sft_assistant_only_loss": 0.21048490703105927,
+      "sft_sampler_coverage": {
+        "coverage": 1.0,
+        "draws": 2000,
+        "epochs_started": 32,
+        "maximum_draws_per_record": 32,
+        "minimum_draws_per_record": 31,
+        "records": 64,
+        "seen_records": 64,
+        "strategy": "deterministic_shuffled_epoch/v1"
+      },
+      "step": 250,
+      "train_teacher_loss": 0.1341952607035637
+    },
+    {
+      "development_teacher_loss": 0.1373177468776703,
+      "holdout_teacher_loss": 0.1373177468776703,
+      "joint_total_loss": 1.3779867887496948,
+      "learning_rate": 3.1965172790967967e-06,
+      "pretrain_next_token_loss": 4.622679710388184,
+      "replay_consumption": {
+        "batch_size": 4,
+        "batches": 275,
+        "block_size": 128,
+        "optimizer_split": "train",
+        "strategy": "deterministic_random_train_windows/v1",
+        "target_tokens": 140800,
+        "test_batches": 0,
+        "validation_batches": 0,
+        "windows": 1100
+      },
+      "sft_assistant_only_loss": 0.22231687605381012,
+      "sft_sampler_coverage": {
+        "coverage": 1.0,
+        "draws": 2200,
+        "epochs_started": 35,
+        "maximum_draws_per_record": 35,
+        "minimum_draws_per_record": 34,
+        "records": 64,
+        "seen_records": 64,
+        "strategy": "deterministic_shuffled_epoch/v1"
+      },
+      "step": 275,
+      "train_teacher_loss": 0.11756225758128697
+    },
+    {
+      "development_teacher_loss": 0.12858474254608154,
+      "holdout_teacher_loss": 0.12858474254608154,
+      "joint_total_loss": 1.3243008852005005,
+      "learning_rate": 2.4522329276841656e-06,
+      "pretrain_next_token_loss": 4.611621856689453,
+      "replay_consumption": {
+        "batch_size": 4,
+        "batches": 300,
+        "block_size": 128,
+        "optimizer_split": "train",
+        "strategy": "deterministic_random_train_windows/v1",
+        "target_tokens": 153600,
+        "test_batches": 0,
+        "validation_batches": 0,
+        "windows": 1200
+      },
+      "sft_assistant_only_loss": 0.17139539122581482,
+      "sft_sampler_coverage": {
+        "coverage": 1.0,
+        "draws": 2400,
+        "epochs_started": 38,
+        "maximum_draws_per_record": 38,
+        "minimum_draws_per_record": 37,
+        "records": 64,
+        "seen_records": 64,
+        "strategy": "deterministic_shuffled_epoch/v1"
+      },
+      "step": 300,
+      "train_teacher_loss": 0.10889522226320372
+    },
+    {
+      "development_teacher_loss": 0.12131787091493607,
+      "holdout_teacher_loss": 0.12131787091493607,
+      "joint_total_loss": 1.3836654424667358,
+      "learning_rate": 1.8376807722841227e-06,
+      "pretrain_next_token_loss": 4.676358222961426,
+      "replay_consumption": {
+        "batch_size": 4,
+        "batches": 325,
+        "block_size": 128,
+        "optimizer_split": "train",
+        "strategy": "deterministic_random_train_windows/v1",
+        "target_tokens": 166400,
+        "test_batches": 0,
+        "validation_batches": 0,
+        "windows": 1300
+      },
+      "sft_assistant_only_loss": 0.21457591652870178,
+      "sft_sampler_coverage": {
+        "coverage": 1.0,
+        "draws": 2600,
+        "epochs_started": 41,
+        "maximum_draws_per_record": 41,
+        "minimum_draws_per_record": 40,
+        "records": 64,
+        "seen_records": 64,
+        "strategy": "deterministic_shuffled_epoch/v1"
+      },
+      "step": 325,
+      "train_teacher_loss": 0.1017315020163854
+    },
+    {
+      "development_teacher_loss": 0.11722464114427567,
+      "holdout_teacher_loss": 0.11722464114427567,
+      "joint_total_loss": 1.3202998638153076,
+      "learning_rate": 1.3790200300522413e-06,
+      "pretrain_next_token_loss": 4.608345031738281,
+      "replay_consumption": {
+        "batch_size": 4,
+        "batches": 350,
+        "block_size": 128,
+        "optimizer_split": "train",
+        "strategy": "deterministic_random_train_windows/v1",
+        "target_tokens": 179200,
+        "test_batches": 0,
+        "validation_batches": 0,
+        "windows": 1400
+      },
+      "sft_assistant_only_loss": 0.1682136505842209,
+      "sft_sampler_coverage": {
+        "coverage": 1.0,
+        "draws": 2800,
+        "epochs_started": 44,
+        "maximum_draws_per_record": 44,
+        "minimum_draws_per_record": 43,
+        "records": 64,
+        "seen_records": 64,
+        "strategy": "deterministic_shuffled_epoch/v1"
+      },
+      "step": 350,
+      "train_teacher_loss": 0.09716547611686918
+    },
+    {
+      "development_teacher_loss": 0.11343280225992203,
+      "holdout_teacher_loss": 0.11343280225992203,
+      "joint_total_loss": 1.2006839513778687,
+      "learning_rate": 1.0957741960269049e-06,
+      "pretrain_next_token_loss": 4.262876033782959,
+      "replay_consumption": {
+        "batch_size": 4,
+        "batches": 375,
+        "block_size": 128,
+        "optimizer_split": "train",
+        "strategy": "deterministic_random_train_windows/v1",
+        "target_tokens": 192000,
+        "test_batches": 0,
+        "validation_batches": 0,
+        "windows": 1500
+      },
+      "sft_assistant_only_loss": 0.1349649280309677,
+      "sft_sampler_coverage": {
+        "coverage": 1.0,
+        "draws": 3000,
+        "epochs_started": 47,
+        "maximum_draws_per_record": 47,
+        "minimum_draws_per_record": 46,
+        "records": 64,
+        "seen_records": 64,
+        "strategy": "deterministic_shuffled_epoch/v1"
+      },
+      "step": 375,
+      "train_teacher_loss": 0.09299248307943345
+    },
+    {
+      "development_teacher_loss": 0.11077246069908142,
+      "holdout_teacher_loss": 0.11077246069908142,
+      "joint_total_loss": 1.2841285467147827,
+      "learning_rate": 1e-06,
+      "pretrain_next_token_loss": 4.522554397583008,
+      "replay_consumption": {
+        "batch_size": 4,
+        "batches": 400,
+        "block_size": 128,
+        "optimizer_split": "train",
+        "strategy": "deterministic_random_train_windows/v1",
+        "target_tokens": 204800,
+        "test_batches": 0,
+        "validation_batches": 0,
+        "windows": 1600
+      },
+      "sft_assistant_only_loss": 0.15348993241786957,
+      "sft_sampler_coverage": {
+        "coverage": 1.0,
+        "draws": 3200,
+        "epochs_started": 50,
+        "maximum_draws_per_record": 50,
+        "minimum_draws_per_record": 50,
+        "records": 64,
+        "seen_records": 64,
+        "strategy": "deterministic_shuffled_epoch/v1"
+      },
+      "step": 400,
+      "train_teacher_loss": 0.09034552979800436
+    }
+  ],
+  "initialization_policy": "fresh_from_frozen_pretrain_step5750",
+  "joint_loss": {
+    "formula": "sft_assistant_only_loss + replay_weight * pretrain_next_token_loss",
+    "replay_weight": 0.25
+  },
+  "latest_checkpoint": "runs/sft_v7_1_canary_replay_w025/latest.pt",
+  "latest_checkpoint_sha256": "9d1ed0454ef65c83ad5dd1aea49dfc961b53663723087f30aaa1860f0e4e8728",
+  "learning_rate_schedule": {
+    "joint_loss": "assistant_only_sft_plus_train_only_pretrain_replay/v1",
+    "minimum_learning_rate": 1e-06,
+    "peak_learning_rate": 1e-05,
+    "replay_sampler": "deterministic_random_train_windows/v1",
+    "sampler": "deterministic_shuffled_epoch/v1",
+    "strategy": "linear_warmup_cosine_decay/v1",
+    "target_steps": 400,
+    "warmup_steps": 20
+  },
+  "logging": {
+    "backup_count": 3,
+    "directory": "runs/sft_v7_1_canary_replay_w025/logs",
+    "format": "rotating JSONL with UTC timestamp and run_id",
+    "max_bytes": 1048576,
+    "modules": [
+      "data",
+      "sft_training",
+      "replay_training",
+      "validation",
+      "checkpoint",
+      "orchestrator"
+    ],
+    "record_bodies_logged": false,
+    "token_ids_logged": false
+  },
+  "loss_csv": "reports/milestones/021_sft_v7_1_canary/canary_replay_w025_train_report_loss.csv",
+  "optimizer_consumption": {
+    "canary_development_checkpoint_selection_events": 17,
+    "canary_development_optimizer_records_drawn": 0,
+    "canary_development_records_per_checkpoint_selection": 16,
+    "canary_development_records_per_teacher_evaluation": 16,
+    "canary_development_teacher_evaluations": 17,
+    "canary_development_teacher_forward_records": 272,
+    "canary_holdout_records_drawn": 0,
+    "canary_train_records_drawn": 3200,
+    "pretrain_test_batches_drawn": 0,
+    "pretrain_train_batches_drawn": 400,
+    "pretrain_train_target_tokens_consumed": 204800,
+    "pretrain_train_windows_drawn": 1600,
+    "pretrain_validation_batches_drawn": 0,
+    "sft_public_records_drawn": 0,
+    "sft_sealed_records_drawn": 0
+  },
+  "optimizer_steps_this_run": 400,
+  "parameter_count": 14880745,
+  "payload_summary": {
+    "holdout_optimizer_record_count": 0,
+    "maximum_sequence_length": 35,
+    "mean_sequence_length": 22.5625,
+    "minimum_sequence_length": 13,
+    "optimizer_record_count": 64,
+    "split_counts": {
+      "holdout_eval": 16,
+      "train": 64
+    },
+    "supervised_token_counts": {
+      "holdout_eval": 180,
+      "train": 720
+    }
+  },
+  "replay_batch_size": 4,
+  "replay_block_size": 128,
+  "replay_consumption": {
+    "batch_size": 4,
+    "batches": 400,
+    "block_size": 128,
+    "optimizer_split": "train",
+    "strategy": "deterministic_random_train_windows/v1",
+    "target_tokens": 204800,
+    "test_batches": 0,
+    "validation_batches": 0,
+    "windows": 1600
+  },
+  "replay_token_manifest_sha256": "5d10245eac86e4dbafef908cb2d915bb1effcf61ad977b4de96d8d64d30809c7",
+  "replay_train_tensor_sha256": "3e152945535e1711471b343e1acafabe7a9f423d5f553a11d532306d1986a712",
+  "report_schema_version": "sft-v7.1-canary-replay-train-report/v1",
+  "run_id": "sft-v7-1-canary-replay-20260829T135916Z-7a79c6f6",
+  "sft_batch_size": 8,
+  "sft_sampler_coverage": {
+    "coverage": 1.0,
+    "draws": 3200,
+    "epochs_started": 50,
+    "maximum_draws_per_record": 50,
+    "minimum_draws_per_record": 50,
+    "records": 64,
+    "seen_records": 64,
+    "strategy": "deterministic_shuffled_epoch/v1"
+  },
+  "signature_sha256": "624064cb59fb7727ba0df4c8ea1d62e478d53d3bb330ae59ea1370d7e44362ce",
+  "source_checkpoint": "runs/formal_pretrain_14m_bpe3000_6000/checkpoints/step_05750.pt",
+  "source_checkpoint_sha256": "bfe4fec5e6045d4c06d22393e7c2079fdc03897be71829c9d9dcbaf0fcaf5c1e",
+  "start_step": 0,
+  "status": "training_complete_generation_and_retention_gates_pending",
+  "target_step": 400,
+  "validation_policy": {
+    "canary_dev_unseen_wording": "full 16-record teacher loss and checkpoint selection; zero optimizer use",
+    "canary_train": "full 64-record teacher loss every eval interval",
+    "pretrain_replay": "frozen formal train tensor only",
+    "pretrain_validation_test": "zero reads for optimizer"
+  }
+}

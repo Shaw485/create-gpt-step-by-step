@@ -1,0 +1,2748 @@
+{
+  "base_config_canonical_sha256": "faac0f759a5ce9cd5e827f95c511b7f9bbbda06f6e7642e5e0d90d5ec5635974",
+  "base_config_path": "configs/formal_pretrain_14m_bpe3000.json",
+  "bpe_token_manifest_sha256": "5d10245eac86e4dbafef908cb2d915bb1effcf61ad977b4de96d8d64d30809c7",
+  "canary_dataset_manifest_path": "data/sft/v7_1_canary/manifest.json",
+  "canary_dataset_manifest_sha256": "68908fdabe4f8ae470f6bcd4ec6d11b59304829119835af901df7bf9888ef50d",
+  "checkpoint_mode": "base",
+  "checkpoint_path": "runs/formal_pretrain_14m_bpe3000_6000/checkpoints/step_05750.pt",
+  "checkpoint_provenance": {
+    "base_checkpoint_sha256": "bfe4fec5e6045d4c06d22393e7c2079fdc03897be71829c9d9dcbaf0fcaf5c1e",
+    "checkpoint_mode": "base",
+    "step": 5750
+  },
+  "checkpoint_sha256": "bfe4fec5e6045d4c06d22393e7c2079fdc03897be71829c9d9dcbaf0fcaf5c1e",
+  "checkpoint_step": 5750,
+  "decision": "baseline_recorded",
+  "effective_config_path": null,
+  "effective_config_sha256": null,
+  "fact_metrics": {
+    "fanjue_identity": {
+      "holdout_count": 2,
+      "holdout_exact_count": 0,
+      "holdout_required_terms_all_count_diagnostic": 0,
+      "train_count": 8,
+      "train_exact_count": 0,
+      "train_required_terms_all_count_diagnostic": 0
+    },
+    "xiaoyan_identity": {
+      "holdout_count": 2,
+      "holdout_exact_count": 0,
+      "holdout_required_terms_all_count_diagnostic": 0,
+      "train_count": 8,
+      "train_exact_count": 0,
+      "train_required_terms_all_count_diagnostic": 0
+    },
+    "xiaozhan_identity": {
+      "holdout_count": 2,
+      "holdout_exact_count": 0,
+      "holdout_required_terms_all_count_diagnostic": 0,
+      "train_count": 8,
+      "train_exact_count": 0,
+      "train_required_terms_all_count_diagnostic": 0
+    },
+    "yaochen_identity": {
+      "holdout_count": 2,
+      "holdout_exact_count": 0,
+      "holdout_required_terms_all_count_diagnostic": 0,
+      "train_count": 8,
+      "train_exact_count": 0,
+      "train_required_terms_all_count_diagnostic": 0
+    },
+    "yaolao_teacher": {
+      "holdout_count": 2,
+      "holdout_exact_count": 0,
+      "holdout_required_terms_all_count_diagnostic": 0,
+      "train_count": 8,
+      "train_exact_count": 0,
+      "train_required_terms_all_count_diagnostic": 0
+    },
+    "yaolao_yaochen_alias": {
+      "holdout_count": 2,
+      "holdout_exact_count": 0,
+      "holdout_required_terms_all_count_diagnostic": 0,
+      "train_count": 8,
+      "train_exact_count": 0,
+      "train_required_terms_all_count_diagnostic": 0
+    },
+    "yihuo_role": {
+      "holdout_count": 2,
+      "holdout_exact_count": 0,
+      "holdout_required_terms_all_count_diagnostic": 0,
+      "train_count": 8,
+      "train_exact_count": 0,
+      "train_required_terms_all_count_diagnostic": 0
+    },
+    "yunlanzong_identity": {
+      "holdout_count": 2,
+      "holdout_exact_count": 0,
+      "holdout_required_terms_all_count_diagnostic": 0,
+      "train_count": 8,
+      "train_exact_count": 0,
+      "train_required_terms_all_count_diagnostic": 0
+    }
+  },
+  "gates": {
+    "checks": {
+      "holdout_eos_count": false,
+      "holdout_exact_answer_rate": false,
+      "per_fact_holdout_exact_min": false,
+      "per_fact_train_exact_min": false,
+      "self_relation_error_count": true,
+      "severe_repetition_count": false,
+      "train_exact_answer_rate": false
+    },
+    "observed": {
+      "holdout_eos_count": 0,
+      "holdout_exact_answer_rate": 0.0,
+      "holdout_required_terms_all_rate_diagnostic": 0.0,
+      "per_fact_holdout_failures": [
+        "fanjue_identity",
+        "xiaoyan_identity",
+        "xiaozhan_identity",
+        "yaochen_identity",
+        "yaolao_teacher",
+        "yaolao_yaochen_alias",
+        "yihuo_role",
+        "yunlanzong_identity"
+      ],
+      "per_fact_train_failures": [
+        "fanjue_identity",
+        "xiaoyan_identity",
+        "xiaozhan_identity",
+        "yaochen_identity",
+        "yaolao_teacher",
+        "yaolao_yaochen_alias",
+        "yihuo_role",
+        "yunlanzong_identity"
+      ],
+      "self_relation_error_count": 0,
+      "severe_repetition_count": 53,
+      "train_exact_answer_rate": 0.0,
+      "train_required_terms_all_rate_diagnostic": 0.0
+    },
+    "status": "fail",
+    "thresholds": {
+      "holdout_eos_count_min": 15,
+      "holdout_exact_answer_rate_min": 0.75,
+      "per_fact_holdout_exact_min": 1,
+      "per_fact_train_exact_min": 7,
+      "self_relation_error_count_max": 0,
+      "severe_repetition_count_max": 0,
+      "train_exact_answer_rate_min": 0.95
+    }
+  },
+  "generation": {
+    "generation_batch_size": 8,
+    "kv_cache": true,
+    "masked_special_tokens": [
+      "<UNK>",
+      "<BOS>",
+      "<USER>",
+      "<ASSISTANT>",
+      "<PAD>"
+    ],
+    "max_new_tokens": 48,
+    "seed": 20260829,
+    "temperature": 0.3,
+    "top_k": 1
+  },
+  "logging": {
+    "backup_count": 3,
+    "directory": "logs/sft_v7_1_canary_evaluate",
+    "format": "rotating JSONL with UTC timestamp and run_id",
+    "generated_text_logged": false,
+    "max_bytes": 1048576,
+    "modules": [
+      "data",
+      "generation",
+      "validation",
+      "checkpoint",
+      "orchestrator"
+    ],
+    "record_bodies_logged": false,
+    "token_ids_logged": false
+  },
+  "report_schema_version": "sft-v7.1-canary-generation-evaluation/v1",
+  "run_id": "sft-v7-1-canary-eval-20260829T131003Z-6e4b369d",
+  "samples": [
+    {
+      "expected_answer": "萧炎是萧战的儿子。",
+      "fact_id": "xiaoyan_identity",
+      "generated_answer": "？\n\n    就在萧炎心中念头转动时，突然一道苍老身影便是出现在了萧炎面前。\n\n    “怎么？！”\n\n    黑袍老者目光一转，冷喝道。\n\n    “怎么？！”\n\n    黑袍老者面色",
+      "generated_tokens": 48,
+      "id": "canary-train-77699175fd6b1660c2a7",
+      "prompt_role": "bare_question",
+      "question": "萧炎是谁？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "萧战": false,
+          "萧炎": true
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": false,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "萧炎是萧战的儿子。",
+      "fact_id": "xiaoyan_identity",
+      "generated_answer": "的道。\n\n    “多谢了。”\n\n    就在萧炎心中念头转动时，其身后那一道道目光便是转向了远处的天空，沉声喝道。\n\n    “咻！”\n\n    喝声落下，两道身影便是自天空暴射而出，直接是将",
+      "generated_tokens": 48,
+      "id": "canary-train-4c62e514e68d80945ad3",
+      "prompt_role": "natural_paraphrase_1",
+      "question": "请简单介绍一下萧炎。",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "萧战": false,
+          "萧炎": true
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": false,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "萧炎是萧战的儿子。",
+      "fact_id": "xiaoyan_identity",
+      "generated_answer": "？\n\n    萧战的名字，让得萧战有些愣了愣，低声道：“我知道你有何时？”\n\n    “父亲，萧家萧家，萧家，萧家，萧家，萧家，萧家，萧家，萧家，萧家，萧家",
+      "generated_tokens": 48,
+      "id": "canary-train-7bdb7d0ba82f1e10d5bf",
+      "prompt_role": "natural_paraphrase_2",
+      "question": "萧炎与萧战是什么关系？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "萧战": true,
+          "萧炎": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "萧炎是萧战的儿子。",
+      "fact_id": "xiaoyan_identity",
+      "generated_answer": "。\n\n    站在原地上。萧炎望着那在咫尺的巨大树枝。心中也是闪过一抹诧异。\n\n    瞧着萧炎的目光。萧炎这才松了一口气。手掌轻弹。身体猛然紧握。身体猛然间。身体犹如一",
+      "generated_tokens": 48,
+      "id": "canary-train-bc0e5ecfd8f7dfe93ac6",
+      "prompt_role": "direct_answer_request",
+      "question": "用一句话说明萧炎的家庭身份。",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "萧战": false,
+          "萧炎": true
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": false,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "萧炎是萧战的儿子。",
+      "fact_id": "xiaoyan_identity",
+      "generated_answer": "坷。\n\n    ……\n\n    ……\n\n    ……\n\n    ……\n\n    ……\n\n    ……\n\n    ……\n\n    ……\n\n    ……\n\n    ……\n\n    ……\n\n",
+      "generated_tokens": 48,
+      "id": "canary-train-498a27c9d7ae7e548274",
+      "prompt_role": "correction",
+      "question": "萧炎是萧战的父亲吗？请纠正。",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "萧战": false,
+          "萧炎": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "萧炎是萧战的儿子。",
+      "fact_id": "xiaoyan_identity",
+      "generated_answer": "？\n\n    大厅中，众人皆是满脸惊愕的望着场中那满脸惊愕的纳兰嫣然，低声道：“我想干什么？”\n\n    “他是什么？”\n\n    大厅中，众人皆是满脸错愕的望着萧炎与纳兰嫣然，半晌之后，",
+      "generated_tokens": 48,
+      "id": "canary-train-4af2e0458560c9014875",
+      "prompt_role": "relation_direction_forward",
+      "question": "萧炎是谁的儿子？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "萧战": false,
+          "萧炎": true
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": false,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "萧炎是萧战的儿子。",
+      "fact_id": "xiaoyan_identity",
+      "generated_answer": "？\n\n    萧战的名字，让得萧战有些愣了愣，低声道：“我知道你有何事？”\n\n    “萧战族长，萧战族长，萧家的族长，萧家，萧家，萧家，萧家，萧家，萧家，",
+      "generated_tokens": 48,
+      "id": "canary-train-368e10ddd48f3e54f74c",
+      "prompt_role": "relation_direction_reverse",
+      "question": "萧战的儿子是谁？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "萧战": true,
+          "萧炎": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "萧炎是萧战的儿子。",
+      "fact_id": "xiaoyan_identity",
+      "generated_answer": "。\n\n    ……\n\n    ……\n\n    ……\n\n    ……\n\n    ……\n\n    ……\n\n    ……\n\n    ……\n\n    ……\n\n    ……\n\n    ……\n\n    ",
+      "generated_tokens": 48,
+      "id": "canary-train-ed7956ed23bc94d75fc3",
+      "prompt_role": "contrastive_check",
+      "question": "判断正误并说明：萧炎和萧战没有亲属关系。",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "萧战": false,
+          "萧炎": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "萧战是萧家族长，也是萧炎的父亲。",
+      "fact_id": "xiaozhan_identity",
+      "generated_answer": "？\n\n    萧战的名字，让得萧战有些愣了愣，低声道：“我知道你有何事？”\n\n    “萧战，萧战族长，萧战族长，萧家的族长，萧家，萧家，萧家，萧家，萧家，",
+      "generated_tokens": 48,
+      "id": "canary-train-508a1156513758481bab",
+      "prompt_role": "bare_question",
+      "question": "萧战是谁？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "族长": true,
+          "萧战": true,
+          "萧炎": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "萧战是萧家族长，也是萧炎的父亲。",
+      "fact_id": "xiaozhan_identity",
+      "generated_answer": "坷。\n\n    萧战的举止，萧战与萧战的笑谈着萧战，萧战的脸庞上浮现一抹笑容。\n\n    萧战的举起码字，萧战的萧战，萧战，萧战的笑意味道：“萧战",
+      "generated_tokens": 48,
+      "id": "canary-train-43dd6566bb81f209546f",
+      "prompt_role": "natural_paraphrase_1",
+      "question": "请简单介绍萧战的身份。",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "族长": false,
+          "萧战": true,
+          "萧炎": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": false,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "萧战是萧家族长，也是萧炎的父亲。",
+      "fact_id": "xiaozhan_identity",
+      "generated_answer": "？\n\n    萧战的名字，让得萧战有些尴尬的点了点头，目光有些复杂的望着萧炎，轻声道：“我知道萧家的萧家，萧家，萧家，萧家，萧家，萧家，萧家，萧家，萧家，萧家，萧家，萧家，萧家",
+      "generated_tokens": 48,
+      "id": "canary-train-8c2c4f01c5b176375757",
+      "prompt_role": "natural_paraphrase_2",
+      "question": "萧战在萧家是什么身份？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "族长": false,
+          "萧战": true,
+          "萧炎": true
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "萧战是萧家族长，也是萧炎的父亲。",
+      "fact_id": "xiaozhan_identity",
+      "generated_answer": "？\n\n    想到此处，萧炎方才松了一口气，目光望向那紧闭的双眸，轻声道：“我想办法？”\n\n    “放心吧，我想办法，先将你给解决掉。”\n\n    小医仙点了点头，旋即目光望向萧炎，道：“我",
+      "generated_tokens": 48,
+      "id": "canary-train-732f8e59a23ab821d4fc",
+      "prompt_role": "direct_answer_request",
+      "question": "萧炎的父亲是谁？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "族长": false,
+          "萧战": false,
+          "萧炎": true
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": false,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "萧战是萧家族长，也是萧炎的父亲。",
+      "fact_id": "xiaozhan_identity",
+      "generated_answer": "坷。\n\n    萧战的举止。\n\n    萧战的举止。\n\n    萧战的举止。\n\n    萧战的举止。\n\n    萧战的举止。\n\n    萧战的举",
+      "generated_tokens": 48,
+      "id": "canary-train-09ef6b2be34f50f54ac1",
+      "prompt_role": "correction",
+      "question": "萧战是萧炎的儿子吗？请纠正。",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "族长": false,
+          "萧战": true,
+          "萧炎": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "萧战是萧家族长，也是萧炎的父亲。",
+      "fact_id": "xiaozhan_identity",
+      "generated_answer": "？\n\n    “萧族长，萧家的族长，萧家，萧家，萧家，萧家，萧家，萧家，萧家，萧家，萧家，萧家，萧家，萧家，萧家，萧家，萧家，萧家，萧家，萧家，萧家",
+      "generated_tokens": 48,
+      "id": "canary-train-213b233e4fa0a8e2a5b2",
+      "prompt_role": "relation_direction_forward",
+      "question": "萧战与萧炎是什么关系？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "族长": true,
+          "萧战": false,
+          "萧炎": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "萧战是萧家族长，也是萧炎的父亲。",
+      "fact_id": "xiaozhan_identity",
+      "generated_answer": "？\n\n    萧战的举动，也是让得萧战有些愣了下来，目光有些疑惑的扫过萧炎，轻声道：“我知道你有何时？”\n\n    “父亲，萧家的萧家，萧家，萧家，萧家，萧家，萧家，萧家，",
+      "generated_tokens": 48,
+      "id": "canary-train-58de1d159940aa8327d4",
+      "prompt_role": "relation_direction_reverse",
+      "question": "从萧炎的角度看，萧战是什么亲属？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "族长": false,
+          "萧战": true,
+          "萧炎": true
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "萧战是萧家族长，也是萧炎的父亲。",
+      "fact_id": "xiaozhan_identity",
+      "generated_answer": "。\n\n    萧战的举止。\n\n    萧战的举止。\n\n    萧战的举止。\n\n    萧战的举止。\n\n    萧战的举止。\n\n    萧战的举止",
+      "generated_tokens": 48,
+      "id": "canary-train-4abd309096c8ed09852b",
+      "prompt_role": "contrastive_check",
+      "question": "判断正误并说明：萧战与萧炎没有父子关系。",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "族长": false,
+          "萧战": true,
+          "萧炎": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "药尘就是药老，也是萧炎的老师。",
+      "fact_id": "yaochen_identity",
+      "generated_answer": "？\n\n    风尊者目光也是转向萧炎，道：“魂殿，魂殿，魂殿，魂殿，魂殿，魂殿，魂殿，魂殿，魂殿，魂殿，魂殿，魂殿，魂殿，魂殿，魂殿，魂殿，魂殿，魂殿，魂殿，",
+      "generated_tokens": 48,
+      "id": "canary-train-e0b17cb3471560c45306",
+      "prompt_role": "bare_question",
+      "question": "药尘是谁？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "老师": false,
+          "药尘": false,
+          "药老": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "药尘就是药老，也是萧炎的老师。",
+      "fact_id": "yaochen_identity",
+      "generated_answer": ")\n\n",
+      "generated_tokens": 3,
+      "id": "canary-train-92f767c2c029f978fff1",
+      "prompt_role": "natural_paraphrase_1",
+      "question": "请简要介绍药尘。",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "老师": false,
+          "药尘": false,
+          "药老": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": false,
+        "stopped_on_eos": true,
+        "truncated": false
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "药尘就是药老，也是萧炎的老师。",
+      "fact_id": "yaochen_identity",
+      "generated_answer": "？\n\n    想到此处，萧炎眉头一皱，轻声道：“我知道你所说的那个老家伙，究竟是什么？”\n\n    “魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？",
+      "generated_tokens": 48,
+      "id": "canary-train-5065687e8572317dea2b",
+      "prompt_role": "natural_paraphrase_2",
+      "question": "药尘还有什么常用称呼？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "老师": false,
+          "药尘": false,
+          "药老": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "药尘就是药老，也是萧炎的老师。",
+      "fact_id": "yaochen_identity",
+      "generated_answer": "？\n\n    韩枫目光也是转向萧炎，道：“我魂殿是魂殿的名头，我魂殿，魂殿的名头，我魂殿，魂殿，魂殿，魂殿，魂殿，魂殿，魂殿，魂殿，魂殿，魂殿，魂殿，魂殿",
+      "generated_tokens": 48,
+      "id": "canary-train-08af72ee85aa0691c228",
+      "prompt_role": "direct_answer_request",
+      "question": "药尘与萧炎是什么关系？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "老师": false,
+          "药尘": false,
+          "药老": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "药尘就是药老，也是萧炎的老师。",
+      "fact_id": "yaochen_identity",
+      "generated_answer": "。\n\n    想到此处，药老也是忍不住的有些尴尬，沉吟道：“老师，老师，老师，老师，您也知道你所说的那个老家伙，您也知道你所说的那个小友，您也太好。”\n",
+      "generated_tokens": 48,
+      "id": "canary-train-be2714b022f572338c95",
+      "prompt_role": "correction",
+      "question": "药尘与药老毫无关系吗？请纠正。",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "老师": true,
+          "药尘": false,
+          "药老": true
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "药尘就是药老，也是萧炎的老师。",
+      "fact_id": "yaochen_identity",
+      "generated_answer": "？\n\n    韩枫目光扫过下方的韩枫，眉头一皱，沉声道：“大长老，药尘，药尘，药尘，药尘，药尘，药尘，药尘，药尘，药尘，药尘，药尘，药尘，药尘，药尘，药尘，",
+      "generated_tokens": 48,
+      "id": "canary-train-9d0f4e5bdbafe4594812",
+      "prompt_role": "relation_direction_forward",
+      "question": "药尘是谁的老师？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "老师": false,
+          "药尘": true,
+          "药老": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "药尘就是药老，也是萧炎的老师。",
+      "fact_id": "yaochen_identity",
+      "generated_answer": "？\n\n    “这个小家伙，怎么办？”\n\n    药老轻叹了一声，道：“我知道你所说的那个小女孩，究竟是什么？”\n\n    “什么？”药老一愣，问道。\n\n    “什么？”药老一愣，问道。\n",
+      "generated_tokens": 48,
+      "id": "canary-train-d23a3de1795fbcfae905",
+      "prompt_role": "relation_direction_reverse",
+      "question": "萧炎的老师药老原名是什么？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "老师": false,
+          "药尘": false,
+          "药老": true
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": false,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "药尘就是药老，也是萧炎的老师。",
+      "fact_id": "yaochen_identity",
+      "generated_answer": "。\n\n    想到此处，萧炎方才松了一口气，将药老收进纳戒中，然后将玉瓶收进纳戒中，然后将玉瓶收入纳戒，笑道：“老师，先将你炼制丹药炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制",
+      "generated_tokens": 48,
+      "id": "canary-train-56e8ac892f169e54dcad",
+      "prompt_role": "contrastive_check",
+      "question": "判断正误并说明：药尘和药老是两个人。",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "老师": true,
+          "药尘": false,
+          "药老": true
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "药尘是药老曾经的名字，二者是同一人物。",
+      "fact_id": "yaolao_yaochen_alias",
+      "generated_answer": "？\n\n    “魂殿是魂殿的魂殿？”\n\n    药老面色凝重，沉吟道。\n\n    “魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？",
+      "generated_tokens": 48,
+      "id": "canary-train-f86bf1e53ee6218114f9",
+      "prompt_role": "bare_question",
+      "question": "药老和药尘是什么关系？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "同一人物": false,
+          "药尘": false,
+          "药老": true
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "药尘是药老曾经的名字，二者是同一人物。",
+      "fact_id": "yaolao_yaochen_alias",
+      "generated_answer": "？\n\n    “魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？",
+      "generated_tokens": 48,
+      "id": "canary-train-1cfd945f6afbc8c1e06e",
+      "prompt_role": "natural_paraphrase_1",
+      "question": "药尘和药老是否指同一个人？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "同一人物": false,
+          "药尘": false,
+          "药老": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "药尘是药老曾经的名字，二者是同一人物。",
+      "fact_id": "yaolao_yaochen_alias",
+      "generated_answer": "？\n\n    “大长老，大长老，大长老大长老，大长老大长老，大长老大长老大长老大长老大长老，大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老，大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老",
+      "generated_tokens": 48,
+      "id": "canary-train-857ab2bf5fb49eb5ca4e",
+      "prompt_role": "natural_paraphrase_2",
+      "question": "药老曾经叫什么名字？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "同一人物": false,
+          "药尘": false,
+          "药老": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "药尘是药老曾经的名字，二者是同一人物。",
+      "fact_id": "yaolao_yaochen_alias",
+      "generated_answer": "。\n\n    想到此处，药老也是忍不住的有些尴尬的点了点头，旋即道：“老师，老师，老师，老师，您也知道你所说的那个老家伙，您也知道你所说的那个小友，您也知道你所说",
+      "generated_tokens": 48,
+      "id": "canary-train-8677ef328696d45698c8",
+      "prompt_role": "direct_answer_request",
+      "question": "说明药老与药尘这两个称呼的对应关系。",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "同一人物": false,
+          "药尘": false,
+          "药老": true
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "药尘是药老曾经的名字，二者是同一人物。",
+      "fact_id": "yaolao_yaochen_alias",
+      "generated_answer": "。\n\n    想到此处，萧炎方才松了一口气，道：“这老家伙，怎么办？”\n\n    “放心吧，我想办法，魂殿也有关于你手中。”药老沉吟道。\n\n    “魂殿？”药老沉吟道。\n\n    “魂殿",
+      "generated_tokens": 48,
+      "id": "canary-train-88e93b47b9dd0103c1be",
+      "prompt_role": "correction",
+      "question": "有人说药老和药尘是两个人，请纠正。",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "同一人物": false,
+          "药尘": false,
+          "药老": true
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": false,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "药尘是药老曾经的名字，二者是同一人物。",
+      "fact_id": "yaolao_yaochen_alias",
+      "generated_answer": "禾在这个名字上，他的名头，是真正的真正的真正的斗圣强者！\n\n    想到此处，药老也是忍不住的有些感到诧异，沉吟道：“这便是魂殿的人？”\n\n    “魂殿的人？”\n\n    药老轻叹了一声，",
+      "generated_tokens": 48,
+      "id": "canary-train-cc52dc29561e05d71d07",
+      "prompt_role": "relation_direction_forward",
+      "question": "从药尘这个名字看，他后来通常被称为什么？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "同一人物": false,
+          "药尘": false,
+          "药老": true
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "药尘是药老曾经的名字，二者是同一人物。",
+      "fact_id": "yaolao_yaochen_alias",
+      "generated_answer": "然无可否的说，异火榜上排名第十的排名第十！\n\n    当年药老在大陆上排名第十的巅峰，异火榜上排名第十的排名第十，异火榜排名第十",
+      "generated_tokens": 48,
+      "id": "canary-train-bf793057f8d2fc1add20",
+      "prompt_role": "relation_direction_reverse",
+      "question": "从药老这个称呼反推，他曾经叫什么？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "同一人物": false,
+          "药尘": false,
+          "药老": true
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": false,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "药尘是药老曾经的名字，二者是同一人物。",
+      "fact_id": "yaolao_yaochen_alias",
+      "generated_answer": "。\n\n    想到此处，药老也是忍不住的有些尴尬的点了点头，旋即道：“老师，老师，老师，老师，您也知道你所说的那个老家伙，您也知道你所说的那个小友，您也知道你所说",
+      "generated_tokens": 48,
+      "id": "canary-train-57cdfcf706c6f1a87f7a",
+      "prompt_role": "contrastive_check",
+      "question": "判断正误并说明：药老只是药尘的朋友。",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "同一人物": false,
+          "药尘": false,
+          "药老": true
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "药老是萧炎的老师。",
+      "fact_id": "yaolao_teacher",
+      "generated_answer": "？\n\n    “大长老，大长老，大长老大长老大长老，大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老",
+      "generated_tokens": 48,
+      "id": "canary-train-695eb5ab7503a6ce6211",
+      "prompt_role": "bare_question",
+      "question": "药老和萧炎是什么关系？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "老师": false,
+          "药老": false,
+          "萧炎": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "药老是萧炎的老师。",
+      "fact_id": "yaolao_teacher",
+      "generated_answer": "？\n\n    “大长老，大长老，大长老大长老，大长老大长老，大长老大长老大长老大长老大长老大长老大长老，大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老大长老",
+      "generated_tokens": 48,
+      "id": "canary-train-5c0e539863e25985df63",
+      "prompt_role": "natural_paraphrase_1",
+      "question": "药老是萧炎的什么人？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "老师": false,
+          "药老": false,
+          "萧炎": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "药老是萧炎的老师。",
+      "fact_id": "yaolao_teacher",
+      "generated_answer": "？\n\n    想到此处，萧炎眉头一皱，轻声道：“老师，老师，老师，您也知道你所说的那个小女孩，您也知道你所说的那个小女孩，您也知道你有何时？”\n\n",
+      "generated_tokens": 48,
+      "id": "canary-train-24084674f3248eb4bebc",
+      "prompt_role": "natural_paraphrase_2",
+      "question": "萧炎与药老是什么师承关系？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "老师": true,
+          "药老": false,
+          "萧炎": true
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "药老是萧炎的老师。",
+      "fact_id": "yaolao_teacher",
+      "generated_answer": "？\n\n    想到此处，萧炎方才松了一口气，目光望向那紧闭的双眸，轻声道：“老师，您是什么？”\n\n    小医仙微微点头，道：“我知道你所说的那个小女孩，您也知道你所说的那个小女孩，",
+      "generated_tokens": 48,
+      "id": "canary-train-594dd8d325ad883f1c3f",
+      "prompt_role": "direct_answer_request",
+      "question": "萧炎的老师是谁？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "老师": true,
+          "药老": false,
+          "萧炎": true
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": false,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "药老是萧炎的老师。",
+      "fact_id": "yaolao_teacher",
+      "generated_answer": "。\n\n    瞧着萧炎的举动。萧炎这才松了一口气。\n\n    瞧着萧炎的举动。萧炎这才松了一口气。手掌轻弹。身体猛然间。身体骤然一颤。身体便是犹如一块巨石一般。狠狠的砸在了萧炎胸膛之上。\n",
+      "generated_tokens": 48,
+      "id": "canary-train-4935ae5a405ed4013c95",
+      "prompt_role": "correction",
+      "question": "萧炎是药老的老师吗？请纠正。",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "老师": false,
+          "药老": false,
+          "萧炎": true
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": false,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "药老是萧炎的老师。",
+      "fact_id": "yaolao_teacher",
+      "generated_answer": "？\n\n    药老目光扫过药老，轻声道：“老师，老师，您也知道你所说的那个神秘的神秘强者？”\n\n    “当年我曾经在加玛帝国的名声望，云岚宗的云岚宗，云岚宗，云岚宗，云岚宗",
+      "generated_tokens": 48,
+      "id": "canary-train-7216d83d5c19a12cbbf2",
+      "prompt_role": "relation_direction_forward",
+      "question": "药老教导的弟子是谁？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "老师": true,
+          "药老": true,
+          "萧炎": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "药老是萧炎的老师。",
+      "fact_id": "yaolao_teacher",
+      "generated_answer": "？\n\n    想到此处，萧炎眉头一皱，轻声道：“我想让我来找你？”\n\n    “放心吧，我想办法，别想办法？”听得萧炎这话，药老顿时一愣，旋即有些疑惑的道。\n\n    “放心吧",
+      "generated_tokens": 48,
+      "id": "canary-train-455eefd85f5ca57c8349",
+      "prompt_role": "relation_direction_reverse",
+      "question": "萧炎师从哪位人物？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "老师": false,
+          "药老": true,
+          "萧炎": true
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": false,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "药老是萧炎的老师。",
+      "fact_id": "yaolao_teacher",
+      "generated_answer": "。\n\n    缓缓的吐了一口气。萧炎将手中的玉瓶收进纳戒之中。然后将之递向药老。\n\n    接过玉瓶。萧炎将玉瓶收进纳戒之中。然后将之递向药老。\n\n    接过玉瓶。萧炎将玉瓶收进",
+      "generated_tokens": 48,
+      "id": "canary-train-673a5fec6bf00307645c",
+      "prompt_role": "contrastive_check",
+      "question": "判断正误并说明：药老与萧炎没有师徒关系。",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "老师": false,
+          "药老": true,
+          "萧炎": true
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": false,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "焚决是一门能通过吞噬异火来进化的功法。",
+      "fact_id": "fanjue_identity",
+      "generated_answer": "坷。\n\n    以萧炎如今的实力。已经达到了斗皇巅峰的层次。\n\n    以萧炎如今的实力。已经能够与斗皇巅峰强者相抗衡。\n\n    以萧炎如今的实力。已经能够与斗皇巅峰强者",
+      "generated_tokens": 48,
+      "id": "canary-train-1cbae6c21cbef60e22a5",
+      "prompt_role": "bare_question",
+      "question": "焚决是什么？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "功法": false,
+          "异火": false,
+          "焚决": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": false,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "焚决是一门能通过吞噬异火来进化的功法。",
+      "fact_id": "fanjue_identity",
+      "generated_answer": "。\n\n    所以。以萧炎如今的实力。已经能够与药老相抗衡。\n\n    所以。药老也是知道药老所说的药老。药老在药老那所谓的“焚决”。药老所知道。\n\n    药老",
+      "generated_tokens": 48,
+      "id": "canary-train-cb58cc73338e6eb7b016",
+      "prompt_role": "natural_paraphrase_1",
+      "question": "请简要说明焚决的性质和特点。",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "功法": false,
+          "异火": false,
+          "焚决": true
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": false,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "焚决是一门能通过吞噬异火来进化的功法。",
+      "fact_id": "fanjue_identity",
+      "generated_answer": "？\n\n    以萧炎如今的实力，根本就不可能将之击杀，否则的话，萧炎必须尽可能将“焚决”炼化“焚决”功法”炼制“焚决””功法”功法，“焚决”功法”功法”功法",
+      "generated_tokens": 48,
+      "id": "canary-train-8baf9fe350f13f8ef64d",
+      "prompt_role": "natural_paraphrase_2",
+      "question": "焚决属于哪一类修炼法门？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "功法": true,
+          "异火": false,
+          "焚决": true
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "焚决是一门能通过吞噬异火来进化的功法。",
+      "fact_id": "fanjue_identity",
+      "generated_answer": "？\n\n    以萧炎如今的实力，根本不可能将之击杀，否则的话，萧炎必须将自己给击杀！\n\n    所以，云山也知道萧炎能够与云山相抗衡的差距，云山，云山，云山，绝对不可能",
+      "generated_tokens": 48,
+      "id": "canary-train-4f9836fcb5beb24bf76e",
+      "prompt_role": "direct_answer_request",
+      "question": "焚决靠什么方式进化？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "功法": false,
+          "异火": false,
+          "焚决": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "焚决是一门能通过吞噬异火来进化的功法。",
+      "fact_id": "fanjue_identity",
+      "generated_answer": "。\n\n    所以。以萧炎如今的实力。已经能够与药老相抗衡。\n\n    所以。药老也清楚。药老在药老地确切。药老地确是。\n\n    药老地确是。药老",
+      "generated_tokens": 48,
+      "id": "canary-train-4f1e75099a85280a0871",
+      "prompt_role": "correction",
+      "question": "焚决不能进化，对吗？请纠正。",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "功法": false,
+          "异火": false,
+          "焚决": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": false,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "焚决是一门能通过吞噬异火来进化的功法。",
+      "fact_id": "fanjue_identity",
+      "generated_answer": "？\n\n    “异火榜上排名第十的异火榜”\n\n    异火榜上排名第十的异火榜排名第十九的异火榜排名第十九的异火榜排名第十九的异火榜排名",
+      "generated_tokens": 48,
+      "id": "canary-train-23a22493ce6ab84275ca",
+      "prompt_role": "relation_direction_forward",
+      "question": "焚决与异火有什么关系？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "功法": false,
+          "异火": true,
+          "焚决": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "焚决是一门能通过吞噬异火来进化的功法。",
+      "fact_id": "fanjue_identity",
+      "generated_answer": "？\n\n    想到此处，萧炎眉头一皱，轻声道：“老师，老师，老师，您也知道你所说的那个小女孩，您也知道你有何必要的？”\n\n    “放心吧，我想办法，先",
+      "generated_tokens": 48,
+      "id": "canary-train-9a0df5dbd678666ec730",
+      "prompt_role": "relation_direction_reverse",
+      "question": "吞噬异火能让哪门功法进化？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "功法": false,
+          "异火": false,
+          "焚决": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "焚决是一门能通过吞噬异火来进化的功法。",
+      "fact_id": "fanjue_identity",
+      "generated_answer": "。\n\n    以萧炎如今的实力。已经能够与药老相抗衡。\n\n    所以。药老也清楚。药老在异火榜上排名第十二。\n\n    所以。药老也并未再说。药老在",
+      "generated_tokens": 48,
+      "id": "canary-train-acf6e285779c32f70aaa",
+      "prompt_role": "contrastive_check",
+      "question": "判断正误并说明：焚决的进化与异火无关。",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "功法": false,
+          "异火": true,
+          "焚决": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": false,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "异火可以用于炼药，提高成功率并增强丹药药效。",
+      "fact_id": "yihuo_role",
+      "generated_answer": "？\n\n    想到此处，萧炎不由得有些尴尬的点了点头，旋即目光望向那在药鼎中那药鼎中所形成的药鼎，药鼎之内，药鼎之内，药鼎之内，药鼎之内，药鼎之内，药鼎之内，药鼎之内，药鼎之内，药鼎之内，药鼎之内，药鼎",
+      "generated_tokens": 48,
+      "id": "canary-train-ffdb4006846a1c445ddf",
+      "prompt_role": "bare_question",
+      "question": "异火在炼药中有什么作用？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "异火": false,
+          "炼药": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "异火可以用于炼药，提高成功率并增强丹药药效。",
+      "fact_id": "yihuo_role",
+      "generated_answer": "？\n\n    想到此处，萧炎眉头一皱，轻声道：“我想办法？”\n\n    “什么？”\n\n    就在萧炎心中念头转动时，其目光却是突然转向那从萧炎身上扫了扫，眉头一皱，笑道：“我想",
+      "generated_tokens": 48,
+      "id": "canary-train-618caa9768f258b5471f",
+      "prompt_role": "natural_paraphrase_1",
+      "question": "炼药时为什么会使用异火？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "异火": false,
+          "炼药": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": false,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "异火可以用于炼药，提高成功率并增强丹药药效。",
+      "fact_id": "yihuo_role",
+      "generated_answer": "？\n\n    想到此处，萧炎眉头一皱，轻声道：“我想办法，炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制丹药",
+      "generated_tokens": 48,
+      "id": "canary-train-d508905c6d224c5b9a2c",
+      "prompt_role": "natural_paraphrase_2",
+      "question": "异火能给炼药带来哪些帮助？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "异火": false,
+          "炼药": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "异火可以用于炼药，提高成功率并增强丹药药效。",
+      "fact_id": "yihuo_role",
+      "generated_answer": "？\n\n    “异火榜上排名第十的异火榜”\n\n    异火榜上排名第十的异火榜排名第十九的排名第十九的排名第十九的排名第四，异火榜排名",
+      "generated_tokens": 48,
+      "id": "canary-train-a1e91e0a8f20d9681c98",
+      "prompt_role": "direct_answer_request",
+      "question": "异火会怎样影响炼药成功率和丹药药效？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "异火": true,
+          "炼药": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "异火可以用于炼药，提高成功率并增强丹药药效。",
+      "fact_id": "yihuo_role",
+      "generated_answer": "。\n\n    以萧炎如今的实力。已经达到了斗皇巅峰的层次。\n\n    以萧炎如今的实力。已经能够与斗皇巅峰强者相抗衡。\n\n    以萧炎如今的实力。已经能够与斗皇巅峰强者相",
+      "generated_tokens": 48,
+      "id": "canary-train-5e8de85273949914c363",
+      "prompt_role": "correction",
+      "question": "异火与炼药无关，对吗？请纠正。",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "异火": false,
+          "炼药": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": false,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "异火可以用于炼药，提高成功率并增强丹药药效。",
+      "fact_id": "yihuo_role",
+      "generated_answer": "？\n\n    想到此处，萧炎眉头一皱，轻声道：“我想办法，炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制丹药，炼制丹药",
+      "generated_tokens": 48,
+      "id": "canary-train-32e9d67165d3b08d2fd5",
+      "prompt_role": "relation_direction_forward",
+      "question": "异火和炼药是什么关系？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "异火": false,
+          "炼药": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "异火可以用于炼药，提高成功率并增强丹药药效。",
+      "fact_id": "yihuo_role",
+      "generated_answer": "然的话。\n\n    所以。炼制丹药。炼制丹药。炼制丹药。炼制丹药。炼制丹药。炼制丹药。炼制丹药。炼制丹药。炼制丹药。炼制丹药。炼制丹药。炼制丹药。炼制丹药。炼制",
+      "generated_tokens": 48,
+      "id": "canary-train-3c8816cbd91539f4cf05",
+      "prompt_role": "relation_direction_reverse",
+      "question": "提高炼药成功率并增强药效的特殊火焰是什么？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "异火": false,
+          "炼药": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "异火可以用于炼药，提高成功率并增强丹药药效。",
+      "fact_id": "yihuo_role",
+      "generated_answer": "。\n\n    所以。药老也知道药老所说。药老在异火榜上排名第十二。\n\n    所以。药老也并未再说。药老在药老那所谓的“焚决”。药老。药老也是颇为的",
+      "generated_tokens": 48,
+      "id": "canary-train-39293c678c4b20545729",
+      "prompt_role": "contrastive_check",
+      "question": "判断正误并说明：使用异火会降低炼药成功率。",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "异火": true,
+          "炼药": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": false,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "云岚宗是加玛帝国境内极有影响力的势力。",
+      "fact_id": "yunlanzong_identity",
+      "generated_answer": "坷？\n\n    云岚宗的云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗",
+      "generated_tokens": 48,
+      "id": "canary-train-12a62f0e156d61429c05",
+      "prompt_role": "bare_question",
+      "question": "云岚宗是什么？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "云岚宗": true,
+          "加玛帝国": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "云岚宗是加玛帝国境内极有影响力的势力。",
+      "fact_id": "yunlanzong_identity",
+      "generated_answer": "。\n\n    云岚宗的云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，",
+      "generated_tokens": 48,
+      "id": "canary-train-9cc48e835a427223c8da",
+      "prompt_role": "natural_paraphrase_1",
+      "question": "请简要介绍云岚宗。",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "云岚宗": true,
+          "加玛帝国": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "云岚宗是加玛帝国境内极有影响力的势力。",
+      "fact_id": "yunlanzong_identity",
+      "generated_answer": "？\n\n    云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，",
+      "generated_tokens": 48,
+      "id": "canary-train-3401e873531942f114dd",
+      "prompt_role": "natural_paraphrase_2",
+      "question": "云岚宗位于哪个帝国境内？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "云岚宗": true,
+          "加玛帝国": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "云岚宗是加玛帝国境内极有影响力的势力。",
+      "fact_id": "yunlanzong_identity",
+      "generated_answer": "地位。云岚宗地云岚宗地强者。已经成为了云岚宗地强者。\n\n    云岚宗地强者。即使是云岚宗地云岚宗地强者。都将会是云岚宗地强者。\n\n    云岚宗地强者。即使是云岚宗",
+      "generated_tokens": 48,
+      "id": "canary-train-bfc2d8f83fc993fb7530",
+      "prompt_role": "direct_answer_request",
+      "question": "云岚宗在加玛帝国有什么地位？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "云岚宗": true,
+          "加玛帝国": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": false,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "云岚宗是加玛帝国境内极有影响力的势力。",
+      "fact_id": "yunlanzong_identity",
+      "generated_answer": "。\n\n    云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。",
+      "generated_tokens": 48,
+      "id": "canary-train-23f3d5d8480f58f2a7b2",
+      "prompt_role": "correction",
+      "question": "云岚宗与加玛帝国毫无关系吗？请纠正。",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "云岚宗": true,
+          "加玛帝国": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "云岚宗是加玛帝国境内极有影响力的势力。",
+      "fact_id": "yunlanzong_identity",
+      "generated_answer": "？\n\n    云岚宗的名字，云岚宗的云岚宗，云岚宗，云岚宗，云岚宗的云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，",
+      "generated_tokens": 48,
+      "id": "canary-train-ac6196c7e99a527ef1e1",
+      "prompt_role": "relation_direction_forward",
+      "question": "云岚宗和加玛帝国是什么关系？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "云岚宗": true,
+          "加玛帝国": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "云岚宗是加玛帝国境内极有影响力的势力。",
+      "fact_id": "yunlanzong_identity",
+      "generated_answer": "？\n\n    所以，云岚宗的云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，",
+      "generated_tokens": 48,
+      "id": "canary-train-e8db91e908304a9dd98d",
+      "prompt_role": "relation_direction_reverse",
+      "question": "加玛帝国境内的重要势力之一是什么？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "云岚宗": true,
+          "加玛帝国": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "云岚宗是加玛帝国境内极有影响力的势力。",
+      "fact_id": "yunlanzong_identity",
+      "generated_answer": "。\n\n    云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。云岚宗。",
+      "generated_tokens": 48,
+      "id": "canary-train-a7da8d81314e7cefe8ed",
+      "prompt_role": "contrastive_check",
+      "question": "判断正误并说明：云岚宗只是一个普通家庭。",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "云岚宗": true,
+          "加玛帝国": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "train"
+    },
+    {
+      "expected_answer": "萧炎是萧战的儿子。",
+      "fact_id": "xiaoyan_identity",
+      "generated_answer": "？\n\n    ……\n\n    ……\n\n    ……\n\n    ……\n\n    ……\n\n    ……\n\n    ……\n\n    ……\n\n    ……\n\n    ……\n\n    ……\n\n    ",
+      "generated_tokens": 48,
+      "id": "canary-holdout_eval-066362b97b82c5ec4814",
+      "prompt_role": "holdout_paraphrase_1",
+      "question": "小说里的萧炎与萧战是什么亲属关系？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "萧战": false,
+          "萧炎": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "holdout_eval"
+    },
+    {
+      "expected_answer": "萧炎是萧战的儿子。",
+      "fact_id": "xiaoyan_identity",
+      "generated_answer": "？\n\n    萧战的举止，萧战的脸庞上浮现一抹笑容，略微沉吟了一会，轻声道：“我知道你有何必要的？”\n\n    “父亲，萧家，萧家，萧家，萧家，萧家，萧家，萧家，",
+      "generated_tokens": 48,
+      "id": "canary-holdout_eval-edd93740fbd1331097f1",
+      "prompt_role": "holdout_paraphrase_2",
+      "question": "如果有人把萧炎说成萧战的父亲，应如何改正？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "萧战": true,
+          "萧炎": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "holdout_eval"
+    },
+    {
+      "expected_answer": "萧战是萧家族长，也是萧炎的父亲。",
+      "fact_id": "xiaozhan_identity",
+      "generated_answer": "？\n\n    “父亲，萧家萧家，萧家萧家，萧家萧家，萧家，萧家萧家，萧家，萧家萧家，萧家，萧家，萧家，萧家，萧家，萧家，萧家，萧家，萧家，萧家，萧家，萧家",
+      "generated_tokens": 48,
+      "id": "canary-holdout_eval-80ad9ca56796d5c1679e",
+      "prompt_role": "holdout_paraphrase_1",
+      "question": "萧家的族长萧战和萧炎有何亲属关系？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "族长": false,
+          "萧战": false,
+          "萧炎": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "holdout_eval"
+    },
+    {
+      "expected_answer": "萧战是萧家族长，也是萧炎的父亲。",
+      "fact_id": "xiaozhan_identity",
+      "generated_answer": "？\n\n    萧媚的脸颊，略微的有些难看，萧媚与萧媚，萧战，萧战，萧战，萧战，萧战，萧战，萧战，萧战，萧战，萧战，萧战，萧战，萧战，萧战，",
+      "generated_tokens": 48,
+      "id": "canary-holdout_eval-dd437a60b37a0232098b",
+      "prompt_role": "holdout_paraphrase_2",
+      "question": "谁既是萧家族长，又是萧炎的父亲？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "族长": false,
+          "萧战": true,
+          "萧炎": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "holdout_eval"
+    },
+    {
+      "expected_answer": "药尘就是药老，也是萧炎的老师。",
+      "fact_id": "yaochen_identity",
+      "generated_answer": "？\n\n    想到此处，萧炎眉头一皱，轻声道：“老师，药尘，药尘，药尘，药尘，药尘，药尘，药尘，药尘，药尘，药尘，药尘，药尘，药尘，药尘，药尘，药尘，药尘，",
+      "generated_tokens": 48,
+      "id": "canary-holdout_eval-c123afb06dd3c274470a",
+      "prompt_role": "holdout_paraphrase_1",
+      "question": "药尘在小说中通常以什么称呼出现？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "老师": true,
+          "药尘": true,
+          "药老": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "holdout_eval"
+    },
+    {
+      "expected_answer": "药尘就是药老，也是萧炎的老师。",
+      "fact_id": "yaochen_identity",
+      "generated_answer": "？\n\n    韩枫目光扫了一眼下方那一道道目光，萧炎眼中掠过一抹凝重，袖袍一挥，一股磅礴斗气便是自体内暴涌而出，旋即在一道残影浮现，旋即，化为一条足有百丈庞大的无形火焰，闪电般的对着后者暴射而去。\n\n",
+      "generated_tokens": 48,
+      "id": "canary-holdout_eval-2950792405ed001ab34d",
+      "prompt_role": "holdout_paraphrase_2",
+      "question": "药尘对萧炎来说是什么身份？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "老师": false,
+          "药尘": false,
+          "药老": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": false,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "holdout_eval"
+    },
+    {
+      "expected_answer": "药尘是药老曾经的名字，二者是同一人物。",
+      "fact_id": "yaolao_yaochen_alias",
+      "generated_answer": "？\n\n    “魂殿的人？”\n\n    药老目光扫过药老，沉吟道。\n\n    “魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？魂殿？",
+      "generated_tokens": 48,
+      "id": "canary-holdout_eval-822bddc59ba3474751a6",
+      "prompt_role": "holdout_paraphrase_1",
+      "question": "药老与药尘是别名关系，还是两名不同人物？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "同一人物": false,
+          "药尘": false,
+          "药老": true
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "holdout_eval"
+    },
+    {
+      "expected_answer": "药尘是药老曾经的名字，二者是同一人物。",
+      "fact_id": "yaolao_yaochen_alias",
+      "generated_answer": "？\n\n    想到此处，萧炎眉头一皱，轻声道：“老师，老师，老师，老师，老师，您也知道你所说的那个老家伙，您也知道你所说的那个小友，您也知道你所说的那个",
+      "generated_tokens": 48,
+      "id": "canary-holdout_eval-08e848aef57ed21bc00d",
+      "prompt_role": "holdout_paraphrase_2",
+      "question": "为什么药老有时会被叫作药尘？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "同一人物": false,
+          "药尘": false,
+          "药老": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "holdout_eval"
+    },
+    {
+      "expected_answer": "药老是萧炎的老师。",
+      "fact_id": "yaolao_teacher",
+      "generated_answer": "？\n\n    想到此处，萧炎眉头一皱，轻声道：“老师，老师，老师，您也知道你所说的那个小女孩，您也知道你所说的那个小女孩，您也知道你有何时？”\n\n",
+      "generated_tokens": 48,
+      "id": "canary-holdout_eval-b3902e07fd1173999510",
+      "prompt_role": "holdout_paraphrase_1",
+      "question": "在药老和萧炎之间，谁是老师？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "老师": true,
+          "药老": false,
+          "萧炎": true
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "holdout_eval"
+    },
+    {
+      "expected_answer": "药老是萧炎的老师。",
+      "fact_id": "yaolao_teacher",
+      "generated_answer": "？\n\n    就在萧炎心中念头转动时，其身形便是陡然加快，脚掌一踏虚空，化为一道黑影，闪电般的对着远处暴掠而去。\n\n    身形刚退，两道身影便是出现在萧炎面前，双掌一握，便是直接",
+      "generated_tokens": 48,
+      "id": "canary-holdout_eval-ab7c99b308ab0c51f65f",
+      "prompt_role": "holdout_paraphrase_2",
+      "question": "萧炎拜谁为师？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "老师": false,
+          "药老": false,
+          "萧炎": true
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": false,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "holdout_eval"
+    },
+    {
+      "expected_answer": "焚决是一门能通过吞噬异火来进化的功法。",
+      "fact_id": "fanjue_identity",
+      "generated_answer": "？\n\n    想到此处，萧炎不由得有些尴尬，嘿嘿一笑，道：“这小家伙，的确很强，难怪你还想将异火融合成虚无，否则的话，我便只能用来炼制出异火。”\n\n    “异火榜上",
+      "generated_tokens": 48,
+      "id": "canary-holdout_eval-484c6c43b82e876519e8",
+      "prompt_role": "holdout_paraphrase_1",
+      "question": "哪门功法可以借助吞噬异火不断进化？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "功法": false,
+          "异火": true,
+          "焚决": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": false,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "holdout_eval"
+    },
+    {
+      "expected_answer": "焚决是一门能通过吞噬异火来进化的功法。",
+      "fact_id": "fanjue_identity",
+      "generated_answer": "？\n\n    以萧炎如今的实力，异火榜上排名第十的排名第十，异火榜排名第十的排名第十，异火榜排名第十七的排名第十，异火榜排名第十七的",
+      "generated_tokens": 48,
+      "id": "canary-holdout_eval-adfce3b899969b7946b2",
+      "prompt_role": "holdout_paraphrase_2",
+      "question": "异火对焚决的成长起什么作用？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "功法": false,
+          "异火": true,
+          "焚决": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": false,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "holdout_eval"
+    },
+    {
+      "expected_answer": "异火可以用于炼药，提高成功率并增强丹药药效。",
+      "fact_id": "yihuo_role",
+      "generated_answer": "？\n\n    炼药师公会的名声望，炼药师公会的名声望，炼药师公会，炼药师公会的名声望，炼药师公会，炼药师公会的名声望，炼药师公会，炼药师公会，炼药师公会，炼药师",
+      "generated_tokens": 48,
+      "id": "canary-holdout_eval-b030a7ceb35637a75e1b",
+      "prompt_role": "holdout_paraphrase_1",
+      "question": "炼药师使用异火能获得什么好处？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "异火": false,
+          "炼药": true
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "holdout_eval"
+    },
+    {
+      "expected_answer": "异火可以用于炼药，提高成功率并增强丹药药效。",
+      "fact_id": "yihuo_role",
+      "generated_answer": "？\n\n    “异火榜上排名第十的异火榜”\n\n    异火榜上排名第十的排名第十九的排名第十九的九”\n\n    异火榜上排名第十九的排名",
+      "generated_tokens": 48,
+      "id": "canary-holdout_eval-c944687aa2b8cadd9f33",
+      "prompt_role": "holdout_paraphrase_2",
+      "question": "异火是否能提升成丹概率和丹药效果？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "异火": true,
+          "炼药": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": false,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "holdout_eval"
+    },
+    {
+      "expected_answer": "云岚宗是加玛帝国境内极有影响力的势力。",
+      "fact_id": "yunlanzong_identity",
+      "generated_answer": "？\n\n    云岚宗的云岚宗，云岚宗，云岚宗的云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，",
+      "generated_tokens": 48,
+      "id": "canary-holdout_eval-8d3069ab881034c296fa",
+      "prompt_role": "holdout_paraphrase_1",
+      "question": "加玛帝国中的云岚宗属于什么性质的组织？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "云岚宗": true,
+          "加玛帝国": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "holdout_eval"
+    },
+    {
+      "expected_answer": "云岚宗是加玛帝国境内极有影响力的势力。",
+      "fact_id": "yunlanzong_identity",
+      "generated_answer": "？\n\n    云岚宗的云岚宗，云岚宗，云岚宗的云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，云岚宗，",
+      "generated_tokens": 48,
+      "id": "canary-holdout_eval-571cc46071a008480dbd",
+      "prompt_role": "holdout_paraphrase_2",
+      "question": "云岚宗在加玛帝国境内是否具有影响力？",
+      "score": {
+        "exact_answer_pass": false,
+        "forbidden_terms_clear": true,
+        "forbidden_terms_present": {
+          "原文写道": false,
+          "可以先记录问题": false,
+          "文本中出现": false
+        },
+        "keypoint_pass": false,
+        "normalized_exact_answer": false,
+        "required_terms_all": false,
+        "required_terms_present": {
+          "云岚宗": true,
+          "加玛帝国": false
+        },
+        "self_relation_error": false,
+        "self_relation_error_reasons": [],
+        "severe_repetition": true,
+        "stopped_on_eos": false,
+        "truncated": true
+      },
+      "split": "holdout_eval"
+    }
+  ],
+  "source_access": {
+    "canary_holdout_eval_records": 16,
+    "canary_train_records": 64,
+    "formal_v7_blind_body_records": 0,
+    "formal_v7_diagnostic_body_records": 0
+  },
+  "split_metrics": {
+    "holdout_eval": {
+      "count": 16,
+      "eos_count": 0,
+      "eos_rate": 0.0,
+      "exact_answer_pass_count": 0,
+      "exact_answer_rate": 0.0,
+      "forbidden_terms_clear_count": 16,
+      "forbidden_terms_clear_rate": 1.0,
+      "keypoint_pass_count": 0,
+      "keypoint_pass_rate": 0.0,
+      "normalized_exact_answer_count": 0,
+      "normalized_exact_answer_rate": 0.0,
+      "required_terms_all_count": 0,
+      "required_terms_all_rate": 0.0,
+      "self_relation_error_count": 0,
+      "severe_repetition_count": 11,
+      "truncated_count": 16
+    },
+    "train": {
+      "count": 64,
+      "eos_count": 1,
+      "eos_rate": 0.015625,
+      "exact_answer_pass_count": 0,
+      "exact_answer_rate": 0.0,
+      "forbidden_terms_clear_count": 64,
+      "forbidden_terms_clear_rate": 1.0,
+      "keypoint_pass_count": 0,
+      "keypoint_pass_rate": 0.0,
+      "normalized_exact_answer_count": 0,
+      "normalized_exact_answer_rate": 0.0,
+      "required_terms_all_count": 0,
+      "required_terms_all_rate": 0.0,
+      "self_relation_error_count": 0,
+      "severe_repetition_count": 42,
+      "truncated_count": 63
+    }
+  },
+  "status": "complete",
+  "tokenizer_sha256": "e70cf3dc0ed185a6b22ab7dc08b6a850eeb59864ba161dd156c644e003862822",
+  "training_tensor_path": null,
+  "training_tensor_sha256": null
+}

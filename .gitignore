@@ -21,6 +21,9 @@ data/sft/v5_1_no_math/
 data/sft/v7/*.jsonl
 data/sft/v7/*.pt
 data/sft/v7/*.pt.sha256
+data/sft/v7_1_canary/*.jsonl
+data/sft/v7_1_canary/*.pt
+data/sft/v7_1_canary/*.pt.sha256
 logs/
 **/logs/
 checkpoints/

@@ -1,0 +1,69 @@
+{
+  "report_schema_version": "m021-canary-semantic-review/v1",
+  "status": "complete_non_blind_codex_ai_assisted_semantic_review",
+  "source_report": "reports/milestones/021_sft_v7_1_canary/canary_replay_w025_step00400_generation_eval.json",
+  "scope": {
+    "reviewed_normalized_exact_failures": 13,
+    "public_records_read": 0,
+    "sealed_records_read": 0,
+    "optimizer_records": 0,
+    "development_split_name": "Dev/Selection",
+    "blind_review": false
+  },
+  "method": {
+    "strict_exact_result_is_immutable": true,
+    "strict_exact_gate_retroactively_changed": false,
+    "review_rule": "在已知问题、参考答案和生成答案的条件下，只把能够表达同一方向、同一实体和同一关系的答案标为 semantic_equivalent；漏答所问实体、串题或关系错误标为 genuine_error。",
+    "reviewer_type": "Codex AI assisted cross-review; not an independent human sign-off",
+    "logging_omission": "本文件是对已冻结报告的文档型Codex AI辅助复核，不执行软件或持久化运行时，因此不新增运行日志。"
+  },
+  "review_summary": {
+    "semantic_equivalent": 8,
+    "genuine_error": 5,
+    "ambiguous": 0,
+    "adjusted_train_correct": 61,
+    "adjusted_train_total": 64,
+    "adjusted_train_rate": 0.953125,
+    "adjusted_development_correct": 14,
+    "adjusted_development_total": 16,
+    "adjusted_development_rate": 0.875,
+    "adjusted_total_correct": 75,
+    "adjusted_total": 80,
+    "adjusted_total_rate": 0.9375,
+    "minimum_train_correct_per_fact": 7,
+    "minimum_development_correct_per_fact": 1,
+    "semantic_question_answering_subgate_passed": true,
+    "overall_candidate_passed": false,
+    "overall_candidate_failure_reason": "同一 Step 400 checkpoint 的预训练保持报告只有 15/16 条小说续写非空；严格 exact gate 也保持原始失败状态。"
+  },
+  "per_fact": {
+    "xiaoyan_identity": {"train": "8/8", "development": "2/2", "total": "10/10"},
+    "xiaozhan_identity": {"train": "8/8", "development": "2/2", "total": "10/10"},
+    "yaochen_identity": {"train": "7/8", "development": "2/2", "total": "9/10"},
+    "yaolao_teacher": {"train": "8/8", "development": "1/2", "total": "9/10"},
+    "yaolao_yaochen_alias": {"train": "7/8", "development": "2/2", "total": "9/10"},
+    "fanjue_identity": {"train": "7/8", "development": "1/2", "total": "8/10"},
+    "yihuo_role": {"train": "8/8", "development": "2/2", "total": "10/10"},
+    "yunlanzong_identity": {"train": "8/8", "development": "2/2", "total": "10/10"}
+  },
+  "reviews": [
+    {"id": "canary-train-498a27c9d7ae7e548274", "split": "train", "fact_id": "xiaoyan_identity", "decision": "semantic_equivalent", "reason": "萧战是萧炎的父亲与萧炎是萧战的儿子互为方向正确的逆关系，并完成纠错。"},
+    {"id": "canary-train-368e10ddd48f3e54f74c", "split": "train", "fact_id": "xiaoyan_identity", "decision": "semantic_equivalent", "reason": "父子关系及方向正确，能够唯一确定萧战的儿子是萧炎。"},
+    {"id": "canary-train-ed7956ed23bc94d75fc3", "split": "train", "fact_id": "xiaoyan_identity", "decision": "semantic_equivalent", "reason": "给出方向正确的父子关系，已经反驳二人没有亲属关系。"},
+    {"id": "canary-train-d23a3de1795fbcfae905", "split": "train", "fact_id": "yaochen_identity", "decision": "genuine_error", "reason": "问题询问药老原名，生成答案只说明师徒关系，遗漏药尘。"},
+    {"id": "canary-train-f86bf1e53ee6218114f9", "split": "train", "fact_id": "yaolao_yaochen_alias", "decision": "semantic_equivalent", "reason": "药尘就是药老明确表达二者为同一人物。"},
+    {"id": "canary-train-1cfd945f6afbc8c1e06e", "split": "train", "fact_id": "yaolao_yaochen_alias", "decision": "semantic_equivalent", "reason": "就是表达同一人物；附加师徒身份不改变别名结论。"},
+    {"id": "canary-train-857ab2bf5fb49eb5ca4e", "split": "train", "fact_id": "yaolao_yaochen_alias", "decision": "genuine_error", "reason": "问题询问曾用名，生成答案没有提供药尘。"},
+    {"id": "canary-train-9a0df5dbd678666ec730", "split": "train", "fact_id": "fanjue_identity", "decision": "genuine_error", "reason": "问题询问能够进化的功法，生成答案串到异火炼药作用并遗漏焚决。"},
+    {"id": "canary-holdout_eval-066362b97b82c5ec4814", "split": "development_selection", "fact_id": "xiaoyan_identity", "decision": "semantic_equivalent", "reason": "父亲关系与儿子关系方向正确，命题等价。"},
+    {"id": "canary-holdout_eval-edd93740fbd1331097f1", "split": "development_selection", "fact_id": "xiaoyan_identity", "decision": "semantic_equivalent", "reason": "正确纠正为萧战是萧炎的父亲。"},
+    {"id": "canary-holdout_eval-c123afb06dd3c274470a", "split": "development_selection", "fact_id": "yaochen_identity", "decision": "semantic_equivalent", "reason": "表述较绕，但明确药尘与药老是同一人物，能够推出通常称作药老。"},
+    {"id": "canary-holdout_eval-ab7c99b308ab0c51f65f", "split": "development_selection", "fact_id": "yaolao_teacher", "decision": "genuine_error", "reason": "问题询问萧炎的老师，生成答案串到萧炎与萧战的父子关系。"},
+    {"id": "canary-holdout_eval-484c6c43b82e876519e8", "split": "development_selection", "fact_id": "fanjue_identity", "decision": "genuine_error", "reason": "问题询问功法名称，生成答案串到异火炼药作用并遗漏焚决。"}
+  ],
+  "limitations": [
+    "这是查看过参考答案的非盲Codex AI辅助语义复核，只用于诊断 exact-match 过严与真实错误类型，不是独立真人签字。",
+    "报告字段 holdout_eval 为旧兼容名，其真实用途是 Dev/Selection，已经参与 teacher-loss 和 checkpoint 选择，不是盲测。",
+    "本复核不能替代 public、独立真人审核或 sealed 最终验收，也不能追溯修改原始严格 exact 结果。"
+  ]
+}

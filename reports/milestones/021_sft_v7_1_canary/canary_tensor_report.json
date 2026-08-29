@@ -1,0 +1,51 @@
+{
+  "artifact_binding_sha256": "9e219610cb2684981892c0e82df216c912bd1c39c9ba96a19b2a7846b016fa9d",
+  "assistant_only_supervision": true,
+  "bpe_token_manifest_sha256": "5d10245eac86e4dbafef908cb2d915bb1effcf61ad977b4de96d8d64d30809c7",
+  "canary_dataset_identity_sha256": "b2012953980c823d018494d2a5212e79b51370c632dceb1e559b552f152f92b9",
+  "canary_dataset_manifest_sha256": "68908fdabe4f8ae470f6bcd4ec6d11b59304829119835af901df7bf9888ef50d",
+  "eos_appended_and_supervised": true,
+  "fact_count": 8,
+  "logging": {
+    "backup_count": 3,
+    "directory": "logs/sft_v7_1_canary_prepare",
+    "format": "rotating JSONL with UTC timestamp and run_id",
+    "max_bytes": 1048576,
+    "modules": [
+      "data",
+      "encoding",
+      "validation",
+      "artifact",
+      "orchestrator"
+    ],
+    "record_bodies_logged": false,
+    "token_ids_logged": false
+  },
+  "output_path": "data/sft/v7_1_canary/train_eval_tensors.pt",
+  "output_sha256": "8511bea2aa449f9dc29cc268239951786d512d9895f29a8730ccb7179f26914e",
+  "report_schema_version": "sft-v7.1-canary-tensor-report/v1",
+  "run_id": "sft-v7-1-canary-prepare-20260829T125712Z-6b3bdb67",
+  "sequence_lengths": {
+    "maximum": 36,
+    "mean": 23.5625,
+    "minimum": 14
+  },
+  "source_jsonl_paths": {
+    "holdout_eval": "data/sft/v7_1_canary/holdout_eval.jsonl",
+    "train": "data/sft/v7_1_canary/train.jsonl"
+  },
+  "source_jsonl_sha256": {
+    "holdout_eval": "fe8a72efcd8e3f179d61ca8e4b2de2b3c775dbd9841d25692fe6743f3548c64d",
+    "train": "e5f0f90b26f9dbacb68017bbaa4243a41ccdacb4ac60484677964061fd4d008a"
+  },
+  "split_counts": {
+    "holdout_eval": 16,
+    "train": 64
+  },
+  "status": "prepared",
+  "supervised_token_counts": {
+    "holdout_eval": 180,
+    "train": 720
+  },
+  "tokenizer_sha256": "e70cf3dc0ed185a6b22ab7dc08b6a850eeb59864ba161dd156c644e003862822"
+}

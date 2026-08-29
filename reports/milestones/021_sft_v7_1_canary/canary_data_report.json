@@ -1,0 +1,202 @@
+{
+  "artifact_files": {
+    "holdout_eval": {
+      "count": 16,
+      "path": "holdout_eval.jsonl",
+      "schema_version": "sft_v7_1_canary/1.0",
+      "sha256": "fe8a72efcd8e3f179d61ca8e4b2de2b3c775dbd9841d25692fe6743f3548c64d"
+    },
+    "train": {
+      "count": 64,
+      "path": "train.jsonl",
+      "schema_version": "sft_v7_1_canary/1.0",
+      "sha256": "e5f0f90b26f9dbacb68017bbaa4243a41ccdacb4ac60484677964061fd4d008a"
+    }
+  },
+  "counts": {
+    "facts": 8,
+    "holdout_eval": 16,
+    "total": 80,
+    "train": 64
+  },
+  "facts": [
+    {
+      "entity": "萧炎",
+      "fact_id": "xiaoyan_identity",
+      "holdout_eval_count": 2,
+      "required_terms": [
+        "萧炎",
+        "萧战"
+      ],
+      "train_count": 8
+    },
+    {
+      "entity": "萧战",
+      "fact_id": "xiaozhan_identity",
+      "holdout_eval_count": 2,
+      "required_terms": [
+        "萧战",
+        "萧炎",
+        "族长"
+      ],
+      "train_count": 8
+    },
+    {
+      "entity": "药尘",
+      "fact_id": "yaochen_identity",
+      "holdout_eval_count": 2,
+      "required_terms": [
+        "药尘",
+        "药老",
+        "老师"
+      ],
+      "train_count": 8
+    },
+    {
+      "entity": "药老",
+      "fact_id": "yaolao_yaochen_alias",
+      "holdout_eval_count": 2,
+      "required_terms": [
+        "药老",
+        "药尘",
+        "同一人物"
+      ],
+      "train_count": 8
+    },
+    {
+      "entity": "药老",
+      "fact_id": "yaolao_teacher",
+      "holdout_eval_count": 2,
+      "required_terms": [
+        "药老",
+        "萧炎",
+        "老师"
+      ],
+      "train_count": 8
+    },
+    {
+      "entity": "焚决",
+      "fact_id": "fanjue_identity",
+      "holdout_eval_count": 2,
+      "required_terms": [
+        "焚决",
+        "功法",
+        "异火"
+      ],
+      "train_count": 8
+    },
+    {
+      "entity": "异火",
+      "fact_id": "yihuo_role",
+      "holdout_eval_count": 2,
+      "required_terms": [
+        "异火",
+        "炼药"
+      ],
+      "train_count": 8
+    },
+    {
+      "entity": "云岚宗",
+      "fact_id": "yunlanzong_identity",
+      "holdout_eval_count": 2,
+      "required_terms": [
+        "云岚宗",
+        "加玛帝国"
+      ],
+      "train_count": 8
+    }
+  ],
+  "lineage_verification": {
+    "base_checkpoint": {
+      "actual_sha256": "bfe4fec5e6045d4c06d22393e7c2079fdc03897be71829c9d9dcbaf0fcaf5c1e",
+      "parameter_count": 14880745,
+      "path": "runs/formal_pretrain_14m_bpe3000_6000/checkpoints/step_05750.pt",
+      "sha256": "bfe4fec5e6045d4c06d22393e7c2079fdc03897be71829c9d9dcbaf0fcaf5c1e",
+      "step": 5750,
+      "verified": true
+    },
+    "parent_manifest": {
+      "actual_dataset_identity_sha256": "47fb0f0af2aaa61f3239883f22966f3b0828a8a3942c78436b07ef5f5118d133",
+      "actual_sha256": "422c35fa130a3e6fc3f656019515fc7c1115616aa396712ea501751aeda1b9e9",
+      "dataset_identity_sha256": "47fb0f0af2aaa61f3239883f22966f3b0828a8a3942c78436b07ef5f5118d133",
+      "path": "data/sft/v7/manifest.json",
+      "sha256": "422c35fa130a3e6fc3f656019515fc7c1115616aa396712ea501751aeda1b9e9",
+      "verified": true
+    },
+    "token_manifest": {
+      "actual_sha256": "5d10245eac86e4dbafef908cb2d915bb1effcf61ad977b4de96d8d64d30809c7",
+      "path": "data/scaling_a/bpe_3000/token_manifest.json",
+      "schema_version": "bpe-v4/v1",
+      "sha256": "5d10245eac86e4dbafef908cb2d915bb1effcf61ad977b4de96d8d64d30809c7",
+      "status": "ready",
+      "tokenizer_sha256": "e70cf3dc0ed185a6b22ab7dc08b6a850eeb59864ba161dd156c644e003862822",
+      "verified": true,
+      "vocab_size": 7465
+    },
+    "tokenizer": {
+      "actual_sha256": "e70cf3dc0ed185a6b22ab7dc08b6a850eeb59864ba161dd156c644e003862822",
+      "context_limit": 512,
+      "path": "data/scaling_a/bpe_3000/tokenizer.json",
+      "sha256": "e70cf3dc0ed185a6b22ab7dc08b6a850eeb59864ba161dd156c644e003862822",
+      "verified": true,
+      "vocab_size": 7465
+    }
+  },
+  "logging": {
+    "default_level": "INFO",
+    "directory": "logs/sft_v7_1_canary_build",
+    "format": "rotating JSONL with UTC timestamp and run_id",
+    "modules": [
+      "data",
+      "validation",
+      "orchestrator"
+    ],
+    "per_module_cli": [
+      "--data-log-level",
+      "--validation-log-level",
+      "--orchestrator-log-level"
+    ],
+    "per_module_environment_prefix": "GPT_CANARY_LOG_LEVEL_",
+    "record_bodies_logged": false,
+    "rotation_defaults": {
+      "backup_count": 3,
+      "max_bytes": 1048576
+    },
+    "sensitive_fields_redacted": true
+  },
+  "manifest": {
+    "dataset_identity_sha256": "b2012953980c823d018494d2a5212e79b51370c632dceb1e559b552f152f92b9",
+    "path": "data/sft/v7_1_canary/manifest.json",
+    "sha256": "68908fdabe4f8ae470f6bcd4ec6d11b59304829119835af901df7bf9888ef50d"
+  },
+  "quality_gates": {
+    "all_required_terms_present": true,
+    "eos_deferred_to_encoding": true,
+    "exactly_16_unseen_holdout_paraphrases": true,
+    "exactly_64_training_records": true,
+    "exactly_eight_reviewed_facts": true,
+    "frozen_lineage_files_verified": true,
+    "public_and_sealed_bodies_untouched": true,
+    "train_and_eval_roles_unambiguous": true,
+    "zero_banned_meta_prefixes": true,
+    "zero_exact_or_normalized_question_duplicates": true
+  },
+  "quality_metrics": {
+    "exact_question_duplicates": 0,
+    "forbidden_term_failures": 0,
+    "literal_eos_occurrences": 0,
+    "meta_answer_prefix_matches": 0,
+    "normalized_question_duplicates": 0,
+    "required_term_failures": 0,
+    "semantic_role_failures": 0,
+    "train_holdout_exact_overlap": 0
+  },
+  "report_schema_version": "sft-v7.1-canary-report/v1",
+  "source_access": {
+    "formal_corpus_body_read": false,
+    "v7_public_body_read": false,
+    "v7_sealed_body_read": false,
+    "v7_train_body_read": false
+  },
+  "status": "pass"
+}

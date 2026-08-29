@@ -15,6 +15,10 @@
 - M020 的 20 步安全试跑和 2,000 步正式 SFT 已完成；Validation Loss 从 5.897454 降至 3.356181，public/sealed 训练消耗均为 0。
 - Public Loss 从纯预训练基线的 5.868089 降至 Step 2000 的 3.294267，EOS 从 7.17% 升至 82.33%，但机械重复仍为 42.17%；固定 16 题在 Step 1500 也只有 1 题 AI 辅助基本通过。
 - 汇总状态为 `automatic_gates_failed_external_review_pending`，严格候选为空。Step 1000 只作为保守诊断候选，Step 1500 只作为行为较优研究候选，Step 2000 已排除；当前没有发布模型，也没有启封 sealed test。
+- M021 复算发现旧 v7 Train 中六种固定答案开头占 49.95%、核心裸问覆盖 0/18、核心相对监督密度 0.6188、证据高复制占 66.01%，因此停止在旧分布上继续堆 Step。
+- 64+16 条 Canary 证明 14.9M 模型能够学习有限小说问答：高 LR 严格答案达到 100%/100%，但固定窗口 BPC 退化超过 43%。
+- 加入正式预训练 Train Token 回放后，`replay_weight=0.25, Step 400` 的命题级 Codex AI 辅助复核达到 Train 95.31%、Dev/Selection 87.50%，BPC 只退化 2.33%；但小说续写仍只有 15/16 非空，所以它只是当前最优诊断节点，不是发布候选。
+- M021 的 public/sealed 正文读取均为 0，严格候选仍为空。下一步重构 3,920 条 A0 Train，并围绕 replay `0.20/0.25/0.30` 做结构化语义与保持联合验收。
 
 完整路线见 [ROADMAP.md](ROADMAP.md)，当前任务见 [TODO.md](TODO.md)，实验材料入口见 [VIDEO_MATERIALS.md](VIDEO_MATERIALS.md)。
 
@@ -31,7 +35,7 @@
 | FFN | 1,280（Embedding 的 4 倍） |
 | 权重共享 | Token Embedding 与输出层共享 |
 
-当前模型容量实测见 [M015](reports/milestones/015_scaling_stage_a/README.md)，正式预训练见 [M016](reports/milestones/016_formal_pretrain_14m/README.md)，纯预训练验收见 [M019](reports/milestones/019_pretrain_capability_audit/README.md)，当前小说垂直 SFT 见 [M020](reports/milestones/020_sft_v7_vertical/README.md)。810 万参数 v4 与 M013 等历史路线仍保留在各自里程碑中用于教学对照。云端扩展备选见 [CLOUD_TRAINING_PLAN.md](CLOUD_TRAINING_PLAN.md)。
+当前模型容量实测见 [M015](reports/milestones/015_scaling_stage_a/README.md)，正式预训练见 [M016](reports/milestones/016_formal_pretrain_14m/README.md)，纯预训练验收见 [M019](reports/milestones/019_pretrain_capability_audit/README.md)，旧 v7 正式实验见 [M020](reports/milestones/020_sft_v7_vertical/README.md)，当前语义密度与遗忘控制结论见 [M021](reports/milestones/021_sft_v7_1_canary/README.md)。810 万参数 v4 与 M013 等历史路线仍保留在各自里程碑中用于教学对照。云端扩展备选见 [CLOUD_TRAINING_PLAN.md](CLOUD_TRAINING_PLAN.md)。
 模型用途、评测和发布边界见 [MODEL_CARD.md](MODEL_CARD.md)。
 
 M020 的同口径节点对比见 [checkpoint_comparison.md](reports/milestones/020_sft_v7_vertical/checkpoint_comparison.md)，Loss 曲线见 [sft_v7_loss_curve.svg](reports/milestones/020_sft_v7_vertical/sft_v7_loss_curve.svg)，固定 16 题 AI 辅助复核见 [fixed_samples_milestone_review.md](reports/milestones/020_sft_v7_vertical/fixed_samples_milestone_review.md)。
@@ -62,6 +66,8 @@ python -m unittest discover -s tests -v
 训练采用分模块轮转 JSONL 日志。数据、预训练、验证、Checkpoint、GPU、SFT 和编排日志能够分别调节级别；默认不记录密码、访问令牌、密钥和完整授权头。首阶段日志位于 `runs/pretrain_v4_m4/logs/`，续训日志位于 `runs/pretrain_v4_m4_continue6000/logs/`；配置分别见 `configs/local_m4_8m.json` 和 `configs/local_m4_8m_continue_6000.json`。M008 SFT数据修复日志位于被Git忽略的`data/sft/v4_teacher_repair/logs/`；M013构建、训练、评估和checkpoint/数据兼容性日志位于`reports/milestones/013_v5_1_no_math_sft/logs/`（被Git忽略）。审核工具使用`review_logs/`分别记录UI、数据保存和验证事件，不记录审核人或审核正文。
 
 M020 继续按构建、验证、编码、训练、生成、公开评估、checkpoint 和编排分模块记录轮转 JSONL；每个模块可独立设为 `OFF/INFO/DEBUG`。默认日志不写小说正文、完整提示、Token 或敏感凭证，汇总产物集中在 `reports/milestones/020_sft_v7_vertical/`。
+
+M021 进一步把审计、数据、SFT 训练、预训练 replay、Dev/Selection、checkpoint、生成和 retention 拆成可独立调级的轮转 JSONL。默认日志只记录 UTC 时间、run id、计数、指标和必要 SHA，不写问题、答案、小说正文、Token 序列、凭证或本机绝对路径；完整文本只进入明确标注的人工验收/视频报告。复现入口和模块过滤方法见 [M021 计划](docs/m021_sft_v7_1_training_plan.md)与[里程碑报告](reports/milestones/021_sft_v7_1_canary/README.md)。
 
 M008本地真人审核页面可用以下命令启动，只监听`127.0.0.1:8765`：
 

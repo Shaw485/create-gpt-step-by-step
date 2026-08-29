@@ -1,0 +1,60 @@
+{
+  "schema_version": "sft-v7.1-canary-replay-training-config/v1",
+  "config_version": "1.0.0",
+  "experiment": "m021_sft_v7_1_canary_with_pretrain_replay",
+  "base_model_config": "configs/formal_pretrain_14m_bpe3000.json",
+  "base_checkpoint": "runs/formal_pretrain_14m_bpe3000_6000/checkpoints/step_05750.pt",
+  "canary": {
+    "tensor_path": "data/sft/v7_1_canary/train_eval_tensors.pt",
+    "train_records": 64,
+    "holdout_eval_records": 16,
+    "development_unseen_wording_records": 16,
+    "assistant_only_loss": true,
+    "holdout_used_for_optimization": false,
+    "development_used_for_teacher_loss": true,
+    "development_used_for_checkpoint_selection": true
+  },
+  "replay": {
+    "split": "train",
+    "train_tensor_path": "data/scaling_a/bpe_3000/train_tokens.pt",
+    "train_tensor_sha256": "3e152945535e1711471b343e1acafabe7a9f423d5f553a11d532306d1986a712",
+    "token_manifest_path": "data/scaling_a/bpe_3000/token_manifest.json",
+    "token_manifest_sha256": "5d10245eac86e4dbafef908cb2d915bb1effcf61ad977b4de96d8d64d30809c7",
+    "tokenizer_sha256": "e70cf3dc0ed185a6b22ab7dc08b6a850eeb59864ba161dd156c644e003862822",
+    "validation_used_for_optimization": false,
+    "test_used_for_optimization": false
+  },
+  "training": {
+    "target_steps": 400,
+    "sft_batch_size": 8,
+    "replay_batch_size": 4,
+    "replay_block_size": 128,
+    "replay_weight": 0.5,
+    "learning_rate": 0.00001,
+    "minimum_learning_rate": 0.000001,
+    "warmup_steps": 20,
+    "weight_decay": 0.01,
+    "betas": [0.9, 0.95],
+    "gradient_clip": 1.0,
+    "eval_interval": 25,
+    "checkpoint_interval": 25,
+    "eval_batch_size": 16,
+    "log_interval": 10,
+    "seed": 42,
+    "sft_sampler": "deterministic_shuffled_epoch/v1",
+    "replay_sampler": "deterministic_random_train_windows/v1"
+  },
+  "logging": {
+    "max_bytes": 1048576,
+    "backup_count": 3,
+    "console": true,
+    "module_levels": {
+      "data": "INFO",
+      "sft_training": "INFO",
+      "replay_training": "INFO",
+      "validation": "INFO",
+      "checkpoint": "INFO",
+      "orchestrator": "INFO"
+    }
+  }
+}

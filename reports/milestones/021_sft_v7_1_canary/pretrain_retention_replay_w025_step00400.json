@@ -1,0 +1,571 @@
+{
+  "automatic_hard_gates": {
+    "failed_gate_names": [
+      "all_16_continuations_nonempty"
+    ],
+    "gate_count": 4,
+    "gates": [
+      {
+        "name": "relative_fixed_window_bpc_degradation",
+        "observed": 0.02334570011236648,
+        "operator": "<=",
+        "passed": true,
+        "threshold": 0.05
+      },
+      {
+        "name": "all_16_continuations_generated",
+        "observed": 16,
+        "operator": "==",
+        "passed": true,
+        "threshold": 16
+      },
+      {
+        "name": "all_16_continuations_nonempty",
+        "observed": 15,
+        "operator": "==",
+        "passed": false,
+        "threshold": 16
+      },
+      {
+        "name": "mechanical_degeneration_rate",
+        "observed": 0.0625,
+        "operator": "<=",
+        "passed": true,
+        "threshold": 0.25
+      }
+    ],
+    "passed": false
+  },
+  "baseline_reference": {
+    "checkpoint_sha256": "bfe4fec5e6045d4c06d22393e7c2079fdc03897be71829c9d9dcbaf0fcaf5c1e",
+    "checkpoint_step": 5750,
+    "checks": {
+      "checkpoint_sha": true,
+      "checkpoint_step": true,
+      "generation_settings": true,
+      "probe_sha": true,
+      "prompt_count": true,
+      "prompts_sha": true,
+      "validation_split": true,
+      "validation_tensor_sha": true,
+      "window_count": true,
+      "window_policy": true,
+      "window_tokens": true
+    },
+    "fixed_window_bpc": 3.745440719321712,
+    "full_history_reference_not_used_for_gate": true,
+    "full_history_validation_bpc_reference_only": 3.761229497144957,
+    "path": "reports/milestones/019_pretrain_capability_audit/step_05750/audit.json",
+    "perplexity": 84.68229992070408,
+    "probe_sha256": "f95d594eaa8d08ef340a704c7b9103627ab949e88c1796fe3db0527cfc54f36e",
+    "prompts_sha256": "032fd93f12ffba3df3d4d9ad4bc1898a6a86ec416a812cd85a0c0f1928a253a7",
+    "sha256": "274d6f8b2c32ed5e54987ff1ee8586b2e38fa1837b71fc25cf84ca2cfc02ab62",
+    "teacher_forced_fixed_window_loss": 4.438906606038412,
+    "tokens_evaluated": 30720,
+    "windows": 60
+  },
+  "bpc_comparison": {
+    "absolute_delta_candidate_minus_baseline": 0.08743993582193088,
+    "baseline_bpc": 3.745440719321712,
+    "candidate_bpc": 3.8328806551436427,
+    "lower_is_better": true,
+    "maximum_allowed_relative_degradation": 0.05,
+    "passed": true,
+    "relative_degradation_candidate_minus_baseline": 0.02334570011236648
+  },
+  "checkpoint_lineage": {
+    "base_checkpoint_path": "runs/formal_pretrain_14m_bpe3000_6000/checkpoints/step_05750.pt",
+    "base_checkpoint_sha256": "bfe4fec5e6045d4c06d22393e7c2079fdc03897be71829c9d9dcbaf0fcaf5c1e",
+    "base_checkpoint_step": 5750,
+    "blind_body_reads": 0,
+    "canary_dataset_identity_sha256": "b2012953980c823d018494d2a5212e79b51370c632dceb1e559b552f152f92b9",
+    "canary_manifest_path": "data/sft/v7_1_canary/manifest.json",
+    "canary_manifest_sha256": "68908fdabe4f8ae470f6bcd4ec6d11b59304829119835af901df7bf9888ef50d",
+    "canary_tensor_path": "data/sft/v7_1_canary/train_eval_tensors.pt",
+    "canary_tensor_sha256": "8511bea2aa449f9dc29cc268239951786d512d9895f29a8730ccb7179f26914e",
+    "checkpoint_path": "runs/sft_v7_1_canary_replay_w025/latest.pt",
+    "checkpoint_sha256": "9d1ed0454ef65c83ad5dd1aea49dfc961b53663723087f30aaa1860f0e4e8728",
+    "checkpoint_sidecar_verified": true,
+    "development_optimizer_records": 0,
+    "development_provenance_inferred_from_legacy_checkpoint": false,
+    "development_records_consumed_for_teacher_loss": 16,
+    "development_records_used_for_checkpoint_selection": 16,
+    "development_records_used_for_optimization": 0,
+    "development_split_role": "unseen_question_development_selection",
+    "development_unseen_wording_records": 16,
+    "effective_config_path": "runs/sft_v7_1_canary_replay_w025/effective_config.json",
+    "effective_config_sha256": "8d6dcb2a4abbdfdf3ba367ecaaddbb18ab3c9a401080ba298cc997cf4f72057b",
+    "holdout_eval_count": 16,
+    "holdout_records_consumed": 0,
+    "pretraining_test_body_reads": 0,
+    "public_records_consumed": 0,
+    "sealed_records_consumed": 0,
+    "step": 400,
+    "target_steps": 400,
+    "training_signature_sha256": "624064cb59fb7727ba0df4c8ea1d62e478d53d3bb330ae59ea1370d7e44362ce",
+    "training_split_counts": {
+      "train": 64
+    },
+    "verified": true
+  },
+  "data_scope": {
+    "blind_split_used_for_selection": false,
+    "pretraining_test_body_reads": 0,
+    "pretraining_validation_only": true,
+    "raw_validation_path": "data/cloud_v4/val.txt",
+    "raw_validation_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+    "sft_public_body_reads": 0,
+    "sft_sealed_body_reads": 0,
+    "validation_tensor_sha256": "f678203005119c241178130790ece08423717cbce0f8949926d3a79a1b18e328"
+  },
+  "device": "mps",
+  "generation_settings": {
+    "max_characters": 120,
+    "max_new_tokens": 256,
+    "prompt_count": 16,
+    "prompt_path": "data/eval/pretrain_capability_prompts.txt",
+    "same_as_m019": true,
+    "seed": 42,
+    "temperature": 0.7,
+    "top_k": 20
+  },
+  "generation_summary": {
+    "empty_rate": 0.0625,
+    "eos_stop_rate": 0.375,
+    "maximum_character_run": 2,
+    "mean_characters": 81.125,
+    "mean_four_gram_repetition": 0.02264610389610388,
+    "mechanical_degeneration_rate": 0.0625,
+    "sample_count": 16,
+    "stop_reason_counts": {
+      "eos": 6,
+      "max_characters": 10,
+      "max_new_tokens": 0
+    }
+  },
+  "generations": [
+    {
+      "characters": 39,
+      "content_characters": 33,
+      "continuation": "二者是同一人物。\n\n    风尊者也是点了点头，以药老的老师，二者是同一人物。",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": false,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": true,
+      "four_gram_repetition": 0.16666666666666663,
+      "generated_tokens": 25,
+      "longest_character_run": 1,
+      "mechanically_degenerate": false,
+      "prompt": "“短短两年时间，你不仅取得了丹会冠军，还晋入了斗尊层次，这等神速，即便是老夫都是汗颜啊。”对于周围的那些视线，唐震却是犹若未闻，目光在萧炎身上扫了扫，叹道，他所说，倒的确是有着几分真心话，当年首次见到萧炎时，后者方才晋入斗宗没多久，",
+      "prompt_index": 1,
+      "stop_reason": "eos",
+      "unique_character_ratio": 0.6060606060606061
+    },
+    {
+      "characters": 120,
+      "content_characters": 108,
+      "continuation": "所以便可以通过联盟,到时候他们便是会飞赶去星陨阁,到时候,也不用于他们”\n\n    听得此话，萧炎三人也是松了一口气，看来是星陨阁的阵容”联盟,联盟,也不是什么寻常势力。\n\n    联盟，联盟，联盟,也是相当的不乏,而现在,天府联盟是天府联",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": false,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": false,
+      "four_gram_repetition": 0.03809523809523807,
+      "generated_tokens": 67,
+      "longest_character_run": 1,
+      "mechanically_degenerate": false,
+      "prompt": "闻言，那小丹塔的大长老却是愣了愣，旋即笑着摇了摇头，轻叹道：“老大年龄太大，血已冷却,若是联盟要固守一域，让老大来倒也无所谓，但这个联盟,显然是需要活力，",
+      "prompt_index": 2,
+      "stop_reason": "max_characters",
+      "unique_character_ratio": 0.5648148148148148
+    },
+    {
+      "characters": 0,
+      "content_characters": 0,
+      "continuation": "",
+      "degeneration_flags": {
+        "empty": true,
+        "high_four_gram_repetition": false,
+        "long_character_run": false,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": true,
+      "four_gram_repetition": 0.0,
+      "generated_tokens": 0,
+      "longest_character_run": 0,
+      "mechanically_degenerate": true,
+      "prompt": "一株株药材被萧炎丢掷而进。然后另外一只手。控制着将鼎中所提炼而出地精华材料。装盛进入玉瓶之中。在这般双手齐用。首发灵魂力量开至巅峰地情况下。石台之上所摆放地药材。",
+      "prompt_index": 3,
+      "stop_reason": "eos",
+      "unique_character_ratio": 0.0
+    },
+    {
+      "characters": 120,
+      "content_characters": 102,
+      "continuation": "令人咂舌。\n\n    被萧炎一掌握住，女子娇躯一跺，娇躯一踏，一道身影便是出现在其面前，一身红衣女子背影，轻轻一握。\n\n    “嘭”\n\n    红衣女子的脸颊也是浮现一抹冷笑，手掌轻点在袖间，一股雄浑的斗气，也是从掌心中暴涌而出，旋即其身",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": false,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": false,
+      "four_gram_repetition": 0.010101010101010055,
+      "generated_tokens": 70,
+      "longest_character_run": 2,
+      "mechanically_degenerate": false,
+      "prompt": "天空上的女子，一套素裙包裹着丰满娇躯，手持一把模样有些奇异，并且散发着青色光芒的长剑，一头青丝被挽成高贵的凤凰发饰，美丽动人的容颜平静恬然，",
+      "prompt_index": 4,
+      "stop_reason": "max_characters",
+      "unique_character_ratio": 0.6078431372549019
+    },
+    {
+      "characters": 120,
+      "content_characters": 108,
+      "continuation": "又是有着将近五日时间，方才能通过吞噬异火来进化的功法。\n\n    修炼，修炼中途所能通过一次的修炼，提升实力自然是能与五星斗宗强者匹敌，战斗经验也是极强。\n\n    时间在修炼，萧炎并未再说，在修炼状态中修炼室内修炼，进入修炼，也是能够用于",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": false,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": false,
+      "four_gram_repetition": 0.0,
+      "generated_tokens": 74,
+      "longest_character_run": 1,
+      "mechanically_degenerate": false,
+      "prompt": "手掌缓缓紧握，充盈的力量之感，令得萧炎嘴角忍不住的泛起一抹笑意，这将进七天休养，总算是将体内彻底枯竭的斗气以及受创的灵魂调养完好，而且，在先前收功间，",
+      "prompt_index": 5,
+      "stop_reason": "max_characters",
+      "unique_character_ratio": 0.6296296296296297
+    },
+    {
+      "characters": 20,
+      "content_characters": 14,
+      "continuation": "\n\n    紫色液体。犹如是一个水灵般。",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": false,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": true,
+      "four_gram_repetition": 0.0,
+      "generated_tokens": 12,
+      "longest_character_run": 1,
+      "mechanically_degenerate": false,
+      "prompt": "没有理会古特的目光。萧炎自顾自的细细打量着手掌上那不断散发着冰冷寒气的小玉瓶。小心翼翼的揭开瓶盖。露出了里面那将近约有半瓶左右的乳白水液。在那水液之上。还能隐隐的看见有着许些结冰状的东西。轻吸了一口从中渗发而出的寒气。",
+      "prompt_index": 6,
+      "stop_reason": "eos",
+      "unique_character_ratio": 0.9285714285714286
+    },
+    {
+      "characters": 120,
+      "content_characters": 102,
+      "continuation": "\n\n    想到此处，天火尊者脸色也是微微一变，旋即眼中掠过一抹难以置信之色，这老家伙是同一人物的名字，二\n\n    此话刚刚落下，那两名老者脸色也是微变，目光冰冷的盯着萧炎，道：“老夫是冰河谷的？”\n\n    闻言，天火尊者等人面色也是一",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": false,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": false,
+      "four_gram_repetition": 0.0505050505050505,
+      "generated_tokens": 56,
+      "longest_character_run": 2,
+      "mechanically_degenerate": false,
+      "prompt": "此次，倒真的是轮到丘陵略微有些变色了，此话别人说出来他或许还不会理会，但这易尘，却基本已确定是下一任的天冥宗宗主，如此，他的话，就不得不加一些重量了，毕竟虽说丹塔强横，但类似天冥宗这等庞大势力，也是极度强横，惹上了，也是有些麻烦。",
+      "prompt_index": 7,
+      "stop_reason": "max_characters",
+      "unique_character_ratio": 0.6372549019607843
+    },
+    {
+      "characters": 13,
+      "content_characters": 13,
+      "continuation": "提高成功率并增强丹药药效。",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": false,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": true,
+      "four_gram_repetition": 0.0,
+      "generated_tokens": 10,
+      "longest_character_run": 2,
+      "mechanically_degenerate": false,
+      "prompt": "然而天才的道路，貌似总是曲折的，三年之前，这名声望达到巅峰的天才少年，却是突兀的接受到了有生以来最残酷的打击，不仅辛辛苦苦修炼十数载方才凝聚的斗之气旋，一夜之间，化为乌有，",
+      "prompt_index": 8,
+      "stop_reason": "eos",
+      "unique_character_ratio": 0.9230769230769231
+    },
+    {
+      "characters": 8,
+      "content_characters": 8,
+      "continuation": "二者是同一人物。",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": false,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": true,
+      "four_gram_repetition": 0.0,
+      "generated_tokens": 7,
+      "longest_character_run": 1,
+      "mechanically_degenerate": false,
+      "prompt": "闻言，萧炎心头顿时一凛，旋即眼神有些炽热的望着曹颖玉手保持的那个奇异手印，他曾经听天火尊者所说这东西，不过令得他有些疑惑的是，天火尊者所说的魂技是灵魂的修炼之法，",
+      "prompt_index": 9,
+      "stop_reason": "eos",
+      "unique_character_ratio": 1.0
+    },
+    {
+      "characters": 120,
+      "content_characters": 108,
+      "continuation": "天妖凰族是远古天魔蟒族群，三大族的势力，分为之所以能够通过这些势力的交战，至于其他势力极有影响力的势力，也并非是什么势力。\n\n    “彩鳞说，二族内极有影响力的势力，二族与三大族内名不足！”\n\n    听得药老此话，药老也是一笑，道：“这",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": false,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": false,
+      "four_gram_repetition": 0.06666666666666665,
+      "generated_tokens": 76,
+      "longest_character_run": 1,
+      "mechanically_degenerate": false,
+      "prompt": "“兽域之中，附属族群最多的，便是九幽地冥蟒族，他们的数量，是三大族群中最为庞大的，当然，换取数量的后果，便是导致如今的九幽地冥蟒的血脉，越来越不精纯……”慕青鸾摊了摊手，道：“天妖凰族，对于血脉的管制就极为的严苛，",
+      "prompt_index": 10,
+      "stop_reason": "max_characters",
+      "unique_character_ratio": 0.6018518518518519
+    },
+    {
+      "characters": 18,
+      "content_characters": 18,
+      "continuation": "轻笑道：“薰儿，儿子我是萧炎的老师。",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": false,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": true,
+      "four_gram_repetition": 0.0,
+      "generated_tokens": 11,
+      "longest_character_run": 1,
+      "mechanically_degenerate": false,
+      "prompt": "在萧炎松气之时，体内因为替云芝压制欲火而大量消耗的斗气，顿时差点被欲火再次冲出，脸庞涨红着，萧炎微弓着身体，望着那趟在石床上没有丝毫防备的美丽女人，他脚步忽然有些忍不住的前踏了一步，低头望着那娇艳欲滴的诱人红唇，眼瞳中闪过一抹炽热，",
+      "prompt_index": 11,
+      "stop_reason": "eos",
+      "unique_character_ratio": 0.9444444444444444
+    },
+    {
+      "characters": 120,
+      "content_characters": 102,
+      "continuation": "依然是有些感到意外。\n\n    “怎么办？”瞧得苏千那犹如被人海般的名字，苏千眉头微皱，皱眉道。\n\n    莫天行眉头微微皱了皱，目光盯着萧炎，道：“没想到他是黑角域中最强的强者。竟然真的有这种感觉？”\n\n    “黑角域？”苏千目光盯着韩",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": false,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": false,
+      "four_gram_repetition": 0.010101010101010055,
+      "generated_tokens": 64,
+      "longest_character_run": 2,
+      "mechanically_degenerate": false,
+      "prompt": "虽然金银二老号称联手可与斗宗强者相战，不过却仅仅只能与一些初级斗宗强者相抗衡，而遇见苏千那种强者，只要被对方稍稍拖延一阵时间，便是会迅速落入下风，对于苏千，金银二老或许还不会如何忌惮，可对于这个有着妖孽般容颜的美人，",
+      "prompt_index": 12,
+      "stop_reason": "max_characters",
+      "unique_character_ratio": 0.6176470588235294
+    },
+    {
+      "characters": 120,
+      "content_characters": 102,
+      "continuation": "魂殿的确很有影响力的势力。\n\n    而且,天府联盟也明白，若是这魂殿是星陨阁必然会大阵的消息来大战,他们也该有多大的好处。\n\n    “这位前辈,是药族的名字，二者是他们最有影响力……”\n\n    星陨阁的长老，也是因此在为联盟，战场的名",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": false,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": false,
+      "four_gram_repetition": 0.010101010101010055,
+      "generated_tokens": 76,
+      "longest_character_run": 2,
+      "mechanically_degenerate": false,
+      "prompt": "面对着萧炎以及药老两位斗圣强者所率领的星陨阁反攻”冥河盟方面，几乎是彻彻底底的溃败”之中甚至连有效的反抗都是未曾形成，便是直接被星陨阁占据了冥河盟，也就是天冥宗的总部宗门，而伴随着天冥宗的宗主，被萧炎随手一掌拍死时，谁都明白，",
+      "prompt_index": 13,
+      "stop_reason": "max_characters",
+      "unique_character_ratio": 0.6176470588235294
+    },
+    {
+      "characters": 120,
+      "content_characters": 108,
+      "continuation": "纤手也是结出一股血迹，对着萧炎暴掠而去。\n\n    云韵脸颊阴沉，玉手轻轻的抚摸着萧炎的额头，望着面前的鹜护法，眼眸也是掠过一抹凝重，低声道：“老师，二哥，你是老师。”\n\n    云韵俏脸微寒的望着萧炎，玉手一晃，一股磅礴斗气陡然自体内暴涌",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": false,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": false,
+      "four_gram_repetition": 0.0,
+      "generated_tokens": 64,
+      "longest_character_run": 2,
+      "mechanically_degenerate": false,
+      "prompt": "喜台处，见到萧炎并未直接被云山击杀，云韵也是悄悄松了二口气，不过当其看见云山那滴血的手掌时，俏脸上也是闪过一道复杂情绪，她不想看见萧炎死在云山手中。但同样也并不想看见云山被萧炎所杀，",
+      "prompt_index": 14,
+      "stop_reason": "max_characters",
+      "unique_character_ratio": 0.6481481481481481
+    },
+    {
+      "characters": 120,
+      "content_characters": 102,
+      "continuation": "恐怕就算是他，都是无法将之压缩进体内。\n\n    “异火……”\n\n    异火刚刚落下，那空间突然陡然扭曲而起，火海之中,也是传出一片扭曲的空间波动，旋即，一道黑炎便是浮现而出”一股股可怕的威压。\n\n    在众人目光一扫,一道惊呼呼声,也",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": false,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": false,
+      "four_gram_repetition": 0.0,
+      "generated_tokens": 66,
+      "longest_character_run": 2,
+      "mechanically_degenerate": false,
+      "prompt": "望着那悬浮天际，缓缓转动的火焰黑盘，药老脸庞上也是掠过一抹震动之色从那火盘中央的黑暗中”他嗅到了一种相当可怕的味道，若是人被绞入其中，",
+      "prompt_index": 15,
+      "stop_reason": "max_characters",
+      "unique_character_ratio": 0.6568627450980392
+    },
+    {
+      "characters": 120,
+      "content_characters": 102,
+      "continuation": "拥有着极端的势力。\n\n    “魂族是魂族的人物，二者是同一人物。”\n\n    天空上，魂厉的目光，在见到这一幕,却是不由得有些恍然，没想到这魂元天,竟然也没错过他。\n\n    “魂族？”魂崖面色阴沉，双手负着胡须，道，这古族的人，倒还真是",
+      "degeneration_flags": {
+        "empty": false,
+        "high_four_gram_repetition": false,
+        "long_character_run": false,
+        "very_low_character_diversity": false
+      },
+      "eos_emitted": false,
+      "four_gram_repetition": 0.010101010101010055,
+      "generated_tokens": 72,
+      "longest_character_run": 1,
+      "mechanically_degenerate": false,
+      "prompt": "而在外界胡乱猜测时，那远古种族之中，却也是因为这件事出现了巨大的分歧，这些远古种族,彼此间比较的了解，不过他们也并非是什么盟友般的存在，只能说是似敌似友，毕竟这些种族，",
+      "prompt_index": 16,
+      "stop_reason": "max_characters",
+      "unique_character_ratio": 0.6274509803921569
+    }
+  ],
+  "logging": {
+    "directory": "logs/sft_v7_1_canary_replay_w025_retention_step400",
+    "environment_override": "GPT_CANARY_RETENTION_LOG_LEVEL_<MODULE>",
+    "format": "rotating JSONL with UTC timestamp and run_id",
+    "modules": [
+      "data",
+      "checkpoint",
+      "validation",
+      "generation",
+      "orchestrator"
+    ],
+    "production_default": "INFO",
+    "prompt_or_continuation_bodies_logged": false,
+    "rotation_backup_count": 3,
+    "rotation_max_bytes": 2097152,
+    "sensitive_fields_redacted": true,
+    "token_ids_logged": false
+  },
+  "model": {
+    "config": {
+      "block_size": 512,
+      "dropout": 0.1,
+      "embedding_size": 320,
+      "ffn_multiplier": 4,
+      "initialization_std": 0.02,
+      "layer_norm_epsilon": 1e-05,
+      "num_heads": 8,
+      "num_layers": 10,
+      "tie_embeddings": true,
+      "vocab_size": 7465
+    },
+    "parameter_count": 14880745
+  },
+  "probe_provenance": {
+    "artifact_path": "data/eval/pretrain_capability_probes.json",
+    "artifact_sha256": "f95d594eaa8d08ef340a704c7b9103627ab949e88c1796fe3db0527cfc54f36e",
+    "build_input_sha256_matches": {
+      "train": true,
+      "val": true
+    },
+    "continuation_prompts": [
+      "“短短两年时间，你不仅取得了丹会冠军，还晋入了斗尊层次，这等神速，即便是老夫都是汗颜啊。”对于周围的那些视线，唐震却是犹若未闻，目光在萧炎身上扫了扫，叹道，他所说，倒的确是有着几分真心话，当年首次见到萧炎时，后者方才晋入斗宗没多久，",
+      "闻言，那小丹塔的大长老却是愣了愣，旋即笑着摇了摇头，轻叹道：“老大年龄太大，血已冷却,若是联盟要固守一域，让老大来倒也无所谓，但这个联盟,显然是需要活力，",
+      "一株株药材被萧炎丢掷而进。然后另外一只手。控制着将鼎中所提炼而出地精华材料。装盛进入玉瓶之中。在这般双手齐用。首发灵魂力量开至巅峰地情况下。石台之上所摆放地药材。",
+      "天空上的女子，一套素裙包裹着丰满娇躯，手持一把模样有些奇异，并且散发着青色光芒的长剑，一头青丝被挽成高贵的凤凰发饰，美丽动人的容颜平静恬然，",
+      "手掌缓缓紧握，充盈的力量之感，令得萧炎嘴角忍不住的泛起一抹笑意，这将进七天休养，总算是将体内彻底枯竭的斗气以及受创的灵魂调养完好，而且，在先前收功间，",
+      "没有理会古特的目光。萧炎自顾自的细细打量着手掌上那不断散发着冰冷寒气的小玉瓶。小心翼翼的揭开瓶盖。露出了里面那将近约有半瓶左右的乳白水液。在那水液之上。还能隐隐的看见有着许些结冰状的东西。轻吸了一口从中渗发而出的寒气。",
+      "此次，倒真的是轮到丘陵略微有些变色了，此话别人说出来他或许还不会理会，但这易尘，却基本已确定是下一任的天冥宗宗主，如此，他的话，就不得不加一些重量了，毕竟虽说丹塔强横，但类似天冥宗这等庞大势力，也是极度强横，惹上了，也是有些麻烦。",
+      "然而天才的道路，貌似总是曲折的，三年之前，这名声望达到巅峰的天才少年，却是突兀的接受到了有生以来最残酷的打击，不仅辛辛苦苦修炼十数载方才凝聚的斗之气旋，一夜之间，化为乌有，",
+      "闻言，萧炎心头顿时一凛，旋即眼神有些炽热的望着曹颖玉手保持的那个奇异手印，他曾经听天火尊者所说这东西，不过令得他有些疑惑的是，天火尊者所说的魂技是灵魂的修炼之法，",
+      "“兽域之中，附属族群最多的，便是九幽地冥蟒族，他们的数量，是三大族群中最为庞大的，当然，换取数量的后果，便是导致如今的九幽地冥蟒的血脉，越来越不精纯……”慕青鸾摊了摊手，道：“天妖凰族，对于血脉的管制就极为的严苛，",
+      "在萧炎松气之时，体内因为替云芝压制欲火而大量消耗的斗气，顿时差点被欲火再次冲出，脸庞涨红着，萧炎微弓着身体，望着那趟在石床上没有丝毫防备的美丽女人，他脚步忽然有些忍不住的前踏了一步，低头望着那娇艳欲滴的诱人红唇，眼瞳中闪过一抹炽热，",
+      "虽然金银二老号称联手可与斗宗强者相战，不过却仅仅只能与一些初级斗宗强者相抗衡，而遇见苏千那种强者，只要被对方稍稍拖延一阵时间，便是会迅速落入下风，对于苏千，金银二老或许还不会如何忌惮，可对于这个有着妖孽般容颜的美人，",
+      "面对着萧炎以及药老两位斗圣强者所率领的星陨阁反攻”冥河盟方面，几乎是彻彻底底的溃败”之中甚至连有效的反抗都是未曾形成，便是直接被星陨阁占据了冥河盟，也就是天冥宗的总部宗门，而伴随着天冥宗的宗主，被萧炎随手一掌拍死时，谁都明白，",
+      "喜台处，见到萧炎并未直接被云山击杀，云韵也是悄悄松了二口气，不过当其看见云山那滴血的手掌时，俏脸上也是闪过一道复杂情绪，她不想看见萧炎死在云山手中。但同样也并不想看见云山被萧炎所杀，",
+      "望着那悬浮天际，缓缓转动的火焰黑盘，药老脸庞上也是掠过一抹震动之色从那火盘中央的黑暗中”他嗅到了一种相当可怕的味道，若是人被绞入其中，",
+      "而在外界胡乱猜测时，那远古种族之中，却也是因为这件事出现了巨大的分歧，这些远古种族,彼此间比较的了解，不过他们也并非是什么盟友般的存在，只能说是似敌似友，毕竟这些种族，"
+    ],
+    "declared_cases_canonical_sha256": "1324c33d1c59e0711d145bcfa1cc83abcb34c5e54dffa10082414df5e113db8e",
+    "declared_prompts_sha256": "032fd93f12ffba3df3d4d9ad4bc1898a6a86ec416a812cd85a0c0f1928a253a7",
+    "formal_declarations_required": true,
+    "formal_status_eligible": true,
+    "mode": "validated_artifact",
+    "probe_count": 56,
+    "prompts_path": "data/eval/pretrain_capability_prompts.txt",
+    "prompts_sha256": "032fd93f12ffba3df3d4d9ad4bc1898a6a86ec416a812cd85a0c0f1928a253a7",
+    "schema_version": "pretrain-capability-probes/v1",
+    "usage_checks": {
+      "sft_false": true,
+      "test_false": true,
+      "training_allowed_false": true
+    },
+    "validation_cloze_count": 12,
+    "validation_continuation_count": 16,
+    "validation_passed": true
+  },
+  "retention_passed": false,
+  "retention_thresholds": {
+    "maximum_mechanical_degeneration_rate": 0.25,
+    "maximum_relative_fixed_window_bpc_degradation": 0.05,
+    "required_nonempty_continuations": 16
+  },
+  "run_id": "sft-v7-1-canary-retention-20260829T140706Z-cc58e5d4",
+  "schema_version": "sft-v7.1-canary-pretrain-retention/v1",
+  "status": "retention_failed",
+  "validation_diagnostic": {
+    "bpc_definition": "fixed-window mean token NLL * frozen full-validation token_count / full-validation character_count / ln(2)",
+    "first_start": 0,
+    "fixed_window_bpc": 3.8328806551436427,
+    "last_start": 183490,
+    "loss": 4.542535988489787,
+    "perplexity": 93.92870043891234,
+    "raw_validation_path": "data/cloud_v4/val.txt",
+    "raw_validation_sha256": "f7ee1531a503001921b5fb767d655f04c393c42edfddf319d7eeca44655d2977",
+    "same_windows_as_m019": true,
+    "split": "val",
+    "tensor_path": "data/scaling_a/bpe_3000/val_tokens.pt",
+    "tensor_sha256": "f678203005119c241178130790ece08423717cbce0f8949926d3a79a1b18e328",
+    "tokens_evaluated": 30720,
+    "top1_accuracy": 0.23170572916666668,
+    "window_selection": "deterministic_evenly_spaced",
+    "windows_evaluated": 60
+  }
+}

@@ -1,10 +1,10 @@
-# Model Card：Doupo GPT（M020 小说垂直实验）
+# Model Card：Doupo GPT（M021 语义密度与遗忘控制实验）
 
-> 状态：M020 的数据、基线、20 步安全试跑、2,000 步正式训练、public 评估、固定样本 AI 辅助复核和预训练保持评估均已完成。自动门失败、独立外部复核仍为 `pending`，严格候选为空，当前没有可发布的 M020 模型。
+> 状态：M021 已完成旧 v7 语义密度审计、64+16 条 Canary、三档联合回放和问答/预训练保持双验收。`replay_weight=0.25, Step400` 是当前最优诊断节点，但小说续写只有 15/16 非空；严格候选为空，当前没有可发布模型。
 
 ## 模型简介
 
-Doupo GPT 是一个用于学习 GPT 原理的中文 Decoder-only Transformer。当前正式模型只使用已获授权的《斗破苍穹》作为预训练知识来源，M020 后训练也只覆盖小说核心事实、给定证据问答、RAG 证据组合、垂直聊天、小说表达任务和需要证据时的边界行为。
+Doupo GPT 是一个用于学习 GPT 原理的中文 Decoder-only Transformer。当前正式模型只使用已获授权的《斗破苍穹》作为预训练知识来源；M021 只探测核心小说事实问答与小说语言保持，不注入数学、通用百科或书外知识。
 
 它的目标是展示 Tokenizer、预训练、SFT、验证、生成和无人值守训练的完整链路，不是通用聊天模型，也不是原作品或成熟商业大模型的替代品。
 
@@ -68,10 +68,15 @@ Doupo GPT 是一个用于学习 GPT 原理的中文 Decoder-only Transformer。�
 | 自动与外部门禁 | `automatic_gates_failed_external_review_pending`；严格候选 `[]` |
 | 汇总完整性 | 必需产物缺失 0；完整性错误 0；`release_ready=false` |
 | Sealed test | 冻结；未用于训练或选模，最终候选前不启封 |
+| M021旧v7语义审计 | 固定开头49.95%；裸核心问0/18；核心相对监督密度0.6188；证据高复制66.01% |
+| M021高LR容量探针 | Train/Dev严格答案100%/100%，但BPC退化43.64%、小说续写9/16非空，只作容量证明 |
+| M021联合回放最优诊断 | Replay 0.25 Step400；严格答案87.50%/68.75%；Codex AI非盲命题复核95.31%/87.50%；BPC退化2.33%；小说续写15/16非空 |
+| M021数据隔离 | 预训练replay只读取Train Token；预训练validation/test和SFT public/sealed优化消费0；public/sealed正文读取0 |
+| M021候选结论 | 严格候选`[]`；`release_ready=false`；下一步重构A0，不发布当前权重 |
 
 测试结果必须同时报告严格正确率、分项表现和失败样本，不能只展示最好看的生成文本。预训练 checkpoint 的选择协议是：Validation Loss 先筛选，自动质量门槛可以否决，最终语义质量由人工盲评决定；Test Loss 只做一次最终报告，不参与选模。
 
-完整节点对比见 [M020 checkpoint comparison](reports/milestones/020_sft_v7_vertical/checkpoint_comparison.md)，Loss 曲线见 [sft_v7_loss_curve.svg](reports/milestones/020_sft_v7_vertical/sft_v7_loss_curve.svg)，固定 16 题复核见 [fixed_samples_milestone_review.md](reports/milestones/020_sft_v7_vertical/fixed_samples_milestone_review.md)。
+M020完整节点对比见 [checkpoint comparison](reports/milestones/020_sft_v7_vertical/checkpoint_comparison.md)；M021三档回放、语义复核和后续计划见 [M021里程碑](reports/milestones/021_sft_v7_1_canary/README.md)。
 
 ## 已知限制
 
@@ -83,6 +88,6 @@ Doupo GPT 是一个用于学习 GPT 原理的中文 Decoder-only Transformer。�
 
 ## 发布与许可证
 
-- M020 正式训练已经完成，但自动行为门失败、保持门未全过、独立外部门未完成，因此没有 checkpoint 可作为可靠聊天模型发布；若后续新实验达标，只发布经验证、行为门、预训练保持评估和人工复核共同选定的 checkpoint。
+- M021 当前最优诊断节点仍未通过16/16小说续写保持门，独立外部门也未完成，因此没有 checkpoint 可作为可靠垂直助手发布；若后续A0达标，只发布经结构化语义、预训练保持、public和独立真人复核共同选定的单一checkpoint。
 - 模型权重通过 GitHub Release 或 Git LFS 发布，并附带哈希与本文件。
 - 代码许可证、模型权重许可证和数据授权说明可能不同；正式发布前必须分别确定。目前许可证尚未选择。

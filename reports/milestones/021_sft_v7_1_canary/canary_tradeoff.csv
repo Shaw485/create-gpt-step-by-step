@@ -1,0 +1,9 @@
+experiment,peak_lr,replay_weight,step,strict_train_rate,strict_dev_rate,semantic_train_rate,semantic_dev_rate,fixed_window_bpc,relative_bpc_degradation,nonempty_continuations,total_continuations,mechanical_degeneration_rate,relation_errors,decision
+base_step5750,0,0,5750,0,0,,,3.745440719321712,0,16,16,0,0,pretrain_initialization_only
+high_lr_early,0.0001,0,50,0.859375,0.75,,,4.374003828100258,0.1678208669906213,12,16,0.25,0,rejected_retention
+high_lr_best_teacher,0.0001,0,375,1,1,,,5.380079303494348,0.43643424276880943,9,16,0.4375,0,capacity_proof_only
+high_lr_final,0.0001,0,400,1,1,,,5.374162251928936,0.4348544416162006,10,16,0.375,0,capacity_proof_only
+low_lr_no_replay,0.00001,0,200,0.359375,0.125,,,3.8720509962934395,0.03380383951041586,12,16,0.25,32,rejected_qa_and_retention
+replay_w050,0.00001,0.5,400,0.8125,0.625,,,3.816209162460421,0.018894556993956365,15,16,0.0625,5,rejected_qa_and_one_empty
+replay_w025,0.00001,0.25,400,0.875,0.6875,0.953125,0.875,3.8328806551436427,0.02334570011236648,15,16,0.0625,0,best_diagnostic_not_candidate
+replay_w010,0.00001,0.1,400,0.875,0.6875,,,3.8595152462980895,0.030456903612944168,13,16,0.25,0,dominated_by_w025

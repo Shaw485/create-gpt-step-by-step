@@ -1,0 +1,523 @@
+{
+  "artifacts": {
+    "json_report": "reports/milestones/021_sft_v7_1_canary/semantic_density_audit.json",
+    "markdown_report": "reports/milestones/021_sft_v7_1_canary/semantic_density_audit.md"
+  },
+  "bare_core_question_coverage": {
+    "by_split": {
+      "train": {
+        "catalog_fact_count": 18,
+        "distinct_catalog_facts_matched": 0,
+        "distinct_fact_coverage": 0.0,
+        "match_counts_by_fact_id": {},
+        "matched_record_count": 0
+      },
+      "val": {
+        "catalog_fact_count": 18,
+        "distinct_catalog_facts_matched": 0,
+        "distinct_fact_coverage": 0.0,
+        "match_counts_by_fact_id": {},
+        "matched_record_count": 0
+      }
+    },
+    "catalog_fact_count": 18,
+    "decision_scope": "train",
+    "definition": "NFKC/lowercase/alphanumeric-only exact equality with one of the reviewed catalog canonical questions; no suffix or lead is allowed",
+    "distinct_catalog_facts_matched": 0,
+    "distinct_fact_coverage": 0.0,
+    "match_counts_by_fact_id": {},
+    "matched_record_count": 0,
+    "overall": {
+      "catalog_fact_count": 18,
+      "distinct_catalog_facts_matched": 0,
+      "distinct_fact_coverage": 0.0,
+      "match_counts_by_fact_id": {},
+      "matched_record_count": 0
+    }
+  },
+  "dimension_semantic_density": {
+    "capability_boundary_clarification_evidence_request": {
+      "record_share": 0.05,
+      "records": 440,
+      "relative_supervision_density_index": 0.5822944,
+      "supervised_token_share": 0.02911472,
+      "supervised_tokens": 16818
+    },
+    "multi_passage_rag_evidence_composition": {
+      "record_share": 0.14,
+      "records": 1232,
+      "relative_supervision_density_index": 1.85428693,
+      "supervised_token_share": 0.25960017,
+      "supervised_tokens": 149957
+    },
+    "novel_summary_rewrite_short_continuation": {
+      "record_share": 0.13,
+      "records": 1144,
+      "relative_supervision_density_index": 0.85387669,
+      "supervised_token_share": 0.11100397,
+      "supervised_tokens": 64121
+    },
+    "parameter_core_fact_and_correction": {
+      "record_share": 0.18,
+      "records": 1584,
+      "relative_supervision_density_index": 0.618593,
+      "supervised_token_share": 0.11134674,
+      "supervised_tokens": 64319
+    },
+    "single_passage_grounded_qa": {
+      "record_share": 0.32,
+      "records": 2816,
+      "relative_supervision_density_index": 0.81028756,
+      "supervised_token_share": 0.25929202,
+      "supervised_tokens": 149779
+    },
+    "vertical_chat_multiturn_eos": {
+      "record_share": 0.18,
+      "records": 1584,
+      "relative_supervision_density_index": 1.275791,
+      "supervised_token_share": 0.22964238,
+      "supervised_tokens": 132652
+    }
+  },
+  "dimension_semantic_density_by_split": {
+    "train": {
+      "capability_boundary_clarification_evidence_request": {
+        "record_share": 0.05,
+        "records_denominator": 8000,
+        "records_numerator": 400,
+        "relative_supervision_density_index": 0.5826026,
+        "supervised_token_share": 0.02913013,
+        "supervised_tokens_denominator": 524886,
+        "supervised_tokens_numerator": 15290
+      },
+      "multi_passage_rag_evidence_composition": {
+        "record_share": 0.14,
+        "records_denominator": 8000,
+        "records_numerator": 1120,
+        "relative_supervision_density_index": 1.85328679,
+        "supervised_token_share": 0.25946015,
+        "supervised_tokens_denominator": 524886,
+        "supervised_tokens_numerator": 136187
+      },
+      "novel_summary_rewrite_short_continuation": {
+        "record_share": 0.13,
+        "records_denominator": 8000,
+        "records_numerator": 1040,
+        "relative_supervision_density_index": 0.85413415,
+        "supervised_token_share": 0.11103744,
+        "supervised_tokens_denominator": 524886,
+        "supervised_tokens_numerator": 58282
+      },
+      "parameter_core_fact_and_correction": {
+        "record_share": 0.18,
+        "records_denominator": 8000,
+        "records_numerator": 1440,
+        "relative_supervision_density_index": 0.61877989,
+        "supervised_token_share": 0.11138038,
+        "supervised_tokens_denominator": 524886,
+        "supervised_tokens_numerator": 58462
+      },
+      "single_passage_grounded_qa": {
+        "record_share": 0.32,
+        "records_denominator": 8000,
+        "records_numerator": 2560,
+        "relative_supervision_density_index": 0.81071772,
+        "supervised_token_share": 0.25942967,
+        "supervised_tokens_denominator": 524886,
+        "supervised_tokens_numerator": 136171
+      },
+      "vertical_chat_multiturn_eos": {
+        "record_share": 0.18,
+        "records_denominator": 8000,
+        "records_numerator": 1440,
+        "relative_supervision_density_index": 1.27534572,
+        "supervised_token_share": 0.22956223,
+        "supervised_tokens_denominator": 524886,
+        "supervised_tokens_numerator": 120494
+      }
+    },
+    "val": {
+      "capability_boundary_clarification_evidence_request": {
+        "record_share": 0.05,
+        "records_denominator": 800,
+        "records_numerator": 40,
+        "relative_supervision_density_index": 0.5792266,
+        "supervised_token_share": 0.02896133,
+        "supervised_tokens_denominator": 52760,
+        "supervised_tokens_numerator": 1528
+      },
+      "multi_passage_rag_evidence_composition": {
+        "record_share": 0.14,
+        "records_denominator": 800,
+        "records_numerator": 112,
+        "relative_supervision_density_index": 1.864237,
+        "supervised_token_share": 0.26099318,
+        "supervised_tokens_denominator": 52760,
+        "supervised_tokens_numerator": 13770
+      },
+      "novel_summary_rewrite_short_continuation": {
+        "record_share": 0.13,
+        "records_denominator": 800,
+        "records_numerator": 104,
+        "relative_supervision_density_index": 0.85131508,
+        "supervised_token_share": 0.11067096,
+        "supervised_tokens_denominator": 52760,
+        "supervised_tokens_numerator": 5839
+      },
+      "parameter_core_fact_and_correction": {
+        "record_share": 0.18,
+        "records_denominator": 800,
+        "records_numerator": 144,
+        "relative_supervision_density_index": 0.61673406,
+        "supervised_token_share": 0.11101213,
+        "supervised_tokens_denominator": 52760,
+        "supervised_tokens_numerator": 5857
+      },
+      "single_passage_grounded_qa": {
+        "record_share": 0.32,
+        "records_denominator": 800,
+        "records_numerator": 256,
+        "relative_supervision_density_index": 0.80600834,
+        "supervised_token_share": 0.25792267,
+        "supervised_tokens_denominator": 52760,
+        "supervised_tokens_numerator": 13608
+      },
+      "vertical_chat_multiturn_eos": {
+        "record_share": 0.18,
+        "records_denominator": 800,
+        "records_numerator": 144,
+        "relative_supervision_density_index": 1.28022072,
+        "supervised_token_share": 0.23043973,
+        "supervised_tokens_denominator": 52760,
+        "supervised_tokens_numerator": 12158
+      }
+    }
+  },
+  "evidence_copy_analysis": {
+    "algorithm": {
+      "eligibility": "answer_support.status == supported and at least one non-empty supporting_spans item",
+      "normalization": "Unicode NFKC, lowercase, retain only str.isalnum characters; Chinese characters remain, whitespace and punctuation are removed",
+      "overlap": "exact longest contiguous common substring between normalized answer and each answer_support.supporting_spans item; take the maximum",
+      "per_record_ratio": "maximum LCS characters / normalized answer characters",
+      "review_threshold": 0.5,
+      "severe_threshold": 0.8
+    },
+    "by_dimension": {
+      "capability_boundary_clarification_evidence_request": {
+        "aggregate_lcs_chars_over_answer_chars": 0.0,
+        "eligible_supported_records": 0,
+        "mean_per_record_copy_ratio": 0.0,
+        "records_at_or_above_0_50": 0,
+        "records_at_or_above_0_80": 0,
+        "share_at_or_above_0_50": 0.0,
+        "share_at_or_above_0_80": 0.0
+      },
+      "multi_passage_rag_evidence_composition": {
+        "aggregate_lcs_chars_over_answer_chars": 0.24669233,
+        "eligible_supported_records": 1016,
+        "mean_per_record_copy_ratio": 0.25236192,
+        "records_at_or_above_0_50": 0,
+        "records_at_or_above_0_80": 0,
+        "share_at_or_above_0_50": 0.0,
+        "share_at_or_above_0_80": 0.0
+      },
+      "novel_summary_rewrite_short_continuation": {
+        "aggregate_lcs_chars_over_answer_chars": 0.53730921,
+        "eligible_supported_records": 1144,
+        "mean_per_record_copy_ratio": 0.5846055,
+        "records_at_or_above_0_50": 688,
+        "records_at_or_above_0_80": 118,
+        "share_at_or_above_0_50": 0.6013986,
+        "share_at_or_above_0_80": 0.10314685
+      },
+      "parameter_core_fact_and_correction": {
+        "aggregate_lcs_chars_over_answer_chars": 0.4383583,
+        "eligible_supported_records": 1584,
+        "mean_per_record_copy_ratio": 0.36078344,
+        "records_at_or_above_0_50": 638,
+        "records_at_or_above_0_80": 3,
+        "share_at_or_above_0_50": 0.40277778,
+        "share_at_or_above_0_80": 0.00189394
+      },
+      "single_passage_grounded_qa": {
+        "aggregate_lcs_chars_over_answer_chars": 0.63504461,
+        "eligible_supported_records": 2323,
+        "mean_per_record_copy_ratio": 0.64854064,
+        "records_at_or_above_0_50": 2182,
+        "records_at_or_above_0_80": 41,
+        "share_at_or_above_0_50": 0.93930263,
+        "share_at_or_above_0_80": 0.01764959
+      },
+      "vertical_chat_multiturn_eos": {
+        "aggregate_lcs_chars_over_answer_chars": 0.59762807,
+        "eligible_supported_records": 1584,
+        "mean_per_record_copy_ratio": 0.60891456,
+        "records_at_or_above_0_50": 1542,
+        "records_at_or_above_0_80": 6,
+        "share_at_or_above_0_50": 0.97348485,
+        "share_at_or_above_0_80": 0.00378788
+      }
+    },
+    "by_split": {
+      "train": {
+        "denominator_eligible_supported_records": 6956,
+        "numerator_at_or_above_0_50": 4592,
+        "numerator_at_or_above_0_80": 149,
+        "share_at_or_above_0_50": 0.66014951,
+        "share_at_or_above_0_80": 0.02142036
+      },
+      "val": {
+        "denominator_eligible_supported_records": 695,
+        "numerator_at_or_above_0_50": 458,
+        "numerator_at_or_above_0_80": 19,
+        "share_at_or_above_0_50": 0.65899281,
+        "share_at_or_above_0_80": 0.02733813
+      }
+    },
+    "decision_scope": "train",
+    "eligible_supported_records": 7651,
+    "overall": {
+      "denominator_eligible_supported_records": 7651,
+      "numerator_at_or_above_0_50": 5050,
+      "numerator_at_or_above_0_80": 168,
+      "share_at_or_above_0_50": 0.66004444,
+      "share_at_or_above_0_80": 0.02195791
+    },
+    "records_at_or_above_0_50": 5050,
+    "records_at_or_above_0_80": 168,
+    "share_at_or_above_0_50": 0.66004444,
+    "share_at_or_above_0_80": 0.02195791
+  },
+  "generated_at_utc": "2026-08-29T13:14:09+00:00",
+  "implementation": {
+    "algorithm_version": "semantic-density-train-gates/2.0",
+    "git_commit": "dbb436d7e459033abe03b87e76fd2864206e9159",
+    "git_dirty": true,
+    "path": "audit_sft_v7_semantic_density.py",
+    "sha256": "c4049d8aff90a7dea0303a1edce9b4cf20681687fb14b58be1c250cc2375b232"
+  },
+  "population": {
+    "authorized_splits": [
+      "train",
+      "val"
+    ],
+    "records_by_split": {
+      "train": 8000,
+      "val": 800
+    },
+    "supervised_tokens_by_split": {
+      "train": 524886,
+      "val": 52760
+    },
+    "task_family_counts": {
+      "boundary_need_evidence": 440,
+      "chat_multiturn": 1056,
+      "chat_single": 528,
+      "continuation": 264,
+      "core_correction": 264,
+      "core_fact": 528,
+      "known_core_direct": 792,
+      "passage_answer": 2323,
+      "passage_insufficient": 493,
+      "rag_compose": 1016,
+      "rag_insufficient": 216,
+      "rewrite": 440,
+      "summary": 440
+    },
+    "total_records": 8800,
+    "total_supervised_tokens": 577646
+  },
+  "privacy": {
+    "accessed_split_bodies": [
+      "train",
+      "val"
+    ],
+    "public_diagnostic_body_accessed": false,
+    "record_body_emitted": false,
+    "record_identifier_emitted": false,
+    "sealed_test_body_accessed": false
+  },
+  "risk_conclusion": {
+    "decision": "rebuild_sft_v7_1_before_additional_training",
+    "decision_scope": "train",
+    "findings": [
+      {
+        "code": "fixed_opening_template_concentration",
+        "decision_scope": "train",
+        "observed": 0.4995,
+        "severity": "P1",
+        "threshold": "<=0.20"
+      },
+      {
+        "code": "bare_core_question_coverage_too_low",
+        "decision_scope": "train",
+        "observed": 0.0,
+        "severity": "P1",
+        "threshold": ">=0.50"
+      },
+      {
+        "code": "core_supervision_density_too_low",
+        "decision_scope": "train",
+        "observed": 0.61877989,
+        "severity": "P1",
+        "threshold": ">=0.75"
+      },
+      {
+        "code": "evidence_copy_concentration",
+        "decision_scope": "train",
+        "observed": 0.66014951,
+        "severity": "P1",
+        "threshold": "<=0.50"
+      }
+    ],
+    "level": "high"
+  },
+  "run_id": "sft-v7-semantic-density-20260829T131355Z-751b6528",
+  "schema_version": "sft-v7-semantic-density-audit/v1",
+  "self_reference_and_cycle_screen": {
+    "by_dimension": {
+      "capability_boundary_clarification_evidence_request": {
+        "exact_self_relation_records": 0,
+        "repeated_normalized_clause_records": 0,
+        "two_node_relation_cycle_records": 0
+      },
+      "multi_passage_rag_evidence_composition": {
+        "exact_self_relation_records": 0,
+        "repeated_normalized_clause_records": 0,
+        "two_node_relation_cycle_records": 0
+      },
+      "novel_summary_rewrite_short_continuation": {
+        "exact_self_relation_records": 0,
+        "repeated_normalized_clause_records": 0,
+        "two_node_relation_cycle_records": 0
+      },
+      "parameter_core_fact_and_correction": {
+        "exact_self_relation_records": 0,
+        "repeated_normalized_clause_records": 0,
+        "two_node_relation_cycle_records": 0
+      },
+      "single_passage_grounded_qa": {
+        "exact_self_relation_records": 0,
+        "repeated_normalized_clause_records": 0,
+        "two_node_relation_cycle_records": 0
+      },
+      "vertical_chat_multiturn_eos": {
+        "exact_self_relation_records": 0,
+        "repeated_normalized_clause_records": 0,
+        "two_node_relation_cycle_records": 0
+      }
+    },
+    "by_split": {
+      "train": {
+        "exact_self_relation_records": 0,
+        "repeated_normalized_clause_records": 0,
+        "two_node_relation_cycle_records": 0
+      },
+      "val": {
+        "exact_self_relation_records": 0,
+        "repeated_normalized_clause_records": 0,
+        "two_node_relation_cycle_records": 0
+      }
+    },
+    "decision_scope": "train",
+    "definitions": {
+      "exact_self_relation": "same catalog entity on both sides of 是/为/和/与/由/属于",
+      "repeated_normalized_clause": "a punctuation-delimited normalized clause of at least four characters repeats",
+      "two_node_relation_cycle": "both A-is-B's-relation and B-is-A's-relation occur in one answer"
+    },
+    "exact_self_relation_records": 0,
+    "fingerprint_truncation_limit_per_category": 100,
+    "record_id_fingerprints": {
+      "exact_self_relation": [],
+      "repeated_normalized_clause": [],
+      "two_node_relation_cycle": []
+    },
+    "repeated_normalized_clause_records": 0,
+    "scope": "heuristic initial screen only; every hit requires semantic review",
+    "two_node_relation_cycle_records": 0
+  },
+  "sources": [
+    {
+      "path": "data/sft/v7/train.jsonl",
+      "records": 8000,
+      "schema_version_counts": {
+        "sft_v7_vertical/1.0": 8000
+      },
+      "sha256": "0f894ef6ab5413f25a86fabbe530c6607a8bd730301a5529eef13e1579c6bb81",
+      "split": "train"
+    },
+    {
+      "path": "data/sft/v7/val.jsonl",
+      "records": 800,
+      "schema_version_counts": {
+        "sft_v7_vertical/1.0": 800
+      },
+      "sha256": "257efe75da51df4f5de239c08e5d9d72d03dfbb6068c50b3e369b397023dd58c",
+      "split": "val"
+    }
+  ],
+  "status": "needs_revision",
+  "template_opening_analysis": {
+    "by_split": {
+      "train": {
+        "denominator": 8000,
+        "numerator": 3996,
+        "share": 0.4995
+      },
+      "val": {
+        "denominator": 800,
+        "numerator": 399,
+        "share": 0.49875
+      }
+    },
+    "counts": {
+      "material_states": {
+        "total": 733,
+        "train": 666,
+        "val": 67
+      },
+      "original_text_says": {
+        "total": 734,
+        "train": 666,
+        "val": 68
+      },
+      "passage_verifiable": {
+        "total": 732,
+        "train": 666,
+        "val": 66
+      },
+      "reviewable_original_sentence": {
+        "total": 732,
+        "train": 666,
+        "val": 66
+      },
+      "text_contains": {
+        "total": 732,
+        "train": 666,
+        "val": 66
+      },
+      "this_place_says": {
+        "total": 732,
+        "train": 666,
+        "val": 66
+      }
+    },
+    "decision_scope": "train",
+    "definition": "record answer starts with the complete frozen prefix",
+    "overall": {
+      "denominator": 8800,
+      "numerator": 4395,
+      "share": 0.49943182
+    },
+    "records_matching_any_of_six": 4395,
+    "share_matching_any_of_six": 0.49943182,
+    "template_prefixes": {
+      "material_states": "材料表述为“",
+      "original_text_says": "原文写道“",
+      "passage_verifiable": "片段可核对：",
+      "reviewable_original_sentence": "可复查的原句是“",
+      "text_contains": "文本中出现“",
+      "this_place_says": "这处写的是“"
+    }
+  }
+}

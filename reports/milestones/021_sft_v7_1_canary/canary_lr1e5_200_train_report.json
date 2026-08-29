@@ -1,0 +1,229 @@
+{
+  "base_checkpoint_step": 5750,
+  "batch_size": 8,
+  "best_holdout_teacher_loss": 0.5847235918045044,
+  "best_teacher_loss_checkpoint": "runs/sft_v7_1_canary_lr1e5_200/best_teacher_loss.pt",
+  "canary_dataset_manifest_sha256": "68908fdabe4f8ae470f6bcd4ec6d11b59304829119835af901df7bf9888ef50d",
+  "data_path": "data/sft/v7_1_canary/train_eval_tensors.pt",
+  "data_sha256": "8511bea2aa449f9dc29cc268239951786d512d9895f29a8730ccb7179f26914e",
+  "device": "mps",
+  "elapsed_seconds": 106.1784214580257,
+  "history": [
+    {
+      "holdout_teacher_loss": 5.818234443664551,
+      "learning_rate": 0.0,
+      "sampler_coverage": {
+        "coverage": 0.0,
+        "draws": 0,
+        "epochs_started": 0,
+        "maximum_draws_per_record": 0,
+        "minimum_draws_per_record": 0,
+        "records": 64,
+        "seen_records": 0,
+        "strategy": "deterministic_shuffled_epoch/v1"
+      },
+      "step": 0,
+      "train_teacher_loss": 5.8871568520863855
+    },
+    {
+      "holdout_teacher_loss": 3.5660111904144287,
+      "learning_rate": 9.862301196726988e-06,
+      "sampler_coverage": {
+        "coverage": 1.0,
+        "draws": 200,
+        "epochs_started": 4,
+        "maximum_draws_per_record": 4,
+        "minimum_draws_per_record": 3,
+        "records": 64,
+        "seen_records": 64,
+        "strategy": "deterministic_shuffled_epoch/v1"
+      },
+      "step": 25,
+      "train_teacher_loss": 3.596503485573663
+    },
+    {
+      "holdout_teacher_loss": 2.3388280868530273,
+      "learning_rate": 9.051132292283772e-06,
+      "sampler_coverage": {
+        "coverage": 1.0,
+        "draws": 400,
+        "epochs_started": 7,
+        "maximum_draws_per_record": 7,
+        "minimum_draws_per_record": 6,
+        "records": 64,
+        "seen_records": 64,
+        "strategy": "deterministic_shuffled_epoch/v1"
+      },
+      "step": 50,
+      "train_teacher_loss": 2.35591821802987
+    },
+    {
+      "holdout_teacher_loss": 1.606460690498352,
+      "learning_rate": 7.641763268666832e-06,
+      "sampler_coverage": {
+        "coverage": 1.0,
+        "draws": 600,
+        "epochs_started": 10,
+        "maximum_draws_per_record": 10,
+        "minimum_draws_per_record": 9,
+        "records": 64,
+        "seen_records": 64,
+        "strategy": "deterministic_shuffled_epoch/v1"
+      },
+      "step": 75,
+      "train_teacher_loss": 1.6004049817721049
+    },
+    {
+      "holdout_teacher_loss": 1.1275217533111572,
+      "learning_rate": 5.871607054625496e-06,
+      "sampler_coverage": {
+        "coverage": 1.0,
+        "draws": 800,
+        "epochs_started": 13,
+        "maximum_draws_per_record": 13,
+        "minimum_draws_per_record": 12,
+        "records": 64,
+        "seen_records": 64,
+        "strategy": "deterministic_shuffled_epoch/v1"
+      },
+      "step": 100,
+      "train_teacher_loss": 1.111481699678633
+    },
+    {
+      "holdout_teacher_loss": 0.8520053625106812,
+      "learning_rate": 4.038852388578925e-06,
+      "sampler_coverage": {
+        "coverage": 1.0,
+        "draws": 1000,
+        "epochs_started": 16,
+        "maximum_draws_per_record": 16,
+        "minimum_draws_per_record": 15,
+        "records": 64,
+        "seen_records": 64,
+        "strategy": "deterministic_shuffled_epoch/v1"
+      },
+      "step": 125,
+      "train_teacher_loss": 0.8338004648685455
+    },
+    {
+      "holdout_teacher_loss": 0.702819287776947,
+      "learning_rate": 2.4522329276841656e-06,
+      "sampler_coverage": {
+        "coverage": 1.0,
+        "draws": 1200,
+        "epochs_started": 19,
+        "maximum_draws_per_record": 19,
+        "minimum_draws_per_record": 18,
+        "records": 64,
+        "seen_records": 64,
+        "strategy": "deterministic_shuffled_epoch/v1"
+      },
+      "step": 150,
+      "train_teacher_loss": 0.6834051979912652
+    },
+    {
+      "holdout_teacher_loss": 0.6261677742004395,
+      "learning_rate": 1.3790200300522413e-06,
+      "sampler_coverage": {
+        "coverage": 1.0,
+        "draws": 1400,
+        "epochs_started": 22,
+        "maximum_draws_per_record": 22,
+        "minimum_draws_per_record": 21,
+        "records": 64,
+        "seen_records": 64,
+        "strategy": "deterministic_shuffled_epoch/v1"
+      },
+      "step": 175,
+      "train_teacher_loss": 0.6064481106069353
+    },
+    {
+      "holdout_teacher_loss": 0.5847235918045044,
+      "learning_rate": 1e-06,
+      "sampler_coverage": {
+        "coverage": 1.0,
+        "draws": 1600,
+        "epochs_started": 25,
+        "maximum_draws_per_record": 25,
+        "minimum_draws_per_record": 25,
+        "records": 64,
+        "seen_records": 64,
+        "strategy": "deterministic_shuffled_epoch/v1"
+      },
+      "step": 200,
+      "train_teacher_loss": 0.5653658290704091
+    }
+  ],
+  "initialization_policy": "fresh_from_frozen_pretrain_step5750",
+  "latest_checkpoint": "runs/sft_v7_1_canary_lr1e5_200/latest.pt",
+  "latest_checkpoint_sha256": "c5ecdf1e5987fd908cbbddc01d7e9fe734a9915f42a49a1802fe28c657c1ebd3",
+  "learning_rate_schedule": {
+    "minimum_learning_rate": 1e-06,
+    "peak_learning_rate": 1e-05,
+    "sampler": "deterministic_shuffled_epoch/v1",
+    "strategy": "linear_warmup_cosine_decay/v1",
+    "target_steps": 200,
+    "warmup_steps": 10
+  },
+  "logging": {
+    "backup_count": 3,
+    "directory": "runs/sft_v7_1_canary_lr1e5_200/logs",
+    "format": "rotating JSONL with UTC timestamp and run_id",
+    "max_bytes": 1048576,
+    "modules": [
+      "data",
+      "training",
+      "validation",
+      "checkpoint",
+      "orchestrator"
+    ],
+    "record_bodies_logged": false,
+    "token_ids_logged": false
+  },
+  "loss_csv": "reports/milestones/021_sft_v7_1_canary/canary_lr1e5_200_train_report_loss.csv",
+  "optimization_holdout_records": 0,
+  "optimization_train_records": 64,
+  "optimizer_steps_this_run": 200,
+  "parameter_count": 14880745,
+  "payload_summary": {
+    "holdout_optimizer_record_count": 0,
+    "maximum_sequence_length": 35,
+    "mean_sequence_length": 22.5625,
+    "minimum_sequence_length": 13,
+    "optimizer_record_count": 64,
+    "split_counts": {
+      "holdout_eval": 16,
+      "train": 64
+    },
+    "supervised_token_counts": {
+      "holdout_eval": 180,
+      "train": 720
+    }
+  },
+  "public_records_consumed": 0,
+  "report_schema_version": "sft-v7.1-canary-train-report/v1",
+  "run_id": "sft-v7-1-canary-20260829T131256Z-79732708",
+  "sampler_coverage": {
+    "coverage": 1.0,
+    "draws": 1600,
+    "epochs_started": 25,
+    "maximum_draws_per_record": 25,
+    "minimum_draws_per_record": 25,
+    "records": 64,
+    "seen_records": 64,
+    "strategy": "deterministic_shuffled_epoch/v1"
+  },
+  "sealed_records_consumed": 0,
+  "signature_sha256": "5c9d3615bfdab061fe4206f130db1c57bdee01f6c5bb5569f6410dc8fa5eaa67",
+  "source_checkpoint": "runs/formal_pretrain_14m_bpe3000_6000/checkpoints/step_05750.pt",
+  "source_checkpoint_sha256": "bfe4fec5e6045d4c06d22393e7c2079fdc03897be71829c9d9dcbaf0fcaf5c1e",
+  "start_step": 0,
+  "status": "training_complete_generation_gates_pending",
+  "target_step": 200,
+  "validation_policy": {
+    "holdout_eval": "all 16 unseen paraphrases; teacher loss only",
+    "selection": "provisional teacher loss; generation gates decide capacity",
+    "train": "all 64 records"
+  },
+  "weight_decay": 0.01
+}

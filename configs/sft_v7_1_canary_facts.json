@@ -1,0 +1,162 @@
+{
+  "schema_version": "sft-v7.1-canary-config/v1",
+  "config_version": "1.0.0",
+  "description": "M021 capacity probe: eight reviewed novel facts with eight training wordings and two held-out paraphrases per fact.",
+  "source_catalog": "sft_v7_vertical_catalog.KNOWN_CORE_FACTS",
+  "source_parent_manifest": "data/sft/v7/manifest.json",
+  "eos_policy": "append_during_encoding",
+  "facts": [
+    {
+      "fact_id": "xiaoyan_identity",
+      "expected_required_terms": ["萧炎", "萧战"],
+      "answer": "萧炎是萧战的儿子。",
+      "train_questions": {
+        "bare_question": "萧炎是谁？",
+        "natural_paraphrase_1": "请简单介绍一下萧炎。",
+        "natural_paraphrase_2": "萧炎与萧战是什么关系？",
+        "direct_answer_request": "用一句话说明萧炎的家庭身份。",
+        "correction": "萧炎是萧战的父亲吗？请纠正。",
+        "relation_direction_forward": "萧炎是谁的儿子？",
+        "relation_direction_reverse": "萧战的儿子是谁？",
+        "contrastive_check": "判断正误并说明：萧炎和萧战没有亲属关系。"
+      },
+      "holdout_questions": {
+        "holdout_paraphrase_1": "小说里的萧炎与萧战是什么亲属关系？",
+        "holdout_paraphrase_2": "如果有人把萧炎说成萧战的父亲，应如何改正？"
+      }
+    },
+    {
+      "fact_id": "xiaozhan_identity",
+      "expected_required_terms": ["萧战", "萧炎", "族长"],
+      "answer": "萧战是萧家族长，也是萧炎的父亲。",
+      "train_questions": {
+        "bare_question": "萧战是谁？",
+        "natural_paraphrase_1": "请简单介绍萧战的身份。",
+        "natural_paraphrase_2": "萧战在萧家是什么身份？",
+        "direct_answer_request": "萧炎的父亲是谁？",
+        "correction": "萧战是萧炎的儿子吗？请纠正。",
+        "relation_direction_forward": "萧战与萧炎是什么关系？",
+        "relation_direction_reverse": "从萧炎的角度看，萧战是什么亲属？",
+        "contrastive_check": "判断正误并说明：萧战与萧炎没有父子关系。"
+      },
+      "holdout_questions": {
+        "holdout_paraphrase_1": "萧家的族长萧战和萧炎有何亲属关系？",
+        "holdout_paraphrase_2": "谁既是萧家族长，又是萧炎的父亲？"
+      }
+    },
+    {
+      "fact_id": "yaochen_identity",
+      "expected_required_terms": ["药尘", "药老", "老师"],
+      "answer": "药尘就是药老，也是萧炎的老师。",
+      "train_questions": {
+        "bare_question": "药尘是谁？",
+        "natural_paraphrase_1": "请简要介绍药尘。",
+        "natural_paraphrase_2": "药尘还有什么常用称呼？",
+        "direct_answer_request": "药尘与萧炎是什么关系？",
+        "correction": "药尘与药老毫无关系吗？请纠正。",
+        "relation_direction_forward": "药尘是谁的老师？",
+        "relation_direction_reverse": "萧炎的老师药老原名是什么？",
+        "contrastive_check": "判断正误并说明：药尘和药老是两个人。"
+      },
+      "holdout_questions": {
+        "holdout_paraphrase_1": "药尘在小说中通常以什么称呼出现？",
+        "holdout_paraphrase_2": "药尘对萧炎来说是什么身份？"
+      }
+    },
+    {
+      "fact_id": "yaolao_yaochen_alias",
+      "expected_required_terms": ["药老", "药尘", "同一人物"],
+      "answer": "药尘是药老曾经的名字，二者是同一人物。",
+      "train_questions": {
+        "bare_question": "药老和药尘是什么关系？",
+        "natural_paraphrase_1": "药尘和药老是否指同一个人？",
+        "natural_paraphrase_2": "药老曾经叫什么名字？",
+        "direct_answer_request": "说明药老与药尘这两个称呼的对应关系。",
+        "correction": "有人说药老和药尘是两个人，请纠正。",
+        "relation_direction_forward": "从药尘这个名字看，他后来通常被称为什么？",
+        "relation_direction_reverse": "从药老这个称呼反推，他曾经叫什么？",
+        "contrastive_check": "判断正误并说明：药老只是药尘的朋友。"
+      },
+      "holdout_questions": {
+        "holdout_paraphrase_1": "药老与药尘是别名关系，还是两名不同人物？",
+        "holdout_paraphrase_2": "为什么药老有时会被叫作药尘？"
+      }
+    },
+    {
+      "fact_id": "yaolao_teacher",
+      "expected_required_terms": ["药老", "萧炎", "老师"],
+      "answer": "药老是萧炎的老师。",
+      "train_questions": {
+        "bare_question": "药老和萧炎是什么关系？",
+        "natural_paraphrase_1": "药老是萧炎的什么人？",
+        "natural_paraphrase_2": "萧炎与药老是什么师承关系？",
+        "direct_answer_request": "萧炎的老师是谁？",
+        "correction": "萧炎是药老的老师吗？请纠正。",
+        "relation_direction_forward": "药老教导的弟子是谁？",
+        "relation_direction_reverse": "萧炎师从哪位人物？",
+        "contrastive_check": "判断正误并说明：药老与萧炎没有师徒关系。"
+      },
+      "holdout_questions": {
+        "holdout_paraphrase_1": "在药老和萧炎之间，谁是老师？",
+        "holdout_paraphrase_2": "萧炎拜谁为师？"
+      }
+    },
+    {
+      "fact_id": "fanjue_identity",
+      "expected_required_terms": ["焚决", "功法", "异火"],
+      "answer": "焚决是一门能通过吞噬异火来进化的功法。",
+      "train_questions": {
+        "bare_question": "焚决是什么？",
+        "natural_paraphrase_1": "请简要说明焚决的性质和特点。",
+        "natural_paraphrase_2": "焚决属于哪一类修炼法门？",
+        "direct_answer_request": "焚决靠什么方式进化？",
+        "correction": "焚决不能进化，对吗？请纠正。",
+        "relation_direction_forward": "焚决与异火有什么关系？",
+        "relation_direction_reverse": "吞噬异火能让哪门功法进化？",
+        "contrastive_check": "判断正误并说明：焚决的进化与异火无关。"
+      },
+      "holdout_questions": {
+        "holdout_paraphrase_1": "哪门功法可以借助吞噬异火不断进化？",
+        "holdout_paraphrase_2": "异火对焚决的成长起什么作用？"
+      }
+    },
+    {
+      "fact_id": "yihuo_role",
+      "expected_required_terms": ["异火", "炼药"],
+      "answer": "异火可以用于炼药，提高成功率并增强丹药药效。",
+      "train_questions": {
+        "bare_question": "异火在炼药中有什么作用？",
+        "natural_paraphrase_1": "炼药时为什么会使用异火？",
+        "natural_paraphrase_2": "异火能给炼药带来哪些帮助？",
+        "direct_answer_request": "异火会怎样影响炼药成功率和丹药药效？",
+        "correction": "异火与炼药无关，对吗？请纠正。",
+        "relation_direction_forward": "异火和炼药是什么关系？",
+        "relation_direction_reverse": "提高炼药成功率并增强药效的特殊火焰是什么？",
+        "contrastive_check": "判断正误并说明：使用异火会降低炼药成功率。"
+      },
+      "holdout_questions": {
+        "holdout_paraphrase_1": "炼药师使用异火能获得什么好处？",
+        "holdout_paraphrase_2": "异火是否能提升成丹概率和丹药效果？"
+      }
+    },
+    {
+      "fact_id": "yunlanzong_identity",
+      "expected_required_terms": ["云岚宗", "加玛帝国"],
+      "answer": "云岚宗是加玛帝国境内极有影响力的势力。",
+      "train_questions": {
+        "bare_question": "云岚宗是什么？",
+        "natural_paraphrase_1": "请简要介绍云岚宗。",
+        "natural_paraphrase_2": "云岚宗位于哪个帝国境内？",
+        "direct_answer_request": "云岚宗在加玛帝国有什么地位？",
+        "correction": "云岚宗与加玛帝国毫无关系吗？请纠正。",
+        "relation_direction_forward": "云岚宗和加玛帝国是什么关系？",
+        "relation_direction_reverse": "加玛帝国境内的重要势力之一是什么？",
+        "contrastive_check": "判断正误并说明：云岚宗只是一个普通家庭。"
+      },
+      "holdout_questions": {
+        "holdout_paraphrase_1": "加玛帝国中的云岚宗属于什么性质的组织？",
+        "holdout_paraphrase_2": "云岚宗在加玛帝国境内是否具有影响力？"
+      }
+    }
+  ]
+}

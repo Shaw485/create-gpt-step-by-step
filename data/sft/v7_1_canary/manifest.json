@@ -1,0 +1,213 @@
+{
+  "access_audit": {
+    "formal_corpus_body_read": false,
+    "v7_public_body_read": false,
+    "v7_sealed_body_read": false,
+    "v7_train_body_read": false
+  },
+  "config": {
+    "canonical_sha256": "7b6ba23ac83f414f944208904b3576b34cbf0f459e1c37a213bd7c6b176c9010",
+    "path": "configs/sft_v7_1_canary_facts.json",
+    "sha256": "0e139053aa018bd25c55d4bece3e79fdfdd85416bbd3bf21b3ebcbe22b75fe44"
+  },
+  "dataset_identity_sha256": "b2012953980c823d018494d2a5212e79b51370c632dceb1e559b552f152f92b9",
+  "manifest_schema_version": "sft-v7.1-canary-manifest/v1",
+  "quality_summary": {
+    "exact_question_duplicates": 0,
+    "fact_count": 8,
+    "fact_split_counts": {
+      "fanjue_identity": {
+        "holdout_eval": 2,
+        "train": 8
+      },
+      "xiaoyan_identity": {
+        "holdout_eval": 2,
+        "train": 8
+      },
+      "xiaozhan_identity": {
+        "holdout_eval": 2,
+        "train": 8
+      },
+      "yaochen_identity": {
+        "holdout_eval": 2,
+        "train": 8
+      },
+      "yaolao_teacher": {
+        "holdout_eval": 2,
+        "train": 8
+      },
+      "yaolao_yaochen_alias": {
+        "holdout_eval": 2,
+        "train": 8
+      },
+      "yihuo_role": {
+        "holdout_eval": 2,
+        "train": 8
+      },
+      "yunlanzong_identity": {
+        "holdout_eval": 2,
+        "train": 8
+      }
+    },
+    "forbidden_term_failures": 0,
+    "holdout_eval_count": 16,
+    "holdout_questions_per_fact": 2,
+    "literal_eos_occurrences": 0,
+    "meta_answer_prefix_matches": 0,
+    "normalized_question_duplicates": 0,
+    "required_term_failures": 0,
+    "role_counts": {
+      "holdout_eval:holdout_paraphrase_1": 8,
+      "holdout_eval:holdout_paraphrase_2": 8,
+      "train:bare_question": 8,
+      "train:contrastive_check": 8,
+      "train:correction": 8,
+      "train:direct_answer_request": 8,
+      "train:natural_paraphrase_1": 8,
+      "train:natural_paraphrase_2": 8,
+      "train:relation_direction_forward": 8,
+      "train:relation_direction_reverse": 8
+    },
+    "semantic_role_failures": 0,
+    "status": "pass",
+    "train_count": 64,
+    "train_holdout_exact_overlap": 0,
+    "train_questions_per_fact": 8
+  },
+  "record_count": 80,
+  "record_schema_version": "sft_v7_1_canary/1.0",
+  "source": {
+    "catalog": "sft_v7_vertical_catalog.KNOWN_CORE_FACTS",
+    "catalog_path": "sft_v7_vertical_catalog.py",
+    "kind": "reviewed_v7_train_known_core_metadata_only",
+    "parent_dataset_identity_sha256": "47fb0f0af2aaa61f3239883f22966f3b0828a8a3942c78436b07ef5f5118d133",
+    "parent_manifest_path": "data/sft/v7/manifest.json",
+    "parent_manifest_sha256": "422c35fa130a3e6fc3f656019515fc7c1115616aa396712ea501751aeda1b9e9",
+    "selected_facts": [
+      {
+        "entity": "萧炎",
+        "fact_id": "xiaoyan_identity",
+        "holdout_eval_count": 2,
+        "required_terms": [
+          "萧炎",
+          "萧战"
+        ],
+        "train_count": 8
+      },
+      {
+        "entity": "萧战",
+        "fact_id": "xiaozhan_identity",
+        "holdout_eval_count": 2,
+        "required_terms": [
+          "萧战",
+          "萧炎",
+          "族长"
+        ],
+        "train_count": 8
+      },
+      {
+        "entity": "药尘",
+        "fact_id": "yaochen_identity",
+        "holdout_eval_count": 2,
+        "required_terms": [
+          "药尘",
+          "药老",
+          "老师"
+        ],
+        "train_count": 8
+      },
+      {
+        "entity": "药老",
+        "fact_id": "yaolao_yaochen_alias",
+        "holdout_eval_count": 2,
+        "required_terms": [
+          "药老",
+          "药尘",
+          "同一人物"
+        ],
+        "train_count": 8
+      },
+      {
+        "entity": "药老",
+        "fact_id": "yaolao_teacher",
+        "holdout_eval_count": 2,
+        "required_terms": [
+          "药老",
+          "萧炎",
+          "老师"
+        ],
+        "train_count": 8
+      },
+      {
+        "entity": "焚决",
+        "fact_id": "fanjue_identity",
+        "holdout_eval_count": 2,
+        "required_terms": [
+          "焚决",
+          "功法",
+          "异火"
+        ],
+        "train_count": 8
+      },
+      {
+        "entity": "异火",
+        "fact_id": "yihuo_role",
+        "holdout_eval_count": 2,
+        "required_terms": [
+          "异火",
+          "炼药"
+        ],
+        "train_count": 8
+      },
+      {
+        "entity": "云岚宗",
+        "fact_id": "yunlanzong_identity",
+        "holdout_eval_count": 2,
+        "required_terms": [
+          "云岚宗",
+          "加玛帝国"
+        ],
+        "train_count": 8
+      }
+    ]
+  },
+  "split_files": {
+    "holdout_eval": {
+      "count": 16,
+      "path": "holdout_eval.jsonl",
+      "schema_version": "sft_v7_1_canary/1.0",
+      "sha256": "fe8a72efcd8e3f179d61ca8e4b2de2b3c775dbd9841d25692fe6743f3548c64d"
+    },
+    "train": {
+      "count": 64,
+      "path": "train.jsonl",
+      "schema_version": "sft_v7_1_canary/1.0",
+      "sha256": "e5f0f90b26f9dbacb68017bbaa4243a41ccdacb4ac60484677964061fd4d008a"
+    }
+  },
+  "split_totals": {
+    "holdout_eval": 16,
+    "train": 64
+  },
+  "status": "frozen_canary_ready",
+  "supervision_policy": {
+    "assistant_only_loss": true,
+    "eos_appended_by_encoder": true,
+    "holdout_eval_must_not_train": true,
+    "jsonl_contains_literal_eos": false
+  },
+  "training_binding": {
+    "base_checkpoint": {
+      "parameter_count": 14880745,
+      "path": "runs/formal_pretrain_14m_bpe3000_6000/checkpoints/step_05750.pt",
+      "sha256": "bfe4fec5e6045d4c06d22393e7c2079fdc03897be71829c9d9dcbaf0fcaf5c1e",
+      "step": 5750
+    },
+    "tokenizer": {
+      "context_limit": 512,
+      "path": "data/scaling_a/bpe_3000/tokenizer.json",
+      "sha256": "e70cf3dc0ed185a6b22ab7dc08b6a850eeb59864ba161dd156c644e003862822",
+      "vocab_size": 7465
+    }
+  }
+}
